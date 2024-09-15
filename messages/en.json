@@ -1,0 +1,8 @@
+{
+  "SidebarLayout": {
+    "trending": "Trending",
+    "discover": "Discover",
+    "shorts": "Shorts",
+    "live": "LIVE"
+  }
+}

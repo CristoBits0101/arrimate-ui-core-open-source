@@ -1,0 +1,86 @@
+.form {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: min-content;
+}
+
+.form button {
+  align-items: center;
+  background: transparent;
+  border-bottom-right-radius: 5rem;
+  border-color: transparent;
+  border-top-right-radius: 5rem;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  outline: none;
+  padding: 0 1rem;
+}
+
+.form button svg {
+  aspect-ratio: 1 / 1;
+  fill: #1d0f0f;
+  height: 1.5rem;
+  margin: 0;
+  object-fit: contain;
+  padding: 0;
+  width: 1.5rem;
+}
+
+.form div {
+  align-items: center;
+  background-color: #f4f4f4;
+  border: 0.05rem solid #bfbdc050;
+  border-radius: 5rem;
+  display: flex;
+  height: 80%;
+  justify-content: center;
+  width: min-content;
+}
+
+.form div:hover button {
+  background-color: #bfbdc050;
+  fill: #1d0f0f;
+}
+
+.form div:hover button svg {
+  background-color: transparent;
+  fill: #1d0f0f;
+}
+
+.form div:hover input,
+.form button:focus ~ input,
+.form button:hover ~ input {
+  border-right: none;
+}
+
+.form input {
+  appearance: textfield;
+  background: transparent;
+  border: none;
+  border-right: 0.05rem solid #bfbdc050;
+  height: 50%;
+  outline: none;
+  padding: 0 1rem;
+}
+
+.form input:focus,
+.form input:hover {
+  border-right: none;
+}
+
+.form input:focus ~ button,
+.form input:hover ~ button {
+  background-color: #bfbdc050;
+  fill: #1d0f0f;
+  transition: background-color 0.3s ease, fill 0.3s ease;
+}
+
+.form input:focus ~ button svg,
+.form input:hover ~ button svg {
+  background-color: transparent;
+  fill: #1d0f0f;
+  transition: background-color 0.3s ease, fill 0.3s ease;
+}

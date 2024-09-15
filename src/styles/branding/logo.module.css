@@ -1,0 +1,14 @@
+.logo {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  min-width: 13.5rem;
+}
+
+.logo h1 {
+  font-size: 2rem;
+}
+
+.logo img {
+  background-color: transparent;
+}
