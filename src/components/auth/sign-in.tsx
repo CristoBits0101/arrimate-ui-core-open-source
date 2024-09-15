@@ -12,9 +12,9 @@ export default function SignIn() {
     <li>
       <Link href={`/${useLocale()}/sign-in`}>
         {isActive ? (
-          <Image src={chatBlackSVG} alt='sign-in' />
+          <Image src={chatBlackSVG} alt='Sign In' />
         ) : (
-          <Image src={chatWhiteSVG} alt='sign-in' />
+          <Image src={chatWhiteSVG} alt='Sign In' />
         )}
       </Link>
     </li>

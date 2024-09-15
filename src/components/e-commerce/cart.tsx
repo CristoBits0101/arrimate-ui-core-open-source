@@ -12,9 +12,9 @@ export default function Cart() {
     <li>
       <Link href={`/${useLocale()}/cart`}>
         {isActive ? (
-          <Image src={cartBlackSVG} alt='cart' />
+          <Image src={cartBlackSVG} alt='Shopping cart' />
         ) : (
-          <Image src={cartWhiteSVG} alt='cart' />
+          <Image src={cartWhiteSVG} alt='Shopping cart' />
         )}
       </Link>
     </li>

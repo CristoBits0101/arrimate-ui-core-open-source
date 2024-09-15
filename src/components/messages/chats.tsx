@@ -12,9 +12,9 @@ export default function Chats() {
     <li>
       <Link href={`/${useLocale()}/chats`}>
         {isActive ? (
-          <Image src={chatBlackSVG} alt='chat' />
+          <Image src={chatBlackSVG} alt='Chats' />
         ) : (
-          <Image src={chatWhiteSVG} alt='chat' />
+          <Image src={chatWhiteSVG} alt='Chats' />
         )}
       </Link>
     </li>
