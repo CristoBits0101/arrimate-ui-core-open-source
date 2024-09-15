@@ -19,9 +19,10 @@
   - Activity notifications
   - Real-time chat
 - **Navigation**
-  - Search engine
   - Navbar
   - Sidebar
+  - Text search engin
+  - Voice search engine
 - **Streaming**
   - Post shorts
   - Stream live
