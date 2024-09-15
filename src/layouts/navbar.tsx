@@ -2,7 +2,7 @@ import Cart from '@/components/e-commerce/cart'
 import Messages from '@/components/messages/chats'
 import Notifications from '@/components/messages/notifications'
 import Post from '@/components/feeds/post'
-import Settings from '@/components/configuration/settings'
+import SignIn from '@/components/auth/sign-in'
 import styles from '@/styles/layouts/navbar.module.css'
 
 export default function Navbar() {
@@ -12,7 +12,7 @@ export default function Navbar() {
         <Post />
         <Messages />
         <Notifications />
-        <Settings />
+        <SignIn />
         <Cart />
       </ul>
     </nav>

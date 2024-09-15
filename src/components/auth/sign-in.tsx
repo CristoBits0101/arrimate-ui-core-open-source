@@ -6,7 +6,7 @@ import chatWhiteSVG from '@/assets/icons/navbar/white/sign-in.svg'
 import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale } from 'next-intl'
 
-export default function Settings() {
+export default function SignIn() {
   const isActive = useActiveRoute('/sign-in')
   return (
     <li>
