@@ -28,10 +28,10 @@
 .navBar img {
   aspect-ratio: 1 / 1;
   height: auto;
-  max-height: 1.75rem;
-  max-width: 1.75rem;
-  min-height: 1.75rem;
-  min-width: 1.75rem;
+  max-height: 1.875rem;
+  max-width: 1.875rem;
+  min-height: 1.875rem;
+  min-width: 1.875rem;
   object-fit: contain;
   width: auto;
 }
