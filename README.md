@@ -1,0 +1,29 @@
+## Features
+
+- **Auth**
+  - 2FA
+  - OAuth
+  - Sign in
+  - Sign up
+- **Branding**
+  - Logo
+- **Configuration**
+  - Settings panel
+- **E-commerce**
+  - Shopping cart
+- **Feeds**
+  - Post content
+- **Languages**
+  - Interface translation
+- **Messages**
+  - Activity notifications
+  - Real-time chat
+- **Navigation**
+  - Search engine
+  - Navbar
+  - Sidebar
+- **Streaming**
+  - Post shorts
+  - Stream live
+- **Styles**
+  - Active route styling
