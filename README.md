@@ -2,8 +2,12 @@
 
 - **Auth**
   - 2FA
+  - Change password
+  - Email verification
   - OAuth
+  - Recover password
   - Sign in
+  - Sign out
   - Sign up
 - **Branding**
   - Logo
