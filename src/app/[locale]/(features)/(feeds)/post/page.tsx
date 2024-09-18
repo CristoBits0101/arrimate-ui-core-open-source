@@ -1,3 +1,3 @@
 export default function PostPage() {
-  return <main>Post</main>
+  return <h2>Post</h2>
 }

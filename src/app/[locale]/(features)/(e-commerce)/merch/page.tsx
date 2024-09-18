@@ -1,3 +1,3 @@
 export default function MerchPage() {
-  return <main>Merch</main>
+  return <h2>Merch</h2>
 }

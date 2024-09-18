@@ -1,3 +1,3 @@
 export default function LivePage() {
-  return <main>LIVE</main>
+  return <h2>LIVE</h2>
 }

@@ -1,3 +1,3 @@
 export default function ShortsPage() {
-  return <main>Shorts</main>
+  return <h2>Shorts</h2>
 }
