@@ -12,3 +12,15 @@
 .logo img {
   background-color: transparent;
 }
+
+.centeredLogo {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-width: 13.5rem;
+}
+
+.centeredLogo h1 {
+  font-size: 3rem;
+}
