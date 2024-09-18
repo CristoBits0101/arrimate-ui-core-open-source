@@ -19,6 +19,7 @@
   - Post content
 - **Languages**
   - Interface translation
+  - Change language
 - **Messages**
   - Activity notifications
   - Real-time chat
