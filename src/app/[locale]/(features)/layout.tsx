@@ -1,11 +1,10 @@
 import Header from '@/layouts/header'
 import Sidebar from '@/layouts/sidebar'
 
-export default function features({
+export default function FeaturesLayout({
   children,
 }: {
   children: React.ReactNode
-  params: { locale: string }
 }) {
   return (
     <>
