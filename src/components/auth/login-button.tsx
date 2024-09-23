@@ -12,6 +12,6 @@ export default function LoginButton({
   mode = 'redirect',
   asChild = false,
 }: LoginButtonProps) {
-  const onClick = () => console.log('Login button clicked...')
-  return <span onClick={onClick}>{children}</span>
+  const clicked = () => console.log('Login button clicked...')
+  return <span onClick={clicked}>{children}</span>
 }
