@@ -1,3 +1,3 @@
 export default function LoginForm() {
-  return <div>login-form</div>
+  return <CardWrapper>Login form!</CardWrapper>
 }
