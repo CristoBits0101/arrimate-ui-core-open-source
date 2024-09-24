@@ -1,0 +1,4 @@
+.span {
+  display: grid;
+  place-content: center;
+}

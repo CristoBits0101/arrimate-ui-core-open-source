@@ -1,5 +1,7 @@
 'use client'
 
+import styles from '@/styles/auth/login-button.module.css'
+
 interface LoginButtonProps {
   // Receive the login button
   children: React.ReactNode
@@ -13,5 +15,9 @@ export default function LoginButton({
   asChild = false,
 }: LoginButtonProps) {
   const clicked = () => console.log('Login button clicked...')
-  return <span onClick={clicked}>{children}</span>
+  return (
+    <span onClick={clicked} className={styles.span}>
+      {children}
+    </span>
+  )
 }

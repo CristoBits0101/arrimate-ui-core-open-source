@@ -1,0 +1,10 @@
+.button {
+  border: 0.1rem solid #1d0f0f;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #1d0f0f;
+  color: #ffffff;
+}

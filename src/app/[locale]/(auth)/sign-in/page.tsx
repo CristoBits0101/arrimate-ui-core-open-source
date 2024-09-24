@@ -1,12 +1,14 @@
 import LoginButton from '@/components/auth/login-button'
 import Logo from '@/components/branding/logo'
+import styles from '@/styles/auth/sign-in.module.css'
+
 export default function SignInPage() {
   return (
-    <main>
-     <Logo centerText={true} />
+    <>
+      <Logo centerText={true} />
       <LoginButton>
-        <button>Sign In</button>
+        <button className={styles.button}>Sign In</button>
       </LoginButton>
-    </main>
+    </>
   )
 }
