@@ -17,5 +17,12 @@ export default function CardWrapper({
   backButtonHref,
   showSocial = false,
 }: CardWrapperProps) {
-  return <Card>{children}</Card>
+  return (
+    <Card>
+      <CardHeader>
+        
+      </CardHeader>
+      {children}
+    </Card>
+  )
 }
