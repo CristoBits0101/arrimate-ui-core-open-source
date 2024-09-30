@@ -18,10 +18,8 @@ export default function CardWrapper({
   showSocial = false,
 }: CardWrapperProps) {
   return (
-    <Card>
-      <CardHeader>
-        
-      </CardHeader>
+    <Card className='w-[400px] shadow-md'>
+      <CardHeader></CardHeader>
       {children}
     </Card>
   )
