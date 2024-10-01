@@ -7,8 +7,10 @@ interface HeaderProps {
 
 export default function Header({ label }: HeaderProps) {
   return (
-    <div className="w-full flex flex-col gap-y-4 items-center justify-center">
-      <h1 className={cn('text-3xl font-semibold', ds.className)}>🔐 Arrimate</h1>
+    <div className="w-full flex flex-col gap-y-3 items-center justify-center">
+      <h1 className={cn('text-5xl', ds.className)}>
+        Arrimate
+      </h1>
       <p className="text-muted-foreground text-sm">{label}</p>
     </div>
   )
