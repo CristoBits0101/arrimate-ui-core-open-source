@@ -1,4 +1,4 @@
-// Statuses and effects are managed from the client.
+// statuses/effects.
 'use client'
 
 // components
@@ -52,7 +52,7 @@ export default function LoginForm() {
                       {...field}
                       placeholder="sophie@example.com"
                       type="email"
-                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050]"
+                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -69,7 +69,7 @@ export default function LoginForm() {
                       {...field}
                       placeholder="Password"
                       type="password"
-                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050]"
+                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]"
                     />
                   </FormControl>
                   <FormMessage />
