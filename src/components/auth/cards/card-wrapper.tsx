@@ -1,9 +1,10 @@
 'use client'
 
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import Header from '@/components/auth/cards/card-header'
-import LoginSocial from '@/components/auth/buttons/sign-in-social'
-import SignUpButton from '../buttons/sign-up-button'
+import SignInSocial from '@/components/auth/buttons/sign-in-social'
+import React from 'react'
+import SignUpButton from '@/components/auth/buttons/sign-up-button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 interface CardWrapperProps {
   children: React.ReactNode
@@ -21,19 +22,23 @@ export default function CardWrapper({
   showSocial = false
 }: CardWrapperProps) {
   return (
-    <Card className="w-[25rem] shadow-none rounded-none p-5">
-      <CardHeader>
-        <Header label={headerLabel} />
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-      {showSocial && (
-        <CardFooter>
-          <LoginSocial />
-        </CardFooter>
-      )}
-      <CardFooter>
-        <SignUpButton href={SignUpButtonHref} label={SignUpButtonLabel} />
-      </CardFooter>
-    </Card>
+    <>
+      <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit">
+        <CardHeader>
+          <Header label={headerLabel} />
+        </CardHeader>
+        <CardContent>{children}</CardContent>
+        {showSocial && (
+          <CardFooter>
+            <SignInSocial />
+          </CardFooter>
+        )}
+      </Card>
+      <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit">
+        <CardContent className="p-0">
+          <SignUpButton href={SignUpButtonHref} label={SignUpButtonLabel} />
+        </CardContent>
+      </Card>
+    </>
   )
 }
