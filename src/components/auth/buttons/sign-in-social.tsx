@@ -9,7 +9,7 @@ export default function SignInSocial() {
     <div className="flex items-center w-full gap-x-10">
       <Button
         size="lg"
-        className="w-full rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#bfbdc050]"
+        className="w-full rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#bfbdc050] focus:border-[#1d0f0f]"
         variant="outline"
         onClick={() => {}}
       >
@@ -17,7 +17,7 @@ export default function SignInSocial() {
       </Button>
       <Button
         size="lg"
-        className="w-full rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#bfbdc050]"
+        className="w-full rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#bfbdc050] focus:border-[#1d0f0f]"
         variant="outline"
         onClick={() => {}}
       >
