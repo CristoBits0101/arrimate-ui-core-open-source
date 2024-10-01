@@ -35,14 +35,13 @@ export default function LoginForm() {
   })
   return (
     <CardWrapper
-      headerLabel="Welcome back"
       SignUpButtonLabel="Don't have an account? Sign Up"
       SignUpButtonHref={`/${useLocale()}/sign-up`}
       showSocial={true}
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(() => {})} className="space-y-6">
-          <div className="space-y-4">
+        <form onSubmit={form.handleSubmit(() => {})}>
+          <div className="space-y-5">
             <FormField
               control={form.control}
               name="email"
@@ -53,7 +52,7 @@ export default function LoginForm() {
                       {...field}
                       placeholder="sophie@example.com"
                       type="email"
-                      className="bg-[#F4F4F4]"
+                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -70,7 +69,7 @@ export default function LoginForm() {
                       {...field}
                       placeholder="Password"
                       type="password"
-                      className="bg-[#F4F4F4]"
+                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050]"
                     />
                   </FormControl>
                   <FormMessage />

@@ -7,8 +7,7 @@ import SignUpButton from '@/components/auth/buttons/sign-up-button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 interface CardWrapperProps {
-  children: React.ReactNode
-  headerLabel: string
+  children: React.ReactNode,
   SignUpButtonLabel: string
   SignUpButtonHref: string
   showSocial?: boolean
@@ -16,16 +15,15 @@ interface CardWrapperProps {
 
 export default function CardWrapper({
   children,
-  headerLabel,
   SignUpButtonLabel,
   SignUpButtonHref,
   showSocial = false
 }: CardWrapperProps) {
   return (
     <>
-      <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit">
+      <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit border-[0.05rem] border-solid border-[#bfbdc050]">
         <CardHeader>
-          <Header label={headerLabel} />
+          <Header />
         </CardHeader>
         <CardContent>{children}</CardContent>
         {showSocial && (
@@ -34,7 +32,7 @@ export default function CardWrapper({
           </CardFooter>
         )}
       </Card>
-      <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit">
+      <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit border-[0.05rem] border-solid border-[#bfbdc050]">
         <CardContent className="p-0">
           <SignUpButton href={SignUpButtonHref} label={SignUpButtonLabel} />
         </CardContent>
