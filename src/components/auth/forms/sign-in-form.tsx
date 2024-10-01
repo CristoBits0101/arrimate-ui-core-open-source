@@ -11,6 +11,7 @@ import { useForm } from 'react-hook-form'
 import { useLocale } from 'next-intl'
 
 // shadcn/ui
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -40,7 +41,7 @@ export default function LoginForm() {
       showSocial={true}
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(() => {})}>
+        <form className="space-y-5" onSubmit={form.handleSubmit(() => {})}>
           <div className="space-y-5">
             <FormField
               control={form.control}
@@ -77,6 +78,9 @@ export default function LoginForm() {
               )}
             />
           </div>
+          <Button type="submit" className="w-full rounded-full bg-stone-700 hover:bg-stone-800">
+            Continue
+          </Button>
         </form>
       </Form>
     </CardWrapper>
