@@ -11,7 +11,7 @@ export default function Post() {
   return (
     <li>
       <Link href={`/${useLocale()}/post`}>
-        { isActive ? (
+        {isActive ? (
           <Image src={postBlackSVG} alt='Post' />
         ) : (
           <Image src={postWhiteSVG} alt='Post' />

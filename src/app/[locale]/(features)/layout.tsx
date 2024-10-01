@@ -2,7 +2,7 @@ import Header from '@/layouts/header'
 import Sidebar from '@/layouts/sidebar'
 
 export default function FeaturesLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {

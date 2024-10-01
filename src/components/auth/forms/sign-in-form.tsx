@@ -31,8 +31,8 @@ export default function LoginForm() {
     resolver: zodResolver(SignInSchema),
     defaultValues: {
       email: '',
-      password: ''
-    }
+      password: '',
+    },
   })
   return (
     <CardWrapper
@@ -41,19 +41,19 @@ export default function LoginForm() {
       showSocial={true}
     >
       <Form {...form}>
-        <form className="space-y-5" onSubmit={form.handleSubmit(() => {})}>
-          <div className="space-y-5">
+        <form className='space-y-5' onSubmit={form.handleSubmit(() => {})}>
+          <div className='space-y-5'>
             <FormField
               control={form.control}
-              name="email"
+              name='email'
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="sophie@example.com"
-                      type="email"
-                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]"
+                      placeholder='sophie@example.com'
+                      type='email'
+                      className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
                     />
                   </FormControl>
                   <FormMessage />
@@ -62,15 +62,15 @@ export default function LoginForm() {
             />
             <FormField
               control={form.control}
-              name="password"
+              name='password'
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="Password"
-                      type="password"
-                      className="bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]"
+                      placeholder='Password'
+                      type='password'
+                      className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
                     />
                   </FormControl>
                   <FormMessage />
@@ -78,7 +78,10 @@ export default function LoginForm() {
               )}
             />
           </div>
-          <Button type="submit" className="w-full rounded-full bg-stone-700 hover:bg-stone-800">
+          <Button
+            type='submit'
+            className='w-full rounded-full bg-[#453C41] hover:bg-stone-800'
+          >
             Continue
           </Button>
         </form>

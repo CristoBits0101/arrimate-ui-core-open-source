@@ -19,7 +19,7 @@ export default function CardWrapper({
   showSocial = false
 }: CardWrapperProps) {
   return (
-    <Card className="w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit border-[0.05rem] border-solid border-[#bfbdc050]">
+    <Card className='w-[25rem] shadow-none rounded-none p-5 mb-5 text-inherit border-[0.05rem] border-solid border-[#bfbdc050]'>
       <CardHeader>
         <Header />
       </CardHeader>
@@ -29,7 +29,7 @@ export default function CardWrapper({
           <SignInSocial />
         </CardFooter>
       )}
-      <CardFooter className="p-0">
+      <CardFooter className='p-0'>
         <SignUpButton href={SignUpButtonHref} label={SignUpButtonLabel} />
       </CardFooter>
     </Card>
