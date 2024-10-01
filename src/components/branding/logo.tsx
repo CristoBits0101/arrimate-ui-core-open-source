@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import styles from '@/styles/branding/logo.module.css'
+import styles from '@/styles/components/branding/logo.module.css'
 import { ds } from '@/lib/fonts'
 
 interface LogoProps {

@@ -1,4 +1,4 @@
-import styles from '@/styles/navigation/searcher.module.css'
+import styles from '@/styles/components/navigation/searcher.module.css'
 
 export default function Searcher() {
   return (

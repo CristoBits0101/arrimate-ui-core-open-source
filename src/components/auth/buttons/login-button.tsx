@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/router'
-import styles from '@/styles/auth/login-button.module.css'
+import styles from '@/styles/components/auth/login-button.module.css'
 
 interface LoginButtonProps {
   // Button content
