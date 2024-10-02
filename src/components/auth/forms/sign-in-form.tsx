@@ -31,8 +31,8 @@ export default function LoginForm() {
     resolver: zodResolver(SignInSchema),
     defaultValues: {
       email: '',
-      password: '',
-    },
+      password: ''
+    }
   })
   return (
     <CardWrapper
@@ -80,7 +80,7 @@ export default function LoginForm() {
           </div>
           <Button
             type='submit'
-            className='w-full rounded-full bg-[#453C41] hover:bg-stone-800'
+            className='w-full rounded-full bg-[#453C41] hover:bg-[#1d0f0f]'
           >
             Continue
           </Button>
