@@ -10,6 +10,7 @@
     🚧               Sign Out ➜ 
     🚧                Sign Up ➜ 
     🚧  Two-Factor Auth (2FA) ➜ 
+    ✅        Data validation ➜ schema validation
 
   Branding:
 
@@ -59,4 +60,5 @@
 
     ✅   Active Route Styling ➜ next/navigation
     ✅    Font Implementation ➜ next/font/google
+    🚧       Responsive Pages ➜ 
     🚧       Sound Animations ➜ 
