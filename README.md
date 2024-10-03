@@ -1,34 +1,34 @@
 ## Features
 
 Auth:
-  🚧 2FA
   🚧 Change Password
   🚧 Email Verification
-  🚧 OAuth
+  🚧 OAuth Login
   🚧 Recover Password
   🔄 Sign In
   🚧 Sign Out
   🚧 Sign Up
+  🚧 Two-Factor Authentication (2FA)
 Branding:
-  🔄 Logo
+  🔄 App Logo
 Configuration:
-  🚧 Settings panel
+  🚧 Settings Panel
 E-commerce:
-  🚧 Shopping cart
+  🚧 Shopping Cart
 Feeds:
-  🚧 Post content
+  🚧 Post Content
 Languages:
-  🚧 Interface translation
-  🔄 Change language
+  ✅ Interface Translation
+  🔄 Change Language
 Messages:
-  🚧 Activity notifications
-  🚧 Email notifications
-  🚧 Real-time chat
+  🚧 Activity Notifications
+  🚧 Email Notifications
+  🚧 Real-Time Chat
 Navigation:
-  ✅ Navbar
-  ✅ Sidebar
-  🚧 Text search engine
-  🚧 Voice search engine
+  ✅ Navigation Bar
+  ✅ Sidebar Menu
+  🚧 Text Search Engine
+  🚧 Voice Search Engine
 Streaming:
   🚧 Publish Shorts
   🚧 Stream LIVE
