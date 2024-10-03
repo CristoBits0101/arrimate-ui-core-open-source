@@ -1,31 +1,27 @@
 'use client'
 
-// components
+// Actions
+import SignIn from '@/actions/sign-in'
+// Components
 import CardWrapper from '@/components/auth/cards/card-wrapper'
+import EmailInput from '@/components/auth/inputs/email-input'
 import FormError from '@/components/auth/alerts/form-error'
 import FormSuccess from '@/components/auth/alerts/form-success'
-
-// react-hook-form
+import PasswordInput from '@/components/auth/inputs/password-input'
+// React hook form
 import { useForm, FormProvider } from 'react-hook-form'
-
-// shadcn/ui
+// Shadcn/ui
 import { Form } from '@/components/ui/form'
-
-// next-intl
+// Next-intl
 import { useLocale } from 'next-intl'
-
-// zod
+// Zod
 import * as z from 'zod'
 import { SignInSchema } from '@/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 import SignInSubmit from '../buttons/sign-in-submit'
 
-// Importar componentes de entrada
-import EmailInput from '@/components/auth/inputs/email-input'
-import PasswordInput from '@/components/auth/inputs/password-input'
-
 export default function LoginForm() {
-  // 
+  //
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -33,9 +29,9 @@ export default function LoginForm() {
       password: ''
     }
   })
-  // 
+  //
   const onSubmit = (values: z.infer<typeof SignInSchema>) => {
-    console.log(values)
+    SignIn(values)
   }
   return (
     <CardWrapper
