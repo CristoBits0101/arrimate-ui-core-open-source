@@ -8,11 +8,12 @@ import EmailInput from '@/components/auth/inputs/email-input'
 import FormError from '@/components/auth/alerts/form-error'
 import FormSuccess from '@/components/auth/alerts/form-success'
 import PasswordInput from '@/components/auth/inputs/password-input'
-// React hook form
+// React
 import { useForm, FormProvider } from 'react-hook-form'
-// Shadcn/ui
+import { useTransition } from 'react'
+// Shadcn
 import { Form } from '@/components/ui/form'
-// Next-intl
+// Next
 import { useLocale } from 'next-intl'
 // Zod
 import * as z from 'zod'
@@ -21,6 +22,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import SignInSubmit from '../buttons/sign-in-submit'
 
 export default function LoginForm() {
+  // 
+  const [isPending, startTransition] = useTransition()
   //
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
@@ -31,6 +34,7 @@ export default function LoginForm() {
   })
   //
   const onSubmit = (values: z.infer<typeof SignInSchema>) => {
+    startTransition(() => {})
     SignIn(values)
   }
   return (
