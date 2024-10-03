@@ -1,7 +1,7 @@
 'use client'
 
 import * as z from 'zod'
-import { SignInSchema } from '@/schemas'
+import { SignUpSchema } from '@/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, FormProvider } from 'react-hook-form'
 import { useState, useTransition } from 'react'
@@ -19,20 +19,20 @@ import SignInSubmit from '../buttons/sign-in-submit'
 // Shadcn/UI
 import { Form } from '@/components/ui/form'
 
-export default function SignInForm() {
+export default function SignUpForm() {
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
 
-  const form = useForm<z.infer<typeof SignInSchema>>({
-    resolver: zodResolver(SignInSchema),
+  const form = useForm<z.infer<typeof SignUpSchema>>({
+    resolver: zodResolver(SignUpSchema),
     defaultValues: {
       email: '',
       password: ''
     }
   })
 
-  const onSubmit = (values: z.infer<typeof SignInSchema>) => {
+  const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
     // Reset values
     setError('')
     setSuccess('')

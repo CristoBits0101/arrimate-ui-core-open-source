@@ -1,12 +1,19 @@
 'use client'
 
+// Actions
+import SignIn from '@/actions/sign-in'
+
+// Zod
 import * as z from 'zod'
-import { SignInSchema } from '@/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { SignInSchema } from '@/schemas'
+
+// React
 import { useForm, FormProvider } from 'react-hook-form'
 import { useState, useTransition } from 'react'
+
+// Next
 import { useLocale } from 'next-intl'
-import SignIn from '@/actions/sign-in'
 
 // Components
 import CardWrapper from '@/components/auth/cards/card-wrapper'
@@ -14,9 +21,9 @@ import EmailInput from '@/components/auth/inputs/email-input'
 import PasswordInput from '@/components/auth/inputs/password-input'
 import FormError from '@/components/auth/alerts/form-error'
 import FormSuccess from '@/components/auth/alerts/form-success'
-import SignInSubmit from '../buttons/sign-in-submit'
+import SignInSubmit from '@/components/auth/buttons/sign-in-submit'
 
-// Shadcn/UI
+// Shadcn
 import { Form } from '@/components/ui/form'
 
 export default function SignInForm() {
@@ -36,7 +43,7 @@ export default function SignInForm() {
     // Reset values
     setError('')
     setSuccess('')
-    
+
     // Enviar datos al servidor
     startTransition(() => {
       SignIn(values)
