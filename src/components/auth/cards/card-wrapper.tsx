@@ -1,7 +1,7 @@
 'use client'
 
 import Header from '@/components/auth/cards/card-header'
-import SignInSocial from '@/components/auth/buttons/social-buttons'
+import SocialButtons from '@/components/auth/buttons/social-buttons'
 import RedirectButton from '@/components/auth/buttons/redirect-button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
@@ -28,7 +28,7 @@ export default function CardWrapper({
       <CardContent>{children}</CardContent>
       {showSocial && (
         <CardFooter>
-          <SignInSocial />
+          <SocialButtons />
         </CardFooter>
       )}
       <CardFooter className='p-0'>
