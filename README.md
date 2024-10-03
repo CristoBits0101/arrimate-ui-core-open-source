@@ -14,11 +14,12 @@ Branding:
 Configuration:
   🚧 Settings Panel
 E-commerce:
+  🚧 Online Payments
   🚧 Shopping Cart
 Feeds:
   🚧 Post Content
 Languages:
-  ✅ Interface Translation
+  ✅ Interface Translation: next-intl
   🔄 Change Language
 Messages:
   🚧 Activity Notifications
@@ -33,4 +34,6 @@ Streaming:
   🚧 Publish Shorts
   🚧 Stream LIVE
 Styles:
-  ✅ Active Route Styling
+  ✅ Active Route Styling: next/navigation
+  ✅ Font Implementation: next/font/google
+  🚧 Sound Animations
