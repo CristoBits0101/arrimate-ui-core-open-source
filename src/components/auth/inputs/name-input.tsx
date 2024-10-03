@@ -8,17 +8,16 @@ import { Input } from '@/components/ui/input'
 import { useFormContext } from 'react-hook-form'
 
 interface NameInputProps {
-  name: string
   isPending: boolean
 }
 
-const NameInput = ({ name, isPending }: NameInputProps) => {
+const NameInput = ({ isPending }: NameInputProps) => {
   const { control } = useFormContext()
 
   return (
     <FormField
       control={control}
-      name={name}
+      name='name'
       render={({ field }) => (
         <FormItem>
           <FormControl>
@@ -26,7 +25,6 @@ const NameInput = ({ name, isPending }: NameInputProps) => {
               {...field}
               disabled={isPending}
               placeholder='Name'
-              type='text'
               className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
             />
           </FormControl>

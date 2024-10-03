@@ -3,28 +3,35 @@
 // Actions
 import SignIn from '@/actions/sign-in'
 
-// Zod
-import * as z from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { SignUpSchema } from '@/schemas'
+// Alerts
+import FormError from '@/components/auth/alerts/form-error'
+import FormSuccess from '@/components/auth/alerts/form-success'
+
+// Buttons
+import SubmitButton from '@/components/auth/buttons/submit-button'
+
+// Cards
+import CardWrapper from '@/components/auth/cards/card-wrapper'
+
+// Inputs
+import EmailInput from '@/components/auth/inputs/email-input'
+import NameInput from '@/components/auth/inputs/name-input'
+import PasswordInput from '@/components/auth/inputs/password-input'
+
+// Next
+import { useLocale } from 'next-intl'
 
 // React
 import { useForm, FormProvider } from 'react-hook-form'
 import { useState, useTransition } from 'react'
 
-// Next
-import { useLocale } from 'next-intl'
-
-// Components
-import CardWrapper from '@/components/auth/cards/card-wrapper'
-import EmailInput from '@/components/auth/inputs/email-input'
-import PasswordInput from '@/components/auth/inputs/password-input'
-import FormError from '@/components/auth/alerts/form-error'
-import FormSuccess from '@/components/auth/alerts/form-success'
-import SubmitButton from '@/components/auth/buttons/submit-button'
-
 // Shadcn
 import { Form } from '@/components/ui/form'
+
+// Zod
+import * as z from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { SignUpSchema } from '@/schemas'
 
 export default function SignUpForm() {
   const [error, setError] = useState<string | undefined>('')
@@ -70,6 +77,7 @@ export default function SignUpForm() {
         <Form {...form}>
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
+              <NameInput isPending={isPending} />
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
             </div>
