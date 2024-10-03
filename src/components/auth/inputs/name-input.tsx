@@ -8,16 +8,17 @@ import { Input } from '@/components/ui/input'
 import { useFormContext } from 'react-hook-form'
 
 interface NameInputProps {
+  name: string
   isPending: boolean
 }
 
-const NameInput = ({ isPending }: NameInputProps) => {
+const NameInput = ({ name, isPending }: NameInputProps) => {
   const { control } = useFormContext()
 
   return (
     <FormField
       control={control}
-      name='name'
+      name={name}
       render={({ field }) => (
         <FormItem>
           <FormControl>

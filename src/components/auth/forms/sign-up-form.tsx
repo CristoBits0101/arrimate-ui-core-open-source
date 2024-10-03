@@ -77,7 +77,7 @@ export default function SignUpForm() {
         <Form {...form}>
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
-              <NameInput isPending={isPending} />
+              <NameInput name='name' isPending={isPending} />
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
             </div>
