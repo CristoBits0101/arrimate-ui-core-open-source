@@ -1,14 +1,14 @@
 import { Button } from '@/components/ui/button'
 
-interface SignInSubmitProps {
+interface SubmitButtonProps {
   message?: string
   isPending: boolean
 }
 
-export default function SignInSubmit({
+export default function SubmitButton({
   message,
   isPending
-}: SignInSubmitProps) {
+}: SubmitButtonProps) {
   return (
     <Button
       disabled={isPending}

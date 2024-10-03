@@ -1,12 +1,19 @@
 'use client'
 
+// Actions
+import SignIn from '@/actions/sign-in'
+
+// Zod
 import * as z from 'zod'
-import { SignUpSchema } from '@/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { SignUpSchema } from '@/schemas'
+
+// React
 import { useForm, FormProvider } from 'react-hook-form'
 import { useState, useTransition } from 'react'
+
+// Next
 import { useLocale } from 'next-intl'
-import SignIn from '@/actions/sign-in'
 
 // Components
 import CardWrapper from '@/components/auth/cards/card-wrapper'
@@ -14,9 +21,9 @@ import EmailInput from '@/components/auth/inputs/email-input'
 import PasswordInput from '@/components/auth/inputs/password-input'
 import FormError from '@/components/auth/alerts/form-error'
 import FormSuccess from '@/components/auth/alerts/form-success'
-import SignInSubmit from '../buttons/sign-in-submit'
+import SubmitButton from '@/components/auth/buttons/submit-button'
 
-// Shadcn/UI
+// Shadcn
 import { Form } from '@/components/ui/form'
 
 export default function SignUpForm() {
@@ -27,6 +34,7 @@ export default function SignUpForm() {
   const form = useForm<z.infer<typeof SignUpSchema>>({
     resolver: zodResolver(SignUpSchema),
     defaultValues: {
+      name: '',
       email: '',
       password: ''
     }
@@ -36,8 +44,8 @@ export default function SignUpForm() {
     // Reset values
     setError('')
     setSuccess('')
-    
-    // Enviar datos al servidor
+
+    // Sent data to server
     startTransition(() => {
       SignIn(values)
         .then((data) => {
@@ -53,9 +61,9 @@ export default function SignUpForm() {
 
   return (
     <CardWrapper
-      pageNameRedirect='Sign Up'
-      signUpButtonLabel="Don't have an account? "
-      signUpButtonHref={`/${useLocale()}/sign-up`}
+      pageNameRedirect='Sign In'
+      signUpButtonLabel='Already have an account? '
+      signUpButtonHref={`/${useLocale()}/sign-in`}
       showSocial={true}
     >
       <FormProvider {...form}>
@@ -67,7 +75,7 @@ export default function SignUpForm() {
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
-            <SignInSubmit message='Continue' isPending={isPending} />
+            <SubmitButton message='Sign Up' isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

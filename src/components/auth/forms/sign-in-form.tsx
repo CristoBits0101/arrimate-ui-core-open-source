@@ -21,7 +21,7 @@ import EmailInput from '@/components/auth/inputs/email-input'
 import PasswordInput from '@/components/auth/inputs/password-input'
 import FormError from '@/components/auth/alerts/form-error'
 import FormSuccess from '@/components/auth/alerts/form-success'
-import SignInSubmit from '@/components/auth/buttons/sign-in-submit'
+import SubmitButton from '@/components/auth/buttons/submit-button'
 
 // Shadcn
 import { Form } from '@/components/ui/form'
@@ -74,7 +74,7 @@ export default function SignInForm() {
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
-            <SignInSubmit message='Continue' isPending={isPending} />
+            <SubmitButton message='Sign In' isPending={isPending} />
           </form>
         </Form>
       </FormProvider>
