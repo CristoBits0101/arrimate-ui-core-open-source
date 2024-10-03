@@ -1,33 +1,31 @@
-// statuses/effects.
 'use client'
 
 // components
 import CardWrapper from '@/components/auth/cards/card-wrapper'
+import FormError from '@/components/auth/alerts/form-error'
+import FormSuccess from '@/components/auth/alerts/form-success'
 
 // react-hook-form
-import { useForm } from 'react-hook-form'
+import { useForm, FormProvider } from 'react-hook-form'
+
+// shadcn/ui
+import { Form } from '@/components/ui/form'
 
 // next-intl
 import { useLocale } from 'next-intl'
-
-// shadcn/ui
-import { Button } from '@/components/ui/button'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
 
 // zod
 import * as z from 'zod'
 import { SignInSchema } from '@/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
+import SignInSubmit from '../buttons/sign-in-submit'
+
+// Importar componentes de entrada
+import EmailInput from '@/components/auth/inputs/email-input'
+import PasswordInput from '@/components/auth/inputs/password-input'
 
 export default function LoginForm() {
-  //
+  // 
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -35,7 +33,7 @@ export default function LoginForm() {
       password: ''
     }
   })
-  //
+  // 
   const onSubmit = (values: z.infer<typeof SignInSchema>) => {
     console.log(values)
   }
@@ -46,52 +44,19 @@ export default function LoginForm() {
       signUpButtonHref={`/${useLocale()}/sign-up`}
       showSocial={true}
     >
-      <Form {...form}>
-        <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
-          <div className='space-y-5'>
-            <FormField
-              control={form.control}
-              name='email'
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      placeholder='sophie@example.com'
-                      type='email'
-                      className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='password'
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      placeholder='Password'
-                      type='password'
-                      className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <Button
-            type='submit'
-            className='w-full rounded-full bg-[#453C41] hover:bg-[#1d0f0f]'
-          >
-            Continue
-          </Button>
-        </form>
-      </Form>
+      <FormProvider {...form}>
+        <Form {...form}>
+          <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
+            <div className='space-y-5'>
+              <EmailInput name='email' />
+              <PasswordInput name='password' />
+            </div>
+            <FormError message='' />
+            <FormSuccess message='' />
+            <SignInSubmit message='Continue' />
+          </form>
+        </Form>
+      </FormProvider>
     </CardWrapper>
   )
 }
