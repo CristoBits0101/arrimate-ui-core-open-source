@@ -1,6 +1,12 @@
-// Actions are marked to run on the server
 'use server'
 
-export default function SignIn(values: any) {
-  return console.log(values)
+import * as z from 'zod'
+import { SignInSchema } from '@/schemas'
+
+export default async function SignIn(values: z.infer<typeof SignInSchema>) {
+  const validatedFields = SignInSchema.safeParse(values)
+  if (!validatedFields.success) {
+    return { error: 'Invalid!' }
+  }
+  return { success: 'Sent!' }
 }

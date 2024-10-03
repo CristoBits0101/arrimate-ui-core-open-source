@@ -1,4 +1,3 @@
-// shadcn/ui
 import {
   FormControl,
   FormField,
@@ -10,9 +9,10 @@ import { useFormContext } from 'react-hook-form'
 
 interface PasswordInputProps {
   name: string
+  isPending: boolean
 }
 
-const PasswordInput = ({ name }: PasswordInputProps) => {
+const PasswordInput = ({ name, isPending }: PasswordInputProps) => {
   const { control } = useFormContext()
 
   return (
@@ -24,6 +24,7 @@ const PasswordInput = ({ name }: PasswordInputProps) => {
           <FormControl>
             <Input
               {...field}
+              disabled={isPending}
               placeholder='Password'
               type='password'
               className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'

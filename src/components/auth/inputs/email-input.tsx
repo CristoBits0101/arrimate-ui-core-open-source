@@ -1,4 +1,3 @@
-// shadcn/ui
 import {
   FormControl,
   FormField,
@@ -10,9 +9,10 @@ import { useFormContext } from 'react-hook-form'
 
 interface EmailInputProps {
   name: string
+  isPending: boolean
 }
 
-const EmailInput = ({ name }: EmailInputProps) => {
+const EmailInput = ({ name, isPending }: EmailInputProps) => {
   const { control } = useFormContext()
 
   return (
@@ -24,6 +24,7 @@ const EmailInput = ({ name }: EmailInputProps) => {
           <FormControl>
             <Input
               {...field}
+              disabled={isPending}
               placeholder='Email'
               type='email'
               className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
