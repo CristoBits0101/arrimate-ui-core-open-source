@@ -7,15 +7,17 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 interface CardWrapperProps {
   children: React.ReactNode
-  SignUpButtonLabel: string
-  SignUpButtonHref: string
+  pageNameRedirect: string
+  signUpButtonLabel: string
+  signUpButtonHref: string
   showSocial?: boolean
 }
 
 export default function CardWrapper({
   children,
-  SignUpButtonLabel,
-  SignUpButtonHref,
+  pageNameRedirect,
+  signUpButtonLabel,
+  signUpButtonHref,
   showSocial = false
 }: CardWrapperProps) {
   return (
@@ -30,7 +32,11 @@ export default function CardWrapper({
         </CardFooter>
       )}
       <CardFooter className='p-0'>
-        <SignUpButton href={SignUpButtonHref} label={SignUpButtonLabel} />
+        <SignUpButton
+          href={signUpButtonHref}
+          label={signUpButtonLabel}
+          page={pageNameRedirect}
+        />
       </CardFooter>
     </Card>
   )

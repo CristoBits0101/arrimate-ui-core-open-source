@@ -6,9 +6,10 @@ import Link from 'next/link'
 interface SignUpButtonProps {
   href: string
   label: string
+  page: string
 }
 
-export default function SignUpButton({ href, label }: SignUpButtonProps) {
+export default function SignUpButton({ href, label, page }: SignUpButtonProps) {
   return (
     <Button
       variant='link'
@@ -16,8 +17,11 @@ export default function SignUpButton({ href, label }: SignUpButtonProps) {
       asChild
     >
       <Link className='text-base' href={href}>
-        {label}
+      {label}
+        <span className='mx-1'> </span> {/* Espacio en un span vacío */}
+        <span className='font-medium text-blue-600/75'>{page}</span>
       </Link>
     </Button>
+    
   )
 }

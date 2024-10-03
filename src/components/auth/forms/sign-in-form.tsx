@@ -27,6 +27,7 @@ import { SignInSchema } from '@/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export default function LoginForm() {
+  //
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     defaultValues: {
@@ -34,14 +35,19 @@ export default function LoginForm() {
       password: ''
     }
   })
+  //
+  const onSubmit = (values: z.infer<typeof SignInSchema>) => {
+    console.log(values)
+  }
   return (
     <CardWrapper
-      SignUpButtonLabel="Don't have an account? Sign Up"
-      SignUpButtonHref={`/${useLocale()}/sign-up`}
+      pageNameRedirect='Sign Up'
+      signUpButtonLabel="Don't have an account? "
+      signUpButtonHref={`/${useLocale()}/sign-up`}
       showSocial={true}
     >
       <Form {...form}>
-        <form className='space-y-5' onSubmit={form.handleSubmit(() => {})}>
+        <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
           <div className='space-y-5'>
             <FormField
               control={form.control}
