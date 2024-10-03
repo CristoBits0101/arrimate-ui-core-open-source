@@ -1,39 +1,43 @@
 ## Features
 
 Auth:
-  🚧 Change Password
-  🚧 Email Verification
-  🚧 OAuth Login
-  🚧 Recover Password
-  🔄 Sign In
-  🚧 Sign Out
-  🚧 Sign Up
-  🚧 Two-Factor Authentication (2FA)
+  🚧        Change Password ➜ 
+  🚧     Email Verification ➜ 
+  🚧            OAuth Login ➜ 
+  🚧       Recover Password ➜ 
+  🔄                Sign In ➜ 
+  🚧               Sign Out ➜ 
+  🚧                Sign Up ➜ 
+  🚧  Two-Factor Auth (2FA) ➜ 
 Branding:
-  🔄 App Logo
+  ✅      Reusable App Logo ➜ 
 Configuration:
-  🚧 Settings Panel
+  🚧         Settings Panel ➜ 
 E-commerce:
-  🚧 Online Payments
-  🚧 Shopping Cart
+  🚧        Online Payments ➜ 
+  🚧          Shopping Cart ➜ 
 Feeds:
-  🚧 Post Content
+  🚧        Comment Content ➜ 
+  🚧           Post Content ➜ 
+  🚧           Rate Content ➜ 
+  🚧      Recommend Content ➜ 
+  🚧          Share Content ➜ 
 Languages:
-  ✅ Interface Translation: next-intl
-  🔄 Change Language
+  ✅  Interface Translation ➜ next-intl
+  🔄        Change Language ➜ 
 Messages:
-  🚧 Activity Notifications
-  🚧 Email Notifications
-  🚧 Real-Time Chat
+  🚧 Activity Notifications ➜ 
+  🚧    Email Notifications ➜ 
+  🚧         Real-Time Chat ➜ 
 Navigation:
-  ✅ Navigation Bar
-  ✅ Sidebar Menu
-  🚧 Text Search Engine
-  🚧 Voice Search Engine
+  ✅         Navigation Bar ➜ next/link
+  ✅           Sidebar Menu ➜ next/link
+  🚧     Text Search Engine ➜ 
+  🚧    Voice Search Engine ➜ 
 Streaming:
-  🚧 Publish Shorts
-  🚧 Stream LIVE
+  🚧         Publish Shorts ➜ 
+  🚧            Stream LIVE ➜ 
 Styles:
-  ✅ Active Route Styling: next/navigation
-  ✅ Font Implementation: next/font/google
-  🚧 Sound Animations
+  ✅   Active Route Styling ➜ next/navigation
+  ✅    Font Implementation ➜ next/font/google
+  🚧       Sound Animations ➜ 
