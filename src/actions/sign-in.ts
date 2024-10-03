@@ -5,8 +5,6 @@ import { SignInSchema } from '@/schemas'
 
 export default async function SignIn(values: z.infer<typeof SignInSchema>) {
   const validatedFields = SignInSchema.safeParse(values)
-  if (!validatedFields.success) {
-    return { error: 'Invalid!' }
-  }
+  if (!validatedFields.success) return { error: 'Invalid!' }
   return { success: 'Sent!' }
 }

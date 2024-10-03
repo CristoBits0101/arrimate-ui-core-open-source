@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignIn from '@/actions/sign-in'
+import SignUp from '@/actions/sign-up'
 
 // Alerts
 import FormError from '@/components/auth/alerts/form-error'
@@ -54,13 +54,13 @@ export default function SignUpForm() {
 
     // Sent data to server
     startTransition(() => {
-      SignIn(values)
+      SignUp(values)
         .then((data) => {
           setError(data.error)
           setSuccess(data.success)
         })
         .catch((err) => {
-          console.error('Error en SignIn:', err)
+          console.error('Error en SignUp:', err)
           setError('Ocurrió un error inesperado.')
         })
     })
@@ -69,8 +69,8 @@ export default function SignUpForm() {
   return (
     <CardWrapper
       pageNameRedirect='Sign In'
-      signUpButtonLabel='Already have an account? '
-      signUpButtonHref={`/${useLocale()}/sign-in`}
+      redirectButtonLabel='Already have an account? '
+      redirectButtonHref={`/${useLocale()}/sign-in`}
       showSocial={true}
     >
       <FormProvider {...form}>

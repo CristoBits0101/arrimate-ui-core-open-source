@@ -3,13 +3,13 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
-interface SignUpButtonProps {
+interface RedirectButtonProps {
   href: string
   label: string
   page: string
 }
 
-export default function SignUpButton({ href, label, page }: SignUpButtonProps) {
+export default function RedirectButton({ href, label, page }: RedirectButtonProps) {
   return (
     <Button
       variant='link'

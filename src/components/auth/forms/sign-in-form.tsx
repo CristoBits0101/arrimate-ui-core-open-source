@@ -67,8 +67,8 @@ export default function SignInForm() {
   return (
     <CardWrapper
       pageNameRedirect='Sign Up'
-      signUpButtonLabel="Don't have an account? "
-      signUpButtonHref={`/${useLocale()}/sign-up`}
+      redirectButtonLabel="Don't have an account? "
+      redirectButtonHref={`/${useLocale()}/sign-up`}
       showSocial={true}
     >
       <FormProvider {...form}>

@@ -1,23 +1,23 @@
 'use client'
 
 import Header from '@/components/auth/cards/card-header'
-import SignInSocial from '@/components/auth/buttons/sign-in-social'
-import SignUpButton from '@/components/auth/buttons/sign-up-button'
+import SignInSocial from '@/components/auth/buttons/social-buttons'
+import RedirectButton from '@/components/auth/buttons/redirect-button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 interface CardWrapperProps {
   children: React.ReactNode
   pageNameRedirect: string
-  signUpButtonLabel: string
-  signUpButtonHref: string
+  redirectButtonLabel: string
+  redirectButtonHref: string
   showSocial?: boolean
 }
 
 export default function CardWrapper({
   children,
   pageNameRedirect,
-  signUpButtonLabel,
-  signUpButtonHref,
+  redirectButtonLabel,
+  redirectButtonHref,
   showSocial = false
 }: CardWrapperProps) {
   return (
@@ -32,9 +32,9 @@ export default function CardWrapper({
         </CardFooter>
       )}
       <CardFooter className='p-0'>
-        <SignUpButton
-          href={signUpButtonHref}
-          label={signUpButtonLabel}
+        <RedirectButton
+          href={redirectButtonHref}
+          label={redirectButtonLabel}
           page={pageNameRedirect}
         />
       </CardFooter>

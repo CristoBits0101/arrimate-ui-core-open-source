@@ -4,7 +4,7 @@ import { FaGithub } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import { Button } from '@/components/ui/button'
 
-export default function SignInSocial() {
+export default function SocialButtons() {
   return (
     <div className='flex items-center w-full gap-x-5'>
       <Button
