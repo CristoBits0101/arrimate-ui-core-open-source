@@ -48,6 +48,7 @@
 # Dependencies
     Auth:
       📦       Encrypt Password ➜ npm install bcrypt
+      📦           Bcrypt Types ➜ npm install --save-dev @types/bcrypt
     Prisma:
       📦             Prisma CLI ➜ npm install prisma --save-dev
       📦         Prisma Queries ➜ npm install @prisma/client
