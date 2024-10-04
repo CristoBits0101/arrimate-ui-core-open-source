@@ -9,8 +9,7 @@
     🔄                Sign In ➜ 
     🚧               Sign Out ➜ 
     🚧                Sign Up ➜ 
-    🚧  Two-Factor Auth (2FA) ➜ 
-    ✅        Data validation ➜ zod
+    🚧  Two-Factor Auth (2FA) ➜  
 
   Branding:
 
@@ -19,6 +18,11 @@
   Configuration:
 
     🚧         Settings Panel ➜ 
+
+  Data:
+
+    ✅        Data Validation ➜ Zod
+    ✅    Database Management ➜ Prisma
 
   E-commerce:
 
