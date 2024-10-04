@@ -17,7 +17,7 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
    * Data validation
    */
   const validatedFields = SignUpSchema.safeParse(values)
-  
+
   if (!validatedFields.success) return { error: 'Invalid!' }
 
   /**
@@ -45,7 +45,7 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
         password: hashedPassword
       }
     })
-    return { success: 'Registration completed successfully!' }
+    return { success: 'Registration completed!' }
   } catch (error) {
     return { error: 'Registration failed. Please try again.' }
   }
