@@ -1,6 +1,6 @@
 'use server'
 
-// We import the pisma client to make queries
+// Prisma client
 import { db } from '@/lib/db'
 
 // Bcrypt
@@ -13,19 +13,18 @@ import { SignUpSchema } from '@/schemas'
 // The data that the user's schema received is saved in value
 export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
 
-  // The sent data is validated and saved in the variable
+  /**
+   * Data validation
+   */
   const validatedFields = SignUpSchema.safeParse(values)
-
-  // Return error if fields do not pass validations
+  
   if (!validatedFields.success) return { error: 'Invalid!' }
 
-  // Get validated data
+  /**
+   * Check existence
+   */
   const { name, email, password } = validatedFields.data
 
-  // We encrypt the user's password with a hash
-  const hashedPassword = await bcrypt.hash(password, 10)
-
-  //
   const existingUser = await db.user.findUnique({
     where: {
       email
@@ -34,6 +33,21 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
 
   if (existingUser) return { error: 'Email already in use!' }
 
-  //
-  return { success: 'Sent!' }
+  /**
+   * Try registration
+   */
+  try {
+    const hashedPassword = await bcrypt.hash(password, 10)
+    await db.user.create({
+      data: {
+        name,
+        email,
+        password: hashedPassword
+      }
+    })
+    return { success: 'Registration completed successfully!' }
+  } catch (error) {
+    return { error: 'Registration failed. Please try again.' }
+  }
+
 }
