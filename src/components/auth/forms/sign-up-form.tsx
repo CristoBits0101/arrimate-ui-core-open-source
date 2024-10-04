@@ -34,12 +34,17 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { SignUpSchema } from '@/schemas'
 
 export default function SignUpForm() {
+  // 
   const [error, setError] = useState<string | undefined>('')
+  // 
   const [success, setSuccess] = useState<string | undefined>('')
+  // Manage asynchronous operations
   const [isPending, startTransition] = useTransition()
-
+  // Used to initialize the form and manage its state when rendering
   const form = useForm<z.infer<typeof SignUpSchema>>({
+    // Validates each time the form is submitted
     resolver: zodResolver(SignUpSchema),
+    // Values ​​before submitting the form
     defaultValues: {
       name: '',
       email: '',
@@ -47,11 +52,11 @@ export default function SignUpForm() {
     }
   })
 
+  // Values is initialized with user data received from the schema
   const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
     // Reset values
     setError('')
     setSuccess('')
-
     // Sent data to server
     startTransition(() => {
       SignUp(values)

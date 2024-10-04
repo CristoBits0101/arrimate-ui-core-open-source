@@ -46,9 +46,11 @@
       🚧       Sound Animations ➜ 
 
 # Dependencies
+    Auth:
+      📦       Encrypt Password ➜ npm install bcrypt
     Prisma:
       📦             Prisma CLI ➜ npm install prisma --save-dev
       📦         Prisma Queries ➜ npm install @prisma/client
       📦       Prisma + Auth.js ➜ npm install @auth/prisma-adapter
     shadcn/ui:
-      📦         Shadcn install ➜ npx shadcn@latest init
+      📦         Shadcn Install ➜ npx shadcn@latest init
