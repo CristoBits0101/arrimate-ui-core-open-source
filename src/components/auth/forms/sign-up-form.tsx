@@ -22,8 +22,8 @@ import PasswordInput from '@/components/auth/inputs/password-input'
 import { useLocale } from 'next-intl'
 
 // React
-import { useForm, FormProvider } from 'react-hook-form'
 import { useState, useTransition } from 'react'
+import { useForm, FormProvider } from 'react-hook-form'
 
 // Shadcn
 import { Form } from '@/components/ui/form'
