@@ -1,7 +1,3 @@
-// npm install prisma --save-dev    -> Prisma CLI
-// npm install @prisma/client       -> Prisma Queries
-// npm install @auth/prisma-adapter -> Prisma + Auth.js
-
 // prisma/schema.prisma
 datasource db {
   provider = "postgresql"
@@ -17,7 +13,16 @@ generator client {
 
 // npx prisma db push
 model User {
-  id   String @id @default(cuid())
-  name String
-  // email String @unique
+  id            String          @id @default(cuid())
+  name          String?
+  email         String          @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  // Optional for WebAuthn support
+  Authenticator Authenticator[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
