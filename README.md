@@ -10,7 +10,7 @@
     🚧               Sign Out ➜ 
     🚧                Sign Up ➜ 
     🚧  Two-Factor Auth (2FA) ➜ 
-    ✅        Data validation ➜ schema validation
+    ✅        Data validation ➜ zod
 
   Branding:
 
