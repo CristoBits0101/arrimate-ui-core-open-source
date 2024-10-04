@@ -48,6 +48,7 @@
 # Dependencies
     Auth:
       📦        Auth.js Install ➜ npm install next-auth@beta
+      📦  AUTH_SECRET Generator ➜ npx auth secret
       📦       Encrypt Password ➜ npm install bcrypt
       📦           Bcrypt Types ➜ npm install --save-dev @types/bcrypt
     Prisma:
