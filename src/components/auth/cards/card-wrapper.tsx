@@ -21,7 +21,7 @@ export default function CardWrapper({
   showSocial = false
 }: CardWrapperProps) {
   return (
-    <Card className='w-[22rem] shadow-none rounded-none p-5 mb-5 text-inherit border-[0.094rem] border-solid border-[#bfbdc050]'>
+    <Card className='w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid border-[#bfbdc050]'>
       <CardHeader>
         <Header />
       </CardHeader>
