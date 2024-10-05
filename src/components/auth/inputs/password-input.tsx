@@ -27,7 +27,7 @@ const PasswordInput = ({ name, isPending }: PasswordInputProps) => {
               disabled={isPending}
               placeholder='Password'
               type='password'
-              className='bg-[#F4F4F4] rounded-none outline-0-[0.05rem] outline-0-solid outline-0-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f] border-0'
+              className='bg-[#F4F4F4] rounded-none border-[0.094rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
             />
           </FormControl>
           <FormMessage />

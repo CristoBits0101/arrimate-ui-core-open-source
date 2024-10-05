@@ -9,7 +9,7 @@ export default function SocialButtons() {
     <div className='flex items-center w-full gap-x-5'>
       <Button
         size='lg'
-        className='w-full rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
+        className='w-full rounded-none border-[0.094rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
         variant='outline'
         onClick={() => {}}
       >
@@ -17,7 +17,7 @@ export default function SocialButtons() {
       </Button>
       <Button
         size='lg'
-        className='w-full rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
+        className='w-full rounded-none border-[0.094rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
         variant='outline'
         onClick={() => {}}
       >
