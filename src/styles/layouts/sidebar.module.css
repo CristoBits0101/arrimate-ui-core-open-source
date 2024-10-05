@@ -1,17 +1,16 @@
 .sidebar {
   font-size: 0.938rem;
   min-width: 6.781rem;
-  padding: 0.5rem;
+  padding:0.625rem;
 }
 
 .sidebar a {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   height: 100%;
   justify-content: center;
-  padding: 0.5rem;
+  padding:0.625rem;
   width: 100%;
 }
 
@@ -41,13 +40,11 @@
 .sidebar nav {
   display: flex;
   height: 50%;
-  justify-content: center;
 }
 
 .sidebar ul {
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
   width: min-content;
 }

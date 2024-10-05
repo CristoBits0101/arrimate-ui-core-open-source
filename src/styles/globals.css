@@ -69,7 +69,7 @@ textarea::placeholder {
 main {
   display: grid;
   grid-area: main;
-  padding: 0.5rem;
+  padding: 1.25rem;
   place-content: center;
 }
 
