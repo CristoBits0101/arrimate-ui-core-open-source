@@ -14,7 +14,9 @@ const intlMiddleware = createIntlMiddleware(routing)
 export default async function middleware(request: NextRequest) {
   // next-auth
   auth((request) => {
+    const isLoggedIn = request.auth
     console.log(`Route: ${request.nextUrl.pathname}`)
+    console.log(`isLoggedIn: ${isLoggedIn}}`)
     NextResponse.next()
   })
 
@@ -30,7 +32,6 @@ export default async function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/',
-    '/(en|es)/:path*',
-    '/((?!api|_next/static|_next/image|favicon.ico).*)'
+    '/(en|es)/:path*'
   ]
 }
