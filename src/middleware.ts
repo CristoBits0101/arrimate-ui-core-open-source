@@ -1,8 +1,7 @@
 // next/server
 import {
   NextResponse,
-  type NextRequest,
-  type NextFetchEvent
+  type NextRequest
 } from 'next/server'
 
 // next-intl
@@ -15,22 +14,17 @@ import { auth } from '@/lib/auth'
 // next-intl
 const intlMiddleware = createIntlMiddleware(routing)
 
-// next-auth
-const authMiddleware = auth(async (req: NextRequest) => {})
-
-export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
-
+export default async function middleware(request: NextRequest) {
   // next-intl
-  const intlResponse = intlMiddleware(req)
+  const intlResponse = intlMiddleware(request)
   if (intlResponse) return intlResponse
 
   // next-auth
-  const authResponse = await authMiddleware(req, ev)
+  const authResponse = auth((request) => {})
   if (authResponse) return authResponse
 
   // Exit
   return NextResponse.next()
-
 }
 
 // Paths
