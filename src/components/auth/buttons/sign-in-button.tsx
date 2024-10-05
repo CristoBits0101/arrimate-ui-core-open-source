@@ -1,7 +1,6 @@
 'use client'
 
 import { useRouter } from 'next/router'
-import styles from '@/styles/components/auth/login-button.module.css'
 
 interface LoginButtonProps {
   // Button content
@@ -24,7 +23,7 @@ LoginButtonProps) {
     return <span>TODO: Implement modal</span>
   }
   return (
-    <span onClick={clicked} className={styles.span}>
+    <span onClick={clicked} className='grid place-content-center'>
       {children}
     </span>
   )
