@@ -26,7 +26,7 @@ const NameInput = ({ name, isPending }: NameInputProps) => {
               {...field}
               disabled={isPending}
               placeholder='Name'
-              className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
+              className='bg-[#F4F4F4] rounded-none border-[0.05rem] border-solid border-[#bfbdc050] hover:bg-[#bfbdc050] focus:bg-[#bfbdc050] text-[#1d0f0f] placeholder:text-[#1d0f0f] outline-0'
             />
           </FormControl>
           <FormMessage />
