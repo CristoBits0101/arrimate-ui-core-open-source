@@ -7,7 +7,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale } from 'next-intl'
 
 export default function Cart() {
-  const isActive = useActiveRoute('/cart')
+  const isActive = useActiveRoute('cart')
   return (
     <li>
       <Link href={`/${useLocale()}/cart`}>

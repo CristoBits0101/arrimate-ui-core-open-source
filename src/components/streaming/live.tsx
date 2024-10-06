@@ -7,7 +7,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale, useTranslations } from 'next-intl'
 
 export default function Live() {
-  const isActive = useActiveRoute('/live')
+  const isActive = useActiveRoute('live')
   const t = useTranslations('SidebarLayout')
   return (
     <li>

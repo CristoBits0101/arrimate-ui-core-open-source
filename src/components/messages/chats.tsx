@@ -7,7 +7,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale } from 'next-intl'
 
 export default function Chats() {
-  const isActive = useActiveRoute('/chats')
+  const isActive = useActiveRoute('chats')
   return (
     <li>
       <Link href={`/${useLocale()}/chats`}>

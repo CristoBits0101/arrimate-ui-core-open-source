@@ -7,7 +7,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale } from 'next-intl'
 
 export default function Post() {
-  const isActive = useActiveRoute('/post')
+  const isActive = useActiveRoute('post')
   return (
     <li>
       <Link href={`/${useLocale()}/post`}>

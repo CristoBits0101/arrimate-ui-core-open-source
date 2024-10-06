@@ -7,7 +7,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale } from 'next-intl'
 
 export default function Notifications() {
-  const isActive = useActiveRoute('/notifications')
+  const isActive = useActiveRoute('notifications')
   return (
     <li>
       <Link href={`/${useLocale()}/notifications`}>

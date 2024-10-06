@@ -7,7 +7,7 @@ import { useActiveRoute } from '@/hooks/useActiveRoute'
 import { useLocale, useTranslations } from 'next-intl'
 
 export default function Shorts() {
-  const isActive = useActiveRoute('/shorts')
+  const isActive = useActiveRoute('shorts')
   const t = useTranslations('SidebarLayout')
   return (
     <li>

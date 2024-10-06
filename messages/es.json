@@ -1,8 +1,10 @@
 {
   "SidebarLayout": {
-    "home": "Inicio",
-    "explore": "Explorar",
-    "shorts": "Cortos",
-    "live": "Directos"
+    "home": "Home",
+    "channels": "Canales",
+    "shorts": "Shorts",
+    "live": "LIVE",
+    "merch": "Merch",
+    "reviews": "Reseñas"
   }
 }
