@@ -68,9 +68,7 @@ textarea::placeholder {
 
 main {
   display: grid;
-  grid-area: main;
   padding: 1.25rem;
-  place-content: center;
 }
 
 svg {
