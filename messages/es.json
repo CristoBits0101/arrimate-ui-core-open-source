@@ -2,9 +2,9 @@
   "SidebarLayout": {
     "home": "Inicio",
     "channels": "Canales",
-    "shorts": "Shorts",
-    "live": "LIVE",
-    "merch": "Merch",
+    "shorts": "Cortos",
+    "live": "Directos",
+    "products": "Productos",
     "reviews": "Reseñas"
   }
 }

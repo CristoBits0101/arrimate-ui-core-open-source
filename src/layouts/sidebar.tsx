@@ -1,7 +1,7 @@
 'use client'
 
-import Merch from '@/components/e-commerce/merch'
-import Explore from '@/components/feeds/channels'
+import Products from '@/components/e-commerce/products'
+import Channels from '@/components/feeds/channels'
 import Home from '@/components/feeds/home'
 import Reviews from '@/components/feeds/reviews'
 import Live from '@/components/streaming/live'
@@ -14,10 +14,10 @@ export default function Sidebar() {
       <nav>
         <ul>
           <Home />
-          <Explore />
+          <Channels />
           <Shorts />
           <Live />
-          <Merch />
+          <Products />
           <Reviews />
         </ul>
       </nav>
