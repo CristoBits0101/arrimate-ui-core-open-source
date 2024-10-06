@@ -10,7 +10,7 @@ export default function HomePage() {
       <Header />
       <Sidebar />
       <main>
-        <h1>{t('trending')}</h1>
+        <h1>{t('home')}</h1>
       </main>
     </>
   )
