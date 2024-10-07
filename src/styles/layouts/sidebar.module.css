@@ -24,7 +24,7 @@
 
 .sidebar li {
   align-items: center;
-  border-radius: 0.75rem;
+  border-radius: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
