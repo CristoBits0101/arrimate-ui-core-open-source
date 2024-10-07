@@ -33,7 +33,7 @@ export function usePageComponent() {
       return 'Panel'
 
     case paths.live:
-      return 'Subscriptions'
+      return 'Siguiendo'
 
     case paths.products:
       return 'Products page'
