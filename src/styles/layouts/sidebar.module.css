@@ -8,7 +8,7 @@
   height: 100%;
   padding: 0.625rem;
   width: 100%;
-  gap: 0.625rem;
+  gap: 1.25rem;
 }
 
 .sidebar img {
@@ -39,7 +39,7 @@
 
 .sidebar nav {
   display: flex;
-  width: 100%;
+  width: 12.5rem;
 }
 
 .sidebar ul {
@@ -47,4 +47,10 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+}
+
+.sidebar .ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

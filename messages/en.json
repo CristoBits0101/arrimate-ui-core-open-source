@@ -1,6 +1,7 @@
 {
   "SidebarLayout": {
     "home": "Home",
+    "explore": "Explore",
     "channels": "Channels",
     "shorts": "Shorts",
     "live": "LIVE",

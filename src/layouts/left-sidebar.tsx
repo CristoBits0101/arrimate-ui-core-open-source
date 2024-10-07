@@ -2,6 +2,7 @@
 
 import Products from '@/components/e-commerce/products'
 import Channels from '@/components/feeds/channels'
+import Explore from '@/components/feeds/explore'
 import Home from '@/components/feeds/home'
 import Reviews from '@/components/feeds/reviews'
 import Live from '@/components/streaming/live'
@@ -14,6 +15,7 @@ export default function Sidebar() {
       <nav>
         <ul>
           <Home />
+          <Explore />
           <Channels />
           <Shorts />
           <Live />

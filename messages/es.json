@@ -1,6 +1,7 @@
 {
   "SidebarLayout": {
     "home": "Inicio",
+    "explore": "Explorar",
     "channels": "Canales",
     "shorts": "Cortos",
     "live": "Directos",
