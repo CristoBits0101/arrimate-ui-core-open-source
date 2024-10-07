@@ -1,7 +1,7 @@
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
-export function useActiveRoute() {
+export function usePageComponent() {
   // Get -> /en/home
   const path = usePathname()
   // Get -> /en

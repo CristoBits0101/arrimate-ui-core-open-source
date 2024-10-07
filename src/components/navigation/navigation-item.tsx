@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useActiveRoute } from '@/hooks/useActiveRoute'
+import { useActiveRoute } from '@/hooks/useCheckActiveRoute'
 import { useLocale, useTranslations } from 'next-intl'
 
 interface NavigationItemProps {
