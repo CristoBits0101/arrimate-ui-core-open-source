@@ -1,12 +1,12 @@
 import '@/styles/globals.css'
 import Header from '@/layouts/header'
-import Sidebar from '@/layouts/left-sidebar'
+import LeftSidebar from '@/layouts/left-sidebar'
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <Sidebar />
+      <LeftSidebar />
       <main>
         <section>
           <h2 className='text-lg font-semibold' >Tendencias</h2>
