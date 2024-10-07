@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useActiveRoute } from '@/hooks/useCheckActiveRoute'
+import { usePageIcon } from '@/hooks/usePageIcon'
 import { useLocale, useTranslations } from 'next-intl'
 
 interface NavigationItemProps {
@@ -17,7 +17,7 @@ export default function NavigationItem({
   whiteIcon,
   textKey
 }: NavigationItemProps) {
-  const isActive = useActiveRoute(route)
+  const isActive = usePageIcon(route)
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
 

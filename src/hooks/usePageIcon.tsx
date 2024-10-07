@@ -1,7 +1,7 @@
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
-export function useCheckActiveRoute(route: string) {
+export function usePageIcon(route: string) {
   const path = usePathname()
   const locale = useLocale()
   if (route === 'home') return path === `/${locale}`
