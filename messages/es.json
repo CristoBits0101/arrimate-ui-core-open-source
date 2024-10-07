@@ -1,8 +1,8 @@
 {
   "SidebarLayout": {
     "home": "Inicio",
-    "explore": "Explorar",
-    "channels": "Canales",
+    "events": "Eventos",
+    "videos": "Vídeos",
     "shorts": "Cortos",
     "live": "Directos",
     "products": "Productos",

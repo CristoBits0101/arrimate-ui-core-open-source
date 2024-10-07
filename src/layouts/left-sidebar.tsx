@@ -2,7 +2,7 @@
 
 import Products from '@/components/e-commerce/products'
 import Videos from '@/components/streaming/videos'
-import Explore from '@/components/feeds/explore'
+import Events from '@/components/feeds/events'
 import Home from '@/components/feeds/home'
 import Reviews from '@/components/feeds/reviews'
 import Live from '@/components/streaming/live'
@@ -15,7 +15,7 @@ export default function Sidebar() {
       <nav>
         <ul>
           <Home />
-          <Explore />
+          <Events />
           <Shorts />
           <Videos />
           <Live />

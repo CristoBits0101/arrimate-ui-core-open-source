@@ -1,8 +1,8 @@
 {
   "SidebarLayout": {
     "home": "Home",
-    "explore": "Explore",
-    "channels": "Channels",
+    "events": "Events",
+    "videos": "Videos",
     "shorts": "Shorts",
     "live": "LIVE",
     "products": "Products",

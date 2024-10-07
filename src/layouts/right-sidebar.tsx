@@ -2,7 +2,7 @@
 
 import Products from '@/components/e-commerce/products'
 import Channels from '@/components/streaming/videos'
-import Explore from '@/components/feeds/explore'
+import Explore from '@/components/feeds/events'
 import Home from '@/components/feeds/home'
 import Reviews from '@/components/feeds/reviews'
 import Live from '@/components/streaming/live'
