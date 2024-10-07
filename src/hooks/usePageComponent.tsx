@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 export function usePageComponent() {
   // Get -> /en/home
   const path = usePathname()
-  // Get -> /en
+  // Get -> en
   const locale = useLocale()
 
   // Paths
