@@ -53,6 +53,11 @@ button {
   cursor: pointer;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start: 0%;
+  margin-block-end: 0%;
+}
+
 header {
   grid-area: header;
   padding: 0.5rem;
@@ -68,9 +73,7 @@ textarea::placeholder {
 
 main {
   display: grid;
-  grid-area: main;
   padding: 1.25rem;
-  place-content: center;
 }
 
 svg {
