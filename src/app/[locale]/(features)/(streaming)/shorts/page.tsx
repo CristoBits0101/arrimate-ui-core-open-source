@@ -1,3 +1,3 @@
 export default function ShortsPage() {
-  return <h2>Shorts</h2>
+  return <h2>Shorts: TikTok</h2>
 }

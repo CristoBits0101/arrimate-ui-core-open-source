@@ -1,3 +1,3 @@
 export default function ChannelsPage() {
-  return <h2>Channels</h2>
+  return <h2>Channels: YouTube</h2>
 }
