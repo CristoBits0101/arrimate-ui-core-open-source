@@ -1,7 +1,7 @@
 'use client'
 
 import Products from '@/components/e-commerce/products'
-import Channels from '@/components/feeds/channels'
+import Videos from '@/components/streaming/videos'
 import Explore from '@/components/feeds/explore'
 import Home from '@/components/feeds/home'
 import Reviews from '@/components/feeds/reviews'
@@ -16,8 +16,8 @@ export default function Sidebar() {
         <ul>
           <Home />
           <Explore />
-          <Channels />
           <Shorts />
+          <Videos />
           <Live />
           <Products />
           <Reviews />
