@@ -43,7 +43,7 @@ body {
   grid-template-areas:
     'header header'
     'aside main';
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: min-content 100%;
   min-height: calc(100vh - 3.75rem);
   min-width: 20rem;
@@ -73,7 +73,7 @@ textarea::placeholder {
 }
 
 main {
-  display: grid;
+  grid-area: main;
   padding: 1.25rem;
 }
 
