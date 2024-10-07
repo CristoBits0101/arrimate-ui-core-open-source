@@ -11,7 +11,7 @@ import styles from '@/styles/layouts/sidebar.module.css'
 
 export default function Sidebar() {
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} left-sidebar`}>
       <nav>
         <ul>
           <Home />

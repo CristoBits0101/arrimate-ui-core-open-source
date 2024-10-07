@@ -9,19 +9,19 @@ export function usePageComponent() {
 
   // Paths
   const paths = {
-    home: `${locale}`,
-    events: `${locale}/events`,
-    shorts: `${locale}/shorts`,
-    videos: `${locale}/videos`,
-    live: `${locale}/live`,
-    products: `${locale}/products`,
-    reviews: `${locale}/reviews`
+    home: `/${locale}`,
+    events: `/${locale}/events`,
+    shorts: `/${locale}/shorts`,
+    videos: `/${locale}/videos`,
+    live: `/${locale}/live`,
+    products: `/${locale}/products`,
+    reviews: `/${locale}/reviews`
   }
 
   // Check if current path is active
   switch (path) {
     case paths.home:
-      return 'Home page'
+      return 'Records'
 
     case paths.events:
       return 'Events page'
@@ -30,10 +30,10 @@ export function usePageComponent() {
       return 'Shorts page'
 
     case paths.videos:
-      return 'Videos page'
+      return 'Panel'
 
     case paths.live:
-      return 'Live page'
+      return 'Subscriptions'
 
     case paths.products:
       return 'Products page'

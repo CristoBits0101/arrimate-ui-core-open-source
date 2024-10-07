@@ -1,5 +1,6 @@
 import Header from '@/layouts/header'
-import Sidebar from '@/layouts/left-sidebar'
+import LeftSidebar from '@/layouts/left-sidebar'
+import RightSidebar from '@/layouts/right-sidebar'
 
 export default function FeaturesLayout({
   children
@@ -9,8 +10,9 @@ export default function FeaturesLayout({
   return (
     <>
       <Header />
-      <Sidebar />
+      <LeftSidebar />
       <main>{children}</main>
+      <RightSidebar />
     </>
   )
 }

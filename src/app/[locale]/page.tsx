@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import Header from '@/layouts/header'
 import LeftSidebar from '@/layouts/left-sidebar'
+import RightSidebar from '@/layouts/right-sidebar'
 
 export default function HomePage() {
   return (
@@ -8,7 +9,7 @@ export default function HomePage() {
       <Header />
       <LeftSidebar />
       <main>
-        Netflix
+        News
         <section>
           <h2 className='text-lg font-semibold'>Tendencias</h2>
           <article>
@@ -42,6 +43,7 @@ export default function HomePage() {
           </article>
         </section>
       </main>
+      <RightSidebar />
     </>
   )
 }
