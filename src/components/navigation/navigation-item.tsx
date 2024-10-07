@@ -23,14 +23,25 @@ export default function NavigationItem({
 
   return (
     <li>
-      <Link className='truncate' href={`/${locale}/${route}`}>
-        {isActive ? (
-          <Image src={blackIcon} alt={route} />
-        ) : (
-          <Image src={whiteIcon} alt={route} />
-        )}
-        {textKey && t(textKey)}
-      </Link>
+      {route === 'home' ? (
+        <Link className='truncate' href={`/${locale}`}>
+          {isActive ? (
+            <Image src={blackIcon} alt={route} />
+          ) : (
+            <Image src={whiteIcon} alt={route} />
+          )}
+          {textKey && t(textKey)}
+        </Link>
+      ) : (
+        <Link className='truncate' href={`/${locale}/${route}`}>
+          {isActive ? (
+            <Image src={blackIcon} alt={route} />
+          ) : (
+            <Image src={whiteIcon} alt={route} />
+          )}
+          {textKey && t(textKey)}
+        </Link>
+      )}
     </li>
   )
 }
