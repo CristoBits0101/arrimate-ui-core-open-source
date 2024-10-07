@@ -1,5 +1,6 @@
 .navBar {
   height: 100%;
+  max-width: 9.286rem;
   min-width: 14.375rem;
 }
 
