@@ -1,6 +1,6 @@
 import homeBlackSVG from '@/assets/icons/sidebar/black/home.svg'
 import homeWhiteSVG from '@/assets/icons/sidebar/white/home.svg'
-import NavigationItem from '@/components/navigation/navigation-item'
+import NavigationItem from '@/components/navigation/menu/item'
 
 export default function Home() {
   return (

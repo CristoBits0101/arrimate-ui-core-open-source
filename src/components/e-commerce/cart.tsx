@@ -1,6 +1,6 @@
 import cartBlackSVG from '@/assets/icons/navbar/black/cart.svg'
 import cartWhiteSVG from '@/assets/icons/navbar/white/cart.svg'
-import NavigationItem from '@/components/navigation/navigation-item'
+import NavigationItem from '@/components/navigation/menu/item'
 
 export default function Cart() {
   return (
