@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import Header from '@/layouts/header'
 import LeftSidebar from '@/layouts/left-sidebar'
 import RightSidebar from '@/layouts/right-sidebar'
+import { Carousel } from '@/components/ui/carousel'
 
 export default function HomePage() {
   return (
@@ -9,6 +10,7 @@ export default function HomePage() {
       <Header />
       <LeftSidebar />
       <main>
+        <Carousel />
         News
         <section>
           <h2 className='text-lg font-semibold'>Tendencias</h2>
