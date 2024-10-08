@@ -9,6 +9,7 @@ import Live from '@/components/streaming/live'
 import Shorts from '@/components/streaming/shorts'
 import styles from '@/styles/layouts/sidebar.module.css'
 import Following from '@/components/network/following'
+import Contacts from '@/components/network/contacts'
 
 export default function Sidebar() {
   return (
@@ -23,6 +24,7 @@ export default function Sidebar() {
           <Products />
           <Reviews />
           <Following />
+          <Contacts />
         </ul>
       </nav>
     </aside>
