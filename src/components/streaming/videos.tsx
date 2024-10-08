@@ -5,10 +5,10 @@ import NavigationItem from '@/components/navigation/navigation-item'
 export default function Videos() {
   return (
     <NavigationItem
-      route="videos"
+      route='videos'
       blackIcon={videosBlackSVG}
       whiteIcon={videosWhiteSVG}
-      textKey="videos"
+      textKey='videos'
     />
-  );
+  )
 }

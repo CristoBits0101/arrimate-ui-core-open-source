@@ -9,7 +9,11 @@ interface RedirectButtonProps {
   page: string
 }
 
-export default function RedirectButton({ href, label, page }: RedirectButtonProps) {
+export default function RedirectButton({
+  href,
+  label,
+  page
+}: RedirectButtonProps) {
   return (
     <Button
       variant='link'
@@ -17,11 +21,10 @@ export default function RedirectButton({ href, label, page }: RedirectButtonProp
       asChild
     >
       <Link className='text-base' href={href}>
-      {label}
+        {label}
         <span className='mx-1'> </span> {/* Espacio en un span vacío */}
         <span className='font-medium text-blue-600/75'>{page}</span>
       </Link>
     </Button>
-    
   )
 }

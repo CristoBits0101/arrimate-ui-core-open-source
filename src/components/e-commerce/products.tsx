@@ -5,10 +5,10 @@ import NavigationItem from '@/components/navigation/navigation-item'
 export default function Products() {
   return (
     <NavigationItem
-      route="products"
+      route='products'
       blackIcon={productsBlackSVG}
       whiteIcon={productsWhiteSVG}
-      textKey="products"
+      textKey='products'
     />
-  );
+  )
 }

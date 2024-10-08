@@ -12,7 +12,6 @@ import { SignUpSchema } from '@/schemas'
 
 // The data that the user's schema received is saved in value
 export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
-
   /**
    * Data validation
    */
@@ -49,5 +48,4 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
   } catch (error) {
     return { error: 'Registration failed. Please try again.' }
   }
-
 }

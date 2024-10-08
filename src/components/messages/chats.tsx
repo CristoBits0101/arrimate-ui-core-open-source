@@ -5,9 +5,9 @@ import NavigationItem from '@/components/navigation/navigation-item'
 export default function Chats() {
   return (
     <NavigationItem
-      route="chats"
+      route='chats'
       blackIcon={chatBlackSVG}
       whiteIcon={chatWhiteSVG}
     />
-  );
+  )
 }

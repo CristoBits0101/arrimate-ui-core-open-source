@@ -89,7 +89,6 @@ main {
   grid-area: right-sidebar;
 }
 
-
 svg {
   fill: light-dark(#1d0f0f, #ffffff);
 }
