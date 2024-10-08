@@ -80,7 +80,6 @@ textarea::placeholder {
 }
 
 main {
-  background-color: red;
   grid-area: main;
   padding: 1.25rem 0;
 }
