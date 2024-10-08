@@ -39,7 +39,7 @@
 
 .sidebar nav {
   display: flex;
-  height: 100%;
+  height: fit-content;
   width: 12.5rem;
 }
 
