@@ -28,10 +28,18 @@
 
 .menu li {
   align-items: center;
+  border-radius: 2.5rem;
   display: flex;
   height: 100%;
-  padding: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem 1rem;
   width: 100%;
+}
+
+.menu li:hover {
+  background-color: #edeced;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .menu ul {

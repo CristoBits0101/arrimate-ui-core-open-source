@@ -18,34 +18,6 @@
   width: 1.875rem;
 }
 
-.aside li {
-  align-items: center;
-  border-radius: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-
-.aside li:hover {
-  background-color: #edeced;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.aside nav {
-  display: flex;
-  height: fit-content;
-  width: 12.5rem;
-}
-
-.aside ul {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
 .aside .ellipsis {
   white-space: nowrap;
   overflow: hidden;

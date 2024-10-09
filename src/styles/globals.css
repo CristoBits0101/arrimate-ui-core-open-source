@@ -36,7 +36,10 @@ aside {
   flex-direction: column;
   gap: 2rem;
   grid-area: aside;
+  height: 100vh;
   padding: 2.5rem;
+  position: sticky;
+  top: 0;
 }
 
 body {
@@ -45,7 +48,6 @@ body {
   display: grid;
   grid-template-areas: 'header main aside';
   grid-template-columns: 20% 1fr 20%;
-  grid-template-rows: 100vh minmax(100vh, auto) 100vh;
   min-width: 20rem;
   width: 100%;
 }
@@ -69,7 +71,10 @@ header {
   flex-direction: column;
   gap: 2rem;
   grid-area: header;
+  height: 100vh;
   padding: 2.5rem;
+  position: sticky;
+  top: 0;
 }
 
 input::placeholder,
@@ -85,6 +90,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  height: auto;
   grid-area: main;
   padding: 2.5rem;
 }
