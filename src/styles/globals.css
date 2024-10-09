@@ -32,7 +32,6 @@ a {
 }
 
 aside {
-  background-color: green;
   grid-area: aside;
 }
 
@@ -66,7 +65,6 @@ h6 {
 }
 
 header {
-  background-color: red;
   grid-area: header;
 }
 
@@ -79,6 +77,7 @@ textarea::placeholder {
 }
 
 main {
+  background-color: yellow;
   display: flex;
   flex-direction: column;
   padding: 2rem 0;
