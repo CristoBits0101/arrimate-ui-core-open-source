@@ -1,16 +1,14 @@
 'use client'
 
-import '@/styles/globals.css'
 import Header from '@/layouts/header'
-import LeftSidebar from '@/layouts/left-sidebar'
-import RightSidebar from '@/layouts/right-sidebar'
+import Aside from '@/layouts/aside'
 import CarouselHome from '@/components/feeds/carousel/carousel-home'
+import '@/styles/globals.css'
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <LeftSidebar />
       <main className='flex flex-col gap-y-5 align-middle'>
         <section>
           <h2 className='text-lg font-semibold'>Tendencias</h2>
@@ -43,7 +41,7 @@ export default function HomePage() {
           </article>
         </section>
       </main>
-      <RightSidebar />
+      <Aside />
     </>
   )
 }

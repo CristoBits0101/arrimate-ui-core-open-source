@@ -31,6 +31,10 @@ a {
   text-decoration: none;
 }
 
+aside {
+  grid-area: aside;
+}
+
 body {
   background-color: light-dark(#ffffff, #1d0f0f);
   color: light-dark(#1d0f0f, #ffffff);
@@ -44,9 +48,7 @@ button {
 
 .content-wrapper {
   display: grid;
-  grid-template-areas:
-    'header header header'
-    'left-sidebar main right-sidebar';
+  grid-template-areas: 'header main right-sidebar';
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto calc(100vh - 3.75rem);
   width: 100%;
@@ -75,17 +77,9 @@ textarea::placeholder {
   opacity: 1;
 }
 
-.left-sideba {
-  grid-area: left-sidebar;
-}
-
 main {
   grid-area: main;
   padding: 1.25rem 0;
-}
-
-.right-sideba {
-  grid-area: right-sidebar;
 }
 
 svg {
