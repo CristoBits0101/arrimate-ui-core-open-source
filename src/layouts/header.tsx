@@ -1,5 +1,5 @@
 import Logo from '@/components/branding/logo'
-import Navbar from '@/components/navigation/menu/navbar'
+import Navbar from '@/components/navigation/menu/panel'
 import Searcher from '@/components/navigation/search/searcher'
 import styles from '@/styles/layouts/header.module.css'
 
