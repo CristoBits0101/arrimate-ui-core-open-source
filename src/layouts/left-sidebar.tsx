@@ -17,10 +17,10 @@ export default function Sidebar() {
         <ul>
           <Home />
           <Events />
+          <Products />
           <Shorts />
           <Videos />
           <Live />
-          <Products />
           <Reviews />
           <Community />
         </ul>
