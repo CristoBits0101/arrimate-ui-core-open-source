@@ -34,7 +34,7 @@ a {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   grid-area: aside;
   padding: 2.5rem;
 }
@@ -67,7 +67,7 @@ h6 {
 header {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   grid-area: header;
   padding: 2.5rem;
 }
@@ -84,8 +84,9 @@ main {
   background-color: yellow;
   display: flex;
   flex-direction: column;
-  padding: 2.5rem;
+  gap: 2.5rem;
   grid-area: main;
+  padding: 2.5rem;
 }
 
 svg {

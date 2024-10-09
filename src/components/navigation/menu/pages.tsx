@@ -6,10 +6,11 @@ import Products from '@/components/e-commerce/products'
 import Reviews from '@/components/feeds/reviews'
 import Shorts from '@/components/streaming/shorts'
 import Videos from '@/components/streaming/videos'
+import styles from '@/styles/components/menu.module.css'
 
 export default function Pages() {
   return (
-    <nav>
+    <nav className={styles.menu}>
       <ul>
         <Home />
         <Events />

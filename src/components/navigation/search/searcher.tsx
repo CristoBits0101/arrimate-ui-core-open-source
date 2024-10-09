@@ -4,7 +4,7 @@ export default function Searcher() {
   return (
     <form className={styles.form}>
       <div>
-        <input className={styles.input} placeholder='Search' />
+        <input placeholder='Search' size={50} />
         <button type='submit'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
