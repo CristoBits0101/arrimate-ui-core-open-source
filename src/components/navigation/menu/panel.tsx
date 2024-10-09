@@ -3,11 +3,10 @@ import Messages from '@/components/messages/chats'
 import Notifications from '@/components/messages/notifications'
 import Post from '@/components/feeds/post'
 import SignIn from '@/components/auth/links/sign-in-link'
-import styles from '@/styles/components/navigation/navbar.module.css'
 
-export default function Navbar() {
+export default function Panel() {
   return (
-    <nav className={styles.navBar}>
+    <nav>
       <ul>
         <Post />
         <Messages />

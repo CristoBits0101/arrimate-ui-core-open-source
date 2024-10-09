@@ -15,11 +15,9 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <head>{/* <link rel='icon' href='/favicon.ico' /> */}</head>
       <body className={roboto.className}>
-        <div className='content-wrapper'>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </div>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   )

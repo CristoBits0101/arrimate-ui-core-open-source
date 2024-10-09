@@ -32,26 +32,27 @@ a {
 }
 
 aside {
+  background-color: green;
   grid-area: aside;
+}
+
+aside, header {
+  padding: 2rem;
 }
 
 body {
   background-color: light-dark(#ffffff, #1d0f0f);
   color: light-dark(#1d0f0f, #ffffff);
+  display: grid;
+  grid-template-areas: 'header main aside';
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 100vh minmax(100vh, auto) 100vh;
   min-width: 20rem;
   width: 100%;
 }
 
 button {
   cursor: pointer;
-}
-
-.content-wrapper {
-  display: grid;
-  grid-template-areas: 'header main aside';
-  grid-template-columns: 25% 1fr 25%;
-  grid-template-rows: 100vh;
-  width: 100%;
 }
 
 h1,
@@ -65,6 +66,7 @@ h6 {
 }
 
 header {
+  background-color: red;
   grid-area: header;
 }
 
@@ -77,6 +79,9 @@ textarea::placeholder {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
   grid-area: main;
 }
 
