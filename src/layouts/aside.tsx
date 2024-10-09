@@ -1,13 +1,13 @@
 'use client'
 
 import Navbar from '@/components/navigation/menu/panel'
-import styles from '@/styles/layouts/sidebar.module.css'
+import styles from '@/styles/layouts/aside.module.css'
 import { usePageComponent } from '@/hooks/usePageComponent'
 
 export default function Sidebar() {
   const component = usePageComponent()
   return (
-    <aside className={`${styles.sidebar} right-sidebar`}>
+    <aside className={`${styles.aside}`}>
       <Navbar />
       <nav>
         <ul>

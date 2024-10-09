@@ -1,8 +1,8 @@
-.sidebar {
+.aside {
   padding: 0.625rem 1.875rem;
 }
 
-.sidebar a {
+.aside a {
   align-items: center;
   display: flex;
   height: 100%;
@@ -11,7 +11,7 @@
   gap: 1.25rem;
 }
 
-.sidebar img {
+.aside img {
   aspect-ratio: 1 / 1;
   display: flex;
   height: 1.875rem;
@@ -22,7 +22,7 @@
   width: 1.875rem;
 }
 
-.sidebar li {
+.aside li {
   align-items: center;
   border-radius: 2.5rem;
   display: flex;
@@ -31,26 +31,26 @@
   width: 100%;
 }
 
-.sidebar li:hover {
+.aside li:hover {
   background-color: #edeced;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.sidebar nav {
+.aside nav {
   display: flex;
   height: fit-content;
   width: 12.5rem;
 }
 
-.sidebar ul {
+.aside ul {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
 }
 
-.sidebar .ellipsis {
+.aside .ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
