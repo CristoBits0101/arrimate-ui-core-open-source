@@ -7,7 +7,7 @@ import Reviews from '@/components/feeds/reviews'
 import Shorts from '@/components/streaming/shorts'
 import Videos from '@/components/streaming/videos'
 
-export default function Navbar() {
+export default function Pages() {
   return (
     <nav>
       <ul>

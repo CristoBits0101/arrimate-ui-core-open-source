@@ -1,6 +1,6 @@
 import postBlackSVG from '@/assets/icons/navbar/black/post.svg'
 import postWhiteSVG from '@/assets/icons/navbar/white/post.svg'
-import NavigationItem from '@/components/navigation/menu/item'
+import NavigationItem from '@/components/navigation/links/item'
 
 export default function Post() {
   return (

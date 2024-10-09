@@ -1,10 +1,10 @@
-import styles from '@/styles/components/navigation/searcher.module.css'
+import styles from '@/styles/components/searcher.module.css'
 
 export default function Searcher() {
   return (
     <form className={styles.form}>
       <div>
-        <input className={styles.input} placeholder='Search' size={50} />
+        <input className={styles.input} placeholder='Search' />
         <button type='submit'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

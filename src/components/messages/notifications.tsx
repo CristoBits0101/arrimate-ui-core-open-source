@@ -1,6 +1,6 @@
 import notificationsBlackSVG from '@/assets/icons/navbar/black/notifications.svg'
 import notificationsWhiteSVG from '@/assets/icons/navbar/white/notifications.svg'
-import NavigationItem from '@/components/navigation/menu/item'
+import NavigationItem from '@/components/navigation/links/item'
 
 export default function Notifications() {
   return (
