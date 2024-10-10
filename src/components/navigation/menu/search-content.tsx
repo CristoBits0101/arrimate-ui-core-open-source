@@ -1,3 +1,5 @@
+import search from '@/assets/icons/searcher/search.svg'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
@@ -29,7 +31,7 @@ export default function SearchContent({
               href={`/${locale}/search?q=${encodeURIComponent(searchTerm)}`}
               className='truncate'
             >
-              Resultado {index + 1} para {searchTerm}
+              <Image src={search} alt='Search' /> Resultado {index + 1}:{' '}
             </Link>
           </li>
         ))}

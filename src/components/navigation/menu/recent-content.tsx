@@ -1,3 +1,5 @@
+import history from '@/assets/icons/searcher/history.svg'
+import Image from 'next/image'
 import Link from 'next/link'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
@@ -35,8 +37,12 @@ export default function RecentContent({
       <ul className='flex flex-col gap-2 w-full h-fit'>
         {recentContent.map((item, index) => (
           <li className='truncate' key={item.id}>
-            <Link href={`/${locale}/item/${item.id}`} className='truncate'>
-              🕔 Resultado {index + 1}: {item.title}
+            <Link
+              href={`/${locale}/item/${item.id}`}
+              className='truncate flex gap-2 items-center'
+            >
+              <Image src={history} alt='History' /> Resultado {index + 1}:{' '}
+              {item.title}
             </Link>
           </li>
         ))}
