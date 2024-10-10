@@ -24,7 +24,7 @@
   width: 1.875rem;
 }
 
-.aside .ellipsis {
+.aside li {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
