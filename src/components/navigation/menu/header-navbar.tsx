@@ -9,7 +9,7 @@ import styles from '@/styles/components/header-navbar.module.css'
 
 export default function Pages() {
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} mt-6`}>
       <ul>
         <Home />
         <Events />
