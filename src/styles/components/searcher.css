@@ -2,14 +2,14 @@
   align-items: center;
   display: flex;
   font-size: 0.875rem;
-  height: 2.5rem;
+  height: 2.875rem;
   justify-content: center;
   margin-top: 0.5rem;
   min-width: 10rem;
   width: 100%;
 }
 
-.form button {
+.form .search {
   align-items: center;
   background: transparent;
   border-bottom-right-radius: 5rem;

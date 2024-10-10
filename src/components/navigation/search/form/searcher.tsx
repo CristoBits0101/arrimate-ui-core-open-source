@@ -1,6 +1,6 @@
 'use client'
 
-import styles from '@/styles/components/searcher.module.css'
+import '@/styles/components/searcher.css'
 import { useState } from 'react'
 
 interface SearcherProps {
@@ -21,7 +21,7 @@ export default function Searcher({ onSearch, onFocus }: SearcherProps) {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
       <div>
         <input
           placeholder='Search'
@@ -29,7 +29,7 @@ export default function Searcher({ onSearch, onFocus }: SearcherProps) {
           onChange={handleChange}
           onFocus={onFocus}
         />
-        <button type='submit'>
+        <button className='search' type='submit'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             height='24px'
