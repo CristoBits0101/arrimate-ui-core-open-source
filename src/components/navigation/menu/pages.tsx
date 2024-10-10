@@ -10,7 +10,7 @@ import styles from '@/styles/components/menu.module.css'
 
 export default function Pages() {
   return (
-    <nav className={styles.menu}>
+    <nav className={`${styles.menu} mt-6`}>
       <ul>
         <Home />
         <Events />

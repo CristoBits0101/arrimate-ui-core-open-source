@@ -6,10 +6,9 @@ import styles from '@/styles/components/searcher.module.css'
 interface SearcherProps {
   onSearch: (term: string) => void
   onFocus: () => void
-  onBlur: () => void
 }
 
-export default function Searcher({ onSearch, onFocus, onBlur }: SearcherProps) {
+export default function Searcher({ onSearch, onFocus }: SearcherProps) {
   const [searchTerm, setSearchTerm] = useState<string>('')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +21,7 @@ export default function Searcher({ onSearch, onFocus, onBlur }: SearcherProps) {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} onBlur={onBlur}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div>
         <input
           placeholder='Search'
