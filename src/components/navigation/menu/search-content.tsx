@@ -18,8 +18,8 @@ export default function SearchContent({
   }
   return (
     <nav className='rounded-3xl mt-2 p-4 text-sm border border-solid border-[#bfbdc050] shadow-sm shadow-[#F4F4F4] w-full h-fit flex flex-col gap-2'>
-      <div className='mb-2 w-full h-fit flex justify-between items-center'>
-        <h2 className='font-medium'>Recomendado</h2>
+      <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
+        <h2>Recomendado</h2>
         <button onClick={handleFocus}>X</button>
       </div>
       <ul className='flex flex-col gap-2 w-full h-fit'>

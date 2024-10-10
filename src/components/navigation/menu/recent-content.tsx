@@ -28,8 +28,8 @@ export default function RecentContent({
   }
   return (
     <nav className='rounded-3xl mt-2 p-4 text-sm border border-solid border-[#bfbdc050] shadow-sm shadow-[#F4F4F4] w-full h-fit flex flex-col gap-2'>
-      <div className='mb-2 w-full h-fit flex justify-between items-center'>
-        <h2 className='font-medium'>Recientes</h2>
+      <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
+        <h2>Recientes</h2>
         <button onClick={handleFocus}>X</button>
       </div>
       <ul className='flex flex-col gap-2 w-full h-fit'>
