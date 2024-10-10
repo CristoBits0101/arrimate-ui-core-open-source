@@ -1,6 +1,9 @@
+'use client'
+
 import search from '@/assets/icons/searcher/search.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
 
@@ -15,13 +18,14 @@ export default function SearchContent({
   searchTerm,
   locale
 }: SearchContentProps) {
+  const t = useTranslations('Searcher')
   const handleFocus = () => {
     setIsFocused(false)
   }
   return (
     <nav className='rounded-3xl mt-2 p-4 text-sm border border-solid border-[#bfbdc050] shadow-sm shadow-[#F4F4F4] w-full h-fit flex flex-col gap-2'>
       <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
-        <h2>Recomendado</h2>
+        <h2>{t('recommended')}</h2>
         <button onClick={handleFocus}>X</button>
       </div>
       <ul className='flex flex-col gap-2 w-full h-fit'>
