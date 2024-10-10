@@ -34,10 +34,10 @@ a {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-area: aside;
   height: 100vh;
-  padding: 2.5rem;
+  padding: 2rem;
   position: sticky;
   top: 0;
 }
@@ -69,10 +69,10 @@ h6 {
 header {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   grid-area: header;
   height: 100vh;
-  padding: 2.5rem;
+  padding: 2rem;
   position: sticky;
   top: 0;
 }
@@ -89,10 +89,10 @@ main {
   background-color: yellow;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
   height: auto;
   grid-area: main;
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 svg {
