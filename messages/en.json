@@ -11,7 +11,7 @@
     "community": "Community"
   },
   "Searcher": {
-    "search": "Search",
+    "placeholder": "Search",
     "recent": "Recents",
     "recommended": "Recommended",
     "article": "Article",

@@ -10,7 +10,7 @@
     "community": "Comunidad"
   },
   "Searcher": {
-    "search": "Buscar",
+    "placeholder": "Buscar",
     "recent": "Recientes",
     "recommended": "Recomendados",
     "article": "Artículo",

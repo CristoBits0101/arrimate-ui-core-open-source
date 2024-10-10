@@ -2,6 +2,7 @@
 
 import '@/styles/components/searcher.css'
 import { useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 interface SearcherProps {
   onSearch: (term: string) => void
@@ -9,6 +10,7 @@ interface SearcherProps {
 }
 
 export default function Searcher({ onSearch, onFocus }: SearcherProps) {
+  const t = useTranslations('Searcher')
   const [searchTerm, setSearchTerm] = useState<string>('')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +26,7 @@ export default function Searcher({ onSearch, onFocus }: SearcherProps) {
     <form className='form' onSubmit={handleSubmit}>
       <div>
         <input
-          placeholder='Search'
+          placeholder={t('placeholder')}
           value={searchTerm}
           onChange={handleChange}
           onFocus={onFocus}

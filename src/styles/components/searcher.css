@@ -22,7 +22,7 @@
   width: 4.5rem;
 }
 
-.form button svg {
+.form .search svg {
   aspect-ratio: 1 / 1;
   fill: #1d0f0f;
   height: 1.25rem;
@@ -35,26 +35,26 @@
 .form div {
   align-items: center;
   background-color: #f4f4f4;
-  border: 0.05rem solid #bfbdc050;
+  border: 0.094rem solid #bfbdc050;
   border-radius: 5rem;
   display: flex;
   height: 100%;
   width: 100%;
 }
 
-.form div:hover button {
+.form div:hover .search {
   background-color: #bfbdc050;
   fill: #1d0f0f;
 }
 
-.form div:hover button svg {
+.form div:hover .search svg {
   background-color: transparent;
   fill: #1d0f0f;
 }
 
 .form div:hover input,
-.form button:focus ~ input,
-.form button:hover ~ input {
+.form .search:focus ~ input,
+.form .search:hover ~ input {
   border-right: none;
 }
 
@@ -62,7 +62,7 @@
   appearance: textfield;
   background: transparent;
   border: none;
-  border-right: 0.05rem solid #bfbdc050;
+  border-right: 0.094rem solid #bfbdc050;
   height: 50%;
   min-width: 5rem;
   outline: none;
@@ -75,15 +75,15 @@
   border-right: none;
 }
 
-.form input:focus ~ button,
-.form input:hover ~ button {
+.form input:focus ~ .search,
+.form input:hover ~ .search {
   background-color: #bfbdc050;
   fill: #1d0f0f;
   transition: background-color 0.3s ease, fill 0.3s ease;
 }
 
-.form input:focus ~ button svg,
-.form input:hover ~ button svg {
+.form input:focus ~ .search svg,
+.form input:hover ~ .search svg {
   background-color: transparent;
   fill: #1d0f0f;
   transition: background-color 0.3s ease, fill 0.3s ease;
