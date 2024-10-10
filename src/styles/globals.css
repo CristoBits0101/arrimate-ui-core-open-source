@@ -32,7 +32,6 @@ a {
 }
 
 aside {
-  border-left: 0.094rem solid #bfbdc050;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
