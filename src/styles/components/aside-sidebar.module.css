@@ -1,4 +1,5 @@
 .aside {
+  align-items: center;
   display: flex;
   width: 100%;
   height: fit-content;
@@ -27,4 +28,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.aside ul {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: fit-content;
 }
