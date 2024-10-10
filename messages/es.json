@@ -8,5 +8,12 @@
     "products": "Productos",
     "reviews": "Reseñas",
     "community": "Comunidad"
+  },
+  "Searcher": {
+    "search": "Buscar",
+    "recent": "Recientes",
+    "recommended": "Recomendados",
+    "article": "Artículo",
+    "result": "Resultado"
   }
 }

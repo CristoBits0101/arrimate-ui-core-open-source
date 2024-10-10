@@ -9,5 +9,12 @@
     "reviews": "Reviews",
     "following": "Following",
     "community": "Community"
+  },
+  "Searcher": {
+    "search": "Search",
+    "recent": "Recents",
+    "recommended": "Recommended",
+    "article": "Article",
+    "result": "Result"
   }
 }
