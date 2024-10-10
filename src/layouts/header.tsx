@@ -48,7 +48,7 @@ export default function Header() {
   return (
     <header>
       <Logo />
-      <div ref={searchContainerRef}>
+      <div id='navigation-container' ref={searchContainerRef}>
         <Searcher onSearch={handleSearch} onFocus={handleFocus} />
         {isFocused && searchTerm ? (
           // Bring the search content

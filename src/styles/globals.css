@@ -77,6 +77,11 @@ header {
   top: 0;
 }
 
+header #navigation-container {
+  width: 100%;
+  height: fit-content;
+}
+
 input::placeholder,
 textarea::placeholder {
   color: #1d0f0f;
