@@ -46,9 +46,10 @@
       🚧       Sound Animations ➜ 
 
 # Dependencies
-    Auth:
+    Auth.js:
       📦        Auth.js Install ➜ npm install next-auth@beta
       📦  AUTH_SECRET Generator ➜ npx auth secret
+    Bcrypt: 
       📦       Encrypt Password ➜ npm install bcrypt
       📦           Bcrypt Types ➜ npm install --save-dev @types/bcrypt
     Prisma:
@@ -60,3 +61,5 @@
     Tailwind CSS:
       📦   Install Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
       📦          Generate both ➜ npx tailwindcss init -p
+    Zod:
+      📦 
