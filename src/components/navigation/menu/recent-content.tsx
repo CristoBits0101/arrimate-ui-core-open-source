@@ -35,7 +35,7 @@ export default function RecentContent({
         <button onClick={handleFocus}>X</button>
       </div>
       <ul className='flex flex-col gap-2 w-full h-fit'>
-        {recentContent.map((item, index) => (
+        {recentContent.map((item) => (
           <li className='truncate' key={item.id}>
             <Link
               href={`/${locale}/item/${item.id}`}

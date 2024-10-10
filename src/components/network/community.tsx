@@ -8,7 +8,7 @@ export default function Community() {
       route='community'
       blackIcon={communityBlackSVG}
       whiteIcon={communityWhiteSVG}
-      textKey='community'
+      textKey=''
     />
   )
 }

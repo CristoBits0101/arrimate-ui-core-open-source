@@ -1,4 +1,5 @@
 import Cart from '@/components/e-commerce/cart'
+import Community from '@/components/network/community'
 import Messages from '@/components/messages/chats'
 import Notifications from '@/components/messages/notifications'
 import Post from '@/components/feeds/post'
@@ -11,6 +12,7 @@ export default function Panel() {
         <Post />
         <Messages />
         <Notifications />
+        <Community />
         <Cart />
       </ul>
     </nav>
