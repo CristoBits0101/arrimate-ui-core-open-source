@@ -47,7 +47,7 @@
 
 # Dependencies
     Auth.js:
-      📦        Auth.js Install ➜ npm install next-auth@beta
+      📦                Auth.js ➜ npm install next-auth@beta
       📦  AUTH_SECRET Generator ➜ npx auth secret
     Bcrypt: 
       📦       Encrypt Password ➜ npm install bcrypt
@@ -56,10 +56,12 @@
       📦             Prisma CLI ➜ npm install prisma --save-dev
       📦         Prisma Queries ➜ npm install @prisma/client
       📦       Prisma + Auth.js ➜ npm install @auth/prisma-adapter
-    shadcn/ui:
-      📦         Shadcn Install ➜ npx shadcn@latest init
+    React Icons:
+      📦            React-icons ➜ npm install react-icons --save
+    Shadcn UI:
+      📦              Shadcn/UI ➜ npx shadcn@latest init
     Tailwind CSS:
-      📦   Install Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
+      📦           Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
       📦          Generate both ➜ npx tailwindcss init -p
     Zod:
       📦 

@@ -36,7 +36,7 @@ export default function RecentContent({
         {recentContent.map((item, index) => (
           <li className='truncate' key={item.id}>
             <Link href={`/${locale}/item/${item.id}`} className='truncate'>
-              Resultado {index + 1}: {item.title}
+              🕔 Resultado {index + 1}: {item.title}
             </Link>
           </li>
         ))}
