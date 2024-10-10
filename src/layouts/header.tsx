@@ -51,8 +51,10 @@ export default function Header() {
       <div ref={searchContainerRef}>
         <Searcher onSearch={handleSearch} onFocus={handleFocus} />
         {isFocused && searchTerm ? (
+          // Bring the search content
           <ReturnContent searchTerm={searchTerm} locale={locale} />
         ) : isFocused ? (
+          // Bring recent content
           <ReturnContent searchTerm={''} locale={locale} />
         ) : (
           <Pages />
