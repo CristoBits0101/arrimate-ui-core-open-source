@@ -57,3 +57,6 @@
       📦       Prisma + Auth.js ➜ npm install @auth/prisma-adapter
     shadcn/ui:
       📦         Shadcn Install ➜ npx shadcn@latest init
+    Tailwind CSS:
+      📦   Install Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
+      📦          Generate both ➜ npx tailwindcss init -p

@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import styles from '@/styles/components/searcher.module.css'
+import { useState } from 'react'
 
 interface SearcherProps {
   onSearch: (term: string) => void
