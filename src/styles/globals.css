@@ -47,7 +47,7 @@ body {
   color: light-dark(#1d0f0f, #ffffff);
   display: grid;
   grid-template-areas: 'header main aside';
-  grid-template-columns: 20% 1fr 20%;
+  grid-template-columns: 20rem 1fr 20rem;
   min-width: 20rem;
   width: 100%;
 }

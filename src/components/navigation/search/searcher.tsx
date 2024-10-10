@@ -1,10 +1,35 @@
+'use client'
+
+import { useState } from 'react'
 import styles from '@/styles/components/searcher.module.css'
 
-export default function Searcher() {
+interface SearcherProps {
+  onSearch: (term: string) => void
+  onFocus: () => void
+  onBlur: () => void
+}
+
+export default function Searcher({ onSearch, onFocus, onBlur }: SearcherProps) {
+  const [searchTerm, setSearchTerm] = useState<string>('')
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value)
+    onSearch(event.target.value)
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+  }
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit} onBlur={onBlur}>
       <div>
-        <input placeholder='Search' size={50} />
+        <input
+          placeholder='Search'
+          value={searchTerm}
+          onChange={handleChange}
+          onFocus={onFocus}
+        />
         <button type='submit'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
