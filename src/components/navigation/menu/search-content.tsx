@@ -25,13 +25,13 @@ export default function SearchContent({
         <button onClick={handleFocus}>X</button>
       </div>
       <ul className='flex flex-col gap-2 w-full h-fit'>
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 9 }).map((_, index) => (
           <li className='truncate' key={index}>
             <Link
               href={`/${locale}/search?q=${encodeURIComponent(searchTerm)}`}
-              className='truncate'
+              className='truncate flex gap-2 items-center'
             >
-              <Image src={search} alt='Search' /> Resultado {index + 1}:{' '}
+              <Image className='w-5' src={search} alt='Search' /> Resultado {index + 1}
             </Link>
           </li>
         ))}

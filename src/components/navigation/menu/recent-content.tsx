@@ -41,8 +41,8 @@ export default function RecentContent({
               href={`/${locale}/item/${item.id}`}
               className='truncate flex gap-2 items-center'
             >
-              <Image src={history} alt='History' /> Resultado {index + 1}:{' '}
-              {item.title}
+              <Image className='w-5' src={history} alt='History' /> Resultado{' '}
+              {index + 1}: {item.title}
             </Link>
           </li>
         ))}
