@@ -1,6 +1,6 @@
 'use client'
 
-import Panel from '@/components/navigation/menu/events-panel'
+import Panel from '@/components/navigation/menu/aside-sidebar'
 import { usePageComponent } from '@/hooks/usePageComponent'
 
 export default function Sidebar() {

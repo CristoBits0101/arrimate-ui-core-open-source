@@ -1,7 +1,7 @@
 'use client'
 
 import Logo from '@/components/branding/logo'
-import Pages from '@/components/navigation/menu/pages'
+import Pages from '@/components/navigation/menu/header-navbar'
 import ReturnContent from '@/components/navigation/search/rendering/return-content'
 import Searcher from '@/components/navigation/search/form/searcher'
 import { useLocale } from 'next-intl'
