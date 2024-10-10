@@ -2,7 +2,7 @@
 
 import Logo from '@/components/branding/logo'
 import Pages from '@/components/navigation/menu/pages'
-import Content from '@/components/navigation/search/return-content'
+import ReturnContent from '@/components/navigation/search/return-content'
 import Searcher from '@/components/navigation/search/searcher'
 import { useLocale } from 'next-intl'
 import { useState, useRef, useEffect } from 'react'
@@ -51,9 +51,9 @@ export default function Header() {
       <div ref={searchContainerRef}>
         <Searcher onSearch={handleSearch} onFocus={handleFocus} />
         {isFocused && searchTerm ? (
-          <Content searchTerm={searchTerm} locale={locale} />
+          <ReturnContent searchTerm={searchTerm} locale={locale} />
         ) : isFocused ? (
-          <Content searchTerm={''} locale={locale} />
+          <ReturnContent searchTerm={''} locale={locale} />
         ) : (
           <Pages />
         )}
