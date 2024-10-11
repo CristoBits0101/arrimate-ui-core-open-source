@@ -6,7 +6,7 @@ import { useLocale } from 'next-intl'
 export default function AuthButtons() {
   const locale = useLocale()
   return (
-    <div className='flex w-full h-fit flex-row items-center justify-between'>
+    <div className='flex w-full h-[2.5rem] flex-row items-center justify-between'>
       <button className='flex flex-row justify-center gap-1 bg-[#F4F4F4] pr-6 pl-6 pt-2 pb-2 border-[0.094rem] border-[#bfbdc050] text-sm hover:bg-[#bfbdc050]'>
         <Link href={`/${locale}/sign-in`}>Sign In</Link>
         <Image

@@ -15,5 +15,9 @@
     "recommended": "Recomendado",
     "article": "Artículo",
     "result": "Resultado"
+  },
+  "AuthButtons": {
+    "signIn": "Acceder",
+    "signUp": "Registrarse"
   }
 }

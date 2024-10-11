@@ -16,5 +16,9 @@
     "recommended": "Recommended",
     "article": "Article",
     "result": "Result"
+  },
+  "AuthButtons": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
   }
 }
