@@ -10,11 +10,7 @@ export default function Aside() {
     <aside>
       <AuthButtons />
       <Sidebar />
-      <nav>
-        <ul>
-          <li>{component}</li>
-        </ul>
-      </nav>
+      {component}
     </aside>
   )
 }

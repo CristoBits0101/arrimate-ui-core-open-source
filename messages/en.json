@@ -3,10 +3,6 @@
     "signIn": "Sign In",
     "signUp": "Sign Up"
   },
-  "Languages": {
-    "english": "English",
-    "spanish": "Spanish"
-  },
   "SidebarLayout": {
     "home": "Home",
     "events": "Events",
@@ -24,5 +20,8 @@
     "recommended": "Recommended",
     "article": "Article",
     "result": "Result"
+  },
+  "SettingsPanel": {
+    "language": "Language"
   }
 }
