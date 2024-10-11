@@ -16,7 +16,12 @@ export function usePageComponent() {
     live: `/${locale}/live`,
     products: `/${locale}/products`,
     reviews: `/${locale}/reviews`,
-    community: `/${locale}/community`
+    community: `/${locale}/community`,
+    post: `/${locale}/post`,
+    chats: `/${locale}/chats`,
+    notifications: `/${locale}/notifications`,
+    cart: `/${locale}/cart`,
+    settings: `/${locale}/settings`
   }
 
   // Check if current path is active
@@ -45,7 +50,22 @@ export function usePageComponent() {
     case paths.community:
       return 'COMMUNITY PANEL'
 
+    case paths.post:
+      return 'POST PANEL'
+
+    case paths.chats:
+      return 'CHATS PANEL'
+
+    case paths.notifications:
+      return 'NOTIFICATIONS PANEL'
+
+    case paths.cart:
+      return 'CART PANEL'
+
+    case paths.settings:
+      return 'SETTINGS PANEL'
+
     default:
-      return 'Not found'
+      return 'PANEL NOT AVAILABLE'
   }
 }
