@@ -1,3 +1,4 @@
+import Community from '@/components/network/community'
 import Events from '@/components/feeds/events'
 import Home from '@/components/feeds/home'
 import Live from '@/components/streaming/live'
@@ -18,6 +19,7 @@ export default function Pages() {
         <Videos />
         <Live />
         <Reviews />
+        <Community />
       </ul>
     </nav>
   )
