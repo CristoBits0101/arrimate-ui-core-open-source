@@ -1,5 +1,5 @@
-import eventsBlackSVG from '@/assets/icons/sidebar/black/events.svg'
-import eventsWhiteSVG from '@/assets/icons/sidebar/white/events.svg'
+import eventsBlackSVG from '@/assets/icons/navbar/black/events.svg'
+import eventsWhiteSVG from '@/assets/icons/navbar/white/events.svg'
 import NavigationItem from '@/components/navigation/links/item'
 
 export default function Events() {

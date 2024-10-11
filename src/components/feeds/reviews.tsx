@@ -1,5 +1,5 @@
-import reviewsBlackSVG from '@/assets/icons/sidebar/black/reviews.svg'
-import reviewsWhiteSVG from '@/assets/icons/sidebar/white/reviews.svg'
+import reviewsBlackSVG from '@/assets/icons/navbar/black/reviews.svg'
+import reviewsWhiteSVG from '@/assets/icons/navbar/white/reviews.svg'
 import NavigationItem from '@/components/navigation/links/item'
 
 export default function Reviews() {

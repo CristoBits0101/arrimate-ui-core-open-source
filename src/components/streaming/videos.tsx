@@ -1,5 +1,5 @@
-import videosBlackSVG from '@/assets/icons/sidebar/black/videos.svg'
-import videosWhiteSVG from '@/assets/icons/sidebar/white/videos.svg'
+import videosBlackSVG from '@/assets/icons/navbar/black/videos.svg'
+import videosWhiteSVG from '@/assets/icons/navbar/white/videos.svg'
 import NavigationItem from '@/components/navigation/links/item'
 
 export default function Videos() {
