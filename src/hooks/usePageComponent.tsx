@@ -66,6 +66,6 @@ export function usePageComponent() {
       return 'SETTINGS PANEL'
 
     default:
-      return 'PANEL NOT AVAILABLE'
+      return 'DEFAULT PANEL'
   }
 }
