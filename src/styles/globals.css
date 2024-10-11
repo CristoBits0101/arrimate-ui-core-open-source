@@ -97,8 +97,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  height: auto;
   grid-area: main;
+  height: auto;
+  min-height: 100vh;
   padding: 2rem;
 }
 
