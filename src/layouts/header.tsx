@@ -28,6 +28,13 @@ export default function Header() {
     setIsFocused(true)
   }
 
+  useEffect(() => {
+    if (resetSearchInput) {
+      setSearchTerm('')
+      setResetSearchInput(false)
+    }
+  }, [resetSearchInput, setResetSearchInput])
+
   // Clicks inside the Searcher and Result component do not fire the handleClickOutside event
   useEffect(() => {
     // The function is triggered when clicking anywhere in the document
