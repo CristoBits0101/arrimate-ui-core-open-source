@@ -1,3 +1,3 @@
 export default function LivePage() {
-  return <h2>LIVE: Twitch</h2>
+  return <h2>LIVE PAGE</h2>
 }

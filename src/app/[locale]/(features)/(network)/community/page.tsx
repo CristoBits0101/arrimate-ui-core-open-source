@@ -1,3 +1,3 @@
-export default function NetworkPage() {
-  return <h2>Network: Personas</h2>
+export default function CommunityPage() {
+  return <h2>COMMUNITY PAGE</h2>
 }

@@ -2,6 +2,6 @@
 
 export default function SettingsPage() {
   return (
-    <div>Settings Page</div>
+    <div>SETTINGS PAGE</div>
   )
 }

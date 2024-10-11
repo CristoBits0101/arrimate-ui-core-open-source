@@ -1,3 +1,3 @@
 export default function EventsPage() {
-  return <h2>Events: Eventbrite</h2>
+  return <h2>EVENTS PAGE</h2>
 }

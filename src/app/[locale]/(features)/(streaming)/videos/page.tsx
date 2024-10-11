@@ -1,3 +1,3 @@
 export default function VideosPage() {
-  return <h2>Videos: YouTube</h2>
+  return <h2>VIDEOS PAGE</h2>
 }

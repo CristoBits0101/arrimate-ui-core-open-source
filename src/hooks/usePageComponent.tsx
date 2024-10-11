@@ -15,31 +15,35 @@ export function usePageComponent() {
     videos: `/${locale}/videos`,
     live: `/${locale}/live`,
     products: `/${locale}/products`,
-    reviews: `/${locale}/reviews`
+    reviews: `/${locale}/reviews`,
+    community: `/${locale}/community`
   }
 
   // Check if current path is active
   switch (path) {
     case paths.home:
-      return 'Records'
+      return 'HOME PANEL'
 
     case paths.events:
-      return 'Events page'
+      return 'EVENTS PANEL'
 
     case paths.shorts:
-      return 'Shorts page'
+      return 'SHORTS PANEL'
 
     case paths.videos:
-      return 'Panel'
+      return 'VIDEOS PANEL'
 
     case paths.live:
-      return 'Siguiendo'
+      return 'LIVE PANEL'
 
     case paths.products:
-      return 'Products page'
+      return 'PRODUCTS PANEL'
 
     case paths.reviews:
-      return 'Reviews page'
+      return 'REVIEWS PANEL'
+
+    case paths.community:
+      return 'COMMUNITY PANEL'
 
     default:
       return 'Not found'

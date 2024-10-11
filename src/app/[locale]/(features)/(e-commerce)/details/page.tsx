@@ -1,3 +1,3 @@
 export default function DetailsPage() {
-  return <h2>Details</h2>
+  return <h2>DETAILS PAGE</h2>
 }

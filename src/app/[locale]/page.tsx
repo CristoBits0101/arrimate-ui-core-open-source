@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>Main</main>
+      <main>HOME PAGE</main>
       <Aside />
     </>
   )

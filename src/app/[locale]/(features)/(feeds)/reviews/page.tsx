@@ -1,3 +1,3 @@
 export default function ReviewsPage() {
-  return <h2>Reviews: Reddit</h2>
+  return <h2>REVIEWS PAGE</h2>
 }
