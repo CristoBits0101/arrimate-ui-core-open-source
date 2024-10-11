@@ -8,12 +8,12 @@ import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
-type SetSearchTerm = React.Dispatch<React.SetStateAction<string>>
+type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
 
 interface RecentContentProps {
   locale: string
   setIsFocused: SetIsFocused
-  setSearchTerm: SetSearchTerm
+  setResetSearchInput: SetResetSearchInput
 }
 
 const recentContent = [
@@ -29,7 +29,7 @@ const recentContent = [
 ]
 
 export default function RecentContent({
-  setSearchTerm,
+  setResetSearchInput,
   setIsFocused,
   locale
 }: RecentContentProps) {
@@ -37,15 +37,15 @@ export default function RecentContent({
   const handleFocus = () => {
     setIsFocused(false)
   }
-  const handleTerm = () => {
-    setSearchTerm('')
+  const handleClearSearch = () => {
+    setResetSearchInput(true)
   }
   return (
     <nav className='rounded-3xl mt-2 p-4 text-sm border-[0.094rem] border-solid border-[#bfbdc050] shadow-sm shadow-[#F4F4F4] w-full h-fit flex flex-col gap-2'>
       <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
         <h2>{t('recent')}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
-          <button onClick={handleTerm}>
+          <button onClick={handleClearSearch}>
             <Image className='w-4' src={clear} alt='Close' />
           </button>
           <button onClick={handleFocus}>

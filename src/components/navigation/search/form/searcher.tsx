@@ -1,15 +1,20 @@
-'use client'
-
 import '@/styles/components/searcher.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 
 interface SearcherProps {
+  resetSearchInput: boolean
+  setResetSearchInput: (value: boolean) => void
   onSearch: (term: string) => void
   onFocus: () => void
 }
 
-export default function Searcher({ onSearch, onFocus }: SearcherProps) {
+export default function Searcher({
+  resetSearchInput,
+  setResetSearchInput,
+  onSearch,
+  onFocus
+}: SearcherProps) {
   const t = useTranslations('Searcher')
   const [searchTerm, setSearchTerm] = useState<string>('')
 
@@ -22,12 +27,19 @@ export default function Searcher({ onSearch, onFocus }: SearcherProps) {
     event.preventDefault()
   }
 
+  useEffect(() => {
+    if (resetSearchInput) {
+      setSearchTerm('')
+      setResetSearchInput(false)
+    }
+  }, [resetSearchInput, setResetSearchInput])
+
   return (
     <form className='form' onSubmit={handleSubmit}>
       <div>
         <input
           placeholder={t('placeholder')}
-          value={searchTerm}
+          value={resetSearchInput ? '' : searchTerm}
           onChange={handleChange}
           onFocus={onFocus}
         />

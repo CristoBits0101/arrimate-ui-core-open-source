@@ -8,6 +8,8 @@ import { useLocale } from 'next-intl'
 import { useState, useRef, useEffect } from 'react'
 
 export default function Header() {
+  // Reset search input
+  const [resetSearchInput, setResetSearchInput] = useState<boolean>(false)
   // Capture the text that is being written
   const [searchTerm, setSearchTerm] = useState<string>('')
   // Detects if the search bar has focus
@@ -44,23 +46,33 @@ export default function Header() {
       setSearchTerm('')
     }
   }
-  // Reset entry
-  const handleSearchInput = () => {
-      // crea una una función para limpiar el valor del input
-      setSearchTerm('')
-  }
 
   return (
     <header>
       <Logo />
       <div id='navigation-container' ref={searchContainerRef}>
-        <Searcher onSearch={handleSearch} onFocus={handleFocus} />
+        <Searcher
+          resetSearchInput={resetSearchInput}
+          setResetSearchInput={setResetSearchInput}
+          onSearch={handleSearch}
+          onFocus={handleFocus}
+        />
         {isFocused && searchTerm ? (
           // Bring the search content
-          <ReturnContent setIsFocused={setIsFocused} setSearchTerm={setSearchTerm} searchTerm={searchTerm} locale={locale} />
+          <ReturnContent
+            setIsFocused={setIsFocused}
+            setResetSearchInput={setResetSearchInput}
+            searchTerm={searchTerm}
+            locale={locale}
+          />
         ) : isFocused ? (
           // Bring recent content
-          <ReturnContent setIsFocused={setIsFocused} setSearchTerm={setSearchTerm} searchTerm={''} locale={locale} />
+          <ReturnContent
+            setIsFocused={setIsFocused}
+            setResetSearchInput={setResetSearchInput}
+            searchTerm={''}
+            locale={locale}
+          />
         ) : (
           <Pages />
         )}

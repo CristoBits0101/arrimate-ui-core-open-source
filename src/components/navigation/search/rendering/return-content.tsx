@@ -2,31 +2,31 @@ import RecentContent from '@/components/navigation/menu/recent-content'
 import SearchContent from '@/components/navigation/menu/search-content'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
-type SetSearchTerm = React.Dispatch<React.SetStateAction<string>>
+type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
 
 interface ReturnContentProps {
   searchTerm: string
   locale: string
   setIsFocused: SetIsFocused
-  setSearchTerm: SetSearchTerm
+  setResetSearchInput: SetResetSearchInput
 }
 
 export default function ReturnContent({
   setIsFocused,
   searchTerm,
   locale,
-  setSearchTerm
+  setResetSearchInput
 }: ReturnContentProps) {
   return searchTerm ? (
     <SearchContent
-      setSearchTerm={setSearchTerm}
+      setResetSearchInput={setResetSearchInput}
       setIsFocused={setIsFocused}
       searchTerm={searchTerm}
       locale={locale}
     />
   ) : (
     <RecentContent
-      setSearchTerm={setSearchTerm}
+      setResetSearchInput={setResetSearchInput}
       setIsFocused={setIsFocused}
       locale={locale}
     />
