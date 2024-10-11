@@ -1,3 +1,4 @@
+import SettingsPanel from '@/components/navigation/panels/settings-panel'
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
@@ -63,7 +64,7 @@ export function usePageComponent() {
       return 'CART PANEL'
 
     case paths.settings:
-      return 'SETTINGS PANEL'
+      return <SettingsPanel />
 
     default:
       return 'DEFAULT PANEL'

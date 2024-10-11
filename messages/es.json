@@ -1,4 +1,12 @@
 {
+  "AuthButtons": {
+    "signIn": "Acceder",
+    "signUp": "Registrarse"
+  },
+  "Languages": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
   "SidebarLayout": {
     "home": "Inicio",
     "events": "Eventos",
@@ -15,9 +23,5 @@
     "recommended": "Recomendado",
     "article": "Artículo",
     "result": "Resultado"
-  },
-  "AuthButtons": {
-    "signIn": "Acceder",
-    "signUp": "Registrarse"
   }
 }
