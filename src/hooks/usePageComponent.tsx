@@ -1,4 +1,4 @@
-import SettingsPanel from '@/components/navigation/panels/settings-panel'
+import SettingsPanel from '@/components/configuration/panels/settings-panel'
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
