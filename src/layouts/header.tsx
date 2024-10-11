@@ -44,6 +44,11 @@ export default function Header() {
       setSearchTerm('')
     }
   }
+  // Reset entry
+  const handleSearchInput = () => {
+      // crea una una función para limpiar el valor del input
+      setSearchTerm('')
+  }
 
   return (
     <header>
@@ -52,10 +57,10 @@ export default function Header() {
         <Searcher onSearch={handleSearch} onFocus={handleFocus} />
         {isFocused && searchTerm ? (
           // Bring the search content
-          <ReturnContent setIsFocused={setIsFocused} searchTerm={searchTerm} locale={locale} />
+          <ReturnContent setIsFocused={setIsFocused} setSearchTerm={setSearchTerm} searchTerm={searchTerm} locale={locale} />
         ) : isFocused ? (
           // Bring recent content
-          <ReturnContent setIsFocused={setIsFocused} searchTerm={''} locale={locale} />
+          <ReturnContent setIsFocused={setIsFocused} setSearchTerm={setSearchTerm} searchTerm={''} locale={locale} />
         ) : (
           <Pages />
         )}
