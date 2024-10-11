@@ -2,6 +2,7 @@ import Cart from '@/components/e-commerce/cart'
 import Messages from '@/components/messages/chats'
 import Notifications from '@/components/messages/notifications'
 import Post from '@/components/feeds/post'
+import Settings from '@/components/configuration/settings'
 import styles from '@/styles/components/aside-sidebar.module.css'
 
 export default function Panel() {
@@ -12,6 +13,7 @@ export default function Panel() {
         <Messages />
         <Notifications />
         <Cart />
+        <Settings />
       </ul>
     </nav>
   )
