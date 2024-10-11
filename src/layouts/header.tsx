@@ -31,9 +31,8 @@ export default function Header() {
   useEffect(() => {
     if (resetSearchInput) {
       setSearchTerm('')
-      setResetSearchInput(false)
     }
-  }, [resetSearchInput, setResetSearchInput])
+  }, [resetSearchInput])
 
   // Clicks inside the Searcher and Result component do not fire the handleClickOutside event
   useEffect(() => {

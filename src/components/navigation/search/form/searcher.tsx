@@ -1,5 +1,5 @@
 import '@/styles/components/searcher.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 
 interface SearcherProps {
@@ -11,6 +11,7 @@ interface SearcherProps {
 
 export default function Searcher({
   resetSearchInput,
+  setResetSearchInput,
   onSearch,
   onFocus
 }: SearcherProps) {
@@ -25,6 +26,13 @@ export default function Searcher({
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
   }
+
+  useEffect(() => {
+    if (resetSearchInput) {
+      setSearchTerm('')
+      setResetSearchInput(false)
+    }
+  }, [resetSearchInput, setResetSearchInput])
 
   return (
     <form className='form' onSubmit={handleSubmit}>
