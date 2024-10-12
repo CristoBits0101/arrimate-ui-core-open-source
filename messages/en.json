@@ -26,6 +26,11 @@
       "title": "Language",
       "english": "English",
       "spanish": "Spanish"
+    },
+    "themes": {
+      "title": "Themes",
+      "dark": "Dark mode",
+      "light": "Light mode"
     }
   }
 }

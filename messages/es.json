@@ -25,6 +25,11 @@
       "title": "Idiomas",
       "english": "Inglés",
       "spanish": "Español"
+    },
+    "themes": {
+      "title": "Temas",
+      "dark": "Modo oscuro",
+      "light": "Modo claro"
     }
   }
 }
