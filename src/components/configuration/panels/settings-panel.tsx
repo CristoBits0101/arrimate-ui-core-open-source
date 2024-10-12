@@ -5,7 +5,7 @@ import ModeSelector from '../themes/mode-selector'
 
 export default function SettingsPanel() {
   return (
-    <div className='w-full h-full flex flex-col gap-4'>
+    <div className='w-full h-full flex flex-col gap-5'>
       <LanguageSelector />
       <ModeSelector />
     </div>

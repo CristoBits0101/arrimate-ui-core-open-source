@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { roboto } from '@/lib/fonts'
+import { op } from '@/lib/fonts'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
@@ -14,7 +14,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>{/* <link rel='icon' href='/favicon.ico' /> */}</head>
-      <body className={roboto.className}>
+      <body className={op.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
