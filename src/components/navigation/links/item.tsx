@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePageIcon } from '@/hooks/usePageIcon'
+import { usePageIcon } from '@/hooks/useIcon'
 import { useLocale, useTranslations } from 'next-intl'
 
 interface NavigationItemProps {
