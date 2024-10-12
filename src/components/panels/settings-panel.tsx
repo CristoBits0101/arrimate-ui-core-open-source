@@ -1,6 +1,6 @@
 'use client'
 
-import LanguageSelector from '@/components/configuration/translate/language-selector'
+import LanguageSelector from '@/components/configuration/languages/language-selector'
 
 export default function SettingsPanel() {
   return (
