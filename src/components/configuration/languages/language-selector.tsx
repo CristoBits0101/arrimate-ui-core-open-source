@@ -21,7 +21,7 @@ const LanguageSelector = () => {
   // Handle change event for language selection
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     // We ensure that the value is of a supported type
-    const newLocale = e.target.value as 'en' | 'es' 
+    const newLocale = e.target.value as 'en' | 'es'
     if (supportedLocales.includes(newLocale)) {
       // Replace the current location with the new one
       const newPath = path.replace(`/${locale}`, `/${newLocale}`)
@@ -33,14 +33,14 @@ const LanguageSelector = () => {
   return (
     <section className='w-full h-fit flex flex-col gap-2'>
       <h2 className='flex flex-col justify-center font-medium'>
-        🌐 {t('language')}
+        {t('language')}
       </h2>
       <select
-          className='w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none'
-          // Detect when the language is changed
-          onChange={handleChange}
-          // Select the current location as the default value
-          value={locale}
+        className='w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none'
+        // Detect when the language is changed
+        onChange={handleChange}
+        // Select the current location as the default value
+        value={locale}
       >
         <option value='en'>English (English)</option>
         <option value='es'>Español (Spanish)</option>
