@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+import language from '@/assets/icons/settings/language.svg'
 import { useRouter, usePathname } from '@/i18n/routing'
 import { useTranslations, useLocale } from 'next-intl'
 import { ChangeEvent } from 'react'
@@ -31,12 +33,15 @@ const LanguageSelector = () => {
   }
 
   return (
-    <section className='w-full h-fit flex flex-col gap-2'>
-      <h2 className='flex flex-col justify-center font-medium'>
-        {t('language.title')}
-      </h2>
+    <section className='text-sm w-full h-fit flex flex-col gap-2'>
+      <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
+        <Image src={language} alt='Languages' className='w-5' />
+        <h2 className='font-semibold flex flex-row items-center'>
+          {t('language.title')}
+        </h2>
+      </div>
       <select
-        className='w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
+        className='rounded-lg font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
         // Detect when the language is changed
         onChange={handleChange}
         // Select the current location as the default value
