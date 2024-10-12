@@ -36,14 +36,14 @@ const LanguageSelector = () => {
         {t('language')}
       </h2>
       <select
-        className='w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none'
+        className='w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
         // Detect when the language is changed
         onChange={handleChange}
         // Select the current location as the default value
         value={locale}
       >
-        <option value='en'>English (English)</option>
-        <option value='es'>Español (Spanish)</option>
+        <option value='en'>{t('english')}</option>
+        <option value='es'>{t('spanish')}</option>
       </select>
     </section>
   )

@@ -22,6 +22,8 @@
     "result": "Result"
   },
   "SettingsPanel": {
-    "language": "Language"
+    "english": "English",
+    "language": "Language",
+    "spanish": "Spanish"
   }
 }
