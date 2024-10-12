@@ -1,7 +1,7 @@
 import Cart from '@/components/e-commerce/cart'
 import Messages from '@/components/messages/chats'
 import Notifications from '@/components/messages/notifications'
-import Post from '@/components/feeds/post'
+import Post from '@/components/feeds/links/post'
 import Settings from '@/components/configuration/links/settings'
 import styles from '@/styles/components/aside-sidebar.module.css'
 
