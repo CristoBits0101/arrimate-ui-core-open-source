@@ -28,6 +28,7 @@
     },
     "themes": {
       "title": "Temas",
+      "system": "Sistema predeterminado",
       "dark": "Modo oscuro",
       "light": "Modo claro"
     }

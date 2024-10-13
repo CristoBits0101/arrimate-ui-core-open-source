@@ -64,7 +64,8 @@ export default function ModeSelector() {
       mediaQuery.addEventListener('change', handleSystemThemeChange)
 
       // Clear effect
-      return () => mediaQuery.removeEventListener('change', handleSystemThemeChange)
+      return () =>
+        mediaQuery.removeEventListener('change', handleSystemThemeChange)
     }
   }, [])
 
@@ -81,9 +82,9 @@ export default function ModeSelector() {
         onChange={handleThemeChange}
         value={theme}
       >
-        <option value='system'>{t('themes.system')}</option>
         <option value='dark'>{t('themes.dark')}</option>
         <option value='light'>{t('themes.light')}</option>
+        <option value='system'>{t('themes.system')}</option>
       </select>
     </section>
   )

@@ -29,6 +29,7 @@
     },
     "themes": {
       "title": "Themes",
+      "system": "Default system",
       "dark": "Dark mode",
       "light": "Light mode"
     }
