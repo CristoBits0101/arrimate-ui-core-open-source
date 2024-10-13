@@ -1,7 +1,7 @@
 'use client'
 
-import LanguageSelector from '@/components/configuration/languages/language-selector'
-import ModeSelector from '../themes/mode-selector'
+import LanguageSelector from '@/components/configuration/options/language-selector'
+import ModeSelector from '../options/mode-selector'
 
 export default function SettingsPanel() {
   return (
