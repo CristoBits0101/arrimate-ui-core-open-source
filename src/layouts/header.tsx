@@ -20,7 +20,7 @@ export default function Header() {
   } = useSearch()
 
   return (
-    <header>
+    <header className='col-span-1'>
       <Logo />
       <div id='navigation-container' ref={searchContainerRef}>
         <Searcher

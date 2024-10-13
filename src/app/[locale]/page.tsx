@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>HOME PAGE</main>
+      <main className='col-span-1'>HOME PAGE</main>
       <Aside />
     </>
   )

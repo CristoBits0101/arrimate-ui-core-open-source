@@ -7,7 +7,7 @@ import { usePageComponent } from '@/hooks/useComponent'
 export default function Aside() {
   const component = usePageComponent()
   return (
-    <aside className='dark:bg-[#1E1F22]'>
+    <aside className='col-span-1'>
       <AuthButtons />
       <Sidebar />
       {component}

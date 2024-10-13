@@ -7,7 +7,7 @@ export const ds = Dancing_Script({
   weight: ['400', '500', '700']
 })
 
-export const op = Open_Sans({
+export const os = Open_Sans({
   display: 'swap',
   subsets: ['latin'],
   weight: ['400', '500', '700']
