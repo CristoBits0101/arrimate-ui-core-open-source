@@ -4,8 +4,8 @@
 import SignIn from '@/actions/sign-in'
 
 // Alerts
-import FormError from '@/components/auth/alerts/form-error'
-import FormSuccess from '@/components/auth/alerts/form-success'
+import FormError from '@/components/auth/alerts/alert-errors'
+import FormSuccess from '@/components/auth/alerts/alert-success'
 
 // Buttons
 import SubmitButton from '@/components/auth/buttons/submit-button'
