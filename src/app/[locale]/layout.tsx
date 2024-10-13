@@ -14,7 +14,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>{/* <link rel='icon' href='/favicon.ico' /> */}</head>
-      <body className={`${op.className} dark:bg-[#0A0F15] dark:text-[#ffffff]`}>
+      <body className={`${op.className} dark:bg-[#1D0F0F] dark:text-[#ffffff]`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

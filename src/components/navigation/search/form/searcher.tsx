@@ -35,16 +35,24 @@ export default function Searcher({
   }, [resetSearchInput, setResetSearchInput])
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className='form flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-[2.875rem]'
+    >
       <div>
         <input
+          className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#bfbdc050] h-1/2 outline-none p-4 w-full border-solid'
           placeholder={t('placeholder')}
           value={resetSearchInput ? '' : searchTerm}
           onChange={handleChange}
           onFocus={onFocus}
         />
-        <button className='search' type='submit'>
+        <button
+          className='search bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem]'
+          type='submit'
+        >
           <svg
+            className=''
             xmlns='http://www.w3.org/2000/svg'
             height='24px'
             viewBox='0 -960 960 960'

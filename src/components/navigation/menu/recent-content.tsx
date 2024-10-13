@@ -43,7 +43,7 @@ export default function RecentContent({
   return (
     <nav className='rounded-3xl mt-2 p-4 text-sm border-[0.094rem] border-solid border-[#bfbdc050] shadow-sm shadow-[#F4F4F4] w-full h-fit flex flex-col gap-2'>
       <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
-        <h2>{t('recent')}</h2>
+        <h2 className='dark:text-white'>{t('recent')}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
           <button onClick={handleClearSearch}>
             <Image className='w-4' src={clear} alt='Close' />
@@ -58,7 +58,7 @@ export default function RecentContent({
           <li className='truncate' key={item.id}>
             <Link
               href={`/${locale}/item/${item.id}`}
-              className='truncate flex gap-2 items-center'
+              className='truncate flex gap-2 items-center dark:text-white'
             >
               <Image className='w-5' src={history} alt='History' /> {item.title}
             </Link>
