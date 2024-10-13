@@ -26,18 +26,18 @@ export default function NavigationItem({
       {route === 'home' ? (
         <Link className='truncate flex items-center h-full w-full gap-4' href={`/${locale}`}>
           {isActive ? (
-            <Image className='w-7 h-7 object-contain aspect-square' src={blackIcon} alt={route} />
+            <Image className='w-8 h-8 object-contain aspect-square' src={blackIcon} alt={route} />
           ) : (
-            <Image className='w-7 h-7 object-contain aspect-square' src={whiteIcon} alt={route} />
+            <Image className='w-8 h-8 object-contain aspect-square' src={whiteIcon} alt={route} />
           )}
           {textKey && t(textKey)}
         </Link>
       ) : (
         <Link className='truncate flex items-center h-full w-full gap-4' href={`/${locale}/${route}`}>
           {isActive ? (
-            <Image className='w-7 h-7 object-contain aspect-square' src={blackIcon} alt={route} />
+            <Image className='w-8 h-8 object-contain aspect-square' src={blackIcon} alt={route} />
           ) : (
-            <Image className='w-7 h-7 object-contain aspect-square' src={whiteIcon} alt={route} />
+            <Image className='w-8 h-8 object-contain aspect-square' src={whiteIcon} alt={route} />
           )}
           {textKey && t(textKey)}
         </Link>
