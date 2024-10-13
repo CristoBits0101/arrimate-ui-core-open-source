@@ -7,7 +7,7 @@ import Reviews from '@/components/feeds/links/reviews-link.'
 import Shorts from '@/components/streaming/links/shorts'
 import Videos from '@/components/streaming/links/videos'
 
-export default function Pages() {
+export default function NavbarMenu() {
   return (
     <nav className='flex h-full justify-center w-full mt-6'>
       <ul className='flex flex-col h-fit w-fit gap-2'>
