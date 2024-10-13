@@ -22,9 +22,9 @@ export default function NavigationItem({
   const t = useTranslations('SidebarLayout')
 
   return (
-    <li className='flex items-center justify-center rounded-[2.5rem] w-full h-full pt-2 pb-2 pr-8 pl-8 hover:cursor-pointer transition-colors duration-300'>
+    <li className='truncate flex items-center justify-center w-fit h-fit pt-2 pb-2 hover:cursor-pointer'>
       {route === 'home' ? (
-        <Link className='truncate flex items-center justify-center h-fit w-fit' href={`/${locale}`}>
+        <Link className='flex items-center justify-center h-fit w-fit' href={`/${locale}`}>
           {isActive ? (
             <Image className='flex justify-center items-center w-8 h-8 object-contain aspect-square' src={blackIcon} alt={route} />
           ) : (
@@ -33,7 +33,7 @@ export default function NavigationItem({
           {textKey && t(textKey)}
         </Link>
       ) : (
-        <Link className='truncate flex items-center justify-center h-fit w-fit' href={`/${locale}`}>
+        <Link className='flex items-center justify-center h-fit w-fit' href={`/${locale}`}>
           {isActive ? (
             <Image className='flex justify-center items-center w-8 h-8 object-contain aspect-square' src={blackIcon} alt={route} />
           ) : (
