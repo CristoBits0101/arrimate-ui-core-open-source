@@ -35,7 +35,7 @@
 .form div {
   align-items: center;
   background-color: #f4f4f4;
-  border: 0.094rem solid #bfbdc050;
+  border: 0.05rem solid #bfbdc050;
   border-radius: 5rem;
   display: flex;
   height: 100%;
@@ -62,7 +62,7 @@
   appearance: textfield;
   background: transparent;
   border: none;
-  border-right: 0.094rem solid #bfbdc050;
+  border-right: 0.05rem solid #bfbdc050;
   height: 50%;
   min-width: 5rem;
   outline: none;

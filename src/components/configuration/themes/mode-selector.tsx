@@ -12,7 +12,7 @@ export default function ModeSelector() {
           {t('themes.title')}
         </h2>
       </div>
-      <select className='rounded-lg font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.094rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'>
+      <select className='rounded-lg font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.05rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'>
         <option value='dark'>{t('themes.dark')}</option>
         <option value='light'>{t('themes.light')}</option>
       </select>
