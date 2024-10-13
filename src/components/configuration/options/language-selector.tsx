@@ -47,7 +47,9 @@ const LanguageSelector = () => {
         // Select the current location as the default value
         value={locale}
       >
-        <option value='en'>{t('language.english')}</option>
+        <option value='en'>
+          {t('language.english')}
+          </option>
         <option value='es'>{t('language.spanish')}</option>
       </select>
     </section>

@@ -6,12 +6,11 @@ import Products from '@/components/e-commerce/links/products-link'
 import Reviews from '@/components/feeds/links/reviews-link.'
 import Shorts from '@/components/streaming/links/shorts'
 import Videos from '@/components/streaming/links/videos'
-import styles from '@/styles/components/header-navbar.module.css'
 
 export default function Pages() {
   return (
-    <nav className={`${styles.navbar} mt-6`}>
-      <ul>
+    <nav className='flex h-full justify-center w-full mt-6'>
+      <ul className='flex flex-col h-fit w-fit gap-2'>
         <Home />
         <Events />
         <Products />
