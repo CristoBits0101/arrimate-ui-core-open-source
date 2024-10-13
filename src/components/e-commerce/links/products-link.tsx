@@ -1,6 +1,6 @@
 import productsBlackSVG from '@/assets/icons/navbar/black/products.svg'
 import productsWhiteSVG from '@/assets/icons/navbar/white/products.svg'
-import NavigationItem from '@/components/navigation/links/navbar-item'
+import NavigationItem from '@/components/navigation/links/navbar-link'
 
 export default function Products() {
   return (
