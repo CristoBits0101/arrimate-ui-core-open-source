@@ -1,4 +1,4 @@
-import Settings from '@/components/configuration/links/settings'
+import Settings from '@/components/configuration/links/settings-link'
 import Cart from '@/components/e-commerce/links/cart-link'
 import Post from '@/components/feeds/links/post-link'
 import Chats from '@/components/messages/links/chats-link'

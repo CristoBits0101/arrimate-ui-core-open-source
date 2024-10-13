@@ -11,7 +11,7 @@ interface NavigationItemProps {
   textKey?: string
 }
 
-export default function NavigationItem({
+export default function SidebarItem({
   route,
   blackIcon,
   whiteIcon,
@@ -21,27 +21,21 @@ export default function NavigationItem({
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
 
+  const href = route === 'home' ? `/${locale}` : `/${locale}/${route}`
+
   return (
-    <li className='truncate flex items-center justify-center w-fit h-fit pt-2 pb-2 hover:cursor-pointer'>
-      {route === 'home' ? (
-        <Link className='flex items-center justify-center h-fit w-fit' href={`/${locale}`}>
-          {isActive ? (
-            <Image className='flex justify-center items-center w-8 h-8 object-contain aspect-square' src={blackIcon} alt={route} />
-          ) : (
-            <Image className='flex justify-center items-center w-8 h-8 object-contain aspect-square' src={whiteIcon} alt={route} />
-          )}
-          {textKey && t(textKey)}
-        </Link>
-      ) : (
-        <Link className='flex items-center justify-center h-fit w-fit' href={`/${locale}`}>
-          {isActive ? (
-            <Image className='flex justify-center items-center w-8 h-8 object-contain aspect-square' src={blackIcon} alt={route} />
-          ) : (
-            <Image className='flex justify-center items-center w-8 h-8 object-contain aspect-square' src={whiteIcon} alt={route} />
-          )}
-          {textKey && t(textKey)}
-        </Link>
-      )}
+    <li className='flex items-center justify-center w-fit h-fit pt-2 pb-2 hover:cursor-pointer'>
+      <Link
+        className='flex items-center justify-center h-fit w-fit gap-4'
+        href={href}
+      >
+        <Image
+          className='w-7 h-7 object-contain aspect-square'
+          src={isActive ? blackIcon : whiteIcon}
+          alt={route}
+        />
+        {textKey && t(textKey)}
+      </Link>
     </li>
   )
 }
