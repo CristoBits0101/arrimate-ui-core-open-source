@@ -7,7 +7,7 @@ import Settings from '@/components/configuration/links/settings'
 export default function Panel() {
   return (
     <nav className='flex w-full items-center h-fit'>
-      <ul className='flex flex-row justify-between w-full h-[2.875rem]'>
+      <ul className='flex items-center flex-row justify-between w-full h-11'>
         <Post />
         <Messages />
         <Notifications />

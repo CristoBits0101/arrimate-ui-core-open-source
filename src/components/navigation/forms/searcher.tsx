@@ -37,7 +37,7 @@ export default function Searcher({
   return (
     <form
       onSubmit={handleSubmit}
-      className='form flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-[2.875rem]'
+      className='form flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11'
     >
       <div>
         <input

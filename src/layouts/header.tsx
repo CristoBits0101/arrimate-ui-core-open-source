@@ -2,8 +2,8 @@
 
 import Logo from '@/components/branding/application-logo'
 import Pages from '@/components/navigation/menu/header-navbar'
-import ReturnContent from '@/components/navigation/search/rendering/return-content'
-import Searcher from '@/components/navigation/search/form/searcher'
+import ReturnContent from '@/components/navigation/rendering/return-content'
+import Searcher from '@/components/navigation/forms/searcher'
 import { useSearch } from '@/hooks/useSearch'
 
 export default function Header() {
