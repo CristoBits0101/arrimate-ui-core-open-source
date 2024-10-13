@@ -22,7 +22,7 @@ export default function RedirectButton({
     >
       <Link className='text-base' href={href}>
         {label}
-        <span className='mx-1'> </span> {/* Espacio en un span vacío */}
+        <span className='mx-1'> </span>
         <span className='font-medium text-blue-600/75'>{page}</span>
       </Link>
     </Button>

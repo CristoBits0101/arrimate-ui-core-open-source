@@ -8,7 +8,7 @@ import FormError from '@/components/auth/alerts/alert-errors'
 import FormSuccess from '@/components/auth/alerts/alert-success'
 
 // Buttons
-import SubmitButton from '@/components/auth/buttons/submit-button'
+import SubmitButton from '@/components/auth/buttons/send/submit-form-button'
 
 // Cards
 import CardWrapper from '@/components/auth/cards/card-wrapper'

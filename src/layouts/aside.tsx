@@ -1,6 +1,6 @@
 'use client'
 
-import AuthButtons from '@/components/auth/buttons/auth-buttons'
+import AuthButtons from '@/components/auth/buttons/redirect/redirect-auth-buttons'
 import Sidebar from '@/components/navigation/menu/aside-sidebar'
 import { usePageComponent } from '@/hooks/useComponent'
 

@@ -1,8 +1,8 @@
 'use client'
 
 import Header from '@/components/auth/cards/card-header'
-import SocialButtons from '@/components/auth/buttons/social-buttons'
-import RedirectButton from '@/components/auth/buttons/redirect-button'
+import SocialButtons from '@/components/auth/buttons/connect/social-buttons'
+import RedirectButton from '@/components/auth/buttons/redirect/redirect-page-button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 interface CardWrapperProps {
