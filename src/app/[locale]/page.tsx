@@ -1,6 +1,6 @@
 'use client'
 
-import CarouselHome from '@/components/feeds/carousels/carousel-home'
+import StoriesCarousel from '@/components/feeds/carousels/stories-carousel'
 import Header from '@/layouts/header'
 import Aside from '@/layouts/aside'
 import '@/styles/globals.css'
@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       <Header />
       <main className='col-span-1'>
-        <CarouselHome />
+        <StoriesCarousel />
       </main>
       <Aside />
     </>
