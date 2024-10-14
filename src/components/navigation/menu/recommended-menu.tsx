@@ -2,9 +2,9 @@
 
 import clear from '@/assets/icons/searcher/clear.svg'
 import close from '@/assets/icons/searcher/close.svg'
-import search from '@/assets/icons/searcher/search.svg'
 import Image from 'next/image'
-import Link from 'next/link'
+import searchIcon from '@/assets/icons/searcher/search.svg'
+import SearchLink from '@/components/navigation/links/search-link'
 import { useTranslations } from 'next-intl'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
@@ -17,12 +17,12 @@ interface SearchContentProps {
   locale: string
 }
 
-export default function SearchContent({
+export default function RecommendedMenu({
   setResetSearchInput,
-  setIsFocused,
-  searchTerm,
-  locale
-}: SearchContentProps) {
+  setIsFocused
+}: // searchTerm,
+// locale
+SearchContentProps) {
   const t = useTranslations('Searcher')
   const handleFocus = () => {
     setIsFocused(false)
@@ -31,8 +31,8 @@ export default function SearchContent({
     setResetSearchInput(true)
   }
   return (
-    <nav className='rounded-3xl mt-2 p-4 text-sm border-[0.05rem] border-solid border-[#bfbdc050] shadow-sm shadow-[#edeced] w-full h-fit flex flex-col gap-2'>
-      <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
+    <nav className='rounded-3xl mt-2 pt-4 pb-3 text-sm border-[0.05rem] border-solid border-[#bfbdc050] shadow shadow-[#edeced] w-full h-fit flex flex-col gap-3'>
+      <div className='font-medium pr-4 pl-4 w-full h-fit flex justify-between items-center'>
         <h2>{t('recommended')}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
           <button onClick={handleClearSearch}>
@@ -43,18 +43,8 @@ export default function SearchContent({
           </button>
         </div>
       </div>
-      <ul className='flex flex-col gap-2 w-full h-fit'>
-        {Array.from({ length: 9 }).map((_, index) => (
-          <li className='truncate' key={index}>
-            <Link
-              href={`/${locale}/search?q=${encodeURIComponent(searchTerm)}`}
-              className='truncate flex gap-2 items-center'
-            >
-              <Image className='w-5' src={search} alt='Search' /> Resultado{' '}
-              {index + 1}
-            </Link>
-          </li>
-        ))}
+      <ul className='flex flex-col w-full h-fit'>
+        <SearchLink iconSrc={searchIcon} />
       </ul>
     </nav>
   )
