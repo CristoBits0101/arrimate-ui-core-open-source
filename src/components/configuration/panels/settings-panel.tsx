@@ -5,9 +5,9 @@ import ModeSelector from '@/components/configuration/options/mode-selector'
 
 export default function SettingsPanel() {
   return (
-    <section className='w-full h-full flex flex-col gap-5'>
+    <div className='w-full h-full flex flex-col gap-5'>
       <LanguageSelector />
       <ModeSelector />
-    </section>
+    </div>
   )
 }
