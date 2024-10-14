@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className='col-span-1'>
       <Logo />
-      <div className='flex flex-col h-fit w-100%' ref={searchContainerRef}>
+      <div className='flex flex-col h-full w-full' ref={searchContainerRef}>
         <Searcher
           resetSearchInput={resetSearchInput}
           setResetSearchInput={setResetSearchInput}

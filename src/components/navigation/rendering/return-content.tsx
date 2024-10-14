@@ -26,7 +26,6 @@ export default function ReturnContent({
     />
   ) : (
     <RecentContent
-      setResetSearchInput={setResetSearchInput}
       setIsFocused={setIsFocused}
       locale={locale}
     />
