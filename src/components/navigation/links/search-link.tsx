@@ -19,6 +19,7 @@ export default function SearchLink({iconSrc}: SearchLinkProps) {
         className='truncate flex gap-2 items-center dark:text-white'
       >
         <Image className='w-5' src={iconSrc} alt='Search' />
+        Data
       </Link>
     </li>
   )
