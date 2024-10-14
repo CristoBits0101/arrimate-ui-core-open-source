@@ -34,7 +34,7 @@ export default function RecentContent({
     setIsFocused(false)
   }
   return (
-    <nav className='rounded-3xl mt-2 p-4 text-sm border-[0.05rem] border-solid border-[#bfbdc050] shadow-sm shadow-[#F0F0FE] w-full h-fit flex flex-col gap-2'>
+    <nav className='rounded-3xl mt-2 p-4 text-sm border-[0.05rem] border-solid border-[#bfbdc050] shadow-sm shadow-[#edeced] w-full h-fit flex flex-col gap-2'>
       <div className='font-medium mb-2 w-full h-fit flex justify-between items-center'>
         <h2 className='dark:text-white'>{t('recent')}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
