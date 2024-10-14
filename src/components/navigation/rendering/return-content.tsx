@@ -1,5 +1,5 @@
 import RecentContent from '@/components/navigation/menu/recent-menu'
-import SearchContent from '@/components/navigation/menu/search-menu'
+import RecommendedContent from '@/components/navigation/menu/recommended-menu'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
 type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
@@ -18,7 +18,7 @@ export default function ReturnContent({
   setResetSearchInput
 }: ReturnContentProps) {
   return searchTerm ? (
-    <SearchContent
+    <RecommendedContent
       setResetSearchInput={setResetSearchInput}
       setIsFocused={setIsFocused}
       searchTerm={searchTerm}
