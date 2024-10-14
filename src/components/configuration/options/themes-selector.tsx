@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import language from '@/assets/icons/settings/themes.svg'
+import themes from '@/assets/icons/settings/themes.svg'
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
@@ -72,7 +72,7 @@ export default function ModeSelector() {
   return (
     <section className='text-sm w-full h-fit flex flex-col gap-2'>
       <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
-        <Image src={language} alt='Languages' className='w-5' />
+        <Image src={themes} alt='Languages' className='w-5' />
         <h2 className='font-semibold flex flex-row items-center'>
           {t('themes.title')}
         </h2>

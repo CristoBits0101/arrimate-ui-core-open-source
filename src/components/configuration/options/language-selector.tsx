@@ -41,7 +41,7 @@ const LanguageSelector = () => {
         </h2>
       </div>
       <select
-        className='font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.05rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
+        className='appearance-none font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.05rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
         // Detect when the language is changed
         onChange={handleChange}
         // Select the current location as the default value
