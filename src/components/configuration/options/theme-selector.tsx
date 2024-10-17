@@ -70,7 +70,7 @@ export default function ThemeSelector() {
   }, [])
 
   return (
-    <section className='text-sm w-full h-fit flex flex-col gap-2'>
+    <section className='text-sm w-full h-fit flex flex-col gap-2 items-center'>
       <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
         <Image src={themes} alt='Languages' className='w-5' />
         <h2 className='font-semibold flex flex-row items-center'>
@@ -78,7 +78,7 @@ export default function ThemeSelector() {
         </h2>
       </div>
       <select
-        className='font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.05rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
+        className='appearance-none font-normal w-full h-fit pl-1 pr-1 pt-2 pb-2 border-[0.05rem] border-solid border-[#bfbdc050] outline-none bg-[#F4F4F4]'
         onChange={handleThemeChange}
         value={theme}
       >
