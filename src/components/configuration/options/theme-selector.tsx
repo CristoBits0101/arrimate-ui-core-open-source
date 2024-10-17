@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl'
 // Allowed Themes
 type Theme = 'system' | 'dark' | 'light'
 
-export default function ModeSelector() {
+export default function ThemeSelector() {
   const t = useTranslations('SettingsPanel')
   const [theme, setTheme] = useState<Theme>('system')
 
