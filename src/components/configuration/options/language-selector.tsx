@@ -36,7 +36,7 @@ const LanguageSelector = () => {
 
   return (
     <details className='group'>
-      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer mb-2'>
+      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer bg-teal-300'>
         <h2 className='flex gap-2'>
           <Image
             src={language}
@@ -46,7 +46,7 @@ const LanguageSelector = () => {
           {t('language.title')}
         </h2>
       </summary>
-      <article className='text-sm flex flex-col gap-1'>
+      <article className='text-sm flex flex-col bg-red-400'>
         {/* English */}
         <p
           onClick={(e) => handleLanguageChange(e, 'en')}

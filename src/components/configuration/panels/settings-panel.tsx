@@ -7,7 +7,7 @@ import password from '@/assets/icons/settings/password.svg'
 
 export default function SettingsPanel() {
   return (
-    <section className='w-full h-full flex flex-col gap-3 p-6 rounded-3xl border-[0.05rem] border-[#bfbdc050] border-solid'>
+    <section className='w-full h-full flex flex-col gap-6 p-6 rounded-3xl border-[0.05rem] border-[#bfbdc050] border-solid'>
       {/*  */}
       <LanguageSelector />
       {/*  */}

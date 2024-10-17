@@ -70,13 +70,13 @@ export default function ThemeSelector() {
 
   return (
     <details className='group'>
-      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer mb-2'>
+      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer'>
         <h2 className='flex gap-2'>
           <Image src={themes} alt='Themes' className='w-5 h-5 aspect-square' />
           {t('themes.title')}
         </h2>
       </summary>
-      <article className='text-sm flex flex-col gap-1'>
+      <article className='text-sm flex flex-col'>
         {/* Option for dark theme */}
         <p
           onClick={(e) => handleThemeChange(e, 'dark')}
