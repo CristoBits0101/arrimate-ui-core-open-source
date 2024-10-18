@@ -4,69 +4,50 @@ import Image from 'next/image'
 import language from '@/assets/icons/settings/language.svg'
 import { useRouter, usePathname } from '@/i18n/routing'
 import { useTranslations, useLocale } from 'next-intl'
-import { MouseEvent } from 'react'
+import { ChangeEvent } from 'react'
 
 const LanguageSelector = () => {
-  // To modify the active route
+  // Para modificar la ruta activa
   const router = useRouter()
-  // Returns: /page
+  // Devuelve: /page
   const path = usePathname()
   console.log(path)
-  // Returns: en or es ...
+  // Devuelve: en o es ...
   const locale = useLocale()
-  // Panel translations
+  // Traducciones del panel
   const t = useTranslations('SettingsPanel')
 
-  // Supported languages
+  // Idiomas soportados
   const supportedLocales: Array<'en' | 'es'> = ['en', 'es']
 
-  // Handle language change event
-  const handleLanguageChange = (
-    e: MouseEvent<HTMLParagraphElement>,
-    newLocale: 'en' | 'es'
-  ) => {
-    e.preventDefault()
+  // Maneja el evento de cambio para la selección de idioma
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    // Aseguramos que el valor es de un tipo soportado
+    const newLocale = e.target.value as 'en' | 'es'
     if (supportedLocales.includes(newLocale)) {
-      // Replace the current location with the new one
+      // Reemplazamos la ruta actual con la nueva
       const newPath = path.replace(`/${locale}`, `/${newLocale}`)
-      // Redirect with the new location
+      // Redirigimos con la nueva ruta
       router.push(newPath, { locale: newLocale })
     }
   }
 
   return (
-    <details name='group'>
-      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer'>
-        <h2 className='flex gap-2'>
-          <Image
-            src={language}
-            alt='Languages'
-            className='w-5 h-5 aspect-square'
-          />
-          {t('language.title')}
-        </h2>
-      </summary>
-      <article className='w-full h-fit bg-white shadow-md p-2 border rounded'>
-        {/* Option for English */}
-        <p
-          onClick={(e) => handleLanguageChange(e, 'en')}
-          className={`cursor-pointer p-2 hover:bg-gray-200 ${
-            locale === 'en' ? 'font-bold' : ''
-          }`}
+    <section className='text-sm w-full h-fit flex flex-col gap-2 items-center'>
+      <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
+        <Image src={language} alt='Languages' className='w-5' />
+        <select
+          className='appearance-none font-semibold flex flex-row items-center outline-none bg-transparent cursor-pointer'
+          // Detecta cuando el idioma cambia
+          onChange={handleChange}
+          // Selecciona el idioma actual como valor predeterminado
+          value={locale}
         >
-          {t('language.english')}
-        </p>
-        {/* Option for Spanish */}
-        <p
-          onClick={(e) => handleLanguageChange(e, 'es')}
-          className={`cursor-pointer p-2 hover:bg-gray-200 ${
-            locale === 'es' ? 'font-bold' : ''
-          }`}
-        >
-          {t('language.spanish')}
-        </p>
-      </article>
-    </details>
+          <option value='en'>{t('language.english')}</option>
+          <option value='es'>{t('language.spanish')}</option>
+        </select>
+      </div>
+    </section>
   )
 }
 

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import themes from '@/assets/icons/settings/themes.svg'
-import { useEffect, useState, MouseEvent } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
 // Allowed Themes
@@ -12,7 +12,7 @@ export default function ThemeSelector() {
   const t = useTranslations('SettingsPanel')
   const [theme, setTheme] = useState<Theme>('system')
 
-  // Function to apply the selected theme
+  // Función para cambiar el tema
   const applyTheme = (selectedTheme: Theme): void => {
     const root = document.documentElement
     switch (selectedTheme) {
@@ -23,19 +23,18 @@ export default function ThemeSelector() {
         root.setAttribute('data-mode', 'light')
         break
       case 'system':
+        // Eliminar preferencias
         root.removeAttribute('data-mode')
+        // Aplicar preferencias del sistema
         window.matchMedia('(prefers-color-scheme: dark)').matches
           ? root.setAttribute('data-mode', 'dark')
           : root.setAttribute('data-mode', 'light')
     }
   }
 
-  // Handle theme change when an option is clicked
-  const handleThemeChange = (
-    e: MouseEvent<HTMLParagraphElement>,
-    selectedTheme: Theme
-  ): void => {
-    e.preventDefault()
+  // Manejar el cambio de selección del usuario
+  const handleThemeChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    const selectedTheme = e.target.value as Theme
     setTheme(selectedTheme)
     selectedTheme === 'system'
       ? localStorage.removeItem('theme')
@@ -43,8 +42,9 @@ export default function ThemeSelector() {
     applyTheme(selectedTheme)
   }
 
-  // Setup the initial theme when the page loads
+  // Configurar el tema inicial al cargar la página
   useEffect(() => {
+    // Verificar si el entorno es el navegador
     if (typeof window !== 'undefined') {
       const storedTheme = localStorage.getItem('theme') as Theme | null
       if (storedTheme) {
@@ -55,7 +55,7 @@ export default function ThemeSelector() {
         applyTheme('system')
       }
 
-      // Listen for system theme changes
+      // Escuchar cambios en las preferencias de color del sistema
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
       const handleSystemThemeChange = (): void => {
         if (!localStorage.getItem('theme')) applyTheme('system')
@@ -63,48 +63,26 @@ export default function ThemeSelector() {
 
       mediaQuery.addEventListener('change', handleSystemThemeChange)
 
+      // Clear effect
       return () =>
         mediaQuery.removeEventListener('change', handleSystemThemeChange)
     }
   }, [])
 
   return (
-    <details name='group'>
-      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer'>
-        <h2 className='flex gap-2'>
-          <Image src={themes} alt='Themes' className='w-5 h-5 aspect-square' />
-          {t('themes.title')}
-        </h2>
-      </summary>
-      <article className='w-full h-fit bg-white shadow-md p-2 border rounded'>
-        {/* Option for dark theme */}
-        <p
-          onClick={(e) => handleThemeChange(e, 'dark')}
-          className={`cursor-pointer p-2 hover:bg-gray-200 ${
-            theme === 'dark' ? 'font-bold' : ''
-          }`}
+    <section className='text-sm w-full h-fit flex flex-col gap-2 items-center'>
+      <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
+        <Image src={themes} alt='Themes' className='w-5' />
+        <select
+          className='appearance-none font-semibold flex flex-row items-center outline-none bg-transparent cursor-pointer'
+          onChange={handleThemeChange}
+          value={theme}
         >
-          {t('themes.dark')}
-        </p>
-        {/* Option for light theme */}
-        <p
-          onClick={(e) => handleThemeChange(e, 'light')}
-          className={`cursor-pointer p-2 hover:bg-gray-200 ${
-            theme === 'light' ? 'font-bold' : ''
-          }`}
-        >
-          {t('themes.light')}
-        </p>
-        {/* Option for system theme */}
-        <p
-          onClick={(e) => handleThemeChange(e, 'system')}
-          className={`cursor-pointer p-2 hover:bg-gray-200 ${
-            theme === 'system' ? 'font-bold' : ''
-          }`}
-        >
-          {t('themes.system')}
-        </p>
-      </article>
-    </details>
+          <option value='dark'>{t('themes.dark')}</option>
+          <option value='light'>{t('themes.light')}</option>
+          <option value='system'>{t('themes.system')}</option>
+        </select>
+      </div>
+    </section>
   )
 }
