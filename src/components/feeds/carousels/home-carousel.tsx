@@ -1,9 +1,20 @@
+import chevron_left from '@/assets/icons/buttons/chevron_left.svg'
+import chevron_right from '@/assets/icons/buttons/chevron_right.svg'
 import Image from 'next/image'
 import { useState } from 'react'
 
 export default function HomeCarousel() {
   // Lista de imágenes
   const images = [
+    '/images/profiles/aspect-ratio-1-1/image1.jpg',
+    '/images/profiles/aspect-ratio-1-1/image2.jpg',
+    '/images/profiles/aspect-ratio-1-1/image3.jpg',
+    '/images/profiles/aspect-ratio-1-1/image4.jpg',
+    '/images/profiles/aspect-ratio-1-1/image5.jpg',
+    '/images/profiles/aspect-ratio-1-1/image6.jpg',
+    '/images/profiles/aspect-ratio-1-1/image7.jpg',
+    '/images/profiles/aspect-ratio-1-1/image8.jpg',
+    '/images/profiles/aspect-ratio-1-1/image9.jpg',
     '/images/profiles/aspect-ratio-1-1/image1.jpg',
     '/images/profiles/aspect-ratio-1-1/image2.jpg',
     '/images/profiles/aspect-ratio-1-1/image3.jpg',
@@ -19,7 +30,7 @@ export default function HomeCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   // Maximum number of images to show at once
-  const maxVisibleImages = 7
+  const maxVisibleImages = 13
 
   // Changes the current index
   const changeImage = (direction: 'next' | 'prev') => {
@@ -44,19 +55,17 @@ export default function HomeCarousel() {
   }
 
   return (
-    <div className='relative w-full bg-blue-400 flex justify-center items-center'>
+    <div className='relative w-full flex justify-between items-center'>
       {/* Botón "Previous" */}
       <button
         onClick={() => changeImage('prev')}
-        className='absolute left-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
-        style={{ top: '50%', transform: 'translateY(-50%)' }} // Centrado vertical
+        className='opacity-75 absolute left-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
       >
-        P
+        <Image className='bg-transparent' src={chevron_left} alt='Previous' />
       </button>
-
-      <div className='relative flex justify-center w-full h-fit overflow-hidden'>
+      <div className='relative flex justify-between w-full h-fit overflow-hidden'>
         {visibleImages.map((image, index) => (
-          <div key={index} className='relative w-20 h-20 mx-2'>
+          <div key={index} className='relative w-20 h-20'>
             <Image
               src={image}
               alt={`Image ${currentIndex + index + 1}`}
@@ -66,14 +75,12 @@ export default function HomeCarousel() {
           </div>
         ))}
       </div>
-
       {/* Botón "Next" */}
       <button
         onClick={() => changeImage('next')}
-        className='absolute right-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
-        style={{ top: '50%', transform: 'translateY(-50%)' }} // Centrado vertical
+        className='opacity-75 absolute right-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
       >
-        N
+        <Image className='bg-transparent' src={chevron_right} alt='Next' />
       </button>
     </div>
   )
