@@ -2,13 +2,15 @@
 
 import Header from '@/layouts/header'
 import Aside from '@/layouts/aside'
+import HomeCarousel from '@/components/feeds/carousels/home-carousel'
 import '@/styles/globals.css'
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <main className='col-span-1'>
+      <main className='col-span-1 flex flex-col items-center'>
+        <HomeCarousel />
       </main>
       <Aside />
     </>
