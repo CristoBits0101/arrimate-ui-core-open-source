@@ -41,6 +41,7 @@
       🚧            Stream LIVE ➜ 
     Styles:
       ✅   Active Route Styling ➜ next/navigation
+      ✅       Stories carousel ➜ component
       ✅    Font Implementation ➜ next/font/google
       🚧       Responsive Pages ➜ 
       🚧       Sound Animations ➜ 
