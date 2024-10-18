@@ -4,50 +4,69 @@ import Image from 'next/image'
 import language from '@/assets/icons/settings/language.svg'
 import { useRouter, usePathname } from '@/i18n/routing'
 import { useTranslations, useLocale } from 'next-intl'
-import { ChangeEvent } from 'react'
+import { MouseEvent } from 'react'
 
 const LanguageSelector = () => {
-  // Para modificar la ruta activa
+  // To modify the active route
   const router = useRouter()
-  // Devuelve: /page
+  // Returns: /page
   const path = usePathname()
   console.log(path)
-  // Devuelve: en o es ...
+  // Returns: en or es ...
   const locale = useLocale()
-  // Traducciones del panel
+  // Panel translations
   const t = useTranslations('SettingsPanel')
 
-  // Idiomas soportados
+  // Supported languages
   const supportedLocales: Array<'en' | 'es'> = ['en', 'es']
 
-  // Maneja el evento de cambio para la selección de idioma
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    // Aseguramos que el valor es de un tipo soportado
-    const newLocale = e.target.value as 'en' | 'es'
+  // Handle language change event
+  const handleLanguageChange = (
+    e: MouseEvent<HTMLParagraphElement>,
+    newLocale: 'en' | 'es'
+  ) => {
+    e.preventDefault()
     if (supportedLocales.includes(newLocale)) {
-      // Reemplazamos la ruta actual con la nueva
+      // Replace the current location with the new one
       const newPath = path.replace(`/${locale}`, `/${newLocale}`)
-      // Redirigimos con la nueva ruta
+      // Redirect with the new location
       router.push(newPath, { locale: newLocale })
     }
   }
 
   return (
-    <section className='text-sm w-full h-fit flex flex-col gap-2 items-center'>
-      <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
-        <Image src={language} alt='Languages' className='w-5' />
-        <select
-          className='appearance-none font-semibold flex flex-row items-center outline-none bg-transparent cursor-pointer'
-          // Detecta cuando el idioma cambia
-          onChange={handleChange}
-          // Selecciona el idioma actual como valor predeterminado
-          value={locale}
+    <details name='group'>
+      <summary className='text-sm font-medium flex justify-between items-center cursor-pointer'>
+        <h2 className='flex gap-2'>
+          <Image
+            src={language}
+            alt='Languages'
+            className='w-5 h-5 aspect-square'
+          />
+          {t('language.title')}
+        </h2>
+      </summary>
+      <article className='w-full h-fit bg-white shadow-md p-2 border rounded'>
+        {/* Option for English */}
+        <p
+          onClick={(e) => handleLanguageChange(e, 'en')}
+          className={`cursor-pointer p-2 hover:bg-gray-200 ${
+            locale === 'en' ? 'font-bold' : ''
+          }`}
         >
-          <option value='en'>{t('language.english')}</option>
-          <option value='es'>{t('language.spanish')}</option>
-        </select>
-      </div>
-    </section>
+          {t('language.english')}
+        </p>
+        {/* Option for Spanish */}
+        <p
+          onClick={(e) => handleLanguageChange(e, 'es')}
+          className={`cursor-pointer p-2 hover:bg-gray-200 ${
+            locale === 'es' ? 'font-bold' : ''
+          }`}
+        >
+          {t('language.spanish')}
+        </p>
+      </article>
+    </details>
   )
 }
 
