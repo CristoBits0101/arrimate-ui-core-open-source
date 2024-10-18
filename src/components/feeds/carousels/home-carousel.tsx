@@ -15,10 +15,10 @@ export default function HomeCarousel() {
     '/images/profiles/aspect-ratio-1-1/image9.jpg'
   ]
 
-  // Stores the current index of the array
+  // Current index of the image being displayed
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Maneja la selección de la nueva imagen, ya sea hacia adelante o atrás
+  // Changes the current index
   const changeImage = (direction: 'next' | 'prev') => {
     setCurrentIndex((prevIndex) =>
       direction === 'next'
