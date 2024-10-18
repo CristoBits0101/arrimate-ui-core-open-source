@@ -34,10 +34,10 @@ const LanguageSelector = () => {
 
   return (
     <section className='text-sm w-full h-fit flex flex-col gap-2 items-center'>
-      <div className='w-full h-fit flex flex-row items-center font-medium gap-2'>
+      <div className='w-full h-fit flex flex-row items-center gap-2'>
         <Image src={language} alt='Languages' className='w-5' />
         <select
-          className='appearance-none font-semibold flex flex-row items-center outline-none bg-transparent cursor-pointer'
+          className='appearance-none flex flex-row items-center outline-none bg-transparent cursor-pointer'
           // Detecta cuando el idioma cambia
           onChange={handleChange}
           // Selecciona el idioma actual como valor predeterminado
