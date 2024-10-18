@@ -15,39 +15,65 @@ export default function HomeCarousel() {
     '/images/profiles/aspect-ratio-1-1/image9.jpg'
   ]
 
-  // Current index of the image being displayed
+  // Current index of the first image being displayed
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  // Maximum number of images to show at once
+  const maxVisibleImages = 7
 
   // Changes the current index
   const changeImage = (direction: 'next' | 'prev') => {
-    setCurrentIndex((prevIndex) =>
+    setCurrentIndex((currentIndex) =>
       direction === 'next'
-        ? (prevIndex + 1) % images.length
-        : (prevIndex - 1 + images.length) % images.length
+        ? (currentIndex + 1) % images.length
+        : (currentIndex - 1 + images.length) % images.length
+    )
+  }
+
+  // Calculate the images to be displayed based on current index
+  const visibleImages = images.slice(
+    currentIndex,
+    currentIndex + maxVisibleImages
+  )
+
+  // If currentIndex + maxVisibleImages exceeds the total number of images, wrap around
+  if (visibleImages.length < maxVisibleImages) {
+    visibleImages.push(
+      ...images.slice(0, maxVisibleImages - visibleImages.length)
     )
   }
 
   return (
-    <div className='w-full bg-blue-400 flex justify-center items-center'>
+    <div className='relative w-full bg-blue-400 flex justify-center items-center'>
+      {/* Botón "Previous" */}
       <button
         onClick={() => changeImage('prev')}
-        className='px-4 py-2 bg-white rounded'
+        className='absolute left-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
+        style={{ top: '50%', transform: 'translateY(-50%)' }} // Centrado vertical
       >
-        Previous
+        P
       </button>
-      <div className='relative w-64 h-64 mx-4'>
-        <Image
-          src={images[currentIndex]}
-          alt={`Image ${currentIndex + 1}`}
-          layout='fill'
-          objectFit='cover'
-        />
+
+      <div className='relative flex justify-center w-full h-fit overflow-hidden'>
+        {visibleImages.map((image, index) => (
+          <div key={index} className='relative w-20 h-20 mx-2'>
+            <Image
+              src={image}
+              alt={`Image ${currentIndex + index + 1}`}
+              className='drop-shadow w-full h-full object-contain aspect-square rounded-full'
+              layout='fill'
+            />
+          </div>
+        ))}
       </div>
+
+      {/* Botón "Next" */}
       <button
         onClick={() => changeImage('next')}
-        className='px-4 py-2 bg-white rounded'
+        className='absolute right-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
+        style={{ top: '50%', transform: 'translateY(-50%)' }} // Centrado vertical
       >
-        Next
+        N
       </button>
     </div>
   )
