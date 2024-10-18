@@ -1,10 +1,9 @@
 import chevron_left from '@/assets/icons/buttons/chevron_left.svg'
 import chevron_right from '@/assets/icons/buttons/chevron_right.svg'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function HomeCarousel() {
-  // Lista de imágenes
   const images = [
     '/images/profiles/aspect-ratio-1-1/image1.jpg',
     '/images/profiles/aspect-ratio-1-1/image2.jpg',
@@ -26,13 +25,11 @@ export default function HomeCarousel() {
     '/images/profiles/aspect-ratio-1-1/image9.jpg'
   ]
 
-  // Current index of the first image being displayed
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [maxVisibleImages, setMaxVisibleImages] = useState(13) // Número inicial de imágenes visibles
+  const containerRef = useRef<HTMLDivElement>(null) // Referencia al div
 
-  // Maximum number of images to show at once
-  const maxVisibleImages = 13
-
-  // Changes the current index
+  // Cambia el índice actual para navegar entre las imágenes
   const changeImage = (direction: 'next' | 'prev') => {
     setCurrentIndex((currentIndex) =>
       direction === 'next'
@@ -41,13 +38,36 @@ export default function HomeCarousel() {
     )
   }
 
-  // Calculate the images to be displayed based on current index
+  // Actualiza el número máximo de imágenes visibles basado en el tamaño del contenedor
+  const updateMaxVisibleImages = () => {
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.offsetWidth
+      const newMaxImages = Math.floor(containerWidth / 88)
+      setMaxVisibleImages(newMaxImages)
+    }
+  }
+
+  // useEffect para ejecutar el cálculo inicial y cada vez que la ventana cambie de tamaño
+  useEffect(() => {
+    // Calcula el número de imágenes visibles al renderizar el componente
+    updateMaxVisibleImages()
+
+    // Listener para el cambio de tamaño de la ventana
+    window.addEventListener('resize', updateMaxVisibleImages)
+
+    // Cleanup al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', updateMaxVisibleImages)
+    }
+  }, [])
+
+  // Calcula las imágenes visibles basadas en el índice actual
   const visibleImages = images.slice(
     currentIndex,
     currentIndex + maxVisibleImages
   )
 
-  // If currentIndex + maxVisibleImages exceeds the total number of images, wrap around
+  // Si el índice + maxVisibleImages supera el total de imágenes, se reinicia el ciclo
   if (visibleImages.length < maxVisibleImages) {
     visibleImages.push(
       ...images.slice(0, maxVisibleImages - visibleImages.length)
@@ -59,11 +79,16 @@ export default function HomeCarousel() {
       {/* Botón "Previous" */}
       <button
         onClick={() => changeImage('prev')}
-        className='opacity-75 absolute left-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
+        className='shadow opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
       >
-        <Image className='bg-transparent' src={chevron_left} alt='Previous' />
+        <Image className='bg-transparent w-fit h-fit' src={chevron_left} alt='Previous' />
       </button>
-      <div className='relative flex justify-between w-full h-fit overflow-hidden'>
+      
+      {/* Contenedor de las imágenes */}
+      <div
+        ref={containerRef} // Referencia al div que contiene las imágenes
+        className='relative flex justify-between w-full h-fit overflow-hidden'
+      >
         {visibleImages.map((image, index) => (
           <div key={index} className='relative w-20 h-20'>
             <Image
@@ -75,12 +100,13 @@ export default function HomeCarousel() {
           </div>
         ))}
       </div>
+
       {/* Botón "Next" */}
       <button
         onClick={() => changeImage('next')}
-        className='opacity-75 absolute right-0 bg-white rounded-full w-10 h-10 flex items-center justify-center z-10'
+        className='shadow opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
       >
-        <Image className='bg-transparent' src={chevron_right} alt='Next' />
+        <Image className='bg-transparent w-fit h-fit' src={chevron_right} alt='Next' />
       </button>
     </div>
   )

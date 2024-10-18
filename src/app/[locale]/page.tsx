@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className='col-span-1 flex flex-col items-center'>
+      <main className='min-w-52 col-span-1 flex flex-col items-center'>
         <HomeCarousel />
       </main>
       <Aside />
