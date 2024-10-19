@@ -76,7 +76,7 @@ textarea::placeholder {
 main {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   height: auto;
   min-height: 100vh;
   padding: 2rem;
