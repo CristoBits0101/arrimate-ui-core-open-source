@@ -14,20 +14,22 @@ export default function HomeCarousel() {
     '/images/profiles/aspect-ratio-1-1/image7.jpg',
     '/images/profiles/aspect-ratio-1-1/image8.jpg',
     '/images/profiles/aspect-ratio-1-1/image9.jpg',
-    '/images/profiles/aspect-ratio-1-1/image1.jpg',
-    '/images/profiles/aspect-ratio-1-1/image2.jpg',
-    '/images/profiles/aspect-ratio-1-1/image3.jpg',
-    '/images/profiles/aspect-ratio-1-1/image4.jpg',
-    '/images/profiles/aspect-ratio-1-1/image5.jpg',
-    '/images/profiles/aspect-ratio-1-1/image6.jpg',
-    '/images/profiles/aspect-ratio-1-1/image7.jpg',
-    '/images/profiles/aspect-ratio-1-1/image8.jpg',
-    '/images/profiles/aspect-ratio-1-1/image9.jpg'
+    '/images/profiles/aspect-ratio-1-1/image10.jpg',
+    '/images/profiles/aspect-ratio-1-1/image11.jpg',
+    '/images/profiles/aspect-ratio-1-1/image12.jpg',
+    '/images/profiles/aspect-ratio-1-1/image13.jpg',
+    '/images/profiles/aspect-ratio-1-1/image14.jpg',
+    '/images/profiles/aspect-ratio-1-1/image15.jpg',
+    '/images/profiles/aspect-ratio-1-1/image16.jpg',
+    '/images/profiles/aspect-ratio-1-1/image17.jpg',
+    '/images/profiles/aspect-ratio-1-1/image18.jpg'
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [maxVisibleImages, setMaxVisibleImages] = useState(13) // Número inicial de imágenes visibles
-  const containerRef = useRef<HTMLDivElement>(null) // Referencia al div
+  // Número inicial de imágenes visibles
+  const [maxVisibleImages, setMaxVisibleImages] = useState(13)
+  // Referencia al div
+  const containerRef = useRef<HTMLDivElement>(null)
 
   // Cambia el índice actual para navegar entre las imágenes
   const changeImage = (direction: 'next' | 'prev') => {
@@ -51,10 +53,8 @@ export default function HomeCarousel() {
   useEffect(() => {
     // Calcula el número de imágenes visibles al renderizar el componente
     updateMaxVisibleImages()
-
     // Listener para el cambio de tamaño de la ventana
     window.addEventListener('resize', updateMaxVisibleImages)
-
     // Cleanup al desmontar el componente
     return () => {
       window.removeEventListener('resize', updateMaxVisibleImages)
