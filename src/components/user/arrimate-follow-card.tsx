@@ -1,31 +1,61 @@
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function ArrimateFollowCard() {
-  // Indicates if the content is trending based on interactions
-  const [isTrending, setIsTrending] = useState(false)
-  // Indicates if the user has more than 1 million followers
-  const [isPopular, setIsPopular] = useState(false)
-  // Indicates if the user's identity is verified
-  const [isVerify, setIsVerify] = useState(false)
-  // Indicates if the user is trusted for transactions and business deals
-  const [isTrusted, setIsTrusted] = useState(false)
+interface ArrimateFollowCardProps {
+  userName: string
+  trending: boolean
+  followers: number
+  reliable: boolean
+  verified: boolean
+  follower: boolean
+}
+
+export default function ArrimateFollowCard({
+  userName,
+  trending,
+  followers,
+  reliable,
+  verified,
+  follower,
+}: ArrimateFollowCardProps) {
+  //
+  const [isTrending, setIsTrending] = useState(trending)
+  const [isPopular, setIsPopular] = useState(followers > 1000000)
+  const [isTrusted, setIsTrusted] = useState(reliable)
+  const [isVerify, setIsVerify] = useState(verified)
+  const [isFollowing, setIsFollowing] = useState(follower)
 
   //
-  const handleToggleFollowing = ({ user }) => {
+  useEffect(() => {
+    setIsTrending(trending)
+    setIsPopular(followers > 1000000)
+    setIsTrusted(reliable)
+    setIsVerify(verified)
+    setIsFollowing(follower)
+  }, [trending, followers, reliable, verified, follower])
+
+  const handleToggleFollowing = () => {
     setIsFollowing(!isFollowing)
   }
+
   return (
     <article className='w-fit h-fit flex bg-red-300'>
       <header className='w-fit h-fit'>
         <Image src='' alt='User avatar' />
       </header>
       <div className=''>
-        <section className=''>Información del usuario</section>
-        <section className=''>Descripción adicional o estadísticas</section>
+        <section className=''>{userName ?? 'Unknown'}</section>
+        <section className=''>
+          {isTrending && <span>📈</span>}
+          {isPopular && <span>🔥</span>}
+          {isTrusted && <span>🛡️</span>}
+          {isVerify && <span>✔ </span>}
+        </section>
       </div>
       <footer className=''>
-        <button className=''>Seguir</button>
+        <button className='' onClick={handleToggleFollowing}>
+          {isFollowing ? 'Siguiendo' : 'Seguir'}
+        </button>
       </footer>
     </article>
   )
