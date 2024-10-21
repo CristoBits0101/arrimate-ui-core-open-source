@@ -59,7 +59,7 @@ export default function HomeCarousel() {
     <div className='relative w-full flex justify-between items-center'>
       <button
         onClick={() => changeImage('prev')}
-        className='shadow opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className='shadow-sm opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
       >
         <Image className='bg-transparent w-fit h-fit' src={chevron_left} alt='Previous' />
       </button>
@@ -80,7 +80,7 @@ export default function HomeCarousel() {
       </div>
       <button
         onClick={() => changeImage('next')}
-        className='shadow opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className='shadow-sm opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
       >
         <Image className='bg-transparent w-fit h-fit' src={chevron_right} alt='Next' />
       </button>

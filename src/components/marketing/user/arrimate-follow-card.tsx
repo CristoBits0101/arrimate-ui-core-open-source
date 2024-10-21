@@ -1,9 +1,5 @@
 import unknownImage from '@/assets/images/profiles/aspect-ratio-16-9/unknown.jpg'
 import Image from 'next/image'
-import popularUser from '@/assets/icons/badges/popular.svg'
-import reliableUser from '@/assets/icons/badges/reliable.svg'
-import trendingUser from '@/assets/icons/badges/trending.svg'
-import verifiedUser from '@/assets/icons/badges/verified.svg'
 import { useState, useEffect } from 'react'
 
 interface ArrimateFollowCardProps {
@@ -29,7 +25,7 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false,
+  follower = false
 }: ArrimateFollowCardProps) {
   const [userImage, setUserImage] = useState<string | undefined>(avatar)
   const [userName, setUserName] = useState(nickname)
@@ -67,7 +63,7 @@ export default function ArrimateFollowCard({
     reliable,
     verified,
     follower,
-    description,
+    description
   ])
 
   const handleToggleFollowing = () => {
@@ -77,7 +73,7 @@ export default function ArrimateFollowCard({
   return (
     <article className='w-full h-16 flex gap-3 text-sm'>
       {/* Image */}
-      <header className='w-1/4 h-full drop-shadow-sm shadow-[#edeced] flex items-center'>
+      <header className='w-1/4 h-full drop-shadow-sm flex items-center'>
         <Image
           src={userImage ?? unknownImage}
           alt={`${userName ?? 'Unknown'} image`}
@@ -114,49 +110,25 @@ export default function ArrimateFollowCard({
           } items-center`}
         >
           {(isTrending || isPopular || isTrusted || isVerify) && (
-            <div className='w-fit h-full flex justify-center items-center gap-1'>
+            <div className='w-fit h-full flex justify-center items-center gap-1 text-base'>
               {isTrending && (
                 <span className='w-fit h-full flex justify-center items-center'>
-                  <Image
-                    src={trendingUser}
-                    alt=''
-                    width={24}
-                    height={24}
-                    className='object-cover aspect-square w-auto h-4/5'
-                  />
+                  🔥
                 </span>
               )}
               {isPopular && (
                 <span className='w-fit h-full flex justify-center items-center'>
-                  <Image
-                    src={popularUser}
-                    alt=''
-                    width={24}
-                    height={24}
-                    className='object-cover aspect-square w-auto h-4/5'
-                  />
+                  ⭐
                 </span>
               )}
               {isTrusted && (
                 <span className='w-fit h-full flex justify-center items-center'>
-                  <Image
-                    src={reliableUser}
-                    alt=''
-                    width={24}
-                    height={24}
-                    className='object-cover aspect-square w-auto h-4/5'
-                  />
+                  💸
                 </span>
               )}
               {isVerify && (
                 <span className='w-fit h-full flex justify-center items-center'>
-                  <Image
-                    src={verifiedUser}
-                    alt=''
-                    width={24}
-                    height={24}
-                    className='object-cover aspect-square w-auto h-4/5'
-                  />
+                  ✔️
                 </span>
               )}
             </div>
