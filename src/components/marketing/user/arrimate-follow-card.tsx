@@ -15,7 +15,7 @@ interface ArrimateFollowCardProps {
 
 export default function ArrimateFollowCard({
   nickname = 'Unknown',
-  avatar = '/default-avatar.png',
+  avatar = '/images/profiles/aspect-ratio-1-1/image9.jpg',
   date = '',
   location = '',
   trending = false,
@@ -40,7 +40,7 @@ export default function ArrimateFollowCard({
 
   useEffect(() => {
     setUserName(nickname || 'Unknown')
-    setUserImage(avatar || '/default-avatar.png')
+    setUserImage(avatar)
     setPublicationDate(date)
     setPublicationLocation(location)
     setIsTrending(trending)
@@ -71,8 +71,8 @@ export default function ArrimateFollowCard({
         <Image
           src={userImage}
           alt={`${userName} avatar`}
-          width={10}
-          height={10}
+          width={44}
+          height={44}
           className='rounded-full'
         />
       </header>
