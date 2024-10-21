@@ -80,7 +80,7 @@ export default function ArrimateFollowCard({
             alt={`${userName} image`}
             width={80}
             height={80}
-            className='drop-shadow object-cover aspect-auto max-h-[100%] w-full h-auto'
+            className='object-cover aspect-auto max-h-[100%] w-full h-auto'
           />
         ) : (
           <Image
@@ -88,7 +88,7 @@ export default function ArrimateFollowCard({
             alt='Unknown image'
             width={80}
             height={80}
-            className='drop-shadow object-cover aspect-auto max-h-[100%] w-full h-auto'
+            className='object-cover aspect-auto max-h-[100%] w-full h-auto'
           />
         )}
       </header>

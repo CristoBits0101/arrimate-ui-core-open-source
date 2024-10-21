@@ -6,7 +6,7 @@ export default function HomePanel() {
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Liang Wei'
-        description='AI and robotics innovator leading the future of automation.'
+        description='Shaping tomorrow with cutting-edge AI and robotics.'
         trending={true}
         followers={1000000}
         reliable={true}
@@ -15,7 +15,7 @@ export default function HomePanel() {
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Valeria Castillo'
-        description='Creative director shaping global brand experiences.'
+        description='Crafting unforgettable brand experiences worldwide.'
         trending={true}
         followers={1000000}
         reliable={true}
@@ -24,7 +24,7 @@ export default function HomePanel() {
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Ethan Collins'
-        description='Marketing strategist driving growth through digital campaigns.'
+        description='Accelerating growth with innovative marketing strategies.'
         trending={true}
         followers={1000000}
         reliable={true}
@@ -33,7 +33,7 @@ export default function HomePanel() {
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Aarav Sharma'
-        description='Full-stack developer building scalable software solutions.'
+        description='Building the future, one line of code at a time.'
         trending={true}
         followers={1000000}
         reliable={true}
@@ -42,7 +42,7 @@ export default function HomePanel() {
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Zara Al-Faraj'
-        description='Data scientist turning data into business insights.'
+        description='Transforming data into impactful business decisions.'
         trending={true}
         followers={1000000}
         reliable={true}
@@ -51,7 +51,7 @@ export default function HomePanel() {
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Élodie Laurent'
-        description='Project manager delivering efficient, sustainable solutions.'
+        description='Leading projects to deliver sustainable, efficient results.'
         trending={true}
         followers={1000000}
         reliable={true}
