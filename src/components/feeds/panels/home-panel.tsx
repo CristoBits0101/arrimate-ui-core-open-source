@@ -49,7 +49,7 @@ export default function HomePanel() {
   }
 
   return (
-    <section className='w-full h-full flex flex-col justify-between'>
+    <section className='w-full h-full flex flex-col justify-between items-center bg-slate-200'>
       {userCards}
     </section>
   )

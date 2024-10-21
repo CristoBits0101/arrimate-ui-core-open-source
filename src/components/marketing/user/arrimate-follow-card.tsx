@@ -1,6 +1,5 @@
 import popularUser from '@/assets/icons/badges/popular.svg'
 import trendingContent from '@/assets/icons/badges/trending.svg'
-import { AiTwotoneFire } from "react-icons/ai";
 import unknownImage from '@/assets/images/avatar/unknown.jpg'
 import verifiedUser from '@/assets/icons/badges/verified.svg'
 import Image from 'next/image'
@@ -16,6 +15,7 @@ interface ArrimateFollowCardProps {
   reliable?: boolean
   verified?: boolean
   follower?: boolean
+  description?: string
 }
 
 export default function ArrimateFollowCard({
@@ -27,7 +27,8 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false
+  follower = false,
+  description = ''
 }: ArrimateFollowCardProps) {
   const [userName, setUserName] = useState(nickname)
   const [userImage, setUserImage] = useState<string>(avatar)
@@ -42,6 +43,7 @@ export default function ArrimateFollowCard({
   const [isTrusted, setIsTrusted] = useState(reliable)
   const [isVerify, setIsVerify] = useState(verified)
   const [isFollowing, setIsFollowing] = useState(follower)
+  const [userDescription, setUserDescription] = useState(description)
 
   useEffect(() => {
     setUserName(nickname || 'Unknown')
@@ -53,6 +55,7 @@ export default function ArrimateFollowCard({
     setIsTrusted(reliable)
     setIsVerify(verified)
     setIsFollowing(follower)
+    setUserDescription(description)
   }, [
     nickname,
     avatar,
@@ -62,7 +65,8 @@ export default function ArrimateFollowCard({
     followers,
     reliable,
     verified,
-    follower
+    follower,
+    description
   ])
 
   const handleToggleFollowing = () => {
@@ -70,30 +74,33 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-full h-fit flex gap-2'>
+    <article className='w-full h-[3.75rem] flex gap-2'>
       {/* Image */}
-      <header className='w-fit h-full'>
+      <header className='bg-red-100 w-fit h-full grid place-content-center'>
         {userImage ? (
           <Image
             src={userImage}
             alt={`${userName} image`}
             width={75}
-            height={75}
-            className='rounded-full drop-shadow object-contain aspect-square'
+            className='h-full drop-shadow object-cover aspect-square'
           />
         ) : (
           <Image
             src={unknownImage}
             alt='Unknown image'
             width={75}
-            height={75}
-            className='rounded-full drop-shadow object-contain aspect-square'
+            className='h-full drop-shadow object-cover aspect-square'
           />
         )}
       </header>
       {/* Content */}
       <div className='bg-yellow-100 w-full text-sm'>
         <section className='font-semibold'>{userName}</section>
+        <section className='font-semibold'>{userName}</section>
+        {/* Descripción del usuario */}
+        {userDescription && (
+          <section className='text-gray-600'>{userDescription}</section>
+        )}
         <section className='w-full'>
           {publicationDate && <div>📅 {publicationDate}</div>}
           {publicationLocation && <div>📍 {publicationLocation}</div>}
