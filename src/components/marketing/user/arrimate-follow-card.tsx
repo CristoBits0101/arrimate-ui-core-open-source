@@ -1,7 +1,4 @@
-import popularUser from '@/assets/icons/badges/popular.svg'
-import trendingContent from '@/assets/icons/badges/trending.svg'
 import unknownImage from '@/assets/images/avatar/unknown.jpg'
-import verifiedUser from '@/assets/icons/badges/verified.svg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
@@ -74,66 +71,38 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-full h-[3.75rem] flex gap-2'>
+    <article className='w-full h-[3.75rem] flex gap-2 text-sm'>
       {/* Image */}
       <header className='bg-red-100 w-fit h-full grid place-content-center'>
         {userImage ? (
           <Image
             src={userImage}
             alt={`${userName} image`}
-            width={75}
-            className='h-full drop-shadow object-cover aspect-square'
+            className='w-16 h-full drop-shadow object-cover aspect-square'
           />
         ) : (
           <Image
             src={unknownImage}
             alt='Unknown image'
-            width={75}
-            className='h-full drop-shadow object-cover aspect-square'
+            className='w-16 h-full drop-shadow object-cover aspect-square'
           />
         )}
       </header>
       {/* Content */}
-      <div className='bg-yellow-100 w-full text-sm'>
-        <section className='font-semibold'>{userName}</section>
-        <section className='font-semibold'>{userName}</section>
-        {/* Descripción del usuario */}
-        {userDescription && (
-          <section className='text-gray-600'>{userDescription}</section>
+      <div className='bg-yellow-100 w-full'>
+        {(userName || publicationDate || publicationLocation) && (
+          <section>
+            {userName && <section>{userName}</section>}
+            {publicationDate && <div>📅 {publicationDate}</div>}
+            {publicationLocation && <div>📍 {publicationLocation}</div>}
+          </section>
         )}
-        <section className='w-full'>
-          {publicationDate && <div>📅 {publicationDate}</div>}
-          {publicationLocation && <div>📍 {publicationLocation}</div>}
-        </section>
+        {userDescription && <section>{userDescription}</section>}
         <section className='w-full flex gap-1 items-center'>
-          {isTrending && (
-            <Image
-              src={trendingContent}
-              alt={`${trendingContent} Trending content`}
-              width={18}
-              height={18}
-              className='rounded-full drop-shadow object-contain aspect-square'
-            />
-          )}
-          {isPopular && (
-            <Image
-              src={popularUser}
-              alt={`${popularUser} Popular user`}
-              width={18}
-              height={18}
-              className='rounded-full drop-shadow object-contain aspect-square'
-            />
-          )}
+          {isTrending && <span>💵</span>}
+          {isPopular && <span>⭐</span>}
           {isTrusted && <span>💵</span>}
-          {isVerify && (
-            <Image
-              src={verifiedUser}
-              alt={`${verifiedUser} Verified user`}
-              width={18}
-              height={18}
-              className='rounded-full drop-shadow object-contain aspect-square'
-            />
-          )}
+          {isVerify && <span>✅</span>}
         </section>
       </div>
       {/* Buttons */}
