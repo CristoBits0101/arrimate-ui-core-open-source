@@ -1,4 +1,4 @@
-import unknownImage from '@/assets/images/avatar/unknown.jpg'
+import unknownImage from '@/assets/images/profiles/aspect-ratio-16-9/unknown.jpg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
@@ -73,37 +73,39 @@ export default function ArrimateFollowCard({
   return (
     <article className='w-full h-[3.75rem] flex gap-2 text-sm'>
       {/* Image */}
-      <header className='bg-red-100 w-fit h-full grid place-content-center'>
+      <header className='w-fit h-full'>
         {userImage ? (
           <Image
             src={userImage}
             alt={`${userName} image`}
-            className='w-16 h-full drop-shadow object-cover aspect-square'
+            className='w-20 h-full drop-shadow object-cover aspect-auto'
           />
         ) : (
           <Image
             src={unknownImage}
             alt='Unknown image'
-            className='w-16 h-full drop-shadow object-cover aspect-square'
+            className='w-20 h-full drop-shadow object-cover aspect-auto'
           />
         )}
       </header>
       {/* Content */}
-      <div className='bg-yellow-100 w-full'>
+      <div className='bg-yellow-100 w-full h-full flex flex-col justify-center'>
         {(userName || publicationDate || publicationLocation) && (
-          <section>
+          <section className='w-full flex gap-1 items-center'>
             {userName && <section>{userName}</section>}
             {publicationDate && <div>📅 {publicationDate}</div>}
             {publicationLocation && <div>📍 {publicationLocation}</div>}
           </section>
         )}
-        {userDescription && <section>{userDescription}</section>}
-        <section className='w-full flex gap-1 items-center'>
-          {isTrending && <span>💵</span>}
-          {isPopular && <span>⭐</span>}
-          {isTrusted && <span>💵</span>}
-          {isVerify && <span>✅</span>}
-        </section>
+        {userDescription && (<section>{userDescription}</section>)}
+        {(isTrending || isPopular || isTrusted || isVerify) && (
+          <section className='w-full flex gap-1 items-center'>
+            {isTrending && <span>🔥</span>}
+            {isPopular && <span>⭐</span>}
+            {isTrusted && <span>💵</span>}
+            {isVerify && <span>✔️</span>}
+          </section>
+        )}
       </div>
       {/* Buttons */}
       <footer className='bg-green-100 flex flex-col justify-center items-center'>
