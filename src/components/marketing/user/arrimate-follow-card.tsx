@@ -39,11 +39,11 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-fit h-fit flex bg-red-300'>
+    <article className='w-fit h-fit flex gap-2 bg-red-300'>
       <header className='w-fit h-fit'>
         <Image src='' alt='User avatar' />
       </header>
-      <div className=''>
+      <div className='w-fit h-fit flex flex-col'>
         <section className=''>{userName ?? 'Unknown'}</section>
         <section className=''>
           {isTrending && <span>📈</span>}
@@ -52,7 +52,7 @@ export default function ArrimateFollowCard({
           {isVerify && <span>✔ </span>}
         </section>
       </div>
-      <footer className=''>
+      <footer className='w-fit h-fit'>
         <button className='' onClick={handleToggleFollowing}>
           {isFollowing ? 'Siguiendo' : 'Seguir'}
         </button>
