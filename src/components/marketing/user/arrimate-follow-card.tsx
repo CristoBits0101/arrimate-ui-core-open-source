@@ -1,5 +1,6 @@
 import popularUser from '@/assets/icons/badges/popular.svg'
 import trendingContent from '@/assets/icons/badges/trending.svg'
+import { AiTwotoneFire } from "react-icons/ai";
 import unknownImage from '@/assets/images/avatar/unknown.jpg'
 import verifiedUser from '@/assets/icons/badges/verified.svg'
 import Image from 'next/image'
@@ -26,7 +27,7 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false,
+  follower = false
 }: ArrimateFollowCardProps) {
   const [userName, setUserName] = useState(nickname)
   const [userImage, setUserImage] = useState<string>(avatar)
@@ -61,7 +62,7 @@ export default function ArrimateFollowCard({
     followers,
     reliable,
     verified,
-    follower,
+    follower
   ])
 
   const handleToggleFollowing = () => {
@@ -71,11 +72,11 @@ export default function ArrimateFollowCard({
   return (
     <article className='w-full h-fit flex gap-2'>
       {/* Image */}
-      <header className='w-fit h-fit'>
+      <header className='w-fit h-full'>
         {userImage ? (
           <Image
             src={userImage}
-            alt={`${userName} Avatar`}
+            alt={`${userName} image`}
             width={75}
             height={75}
             className='rounded-full drop-shadow object-contain aspect-square'
@@ -83,7 +84,7 @@ export default function ArrimateFollowCard({
         ) : (
           <Image
             src={unknownImage}
-            alt={`${userName} Unknown`}
+            alt='Unknown image'
             width={75}
             height={75}
             className='rounded-full drop-shadow object-contain aspect-square'
