@@ -1,3 +1,4 @@
+import unknownImage from '@/assets/images/avatar/unknown.jpg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
@@ -15,14 +16,14 @@ interface ArrimateFollowCardProps {
 
 export default function ArrimateFollowCard({
   nickname = 'Unknown',
-  avatar = '/images/profiles/aspect-ratio-1-1/image9.jpg',
+  avatar = '',
   date = '',
   location = '',
   trending = false,
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false
+  follower = false,
 }: ArrimateFollowCardProps) {
   const [userName, setUserName] = useState(nickname)
   const [userImage, setUserImage] = useState<string>(avatar)
@@ -68,13 +69,23 @@ export default function ArrimateFollowCard({
     <article className='bg-red-100 w-full h-fit flex gap-2'>
       {/* Image */}
       <header className='w-fit h-fit'>
-        <Image
-          src={userImage}
-          alt={`${userName} avatar`}
-          width={75}
-          height={75}
-          className='rounded-full'
-        />
+        {userImage ? (
+          <Image
+            src={userImage}
+            alt={`${userName} avatar`}
+            width={75}
+            height={75}
+            className='rounded-full'
+          />
+        ) : (
+          <Image
+            src={unknownImage}
+            alt={`${userName} avatar`}
+            width={75}
+            height={75}
+            className='rounded-full'
+          />
+        )}
       </header>
       {/* Content */}
       <div className='bg-yellow-100 w-full text-sm'>
@@ -86,8 +97,8 @@ export default function ArrimateFollowCard({
         <section className='w-full flex gap-1'>
           {isTrending && <span>🔥</span>}
           {isPopular && <span>⭐</span>}
-          {isTrusted && <span>🛡️</span>}
-          {isVerify && <span>✔</span>}
+          {isTrusted && <span>💵</span>}
+          {isVerify && <span>✅</span>}
         </section>
       </div>
       {/* Buttons */}
