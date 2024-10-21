@@ -3,8 +3,9 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 interface ArrimateFollowCardProps {
+  avatar?: string | undefined
   nickname: string
-  avatar?: string
+  description?: string
   date?: string
   location?: string
   trending?: boolean
@@ -12,23 +13,23 @@ interface ArrimateFollowCardProps {
   reliable?: boolean
   verified?: boolean
   follower?: boolean
-  description?: string
 }
 
 export default function ArrimateFollowCard({
-  nickname = 'Unknown',
   avatar = '',
+  nickname = 'Unknown',
+  description = '',
   date = '',
   location = '',
   trending = false,
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false,
-  description = ''
+  follower = false
 }: ArrimateFollowCardProps) {
-  const [userName, setUserName] = useState(nickname)
   const [userImage, setUserImage] = useState<string>(avatar)
+  const [userName, setUserName] = useState(nickname)
+  const [userDescription, setUserDescription] = useState(description)
   const [publicationDate, setPublicationDate] = useState<string | undefined>(
     date
   )
@@ -40,7 +41,6 @@ export default function ArrimateFollowCard({
   const [isTrusted, setIsTrusted] = useState(reliable)
   const [isVerify, setIsVerify] = useState(verified)
   const [isFollowing, setIsFollowing] = useState(follower)
-  const [userDescription, setUserDescription] = useState(description)
 
   useEffect(() => {
     setUserName(nickname || 'Unknown')
@@ -71,33 +71,47 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-full h-[3.75rem] flex gap-2 text-sm'>
+    <article className='w-full h-[3.75rem] flex gap-4 text-sm'>
       {/* Image */}
-      <header className='w-fit h-full'>
-        {userImage ? (
+      <header className='w-1/4 h-full'>
+        {userImage && userImage !== '' ? (
           <Image
             src={userImage}
             alt={`${userName} image`}
-            className='w-20 h-full drop-shadow object-cover aspect-auto'
+            width={80}
+            height={80}
+            className='drop-shadow object-cover aspect-auto max-h-[100%] w-full h-auto'
           />
         ) : (
           <Image
             src={unknownImage}
             alt='Unknown image'
-            className='w-20 h-full drop-shadow object-cover aspect-auto'
+            width={80}
+            height={80}
+            className='drop-shadow object-cover aspect-auto max-h-[100%] w-full h-auto'
           />
         )}
       </header>
       {/* Content */}
-      <div className='bg-yellow-100 w-full h-full flex flex-col justify-center'>
+      <div className='w-2/4 h-full flex flex-col justify-center'>
         {(userName || publicationDate || publicationLocation) && (
           <section className='w-full flex gap-1 items-center'>
-            {userName && <section>{userName}</section>}
-            {publicationDate && <div>📅 {publicationDate}</div>}
-            {publicationLocation && <div>📍 {publicationLocation}</div>}
+            <p className='truncate'>
+              <span className='font-medium'>{userName && userName}</span>
+              <span className='font-light'>
+                {publicationDate && publicationDate}
+              </span>
+              <span className='font-light'>
+                {publicationLocation && publicationLocation}
+              </span>
+            </p>
           </section>
         )}
-        {userDescription && (<section>{userDescription}</section>)}
+        {userDescription && (
+          <section className='w-full flex gap-1 items-center'>
+            <p className='truncate'>{userDescription}</p>
+          </section>
+        )}
         {(isTrending || isPopular || isTrusted || isVerify) && (
           <section className='w-full flex gap-1 items-center'>
             {isTrending && <span>🔥</span>}
@@ -108,9 +122,9 @@ export default function ArrimateFollowCard({
         )}
       </div>
       {/* Buttons */}
-      <footer className='bg-green-100 flex flex-col justify-center items-center'>
+      <footer className='w-1/4 flex flex-col justify-center items-center'>
         <button className='' onClick={handleToggleFollowing}>
-          {isFollowing ? 'Siguiendo' : 'Seguir'}
+          <span className='font-light'>{isFollowing ? 'Siguiendo' : 'Seguir'}</span>
         </button>
       </footer>
     </article>
