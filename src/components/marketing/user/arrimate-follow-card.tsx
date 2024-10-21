@@ -16,7 +16,7 @@ interface ArrimateFollowCardProps {
 }
 
 export default function ArrimateFollowCard({
-  avatar = '',
+  avatar = undefined,
   nickname = 'Unknown',
   description = '',
   date = '',
@@ -27,7 +27,7 @@ export default function ArrimateFollowCard({
   verified = false,
   follower = false
 }: ArrimateFollowCardProps) {
-  const [userImage, setUserImage] = useState<string>(avatar)
+  const [userImage, setUserImage] = useState<string | undefined>(avatar)
   const [userName, setUserName] = useState(nickname)
   const [userDescription, setUserDescription] = useState(description)
   const [publicationDate, setPublicationDate] = useState<string | undefined>(
@@ -71,29 +71,19 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-full h-[3.75rem] flex gap-4 text-sm'>
+    <article className='w-full h-[3.75rem] flex gap-3 text-sm'>
       {/* Image */}
-      <header className='w-1/4 h-full'>
-        {userImage && userImage !== '' ? (
-          <Image
-            src={userImage}
-            alt={`${userName} image`}
-            width={80}
-            height={80}
-            className='object-cover aspect-auto max-h-[100%] w-full h-auto'
-          />
-        ) : (
-          <Image
-            src={unknownImage}
-            alt='Unknown image'
-            width={80}
-            height={80}
-            className='object-cover aspect-auto max-h-[100%] w-full h-auto'
-          />
-        )}
+      <header className='w-1/4 h-full border-[0.188rem] border-[#bfbdc050] border-solid shadow shadow-[#edeced]'>
+        <Image
+          src={userImage ?? unknownImage}
+          alt={`${userName ?? 'Unknown'} image`}
+          width={80}
+          height={80}
+          className='drop-shadow object-cover aspect-auto max-h-[100%] w-full h-auto'
+        />
       </header>
       {/* Content */}
-      <div className='w-2/4 h-full flex flex-col justify-center'>
+      <div className='w-3/4 h-full flex flex-col justify-center'>
         {(userName || publicationDate || publicationLocation) && (
           <section className='w-full flex gap-1 items-center'>
             <p className='truncate'>
@@ -112,21 +102,36 @@ export default function ArrimateFollowCard({
             <p className='truncate'>{userDescription}</p>
           </section>
         )}
-        {(isTrending || isPopular || isTrusted || isVerify) && (
-          <section className='w-full flex gap-1 items-center'>
-            {isTrending && <span>🔥</span>}
-            {isPopular && <span>⭐</span>}
-            {isTrusted && <span>💵</span>}
-            {isVerify && <span>✔️</span>}
-          </section>
-        )}
+        <section
+          className={`w-full flex ${
+            isTrending || isPopular || isTrusted || isVerify
+              ? 'justify-between'
+              : 'justify-end'
+          } items-center`}
+        >
+          {(isTrending || isPopular || isTrusted || isVerify) && (
+            <div className='w-fit'>
+              {isTrending && <span>🔥</span>}
+              {isPopular && <span>⭐</span>}
+              {isTrusted && <span>💵</span>}
+              {isVerify && <span>✔️</span>}
+            </div>
+          )}
+          <footer className='w-fit flex justify-between items-center gap-2'>
+            <button className='w-fit h-fit' onClick={handleToggleFollowing}>
+              <span className='font-light'>
+                {isFollowing ? 'Siguiendo' : 'Seguir'}
+              </span>
+            </button>
+            <button className='w-fit h-fit' onClick={handleToggleFollowing}>
+              <span className='font-light'>
+                {isFollowing ? 'Siguiendo' : 'Seguir'}
+              </span>
+            </button>
+          </footer>
+        </section>
       </div>
       {/* Buttons */}
-      <footer className='w-1/4 flex flex-col justify-center items-center'>
-        <button className='' onClick={handleToggleFollowing}>
-          <span className='font-light'>{isFollowing ? 'Siguiendo' : 'Seguir'}</span>
-        </button>
-      </footer>
     </article>
   )
 }

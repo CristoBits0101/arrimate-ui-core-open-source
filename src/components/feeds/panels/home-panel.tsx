@@ -2,7 +2,7 @@ import ArrimateFollowCard from '@/components/marketing/user/arrimate-follow-card
 
 export default function HomePanel() {
   return (
-    <section className='w-full h-full flex flex-col justify-between items-center gap-2'>
+    <section className='w-full h-full flex flex-col justify-between items-center gap-3 overflow-hidden overflow-y-auto no-scrollbar'>
       <ArrimateFollowCard
         avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Liang Wei'
@@ -13,7 +13,6 @@ export default function HomePanel() {
         verified={true}
       />
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-16-9/image1.jpg'
         nickname='Valeria Castillo'
         description='Crafting unforgettable brand experiences worldwide.'
         trending={true}
