@@ -16,7 +16,7 @@ export default function ArrimateFollowCard({
   followers,
   reliable,
   verified,
-  follower,
+  follower
 }: ArrimateFollowCardProps) {
   //
   const [isTrending, setIsTrending] = useState(trending)
