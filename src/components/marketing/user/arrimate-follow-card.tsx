@@ -73,7 +73,7 @@ export default function ArrimateFollowCard({
   return (
     <article className='w-full h-[3.75rem] flex gap-3 text-sm'>
       {/* Image */}
-      <header className='w-1/4 h-full border-[0.188rem] border-[#bfbdc050] border-solid shadow shadow-[#edeced]'>
+      <header className='w-1/4 h-full border-[0.188rem] border-[#bfbdc050] border-solid drop-shadow-sm shadow-[#edeced]'>
         <Image
           src={userImage ?? unknownImage}
           alt={`${userName ?? 'Unknown'} image`}

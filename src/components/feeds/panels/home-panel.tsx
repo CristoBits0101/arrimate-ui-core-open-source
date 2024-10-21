@@ -13,6 +13,7 @@ export default function HomePanel() {
         verified={true}
       />
       <ArrimateFollowCard
+        avatar='/images/profiles/aspect-ratio-16-9/image2.jpg'
         nickname='Valeria Castillo'
         description='Crafting unforgettable brand experiences worldwide.'
         trending={true}

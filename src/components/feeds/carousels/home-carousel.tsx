@@ -72,7 +72,7 @@ export default function HomeCarousel() {
             <Image
               src={image}
               alt={`Image ${currentIndex + index + 1}`}
-              className='drop-shadow w-full h-full object-contain aspect-square rounded-full'
+              className='drop-shadow-sm w-full h-full object-contain aspect-square rounded-full'
               layout='fill'
             />
           </div>
