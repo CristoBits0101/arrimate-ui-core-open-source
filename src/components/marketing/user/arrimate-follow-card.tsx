@@ -44,7 +44,7 @@ export default function ArrimateFollowCard({
     setPublicationDate(date)
     setPublicationLocation(location)
     setIsTrending(trending)
-    setIsPopular(followers > 1000000)
+    setIsPopular(followers >= 1000000)
     setIsTrusted(reliable)
     setIsVerify(verified)
     setIsFollowing(follower)
@@ -67,31 +67,31 @@ export default function ArrimateFollowCard({
   return (
     <article className='bg-red-100 w-full h-fit flex gap-2'>
       {/* Image */}
-      <header className='bg-blue-200 w-fit h-fit'>
+      <header className='w-fit h-fit'>
         <Image
           src={userImage}
           alt={`${userName} avatar`}
-          width={44}
-          height={44}
+          width={75}
+          height={75}
           className='rounded-full'
         />
       </header>
       {/* Content */}
-      <div className='bg-yellow-100'>
-        <section className=''>{userName}</section>
-        <section className=''>
+      <div className='bg-yellow-100 w-full text-sm'>
+        <section className='font-semibold'>{userName}</section>
+        <section className='w-full'>
           {publicationDate && <div>📅 {publicationDate}</div>}
           {publicationLocation && <div>📍 {publicationLocation}</div>}
         </section>
-        <section className=''>
-          {isTrending && <span>📈 Trending</span>}
-          {isPopular && <span>🔥 Popular</span>}
-          {isTrusted && <span>🛡️ Trusted</span>}
-          {isVerify && <span>✔ Verified</span>}
+        <section className='w-full flex gap-1'>
+          {isTrending && <span>🔥</span>}
+          {isPopular && <span>⭐</span>}
+          {isTrusted && <span>🛡️</span>}
+          {isVerify && <span>✔</span>}
         </section>
       </div>
       {/* Buttons */}
-      <footer className='bg-green-100'>
+      <footer className='bg-green-100 flex flex-col justify-center items-center'>
         <button className='' onClick={handleToggleFollowing}>
           {isFollowing ? 'Siguiendo' : 'Seguir'}
         </button>
