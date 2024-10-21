@@ -13,25 +13,13 @@ export default function HomeCarousel() {
     '/images/profiles/aspect-ratio-1-1/image6.jpg',
     '/images/profiles/aspect-ratio-1-1/image7.jpg',
     '/images/profiles/aspect-ratio-1-1/image8.jpg',
-    '/images/profiles/aspect-ratio-1-1/image9.jpg',
-    '/images/profiles/aspect-ratio-1-1/image10.jpg',
-    '/images/profiles/aspect-ratio-1-1/image11.jpg',
-    '/images/profiles/aspect-ratio-1-1/image12.jpg',
-    '/images/profiles/aspect-ratio-1-1/image13.jpg',
-    '/images/profiles/aspect-ratio-1-1/image14.jpg',
-    '/images/profiles/aspect-ratio-1-1/image15.jpg',
-    '/images/profiles/aspect-ratio-1-1/image16.jpg',
-    '/images/profiles/aspect-ratio-1-1/image17.jpg',
-    '/images/profiles/aspect-ratio-1-1/image18.jpg'
+    '/images/profiles/aspect-ratio-1-1/image9.jpg'
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
-  // Número inicial de imágenes visibles
   const [maxVisibleImages, setMaxVisibleImages] = useState(13)
-  // Referencia al div
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Cambia el índice actual para navegar entre las imágenes
   const changeImage = (direction: 'next' | 'prev') => {
     setCurrentIndex((currentIndex) =>
       direction === 'next'
@@ -40,7 +28,6 @@ export default function HomeCarousel() {
     )
   }
 
-  // Actualiza el número máximo de imágenes visibles basado en el tamaño del contenedor
   const updateMaxVisibleImages = () => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth
@@ -49,25 +36,19 @@ export default function HomeCarousel() {
     }
   }
 
-  // useEffect para ejecutar el cálculo inicial y cada vez que la ventana cambie de tamaño
   useEffect(() => {
-    // Calcula el número de imágenes visibles al renderizar el componente
     updateMaxVisibleImages()
-    // Listener para el cambio de tamaño de la ventana
     window.addEventListener('resize', updateMaxVisibleImages)
-    // Cleanup al desmontar el componente
     return () => {
       window.removeEventListener('resize', updateMaxVisibleImages)
     }
   }, [])
 
-  // Calcula las imágenes visibles basadas en el índice actual
   const visibleImages = images.slice(
     currentIndex,
     currentIndex + maxVisibleImages
   )
 
-  // Si el índice + maxVisibleImages supera el total de imágenes, se reinicia el ciclo
   if (visibleImages.length < maxVisibleImages) {
     visibleImages.push(
       ...images.slice(0, maxVisibleImages - visibleImages.length)
@@ -76,17 +57,14 @@ export default function HomeCarousel() {
 
   return (
     <div className='relative w-full flex justify-between items-center'>
-      {/* Botón "Previous" */}
       <button
         onClick={() => changeImage('prev')}
         className='shadow opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
       >
         <Image className='bg-transparent w-fit h-fit' src={chevron_left} alt='Previous' />
       </button>
-      
-      {/* Contenedor de las imágenes */}
       <div
-        ref={containerRef} // Referencia al div que contiene las imágenes
+        ref={containerRef}
         className='relative flex justify-between w-full h-fit overflow-hidden'
       >
         {visibleImages.map((image, index) => (
@@ -100,8 +78,6 @@ export default function HomeCarousel() {
           </div>
         ))}
       </div>
-
-      {/* Botón "Next" */}
       <button
         onClick={() => changeImage('next')}
         className='shadow opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
