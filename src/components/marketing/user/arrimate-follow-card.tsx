@@ -6,18 +6,18 @@ interface ArrimateFollowCardProps {
   avatar?: string
   date?: string
   location?: string
-  trending: boolean
+  trending?: boolean
   followers: number
-  reliable: boolean
-  verified: boolean
-  follower: boolean
+  reliable?: boolean
+  verified?: boolean
+  follower?: boolean
 }
 
 export default function ArrimateFollowCard({
   nickname = 'Unknown',
   avatar = '/default-avatar.png',
-  date,
-  location,
+  date = '',
+  location = '',
   trending = false,
   followers = 0,
   reliable = false,
@@ -38,7 +38,6 @@ export default function ArrimateFollowCard({
   const [isVerify, setIsVerify] = useState(verified)
   const [isFollowing, setIsFollowing] = useState(follower)
 
-  // Actualizar estados si los props cambian
   useEffect(() => {
     setUserName(nickname || 'Unknown')
     setUserImage(avatar || '/default-avatar.png')
@@ -66,34 +65,34 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-fit h-fit flex gap-2 bg-red-300 p-4 rounded-md shadow-md'>
-      <header className='w-16 h-16'>
+    <article className='bg-red-100 w-full h-fit flex gap-2'>
+      {/* Image */}
+      <header className='bg-blue-200 w-fit h-fit'>
         <Image
           src={userImage}
           alt={`${userName} avatar`}
-          width={64}
-          height={64}
+          width={10}
+          height={10}
           className='rounded-full'
         />
       </header>
-      <div className='flex flex-col justify-center'>
-        <section className='font-bold text-lg'>{userName}</section>
-        <section className='text-sm text-gray-600'>
+      {/* Content */}
+      <div className='bg-yellow-100'>
+        <section className=''>{userName}</section>
+        <section className=''>
           {publicationDate && <div>📅 {publicationDate}</div>}
           {publicationLocation && <div>📍 {publicationLocation}</div>}
         </section>
-        <section className='mt-2 flex gap-1'>
+        <section className=''>
           {isTrending && <span>📈 Trending</span>}
           {isPopular && <span>🔥 Popular</span>}
           {isTrusted && <span>🛡️ Trusted</span>}
           {isVerify && <span>✔ Verified</span>}
         </section>
       </div>
-      <footer className='ml-auto flex items-center'>
-        <button
-          className='bg-blue-500 text-white px-4 py-2 rounded-md'
-          onClick={handleToggleFollowing}
-        >
+      {/* Buttons */}
+      <footer className='bg-green-100'>
+        <button className='' onClick={handleToggleFollowing}>
           {isFollowing ? 'Siguiendo' : 'Seguir'}
         </button>
       </footer>

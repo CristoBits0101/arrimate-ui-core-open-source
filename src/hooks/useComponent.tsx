@@ -1,3 +1,4 @@
+import HomePanel from '@/components/feeds/panels/home-panel'
 import SettingsPanel from '@/components/configuration/panels/settings-panel'
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
@@ -28,7 +29,7 @@ export function usePageComponent() {
   // Check if current path is active
   switch (path) {
     case paths.home:
-      return 'HOME PANEL'
+      return <HomePanel />
 
     case paths.events:
       return 'EVENTS PANEL'
