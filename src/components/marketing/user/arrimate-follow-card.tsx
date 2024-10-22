@@ -25,7 +25,7 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false
+  follower = false,
 }: ArrimateFollowCardProps) {
   const [isMounted, setIsMounted] = useState(false)
 
@@ -66,7 +66,7 @@ export default function ArrimateFollowCard({
     reliable,
     verified,
     follower,
-    description
+    description,
   ])
 
   const handleToggleFollowing = () => {
@@ -92,7 +92,7 @@ export default function ArrimateFollowCard({
             <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full font-medium'>{userName && userName}</span>
               <span className='h-full font-light'>
-                {publicationDate && publicationDate}
+                {publicationDate && ` • ${publicationDate}`}
               </span>
               <span className='h-full font-light'>
                 {publicationLocation && publicationLocation}

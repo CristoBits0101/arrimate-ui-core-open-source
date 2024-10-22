@@ -11,6 +11,29 @@ export default function ShowPostImages() {
   // Save the results
   const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
 
+  // Random statistics
+  const getRandomBoolean = () => Math.random() < 0.5
+  const getRandomFollowers = () =>
+    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500
+
+  // Random date
+  const getRandomTimeAgo = () => {
+    const maxMinutesInMonth = 60 * 24 * 30
+    const randomMinutes = Math.floor(Math.random() * (maxMinutesInMonth + 1))
+    const minutesInHour = 60
+    const minutesInDay = 60 * 24
+    const minutesInWeek = minutesInDay * 7
+    if (randomMinutes >= minutesInWeek) {
+      return `${Math.round(randomMinutes / minutesInWeek)} weeks ago`
+    } else if (randomMinutes >= minutesInDay) {
+      return `${Math.round(randomMinutes / minutesInDay)} days ago`
+    } else if (randomMinutes >= minutesInHour) {
+      return `${Math.round(randomMinutes / minutesInHour)} hours ago`
+    } else {
+      return `${randomMinutes} minutes ago`
+    }
+  }
+
   useEffect(() => {
     // Api key
     const client = createClient(
@@ -38,19 +61,22 @@ export default function ShowPostImages() {
   }, [])
 
   return (
-    <section className='w-full h-fit flex flex-col justify-center items-center'>
+    <section className='w-full h-fit flex flex-col justify-center items-center gap-16'>
       {/* Print the photos */}
-      {photos.map((photo, index) => (
+      {photos.map((photo) => (
         <article
           key={photo.id}
-          className='w-[25vw] h-fit flex flex-col items-center'
+          className='w-[25vw] h-fit flex flex-col items-center gap-4'
         >
-          <header className='w-full h-fit mb-4'>
+          <header className='w-full h-fit'>
             <ArrimateFollowCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
-              trending={photo.liked}
-              followers={photo.id}
+              trending={getRandomBoolean()}
+              followers={getRandomFollowers()}
+              reliable={getRandomBoolean()}
+              verified={getRandomBoolean()}
+              date={getRandomTimeAgo()}
             />
           </header>
           <div className='relative w-full h-[75vh] overflow-hidden'>
@@ -62,10 +88,6 @@ export default function ShowPostImages() {
               className='rounded-3xl drop-shadow-sm'
             />
           </div>
-          {/* Print lines */}
-          {index < photos.length - 1 && (
-            <hr className='border-[#bfbdc050] border-solid w-full h-[0.05rem] my-8' />
-          )}
         </article>
       ))}
     </section>
