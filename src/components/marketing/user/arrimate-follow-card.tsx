@@ -88,7 +88,7 @@ export default function ArrimateFollowCard({
       {/* Content */}
       <div className='flex-grow h-full flex flex-col justify-between overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
-          <section className='w-full h-fit flex gap-1 items-center'>
+          <section className='w-full h-fit flex gap-1 items-center mt-[-0.25rem]'>
             <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full font-medium'>{userName && userName}</span>
               <span className='h-full font-light'>
@@ -101,7 +101,7 @@ export default function ArrimateFollowCard({
           </section>
         )}
         {userDescription && (
-          <section className='w-full h-fit flex gap-1 items-center'>
+          <section className='w-full h-fit flex gap-1 items-center mb-0.5'>
             <p className='truncate flex-grow h-fit min-w-0'>
               {userDescription}
             </p>

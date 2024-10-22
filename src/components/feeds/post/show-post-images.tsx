@@ -49,6 +49,7 @@ export default function ShowPostImages() {
             <ArrimateFollowCard
               nickname={photo.photographer}
               description={photo.photographer_url}
+              trending={photo.liked}
               followers={photo.id}
             />
           </header>
