@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function ShowImages() {
+export default function ShowPostImages() {
   return (
     <section className='w-full h-full flex flex-col justify-center items-center gap-8'>
       <article className='relative rounded-3xl w-[25vw] h-[74.47vh] flex justify-center items-center'>
