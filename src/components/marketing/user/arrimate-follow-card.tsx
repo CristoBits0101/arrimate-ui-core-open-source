@@ -114,7 +114,7 @@ export default function ArrimateFollowCard({
               : 'justify-end'
           } items-center`}
         >
-          {isMounted && (isTrending || isPopular || isTrusted || isVerify) && (
+          {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
             <div className='w-fit h-full flex justify-center items-center gap-1 text-base mt-0.5'>
               {isTrending && (
                 <span className='w-fit h-full flex justify-center items-center'>
@@ -137,6 +137,8 @@ export default function ArrimateFollowCard({
                 </span>
               )}
             </div>
+          ) : (
+            <div className='flex-grow'></div>
           )}
           <footer className='h-full w-fit flex justify-between items-center gap-2'>
             <button
