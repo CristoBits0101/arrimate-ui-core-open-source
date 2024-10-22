@@ -26,7 +26,7 @@ export default function ShowPostImages() {
               followers={randomUtils.getRandomFollowers()}
               reliable={randomUtils.getRandomBoolean()}
               verified={randomUtils.getRandomBoolean()}
-              date={randomUtils.getRandomTimeAgo()}
+              date={randomUtils.getRandomTime()}
             />
           </header>
           <div className='relative w-full h-[75vh] overflow-hidden'>
