@@ -138,8 +138,8 @@ export default function ArrimateFollowCard({
               className='w-fit h-full flex justify-center items-center'
               onClick={handleToggleFollowing}
             >
-              <span className='rounded-full h-6 font-medium flex justify-center items-center pl-2 pr-2.5 text-xs bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
-                {isFollowing ? 'Siguiendo' : '🤝 Follow'}
+              <span className='rounded-full h-5 font-medium flex justify-center items-center px-2.5 text-xs bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
+                {isFollowing ? 'Siguiendo' : 'Follow'}
               </span>
             </button>
           </footer>
