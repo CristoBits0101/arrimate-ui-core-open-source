@@ -1,3 +1,5 @@
+'use client'
+
 import unknownImage from '@/assets/images/profiles/aspect-ratio-16-9/unknown.jpg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
@@ -25,7 +27,7 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false
+  follower = false,
 }: ArrimateFollowCardProps) {
   const [userImage, setUserImage] = useState<string | undefined>(avatar)
   const [userName, setUserName] = useState(nickname)
@@ -63,7 +65,7 @@ export default function ArrimateFollowCard({
     reliable,
     verified,
     follower,
-    description
+    description,
   ])
 
   const handleToggleFollowing = () => {
@@ -73,20 +75,20 @@ export default function ArrimateFollowCard({
   return (
     <article className='w-full h-16 flex gap-3 text-sm'>
       {/* Image */}
-      <header className='w-1/4 h-full drop-shadow-sm flex items-center'>
+      <header className='rounded-full w-16 h-full shadow-sm flex-shrink-0 flex items-center'>
         <Image
           src={userImage ?? unknownImage}
           alt='Avatar'
           width={80}
           height={80}
-          className='object-cover aspect-auto max-h-[100%] w-full h-full'
+          className='rounded-full object-cover aspect-square max-h-[100%] w-16 h-full'
         />
       </header>
       {/* Content */}
-      <div className='w-3/4 h-full flex flex-col justify-between'>
+      <div className='flex-grow h-full flex flex-col justify-between overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
-          <section className='w-full h-4 flex gap-1 items-center'>
-            <p className='truncate h-fit'>
+          <section className='w-full flex gap-1 items-center'>
+            <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full font-medium'>{userName && userName}</span>
               <span className='h-full font-light'>
                 {publicationDate && publicationDate}
@@ -98,12 +100,14 @@ export default function ArrimateFollowCard({
           </section>
         )}
         {userDescription && (
-          <section className='w-full h-4 flex gap-1 items-center'>
-            <p className='truncate h-fit'>{userDescription}</p>
+          <section className='w-full flex gap-1 items-center'>
+            <p className='truncate flex-grow h-fit min-w-0'>
+              {userDescription}
+            </p>
           </section>
         )}
         <section
-          className={`w-full h-6 flex ${
+          className={`w-full flex ${
             isTrending || isPopular || isTrusted || isVerify
               ? 'justify-between'
               : 'justify-end'
@@ -145,7 +149,6 @@ export default function ArrimateFollowCard({
           </footer>
         </section>
       </div>
-      {/* Buttons */}
     </article>
   )
 }
