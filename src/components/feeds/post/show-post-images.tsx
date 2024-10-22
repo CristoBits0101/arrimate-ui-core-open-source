@@ -7,10 +7,8 @@ import { randomUtils } from '@/utils/randomUtils'
 
 export default function ShowPostImages() {
   const { photos, loading, error } = useFetchPhotos({ query: 'momentos' })
-
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
-
   return (
     <section className='w-full h-fit flex flex-col justify-center items-center gap-16'>
       {photos.map((photo) => (
