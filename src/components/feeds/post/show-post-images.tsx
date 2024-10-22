@@ -22,11 +22,13 @@ export default function ShowPostImages() {
             <ArrimateFollowCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
+              date={randomUtils.getRandomTime()}
+              location={randomUtils.getImportantCapital()}
               trending={randomUtils.getRandomBoolean()}
               followers={randomUtils.getRandomFollowers()}
               reliable={randomUtils.getRandomBoolean()}
               verified={randomUtils.getRandomBoolean()}
-              date={randomUtils.getRandomTime()}
+              follower={true}
             />
           </header>
           <div className='relative w-full h-[75vh] overflow-hidden'>

@@ -90,10 +90,10 @@ export default function ArrimateFollowCard({
           <section className='w-full h-fit flex gap-1 items-center mt-[-0.25rem]'>
             <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full font-medium'>{userName && userName}</span>
-              <span className='h-full font-light'>
+              <span className='h-full'>
                 {publicationDate && ` • ${publicationDate}`}
               </span>
-              <span className='h-full font-light'>
+              <span className='h-full'>
                 {publicationLocation && ` • ${publicationLocation}`}
               </span>
             </p>
@@ -145,7 +145,7 @@ export default function ArrimateFollowCard({
               onClick={handleToggleFollowing}
             >
               <span className='rounded-full h-5 font-medium flex justify-center items-center px-2.5 text-xs bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
-                {isFollowing ? 'Siguiendo' : 'Follow'}
+                {isFollowing ? 'Following' : 'Follow'}
               </span>
             </button>
           </footer>

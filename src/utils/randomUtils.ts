@@ -3,19 +3,22 @@ export const randomUtils = {
   getRandomBoolean: () => Math.random() < 0.5,
   getRandomFollowers: () => Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
   getRandomTime: () => {
-    const maxMinutesInMonth = 60 * 24 * 30
-    const randomMinutes = Math.floor(Math.random() * (maxMinutesInMonth + 1))
-    const minutesInHour = 60
-    const minutesInDay = 60 * 24
-    const minutesInWeek = minutesInDay * 7
-    if (randomMinutes >= minutesInWeek)
-      return `${Math.round(randomMinutes / minutesInWeek)} weeks`
-    else if (randomMinutes >= minutesInDay)
-      return `${Math.round(randomMinutes / minutesInDay)} days`
-    else if (randomMinutes >= minutesInHour)
-      return `${Math.round(randomMinutes / minutesInHour)} hours`
-    else return `${randomMinutes} minutes`
-  },
+    const minutesInHour = 60;
+    const minutesInDay = minutesInHour * 24;
+    const minutesInWeek = minutesInDay * 7;
+    const randomCategory = Math.random();
+    let randomMinutes;
+    if (randomCategory < 0.33) {
+      randomMinutes = Math.floor(Math.random() * (23 * minutesInHour)) + minutesInHour;
+      return `${Math.round(randomMinutes / minutesInHour)} hours`;
+    } else if (randomCategory < 0.66) {
+      randomMinutes = Math.floor(Math.random() * (6 * minutesInDay)) + minutesInDay;
+      return `${Math.round(randomMinutes / minutesInDay)} days`;
+    } else {
+      randomMinutes = Math.floor(Math.random() * (3 * minutesInWeek)) + minutesInWeek;
+      return `${Math.round(randomMinutes / minutesInWeek)} weeks`;
+    }
+  },  
   getImportantCapital: () => {
     const capitals = [
       'Washington D.C.',
