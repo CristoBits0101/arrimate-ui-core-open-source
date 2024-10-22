@@ -1,8 +1,6 @@
-'use client'
-
-import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
 
 interface ArrimateFollowCardProps {
   avatar?: string | undefined
@@ -29,6 +27,8 @@ export default function ArrimateFollowCard({
   verified = false,
   follower = false
 }: ArrimateFollowCardProps) {
+  const [isMounted, setIsMounted] = useState(false)
+
   const [userImage, setUserImage] = useState<string | undefined>(avatar)
   const [userName, setUserName] = useState(nickname)
   const [userDescription, setUserDescription] = useState(description)
@@ -45,6 +45,7 @@ export default function ArrimateFollowCard({
   const [isFollowing, setIsFollowing] = useState(follower)
 
   useEffect(() => {
+    setIsMounted(true) // Marca que el componente está montado
     setUserName(nickname || 'Unknown')
     setUserImage(avatar)
     setPublicationDate(date)
@@ -113,7 +114,7 @@ export default function ArrimateFollowCard({
               : 'justify-end'
           } items-center`}
         >
-          {(isTrending || isPopular || isTrusted || isVerify) && (
+          {isMounted && (isTrending || isPopular || isTrusted || isVerify) && (
             <div className='w-fit h-full flex justify-center items-center gap-1 text-base'>
               {isTrending && (
                 <span className='w-fit h-full flex justify-center items-center'>
