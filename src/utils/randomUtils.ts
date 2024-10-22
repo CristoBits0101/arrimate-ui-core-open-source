@@ -12,11 +12,11 @@ export const randomUtils = {
     const minutesInWeek = minutesInDay * 7
 
     if (randomMinutes >= minutesInWeek)
-      return `${Math.round(randomMinutes / minutesInWeek)} weeks ago`
+      return `${Math.round(randomMinutes / minutesInWeek)} weeks`
     else if (randomMinutes >= minutesInDay)
-      return `${Math.round(randomMinutes / minutesInDay)} days ago`
+      return `${Math.round(randomMinutes / minutesInDay)} days`
     else if (randomMinutes >= minutesInHour)
-      return `${Math.round(randomMinutes / minutesInHour)} hours ago`
-    else return `${randomMinutes} minutes ago`
+      return `${Math.round(randomMinutes / minutesInHour)} hours`
+    else return `${randomMinutes} minutes`
   }
 }
