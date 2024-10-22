@@ -18,43 +18,36 @@ export const useFetchPhotos = ({
   color = 'white',
   locale = 'es-ES',
   page = 1,
-  per_page = 10,
+  per_page = 10
 }: UseFetchPhotosParams) => {
   const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
-  const [loading, setLoading] = useState<boolean>(true)
-  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState<boolean>(true) // Spinner state
+  const [error, setError] = useState<string | null>(null) // Error state
 
   useEffect(() => {
     const client = createClient(
       'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
     )
-
-    const fetchPhotos = async () => {
-      setLoading(true)
-      try {
-        const response = await client.photos.search({
-          query,
-          orientation,
-          size,
-          color,
-          locale,
-          page,
-          per_page
-        })
+    setLoading(true)
+    setError(null)
+    client.photos
+      .search({ query, orientation, size, color, locale, page, per_page })
+      .then((response: PhotosWithTotalResults | ErrorResponse) => {
         if ('photos' in response) {
-          setPhotos(response.photos)
+          setPhotos(response.photos) // Save the photos to state
         } else {
-          setError('Error fetching photos')
+          console.error('Error fetching photos: ', response.error)
+          setError('Error fetching photos: ' + response.error) // Save error to state
         }
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Unknown error')
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchPhotos()
+      })
+      .catch((error) => {
+        console.error('Error fetching photos: ', error)
+        setError('Error fetching photos: ' + error.message) // Save error to state
+      })
+      .finally(() => {
+        setLoading(false) // End loading when request finishes
+      })
   }, [query, orientation, size, color, locale, page, per_page])
-
+  
   return { photos, loading, error }
 }

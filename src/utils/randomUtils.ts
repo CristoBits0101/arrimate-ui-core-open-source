@@ -18,5 +18,5 @@ export const randomUtils = {
     else if (randomMinutes >= minutesInHour)
       return `${Math.round(randomMinutes / minutesInHour)} hours ago`
     else return `${randomMinutes} minutes ago`
-  },
+  }
 }
