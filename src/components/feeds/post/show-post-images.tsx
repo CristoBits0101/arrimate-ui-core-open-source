@@ -23,15 +23,13 @@ export default function ShowPostImages() {
     const minutesInHour = 60
     const minutesInDay = 60 * 24
     const minutesInWeek = minutesInDay * 7
-    if (randomMinutes >= minutesInWeek) {
+    if (randomMinutes >= minutesInWeek)
       return `${Math.round(randomMinutes / minutesInWeek)} weeks ago`
-    } else if (randomMinutes >= minutesInDay) {
+    else if (randomMinutes >= minutesInDay)
       return `${Math.round(randomMinutes / minutesInDay)} days ago`
-    } else if (randomMinutes >= minutesInHour) {
+    else if (randomMinutes >= minutesInHour)
       return `${Math.round(randomMinutes / minutesInHour)} hours ago`
-    } else {
-      return `${randomMinutes} minutes ago`
-    }
+    else return `${randomMinutes} minutes ago`
   }
 
   useEffect(() => {
@@ -41,18 +39,17 @@ export default function ShowPostImages() {
     )
 
     // Search term
-    const query: string = 'momentos'
-    const orientation: string = 'portrait'
+    const query = 'momentos'
+    const orientation = 'portrait'
     const size = 'medium'
     const color = 'white'
     const locale = 'es-ES'
     const page = 2
-    const per_page: number = 10
+    const per_page = 10
 
     // Request
     client.photos
       .search({ query, orientation, size, color, locale, page, per_page })
-      // Results
       .then((response: PhotosWithTotalResults | ErrorResponse) => {
         if ('photos' in response) setPhotos(response.photos)
         else console.error('Error fetching photos: ', response.error)
