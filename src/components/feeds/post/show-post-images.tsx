@@ -1,29 +1,40 @@
 'use client'
 
 import Image from 'next/image'
-import { createClient, PhotosWithTotalResults, ErrorResponse } from 'pexels'
 import { useEffect, useState } from 'react'
 
+// Pexels library
+import { createClient, PhotosWithTotalResults, ErrorResponse } from 'pexels'
+
 export default function ShowPostImages() {
+  // Save the results
   const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
 
   useEffect(() => {
+    // Api key
     const client = createClient(
       'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
     )
-    const query = 'Nature'
+
+    // Search term
+    const query: string = 'young'
+    const orientation: string = 'portrait'
+    const per_page: number = 10
+
+    // Request
     client.photos
-      .search({ query, per_page: 3 })
+      .search({ query, orientation, per_page })
+      // Results
       .then((response: PhotosWithTotalResults | ErrorResponse) => {
         if ('photos' in response) setPhotos(response.photos)
-        else console.error('Error fetching photos:', response.error)
+        else console.error('Error fetching photos: ', response.error)
       })
-      .catch((error) => console.error('Error fetching photos:', error))
+      .catch((error) => console.error('Error fetching photos: ', error))
   }, [])
 
   return (
     <section className='w-full h-full flex flex-col justify-center items-center gap-8'>
-      <h1>Photos from Pexels</h1>
+      {/* Print the photos */}
       {photos.map((photo) => (
         <article
           key={photo.id}
@@ -35,7 +46,7 @@ export default function ShowPostImages() {
             alt={photo.alt || 'Image from Pexels'}
             layout='fill'
           />
-          <div className='p-4 text-center'>
+          {/* <div className='p-4 text-center'>
             <p className='font-semibold'>{photo.photographer}</p>
             <a
               href={photo.url}
@@ -45,7 +56,7 @@ export default function ShowPostImages() {
             >
               View on Pexels
             </a>
-          </div>
+          </div> */}
         </article>
       ))}
     </section>
