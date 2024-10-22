@@ -48,7 +48,7 @@ export default function ShowPostImages() {
           <header className='w-full h-fit mb-4'>
             <ArrimateFollowCard
               nickname={photo.photographer}
-              description={photo.photographer_url}
+              description={photo.photographer_url.replace('https://www.', '')}
               trending={photo.liked}
               followers={photo.id}
             />
