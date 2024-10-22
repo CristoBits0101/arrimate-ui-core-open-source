@@ -1,8 +1,7 @@
 export const randomUtils = {
+  getRandomPage: () => Math.floor(Math.random() * 5) + 1,
   getRandomBoolean: () => Math.random() < 0.5,
-
-  getRandomFollowers: () =>
-    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
+  getRandomFollowers: () => Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
 
   getRandomTimeAgo: () => {
     const maxMinutesInMonth = 60 * 24 * 30

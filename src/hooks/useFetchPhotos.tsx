@@ -33,9 +33,8 @@ export const useFetchPhotos = ({
     client.photos
       .search({ query, orientation, size, color, locale, page, per_page })
       .then((response: PhotosWithTotalResults | ErrorResponse) => {
-        if ('photos' in response) {
-          setPhotos(response.photos)
-        } else {
+        if ('photos' in response) setPhotos(response.photos)
+        else {
           console.error('Error fetching photos: ', response.error)
           setError('Error fetching photos: ' + response.error)
         }

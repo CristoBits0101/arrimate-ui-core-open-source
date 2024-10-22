@@ -6,7 +6,9 @@ import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function ShowPostImages() {
-  const { photos, loading, error } = useFetchPhotos({ query: 'momentos' })
+  const { photos, loading, error } = useFetchPhotos({
+    query: 'momentos'
+  })
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   return (
