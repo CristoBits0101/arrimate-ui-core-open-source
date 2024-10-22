@@ -1,6 +1,11 @@
 import Image from 'next/image'
+import { createClient } from 'pexels'
 
 export default function ShowPostImages() {
+  const client = createClient(
+    'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
+  )
+  const query = 'Nature'
   return (
     <section className='w-full h-full flex flex-col justify-center items-center gap-8'>
       <article className='relative rounded-3xl w-[25vw] h-[74.47vh] flex justify-center items-center'>
