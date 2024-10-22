@@ -1,6 +1,6 @@
 'use client'
 
-import unknownImage from '@/assets/images/profiles/aspect-ratio-16-9/unknown.jpg'
+import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
@@ -19,7 +19,7 @@ interface ArrimateFollowCardProps {
 
 export default function ArrimateFollowCard({
   avatar = undefined,
-  nickname = 'Unknown',
+  nickname = '',
   description = '',
   date = '',
   location = '',
@@ -27,7 +27,7 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false,
+  follower = false
 }: ArrimateFollowCardProps) {
   const [userImage, setUserImage] = useState<string | undefined>(avatar)
   const [userName, setUserName] = useState(nickname)
@@ -65,7 +65,7 @@ export default function ArrimateFollowCard({
     reliable,
     verified,
     follower,
-    description,
+    description
   ])
 
   const handleToggleFollowing = () => {
@@ -77,7 +77,7 @@ export default function ArrimateFollowCard({
       {/* Image */}
       <header className='rounded-full w-16 h-full shadow-sm flex-shrink-0 flex items-center'>
         <Image
-          src={userImage ?? unknownImage}
+          src={userImage ? userImage : unknownImage}
           alt='Avatar'
           width={80}
           height={80}

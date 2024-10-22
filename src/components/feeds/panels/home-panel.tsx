@@ -9,7 +9,6 @@ export default function HomePanel() {
   return (
     <section className='w-full h-full flex flex-col justify-between items-center gap-3 overflow-hidden overflow-y-auto no-scrollbar'>
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-1-1/image1.jpg'
         nickname='Liang Wei'
         description='Shaping tomorrow with cutting-edge AI and robotics.'
         trending={true}
@@ -18,7 +17,6 @@ export default function HomePanel() {
         verified={true}
       />
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-16-9/image2.jpg'
         nickname='Valeria Castillo'
         description='Crafting unforgettable brand experiences worldwide.'
         trending={true}
@@ -27,7 +25,6 @@ export default function HomePanel() {
         verified={true}
       />
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-16-9/image3.jpg'
         nickname='Ethan Collins'
         description='Accelerating growth with innovative marketing strategies.'
         trending={getRandomBoolean()}
@@ -36,7 +33,6 @@ export default function HomePanel() {
         verified={getRandomBoolean()}
       />
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-16-9/image4.jpg'
         nickname='Aarav Sharma'
         description='Building the future, one line of code at a time.'
         trending={getRandomBoolean()}
@@ -45,7 +41,6 @@ export default function HomePanel() {
         verified={getRandomBoolean()}
       />
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-16-9/image5.jpg'
         nickname='Zara Al-Faraj'
         description='Transforming data into impactful business decisions.'
         trending={getRandomBoolean()}
@@ -54,7 +49,6 @@ export default function HomePanel() {
         verified={getRandomBoolean()}
       />
       <ArrimateFollowCard
-        avatar='/images/profiles/aspect-ratio-16-9/image6.jpg'
         nickname='Élodie Laurent'
         description='Leading projects to deliver sustainable, efficient results.'
         trending={getRandomBoolean()}
