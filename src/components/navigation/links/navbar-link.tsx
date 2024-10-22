@@ -15,7 +15,7 @@ export default function NavbarItem({
   route,
   blackIcon,
   whiteIcon,
-  textKey,
+  textKey
 }: NavigationItemProps) {
   const isActive = usePageIcon(route)
   const locale = useLocale()
