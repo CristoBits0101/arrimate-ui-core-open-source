@@ -2,16 +2,64 @@
 
 import ArrimateFollowCard from '@/components/marketing/user/arrimate-follow-card'
 import Image from 'next/image'
-import { useFetchPhotos } from '@/hooks/useFetchPhotos'
-import { randomUtils } from '@/utils/randomUtils'
-export default function ShowPostImages() {
-  const { photos, loading, error } = useFetchPhotos({ query: 'momentos' })
+import { useEffect, useState } from 'react'
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+// Pexels library
+import { createClient, PhotosWithTotalResults, ErrorResponse } from 'pexels'
+
+export default function ShowPostImages() {
+  // Save results
+  const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
+
+  // Random statistics
+  const getRandomBoolean = () => Math.random() < 0.5
+  const getRandomFollowers = () =>
+    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500
+
+  // Random date
+  const getRandomTimeAgo = () => {
+    const maxMinutesInMonth = 60 * 24 * 30
+    const randomMinutes = Math.floor(Math.random() * (maxMinutesInMonth + 1))
+    const minutesInHour = 60
+    const minutesInDay = 60 * 24
+    const minutesInWeek = minutesInDay * 7
+    if (randomMinutes >= minutesInWeek)
+      return `${Math.round(randomMinutes / minutesInWeek)} weeks`
+    else if (randomMinutes >= minutesInDay)
+      return `${Math.round(randomMinutes / minutesInDay)} days`
+    else if (randomMinutes >= minutesInHour)
+      return `${Math.round(randomMinutes / minutesInHour)} hours`
+    else return `${randomMinutes} minutes`
+  }
+
+  useEffect(() => {
+    // Api key
+    const client = createClient(
+      'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
+    )
+
+    // Search term
+    const query = 'momentos'
+    const orientation = 'portrait'
+    const size = 'medium'
+    const color = 'white'
+    const locale = 'es-ES'
+    const page = 2
+    const per_page = 10
+
+    // Request
+    client.photos
+      .search({ query, orientation, size, color, locale, page, per_page })
+      .then((response: PhotosWithTotalResults | ErrorResponse) => {
+        if ('photos' in response) setPhotos(response.photos)
+        else console.error('Error fetching photos: ', response.error)
+      })
+      .catch((error) => console.error('Error fetching photos: ', error))
+  }, [])
 
   return (
     <section className='w-full h-fit flex flex-col justify-center items-center gap-16'>
+      {/* Print photos */}
       {photos.map((photo) => (
         <article
           key={photo.id}
@@ -21,11 +69,11 @@ export default function ShowPostImages() {
             <ArrimateFollowCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
-              trending={randomUtils.getRandomBoolean()}
-              followers={randomUtils.getRandomFollowers()}
-              reliable={randomUtils.getRandomBoolean()}
-              verified={randomUtils.getRandomBoolean()}
-              date={randomUtils.getRandomTimeAgo()}
+              trending={getRandomBoolean()}
+              followers={getRandomFollowers()}
+              reliable={getRandomBoolean()}
+              verified={getRandomBoolean()}
+              date={getRandomTimeAgo()}
             />
           </header>
           <div className='relative w-full h-[75vh] overflow-hidden'>
