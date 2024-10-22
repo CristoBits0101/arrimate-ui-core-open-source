@@ -63,7 +63,7 @@ export default function ShowPostImages() {
           </div>
           {/* Print the photos */}
           {index < photos.length - 1 && (
-            <hr className='border-gray-300 w-full my-8' />
+            <hr className='border-[#bfbdc050] border-solid w-full h-[0.05rem] my-8' />
           )}
         </article>
       ))}
