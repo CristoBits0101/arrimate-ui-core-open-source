@@ -21,8 +21,8 @@ export const useFetchPhotos = ({
   per_page = 10
 }: UseFetchPhotosParams) => {
   const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
-  const [loading, setLoading] = useState<boolean>(true) // Spinner state
-  const [error, setError] = useState<string | null>(null) // Error state
+  const [loading, setLoading] = useState<boolean>(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const client = createClient(
@@ -34,20 +34,20 @@ export const useFetchPhotos = ({
       .search({ query, orientation, size, color, locale, page, per_page })
       .then((response: PhotosWithTotalResults | ErrorResponse) => {
         if ('photos' in response) {
-          setPhotos(response.photos) // Save the photos to state
+          setPhotos(response.photos)
         } else {
           console.error('Error fetching photos: ', response.error)
-          setError('Error fetching photos: ' + response.error) // Save error to state
+          setError('Error fetching photos: ' + response.error)
         }
       })
       .catch((error) => {
         console.error('Error fetching photos: ', error)
-        setError('Error fetching photos: ' + error.message) // Save error to state
+        setError('Error fetching photos: ' + error.message)
       })
       .finally(() => {
-        setLoading(false) // End loading when request finishes
+        setLoading(false)
       })
   }, [query, orientation, size, color, locale, page, per_page])
-  
+
   return { photos, loading, error }
 }
