@@ -1,5 +1,6 @@
 'use client'
 
+import ArrimateFollowCard from '@/components/marketing/user/arrimate-follow-card'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -17,13 +18,17 @@ export default function ShowPostImages() {
     )
 
     // Search term
-    const query: string = 'young'
+    const query: string = 'momentos'
     const orientation: string = 'portrait'
+    const size = 'medium'
+    const color = 'white'
+    const locale = 'es-ES'
+    const page = 2
     const per_page: number = 10
 
     // Request
     client.photos
-      .search({ query, orientation, per_page })
+      .search({ query, orientation, size, color, locale, page, per_page })
       // Results
       .then((response: PhotosWithTotalResults | ErrorResponse) => {
         if ('photos' in response) setPhotos(response.photos)
@@ -33,30 +38,33 @@ export default function ShowPostImages() {
   }, [])
 
   return (
-    <section className='w-full h-full flex flex-col justify-center items-center gap-8'>
+    <section className='w-full h-fit flex flex-col justify-center items-center'>
       {/* Print the photos */}
-      {photos.map((photo) => (
+      {photos.map((photo, index) => (
         <article
           key={photo.id}
-          className='relative rounded-3xl w-[25vw] h-[74.47vh] flex flex-col items-center'
+          className='w-[25vw] h-fit flex flex-col items-center'
         >
-          <Image
-            className='drop-shadow-sm w-full h-full object-cover aspect-video rounded-3xl'
-            src={photo.src.large}
-            alt={photo.alt || 'Image from Pexels'}
-            layout='fill'
-          />
-          {/* <div className='p-4 text-center'>
-            <p className='font-semibold'>{photo.photographer}</p>
-            <a
-              href={photo.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-blue-500'
-            >
-              View on Pexels
-            </a>
-          </div> */}
+          <header className='w-full h-fit mb-4'>
+            <ArrimateFollowCard
+              nickname={photo.photographer}
+              description={photo.photographer_url}
+              followers={photo.id}
+            />
+          </header>
+          <div className='relative w-full h-[75vh] overflow-hidden'>
+            <Image
+              src={photo.src.large2x}
+              alt={photo.alt || 'Image from Pexels'}
+              layout='fill'
+              objectFit='cover'
+              className='rounded-3xl drop-shadow-sm'
+            />
+          </div>
+          {/* Print the photos */}
+          {index < photos.length - 1 && (
+            <hr className='border-gray-300 w-full my-8' />
+          )}
         </article>
       ))}
     </section>

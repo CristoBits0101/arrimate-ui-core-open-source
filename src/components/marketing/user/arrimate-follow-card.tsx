@@ -5,7 +5,7 @@ import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage
 interface ArrimateFollowCardProps {
   avatar?: string | undefined
   nickname: string
-  description?: string
+  description?: string | undefined | null
   date?: string
   location?: string
   trending?: boolean
