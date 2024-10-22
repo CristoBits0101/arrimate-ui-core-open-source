@@ -95,7 +95,7 @@ export default function ArrimateFollowCard({
                 {publicationDate && ` • ${publicationDate}`}
               </span>
               <span className='h-full font-light'>
-                {publicationLocation && publicationLocation}
+                {publicationLocation && ` • ${publicationLocation}`}
               </span>
             </p>
           </section>
