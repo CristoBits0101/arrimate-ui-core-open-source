@@ -62,7 +62,7 @@ export default function ShowPostImages() {
               className='rounded-3xl drop-shadow-sm'
             />
           </div>
-          {/* Print the photos */}
+          {/* Print lines */}
           {index < photos.length - 1 && (
             <hr className='border-[#bfbdc050] border-solid w-full h-[0.05rem] my-8' />
           )}
