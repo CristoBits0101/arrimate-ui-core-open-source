@@ -28,7 +28,6 @@ export default function ArrimateFollowCard({
   follower = false
 }: ArrimateFollowCardProps) {
   const [isMounted, setIsMounted] = useState(false)
-
   const [userImage, setUserImage] = useState<string | undefined>(avatar)
   const [userName, setUserName] = useState(nickname)
   const [userDescription, setUserDescription] = useState(description)
@@ -45,7 +44,7 @@ export default function ArrimateFollowCard({
   const [isFollowing, setIsFollowing] = useState(follower)
 
   useEffect(() => {
-    setIsMounted(true) // Marca que el componente está montado
+    setIsMounted(true)
     setUserName(nickname || 'Unknown')
     setUserImage(avatar)
     setPublicationDate(date)
