@@ -4,10 +4,10 @@ import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel() {
   const { photos, loading, error } = useFetchPhotos({
-    query: 'facial',
+    query: 'personas',
     orientation: 'square',
     page: Math.floor(Math.random() * 10) + 1,
-    per_page: 8
+    per_page: 10
   })
 
   if (loading) return <p>Loading...</p>
