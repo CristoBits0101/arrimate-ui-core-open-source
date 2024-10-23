@@ -17,9 +17,9 @@ export default function ShowPostImages() {
       {photos.map((photo) => (
         <article
           key={photo.id}
-          className='w-[25vw] h-fit flex flex-col items-center gap-4'
+          className='relative w-[25vw] h-fit flex flex-col items-center gap-4'
         >
-          <header className='w-full h-fit'>
+          <header className='w-full h-fit absolute bottom-0 left-0 z-10 p-4'>
             <ArrimateCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}

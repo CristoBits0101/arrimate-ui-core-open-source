@@ -35,6 +35,8 @@ export default function HomePanel() {
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
             verified={randomUtils.getRandomBoolean()}
+            date={randomUtils.getRandomTime()}
+            location={randomUtils.getImportantCapital()}
           />
         ))}
       </div>
@@ -52,6 +54,8 @@ export default function HomePanel() {
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
             verified={randomUtils.getRandomBoolean()}
+            date={randomUtils.getRandomTime()}
+            location={randomUtils.getImportantCapital()}
           />
         ))}
       </div>

@@ -47,27 +47,27 @@ export const randomUtils = {
   },
   getRandomSelfDescription: () => {
     const descriptions = [
-      'Energetic and focused',
-      'Curious by nature',
-      'Driven to succeed',
-      'Creative and intuitive',
-      'Optimistic problem solver',
-      'Confident decision-maker',
-      'Adaptable and agile',
-      'Thoughtful collaborator',
-      'Reliable and proactive',
-      'Always learning',
-      'Strategic thinker',
-      'Caring and empathetic',
-      'Focused on results',
-      'Calm under stress',
-      'Innovative at heart',
-      'Efficient and organized',
-      'Motivated to lead',
-      'Passionate and driven',
-      'Detail-oriented',
-      'Collaborative and kind'
-    ]
+      'Unstoppable Energy with Focused Drive',
+      'Curiosity that Sparks Discovery',
+      'Driven by Success Step by Step',
+      'Creative Intuition for Brilliant Solutions',
+      'Optimism that Unlocks New Opportunities',
+      'Confident Decisions with Clarity of Purpose',
+      'Agile Adaptability in Every Situation',
+      'Thoughtful Collaboration that Makes an Impact',
+      'Proactive Actions that Build Trust and Results',
+      'Continuous Learning for Constant Growth',
+      'Strategic Thinker with Future Vision',
+      'Empathy that Connects and Transforms',
+      'Focused on Results with Laser Precision',
+      'Calm Under Pressure with Controlled Action',
+      'Innovative at Heart Always Ahead',
+      'Efficient Organization for Higher Productivity',
+      'Motivated Leadership that Inspires Others',
+      'Passion that Drives Every Action',
+      'Detail-Oriented for Guaranteed Success',
+      'Kind Collaboration with Deep Impact'
+    ];
     const randomIndex = Math.floor(Math.random() * descriptions.length)
     return descriptions[randomIndex]
   }

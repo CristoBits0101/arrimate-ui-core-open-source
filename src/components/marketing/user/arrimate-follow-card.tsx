@@ -1,7 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
-import { useState, useEffect } from 'react'
 import FollowButton from '@/components/marketing/buttons/follow-button'
+import { useState, useEffect } from 'react'
 
 interface ArrimateFollowCardProps {
   src?: string | undefined
@@ -112,7 +114,7 @@ export default function ArrimateFollowCard({
           )}
         </section>
       )}
-      <footer className='w-full h-fit flex justify-center items-center'>
+      <footer className='w-full h-fit flex flex-col justify-center items-center'>
         <FollowButton
           isFollowing={isFollowing}
           onToggleFollow={handleToggleFollowing}
@@ -122,6 +124,15 @@ export default function ArrimateFollowCard({
           textColor='#FFFFFF'
           isRound={true}
         />
+         {(!publicationDate || !publicationLocation) && (
+          <section className='w-full h-fit flex gap-1 justify-center items-center'>
+            <p className='truncate flex-grow h-fit min-w-0'>
+              <span className='h-full text-center text-xs'>
+                {publicationLocation && ` • ${publicationLocation}`}
+              </span>
+            </p>
+          </section>
+        )}
       </footer>
     </article>
   )
