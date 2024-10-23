@@ -1,6 +1,6 @@
 'use client'
 
-import ArrimateCard from '@/components/marketing/user/arrimate-card'
+import ArrimateCard from '@/components/marketing/card/arrimate-card'
 import Image from 'next/image'
 import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'

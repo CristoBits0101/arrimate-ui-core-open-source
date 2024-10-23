@@ -116,22 +116,22 @@ export default function ArrimateFollowCard({
           {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
             <div className='w-fit h-full flex justify-center items-center gap-1 text-base'>
               {isTrending && (
-                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
+                <span className='w-fit h-full flex justify-center items-center'>
                   🔥
                 </span>
               )}
               {isPopular && (
-                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
+                <span className='w-fit h-full flex justify-center items-center'>
                   ⭐
                 </span>
               )}
               {isTrusted && (
-                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
+                <span className='w-fit h-full flex justify-center items-center'>
                   💸
                 </span>
               )}
               {isVerify && (
-                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
+                <span className='w-fit h-full flex justify-center items-center'>
                   ✔️
                 </span>
               )}
