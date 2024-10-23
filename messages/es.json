@@ -3,6 +3,17 @@
     "signIn": "Acceder",
     "signUp": "Registrarse"
   },
+  "Button": {
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "follow": "Seguir",
+    "following": "Siguiendo",
+    "like": "Me gusta",
+    "submit": "Enviar",
+    "unfollow": "Dejar de seguir",
+    "unlike": "Ya no me gusta"
+  },
   "SidebarLayout": {
     "home": "Inicio",
     "events": "Eventos",
