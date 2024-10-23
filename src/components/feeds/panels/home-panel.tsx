@@ -7,7 +7,7 @@ export default function HomePanel() {
 
   return (
     <section className='w-full h-full flex flex-col gap-4 overflow-hidden overflow-y-auto no-scrollbar'>
-      <div className='flex gap-4'>
+      <div className='grid grid-cols-2 gap-4'>
         <ArrimateFollowCard
           nickname='Liang Wei'
           description='Shaping tomorrow with cutting-edge AI and robotics.'
@@ -25,7 +25,7 @@ export default function HomePanel() {
           verified={getRandomBoolean()}
         />
       </div>
-      <div className='flex gap-4'>
+      <div className='grid grid-cols-2 gap-4'>
         <ArrimateFollowCard
           nickname='Ethan Collins'
           description='Accelerating growth with innovative marketing strategies.'

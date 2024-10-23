@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
+import { useState, useEffect } from 'react'
 
 interface ArrimateFollowCardProps {
   avatar?: string | undefined
@@ -73,53 +73,39 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='w-1/2 h-fit flex flex-col gap-2 p-4 text-sm justify-center items-center bg-red-100'>
-      <header className='rounded-full w-14 h-14 shadow-sm flex items-center justify-center bg-blue-100'>
+    <article className='border-solid border-[0.05rem] border-[#bfbdc050] rounded-xl w-full h-fit flex flex-col gap-1 px-2 py-4 text-sm justify-center items-center'>
+      <header className='rounded-full border-solid border-[0.125rem] border-[#bfbdc050] w-14 h-14 shadow-sm flex items-center justify-center'>
         <Image
-          src={userImage ? userImage : unknownImage}
+          src={userImage || unknownImage}
           alt='Avatar'
           width={80}
           height={80}
-          className='rounded-full object-cover aspect-square max-h-[100%] w-full h-full'
+          className='rounded-full object-cover aspect-square w-full h-full'
         />
       </header>
       {userName && (
-        <section className='w-full h-fit flex justify-center items-center'>
-          <p className='truncate font-medium'>{userName && userName}</p>
+        <section className='w-full h-fit flex flex-col justify-center items-center my-1'>
+          <p className='truncate font-medium text-center w-full'>{userName}</p>
+          {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
+            <div className='w-full h-fit flex justify-center items-center'>
+              {isTrending && <span>🔥</span>}
+              {isPopular && <span>⭐</span>}
+              {isTrusted && <span>💸</span>}
+              {isVerify && <span>✔️</span>}
+            </div>
+          ) : isMounted && (
+            <div>
+              <span>{'ㅤ'}</span>
+            </div>
+          )}
         </section>
       )}
-      {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
-        <div className='w-fit h-full flex justify-center items-center gap-1 text-base mt-0.5'>
-          {isTrending && (
-            <span className='w-fit h-full flex justify-center items-center'>
-              🔥
-            </span>
-          )}
-          {isPopular && (
-            <span className='w-fit h-full flex justify-center items-center'>
-              ⭐
-            </span>
-          )}
-          {isTrusted && (
-            <span className='w-fit h-full flex justify-center items-center'>
-              💸
-            </span>
-          )}
-          {isVerify && (
-            <span className='w-fit h-full flex justify-center items-center'>
-              ✔️
-            </span>
-          )}
-        </div>
-      ) : (
-        <></>
-      )}
-      <footer className='h-fit w-fit flex justify-between items-center'>
+      <footer className='w-full h-fit flex justify-center items-center'>
         <button
-          className='w-fit h-full flex justify-center items-center'
+          className='outline-none w-full h-fit flex justify-center items-center'
           onClick={handleToggleFollowing}
         >
-          <span className='rounded-full h-5 font-medium flex justify-center items-center px-2.5 bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
+          <span className='w-full py-1.5 mx-1.5 rounded-full font-medium flex justify-center items-center bg-[#453C41] hover:bg-[#1D0F0F] text-[#FFFFFF] text-xs'>
             {isFollowing ? 'Following' : 'Follow'}
           </span>
         </button>

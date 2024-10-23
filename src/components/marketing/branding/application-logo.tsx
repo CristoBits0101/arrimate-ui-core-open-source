@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import { ds } from '@/lib/fonts'
 
 export default function Logo() {
