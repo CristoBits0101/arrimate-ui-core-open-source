@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
 import { useState, useEffect } from 'react'
+import FollowButton from '@/components/marketing/buttons/follow-button'
 
 interface ArrimateFollowCardProps {
   src?: string | undefined
@@ -70,8 +71,8 @@ export default function ArrimateFollowCard({
     description
   ])
 
-  const handleToggleFollowing = () => {
-    setIsFollowing(!isFollowing)
+  const handleToggleFollowing = (newState: boolean) => {
+    setIsFollowing(newState)
   }
 
   return (
@@ -112,14 +113,15 @@ export default function ArrimateFollowCard({
         </section>
       )}
       <footer className='w-full h-fit flex justify-center items-center'>
-        <button
-          className='outline-none w-full h-fit flex justify-center items-center'
-          onClick={handleToggleFollowing}
-        >
-          <span className='w-full py-1.5 mx-1.5 rounded-full flex justify-center items-center bg-[#453C41] hover:bg-[#1D0F0F] text-[#FFFFFF] text-xs transition-colors duration-300'>
-            {isFollowing ? 'Following' : 'Follow'}
-          </span>
-        </button>
+        <FollowButton
+          isFollowing={isFollowing}
+          onToggleFollow={handleToggleFollowing}
+          text={isFollowing ? 'Following' : 'Follow'}
+          bgColor={isFollowing ? '#1D0F0F' : '#453C41'}
+          hoverBgColor={'#1D0F0F'}
+          textColor='#FFFFFF'
+          isRound={true}
+        />
       </footer>
     </article>
   )

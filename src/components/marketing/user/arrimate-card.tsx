@@ -68,10 +68,6 @@ export default function ArrimateFollowCard({
     description
   ])
 
-  const handleToggleFollowing = () => {
-    setIsFollowing(!isFollowing)
-  }
-
   return (
     <article className='w-full h-16 flex gap-3 text-sm'>
       {/* Image */}
@@ -87,7 +83,7 @@ export default function ArrimateFollowCard({
       {/* Content */}
       <div className='flex-grow h-full flex flex-col justify-between overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
-          <section className='w-full h-fit flex gap-1 items-center mt-[-0.25rem]'>
+          <section className='w-full h-fit flex gap-1 items-center'>
             <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full font-medium'>{userName && userName}</span>
               <span className='h-full'>
@@ -100,7 +96,7 @@ export default function ArrimateFollowCard({
           </section>
         )}
         {userDescription && (
-          <section className='w-full h-fit flex gap-1 items-center mb-0.5'>
+          <section className='w-full h-fit flex gap-1 items-center'>
             <p className='truncate flex-grow h-fit min-w-0'>
               {userDescription}
             </p>
@@ -114,7 +110,7 @@ export default function ArrimateFollowCard({
           } items-center`}
         >
           {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
-            <div className='w-fit h-full flex justify-center items-center gap-1 text-base mt-0.5'>
+            <div className='w-fit h-full flex justify-center items-center gap-1 text-base'>
               {isTrending && (
                 <span className='w-fit h-full flex justify-center items-center'>
                   🔥
@@ -139,16 +135,6 @@ export default function ArrimateFollowCard({
           ) : (
             <div className='flex-grow'></div>
           )}
-          <footer className='h-full w-fit flex justify-between items-center gap-2'>
-            <button
-              className='w-fit h-full flex justify-center items-center'
-              onClick={handleToggleFollowing}
-            >
-              <span className='rounded-full h-5 font-medium flex justify-center items-center px-2.5 text-xs bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
-                {isFollowing ? 'Following' : 'Follow'}
-              </span>
-            </button>
-          </footer>
         </section>
       </div>
     </article>
