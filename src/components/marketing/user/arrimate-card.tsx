@@ -38,8 +38,12 @@ export default function ArrimateFollowCard({
   const [userImage, setUserImage] = useState<string | undefined>(src)
   const [userName, setUserName] = useState(nickname)
   const [userDescription, setUserDescription] = useState(description)
-  const [publicationDate, setPublicationDate] = useState<string | undefined>(date)
-  const [publicationLocation, setPublicationLocation] = useState<string | undefined>(location)
+  const [publicationDate, setPublicationDate] = useState<string | undefined>(
+    date
+  )
+  const [publicationLocation, setPublicationLocation] = useState<
+    string | undefined
+  >(location)
   const [isTrending, setIsTrending] = useState(trending)
   const [isPopular, setIsPopular] = useState(followers > 1000000)
   const [isTrusted, setIsTrusted] = useState(reliable)
@@ -112,22 +116,22 @@ export default function ArrimateFollowCard({
           {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
             <div className='w-fit h-full flex justify-center items-center gap-1 text-base'>
               {isTrending && (
-                <span className='w-fit h-full flex justify-center items-center'>
+                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
                   🔥
                 </span>
               )}
               {isPopular && (
-                <span className='w-fit h-full flex justify-center items-center'>
+                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
                   ⭐
                 </span>
               )}
               {isTrusted && (
-                <span className='w-fit h-full flex justify-center items-center'>
+                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
                   💸
                 </span>
               )}
               {isVerify && (
-                <span className='w-fit h-full flex justify-center items-center'>
+                <span className='w-fit h-full flex justify-center items-center bg-[#FFFFFF50] rounded-full'>
                   ✔️
                 </span>
               )}

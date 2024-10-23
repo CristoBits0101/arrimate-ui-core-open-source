@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useTranslations } from 'next-intl'
 
 interface FollowButtonProps {
   isFollowing: boolean
@@ -13,17 +14,16 @@ interface FollowButtonProps {
 const FollowButton: FC<FollowButtonProps> = ({
   isFollowing,
   onToggleFollow,
-  text,
   bgColor,
   hoverBgColor,
   textColor,
   isRound
 }) => {
+  const t = useTranslations('Button')
   const handleClick = () => {
     const newState = !isFollowing
     onToggleFollow(newState)
   }
-
   return (
     <button
       className={`outline-none w-full h-fit flex justify-center items-center py-1.5 mx-1.5 transition-colors duration-300 ${
@@ -40,7 +40,7 @@ const FollowButton: FC<FollowButtonProps> = ({
       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
     >
       <span className='w-full flex justify-center items-center text-xs'>
-        {text}
+        {isFollowing ? t('following') : t('follow')}
       </span>
     </button>
   )
