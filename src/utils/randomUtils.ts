@@ -44,5 +44,31 @@ export const randomUtils = {
     ]
     const randomIndex = Math.floor(Math.random() * capitals.length)
     return capitals[randomIndex]
+  },
+  getRandomSelfDescription: () => {
+    const descriptions = [
+      'Energetic and focused',
+      'Curious by nature',
+      'Driven to succeed',
+      'Creative and intuitive',
+      'Optimistic problem solver',
+      'Confident decision-maker',
+      'Adaptable and agile',
+      'Thoughtful collaborator',
+      'Reliable and proactive',
+      'Always learning',
+      'Strategic thinker',
+      'Caring and empathetic',
+      'Focused on results',
+      'Calm under stress',
+      'Innovative at heart',
+      'Efficient and organized',
+      'Motivated to lead',
+      'Passionate and driven',
+      'Detail-oriented',
+      'Collaborative and kind'
+    ]
+    const randomIndex = Math.floor(Math.random() * descriptions.length)
+    return descriptions[randomIndex]
   }
 }

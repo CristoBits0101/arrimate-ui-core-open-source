@@ -4,7 +4,7 @@ import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel() {
   const { photos, loading, error } = useFetchPhotos({
-    query: 'face',
+    query: 'faces',
     orientation: 'square',
     page: Math.floor(Math.random() * 10) + 1,
     per_page: 8
@@ -30,7 +30,7 @@ export default function HomePanel() {
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            description={photo?.photographer_url.replace('https://www.', '')}
+            description={randomUtils.getRandomSelfDescription()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
@@ -47,7 +47,7 @@ export default function HomePanel() {
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            description={photo?.photographer_url.replace('https://www.', '')}
+            description={randomUtils.getRandomSelfDescription()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}

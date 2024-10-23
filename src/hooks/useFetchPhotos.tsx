@@ -23,30 +23,35 @@ export const useFetchPhotos = ({
   const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
+  const [prevQuery, setPrevQuery] = useState<string | null>(null)
 
   useEffect(() => {
-    const client = createClient(
-      'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
-    )
-    setLoading(true)
-    setError(null)
-    client.photos
-      .search({ query, orientation, size, color, locale, page, per_page })
-      .then((response: PhotosWithTotalResults | ErrorResponse) => {
-        if ('photos' in response) setPhotos(response.photos)
-        else {
-          console.error('Error fetching photos: ', response.error)
-          setError('Error fetching photos: ' + response.error)
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching photos: ', error)
-        setError('Error fetching photos: ' + error.message)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [query, orientation, size, color, locale, page, per_page])
+    if (query !== prevQuery) {
+      const client = createClient(
+        'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
+      )
+      setLoading(true)
+      setError(null)
+      client.photos
+        .search({ query, orientation, size, color, locale, page, per_page })
+        .then((response: PhotosWithTotalResults | ErrorResponse) => {
+          if ('photos' in response) {
+            setPhotos(response.photos)
+            setPrevQuery(query)
+          } else {
+            console.error('Error fetching photos: ', response.error)
+            setError('Error fetching photos: ' + response.error)
+          }
+        })
+        .catch((error) => {
+          console.error('Error fetching photos: ', error)
+          setError('Error fetching photos: ' + error.message)
+        })
+        .finally(() => {
+          setLoading(false)
+        })
+    }
+  }, [query, orientation, size, color, locale, page, per_page, prevQuery])
 
   return { photos, loading, error }
 }
