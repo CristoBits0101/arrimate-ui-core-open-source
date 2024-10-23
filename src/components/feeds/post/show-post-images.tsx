@@ -1,13 +1,14 @@
 'use client'
 
-import ArrimateFollowCard from '@/components/marketing/user/arrimate-follow-card'
+import ArrimateCard from '@/components/marketing/user/arrimate-card'
 import Image from 'next/image'
 import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function ShowPostImages() {
   const { photos, loading, error } = useFetchPhotos({
-    query: 'momentos'
+    query: 'happy',
+    page: 4
   })
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
@@ -19,7 +20,7 @@ export default function ShowPostImages() {
           className='w-[25vw] h-fit flex flex-col items-center gap-4'
         >
           <header className='w-full h-fit'>
-            <ArrimateFollowCard
+            <ArrimateCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
               date={randomUtils.getRandomTime()}
