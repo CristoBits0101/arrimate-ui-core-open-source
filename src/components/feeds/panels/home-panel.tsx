@@ -1,47 +1,59 @@
 import ArrimateFollowCard from '@/components/marketing/user/arrimate-follow-card'
+import { useFetchPhotos } from '@/hooks/useFetchPhotos'
+import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel() {
-  const getRandomBoolean = () => Math.random() < 0.5
-  const getRandomFollowers = () =>
-    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500
+  const { photos, loading, error } = useFetchPhotos({
+    query: 'face',
+    orientation: 'square',
+    page: Math.floor(Math.random() * 10) + 1,
+    per_page: 8
+  })
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
+
+  const uniquePhotos = photos
+    .filter(
+      (photo, index, self) => index === self.findIndex((p) => p.id === photo.id)
+    )
+    .slice(0, 4)
 
   return (
     <section className='w-full h-full flex flex-col gap-4 overflow-hidden overflow-y-auto no-scrollbar'>
       <div className='grid grid-cols-2 gap-4'>
-        <ArrimateFollowCard
-          nickname='Liang Wei'
-          description='Shaping tomorrow with cutting-edge AI and robotics.'
-          trending={getRandomBoolean()}
-          followers={getRandomFollowers()}
-          reliable={getRandomBoolean()}
-          verified={getRandomBoolean()}
-        />
-        <ArrimateFollowCard
-          nickname='Valeria Castillo'
-          description='Crafting unforgettable brand experiences worldwide.'
-          trending={getRandomBoolean()}
-          followers={getRandomFollowers()}
-          reliable={getRandomBoolean()}
-          verified={getRandomBoolean()}
-        />
+        {uniquePhotos.slice(0, 2).map((photo) => (
+          <ArrimateFollowCard
+            src={photo?.src?.small}
+            alt={photo?.alt || 'Image from Pexels'}
+            width={photo?.width}
+            height={photo?.height}
+            key={photo?.id}
+            nickname={photo?.photographer}
+            description={photo?.photographer_url.replace('https://www.', '')}
+            trending={randomUtils.getRandomBoolean()}
+            followers={randomUtils.getRandomFollowers()}
+            reliable={randomUtils.getRandomBoolean()}
+            verified={randomUtils.getRandomBoolean()}
+          />
+        ))}
       </div>
       <div className='grid grid-cols-2 gap-4'>
-        <ArrimateFollowCard
-          nickname='Ethan Collins'
-          description='Accelerating growth with innovative marketing strategies.'
-          trending={getRandomBoolean()}
-          followers={getRandomFollowers()}
-          reliable={getRandomBoolean()}
-          verified={getRandomBoolean()}
-        />
-        <ArrimateFollowCard
-          nickname='Aarav Sharma'
-          description='Building the future, one line of code at a time.'
-          trending={getRandomBoolean()}
-          followers={getRandomFollowers()}
-          reliable={getRandomBoolean()}
-          verified={getRandomBoolean()}
-        />
+        {uniquePhotos.slice(2, 4).map((photo) => (
+          <ArrimateFollowCard
+            src={photo?.src?.small}
+            alt={photo?.alt || 'Image from Pexels'}
+            width={photo?.width}
+            height={photo?.height}
+            key={photo?.id}
+            nickname={photo?.photographer}
+            description={photo?.photographer_url.replace('https://www.', '')}
+            trending={randomUtils.getRandomBoolean()}
+            followers={randomUtils.getRandomFollowers()}
+            reliable={randomUtils.getRandomBoolean()}
+            verified={randomUtils.getRandomBoolean()}
+          />
+        ))}
       </div>
     </section>
   )
