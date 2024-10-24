@@ -64,7 +64,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
       const overflow = currentIndex + maxVisibleImages - photos.length
       return [
         ...photos.slice(currentIndex, photos.length),
-        ...photos.slice(0, overflow),
+        ...photos.slice(0, overflow)
       ]
     }
     return photos.slice(currentIndex, currentIndex + maxVisibleImages)
