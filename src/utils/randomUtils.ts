@@ -19,7 +19,7 @@ export const randomUtils = {
       return `${Math.round(randomMinutes / minutesInWeek)} weeks`;
     }
   },  
-  getImportantCapital: () => {
+  getRandomCapital: () => {
     const capitals = [
       'Washington D.C.',
       'Beijing',
@@ -45,7 +45,7 @@ export const randomUtils = {
     const randomIndex = Math.floor(Math.random() * capitals.length)
     return capitals[randomIndex]
   },
-  getRandomSelfDescription: () => {
+  getRandomDescription: () => {
     const descriptions = [
       'Unstoppable Energy with Focused Drive',
       'Curiosity that Sparks Discovery',

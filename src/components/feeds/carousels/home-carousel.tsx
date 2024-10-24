@@ -56,9 +56,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
   useEffect(() => {
     updateMaxVisibleImages()
     window.addEventListener('resize', updateMaxVisibleImages)
-    return () => {
-      window.removeEventListener('resize', updateMaxVisibleImages)
-    }
+    return () => window.removeEventListener('resize', updateMaxVisibleImages)
   }, [updateMaxVisibleImages])
   const getVisibleImages = useCallback(() => {
     if (currentIndex + maxVisibleImages > photos.length) {
@@ -80,13 +78,11 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
         img.src = src
       }
 
-      if (photos[nextIndex]?.src.small) {
+      if (photos[nextIndex]?.src.small)
         preloadImage(photos[nextIndex].src.small)
-      }
 
-      if (photos[prevIndex]?.src.small) {
+      if (photos[prevIndex]?.src.small)
         preloadImage(photos[prevIndex].src.small)
-      }
     }
 
     preloadAdjacentImages()
@@ -115,14 +111,18 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
             key={photo.id}
             className='relative w-20 h-20 flex flex-col text-center text-sm gap-2'
           >
-              <span
-                className='relative w-20 h-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
-                style={{
-                  backgroundColor: photo.avg_color || '#f0f0f0',
-                  backgroundImage: `url(${photo.src.small || unknownImage})`
-                }}
-              ></span>
-              <h3 className='w-20'>{photo.photographer.length > 8 ? photo.photographer.slice(0, 8) + '...' : photo.photographer}</h3>
+            <span
+              className='relative w-20 h-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10 shadow-sm'
+              style={{
+                backgroundColor: photo.avg_color || '#f0f0f0',
+                backgroundImage: `url(${photo.src.small || unknownImage})`,
+              }}
+            ></span>
+            <h3 className='w-20'>
+              {photo.photographer.length > 8
+                ? photo.photographer.slice(0, 8) + '...'
+                : photo.photographer}
+            </h3>
           </div>
         ))}
       </div>

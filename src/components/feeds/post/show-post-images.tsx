@@ -6,12 +6,16 @@ import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function ShowPostImages() {
-  const { photos, loading, error } = useFetchPhotos({
+  /**
+   * Loading animation on pause
+   * const { photos, loading, error } = useFetchPhotos({
+   */
+  const { photos } = useFetchPhotos({
     query: 'happy',
     page: 4
   })
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error: {error}</p>
   return (
     <section className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => (
@@ -24,7 +28,7 @@ export default function ShowPostImages() {
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
               date={randomUtils.getRandomTime()}
-              location={randomUtils.getImportantCapital()}
+              location={randomUtils.getRandomCapital()}
               trending={randomUtils.getRandomBoolean()}
               followers={randomUtils.getRandomFollowers()}
               reliable={randomUtils.getRandomBoolean()}

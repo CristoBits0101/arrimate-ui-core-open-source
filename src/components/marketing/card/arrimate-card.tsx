@@ -137,7 +137,7 @@ export default function ArrimateFollowCard({
               )}
             </div>
           ) : (
-            <div className='flex-grow'></div>
+            <div className='flex-grow'>⠀</div>
           )}
         </section>
       </div>

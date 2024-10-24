@@ -3,15 +3,20 @@ import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel() {
-  const { photos, loading, error } = useFetchPhotos({
+
+  /**
+   * Loading animation on pause
+   * const { photos, loading, error } = useFetchPhotos({
+   */
+  const { photos } = useFetchPhotos({
     query: 'personas',
     orientation: 'square',
     page: Math.floor(Math.random() * 10) + 1,
     per_page: 10
   })
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error: {error}</p>
 
   const uniquePhotos = photos
     .filter(
@@ -33,13 +38,13 @@ export default function HomePanel() {
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            description={randomUtils.getRandomSelfDescription()}
+            description={randomUtils.getRandomDescription()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
             verified={randomUtils.getRandomBoolean()}
             date={randomUtils.getRandomTime()}
-            location={randomUtils.getImportantCapital()}
+            location={randomUtils.getRandomCapital()}
             connection={randomUtils.getRandomBoolean()}
           />
         ))}
@@ -53,13 +58,13 @@ export default function HomePanel() {
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            description={randomUtils.getRandomSelfDescription()}
+            description={randomUtils.getRandomDescription()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
             verified={randomUtils.getRandomBoolean()}
             date={randomUtils.getRandomTime()}
-            location={randomUtils.getImportantCapital()}
+            location={randomUtils.getRandomCapital()}
             connection={randomUtils.getRandomBoolean()}
           />
         ))}
