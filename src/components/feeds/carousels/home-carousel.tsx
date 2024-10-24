@@ -27,7 +27,7 @@ interface Photo {
 }
 
 interface CarouselProps {
-  photos: Photo[]
+  photos?: Photo[]
 }
 
 const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
