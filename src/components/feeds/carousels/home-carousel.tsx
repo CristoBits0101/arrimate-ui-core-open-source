@@ -48,7 +48,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
   const updateMaxVisibleImages = useCallback(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth
-      const newMaxImages = Math.floor(containerWidth / 84)
+      const newMaxImages = Math.floor(containerWidth / 96)
       setMaxVisibleImages(newMaxImages)
     }
   }, [])
@@ -74,7 +74,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
     <div className='relative w-full flex justify-between items-center'>
       <button
         onClick={() => changeImage('prev')}
-        className='shadow-sm opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className='shadow-sm opacity-75 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
         aria-label='Previous Image'
       >
         <Image
@@ -100,7 +100,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
       </div>
       <button
         onClick={() => changeImage('next')}
-        className='shadow-sm opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className='shadow-sm opacity-75 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
         aria-label='Next Image'
       >
         <Image
