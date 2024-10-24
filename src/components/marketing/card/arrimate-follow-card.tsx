@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
 import FollowButton from '@/components/marketing/buttons/follow-button'
 import { useState, useEffect } from 'react'
@@ -23,7 +22,6 @@ interface ArrimateFollowCardProps {
 
 export default function ArrimateFollowCard({
   src = undefined,
-  alt = 'User avatar',
   nickname = '',
   description = '',
   date = '',
@@ -32,16 +30,18 @@ export default function ArrimateFollowCard({
   followers = 0,
   reliable = false,
   verified = false,
-  follower = false,
-  width = 80,
-  height = 80
+  follower = false
 }: ArrimateFollowCardProps) {
   const [isMounted, setIsMounted] = useState(false)
   const [userImage, setUserImage] = useState<string | undefined>(src)
   const [userName, setUserName] = useState(nickname)
   const [userDescription, setUserDescription] = useState(description)
-  const [publicationDate, setPublicationDate] = useState<string | undefined>(date)
-  const [publicationLocation, setPublicationLocation] = useState<string | undefined>(location)
+  const [publicationDate, setPublicationDate] = useState<string | undefined>(
+    date
+  )
+  const [publicationLocation, setPublicationLocation] = useState<
+    string | undefined
+  >(location)
   const [isTrending, setIsTrending] = useState(trending)
   const [isPopular, setIsPopular] = useState(followers > 1000000)
   const [isTrusted, setIsTrusted] = useState(reliable)
@@ -79,15 +79,13 @@ export default function ArrimateFollowCard({
 
   return (
     <article className='border-solid border-[0.05rem] border-[#bfbdc050] rounded-xl w-full h-fit flex flex-col gap-1 px-2 py-4 text-sm justify-center items-center'>
-      <header className='w-14 h-14 shadow-sm flex items-center justify-center'>
-        <Image
-          src={userImage || unknownImage}
-          alt={alt || 'User avatar'}
-          width={width}
-          height={height}
-          className='drop-shadow-sm border-solid border-4 border-[#453C41] object-cover aspect-square w-full h-full'
-        />
-      </header>
+      <span className='relative inline-flex overflow-hidden rounded-full p-[0.156rem]'>
+        <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#4CAF50_0%,#4CAF50_25%,#388E3C_50%,#2E7D32_75%,#66BB6A_100%)]'></span>
+        <header
+          className='relative w-16 h-w-16 shadow-sm flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
+          style={{ backgroundImage: `url(${userImage || unknownImage})` }}
+        ></header>
+      </span>
       {userName && (
         <section className='w-full h-fit flex flex-col justify-center items-center mb-1'>
           <p className='truncate w-full h-fit text-center font-medium'>
@@ -124,7 +122,7 @@ export default function ArrimateFollowCard({
           textColor='#FFFFFF'
           isRound={true}
         />
-         {(!publicationDate || !publicationLocation) && (
+        {(!publicationDate || !publicationLocation) && (
           <section className='w-full h-fit flex gap-1 justify-center items-center'>
             <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full text-center text-xs'>
