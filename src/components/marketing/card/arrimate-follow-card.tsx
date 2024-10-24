@@ -80,7 +80,7 @@ export default function ArrimateFollowCard({
   return (
     <article className='border-solid border-[0.05rem] border-[#bfbdc050] rounded-xl w-full h-fit flex flex-col gap-1 px-2 py-4 text-sm justify-center items-center'>
       <span className='relative inline-flex overflow-hidden rounded-full p-1'>
-        <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#80C2B8_0%,#7FC950_50%,#80C2B8_100%)]'></span>{' '}
+        <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#BFE95F_0%,#74D7B8_50%,#BFE95F_100%)]'></span>{' '}
         <header
           className='relative w-20 h-w-20 shadow-sm flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
           style={{ backgroundImage: `url(${userImage || unknownImage})` }}
