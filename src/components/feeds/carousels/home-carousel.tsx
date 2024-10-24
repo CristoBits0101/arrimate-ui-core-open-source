@@ -1,7 +1,8 @@
 import chevron_left from '@/assets/icons/buttons/chevron_left.svg'
 import chevron_right from '@/assets/icons/buttons/chevron_right.svg'
 import Image from 'next/image'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 
 interface Photo {
   id: number
@@ -59,7 +60,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
       window.removeEventListener('resize', updateMaxVisibleImages)
     }
   }, [updateMaxVisibleImages])
-  const getVisibleImages = () => {
+  const getVisibleImages = useCallback(() => {
     if (currentIndex + maxVisibleImages > photos.length) {
       const overflow = currentIndex + maxVisibleImages - photos.length
       return [
@@ -68,45 +69,73 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
       ]
     }
     return photos.slice(currentIndex, currentIndex + maxVisibleImages)
-  }
-  const visibleImages = getVisibleImages()
+  }, [currentIndex, maxVisibleImages, photos])
+  useEffect(() => {
+    const preloadAdjacentImages = () => {
+      const nextIndex = (currentIndex + 1) % photos.length
+      const prevIndex = (currentIndex - 1 + photos.length) % photos.length
+
+      const preloadImage = (src: string) => {
+        const img = new window.Image()
+        img.src = src
+      }
+
+      if (photos[nextIndex]?.src.small) {
+        preloadImage(photos[nextIndex].src.small)
+      }
+
+      if (photos[prevIndex]?.src.small) {
+        preloadImage(photos[prevIndex].src.small)
+      }
+    }
+
+    preloadAdjacentImages()
+  }, [currentIndex, photos])
+  const visibleImages = useMemo(() => getVisibleImages(), [getVisibleImages])
   return (
     <div className='relative w-full flex justify-between items-center'>
       <button
         onClick={() => changeImage('prev')}
-        className='shadow-sm opacity-75 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className='shadow-sm opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-20'
         aria-label='Previous Image'
       >
         <Image
           className='bg-transparent w-fit h-fit'
           src={chevron_left}
           alt='Previous'
+          loading='lazy'
         />
       </button>
       <div
         ref={containerRef}
-        className='relative flex justify-between w-full h-fit overflow-hidden'
+        className='relative flex justify-between w-full h-fit overflow-visible'
       >
         {visibleImages.map((photo) => (
-          <div key={photo.id} className='relative w-20 h-20'>
-            <Image
-              src={photo.src.medium}
-              alt={photo.alt ?? `Image by ${photo.photographer}`}
-              className='drop-shadow-sm w-full h-full object-contain aspect-square rounded-full'
-              layout='fill'
-            />
+          <div
+            key={photo.id}
+            className='relative w-20 h-20 flex flex-col text-center text-sm gap-2'
+          >
+              <span
+                className='relative w-20 h-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
+                style={{
+                  backgroundColor: photo.avg_color || '#f0f0f0',
+                  backgroundImage: `url(${photo.src.small || unknownImage})`
+                }}
+              ></span>
+              <h3 className='w-20'>{photo.photographer.length > 8 ? photo.photographer.slice(0, 8) + '...' : photo.photographer}</h3>
           </div>
         ))}
       </div>
       <button
         onClick={() => changeImage('next')}
-        className='shadow-sm opacity-75 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className='shadow-sm opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
         aria-label='Next Image'
       >
         <Image
           className='bg-transparent w-fit h-fit'
           src={chevron_right}
           alt='Next'
+          loading='lazy'
         />
       </button>
     </div>
