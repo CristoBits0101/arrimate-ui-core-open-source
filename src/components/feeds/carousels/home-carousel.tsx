@@ -31,17 +31,6 @@ interface CarouselProps {
 }
 
 export default function HomeCarousel({ photos }: CarouselProps) {
-  const images = [
-    '/images/profiles/aspect-ratio-1-1/image1.jpg',
-    '/images/profiles/aspect-ratio-1-1/image2.jpg',
-    '/images/profiles/aspect-ratio-1-1/image3.jpg',
-    '/images/profiles/aspect-ratio-1-1/image4.jpg',
-    '/images/profiles/aspect-ratio-1-1/image5.jpg',
-    '/images/profiles/aspect-ratio-1-1/image6.jpg',
-    '/images/profiles/aspect-ratio-1-1/image7.jpg',
-    '/images/profiles/aspect-ratio-1-1/image8.jpg',
-    '/images/profiles/aspect-ratio-1-1/image9.jpg'
-  ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const [maxVisibleImages, setMaxVisibleImages] = useState(13)
@@ -50,8 +39,8 @@ export default function HomeCarousel({ photos }: CarouselProps) {
   const changeImage = (direction: 'next' | 'prev') => {
     setCurrentIndex((currentIndex) =>
       direction === 'next'
-        ? (currentIndex + 1) % images.length
-        : (currentIndex - 1 + images.length) % images.length
+        ? (currentIndex + 1) % photos.length
+        : (currentIndex - 1 + photos.length) % photos.length
     )
   }
 
@@ -71,14 +60,14 @@ export default function HomeCarousel({ photos }: CarouselProps) {
     }
   }, [])
 
-  const visibleImages = images.slice(
+  const visibleImages = photos.slice(
     currentIndex,
     currentIndex + maxVisibleImages
   )
 
   if (visibleImages.length < maxVisibleImages) {
     visibleImages.push(
-      ...images.slice(0, maxVisibleImages - visibleImages.length)
+      ...photos.slice(0, maxVisibleImages - visibleImages.length)
     )
   }
 
@@ -94,10 +83,10 @@ export default function HomeCarousel({ photos }: CarouselProps) {
         ref={containerRef}
         className='relative flex justify-between w-full h-fit overflow-hidden'
       >
-        {visibleImages.map((image, index) => (
+        {photos.map((photo, index) => (
           <div key={index} className='relative w-20 h-20'>
             <Image
-              src={image}
+              src={photo.src.medium}
               alt={`Image ${currentIndex + index + 1}`}
               className='drop-shadow-sm w-full h-full object-contain aspect-square rounded-full'
               layout='fill'
