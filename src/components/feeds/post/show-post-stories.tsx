@@ -5,7 +5,7 @@ export default function ShowPostStories() {
   const { photos, loading, error } = useFetchPhotos({
     query: 'happy',
     orientation: 'square',
-    per_page: 12,
+    per_page: 84,
     page: 4
   })
 

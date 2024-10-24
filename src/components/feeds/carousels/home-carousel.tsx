@@ -31,75 +31,66 @@ interface CarouselProps {
 }
 
 export default function HomeCarousel({ photos }: CarouselProps) {
-
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [maxVisibleImages, setMaxVisibleImages] = useState(13)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [maxVisibleImages, setMaxVisibleImages] = useState(13);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const changeImage = (direction: 'next' | 'prev') => {
     setCurrentIndex((currentIndex) =>
       direction === 'next'
         ? (currentIndex + 1) % photos.length
         : (currentIndex - 1 + photos.length) % photos.length
-    )
-  }
+    );
+  };
 
   const updateMaxVisibleImages = () => {
     if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth
-      const newMaxImages = Math.floor(containerWidth / 88)
-      setMaxVisibleImages(newMaxImages)
+      const containerWidth = containerRef.current.offsetWidth;
+      const newMaxImages = Math.floor(containerWidth / 88);
+      setMaxVisibleImages(newMaxImages);
     }
-  }
+  };
 
   useEffect(() => {
-    updateMaxVisibleImages()
-    window.addEventListener('resize', updateMaxVisibleImages)
+    updateMaxVisibleImages();
+    window.addEventListener('resize', updateMaxVisibleImages);
     return () => {
-      window.removeEventListener('resize', updateMaxVisibleImages)
-    }
-  }, [])
+      window.removeEventListener('resize', updateMaxVisibleImages);
+    };
+  }, []);
 
-  const visibleImages = photos.slice(
-    currentIndex,
-    currentIndex + maxVisibleImages
-  )
-
-  if (visibleImages.length < maxVisibleImages) {
-    visibleImages.push(
-      ...photos.slice(0, maxVisibleImages - visibleImages.length)
-    )
-  }
+  // Solo renderiza las imágenes visibles
+  const visibleImages = photos.slice(currentIndex, currentIndex + maxVisibleImages);
 
   return (
-    <div className='relative w-full flex justify-between items-center'>
+    <div className="relative w-full flex justify-between items-center">
       <button
         onClick={() => changeImage('prev')}
-        className='shadow-sm opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className="shadow-sm opacity-85 absolute left-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10"
       >
-        <Image className='bg-transparent w-fit h-fit' src={chevron_left} alt='Previous' />
+        <Image className="bg-transparent w-fit h-fit" src={chevron_left} alt="Previous" />
       </button>
       <div
         ref={containerRef}
-        className='relative flex justify-between w-full h-fit overflow-hidden'
+        className="relative flex justify-between w-full h-fit overflow-hidden"
       >
-        {photos.map((photo, index) => (
-          <div key={index} className='relative w-20 h-20'>
+        {visibleImages.map((photo, index) => (
+          <div key={index} className="relative w-20 h-20">
             <Image
               src={photo.src.medium}
-              alt={`Image ${currentIndex + index + 1}`}
-              className='drop-shadow-sm w-full h-full object-contain aspect-square rounded-full'
-              layout='fill'
+              alt={`Image ${index + 1}`}
+              className="drop-shadow-sm w-full h-full object-contain aspect-square rounded-full"
+              layout="fill"
             />
           </div>
         ))}
       </div>
       <button
         onClick={() => changeImage('next')}
-        className='shadow-sm opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10'
+        className="shadow-sm opacity-85 absolute right-2 bg-white rounded-full w-8 h-8 flex items-center justify-center z-10"
       >
-        <Image className='bg-transparent w-fit h-fit' src={chevron_right} alt='Next' />
+        <Image className="bg-transparent w-fit h-fit" src={chevron_right} alt="Next" />
       </button>
     </div>
-  )
+  );
 }
