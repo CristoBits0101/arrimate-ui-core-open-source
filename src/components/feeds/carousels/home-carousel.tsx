@@ -46,7 +46,7 @@ export default function HomeCarousel({ photos }: CarouselProps) {
   const updateMaxVisibleImages = () => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth;
-      const newMaxImages = Math.floor(containerWidth / 88);
+      const newMaxImages = Math.floor(containerWidth / 84);
       setMaxVisibleImages(newMaxImages);
     }
   };
@@ -59,7 +59,6 @@ export default function HomeCarousel({ photos }: CarouselProps) {
     };
   }, []);
 
-  // Solo renderiza las imágenes visibles
   const visibleImages = photos.slice(currentIndex, currentIndex + maxVisibleImages);
 
   return (
