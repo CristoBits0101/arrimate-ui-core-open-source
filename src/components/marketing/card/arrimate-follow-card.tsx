@@ -88,7 +88,7 @@ export default function ArrimateFollowCard({
         {isOnline ? (
           <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#68EF00_0%,#5EBAA6_50%,#68EF00_100%)]'></span>
         ) : (
-          <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#932D30_0%,#683142_50%,#932D30_100%)]'></span>
+          <span className='absolute inset-[-1000%] bg-[#453C41]'></span>
         )}
         <header
           className='relative w-20 h-w-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
