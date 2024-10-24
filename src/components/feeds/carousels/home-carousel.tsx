@@ -3,7 +3,34 @@ import chevron_right from '@/assets/icons/buttons/chevron_right.svg'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 
-export default function HomeCarousel() {
+interface Photo {
+  id: number;
+  width: number;
+  height: number;
+  url: string;
+  photographer: string;
+  photographer_url: string;
+  photographer_id: string;
+  avg_color: string | null;
+  src: {
+    original: string;
+    large2x: string;
+    large: string;
+    medium: string;
+    small: string;
+    portrait: string;
+    landscape: string;
+    tiny: string;
+  };
+  liked: boolean;
+  alt: string | null;
+}
+
+interface CarouselProps {
+  photos: Photo[];
+}
+
+export default function HomeCarousel({ photos }: CarouselProps) {
   const images = [
     '/images/profiles/aspect-ratio-1-1/image1.jpg',
     '/images/profiles/aspect-ratio-1-1/image2.jpg',

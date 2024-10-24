@@ -2,8 +2,8 @@
 
 import Header from '@/layouts/header'
 import Aside from '@/layouts/aside'
-import HomeCarousel from '@/components/feeds/carousels/home-carousel'
-import ShowImages from '@/components/feeds/post/show-post-images'
+import ShowPostImages from '@/components/feeds/post/show-post-images'
+import ShowPostStories from '@/components/feeds/post/show-post-stories'
 import '@/styles/globals.css'
 
 export default function HomePage() {
@@ -11,8 +11,8 @@ export default function HomePage() {
     <>
       <Header />
       <main className='min-w-52 col-span-1 flex flex-col items-center'>
-        <HomeCarousel />
-        <ShowImages />
+        <ShowPostStories />
+        <ShowPostImages />
       </main>
       <Aside />
     </>
