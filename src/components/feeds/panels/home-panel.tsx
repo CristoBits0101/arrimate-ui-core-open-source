@@ -21,6 +21,7 @@ export default function HomePanel() {
 
   return (
     <section className='w-full h-full flex flex-col gap-4 overflow-hidden overflow-y-auto no-scrollbar'>
+      <h2 className='font-medium uppercase w-full'>Top Content Creators</h2>
       <div className='grid grid-cols-2 gap-4'>
         {uniquePhotos.slice(0, 2).map((photo) => (
           <ArrimateFollowCard

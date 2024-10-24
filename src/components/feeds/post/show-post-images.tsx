@@ -13,7 +13,7 @@ export default function ShowPostImages() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   return (
-    <section className='w-full h-fit flex flex-col justify-center items-center gap-16'>
+    <section className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => (
         <article
           key={photo.id}
