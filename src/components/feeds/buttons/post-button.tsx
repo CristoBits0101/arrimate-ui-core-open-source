@@ -19,42 +19,47 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#FFFFFF',
   iconAlt = '',
-  iconSize = 24,
+  iconSize = 26
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
       <button className='w-fit h-fit p-2 rounded-full'>
         {iconDisplay === 'like' && (
           <GoHeartFill
-            className='fill-white drop-shadow-sm '
+            style={{ fill: iconColor }}
+            className='drop-shadow-sm opacity-85'
             size={iconSize}
             aria-label={iconAlt}
           />
         )}
         {iconDisplay === 'comments' && (
           <IoChatbubbleEllipses
-            className='fill-white drop-shadow-sm '
+            style={{ fill: iconColor }}
+            className='drop-shadow-sm opacity-85'
             size={iconSize}
             aria-label={iconAlt}
           />
         )}
         {iconDisplay === 'save' && (
           <PiShareFatFill
-            className='fill-white drop-shadow-sm '
+            style={{ fill: iconColor }}
+            className='drop-shadow-sm opacity-85'
             size={iconSize}
             aria-label={iconAlt}
           />
         )}
         {iconDisplay === 'share' && (
           <HiBookmark
-            className='fill-white drop-shadow-sm '
+            style={{ fill: iconColor }}
+            className='drop-shadow-sm opacity-85'
             size={iconSize}
             aria-label={iconAlt}
           />
         )}
         {iconDisplay === 'options' && (
           <SlOptionsVertical
-            className='fill-white drop-shadow-sm '
+            style={{ fill: iconColor }}
+            className='drop-shadow-sm opacity-85'
             size={iconSize}
             aria-label={iconAlt}
           />

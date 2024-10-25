@@ -48,31 +48,31 @@ export default function ShowPostImages() {
           </div>
           <div className='w-fit h-fit absolute top-1/2 right-0 transform -translate-y-1/2 p-2 flex flex-col gap-2'>
             <PostButton
-              iconColor = '#FFFFFF85'
+              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='like'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF85'
+              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='comments'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF85'
+              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='save'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF85'
+              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='share'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF85'
+              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='options'
               textDisplay=''
