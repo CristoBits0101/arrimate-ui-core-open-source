@@ -73,7 +73,7 @@ export default function ArrimateFollowCard({
   ])
 
   return (
-    <article className='w-full h-16 flex gap-3 text-sm text-[#FFFFFF] text-shadow'>
+    <section className='w-full h-16 flex gap-3 text-sm'>
       {/* Image */}
       <header className='rounded-full w-16 h-full shadow-sm flex-shrink-0 flex items-center'>
         <Image
@@ -85,9 +85,9 @@ export default function ArrimateFollowCard({
         />
       </header>
       {/* Content */}
-      <div className='flex-grow h-full flex flex-col justify-between overflow-hidden'>
+      <aside className='flex-grow h-full flex flex-col justify-between overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
-          <section className='w-full h-fit flex gap-1 items-center'>
+          <div className='w-full h-fit flex gap-1 items-center'>
             <p className='truncate flex-grow h-fit min-w-0'>
               <span className='h-full font-medium'>{userName && userName}</span>
               <span className='h-full'>
@@ -97,16 +97,16 @@ export default function ArrimateFollowCard({
                 {publicationLocation && ` • ${publicationLocation}`}
               </span>
             </p>
-          </section>
+          </div>
         )}
         {userDescription && (
-          <section className='w-full h-fit flex gap-1 items-center'>
+          <div className='w-full h-fit flex gap-1 items-center'>
             <p className='truncate flex-grow h-fit min-w-0'>
               {userDescription}
             </p>
-          </section>
+          </div>
         )}
-        <section
+        <div
           className={`w-full flex ${
             isTrending || isPopular || isTrusted || isVerify
               ? 'justify-between'
@@ -139,8 +139,8 @@ export default function ArrimateFollowCard({
           ) : (
             <div className='flex-grow'>⠀</div>
           )}
-        </section>
-      </div>
-    </article>
+        </div>
+      </aside>
+    </section>
   )
 }

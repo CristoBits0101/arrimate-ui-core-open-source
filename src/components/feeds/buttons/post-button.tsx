@@ -17,7 +17,7 @@ export default function PostButton({
   textDisplay = '',
   textColor = '#FFFFFF',
   iconDisplay = '',
-  iconColor = '#FFFFFF',
+  iconColor = '#1D0F0F',
   iconAlt = '',
   iconSize = 28
 }: PostButtonProps) {

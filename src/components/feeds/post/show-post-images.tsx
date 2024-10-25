@@ -18,13 +18,13 @@ export default function ShowPostImages() {
   // if (loading) return <p>Loading...</p>
   // if (error) return <p>Error: {error}</p>
   return (
-    <section className='w-full h-fit flex flex-col justify-center items-center gap-8'>
+    <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => (
         <article
           key={photo.id}
           className='relative w-[25vw] h-fit flex flex-col items-center gap-4'
         >
-          <header className='w-full h-fit absolute bottom-0 left-0 z-10 p-4'>
+          <header className='w-full h-fit'>
             <ArrimateCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
@@ -37,7 +37,7 @@ export default function ShowPostImages() {
               follower={true}
             />
           </header>
-          <div className='relative w-full h-[75vh] overflow-hidden'>
+          <section className='relative w-full h-[75vh] overflow-hidden'>
             <Image
               src={photo.src.large2x}
               alt={photo.alt || 'Image from Pexels'}
@@ -45,41 +45,36 @@ export default function ShowPostImages() {
               objectFit='cover'
               className='rounded-3xl drop-shadow-sm'
             />
-          </div>
-          <div className='w-fit h-fit absolute top-1/2 right-0 transform -translate-y-1/2 p-2 flex flex-col gap-2'>
+          </section>
+          <aside className='w-fit h-fit flex flex-col gap-2'>
             <PostButton
-              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='like'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='comments'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='save'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='share'
               textDisplay=''
             />
             <PostButton
-              iconColor = '#FFFFFF'
               iconAlt=''
               iconDisplay='options'
               textDisplay=''
             />
-          </div>
+          </aside>
         </article>
       ))}
-    </section>
+    </div>
   )
 }
