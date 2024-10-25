@@ -1,6 +1,6 @@
 import { IoMdHeart } from 'react-icons/io'
 import { IoChatbubbleEllipsesSharp } from 'react-icons/io5'
-import { IoBookmarkSharp } from 'react-icons/io5'
+import { BiSolidBookmark } from 'react-icons/bi'
 import { RiShareForwardFill } from 'react-icons/ri'
 import { SlOptionsVertical } from 'react-icons/sl'
 
@@ -41,7 +41,7 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'share' && (
-          <IoBookmarkSharp
+          <BiSolidBookmark
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
