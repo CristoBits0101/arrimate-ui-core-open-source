@@ -15,7 +15,7 @@ export default function ShowPostImages() {
     query: 'halloween party',
     orientation: 'portrait',
     per_page: 84,
-    page: 4
+    page: randomUtils.getRandomPage()
   })
   // if (loading) return <p>Loading...</p>
   // if (error) return <p>Error: {error}</p>

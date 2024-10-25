@@ -70,5 +70,31 @@ export const randomUtils = {
     ];
     const randomIndex = Math.floor(Math.random() * descriptions.length)
     return descriptions[randomIndex]
+  },
+  getRandomHalloweenWord: () => {
+    const halloweenWords = [
+      'Pumpkin',
+      'Ghost',
+      'Witch',
+      'Zombie',
+      'Vampire',
+      'Werewolf',
+      'Haunted House',
+      'Skeleton',
+      'Cemetery',
+      'Cauldron',
+      'Candy Corn',
+      'Trick or Treat',
+      'Black Cat',
+      'Full Moon',
+      'Bat',
+      'Graveyard',
+      'Spooky',
+      'Ghoul',
+      'Spider Web',
+      'Jack-o\'-lantern'
+    ]
+    const randomIndex = Math.floor(Math.random() * halloweenWords.length)
+    return halloweenWords[randomIndex]
   }
 }
