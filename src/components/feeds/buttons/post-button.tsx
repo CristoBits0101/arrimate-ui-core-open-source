@@ -19,7 +19,7 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#FFFFFF',
   iconAlt = '',
-  iconSize = 26
+  iconSize = 28
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
@@ -27,7 +27,7 @@ export default function PostButton({
         {iconDisplay === 'like' && (
           <GoHeartFill
             style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85'
+            className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
           />
@@ -35,7 +35,7 @@ export default function PostButton({
         {iconDisplay === 'comments' && (
           <IoChatbubbleEllipses
             style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85'
+            className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
           />
@@ -43,7 +43,7 @@ export default function PostButton({
         {iconDisplay === 'save' && (
           <PiShareFatFill
             style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85'
+            className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
           />
@@ -51,7 +51,7 @@ export default function PostButton({
         {iconDisplay === 'share' && (
           <HiBookmark
             style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85'
+            className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
           />
@@ -59,7 +59,7 @@ export default function PostButton({
         {iconDisplay === 'options' && (
           <SlOptionsVertical
             style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85'
+            className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
           />
