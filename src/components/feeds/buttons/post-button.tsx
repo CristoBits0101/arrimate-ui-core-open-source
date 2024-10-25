@@ -1,5 +1,5 @@
 import { GoHeartFill } from 'react-icons/go'
-import { FaCommentDots } from 'react-icons/fa'
+import { IoChatbubbleEllipses } from 'react-icons/io5'
 import { HiBookmark } from 'react-icons/hi2'
 import { PiShareFatFill } from 'react-icons/pi'
 import { SlOptionsVertical } from 'react-icons/sl'
@@ -19,35 +19,43 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#FFFFFF',
   iconAlt = '',
-  iconSize = 24
+  iconSize = 24,
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
-      <button className='w-fit h-fit p-2 rounded-full bg-red-400'>
+      <button className='w-fit h-fit p-2 rounded-full'>
         {iconDisplay === 'like' && (
-          <GoHeartFill size={iconSize} color={iconColor} aria-label={iconAlt} />
+          <GoHeartFill
+            className='fill-white drop-shadow-sm '
+            size={iconSize}
+            aria-label={iconAlt}
+          />
         )}
         {iconDisplay === 'comments' && (
-          <FaCommentDots
+          <IoChatbubbleEllipses
+            className='fill-white drop-shadow-sm '
             size={iconSize}
-            color={iconColor}
             aria-label={iconAlt}
           />
         )}
         {iconDisplay === 'save' && (
           <PiShareFatFill
+            className='fill-white drop-shadow-sm '
             size={iconSize}
-            color={iconColor}
             aria-label={iconAlt}
           />
         )}
         {iconDisplay === 'share' && (
-          <HiBookmark size={iconSize} color={iconColor} aria-label={iconAlt} />
+          <HiBookmark
+            className='fill-white drop-shadow-sm '
+            size={iconSize}
+            aria-label={iconAlt}
+          />
         )}
         {iconDisplay === 'options' && (
           <SlOptionsVertical
+            className='fill-white drop-shadow-sm '
             size={iconSize}
-            color={iconColor}
             aria-label={iconAlt}
           />
         )}
