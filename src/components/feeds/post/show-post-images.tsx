@@ -1,8 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import ArrimateCard from '@/components/marketing/card/arrimate-card'
 import PostButton from '@/components/feeds/buttons/post-button'
+import Image from 'next/image'
 import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
@@ -47,11 +47,31 @@ export default function ShowPostImages() {
             />
           </div>
           <div className='w-fit h-fit absolute top-1/2 right-0 transform -translate-y-1/2 p-2 flex flex-col gap-2'>
-            <PostButton backgroundColor='#F4F4F4' color='' iconSrc='' iconAlt='' text='' />
-            <PostButton backgroundColor='#F4F4F4' color='' iconSrc='' iconAlt='' text='' />
-            <PostButton backgroundColor='#F4F4F4' color='' iconSrc='' iconAlt='' text='' />
-            <PostButton backgroundColor='#F4F4F4' color='' iconSrc='' iconAlt='' text='' />
-            <PostButton backgroundColor='#F4F4F4' color='' iconSrc='' iconAlt='' text='' />
+            <PostButton
+              iconAlt=''
+              iconDisplay='like'
+              textDisplay=''
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='comments'
+              textDisplay=''
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='save'
+              textDisplay=''
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='share'
+              textDisplay=''
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='options'
+              textDisplay=''
+            />
           </div>
         </article>
       ))}
