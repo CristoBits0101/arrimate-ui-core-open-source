@@ -1,6 +1,6 @@
 import { GoHeartFill } from 'react-icons/go'
 import { FaCommentDots } from 'react-icons/fa'
-import { FaBookmark } from 'react-icons/fa'
+import { BsBookmarkFill } from 'react-icons/bs'
 import { PiShareFatFill } from 'react-icons/pi'
 import { SlOptionsVertical } from 'react-icons/sl'
 
@@ -35,10 +35,18 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'save' && (
-          <PiShareFatFill size={iconSize} color={iconColor} aria-label={iconAlt} />
+          <PiShareFatFill
+            size={iconSize}
+            color={iconColor}
+            aria-label={iconAlt}
+          />
         )}
         {iconDisplay === 'share' && (
-          <FaBookmark size={iconSize} color={iconColor} aria-label={iconAlt} />
+          <BsBookmarkFill
+            size={iconSize}
+            color={iconColor}
+            aria-label={iconAlt}
+          />
         )}
         {iconDisplay === 'options' && (
           <SlOptionsVertical
