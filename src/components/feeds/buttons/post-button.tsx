@@ -19,7 +19,7 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#1D0F0F',
   iconAlt = '',
-  iconSize = 28,
+  iconSize = 28
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
