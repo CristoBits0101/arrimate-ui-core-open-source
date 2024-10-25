@@ -12,7 +12,9 @@ export default function ShowPostImages() {
    * const { photos, loading, error } = useFetchPhotos({
    */
   const { photos } = useFetchPhotos({
-    query: 'happy',
+    query: 'halloween party',
+    orientation: 'portrait',
+    per_page: 84,
     page: 4
   })
   // if (loading) return <p>Loading...</p>
@@ -37,14 +39,14 @@ export default function ShowPostImages() {
               follower={true}
             />
           </header>
-          <div className='w-full h-[75vh] flex justify-center items-center gap-4'>
+          <div className='w-full h-[70vh] flex justify-center items-center gap-4'>
             <section className='relative w-full h-full overflow-hidden'>
               <Image
                 src={photo.src.large2x}
                 alt={photo.alt || 'Image from Pexels'}
                 layout='fill'
                 objectFit='cover'
-                className='rounded-3xl drop-shadow-sm'
+                className='rounded-2xl drop-shadow-sm'
               />
             </section>
             <aside className='relative w-fit h-fit flex flex-col gap-2 justify-center items-center'>
