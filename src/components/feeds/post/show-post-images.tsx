@@ -22,7 +22,7 @@ export default function ShowPostImages() {
       {photos.map((photo) => (
         <article
           key={photo.id}
-          className='relative w-[25vw] h-fit flex flex-col items-center gap-4'
+          className='relative w-[30vw] h-fit flex flex-col items-center justify-center gap-4'
         >
           <header className='w-full h-fit'>
             <ArrimateCard
@@ -37,42 +37,24 @@ export default function ShowPostImages() {
               follower={true}
             />
           </header>
-          <section className='relative w-full h-[75vh] overflow-hidden'>
-            <Image
-              src={photo.src.large2x}
-              alt={photo.alt || 'Image from Pexels'}
-              layout='fill'
-              objectFit='cover'
-              className='rounded-3xl drop-shadow-sm'
-            />
-          </section>
-          <aside className='w-fit h-fit flex flex-col gap-2'>
-            <PostButton
-              iconAlt=''
-              iconDisplay='like'
-              textDisplay=''
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='comments'
-              textDisplay=''
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='save'
-              textDisplay=''
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='share'
-              textDisplay=''
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='options'
-              textDisplay=''
-            />
-          </aside>
+          <div className='w-full h-[75vh] flex justify-center items-center gap-4'>
+            <section className='relative w-full h-full overflow-hidden'>
+              <Image
+                src={photo.src.large2x}
+                alt={photo.alt || 'Image from Pexels'}
+                layout='fill'
+                objectFit='cover'
+                className='rounded-3xl drop-shadow-sm'
+              />
+            </section>
+            <aside className='relative w-fit h-fit flex flex-col gap-2 justify-center items-center'>
+              <PostButton iconAlt='' iconDisplay='like' textDisplay='' />
+              <PostButton iconAlt='' iconDisplay='comments' textDisplay='' />
+              <PostButton iconAlt='' iconDisplay='save' textDisplay='' />
+              <PostButton iconAlt='' iconDisplay='share' textDisplay='' />
+              <PostButton iconAlt='' iconDisplay='options' textDisplay='' />
+            </aside>
+          </div>
         </article>
       ))}
     </div>

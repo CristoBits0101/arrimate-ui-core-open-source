@@ -1,7 +1,7 @@
-import { GoHeartFill } from 'react-icons/go'
-import { IoChatbubbleEllipses } from 'react-icons/io5'
-import { HiBookmark } from 'react-icons/hi2'
-import { PiShareFatFill } from 'react-icons/pi'
+import { IoMdHeart } from 'react-icons/io'
+import { IoChatbubbleEllipsesSharp } from 'react-icons/io5'
+import { IoBookmarkSharp } from 'react-icons/io5'
+import { RiShareForwardFill } from 'react-icons/ri'
 import { SlOptionsVertical } from 'react-icons/sl'
 
 interface PostButtonProps {
@@ -19,13 +19,13 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#1D0F0F',
   iconAlt = '',
-  iconSize = 28
+  iconSize = 28,
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
-      <button className='w-fit h-fit p-2 rounded-full'>
+      <button className='w-fit h-fit p-4 rounded-full bg-[#F4F4F4]'>
         {iconDisplay === 'like' && (
-          <GoHeartFill
+          <IoMdHeart
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
@@ -33,15 +33,7 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'comments' && (
-          <IoChatbubbleEllipses
-            style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85 w-7 h-7'
-            size={iconSize}
-            aria-label={iconAlt}
-          />
-        )}
-        {iconDisplay === 'save' && (
-          <PiShareFatFill
+          <IoChatbubbleEllipsesSharp
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
@@ -49,7 +41,15 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'share' && (
-          <HiBookmark
+          <IoBookmarkSharp
+            style={{ fill: iconColor }}
+            className='drop-shadow-sm opacity-85 w-7 h-7'
+            size={iconSize}
+            aria-label={iconAlt}
+          />
+        )}
+        {iconDisplay === 'save' && (
+          <RiShareForwardFill
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
