@@ -1,11 +1,10 @@
-import { IoIosHeart } from 'react-icons/io'
+import { GoHeartFill } from 'react-icons/go'
 import { FaCommentDots } from 'react-icons/fa'
-import { IoMdBookmark } from 'react-icons/io'
-import { IoIosShareAlt } from 'react-icons/io'
+import { FaBookmark } from 'react-icons/fa'
+import { PiShareFatFill } from 'react-icons/pi'
 import { SlOptionsVertical } from 'react-icons/sl'
 
 interface PostButtonProps {
-  backgroundColor?: string
   textDisplay?: string
   textColor?: string
   iconDisplay: string
@@ -15,22 +14,18 @@ interface PostButtonProps {
 }
 
 export default function PostButton({
-  backgroundColor = '#FFFFFF',
   textDisplay = '',
   textColor = '#FFFFFF',
   iconDisplay = '',
-  iconColor = '#1D0F0F',
+  iconColor,
   iconAlt = '',
-  iconSize = 20,
+  iconSize = 24
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
-      <button
-        style={{ backgroundColor }}
-        className='w-fit h-fit p-2 rounded-full'
-      >
+      <button className='w-fit h-fit p-2 rounded-full'>
         {iconDisplay === 'like' && (
-          <IoIosHeart size={iconSize} color={iconColor} aria-label={iconAlt} />
+          <GoHeartFill size={iconSize} color={iconColor} aria-label={iconAlt} />
         )}
         {iconDisplay === 'comments' && (
           <FaCommentDots
@@ -40,18 +35,10 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'save' && (
-          <IoIosShareAlt
-            size={iconSize}
-            color={iconColor}
-            aria-label={iconAlt}
-          />
+          <PiShareFatFill size={iconSize} color={iconColor} aria-label={iconAlt} />
         )}
         {iconDisplay === 'share' && (
-          <IoMdBookmark
-            size={iconSize}
-            color={iconColor}
-            aria-label={iconAlt}
-          />
+          <FaBookmark size={iconSize} color={iconColor} aria-label={iconAlt} />
         )}
         {iconDisplay === 'options' && (
           <SlOptionsVertical
