@@ -74,7 +74,6 @@ export default function ArrimateFollowCard({
 
   return (
     <article className='w-full h-fit flex gap-4 text-sm'>
-      {/* Image */}
       <header className='rounded-full w-fit h-fit shadow-sm flex-shrink-0 flex items-center'>
         <Image
           src={userImage || unknownImage}
@@ -84,10 +83,9 @@ export default function ArrimateFollowCard({
           className='rounded-full object-cover aspect-square max-h-[100%] w-[3.75rem] h-[3.75rem]'
         />
       </header>
-      {/* Content */}
       <aside className='flex-grow h-full flex flex-col items-center justify-between overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (<p className='font-medium w-full h-fit'>{userName && userName}</p>)}
-        {userDescription && <p className='w-full h-fit'>{userDescription}</p>}
+        {userDescription && <p className='w-full h-fit truncate'>{userDescription}</p>}
         {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
           <div className='w-full h-full flex items-center gap-1'>
             {isTrending && (

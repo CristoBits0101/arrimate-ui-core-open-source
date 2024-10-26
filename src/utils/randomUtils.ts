@@ -21,7 +21,7 @@ export const randomUtils = {
   },  
   getRandomCapital: () => {
     const capitals = [
-      'Washington D.C.',
+      'Washington D.C',
       'Beijing',
       'Moscow',
       'Berlin',
