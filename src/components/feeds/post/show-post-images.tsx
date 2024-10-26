@@ -27,21 +27,20 @@ export default function ShowPostImages() {
           className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto] gap-4'
         >
           <header className='col-span-1 row-span-1 w-full h-fit flex gap-4'>
-            <section className='w-4/5 h-full'>
-              <ArrimateImagesCard
-                nickname={photo.photographer}
-                description={photo.photographer_url
-                  .replace('https://www.', '')
-                  .replace('es-es/', '')}
-                date={randomUtils.getRandomTime()}
-                location={randomUtils.getRandomCapital()}
-                trending={randomUtils.getRandomBoolean()}
-                followers={randomUtils.getRandomFollowers()}
-                reliable={randomUtils.getRandomBoolean()}
-                verified={randomUtils.getRandomBoolean()}
-                follower={true}
-              />
-            </section>
+            <ArrimateImagesCard
+              nickname={photo.photographer}
+              description={randomUtils.getRandomDescription()}
+              // description={photo.photographer_url
+              //   .replace('https://www.', '')
+              //   .replace('es-es/', '')}
+              date={randomUtils.getRandomTime()}
+              location={randomUtils.getRandomCapital()}
+              trending={randomUtils.getRandomBoolean()}
+              followers={randomUtils.getRandomFollowers()}
+              reliable={randomUtils.getRandomBoolean()}
+              verified={randomUtils.getRandomBoolean()}
+              follower={true}
+            />
           </header>
           <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
           <footer className='col-span-1 row-span-1 relative w-full m-h-[42.703rem] h-[75vh] 2xl:h-[90vh] overflow-hidden'>

@@ -3,7 +3,8 @@ export const randomUtils = {
   getRandomInteractions: () => Math.floor(Math.random() * (5000 - 1 + 1)) + 1,
   getRandomPage: () => Math.floor(Math.random() * 5) + 1,
   getRandomBoolean: () => Math.random() < 0.5,
-  getRandomFollowers: () => Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
+  getRandomFollowers: () =>
+    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
   getRandomTime: () => {
     const minutesInHour = 60
     const minutesInDay = minutesInHour * 24
@@ -52,27 +53,27 @@ export const randomUtils = {
   },
   getRandomDescription: () => {
     const descriptions = [
-      'Unstoppable Energy with Focused Drive',
-      'Curiosity that Sparks Discovery',
-      'Driven by Success Step by Step',
-      'Creative Intuition for Brilliant Solutions',
-      'Optimism that Unlocks New Opportunities',
-      'Confident Decisions with Clarity of Purpose',
-      'Agile Adaptability in Every Situation',
-      'Thoughtful Collaboration that Makes an Impact',
-      'Proactive Actions that Build Trust and Results',
-      'Continuous Learning for Constant Growth',
-      'Strategic Thinker with Future Vision',
-      'Empathy that Connects and Transforms',
-      'Focused on Results with Laser Precision',
-      'Calm Under Pressure with Controlled Action',
-      'Innovative at Heart Always Ahead',
-      'Efficient Organization for Higher Productivity',
-      'Motivated Leadership that Inspires Others',
-      'Passion that Drives Every Action',
-      'Detail-Oriented for Guaranteed Success',
-      'Kind Collaboration with Deep Impact'
-    ]
+      'E-commerce Visionary | Redefining Online Selling with Strategic Brilliance',
+      'Digital Story Architect | Building Immersive Narratives that Captivate Audiences',
+      'Event Maestro | Crafting Unforgettable Experiences for Global Connections',
+      'Video Sorcerer | Transforming Moments into Viral Masterpieces',
+      'Live Engagement Specialist | Amplifying Brands in Real-Time Interactions',
+      'Marketplace Innovator | Turning Clicks into Conversions with Authentic Connection',
+      'Content Virtuoso | Capturing Attention with Scroll-Stopping Creativity',
+      'Influential Connector | Blending Authenticity with Impactful Reach',
+      'Community Catalyst | Igniting Engagement and Fostering True Connections',
+      'Customer Journey Curator | Delivering Remarkable Experiences that Resonate',
+      'Trend Leader | Setting the Pulse for What’s Next in Commerce and Connection',
+      'Creative Commerce Pro | Where Strategy Meets Passion for Unforgettable Sales',
+      'Social Commerce Engineer | Building Bridges Between People and Products',
+      'Audience Whisperer | Uncovering Insights that Drive Lasting Loyalty',
+      'Authenticity Advocate | Building Brands People Trust and Love',
+      'Impactful Storyteller | Crafting Narratives that Sell and Inspire',
+      'Network Navigator | Expanding Reach Through Strategic Alliances',
+      'Passion-Driven Seller | Elevating Brands with Every Interaction',
+      'Insightful Content Designer | Shaping Visuals that Speak Volumes',
+      'Conversion Alchemist | Turning Ideas into Impactful Purchases'
+    ]    
     const randomIndex = Math.floor(Math.random() * descriptions.length)
     return descriptions[randomIndex]
   },
@@ -177,7 +178,7 @@ export const randomUtils = {
       'amorpropio',
       'instachile',
       'mexico',
-      'colombia'
+      'colombia',
     ]
     return popularHashtags[Math.floor(Math.random() * popularHashtags.length)]
   }
