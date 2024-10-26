@@ -87,38 +87,49 @@ export default function ArrimateFollowCard({
         {(userName || publicationDate || publicationLocation) && (
           <div className='flex w-full h-fit'>
             {userName && <p className='font-medium'>{userName}</p>}
-            {publicationDate && <span className='font-light text-[#453C41]'>&nbsp;•&nbsp;{publicationDate}</span>}
-            {publicationLocation && <span className='font-light text-[#453C41]'>&nbsp;•&nbsp;{publicationLocation}</span>}
+            {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
+              <div className='w-fit h-fit flex items-center'>
+                <span>&nbsp;</span>
+                {isMounted && isTrending && (
+                  <span className='w-fit h-fit flex justify-center items-center'>
+                    🔥
+                  </span>
+                )}
+                {isMounted && isPopular && (
+                  <span className='w-fit h-fit flex justify-center items-center'>
+                    ⭐
+                  </span>
+                )}
+                {isMounted && isTrusted && (
+                  <span className='w-fit h-fit flex justify-center items-center'>
+                    💸
+                  </span>
+                )}
+                {isMounted && isVerify && (
+                  <span className='w-fit h-fit flex justify-center items-center'>
+                    ✔️
+                  </span>
+                )}
+              </div>
+            ) : (
+              ''
+            )}
+            {publicationDate && (
+              <span className='font-light text-[#453C41]'>
+                &nbsp;•&nbsp;{publicationDate}
+              </span>
+            )}
+            {publicationLocation && (
+              <span className='font-light text-[#453C41]'>
+                &nbsp;•&nbsp;{publicationLocation}
+              </span>
+            )}
           </div>
         )}
         {userDescription && (
-          <p className='w-full h-fit font-light text-[#453C41] truncate'>{userDescription}</p>
-        )}
-        {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
-          <div className='w-full h-full flex items-center gap-1'>
-            {isTrending && (
-              <span className='w-fit h-fit flex justify-center items-center'>
-                🔥
-              </span>
-            )}
-            {isPopular && (
-              <span className='w-fit h-fit flex justify-center items-center'>
-                ⭐
-              </span>
-            )}
-            {isTrusted && (
-              <span className='w-fit h-fit flex justify-center items-center'>
-                💸
-              </span>
-            )}
-            {isVerify && (
-              <span className='w-fit h-fit flex justify-center items-center'>
-                ✔️
-              </span>
-            )}
-          </div>
-        ) : (
-          <div className='flex-grow'>⠀</div>
+          <p className='w-full max-w-md font-light text-[#453C41] truncate overflow-hidden'>
+            {userDescription}
+          </p>
         )}
       </aside>
     </article>
