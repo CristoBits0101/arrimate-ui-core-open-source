@@ -23,7 +23,7 @@ export default function PostButton({
 }: PostButtonProps) {
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
-      <button className='w-fit h-fit p-4 rounded-full bg-[#F4F4F4]'>
+      <button className='w-fit h-fit p-4 rounded-full bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
         {iconDisplay === 'like' && (
           <IoMdHeart
             style={{ fill: iconColor }}
