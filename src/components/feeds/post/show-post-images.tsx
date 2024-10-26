@@ -33,6 +33,8 @@ export default function ShowPostImages() {
                 description={photo.photographer_url
                   .replace('https://www.', '')
                   .replace('es-es/', '')}
+                date={randomUtils.getRandomTime()}
+                location={randomUtils.getRandomCapital()}
                 trending={randomUtils.getRandomBoolean()}
                 followers={randomUtils.getRandomFollowers()}
                 reliable={randomUtils.getRandomBoolean()}

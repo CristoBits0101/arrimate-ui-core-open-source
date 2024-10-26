@@ -83,9 +83,17 @@ export default function ArrimateFollowCard({
           className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3.75rem] h-[3.75rem]'
         />
       </header>
-      <aside className='flex-grow h-full flex flex-col items-center justify-between overflow-hidden'>
-        {(userName || publicationDate || publicationLocation) && (<p className='font-medium w-full h-fit'>{userName && userName}</p>)}
-        {userDescription && <p className='w-full h-fit truncate'>{userDescription}</p>}
+      <aside className='flex-grow h-full overflow-hidden'>
+        {(userName || publicationDate || publicationLocation) && (
+          <div className='flex w-full h-fit'>
+            {userName && <p className='font-medium'>{userName}</p>}
+            {publicationDate && <span className='font-light text-[#453C41]'>&nbsp;•&nbsp;{publicationDate}</span>}
+            {publicationLocation && <span className='font-light text-[#453C41]'>&nbsp;•&nbsp;{publicationLocation}</span>}
+          </div>
+        )}
+        {userDescription && (
+          <p className='w-full h-fit font-light text-[#453C41] truncate'>{userDescription}</p>
+        )}
         {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
           <div className='w-full h-full flex items-center gap-1'>
             {isTrending && (
