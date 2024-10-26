@@ -42,13 +42,13 @@ export default function ShowPostImages() {
             </section>
           </header>
           <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
-          <footer className='col-span-1 row-span-1 relative w-full m-h-[42.703rem] h-[75vh] overflow-hidden'>
+          <footer className='col-span-1 row-span-1 relative w-full m-h-[42.703rem] h-[75vh] 2xl:h-[90vh] overflow-hidden'>
             <Image
               src={photo.src.large2x}
               alt={photo.alt || 'Image from Pexels'}
               layout='fill'
               objectFit='cover'
-              className='rounded-2xl drop-shadow-sm'
+              className='rounded-2xl 2xl:rounded-3xl drop-shadow-sm'
             />
           </footer>
           <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
