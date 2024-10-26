@@ -1,6 +1,6 @@
-import { IoMdHeart } from 'react-icons/io'
+import { IoIosHeart } from 'react-icons/io'
 import { IoChatbubbleEllipsesSharp } from 'react-icons/io5'
-import { BiSolidBookmark } from 'react-icons/bi'
+import { IoBookmarkSharp } from 'react-icons/io5'
 import { RiShareForwardFill } from 'react-icons/ri'
 import { SlOptionsVertical } from 'react-icons/sl'
 
@@ -25,7 +25,7 @@ export default function PostButton({
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
       <button className='w-fit h-fit p-4 rounded-full bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
         {iconDisplay === 'like' && (
-          <IoMdHeart
+          <IoIosHeart
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
@@ -41,7 +41,7 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'share' && (
-          <BiSolidBookmark
+          <IoBookmarkSharp
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}

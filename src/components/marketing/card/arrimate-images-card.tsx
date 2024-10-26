@@ -74,13 +74,13 @@ export default function ArrimateFollowCard({
 
   return (
     <article className='w-full h-fit flex gap-4 text-sm'>
-      <header className='rounded-full w-fit h-fit shadow-sm flex-shrink-0 flex items-center'>
+      <header className='rounded-full w-fit h-fit flex-shrink-0 flex items-center'>
         <Image
           src={userImage || unknownImage}
           alt={alt || 'User avatar'}
           width={width}
           height={height}
-          className='rounded-full object-cover aspect-square max-h-[100%] w-[3.75rem] h-[3.75rem]'
+          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3.75rem] h-[3.75rem]'
         />
       </header>
       <aside className='flex-grow h-full flex flex-col items-center justify-between overflow-hidden'>
