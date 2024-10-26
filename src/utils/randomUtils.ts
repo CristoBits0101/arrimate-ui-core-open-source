@@ -3,8 +3,7 @@ export const randomUtils = {
   getRandomMessages: () => Math.floor(Math.random() * (5000 - 1 + 1)) + 1,
   getRandomPage: () => Math.floor(Math.random() * 5) + 1,
   getRandomBoolean: () => Math.random() < 0.5,
-  getRandomFollowers: () =>
-    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
+  getRandomFollowers: () => Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
   getRandomTime: () => {
     const minutesInHour = 60
     const minutesInDay = minutesInHour * 24

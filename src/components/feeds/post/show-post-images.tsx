@@ -47,7 +47,7 @@ export default function ShowPostImages() {
             />
           </footer>
           <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
-            <PostButton iconAlt='' iconDisplay='like' textDisplay='' />
+            <PostButton iconAlt='' iconDisplay='like' textDisplay={randomUtils.getRandomLikes().toString()} />
             <PostButton iconAlt='' iconDisplay='comments' textDisplay='' />
             <PostButton iconAlt='' iconDisplay='save' textDisplay='' />
             <PostButton iconAlt='' iconDisplay='share' textDisplay='' />
