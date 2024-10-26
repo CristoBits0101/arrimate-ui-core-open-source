@@ -19,7 +19,7 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#1D0F0F',
   iconAlt = '',
-  iconSize = 30
+  iconSize = 28
 }: PostButtonProps) {
   // Calculate the text that will be displayed
   const likes = parseInt(textDisplay, 10)
@@ -31,7 +31,7 @@ export default function PostButton({
     textDisplay = (likes / 1_000_000_000).toFixed(1) + ' B'
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
-      <button className='w-fit h-fit p-4 rounded-full bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
+      <button className='w-fit h-fit p-3 rounded-full bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
         {iconDisplay === 'like' && (
           <IoIosHeart
             style={{ fill: iconColor }}
@@ -73,7 +73,7 @@ export default function PostButton({
           />
         )}
       </button>
-      <span style={{ color: textColor }} className='text-sm font-medium'>
+      <span style={{ color: textColor }} className='text-xs font-medium'>
         {textDisplay}
       </span>
     </div>
