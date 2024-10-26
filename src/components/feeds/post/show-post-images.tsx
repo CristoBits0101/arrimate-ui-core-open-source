@@ -1,6 +1,6 @@
 'use client'
 
-import ArrimateCard from '@/components/marketing/card/arrimate-card'
+import ArrimateImagesCard from '@/components/marketing/card/arrimate-images-card'
 import PostButton from '@/components/feeds/buttons/post-button'
 import Image from 'next/image'
 import { useFetchPhotos } from '@/hooks/useFetchPhotos'
@@ -27,7 +27,7 @@ export default function ShowPostImages() {
           className='relative w-[30vw] h-fit flex flex-col items-center justify-center gap-4'
         >
           <header className='w-full h-fit'>
-            <ArrimateCard
+            <ArrimateImagesCard
               nickname={photo.photographer}
               description={photo.photographer_url.replace('https://www.', '')}
               date={randomUtils.getRandomTime()}
