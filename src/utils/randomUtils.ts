@@ -1,24 +1,30 @@
 export const randomUtils = {
+  getRandomLikes: () => Math.floor(Math.random() * (100000 - 1 + 1)) + 10,
+  getRandomMessages: () => Math.floor(Math.random() * (5000 - 1 + 1)) + 1,
   getRandomPage: () => Math.floor(Math.random() * 5) + 1,
   getRandomBoolean: () => Math.random() < 0.5,
-  getRandomFollowers: () => Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
+  getRandomFollowers: () =>
+    Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
   getRandomTime: () => {
-    const minutesInHour = 60;
-    const minutesInDay = minutesInHour * 24;
-    const minutesInWeek = minutesInDay * 7;
-    const randomCategory = Math.random();
-    let randomMinutes;
+    const minutesInHour = 60
+    const minutesInDay = minutesInHour * 24
+    const minutesInWeek = minutesInDay * 7
+    const randomCategory = Math.random()
+    let randomMinutes
     if (randomCategory < 0.33) {
-      randomMinutes = Math.floor(Math.random() * (23 * minutesInHour)) + minutesInHour;
-      return `${Math.round(randomMinutes / minutesInHour)} hours`;
+      randomMinutes =
+        Math.floor(Math.random() * (23 * minutesInHour)) + minutesInHour
+      return `${Math.round(randomMinutes / minutesInHour)} hours`
     } else if (randomCategory < 0.66) {
-      randomMinutes = Math.floor(Math.random() * (6 * minutesInDay)) + minutesInDay;
-      return `${Math.round(randomMinutes / minutesInDay)} days`;
+      randomMinutes =
+        Math.floor(Math.random() * (6 * minutesInDay)) + minutesInDay
+      return `${Math.round(randomMinutes / minutesInDay)} days`
     } else {
-      randomMinutes = Math.floor(Math.random() * (3 * minutesInWeek)) + minutesInWeek;
-      return `${Math.round(randomMinutes / minutesInWeek)} weeks`;
+      randomMinutes =
+        Math.floor(Math.random() * (3 * minutesInWeek)) + minutesInWeek
+      return `${Math.round(randomMinutes / minutesInWeek)} weeks`
     }
-  },  
+  },
   getRandomCapital: () => {
     const capitals = [
       'Washington D.C',
@@ -66,8 +72,8 @@ export const randomUtils = {
       'Motivated Leadership that Inspires Others',
       'Passion that Drives Every Action',
       'Detail-Oriented for Guaranteed Success',
-      'Kind Collaboration with Deep Impact'
-    ];
+      'Kind Collaboration with Deep Impact',
+    ]
     const randomIndex = Math.floor(Math.random() * descriptions.length)
     return descriptions[randomIndex]
   },
