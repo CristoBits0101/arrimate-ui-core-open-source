@@ -5,13 +5,18 @@ import PostButton from '@/components/feeds/buttons/post-button'
 import Image from 'next/image'
 import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
+import { useState } from 'react'
 
 export default function ShowPostImages() {
+  const [hashtag] = useState(() => randomUtils.getRandomHashtag())
+  const [page] = useState(() => randomUtils.getRandomPage())
+
+  // Query images
   const { photos } = useFetchPhotos({
-    query: 'halloween party',
+    query: hashtag,
     orientation: 'portrait',
-    per_page: 84,
-    page: randomUtils.getRandomPage()
+    per_page: 10,
+    page: page
   })
 
   return (
@@ -47,11 +52,27 @@ export default function ShowPostImages() {
             />
           </footer>
           <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
-            <PostButton iconAlt='' iconDisplay='like' textDisplay={randomUtils.getRandomLikes().toString()} />
-            <PostButton iconAlt='' iconDisplay='comments' textDisplay='' />
-            <PostButton iconAlt='' iconDisplay='save' textDisplay='' />
-            <PostButton iconAlt='' iconDisplay='share' textDisplay='' />
-            <PostButton iconAlt='' iconDisplay='options' textDisplay='' />
+            <PostButton
+              iconAlt=''
+              iconDisplay='like'
+              textDisplay={randomUtils.getRandomLikes().toString()}
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='comments'
+              textDisplay={randomUtils.getRandomInteractions().toString()}
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='save'
+              textDisplay={randomUtils.getRandomInteractions().toString()}
+            />
+            <PostButton
+              iconAlt=''
+              iconDisplay='share'
+              textDisplay={randomUtils.getRandomInteractions().toString()}
+            />
+            <PostButton iconAlt='' iconDisplay='options' />
           </aside>
         </article>
       ))}

@@ -19,40 +19,16 @@ export default function PostButton({
   iconDisplay = '',
   iconColor = '#1D0F0F',
   iconAlt = '',
-  iconSize = 28
+  iconSize = 30
 }: PostButtonProps) {
   // Calculate the text that will be displayed
-  switch (iconDisplay) {
-    // Likes
-    case 'like':
-      const likes = parseInt(textDisplay, 10)
-      if (likes >= 1_000 && likes < 1_000_000)
-        textDisplay = (likes / 1_000).toFixed(1) + ' K'
-      else if (likes >= 1_000_000 && likes < 1_000_000_000)
-        textDisplay = (likes / 1_000_000).toFixed(1) + ' M'
-      else if (likes >= 1_000_000_000)
-        textDisplay = (likes / 1_000_000_000).toFixed(1) + ' B'
-      break
-    // Comments
-    case 'comments':
-      const comments = parseInt(textDisplay, 10)
-      if (comments >= 1_000 && comments < 1_000_000)
-        textDisplay = (comments / 1_000).toFixed(1) + ' K'
-      else if (comments >= 1_000_000 && comments < 1_000_000_000)
-        textDisplay = (comments / 1_000_000).toFixed(1) + ' M'
-      else if (comments >= 1_000_000_000)
-        textDisplay = (comments / 1_000_000_000).toFixed(1) + ' B'
-      break
-    // Share
-    case 'share':
-      break
-    // Save
-    case 'save':
-      break
-    // Default
-    default:
-      break
-  }
+  const likes = parseInt(textDisplay, 10)
+  if (likes >= 1_000 && likes < 1_000_000)
+    textDisplay = (likes / 1_000).toFixed(1) + ' K'
+  else if (likes >= 1_000_000 && likes < 1_000_000_000)
+    textDisplay = (likes / 1_000_000).toFixed(1) + ' M'
+  else if (likes >= 1_000_000_000)
+    textDisplay = (likes / 1_000_000_000).toFixed(1) + ' B'
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
       <button className='w-fit h-fit p-4 rounded-full bg-[#F4F4F4] hover:bg-[#bfbdc050]'>
@@ -72,7 +48,7 @@ export default function PostButton({
             aria-label={iconAlt}
           />
         )}
-        {iconDisplay === 'share' && (
+        {iconDisplay === 'save' && (
           <IoBookmarkSharp
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
@@ -80,7 +56,7 @@ export default function PostButton({
             aria-label={iconAlt}
           />
         )}
-        {iconDisplay === 'save' && (
+        {iconDisplay === 'share' && (
           <RiShareForwardFill
             style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
@@ -97,7 +73,7 @@ export default function PostButton({
           />
         )}
       </button>
-      <span style={{ color: textColor }} className='text-xs'>
+      <span style={{ color: textColor }} className='text-sm font-medium'>
         {textDisplay}
       </span>
     </div>
