@@ -72,7 +72,7 @@ export const randomUtils = {
       'Motivated Leadership that Inspires Others',
       'Passion that Drives Every Action',
       'Detail-Oriented for Guaranteed Success',
-      'Kind Collaboration with Deep Impact',
+      'Kind Collaboration with Deep Impact'
     ]
     const randomIndex = Math.floor(Math.random() * descriptions.length)
     return descriptions[randomIndex]
