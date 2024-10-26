@@ -73,19 +73,19 @@ export default function ArrimateFollowCard({
   ])
 
   return (
-    <article className='w-full h-fit flex gap-4 text-sm'>
+    <article className='w-full h-fit flex items-center gap-4 text-sm'>
       <header className='rounded-full w-fit h-fit flex-shrink-0 flex items-center'>
         <Image
           src={userImage || unknownImage}
           alt={alt || 'User avatar'}
           width={width}
           height={height}
-          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3.75rem] h-[3.75rem]'
+          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3rem] h-[3rem]'
         />
       </header>
-      <aside className='flex-grow h-full overflow-hidden'>
+      <aside className='flex-grow h-fit overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
-          <div className='flex w-full h-fit'>
+          <div className='flex w-full h-fit truncate'>
             {userName && <p className='font-medium'>{userName}</p>}
             {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
               <div className='w-fit h-fit flex items-center'>
@@ -127,7 +127,7 @@ export default function ArrimateFollowCard({
           </div>
         )}
         {userDescription && (
-          <p className='w-full max-w-md font-light text-[#453C41] truncate overflow-hidden'>
+          <p className='w-full max-w-md font-light text-xs text-[#453C41] truncate overflow-hidden'>
             {userDescription}
           </p>
         )}
