@@ -3,7 +3,6 @@ import { useFetchPhotos } from '@/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel() {
-
   /**
    * Loading animation on pause
    * const { photos, loading, error } = useFetchPhotos({
@@ -38,7 +37,9 @@ export default function HomePanel() {
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            description={randomUtils.getRandomDescription()}
+            profesion={randomUtils.getRandomProfesion()}
+            intereses={randomUtils.getRandomIntereses()}
+            slogan={randomUtils.getRandomSlogan()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
@@ -58,7 +59,9 @@ export default function HomePanel() {
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            description={randomUtils.getRandomDescription()}
+            profesion={randomUtils.getRandomProfesion()}
+            intereses={randomUtils.getRandomIntereses()}
+            slogan={randomUtils.getRandomSlogan()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}

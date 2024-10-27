@@ -29,10 +29,9 @@ export default function ShowPostImages() {
           <header className='col-span-1 row-span-1 w-full h-fit flex gap-4'>
             <ArrimateImagesCard
               nickname={photo.photographer}
-              description={randomUtils.getRandomDescription()}
-              // description={photo.photographer_url
-              //   .replace('https://www.', '')
-              //   .replace('es-es/', '')}
+              profesion={randomUtils.getRandomProfesion()}
+              intereses={randomUtils.getRandomIntereses()}
+              slogan={randomUtils.getRandomSlogan()}
               date={randomUtils.getRandomTime()}
               location={randomUtils.getRandomCapital()}
               trending={randomUtils.getRandomBoolean()}

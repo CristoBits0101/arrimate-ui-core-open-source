@@ -8,7 +8,9 @@ interface ArrimateFollowCardProps {
   src?: string | undefined
   alt?: string | undefined
   nickname: string
-  description?: string | undefined | null
+  profesion: string
+  intereses: string
+  slogan: string
   date?: string
   location?: string
   trending?: boolean
@@ -24,7 +26,9 @@ interface ArrimateFollowCardProps {
 export default function ArrimateFollowCard({
   src = undefined,
   nickname = '',
-  description = '',
+  profesion = '',
+  intereses = '',
+  slogan = '',
   date = '',
   location = '',
   trending = false,
@@ -37,7 +41,9 @@ export default function ArrimateFollowCard({
   const [isMounted, setIsMounted] = useState(false)
   const [userImage, setUserImage] = useState<string | undefined>(src)
   const [userName, setUserName] = useState(nickname)
-  const [userDescription, setUserDescription] = useState(description)
+  const [userProfesion, setUserProfesion] = useState(profesion)
+  const [userIntereses, setUserIntereses] = useState(intereses)
+  const [userSlogan, setUserSlogan] = useState(slogan)
   const [publicationDate, setPublicationDate] = useState<string | undefined>(
     date
   )
@@ -62,7 +68,9 @@ export default function ArrimateFollowCard({
     setIsTrusted(reliable)
     setIsVerify(verified)
     setIsFollowing(follower)
-    setUserDescription(description)
+    setUserProfesion(profesion)
+    setUserIntereses(intereses)
+    setUserSlogan(slogan)
     setIsOnline(connection)
   }, [
     nickname,
@@ -74,7 +82,9 @@ export default function ArrimateFollowCard({
     reliable,
     verified,
     follower,
-    description,
+    profesion,
+    intereses,
+    slogan,
     connection
   ])
 
@@ -100,11 +110,15 @@ export default function ArrimateFollowCard({
           <p className='truncate w-full h-fit text-center font-medium'>
             {userName}
           </p>
-          {userDescription && (
-            <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
-              {userDescription}
-            </p>
-          )}
+          <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
+            {userProfesion}
+          </p>
+          <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
+            {userIntereses}
+          </p>
+          <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
+            {userSlogan}
+          </p>
           {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
             <p className='truncate w-full h-fit flex justify-center items-start gap-1'>
               {isTrending && <span>🔥</span>}

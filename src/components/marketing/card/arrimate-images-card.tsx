@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
 import { useState, useEffect } from 'react'
@@ -8,7 +6,9 @@ interface ArrimateFollowCardProps {
   src?: string | undefined
   alt?: string | undefined
   nickname: string
-  description?: string | undefined | null
+  profesion: string
+  intereses: string
+  slogan: string
   date?: string
   location?: string
   trending?: boolean
@@ -24,7 +24,9 @@ export default function ArrimateFollowCard({
   src = undefined,
   alt = 'User avatar',
   nickname = '',
-  description = '',
+  profesion = '',
+  intereses = '',
+  slogan = '',
   date = '',
   location = '',
   trending = false,
@@ -37,7 +39,9 @@ export default function ArrimateFollowCard({
   const [isMounted, setIsMounted] = useState(false)
   const [userImage, setUserImage] = useState<string | undefined>(src)
   const [userName, setUserName] = useState(nickname)
-  const [userDescription, setUserDescription] = useState(description)
+  const [userProfesion, setUserProfesion] = useState(profesion)
+  const [userIntereses, setUserIntereses] = useState(intereses)
+  const [userSlogan, setUserSlogan] = useState(slogan)
   const [publicationDate, setPublicationDate] = useState<string | undefined>(
     date
   )
@@ -59,7 +63,9 @@ export default function ArrimateFollowCard({
     setIsPopular(followers >= 1000000)
     setIsTrusted(reliable)
     setIsVerify(verified)
-    setUserDescription(description)
+    setUserProfesion(profesion)
+    setUserIntereses(intereses)
+    setUserSlogan(slogan)
   }, [
     nickname,
     src,
@@ -69,7 +75,9 @@ export default function ArrimateFollowCard({
     followers,
     reliable,
     verified,
-    description
+    profesion,
+    intereses,
+    slogan
   ])
 
   return (
@@ -86,7 +94,11 @@ export default function ArrimateFollowCard({
       <aside className='flex-grow h-fit overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
           <div className='flex w-full h-fit truncate'>
-            {userName && <a href='' className='font-medium'>{userName}</a>}
+            {userName && (
+              <a href='' className='font-medium'>
+                {userName}
+              </a>
+            )}
             {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
               <div className='w-fit h-fit flex items-center'>
                 <span>&nbsp;</span>
@@ -126,11 +138,15 @@ export default function ArrimateFollowCard({
             )}
           </div>
         )}
-        {userDescription && (
-          <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
-            {userDescription}
-          </p>
-        )}
+        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
+          {userProfesion}
+        </p>
+        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
+          {userIntereses}
+        </p>
+        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
+          {userSlogan}
+        </p>
       </aside>
     </article>
   )
