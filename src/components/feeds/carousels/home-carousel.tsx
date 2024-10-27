@@ -96,7 +96,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
         aria-label='Previous Image'
       >
         <Image
-          className='bg-transparent w-fit h-fit'
+          className='bg-transparent w-fit h-fit drop-shadow-sm'
           src={chevron_left}
           alt='Previous'
           loading='lazy'
