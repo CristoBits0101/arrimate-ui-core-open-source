@@ -112,7 +112,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
             className='relative w-20 h-20 flex flex-col text-center gap-2'
           >
             <span
-              className='relative w-20 h-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10 shadow-sm border-[0.094rem] border-solid border-[#bfbdc050]'
+              className='relative w-20 h-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10 shadow-sm'
               style={{
                 backgroundColor: photo.avg_color || '#f0f0f0',
                 backgroundImage: `url(${photo.src.small || unknownImage})`
