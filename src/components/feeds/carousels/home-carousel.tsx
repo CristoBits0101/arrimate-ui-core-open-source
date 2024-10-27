@@ -109,7 +109,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
         {visibleImages.map((photo) => (
           <div
             key={photo.id}
-            className='relative w-20 h-20 flex flex-col text-center text-sm gap-2'
+            className='relative w-20 h-20 flex flex-col text-center gap-2'
           >
             <span
               className='relative w-20 h-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10 shadow-sm'
@@ -118,9 +118,9 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
                 backgroundImage: `url(${photo.src.small || unknownImage})`
               }}
             ></span>
-            <h3 className='w-20 text-sm'>
+            <h3 className='w-20'>
               {photo.photographer.length > 8
-                ? photo.photographer.slice(0, 8) + '...'
+                ? photo.photographer.slice(0, 7) + '...'
                 : photo.photographer}
             </h3>
           </div>

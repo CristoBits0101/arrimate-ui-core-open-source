@@ -73,7 +73,7 @@ export default function ArrimateFollowCard({
   ])
 
   return (
-    <article className='w-full h-16 flex gap-3 text-sm'>
+    <article className='w-full h-16 flex gap-3'>
       {/* Image */}
       <header className='rounded-full w-16 h-full shadow-sm flex-shrink-0 flex items-center'>
         <Image
