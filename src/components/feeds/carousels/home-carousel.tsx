@@ -118,7 +118,7 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
                 backgroundImage: `url(${photo.src.small || unknownImage})`
               }}
             ></span>
-            <h3 className='w-20'>
+            <h3 className='w-20 text-sm'>
               {photo.photographer.length > 8
                 ? photo.photographer.slice(0, 8) + '...'
                 : photo.photographer}
