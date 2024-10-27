@@ -86,7 +86,7 @@ export default function ArrimateFollowCard({
       <aside className='flex-grow h-fit overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
           <div className='flex w-full h-fit truncate'>
-            {userName && <p className='font-medium'>{userName}</p>}
+            {userName && <a href='' className='font-medium'>{userName}</a>}
             {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
               <div className='w-fit h-fit flex items-center'>
                 <span>&nbsp;</span>
