@@ -139,13 +139,11 @@ export default function ArrimateFollowCard({
           </div>
         )}
         <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
-          {userProfesion}
-        </p>
-        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
-          {userIntereses}
-        </p>
-        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
-          {userSlogan}
+          {userProfesion && userProfesion}
+          {userProfesion && userIntereses && ' | '}
+          {userIntereses && userIntereses}
+          {(userProfesion || userIntereses) && userSlogan && ' | '}
+          {userSlogan && userSlogan}
         </p>
       </aside>
     </article>

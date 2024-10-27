@@ -111,13 +111,11 @@ export default function ArrimateFollowCard({
             {userName}
           </p>
           <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
-            {userProfesion}
-          </p>
-          <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
-            {userIntereses}
-          </p>
-          <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
-            {userSlogan}
+            {userProfesion && userProfesion}
+            {userProfesion && userIntereses && ' | '}
+            {userIntereses && userIntereses}
+            {(userProfesion || userIntereses) && userSlogan && ' | '}
+            {userSlogan && userSlogan}
           </p>
           {isMounted && (isTrending || isPopular || isTrusted || isVerify) ? (
             <p className='truncate w-full h-fit flex justify-center items-start gap-1'>
