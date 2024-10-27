@@ -127,7 +127,7 @@ export default function ArrimateFollowCard({
           </div>
         )}
         {userDescription && (
-          <p className='w-full max-w-md font-light text-xs text-[#453C41] truncate overflow-hidden'>
+          <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
             {userDescription}
           </p>
         )}

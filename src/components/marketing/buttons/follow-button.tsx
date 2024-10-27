@@ -39,7 +39,7 @@ const FollowButton: FC<FollowButtonProps> = ({
       }
       onMouseOut={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
     >
-      <span className='w-full flex justify-center items-center text-xs'>
+      <span className='w-full flex justify-center items-center text-sm'>
         {isFollowing ? t('following') : t('follow')}
       </span>
     </button>

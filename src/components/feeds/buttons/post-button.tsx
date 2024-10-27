@@ -73,7 +73,7 @@ export default function PostButton({
           />
         )}
       </button>
-      <span style={{ color: textColor }} className='text-xs font-medium'>
+      <span style={{ color: textColor }} className='text-sm font-medium'>
         {textDisplay}
       </span>
     </div>

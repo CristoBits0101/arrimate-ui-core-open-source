@@ -101,7 +101,7 @@ export default function ArrimateFollowCard({
             {userName}
           </p>
           {userDescription && (
-            <p className='truncate w-full h-fit text-center text-[#453C41] text-xs mb-1'>
+            <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
               {userDescription}
             </p>
           )}
@@ -134,7 +134,7 @@ export default function ArrimateFollowCard({
         {(!publicationDate || !publicationLocation) && (
           <section className='w-full h-fit flex gap-1 justify-center items-center'>
             <p className='truncate flex-grow h-fit min-w-0'>
-              <span className='h-full text-center text-xs'>
+              <span className='h-full text-center text-sm'>
                 {publicationLocation && ` • ${publicationLocation}`}
               </span>
             </p>
