@@ -6,7 +6,7 @@
       🚧       Recover Password ➜ 
       🔄                Sign In ➜ 
       🚧               Sign Out ➜ 
-      🚧                Sign Up ➜ 
+      🚧                Sign Up ➜ Forms + Prisma + Zod + Neon
       🚧  Two-Factor Auth (2FA) ➜  
     Branding:
       ✅      Reusable App Logo ➜ next/image
