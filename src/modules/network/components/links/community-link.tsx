@@ -1,6 +1,6 @@
 import communityBlackSVG from '@/assets/icons/navbar/black/community.svg'
 import communityWhiteSVG from '@/assets/icons/navbar/white/community.svg'
-import NavigationItem from '@/components/navigation/links/navbar-link'
+import NavigationItem from '@/modules/navigation/components/links/navbar-link'
 
 export default function Community() {
   return (

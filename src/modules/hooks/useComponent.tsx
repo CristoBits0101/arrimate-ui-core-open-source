@@ -1,5 +1,5 @@
-import HomePanel from '@/components/feeds/panels/home-panel'
-import SettingsPanel from '@/components/configuration/panels/settings-panel'
+import HomePanel from '@/modules/feeds/components/panels/home-panel'
+import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
 import { useLocale } from 'next-intl'
 import { usePathname } from 'next/navigation'
 

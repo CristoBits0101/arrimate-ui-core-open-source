@@ -46,9 +46,9 @@ export default function ShowPostImages() {
             <Image
               src={photo.src.large2x}
               alt={photo.alt || 'Image from Pexels'}
-              layout='fill'
-              objectFit='cover'
-              className='rounded-2xl 2xl:rounded-3xl drop-shadow-sm'
+              fill
+              className='rounded-2xl 2xl:rounded-3xl drop-shadow-sm object-cover'
+              style={{ objectFit: 'cover' }}
             />
           </footer>
           <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>

@@ -1,6 +1,6 @@
 import liveBlackSVG from '@/assets/icons/navbar/black/live.svg'
 import liveWhiteSVG from '@/assets/icons/navbar/white/live.svg'
-import NavigationItem from '@/components/navigation/links/navbar-link'
+import NavigationItem from '@/modules/navigation/components/links/navbar-link'
 
 export default function Live() {
   return (

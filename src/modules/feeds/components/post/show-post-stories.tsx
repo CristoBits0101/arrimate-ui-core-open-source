@@ -1,4 +1,4 @@
-import HomeCarousel from '@/components/feeds/carousels/home-carousel'
+import HomeCarousel from '@/modules/feeds/components/carousels/home-carousel'
 import { useFetchPhotos } from '@/modules/hooks/useFetchPhotos'
 
 export default function ShowPostStories() {
