@@ -1,5 +1,5 @@
-import RecentContent from '@/components/navigation/menu/recent-menu'
-import RecommendedContent from '@/components/navigation/menu/recommended-menu'
+import RecentContent from '@/modules/navigation/components/menu/recent-menu'
+import RecommendedContent from '@/modules/navigation/components/menu/recommended-menu'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
 type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>

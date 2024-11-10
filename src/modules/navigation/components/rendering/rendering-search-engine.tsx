@@ -1,8 +1,8 @@
 'use-client'
 
-import Pages from '@/components/navigation/menu/navbar-menu'
-import ReturnSearchContent from '@/components/navigation/rendering/return-search-content'
-import Searcher from '@/components/navigation/forms/searcher'
+import Pages from '@/modules/navigation/components/menu/navbar-menu'
+import ReturnSearchContent from '@/modules/navigation/components/rendering/rendering-search-content'
+import Searcher from '@/modules/navigation/components/forms/searcher-form'
 import { useSearch } from '@/modules/hooks/useSearch'
 
 export default function ReturnSearchEngine() {

@@ -4,19 +4,19 @@
 import SignUp from '@/modules/auth/actions/sign-up'
 
 // Alerts
-import FormError from '@/components/auth/alerts/alert-errors'
-import FormSuccess from '@/components/auth/alerts/alert-success'
+import FormError from '@/modules/auth/components/alerts/alert-errors'
+import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
 // Buttons
-import SubmitButton from '@/components/auth/buttons/send/submit-form-button'
+import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
 // Cards
-import CardWrapper from '@/components/auth/cards/card-wrapper'
+import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // Inputs
-import EmailInput from '@/components/auth/inputs/email-input'
-import NameInput from '@/components/auth/inputs/name-input'
-import PasswordInput from '@/components/auth/inputs/password-input'
+import EmailInput from '@/modules/auth/components/inputs/email-input'
+import NameInput from '@/modules/auth/components/inputs/name-input'
+import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
 // Next
 import { useLocale } from 'next-intl'
@@ -26,7 +26,7 @@ import { useState, useTransition } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 
 // Shadcn
-import { Form } from '@/components/ui/form'
+import { Form } from '@/modules/ui/form'
 
 // Zod
 import * as z from 'zod'

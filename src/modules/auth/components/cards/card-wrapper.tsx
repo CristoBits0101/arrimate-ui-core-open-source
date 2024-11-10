@@ -1,9 +1,9 @@
 'use client'
 
-import Header from '@/components/auth/cards/card-header'
-import SocialButtons from '@/components/auth/buttons/connect/social-buttons'
-import RedirectButton from '@/components/auth/buttons/redirect/redirect-page-button'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import Header from '@/modules/auth/components/cards/card-header'
+import SocialButtons from '@/modules/auth/components/buttons/sign-in/sign-in-social-buttons'
+import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/modules/ui/card'
 
 interface CardWrapperProps {
   children: React.ReactNode

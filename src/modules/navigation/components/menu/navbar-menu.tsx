@@ -1,11 +1,11 @@
-import Community from '@/components/network/links/community-link'
-import Events from '@/components/feeds/links/events-link'
-import Home from '@/components/feeds/links/home-link'
-import Live from '@/components/streaming/links/live'
-import Products from '@/components/e-commerce/links/products-link'
-import Reviews from '@/components/feeds/links/reviews-link'
-import Shorts from '@/components/streaming/links/shorts'
-import Videos from '@/components/streaming/links/videos'
+import Community from '@/modules/network/components/links/community-link'
+import Events from '@/modules/feeds/components/links/events-link'
+import Home from '@/modules/feeds/components/links/home-link'
+import Live from '@/modules/streaming/components/links/live-link'
+import Products from '@/modules/e-commerce/components/links/products-link'
+import Reviews from '@/modules/feeds/components/links/reviews-link'
+import Shorts from '@/modules/streaming/components/links/shorts-link'
+import Videos from '@/modules/streaming/components/links/videos-link'
 
 export default function NavbarMenu() {
   return (

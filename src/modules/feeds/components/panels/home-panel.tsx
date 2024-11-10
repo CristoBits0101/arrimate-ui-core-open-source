@@ -1,4 +1,4 @@
-import ArrimateFollowCard from '@/components/marketing/card/arrimate-follow-card'
+import ArrimateFollowCard from '@/modules/marketing/components/card/arrimate-follow-card'
 import { useFetchPhotos } from '@/modules/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 

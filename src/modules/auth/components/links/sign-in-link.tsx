@@ -1,6 +1,6 @@
 import signInBlackSVG from '@/assets/icons/navbar/black/sign-in.svg'
 import signInWhiteSVG from '@/assets/icons/navbar/white/sign-in.svg'
-import NavigationItem from '@/components/navigation/links/navbar-link'
+import NavigationItem from '@/modules/navigation/components/links/navbar-link'
 
 export default function SignIn() {
   return (

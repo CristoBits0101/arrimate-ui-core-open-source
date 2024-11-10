@@ -3,8 +3,8 @@ import {
   FormField,
   FormItem,
   FormMessage
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
+} from '@/modules/ui/form'
+import { Input } from '@/modules/ui/input'
 import { useFormContext } from 'react-hook-form'
 
 interface NameInputProps {

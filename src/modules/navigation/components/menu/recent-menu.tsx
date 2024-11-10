@@ -3,7 +3,7 @@
 import close from '@/assets/icons/searcher/close.svg'
 import historyIcon from '@/assets/icons/searcher/history.svg'
 import Image from 'next/image'
-import SearchLink from '@/components/navigation/links/search-link'
+import SearchLink from '@/modules/navigation/components/links/search-link'
 import { useTranslations } from 'next-intl'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
