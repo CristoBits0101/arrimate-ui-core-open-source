@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePageIcon } from '@/hooks/useIcon'
+import { usePageIcon } from '@/modules/hooks/useIcon'
 import { useLocale, useTranslations } from 'next-intl'
 
 interface NavigationItemProps {
@@ -11,7 +11,7 @@ interface NavigationItemProps {
   textKey?: string
 }
 
-export default function NavbarItem({
+export default function SidebarItem({
   route,
   blackIcon,
   whiteIcon,
@@ -20,11 +20,13 @@ export default function NavbarItem({
   const isActive = usePageIcon(route)
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
+
   const href = route === 'home' ? `/${locale}` : `/${locale}/${route}`
+
   return (
-    <li className='flex items-center justify-center rounded-[2.5rem] w-full h-full pt-2 pb-2 pr-8 pl-8 hover:bg-[#F4F4F4] hover:cursor-pointer transition-colors duration-300'>
+    <li className='flex items-center justify-center w-fit h-fit pt-2 pb-2 hover:cursor-pointer'>
       <Link
-        className='truncate flex items-center h-full w-full gap-4'
+        className='flex items-center justify-center h-fit w-fit gap-4'
         href={href}
       >
         <Image

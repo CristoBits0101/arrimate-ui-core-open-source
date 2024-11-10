@@ -8,7 +8,7 @@ import bcrypt from 'bcrypt'
 
 // Zod
 import * as z from 'zod'
-import { SignUpSchema } from '@/schemas'
+import { SignUpSchema } from '@/modules/auth/schemas'
 
 // The data that the user's schema received is saved in value
 export default async function SignUp(values: z.infer<typeof SignUpSchema>) {

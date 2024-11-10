@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignIn from '@/actions/sign-in'
+import SignIn from '@/modules/auth/actions/sign-in'
 
 // Alerts
 import FormError from '@/components/auth/alerts/alert-errors'
@@ -30,7 +30,7 @@ import { Form } from '@/components/ui/form'
 // Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { SignInSchema } from '@/schemas'
+import { SignInSchema } from '@/modules/auth/schemas'
 
 export default function SignInForm() {
   const [error, setError] = useState<string | undefined>('')

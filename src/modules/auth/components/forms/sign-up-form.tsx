@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignUp from '@/actions/sign-up'
+import SignUp from '@/modules/auth/actions/sign-up'
 
 // Alerts
 import FormError from '@/components/auth/alerts/alert-errors'
@@ -31,7 +31,7 @@ import { Form } from '@/components/ui/form'
 // Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { SignUpSchema } from '@/schemas'
+import { SignUpSchema } from '@/modules/auth/schemas'
 
 export default function SignUpForm() {
 

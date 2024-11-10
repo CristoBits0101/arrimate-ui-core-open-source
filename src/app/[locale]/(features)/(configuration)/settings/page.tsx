@@ -1,4 +1,4 @@
-import HomeSwiperCarousel from '@/components/feeds/carousels/home-swiper-carousel'
+import HomeSwiperCarousel from '@/modules/feeds/components/carousels/home-swiper-carousel'
 
 export default function SettingsPage() {
   return (
