@@ -42,6 +42,9 @@ export default function ShowPostStories() {
     new Set(photos.map((photo) => photo.src?.small))
   ).map((src) => photos.find((photo) => photo.src?.small === src))
 
+  // Ensure slidesPerView does not exceed the number of available photos
+  const effectiveSlidesPerView = Math.min(slidesPerView, uniquePhotos.length)
+
   return (
     <div
       ref={containerRef}
@@ -50,7 +53,7 @@ export default function ShowPostStories() {
       <Swiper
         modules={[Navigation]}
         spaceBetween={15}
-        slidesPerView={slidesPerView}
+        slidesPerView={effectiveSlidesPerView}
         navigation
         pagination={{ clickable: true }}
         onSlideChange={() => console.log('slide change')}
