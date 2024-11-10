@@ -1,13 +1,3 @@
-.form div {
-  align-items: center;
-  background-color: #f4f4f4;
-  border: 0.05rem solid #bfbdc050;
-  border-radius: 5rem;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
 .form div:hover .search {
   background-color: #bfbdc050;
   fill: #1d0f0f;

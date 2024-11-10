@@ -37,9 +37,9 @@ export default function Searcher({
   return (
     <form
       onSubmit={handleSubmit}
-      className='form flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11'
+      className='flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11'
     >
-      <div>
+      <div className='flex items-center bg-[#f4f4f4] border border-[rgba(191,189,192,0.31)] rounded-full h-full w-full'>
         <input
           className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#bfbdc050] h-1/2 outline-none p-4 w-full border-solid'
           placeholder={t('placeholder')}
