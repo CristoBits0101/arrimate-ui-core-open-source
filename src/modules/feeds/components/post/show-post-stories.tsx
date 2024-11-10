@@ -8,6 +8,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import '@/modules/feeds/styles/swiper.css'
 
 export default function ShowPostStories() {
   const { photos, loading, error } = useFetchPhotos({
@@ -20,19 +21,32 @@ export default function ShowPostStories() {
   const [slidesPerView, setSlidesPerView] = useState(1)
   const containerRef = useRef<HTMLDivElement>(null)
 
+  // Function to update slidesPerView based on container width
   const updateSlidesPerView = useCallback(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth
-      const newSlidesPerView = Math.floor(containerWidth / 96)
+      const newSlidesPerView = Math.max(1, Math.floor(containerWidth / 96))
       setSlidesPerView(newSlidesPerView)
     }
   }, [])
 
+  // Run the update when the component is mounted and when photos are loaded
   useEffect(() => {
+    // Ensure the calculation runs on initial load
     updateSlidesPerView()
+
     window.addEventListener('resize', updateSlidesPerView)
-    return () => window.removeEventListener('resize', updateSlidesPerView)
+    return () => {
+      window.removeEventListener('resize', updateSlidesPerView)
+    }
   }, [updateSlidesPerView])
+
+  // Ensure slidesPerView is recalculated when the component is fully mounted
+  useEffect(() => {
+    if (photos.length > 0)
+      // Run again after photos are loaded
+      updateSlidesPerView()
+  }, [photos, updateSlidesPerView])
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
@@ -52,7 +66,7 @@ export default function ShowPostStories() {
     >
       <Swiper
         modules={[Navigation]}
-        spaceBetween={15}
+        spaceBetween={20}
         slidesPerView={effectiveSlidesPerView}
         navigation
         pagination={{ clickable: true }}
@@ -64,7 +78,7 @@ export default function ShowPostStories() {
           (photo) =>
             photo &&
             photo.src && (
-              <SwiperSlide key={photo.id}>
+              <SwiperSlide key={photo.id} className='relative'>
                 <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full'>
                   <Image
                     src={photo.src.small}
@@ -76,6 +90,7 @@ export default function ShowPostStories() {
                     className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#bfbdc050]'
                   />
                 </div>
+                <p className='w-full mt-2 text-center text-sm text-gray-700 truncate'>{photo.photographer}</p>
               </SwiperSlide>
             )
         )}

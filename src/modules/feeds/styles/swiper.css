@@ -1,0 +1,12 @@
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  transform: translateY(-14px); 
+  z-index: 10; 
+  opacity: 0.85; 
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: inherit; 
+}
