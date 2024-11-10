@@ -1,3 +1,5 @@
+'use client'
+
 import chevron_left from '@/modules/feeds/assets/icons/carousels/chevron_left.svg'
 import chevron_right from '@/modules/feeds/assets/icons/carousels/chevron_right.svg'
 import Image from 'next/image'
