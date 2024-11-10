@@ -26,6 +26,7 @@ export default function ShowPostImages() {
           key={photo.id}
           className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto] gap-4'
         >
+          {/* Card */}
           <header className='col-span-1 row-span-1 w-full h-fit flex gap-4'>
             <ArrimateImagesCard
               nickname={photo.photographer}
@@ -41,16 +42,19 @@ export default function ShowPostImages() {
               follower={true}
             />
           </header>
+          {/* Empty */}
           <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
-          <footer className='col-span-1 row-span-1 relative w-full m-h-[42.703rem] h-[75vh] 2xl:h-[90vh] overflow-hidden'>
+          {/* Image */}
+          <footer className='col-span-1 row-span-1 relative w-full h-[42.5rem] overflow-hidden'>
             <Image
               src={photo.src.large2x}
               alt={photo.alt || 'Image from Pexels'}
               fill
-              className='rounded-2xl 2xl:rounded-3xl drop-shadow-sm object-cover'
+              className='rounded-3xl drop-shadow-sm object-cover'
               style={{ objectFit: 'cover' }}
             />
           </footer>
+          {/* Buttons */}
           <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
             <PostButton
               iconAlt=''
