@@ -1,7 +1,7 @@
-import chevron_left from '@/assets/icons/buttons/chevron_left.svg'
-import chevron_right from '@/assets/icons/buttons/chevron_right.svg'
+import chevron_left from '@/modules/feeds/assets/icons/carousels/chevron_left.svg'
+import chevron_right from '@/modules/feeds/assets/icons/carousels/chevron_right.svg'
 import Image from 'next/image'
-import unknownImage from '@/assets/images/profiles/aspect-ratio-1-1/unknownImage.jpg'
+import unknownImage from '@/modules/feeds/assets/images/profile/aspect-ratio-1-1/unknownImage.jpg'
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 
 interface Photo {
