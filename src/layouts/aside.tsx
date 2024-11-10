@@ -1,8 +1,8 @@
 'use client'
 
-import AuthButtons from '@/components/auth/buttons/redirect/redirect-auth-buttons'
-import Sidebar from '@/components/navigation/menu/sidebar-menu'
-import { usePageComponent } from '@/hooks/useComponent'
+import AuthButtons from '@/modules/auth/components/buttons/redirect/redirect-auth-buttons'
+import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'
+import { usePageComponent } from '@/modules/hooks/useComponent'
 
 export default function Aside() {
   const component = usePageComponent()
