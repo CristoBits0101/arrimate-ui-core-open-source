@@ -1,5 +1,5 @@
-import settingsBlackSVG from '@/assets/icons/sidebar/black/settings.svg'
-import settingsWhiteSVG from '@/assets/icons/sidebar/white/settings.svg'
+import settingsBlackSVG from '@/modules/configuration/assets/icons/links/black/settings.svg'
+import settingsWhiteSVG from '@/modules/configuration/assets/icons/links/white/settings.svg'
 import NavigationItem from '@/modules/navigation/components/links/sidebar-link'
 
 export default function Settings() {

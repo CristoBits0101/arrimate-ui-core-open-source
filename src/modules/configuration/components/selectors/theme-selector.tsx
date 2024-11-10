@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import themes from '@/assets/icons/settings/themes.svg'
+import themes from '@/modules/configuration/assets/icons/selectors/themes.svg'
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import language from '@/assets/icons/settings/language.svg'
+import language from '@/modules/configuration/assets/icons/selectors/language.svg'
 import { useRouter, usePathname } from '@/i18n/routing'
 import { useTranslations, useLocale } from 'next-intl'
 import { ChangeEvent } from 'react'
