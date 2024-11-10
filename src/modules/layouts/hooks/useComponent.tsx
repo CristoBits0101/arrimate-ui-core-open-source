@@ -29,7 +29,7 @@ export function usePageComponent() {
   // Check if current path is active
   switch (path) {
     case paths.home:
-      return <HomePanel />
+      return <HomePanel emoji='🏆' emojiTwo='💡' title='TOP CONTENT CREATOR' titleTwo='RECOMMENDED USERS'/>
 
     case paths.events:
       return 'EVENTS PANEL'

@@ -1,8 +1,16 @@
 import ArrimateFollowCard from '@/modules/marketing/components/card/arrimate-follow-card'
 import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
+import React from 'react'
 
-export default function HomePanel() {
+interface HomePanelProps {
+  emoji?: string
+  title?: string
+  emojiTwo?: string
+  titleTwo?: string
+}
+
+export default function HomePanel({ emoji = '', title = '', emojiTwo = '', titleTwo = '' }: HomePanelProps) {
   /**
    * Loading animation on pause
    * const { photos, loading, error } = useFetchPhotos({
@@ -24,10 +32,12 @@ export default function HomePanel() {
     .slice(0, 4)
 
   return (
-    <section className='w-full h-full flex flex-col gap-4 overflow-hidden overflow-y-auto no-scrollbar'>
-      <h2 className='font-medium uppercase w-full text-center'>
-        Top Content Creators
-      </h2>
+    <section className='w-full h-full flex flex-col gap-4 overflow-hidden overflow-y-auto no-scrollbar text-sm'>
+      {title && (
+        <h2 className='font-medium uppercase w-full'>
+          {emoji && <span className='text-lg'>{emoji}</span>} {title}
+        </h2>
+      )}
       <div className='grid grid-cols-2 gap-4'>
         {uniquePhotos.slice(0, 2).map((photo) => (
           <ArrimateFollowCard
@@ -50,6 +60,11 @@ export default function HomePanel() {
           />
         ))}
       </div>
+      {titleTwo && (
+        <h2 className='font-medium uppercase w-full mt-4'>
+          {emojiTwo && <span className='text-lg'>{emojiTwo}</span>} {titleTwo}
+        </h2>
+      )}
       <div className='grid grid-cols-2 gap-4'>
         {uniquePhotos.slice(2, 4).map((photo) => (
           <ArrimateFollowCard
