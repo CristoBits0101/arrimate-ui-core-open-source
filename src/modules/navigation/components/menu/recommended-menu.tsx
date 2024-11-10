@@ -1,9 +1,9 @@
 'use client'
 
-import clear from '@/assets/icons/searcher/clear.svg'
-import close from '@/assets/icons/searcher/close.svg'
+import clear from '@/modules/navigation/assets/icons/searcher/clear.svg'
+import close from '@/modules/navigation/assets/icons/searcher/close.svg'
 import Image from 'next/image'
-import searchIcon from '@/assets/icons/searcher/search.svg'
+import searchIcon from '@/modules/navigation/assets/icons/searcher/search.svg'
 import SearchLink from '@/modules/navigation/components/links/search-link'
 import { useTranslations } from 'next-intl'
 

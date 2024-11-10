@@ -1,5 +1,5 @@
-import postBlackSVG from '@/assets/icons/sidebar/black/post.svg'
-import postWhiteSVG from '@/assets/icons/sidebar/white/post.svg'
+import postBlackSVG from '@/modules/feeds/assets/icons/links/black/post.svg'
+import postWhiteSVG from '@/modules/feeds/assets/icons/links/white/post.svg'
 import NavigationItem from '@/modules/navigation/components/links/sidebar-link'
 
 export default function Post() {
