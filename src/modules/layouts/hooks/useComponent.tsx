@@ -1,9 +1,11 @@
 import HomePanel from '@/modules/feeds/components/panels/home-panel'
 import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
 export function usePageComponent() {
+  // Get translations
+  const hpt = useTranslations('HomePanel')
   // Get -> /en/home
   const path = usePathname()
   // Get -> en
@@ -23,13 +25,20 @@ export function usePageComponent() {
     chats: `/${locale}/chats`,
     notifications: `/${locale}/notifications`,
     cart: `/${locale}/cart`,
-    settings: `/${locale}/settings`
+    settings: `/${locale}/settings`,
   }
 
   // Check if current path is active
   switch (path) {
     case paths.home:
-      return <HomePanel emoji='🏆' emojiTwo='💡' title='TOP CONTENT CREATOR' titleTwo='RECOMMENDED USERS'/>
+      return (
+        <HomePanel
+          emoji={hpt('emoji')}
+          emojiTwo={hpt('emojiTwo')}
+          title={hpt('title')}
+          titleTwo={hpt('titleTwo')}
+        />
+      )
 
     case paths.events:
       return 'EVENTS PANEL'

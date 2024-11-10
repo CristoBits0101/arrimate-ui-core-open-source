@@ -15,6 +15,12 @@
     "unfollow": "Dejar de seguir",
     "unlike": "Ya no me gusta"
   },
+  "HomePanel": {
+    "title": "TOP 10",
+    "emoji": "🏆",
+    "titleTwo": "RECOMENDADOS",
+    "emojiTwo": "💡"
+  },
   "SidebarLayout": {
     "home": "Inicio",
     "events": "Eventos",
