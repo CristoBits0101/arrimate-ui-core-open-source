@@ -1,5 +1,5 @@
-import Aside from '@/layouts/aside'
-import Header from '@/layouts/header'
+import Aside from '@/modules/layouts/components/aside'
+import Header from '@/modules/layouts/components/header'
 
 export default function FeaturesLayout({
   children

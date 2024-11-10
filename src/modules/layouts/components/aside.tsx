@@ -2,7 +2,7 @@
 
 import AuthButtons from '@/modules/auth/components/buttons/redirect/redirect-auth-buttons'
 import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'
-import { usePageComponent } from '@/modules/hooks/useComponent'
+import { usePageComponent } from '@/modules/layouts/hooks/useComponent'
 
 export default function Aside() {
   const component = usePageComponent()

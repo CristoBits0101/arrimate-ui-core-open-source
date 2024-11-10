@@ -3,7 +3,7 @@
 import Pages from '@/modules/navigation/components/menu/navbar-menu'
 import ReturnSearchContent from '@/modules/navigation/components/rendering/rendering-search-content'
 import Searcher from '@/modules/navigation/components/forms/searcher-form'
-import { useSearch } from '@/modules/hooks/useSearch'
+import { useSearch } from '@/modules/navigation/hooks/useSearch'
 
 export default function ReturnSearchEngine() {
   const {

@@ -1,7 +1,7 @@
 'use client'
 
-import Header from '@/layouts/header'
-import Aside from '@/layouts/aside'
+import Header from '@/modules/layouts/components/header'
+import Aside from '@/modules/layouts/components/aside'
 import ShowPostImages from '@/modules/feeds/components/post/show-post-images'
 import ShowPostStories from '@/modules/feeds/components/post/show-post-stories'
 import '@/styles/globals.css'

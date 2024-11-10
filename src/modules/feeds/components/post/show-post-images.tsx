@@ -3,7 +3,7 @@
 import ArrimateImagesCard from '@/modules/feeds/components/card/arrimate-images-card'
 import PostButton from '@/modules/feeds/components/buttons/post-button'
 import Image from 'next/image'
-import { useFetchPhotos } from '@/modules/hooks/useFetchPhotos'
+import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 import { useState } from 'react'
 

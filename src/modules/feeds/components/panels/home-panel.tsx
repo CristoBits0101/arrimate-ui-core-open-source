@@ -1,5 +1,5 @@
 import ArrimateFollowCard from '@/modules/marketing/components/card/arrimate-follow-card'
-import { useFetchPhotos } from '@/modules/hooks/useFetchPhotos'
+import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel() {
