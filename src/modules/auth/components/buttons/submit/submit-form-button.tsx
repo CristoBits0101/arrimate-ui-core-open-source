@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/modules/ui/button'
 
 interface SubmitButtonProps {
   message?: string
