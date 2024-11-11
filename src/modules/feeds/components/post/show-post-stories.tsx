@@ -54,9 +54,7 @@ export default function ShowPostStories() {
   useEffect(() => {
     updateSlidesPerView()
     window.addEventListener('resize', updateSlidesPerView)
-    return () => {
-      window.removeEventListener('resize', updateSlidesPerView)
-    }
+    return () => window.removeEventListener('resize', updateSlidesPerView)
   }, [updateSlidesPerView])
 
   useEffect(() => {
