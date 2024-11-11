@@ -16,9 +16,9 @@
     "unlike": "Ya no me gusta"
   },
   "HomePanel": {
-    "title": "TOP 10",
+    "title": "DESTACADOS",
     "emoji": "🏆",
-    "titleTwo": "RECOMENDACIONES",
+    "titleTwo": "SUGERENCIAS",
     "emojiTwo": "💡"
   },
   "SidebarLayout": {

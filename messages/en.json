@@ -16,9 +16,9 @@
     "unlike": "Unlike"
   },
   "HomePanel": {
-    "title": " TOP 10",
+    "title": "HIGHLIGHTS",
     "emoji": "🏆",
-    "titleTwo": "RECOMMENDED",
+    "titleTwo": "SUGGESTIONS",
     "emojiTwo": "💡"
   },
   "SidebarLayout": {
