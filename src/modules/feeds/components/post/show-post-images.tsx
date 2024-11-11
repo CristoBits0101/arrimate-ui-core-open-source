@@ -24,10 +24,10 @@ export default function ShowPostImages() {
       {photos.map((photo) => (
         <article
           key={photo.id}
-          className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto] gap-4'
+          className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
         >
           {/* Card */}
-          <header className='col-span-1 row-span-1 w-full h-fit flex gap-4'>
+          <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
             <ArrimateImagesCard
               nickname={photo.photographer}
               profesion={randomUtils.getRandomProfesion()}
@@ -45,7 +45,7 @@ export default function ShowPostImages() {
           {/* Empty */}
           <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
           {/* Image */}
-          <footer className='col-span-1 row-span-1 relative w-full h-[42.5rem] overflow-hidden'>
+          <section className='col-span-1 row-span-1 relative w-full h-[42.5rem] overflow-hidden'>
             <Image
               src={photo.src.large2x}
               alt={photo.alt || 'Image from Pexels'}
@@ -53,7 +53,7 @@ export default function ShowPostImages() {
               className='rounded-3xl drop-shadow-sm object-cover'
               style={{ objectFit: 'cover' }}
             />
-          </footer>
+          </section>
           {/* Buttons */}
           <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
             <PostButton
@@ -78,6 +78,14 @@ export default function ShowPostImages() {
             />
             <PostButton iconAlt='' iconDisplay='options' />
           </aside>
+          {/* Card */}
+          <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
+            <p className='w-full truncate'>
+              ✍️ {randomUtils.getRandomImageDescription().toString()}
+            </p>
+          </footer>
+          {/* Empty */}
+          <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
         </article>
       ))}
     </div>
