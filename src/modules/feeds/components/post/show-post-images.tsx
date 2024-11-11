@@ -1,5 +1,3 @@
-'use client'
-
 import ArrimateImagesCard from '@/modules/feeds/components/card/arrimate-images-card'
 import PostButton from '@/modules/feeds/components/buttons/post-button'
 import Image from 'next/image'
@@ -13,24 +11,35 @@ export default function ShowPostImages() {
   const [page] = useState(() => randomUtils.getRandomPage())
 
   // Query images
-  const { photos } = useFetchPhotos({
+  const { photos, loading } = useFetchPhotos({
     query: hashtag,
     orientation: 'portrait',
     per_page: 10,
     page: page
   })
 
-  // Check if photos are available
-  if (!photos || photos.length === 0)
+  // Show loading message while fetching photos
+  if (loading) {
     return (
-      <div className='w-full h-fit justify-center items-center'>
-        <h2>
-          ¡Ups! No hay fotos disponibles. 😓 Intenta recargar o explorar con
+      <div className='w-full h-full flex justify-center items-center'>
+        <h2 className='text-center text-gray-500'>{''}</h2>
+      </div>
+    )
+  }
+
+  // Show no photos available message if photos array is empty
+  if (!photos || photos.length === 0) {
+    return (
+      <div className='w-full h-full flex justify-center items-center'>
+        <h2 className='text-center text-gray-500'>
+          ⚠️ Vaya, no hay fotos disponibles. 😓 Intenta recargar o explorar con
           otro hashtag.
         </h2>
       </div>
     )
+  }
 
+  // Render photos if available
   return (
     <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => {
