@@ -302,23 +302,21 @@ export const randomUtils = {
   },
   getRandomImageDescription: () => {
     const intros = [
-      'Check out this amazing capture:',
-      "Here's a snapshot of inspiration:",
-      'A moment worth sharing:',
-      'A visual story of the day:',
-      'Another great memory:',
-      'Bringing you a glimpse of beauty:',
-      'Captured just for you:',
-      'A scene that speaks for itself:',
-      'A perfect moment to share:',
-      'A picture worth a thousand words:'
-    ]
-
+      'Check out this amazing capture.',
+      "Here's a snapshot of inspiration.",
+      'A moment worth sharing.',
+      'A visual story of the day.',
+      'Another great memory.',
+      'Bringing you a glimpse of beauty.',
+      'Captured just for you.',
+      'A scene that speaks for itself.',
+      'A perfect moment to share.',
+      'A picture worth a thousand words.'
+    ];
     const hashtags = Array.from(
       { length: 5 },
       () => `#${randomUtils.getRandomHashtag()}`
-    ).join(' ')
-
-    return `${intros[Math.floor(Math.random() * intros.length)]} ${hashtags}`
-  }
+    ).join(' ');
+    return `${intros[Math.floor(Math.random() * intros.length)]}\n${hashtags}`;
+  }  
 }

@@ -8,6 +8,7 @@ import { randomUtils } from '@/utils/randomUtils'
 import { useState } from 'react'
 
 export default function ShowPostImages() {
+  // Get aleatory keyword and page
   const [hashtag] = useState(() => randomUtils.getRandomHashtag())
   const [page] = useState(() => randomUtils.getRandomPage())
 
@@ -21,73 +22,80 @@ export default function ShowPostImages() {
 
   return (
     <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
-      {photos.map((photo) => (
-        <article
-          key={photo.id}
-          className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
-        >
-          {/* Card */}
-          <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
-            <ArrimateImagesCard
-              nickname={photo.photographer}
-              profesion={randomUtils.getRandomProfesion()}
-              intereses={randomUtils.getRandomIntereses()}
-              slogan={randomUtils.getRandomSlogan()}
-              date={randomUtils.getRandomTime()}
-              location={randomUtils.getRandomCapital()}
-              trending={randomUtils.getRandomBoolean()}
-              followers={randomUtils.getRandomFollowers()}
-              reliable={randomUtils.getRandomBoolean()}
-              verified={randomUtils.getRandomBoolean()}
-              follower={true}
-            />
-          </header>
-          {/* Empty */}
-          <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
-          {/* Image */}
-          <section className='col-span-1 row-span-1 relative w-full h-[42.5rem] overflow-hidden'>
-            <Image
-              src={photo.src.large2x}
-              alt={photo.alt || 'Image from Pexels'}
-              fill
-              className='rounded-3xl drop-shadow-sm object-cover'
-              style={{ objectFit: 'cover' }}
-            />
-          </section>
-          {/* Buttons */}
-          <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
-            <PostButton
-              iconAlt=''
-              iconDisplay='like'
-              textDisplay={randomUtils.getRandomLikes().toString()}
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='comments'
-              textDisplay={randomUtils.getRandomInteractions().toString()}
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='save'
-              textDisplay={randomUtils.getRandomInteractions().toString()}
-            />
-            <PostButton
-              iconAlt=''
-              iconDisplay='share'
-              textDisplay={randomUtils.getRandomInteractions().toString()}
-            />
-            <PostButton iconAlt='' iconDisplay='options' />
-          </aside>
-          {/* Card */}
-          <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
-            <p className='w-full truncate'>
-              ✍️ {randomUtils.getRandomImageDescription().toString()}
-            </p>
-          </footer>
-          {/* Empty */}
-          <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
-        </article>
-      ))}
+      {photos.map((photo) => {
+        // Generate a unique description and split it into text and hashtags
+        const description = randomUtils.getRandomImageDescription().toString()
+        const [text, hashtags] = description.split(/(?=#)/)
+
+        return (
+          <article
+            key={photo.id}
+            className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
+          >
+            {/* Card */}
+            <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
+              <ArrimateImagesCard
+                nickname={photo.photographer}
+                profesion={randomUtils.getRandomProfesion()}
+                intereses={randomUtils.getRandomIntereses()}
+                slogan={randomUtils.getRandomSlogan()}
+                date={randomUtils.getRandomTime()}
+                location={randomUtils.getRandomCapital()}
+                trending={randomUtils.getRandomBoolean()}
+                followers={randomUtils.getRandomFollowers()}
+                reliable={randomUtils.getRandomBoolean()}
+                verified={randomUtils.getRandomBoolean()}
+                follower={true}
+              />
+            </header>
+            {/* Empty */}
+            <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
+            {/* Image */}
+            <section className='col-span-1 row-span-1 relative w-full h-[42.5rem] overflow-hidden'>
+              <Image
+                src={photo.src.large2x}
+                alt={photo.alt || 'Image from Pexels'}
+                fill
+                className='rounded-3xl drop-shadow-sm object-cover'
+                style={{ objectFit: 'cover' }}
+              />
+            </section>
+            {/* Buttons */}
+            <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
+              <PostButton
+                iconAlt=''
+                iconDisplay='like'
+                textDisplay={randomUtils.getRandomLikes().toString()}
+              />
+              <PostButton
+                iconAlt=''
+                iconDisplay='comments'
+                textDisplay={randomUtils.getRandomInteractions().toString()}
+              />
+              <PostButton
+                iconAlt=''
+                iconDisplay='save'
+                textDisplay={randomUtils.getRandomInteractions().toString()}
+              />
+              <PostButton
+                iconAlt=''
+                iconDisplay='share'
+                textDisplay={randomUtils.getRandomInteractions().toString()}
+              />
+              <PostButton iconAlt='' iconDisplay='options' />
+            </aside>
+            {/* Card */}
+            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
+              {text && <p className='w-full break-words'>✍️ {text}</p>}
+              {hashtags && (
+                <p className='w-full break-words text-cyan-700'>{hashtags}</p>
+              )}
+            </footer>
+            {/* Empty */}
+            <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
+          </article>
+        )
+      })}
     </div>
   )
 }
