@@ -323,5 +323,31 @@ export const randomUtils = {
       description: intros[Math.floor(Math.random() * intros.length)],
       hashtags: hashtags
     }
+  },
+  getRandomCountryCode: () => {
+    const countryCodes = [
+      'USA',
+      'CHN',
+      'RUS',
+      'DEU',
+      'FRA',
+      'GBR',
+      'JPN',
+      'IND',
+      'BRA',
+      'CAN',
+      'AUS',
+      'ITA',
+      'ESP',
+      'KOR',
+      'MEX',
+      'IDN',
+      'SAU',
+      'ARG',
+      'EGY',
+      'ZAF'
+    ]
+    const randomIndex = Math.floor(Math.random() * countryCodes.length)
+    return countryCodes[randomIndex]
   }
 }

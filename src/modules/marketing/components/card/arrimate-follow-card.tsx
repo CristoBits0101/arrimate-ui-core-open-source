@@ -21,6 +21,7 @@ interface ArrimateFollowCardProps {
   width?: number
   height?: number
   connection: boolean
+  countryCode?: string
 }
 
 export default function ArrimateFollowCard({
@@ -36,7 +37,8 @@ export default function ArrimateFollowCard({
   reliable = false,
   verified = false,
   follower = false,
-  connection = false
+  connection = false,
+  countryCode = ''
 }: ArrimateFollowCardProps) {
   const [isMounted, setIsMounted] = useState(false)
   const [userImage, setUserImage] = useState<string | undefined>(src)
@@ -93,7 +95,12 @@ export default function ArrimateFollowCard({
   }
 
   return (
-    <article className='border-solid border-[0.05rem] border-[#bfbdc050] rounded-xl w-full h-fit flex flex-col gap-1 px-2 py-4 justify-center items-center'>
+    <article className='relative border-solid border-[0.05rem] border-[#bfbdc050] rounded-xl w-full h-fit flex flex-col gap-1 px-2 py-4 justify-center items-center'>
+      {countryCode && (
+        <span className='absolute top-1 right-2 text-[0.625rem] font-light rounded-full'>
+          {countryCode}
+        </span>
+      )}
       <span className='shadow-sm relative inline-flex overflow-hidden rounded-full p-1'>
         {isOnline ? (
           <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#68EF00_0%,#5EBAA6_50%,#68EF00_100%)]'></span>

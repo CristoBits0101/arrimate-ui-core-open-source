@@ -25,7 +25,7 @@ export function usePageComponent() {
     chats: `/${locale}/chats`,
     notifications: `/${locale}/notifications`,
     cart: `/${locale}/cart`,
-    settings: `/${locale}/settings`,
+    settings: `/${locale}/settings`
   }
 
   // Check if current path is active
