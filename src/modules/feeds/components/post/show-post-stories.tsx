@@ -28,7 +28,8 @@ export default function ShowPostStories() {
   const [hashtag] = useState(() => randomUtils.getRandomHashtag())
   const [page] = useState(() => randomUtils.getRandomPage())
 
-  const { photos, loading, error } = useFetchPhotos({
+  // const { photos, loading, error } = useFetchPhotos({
+  const { photos, error } = useFetchPhotos({
     query: hashtag,
     orientation: 'square',
     per_page: 30,
