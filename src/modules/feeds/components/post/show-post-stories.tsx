@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Navigation } from 'swiper/modules'
+import { randomUtils } from '@/utils/randomUtils'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { useState, useEffect, useRef, useCallback } from 'react'
@@ -11,11 +12,14 @@ import 'swiper/css/pagination'
 import '@/modules/feeds/styles/swiper.css'
 
 export default function ShowPostStories() {
+  const [hashtag] = useState(() => randomUtils.getRandomHashtag())
+  const [page] = useState(() => randomUtils.getRandomPage())
+
   const { photos, loading, error } = useFetchPhotos({
-    query: 'personas',
+    query: hashtag,
     orientation: 'square',
     per_page: 30,
-    page: 4
+    page: page
   })
 
   const [slidesPerView, setSlidesPerView] = useState(1)
@@ -90,7 +94,9 @@ export default function ShowPostStories() {
                     className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#bfbdc050]'
                   />
                 </div>
-                <p className='w-full mt-2 text-center text-sm text-gray-700 truncate'>{photo.photographer}</p>
+                <p className='w-full mt-2 text-center text-sm text-gray-700 truncate'>
+                  {photo.photographer}
+                </p>
               </SwiperSlide>
             )
         )}
