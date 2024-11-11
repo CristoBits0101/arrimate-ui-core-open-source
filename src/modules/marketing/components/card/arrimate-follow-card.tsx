@@ -97,7 +97,7 @@ export default function ArrimateFollowCard({
   return (
     <article className='relative border-solid border-[0.05rem] border-[#bfbdc050] rounded-xl w-full h-fit flex flex-col gap-1 px-2 py-4 justify-center items-center'>
       {countryCode && (
-        <span className='absolute top-1 right-2 text-[0.625rem] font-light rounded-full'>
+        <span className='absolute top-1.5 right-2 text-xs font-light rounded-full'>
           {countryCode}
         </span>
       )}

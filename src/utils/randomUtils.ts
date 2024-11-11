@@ -303,7 +303,7 @@ export const randomUtils = {
   getRandomImageDescription: () => {
     const intros = [
       'Check out this amazing capture.',
-      "Here's a snapshot of inspiration.",
+      'Here\'s a snapshot of inspiration.',
       'A moment worth sharing.',
       'A visual story of the day.',
       'Another great memory.',
@@ -326,26 +326,26 @@ export const randomUtils = {
   },
   getRandomCountryCode: () => {
     const countryCodes = [
-      'USA',
-      'CHN',
-      'RUS',
-      'DEU',
-      'FRA',
-      'GBR',
-      'JPN',
-      'IND',
-      'BRA',
-      'CAN',
-      'AUS',
-      'ITA',
-      'ESP',
-      'KOR',
-      'MEX',
-      'IDN',
-      'SAU',
-      'ARG',
-      'EGY',
-      'ZAF'
+      'US',
+      'CN',
+      'RU',
+      'DE',
+      'FR',
+      'GB',
+      'JP',
+      'IN',
+      'BR',
+      'CA',
+      'AU',
+      'IT',
+      'ES',
+      'KR',
+      'MX',
+      'ID',
+      'SA',
+      'AR',
+      'EG',
+      'ZA'
     ]
     const randomIndex = Math.floor(Math.random() * countryCodes.length)
     return countryCodes[randomIndex]
