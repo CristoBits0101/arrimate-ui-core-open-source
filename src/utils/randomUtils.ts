@@ -312,11 +312,16 @@ export const randomUtils = {
       'A scene that speaks for itself.',
       'A perfect moment to share.',
       'A picture worth a thousand words.'
-    ];
+    ]
+    // Generate an array with 5 hashtags
     const hashtags = Array.from(
       { length: 5 },
       () => `#${randomUtils.getRandomHashtag()}`
-    ).join(' ');
-    return `${intros[Math.floor(Math.random() * intros.length)]}\n${hashtags}`;
-  }  
+    )
+    // Return an object with the description and hashtags array
+    return {
+      description: intros[Math.floor(Math.random() * intros.length)],
+      hashtags: hashtags
+    }
+  }
 }

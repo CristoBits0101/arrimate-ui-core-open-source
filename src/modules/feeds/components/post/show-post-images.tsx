@@ -23,9 +23,9 @@ export default function ShowPostImages() {
   return (
     <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => {
-        // Generate a unique description and split it into text and hashtags
-        const description = randomUtils.getRandomImageDescription().toString()
-        const [text, hashtags] = description.split(/(?=#)/)
+        // Generate a unique description and hashtags for each photo
+        const { description, hashtags } =
+          randomUtils.getRandomImageDescription()
 
         return (
           <article
@@ -84,12 +84,12 @@ export default function ShowPostImages() {
               />
               <PostButton iconAlt='' iconDisplay='options' />
             </aside>
-            {/* Card */}
-            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
-              {text && <p className='w-full break-words'>✍️ {text}</p>}
-              {hashtags && (
-                <p className='w-full break-words text-cyan-700'>{hashtags}</p>
-              )}
+            {/* Footer with Description and Hashtags */}
+            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col px-3'>
+              <p className='w-full break-words'>✍️ {description}</p>
+              <p className='w-full break-words text-cyan-700'>
+                📸 {hashtags.join(' ')}
+              </p>
             </footer>
             {/* Empty */}
             <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
