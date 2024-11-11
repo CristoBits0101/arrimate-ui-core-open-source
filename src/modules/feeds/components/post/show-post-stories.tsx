@@ -11,6 +11,19 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import '@/modules/feeds/styles/swiper.css'
 
+type Photo = {
+  id: number
+  src: {
+    small: string
+    medium?: string
+    large?: string
+  }
+  alt?: string | null
+  width: number
+  height: number
+  photographer: string
+}
+
 export default function ShowPostStories() {
   const [hashtag] = useState(() => randomUtils.getRandomHashtag())
   const [page] = useState(() => randomUtils.getRandomPage())
@@ -24,6 +37,9 @@ export default function ShowPostStories() {
 
   const [slidesPerView, setSlidesPerView] = useState(1)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isImageErrorMap, setIsImageErrorMap] = useState<{
+    [key: number]: boolean
+  }>({})
 
   // Function to update slidesPerView based on container width
   const updateSlidesPerView = useCallback(() => {
@@ -34,34 +50,35 @@ export default function ShowPostStories() {
     }
   }, [])
 
-  // Run the update when the component is mounted and when photos are loaded
   useEffect(() => {
-    // Ensure the calculation runs on initial load
     updateSlidesPerView()
-
     window.addEventListener('resize', updateSlidesPerView)
     return () => {
       window.removeEventListener('resize', updateSlidesPerView)
     }
   }, [updateSlidesPerView])
 
-  // Ensure slidesPerView is recalculated when the component is fully mounted
   useEffect(() => {
-    if (photos.length > 0)
-      // Run again after photos are loaded
-      updateSlidesPerView()
+    if (photos.length > 0) updateSlidesPerView()
   }, [photos, updateSlidesPerView])
 
+  // Return null if the photos array is empty
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
+  if (photos.length === 0) return null
 
-  // Create a set of unique photos based on the src
-  const uniquePhotos = Array.from(
-    new Set(photos.map((photo) => photo.src?.small))
-  ).map((src) => photos.find((photo) => photo.src?.small === src))
+  const uniquePhotos: Photo[] = Array.from(
+    new Set(photos.map((photo: Photo) => photo.src?.small))
+  ).map(
+    (src) => photos.find((photo: Photo) => photo.src?.small === src) as Photo
+  )
 
-  // Ensure slidesPerView does not exceed the number of available photos
   const effectiveSlidesPerView = Math.min(slidesPerView, uniquePhotos.length)
+
+  // Function to handle image loading error
+  const handleImageError = (photoId: number) => {
+    setIsImageErrorMap((prev) => ({ ...prev, [photoId]: true }))
+  }
 
   return (
     <div
@@ -78,27 +95,26 @@ export default function ShowPostStories() {
         onSwiper={(swiper) => console.log(swiper)}
         className='relative w-full flex justify-between items-center'
       >
-        {uniquePhotos.map(
-          (photo) =>
-            photo &&
-            photo.src && (
-              <SwiperSlide key={photo.id} className='relative'>
-                <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full'>
-                  <Image
-                    src={photo.src.small}
-                    alt={photo.alt || 'Image from Pexels'}
-                    width={photo.width}
-                    height={photo.height}
-                    layout='responsive'
-                    objectFit='cover'
-                    className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#bfbdc050]'
-                  />
-                </div>
-                <p className='w-full mt-2 text-center text-sm text-gray-700 truncate'>
-                  {photo.photographer}
-                </p>
-              </SwiperSlide>
-            )
+        {uniquePhotos.map((photo) =>
+          photo && photo.src && !isImageErrorMap[photo.id] ? (
+            <SwiperSlide key={photo.id} className='relative'>
+              <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full'>
+                <Image
+                  src={photo.src.small}
+                  alt={photo.alt || 'Image from Pexels'}
+                  width={photo.width}
+                  height={photo.height}
+                  layout='responsive'
+                  objectFit='cover'
+                  className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#bfbdc050]'
+                  onError={() => handleImageError(photo.id)}
+                />
+              </div>
+              <p className='w-full mt-2 text-center text-sm text-gray-700 truncate'>
+                {photo.photographer}
+              </p>
+            </SwiperSlide>
+          ) : null
         )}
       </Swiper>
     </div>
