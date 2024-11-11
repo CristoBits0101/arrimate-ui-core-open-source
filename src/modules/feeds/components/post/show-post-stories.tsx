@@ -63,7 +63,7 @@ export default function ShowPostStories() {
   }, [photos, updateSlidesPerView])
 
   // Return null if the photos array is empty
-  if (loading) return <p>Loading...</p>
+  // if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   if (photos.length === 0) return null
 

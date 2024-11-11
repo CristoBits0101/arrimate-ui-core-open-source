@@ -20,6 +20,17 @@ export default function ShowPostImages() {
     page: page
   })
 
+  // Check if photos are available
+  if (!photos || photos.length === 0)
+    return (
+      <div className='w-full h-fit justify-center items-center'>
+        <h2>
+          ¡Ups! No hay fotos disponibles. 😓 Intenta recargar o explorar con
+          otro hashtag.
+        </h2>
+      </div>
+    )
+
   return (
     <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => {
