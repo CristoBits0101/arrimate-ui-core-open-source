@@ -105,7 +105,7 @@ export default function ShowPostImages() {
               <PostButton iconAlt='' iconDisplay='options' />
             </aside>
             {/* Footer with Description and Hashtags */}
-            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col px-3.5'>
+            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col'>
               <p className='w-full break-words'>✍️ {description}</p>
               <p className='w-full break-words text-cyan-800'>
                 📸 {hashtags.join(' ')}
