@@ -1,5 +1,8 @@
 'use client'
-
+import Image from 'next/image'
+import dark from '@/modules/configuration/assets/icons/buttons/dark.svg'
+import light from '@/modules/configuration/assets/icons/buttons/light.svg'
+import system from '@/modules/configuration/assets/icons/buttons/system.svg'
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
@@ -31,45 +34,50 @@ export default function ThemeSelector() {
     selectedTheme === 'system'
       ? localStorage.removeItem('theme')
       : localStorage.setItem('theme', selectedTheme)
-  }
 
-  useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
+    window.location.reload()
+  }
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null
     if (storedTheme) {
       setTheme(storedTheme)
     } else {
-      applyTheme('system')
+      setTheme('system')
     }
   }, [])
+
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   return (
     <section className='w-full h-fit flex flex-col'>
       <button
-        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex items-center gap-2 ${
           theme === 'dark' ? 'bg-[#F4F4F4] font-medium' : ''
         }`}
         onClick={() => handleThemeClick('dark')}
       >
+        <Image width={24} height={24} src={dark} alt='Dark icon' className='ml-[0.05rem] aspect-square object-cover' />
         {t('themes.dark')}
       </button>
       <button
-        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex items-center gap-2 ${
           theme === 'light' ? 'bg-[#F4F4F4] font-medium' : ''
         }`}
         onClick={() => handleThemeClick('light')}
       >
+        <Image width={24} height={24} src={light} alt='Light icon' className='ml-[0.05rem] aspect-square object-cover' />
         {t('themes.light')}
       </button>
       <button
-        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex items-center gap-2 ${
           theme === 'system' ? 'bg-[#F4F4F4] font-medium' : ''
         }`}
         onClick={() => handleThemeClick('system')}
       >
+        <Image width={24} height={24} src={system} alt='System icon' className='ml-[0.05rem] aspect-square object-cover' />
         {t('themes.system')}
       </button>
     </section>
