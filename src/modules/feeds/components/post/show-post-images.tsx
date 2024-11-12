@@ -9,7 +9,7 @@ export default function ShowPostImages() {
 
   // Query images
   const { photos, loading } = useFetchPhotos({
-    query: 'feliz',
+    query: 'couple',
     orientation: 'portrait',
     per_page: 10,
     page: 1
