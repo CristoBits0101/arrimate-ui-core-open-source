@@ -31,14 +31,16 @@ export default function ThemeSelector() {
     selectedTheme === 'system'
       ? localStorage.removeItem('theme')
       : localStorage.setItem('theme', selectedTheme)
-    applyTheme(selectedTheme)
   }
+
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null
     if (storedTheme) {
       setTheme(storedTheme)
-      applyTheme(storedTheme)
     } else {
       applyTheme('system')
     }
@@ -46,30 +48,30 @@ export default function ThemeSelector() {
 
   return (
     <section className='w-full h-fit flex flex-col'>
-        <button
-          className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
-            theme === 'dark' ? 'bg-[#F4F4F4] font-medium' : ''
-          }`}
-          onClick={() => handleThemeClick('dark')}
-        >
-          {t('themes.dark')}
-        </button>
-        <button
-          className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
-            theme === 'light' ? 'bg-[#F4F4F4] font-medium' : ''
-          }`}
-          onClick={() => handleThemeClick('light')}
-        >
-          {t('themes.light')}
-        </button>
-        <button
-          className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
-            theme === 'system' ? 'bg-[#F4F4F4] font-medium' : ''
-          }`}
-          onClick={() => handleThemeClick('system')}
-        >
-          {t('themes.system')}
-        </button>
+      <button
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+          theme === 'dark' ? 'bg-[#F4F4F4] font-medium' : ''
+        }`}
+        onClick={() => handleThemeClick('dark')}
+      >
+        {t('themes.dark')}
+      </button>
+      <button
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+          theme === 'light' ? 'bg-[#F4F4F4] font-medium' : ''
+        }`}
+        onClick={() => handleThemeClick('light')}
+      >
+        {t('themes.light')}
+      </button>
+      <button
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+          theme === 'system' ? 'bg-[#F4F4F4] font-medium' : ''
+        }`}
+        onClick={() => handleThemeClick('system')}
+      >
+        {t('themes.system')}
+      </button>
     </section>
   )
 }
