@@ -5,8 +5,6 @@ import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function ShowPostImages() {
-  // Get aleatory keyword and page
-
   // Query images
   const { photos, loading } = useFetchPhotos({
     query: 'couple',
@@ -47,7 +45,7 @@ export default function ShowPostImages() {
         return (
           <article
             key={photo.id}
-            className='relative min-w-[36rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
+            className='relative min-w-[36rem] max-w-[46rem] w-[36vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
           >
             {/* Card */}
             <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
