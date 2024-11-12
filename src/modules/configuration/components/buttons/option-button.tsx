@@ -15,7 +15,7 @@ export default function OptionButton({
   return (
     <div className='flex flex-col items-center gap-2 py-8'>
       <div className='relative w-full h-fit'>
-        <h2 className='text-center text-lg font-medium'>
+        <h2 className='text-center font-medium'>
           {component === 'language' ? 'Language' : 'Theme'}
         </h2>
         <button
