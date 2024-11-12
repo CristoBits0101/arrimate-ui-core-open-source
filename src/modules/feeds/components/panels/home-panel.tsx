@@ -9,7 +9,7 @@ export default function HomePanel({ emoji = '', title = '', emojiTwo = '', title
   const { photos } = useFetchPhotos({
     query: 'personas',
     orientation: 'square',
-    page: Math.floor(Math.random() * 10) + 1,
+    page: 1,
     per_page: 10
   })
 
