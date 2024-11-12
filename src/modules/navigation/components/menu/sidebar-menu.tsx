@@ -7,7 +7,7 @@ import Notifications from '@/modules/messages/components/links/notifications-lin
 export default function SidebarMenu() {
   return (
     <nav className='flex w-full items-center justify-center h-fit'>
-      <ul className='flex items-center justify-between w-full h-11'>
+      <ul className='flex items-center justify-between w-full h-fit'>
         <Post />
         <Chats />
         <Notifications />

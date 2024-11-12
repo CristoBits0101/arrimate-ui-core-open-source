@@ -24,7 +24,7 @@ export default function SidebarItem({
   const href = route === 'home' ? `/${locale}` : `/${locale}/${route}`
 
   return (
-    <li className='flex items-center justify-center w-fit h-fit pt-2 pb-2 hover:cursor-pointer'>
+    <li className='flex items-center justify-center w-fit h-fit hover:cursor-pointer'>
       <Link
         className='flex items-center justify-center h-fit w-fit gap-4'
         href={href}
