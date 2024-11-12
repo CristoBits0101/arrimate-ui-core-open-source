@@ -36,7 +36,7 @@ export default function ShowPostImages() {
 
   // Render photos if available
   return (
-    <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
+    <div className='w-full h-fit flex flex-col justify-center items-center gap-16'>
       {photos.map((photo) => {
         // Generate a unique description and hashtags for each photo
         const { description, hashtags } =
@@ -45,7 +45,7 @@ export default function ShowPostImages() {
         return (
           <article
             key={photo.id}
-            className='relative min-w-[36rem] max-w-[46rem] w-[28vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
+            className='relative min-w-[30rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
           >
             {/* Card */}
             <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
@@ -66,7 +66,7 @@ export default function ShowPostImages() {
             {/* Empty */}
             <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
             {/* Image */}
-            <section className='col-span-1 row-span-1 relative w-full h-[42.5rem] overflow-hidden'>
+            <section className='col-span-1 row-span-1 relative w-full h-[45rem] overflow-hidden'>
               <Image
                 src={photo.src.large2x}
                 alt={photo.alt || 'Image from Pexels'}
@@ -100,7 +100,7 @@ export default function ShowPostImages() {
               <PostButton iconAlt='' iconDisplay='options' />
             </aside>
             {/* Footer with Description and Hashtags */}
-            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col'>
+            <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col px-8'>
               <p className='w-full break-words'>✍️ {description}</p>
               <p className='w-full break-words text-cyan-800'>
                 📸 {hashtags.join(' ')}
