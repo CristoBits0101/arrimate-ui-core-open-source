@@ -36,7 +36,7 @@ export default function ShowPostImages() {
 
   // Render photos if available
   return (
-    <div className='w-full h-fit flex flex-col justify-center items-center gap-16'>
+    <div className='w-full h-fit flex flex-col justify-center items-center gap-8'>
       {photos.map((photo) => {
         // Generate a unique description and hashtags for each photo
         const { description, hashtags } =
