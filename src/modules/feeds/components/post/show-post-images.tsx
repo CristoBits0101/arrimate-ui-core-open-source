@@ -3,19 +3,16 @@ import PostButton from '@/modules/feeds/components/buttons/post-button'
 import Image from 'next/image'
 import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
-import { useState } from 'react'
 
 export default function ShowPostImages() {
   // Get aleatory keyword and page
-  const [hashtag] = useState(() => randomUtils.getRandomHashtag())
-  const [page] = useState(() => randomUtils.getRandomPage())
 
   // Query images
   const { photos, loading } = useFetchPhotos({
-    query: hashtag,
+    query: 'feliz',
     orientation: 'portrait',
     per_page: 10,
-    page: page
+    page: 1
   })
 
   // Show loading message while fetching photos

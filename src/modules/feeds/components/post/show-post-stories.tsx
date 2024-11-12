@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Navigation } from 'swiper/modules'
-import { randomUtils } from '@/utils/randomUtils'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { useState, useEffect, useRef, useCallback } from 'react'
@@ -25,15 +24,12 @@ type Photo = {
 }
 
 export default function ShowPostStories() {
-  const [hashtag] = useState(() => randomUtils.getRandomHashtag())
-  const [page] = useState(() => randomUtils.getRandomPage())
-
   // const { photos, loading, error } = useFetchPhotos({
   const { photos, error } = useFetchPhotos({
-    query: hashtag,
+    query: 'happy',
     orientation: 'square',
     per_page: 30,
-    page: page
+    page: 1
   })
 
   const [slidesPerView, setSlidesPerView] = useState(1)
