@@ -2,6 +2,7 @@
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
     "quotes": ["error", "single"],
-    "comma-dangle": ["error", "never"]
+    "comma-dangle": ["error", "never"],
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
