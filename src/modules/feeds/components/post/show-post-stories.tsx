@@ -26,7 +26,7 @@ type Photo = {
 export default function ShowPostStories() {
   // const { photos, loading, error } = useFetchPhotos({
   const { photos, error } = useFetchPhotos({
-    query: 'happy',
+    query: 'selfi',
     orientation: 'square',
     per_page: 30,
     page: 1
