@@ -88,7 +88,7 @@ export default function ArrimateFollowCard({
           alt={alt || 'User avatar'}
           width={width}
           height={height}
-          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3rem] h-[3rem] border-[0.094rem] border-solid border-[#bfbdc050]'
+          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3rem] h-[3rem] border-[0.094rem] border-solid border-[#EBEAEB]'
         />
       </header>
       <aside className='flex-grow h-fit overflow-hidden'>

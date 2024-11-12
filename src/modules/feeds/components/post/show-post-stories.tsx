@@ -101,7 +101,7 @@ export default function ShowPostStories() {
                   height={photo.height}
                   layout='responsive'
                   objectFit='cover'
-                  className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#bfbdc050]'
+                  className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#EBEAEB]'
                   onError={() => handleImageError(photo.id)}
                 />
               </div>

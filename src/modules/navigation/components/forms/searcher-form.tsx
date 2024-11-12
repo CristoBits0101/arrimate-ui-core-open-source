@@ -41,7 +41,7 @@ export default function Searcher({
     >
       <div className='flex items-center bg-[#f4f4f4] border border-[rgba(191,189,192,0.31)] rounded-full h-full w-full'>
         <input
-          className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#bfbdc050] h-1/2 outline-none p-4 w-full border-solid'
+          className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#EBEAEB] h-1/2 outline-none p-4 w-full border-solid'
           placeholder={t('placeholder')}
           value={resetSearchInput ? '' : searchTerm}
           onChange={handleChange}

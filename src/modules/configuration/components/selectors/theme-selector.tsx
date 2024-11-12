@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import themes from '@/modules/configuration/assets/icons/selectors/themes.svg'
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
@@ -28,8 +26,7 @@ export default function ThemeSelector() {
     }
   }
 
-  const handleThemeChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
-    const selectedTheme = e.target.value as Theme
+  const handleThemeClick = (selectedTheme: Theme): void => {
     setTheme(selectedTheme)
     selectedTheme === 'system'
       ? localStorage.removeItem('theme')
@@ -48,19 +45,31 @@ export default function ThemeSelector() {
   }, [])
 
   return (
-    <section className='w-full h-fit flex flex-col gap-2 items-center'>
-      <div className='w-full h-fit flex flex-row items-center gap-2'>
-        <Image src={themes} alt='Themes' className='w-5' />
-        <select
-          className='appearance-none flex flex-row items-center outline-none bg-transparent cursor-pointer'
-          onChange={handleThemeChange}
-          value={theme}
+    <section className='w-full h-fit flex flex-col'>
+        <button
+          className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+            theme === 'dark' ? 'bg-[#F4F4F4] font-medium' : ''
+          }`}
+          onClick={() => handleThemeClick('dark')}
         >
-          <option value='dark'>{t('themes.dark')}</option>
-          <option value='light'>{t('themes.light')}</option>
-          <option value='system'>{t('themes.system')}</option>
-        </select>
-      </div>
+          {t('themes.dark')}
+        </button>
+        <button
+          className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+            theme === 'light' ? 'bg-[#F4F4F4] font-medium' : ''
+          }`}
+          onClick={() => handleThemeClick('light')}
+        >
+          {t('themes.light')}
+        </button>
+        <button
+          className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] ${
+            theme === 'system' ? 'bg-[#F4F4F4] font-medium' : ''
+          }`}
+          onClick={() => handleThemeClick('system')}
+        >
+          {t('themes.system')}
+        </button>
     </section>
   )
 }

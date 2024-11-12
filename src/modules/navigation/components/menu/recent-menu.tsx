@@ -22,7 +22,7 @@ RecentContentProps) {
     setIsFocused(false)
   }
   return (
-    <nav className='rounded-3xl mt-2 pt-4 pb-3 border-[0.05rem] border-solid border-[#bfbdc050] shadow-sm w-full h-fit flex flex-col gap-3'>
+    <nav className='rounded-3xl mt-2 pt-4 pb-3 border-[0.05rem] border-solid border-[#EBEAEB] shadow-sm w-full h-fit flex flex-col gap-3'>
       <div className='font-medium pr-4 pl-4 w-full h-fit flex justify-between items-center'>
         <h2>{t('recent')}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
