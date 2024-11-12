@@ -7,27 +7,27 @@ import { useTranslations, useLocale } from 'next-intl'
 import { ChangeEvent } from 'react'
 
 const LanguageSelector = () => {
-  // Para modificar la ruta activa
+  // To modify the active route
   const router = useRouter()
-  // Devuelve: /page
+  // Returns the current path
   const path = usePathname()
   console.log(path)
-  // Devuelve: en o es ...
+  // Returns the current locale
   const locale = useLocale()
-  // Traducciones del panel
+  // Translations for the settings panel
   const t = useTranslations('SettingsPanel')
 
-  // Idiomas soportados
+  // Supported languages
   const supportedLocales: Array<'en' | 'es'> = ['en', 'es']
 
-  // Maneja el evento de cambio para la selección de idioma
+  // Handles the change event for the language selection
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    // Aseguramos que el valor es de un tipo soportado
+    // Ensures the selected value is a supported language
     const newLocale = e.target.value as 'en' | 'es'
     if (supportedLocales.includes(newLocale)) {
-      // Reemplazamos la ruta actual con la nueva
+      // Replace the current path with the new locale
       const newPath = path.replace(`/${locale}`, `/${newLocale}`)
-      // Redirigimos con la nueva ruta
+      // Redirects to the updated path
       router.push(newPath, { locale: newLocale })
     }
   }
@@ -35,12 +35,13 @@ const LanguageSelector = () => {
   return (
     <section className='w-full h-fit flex flex-col gap-2 items-center'>
       <div className='w-full h-fit flex flex-row items-center gap-2'>
+        {/* Icon for language selection */}
         <Image src={language} alt='Languages' className='w-5' />
         <select
           className='appearance-none flex flex-row items-center outline-none bg-transparent cursor-pointer'
-          // Detecta cuando el idioma cambia
+          // Detects when the language selection changes
           onChange={handleChange}
-          // Selecciona el idioma actual como valor predeterminado
+          // Sets the current language as the default value
           value={locale}
         >
           <option value='en'>{t('language.english')}</option>
