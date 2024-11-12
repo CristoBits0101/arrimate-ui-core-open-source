@@ -10,7 +10,7 @@ export default function ShowPostImages() {
     query: 'couple',
     orientation: 'portrait',
     per_page: 10,
-    page: 1
+    page: 2
   })
 
   // Show loading message while fetching photos
