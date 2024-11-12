@@ -45,7 +45,7 @@ export default function ShowPostImages() {
         return (
           <article
             key={photo.id}
-            className='relative min-w-[36rem] max-w-[46rem] w-[32vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
+            className='relative min-w-[36rem] max-w-[46rem] w-[28vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
           >
             {/* Card */}
             <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
