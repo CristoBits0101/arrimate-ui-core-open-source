@@ -54,31 +54,31 @@ export default function ThemeSelector() {
   return (
     <section className='w-full h-fit flex flex-col'>
       <button
-        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex items-center gap-2 ${
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center gap-2 ${
           theme === 'dark' ? 'bg-[#F4F4F4] font-medium' : ''
         }`}
         onClick={() => handleThemeClick('dark')}
       >
-        <Image width={24} height={24} src={dark} alt='Dark icon' className='ml-[0.05rem] aspect-square object-cover' />
         {t('themes.dark')}
+        <Image width={24} height={24} src={dark} alt='Dark icon' className='ml-[0.05rem] aspect-square object-cover' />
       </button>
       <button
-        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex items-center gap-2 ${
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center gap-2 ${
           theme === 'light' ? 'bg-[#F4F4F4] font-medium' : ''
         }`}
         onClick={() => handleThemeClick('light')}
       >
-        <Image width={24} height={24} src={light} alt='Light icon' className='ml-[0.05rem] aspect-square object-cover' />
         {t('themes.light')}
+        <Image width={24} height={24} src={light} alt='Light icon' className='ml-[0.05rem] aspect-square object-cover' />
       </button>
       <button
-        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex items-center gap-2 ${
+        className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center gap-2 ${
           theme === 'system' ? 'bg-[#F4F4F4] font-medium' : ''
         }`}
         onClick={() => handleThemeClick('system')}
       >
-        <Image width={24} height={24} src={system} alt='System icon' className='ml-[0.05rem] aspect-square object-cover' />
         {t('themes.system')}
+        <Image width={24} height={24} src={system} alt='System icon' className='ml-[0.05rem] aspect-square object-cover' />
       </button>
     </section>
   )
