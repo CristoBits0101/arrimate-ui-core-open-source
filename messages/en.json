@@ -40,6 +40,7 @@
     "result": "Result"
   },
   "SettingsPanel": {
+    "settings": "Settings",
     "language": {
       "title": "Language",
       "english": "English",

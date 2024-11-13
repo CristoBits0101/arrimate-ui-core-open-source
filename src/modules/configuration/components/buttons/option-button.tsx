@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-interface SectionButtonProps {
+interface OptionButtonProps {
   label: string
   isSelected: boolean
   onClick: () => void
@@ -8,7 +8,7 @@ interface SectionButtonProps {
   altText: string
 }
 
-const SectionButton: React.FC<SectionButtonProps> = ({
+const SectionButton: React.FC<OptionButtonProps> = ({
   label,
   isSelected,
   onClick,
@@ -16,7 +16,7 @@ const SectionButton: React.FC<SectionButtonProps> = ({
   altText
 }) => (
   <button
-    className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center gap-2 ${
+    className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center ${
       isSelected ? 'bg-[#F4F4F4] font-medium' : ''
     }`}
     onClick={onClick}

@@ -1,7 +1,6 @@
-// components/ThemeSelector.tsx
 'use client'
 
-import SectionButton from '@/modules/configuration/components/buttons/section-button'
+import OptionButton from '@/modules/configuration/components/buttons/option-button'
 import darkIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/dark.svg'
 import lightIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/light.svg'
 import systemIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/system.svg'
@@ -14,21 +13,21 @@ const ThemeSelector = () => {
 
   return (
     <section className="w-full h-fit flex flex-col">
-      <SectionButton
+      <OptionButton
         label={t('themes.dark')}
         isSelected={theme === 'dark'}
         onClick={() => changeTheme('dark')}
         iconSrc={darkIcon}
         altText="Dark theme icon"
       />
-      <SectionButton
+      <OptionButton
         label={t('themes.light')}
         isSelected={theme === 'light'}
         onClick={() => changeTheme('light')}
         iconSrc={lightIcon}
         altText="Light theme icon"
       />
-      <SectionButton
+      <OptionButton
         label={t('themes.system')}
         isSelected={theme === 'system'}
         onClick={() => changeTheme('system')}

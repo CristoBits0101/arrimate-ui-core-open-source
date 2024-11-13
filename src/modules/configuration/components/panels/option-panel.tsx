@@ -1,4 +1,3 @@
-// components/OptionPanel.tsx
 'use client'
 
 import BackButton from '@/modules/configuration/components/buttons/back-button'
@@ -19,7 +18,7 @@ export default function OptionPanel({
 
   return (
     <div className='flex flex-col items-center gap-2 py-8'>
-      <div className='relative w-full h-fit'>
+      <div className='relative w-full h-fit mb-4'>
         <h2 className='text-center text-lg font-medium'>
           {component === 'language' ? t('language.title') : t('themes.title')}
         </h2>

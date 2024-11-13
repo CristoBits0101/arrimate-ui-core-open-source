@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 
 interface SettingButtonProps {
@@ -14,9 +13,9 @@ const SettingButton: React.FC<SettingButtonProps> = ({
   onClick,
   altText
 }) => (
-  <button className='flex items-center gap-2' onClick={onClick}>
-    <Image src={icon} alt={altText} className='w-5' />
+  <button className='text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center' onClick={onClick}>
     {label}
+    <Image src={icon} alt={altText} className='w-5' />
   </button>
 )
 

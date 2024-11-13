@@ -39,6 +39,7 @@
     "result": "Resultado"
   },
   "SettingsPanel": {
+    "settings": "Ajustes",
     "language": {
       "title": "Idiomas",
       "english": "Inglés",

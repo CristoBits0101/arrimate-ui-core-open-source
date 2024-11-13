@@ -1,7 +1,6 @@
-// components/LanguageSelector.tsx
 'use client'
 
-import SelectorButton from '@/modules/configuration/components/buttons/section-button'
+import OptionButton from '@/modules/configuration/components/buttons/option-button'
 import enIcon from '@/modules/configuration/assets/icons/buttons/languages/gb.svg'
 import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.svg'
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'
@@ -13,14 +12,14 @@ const LanguageSelector = () => {
 
   return (
     <section className="w-full h-fit flex flex-col">
-      <SelectorButton
+      <OptionButton
         label={t('language.english')}
         isSelected={locale === 'en'}
         onClick={() => changeLanguage('en')}
         iconSrc={enIcon}
         altText="English icon"
       />
-      <SelectorButton
+      <OptionButton
         label={t('language.spanish')}
         isSelected={locale === 'es'}
         onClick={() => changeLanguage('es')}
