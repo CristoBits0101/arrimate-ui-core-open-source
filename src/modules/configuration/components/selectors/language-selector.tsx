@@ -43,7 +43,7 @@ const LanguageSelector = () => {
           height={18}
           src={en}
           alt='English icon'
-          className='object-cover'
+          className='object-cover drop-shadow-sm'
         />
       </button>
       <button
@@ -58,7 +58,7 @@ const LanguageSelector = () => {
           height={18}
           src={es}
           alt='Spanish icon'
-          className='object-cover'
+          className='object-cover drop-shadow-sm'
         />
       </button>
     </section>
