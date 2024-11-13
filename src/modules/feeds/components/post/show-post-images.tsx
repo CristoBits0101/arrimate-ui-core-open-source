@@ -1,6 +1,7 @@
 import ArrimateImagesCard from '@/modules/feeds/components/card/arrimate-images-card'
-import PostButton from '@/modules/feeds/components/buttons/post-button'
 import Image from 'next/image'
+import PostButton from '@/modules/feeds/components/buttons/post-button'
+import styles from '@/modules/feeds/styles/show-post-images.module.css'
 import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
@@ -66,12 +67,14 @@ export default function ShowPostImages() {
             {/* Empty */}
             <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
             {/* Image */}
-            <section className='col-span-1 row-span-1 relative w-full h-[45rem] overflow-hidden'>
+            <section
+              className={`${styles.container} col-span-1 row-span-1 relative w-full overflow-hidden`}
+            >
               <Image
                 src={photo.src.large2x}
                 alt={photo.alt || 'Image from Pexels'}
                 fill
-                className='rounded-3xl drop-shadow-sm object-cover'
+                className='rounded-3xl drop-shadow-sm object-cover aspect-video'
                 style={{ objectFit: 'cover' }}
               />
             </section>
