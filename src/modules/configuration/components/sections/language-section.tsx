@@ -1,7 +1,7 @@
 // components/LanguageSelector.tsx
 'use client'
 
-import SelectorButton from '@/modules/configuration/components/buttons/selector-button'
+import SelectorButton from '@/modules/configuration/components/buttons/section-button'
 import enIcon from '@/modules/configuration/assets/icons/buttons/languages/gb.svg'
 import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.svg'
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'

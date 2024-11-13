@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-interface SelectorButtonProps {
+interface SectionButtonProps {
   label: string
   isSelected: boolean
   onClick: () => void
@@ -8,7 +8,7 @@ interface SelectorButtonProps {
   altText: string
 }
 
-const SelectorButton: React.FC<SelectorButtonProps> = ({
+const SectionButton: React.FC<SectionButtonProps> = ({
   label,
   isSelected,
   onClick,
@@ -32,4 +32,4 @@ const SelectorButton: React.FC<SelectorButtonProps> = ({
   </button>
 )
 
-export default SelectorButton
+export default SectionButton
