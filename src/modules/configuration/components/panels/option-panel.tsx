@@ -2,8 +2,8 @@
 'use client'
 
 import BackButton from '@/modules/configuration/components/buttons/back-button'
-import LanguageSelector from '@/modules/configuration/components/sections/language-section'
-import ThemeSelector from '@/modules/configuration/components/sections/theme-section'
+import LanguageSection from '@/modules/configuration/components/sections/language-section'
+import ThemeSection from '@/modules/configuration/components/sections/theme-section'
 import { useTranslations } from 'next-intl'
 
 interface OptionPanelProps {
@@ -25,7 +25,7 @@ export default function OptionPanel({
         </h2>
         <BackButton onClick={handleBack} />
       </div>
-      {component === 'language' ? <LanguageSelector /> : <ThemeSelector />}
+      {component === 'language' ? <LanguageSection /> : <ThemeSection />}
     </div>
   )
 }
