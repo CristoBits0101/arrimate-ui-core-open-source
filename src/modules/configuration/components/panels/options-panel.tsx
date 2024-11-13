@@ -17,7 +17,7 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
   const t = useTranslations('SettingsPanel')
 
   return (
-    <div className='flex flex-col items-center gap-2 py-4'>
+    <div className='flex flex-col items-center py-4'>
       <div className='relative w-full h-fit pb-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
         <h2 className='text-center text-lg font-medium'>
           {t('settings')}

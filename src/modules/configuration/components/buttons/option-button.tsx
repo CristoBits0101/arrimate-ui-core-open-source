@@ -16,18 +16,16 @@ const SectionButton: React.FC<OptionButtonProps> = ({
   altText
 }) => (
   <button
-    className={`text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center ${
+    className={`text-left cursor-pointer px-8 py-4 hover:bg-[#F4F4F4] flex justify-between items-center border-b-[0.05rem] border-[#EBEAEB] border-solid ${
       isSelected ? 'bg-[#F4F4F4] font-medium' : ''
     }`}
     onClick={onClick}
   >
     {label}
     <Image
-      width={24}
-      height={24}
       src={iconSrc}
       alt={altText}
-      className='object-cover drop-shadow-sm'
+      className='w-5 object-contain'
     />
   </button>
 )

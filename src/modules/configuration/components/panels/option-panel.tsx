@@ -17,12 +17,12 @@ export default function OptionPanel({
   const t = useTranslations('SettingsPanel')
 
   return (
-    <div className='flex flex-col items-center gap-2 py-8'>
-      <div className='relative w-full h-fit mb-4'>
-        <h2 className='text-center text-lg font-medium'>
+    <div className='flex flex-col items-center py-4'>
+      <div className='w-full h-fit flex items-center pb-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
+        <h2 className='relative text-center text-lg font-medium w-full'>
           {component === 'language' ? t('language.title') : t('themes.title')}
+          <BackButton onClick={handleBack} />
         </h2>
-        <BackButton onClick={handleBack} />
       </div>
       {component === 'language' ? <LanguageSection /> : <ThemeSection />}
     </div>

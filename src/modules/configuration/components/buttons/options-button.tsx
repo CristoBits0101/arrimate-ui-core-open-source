@@ -13,9 +13,9 @@ const SettingButton: React.FC<SettingButtonProps> = ({
   onClick,
   altText
 }) => (
-  <button className='text-left cursor-pointer px-8 py-2 hover:bg-[#F4F4F4] flex justify-between items-center' onClick={onClick}>
+  <button className='text-left cursor-pointer px-8 py-4 hover:bg-[#F4F4F4] flex justify-between items-center border-b-[0.05rem] border-[#EBEAEB] border-solid' onClick={onClick}>
     {label}
-    <Image src={icon} alt={altText} className='w-5' />
+    <Image src={icon} alt={altText} className='w-5 object-contain' />
   </button>
 )
 

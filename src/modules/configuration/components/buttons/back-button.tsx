@@ -13,15 +13,15 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
 
   return (
     <button
-      className='w-7 h-full absolute top-0 left-8 flex items-center'
+      className='w-7 absolute left-8 top-1/2 transform -translate-y-1/2 flex items-center bg-[#F4F4F4] aspect-square rounded-full border-[0.05rem] border-[#EBEAEB] border-solid'
       onClick={onClick}
     >
       <Image
-        width={24}
-        height={24}
+        width={28}
+        height={28}
         src={backIcon}
         alt={t('backIconAlt', { defaultMessage: 'Back' })}
-        className='aspect-square object-cover'
+        className='aspect-square object-contain'
       />
     </button>
   )
