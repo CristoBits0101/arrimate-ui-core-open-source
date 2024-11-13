@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import languageIcon from '@/modules/configuration/assets/icons/selectors/language.svg'
-import themesIcon from '@/modules/configuration/assets/icons/selectors/themes.svg'
+import languageIcon from '@/modules/configuration/assets/icons/buttons/settings/language.svg'
+import themesIcon from '@/modules/configuration/assets/icons/buttons/settings/themes.svg'
 import OptionButton from '@/modules/configuration/components/panels/option-panel'
 import { useTranslations } from 'next-intl'
 

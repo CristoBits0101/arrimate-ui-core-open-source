@@ -2,9 +2,9 @@
 'use client'
 
 import SelectorButton from '@/modules/configuration/components/buttons/selector-button'
-import enIcon from '@/modules/configuration/assets/icons/selectors/gb.svg'
-import esIcon from '@/modules/configuration/assets/icons/selectors/es.svg'
-import useLanguageSection from '@/modules/configuration//hooks/useLanguageSection'
+import enIcon from '@/modules/configuration/assets/icons/buttons/languages/gb.svg'
+import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.svg'
+import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'
 import { useTranslations } from 'next-intl'
 
 const LanguageSelector = () => {

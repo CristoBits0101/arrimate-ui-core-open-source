@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import backIcon from '@/modules/configuration/assets/icons/buttons/back.svg'
+import backIcon from '@/modules/configuration/assets/icons/buttons/navigation/back.svg'
 import { useTranslations } from 'next-intl'
 
 interface BackButtonProps {

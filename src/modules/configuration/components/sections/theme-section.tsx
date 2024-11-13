@@ -2,10 +2,10 @@
 'use client'
 
 import SelectorButton from '@/modules/configuration/components/buttons/selector-button'
-import darkIcon from '@/modules/configuration/assets/icons/buttons/dark.svg'
-import lightIcon from '@/modules/configuration/assets/icons/buttons/light.svg'
-import systemIcon from '@/modules/configuration/assets/icons/buttons/system.svg'
-import useThemeSection from '@/modules/configuration//hooks/useThemeSection'
+import darkIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/dark.svg'
+import lightIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/light.svg'
+import systemIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/system.svg'
+import useThemeSection from '@/modules/configuration/hooks/useThemeSection'
 import { useTranslations } from 'next-intl'
 
 const ThemeSelector = () => {

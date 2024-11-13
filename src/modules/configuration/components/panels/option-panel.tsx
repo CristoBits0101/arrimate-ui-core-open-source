@@ -2,8 +2,8 @@
 'use client'
 
 import BackButton from '@/modules/configuration/components/buttons/back-button'
-import LanguageSelector from '../sections/language-section'
-import ThemeSelector from '../sections/theme-section'
+import LanguageSelector from '@/modules/configuration/components/sections/language-section'
+import ThemeSelector from '@/modules/configuration/components/sections/theme-section'
 import { useTranslations } from 'next-intl'
 
 interface OptionPanelProps {
