@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 type Theme = 'system' | 'dark' | 'light'
 
-const useThemeSelector = () => {
+const useThemeSection = () => {
   const [theme, setTheme] = useState<Theme>('system')
 
   const applyTheme = (selectedTheme: Theme): void => {
@@ -47,4 +47,4 @@ const useThemeSelector = () => {
   }
 }
 
-export default useThemeSelector
+export default useThemeSection

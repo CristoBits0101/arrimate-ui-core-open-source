@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 type Locale = 'en' | 'es'
 
-const useLanguageSelector = () => {
+const useLanguageSection = () => {
   const router = useRouter()
   const path = usePathname()
   const locale = useLocale()
@@ -32,4 +32,4 @@ const useLanguageSelector = () => {
   }
 }
 
-export default useLanguageSelector
+export default useLanguageSection

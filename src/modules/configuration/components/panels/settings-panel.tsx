@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import languageIcon from '@/modules/configuration/assets/icons/selectors/language.svg'
 import themesIcon from '@/modules/configuration/assets/icons/selectors/themes.svg'
-import OptionButton from '@/modules/configuration/components/buttons/option-button'
+import OptionButton from '@/modules/configuration/components/panels/option-panel'
 import { useTranslations } from 'next-intl'
 
 export default function SettingsPanel() {

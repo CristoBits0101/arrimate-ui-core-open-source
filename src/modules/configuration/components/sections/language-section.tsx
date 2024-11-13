@@ -4,11 +4,11 @@
 import SelectorButton from '@/modules/configuration/components/buttons/selector-button'
 import enIcon from '@/modules/configuration/assets/icons/selectors/gb.svg'
 import esIcon from '@/modules/configuration/assets/icons/selectors/es.svg'
-import useLanguageSelector from '@/modules/configuration//hooks/useLanguageSelector'
+import useLanguageSection from '@/modules/configuration//hooks/useLanguageSection'
 import { useTranslations } from 'next-intl'
 
 const LanguageSelector = () => {
-  const { locale, changeLanguage } = useLanguageSelector()
+  const { locale, changeLanguage } = useLanguageSection()
   const t = useTranslations('SettingsPanel')
 
   return (

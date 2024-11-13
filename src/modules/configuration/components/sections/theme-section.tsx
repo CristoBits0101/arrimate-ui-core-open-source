@@ -5,11 +5,11 @@ import SelectorButton from '@/modules/configuration/components/buttons/selector-
 import darkIcon from '@/modules/configuration/assets/icons/buttons/dark.svg'
 import lightIcon from '@/modules/configuration/assets/icons/buttons/light.svg'
 import systemIcon from '@/modules/configuration/assets/icons/buttons/system.svg'
-import useThemeSelector from '@/modules/configuration//hooks/useThemeSelector'
+import useThemeSection from '@/modules/configuration//hooks/useThemeSection'
 import { useTranslations } from 'next-intl'
 
 const ThemeSelector = () => {
-  const { theme, changeTheme } = useThemeSelector()
+  const { theme, changeTheme } = useThemeSection()
   const t = useTranslations('SettingsPanel')
 
   return (
