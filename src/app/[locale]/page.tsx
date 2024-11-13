@@ -2,8 +2,8 @@
 
 import Header from '@/layouts/components/header'
 import Aside from '@/layouts/components/aside'
-import ShowPostImages from '@/modules/feeds/components/post/show-post-images'
-import ShowPostStories from '@/modules/feeds/components/post/show-post-stories'
+import ShowPostImages from '@/modules/feeds/components/posts/show-post-images'
+import ShowPostStories from '@/modules/feeds/components/posts/show-post-stories'
 import '@/styles/globals.css'
 
 export default function HomePage() {

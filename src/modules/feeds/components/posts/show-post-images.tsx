@@ -1,7 +1,7 @@
-import ArrimateImagesCard from '@/modules/feeds/components/card/arrimate-images-card'
+import ArrimateImagesCard from '@/modules/feeds/components/cards/arrimate-images-card'
 import Image from 'next/image'
 import PostButton from '@/modules/feeds/components/buttons/post-button'
-import styles from '@/modules/feeds/styles/show-post-images.module.css'
+import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
 import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
@@ -46,7 +46,7 @@ export default function ShowPostImages() {
         return (
           <article
             key={photo.id}
-            className='relative min-w-[30rem] max-w-[46rem] w-[30vw] h-fit grid grid-cols-[1fr,auto] grid-rows-[auto,auto,auto] gap-4'
+            className='relative h-fit grid grid-cols-[25vw,auto] grid-rows-[auto,auto,auto] gap-4'
           >
             {/* Card */}
             <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
@@ -68,14 +68,13 @@ export default function ShowPostImages() {
             <aside className='col-span-1 row-span-1 w-auto h-full flex flex-col'></aside>
             {/* Image */}
             <section
-              className={`${styles.container} col-span-1 row-span-1 relative w-full overflow-hidden`}
+              className={`${styles.section} col-span-1 row-span-1 relative w-full overflow-hidden`}
             >
               <Image
                 src={photo.src.large2x}
                 alt={photo.alt || 'Image from Pexels'}
                 fill
-                className='rounded-3xl drop-shadow-sm object-cover aspect-video'
-                style={{ objectFit: 'cover' }}
+                className='rounded-3xl drop-shadow-sm object-cover w-full h-full'
               />
             </section>
             {/* Buttons */}
