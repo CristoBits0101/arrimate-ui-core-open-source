@@ -16,7 +16,7 @@ export default function HomePage() {
       </main>
       <Aside />
       <div className='sm:grid md:hidden place-content-center w-full h-full'>
-        <h1>
+        <h1 className='w-fit m-auto'>
           🚧 Mobile version coming soon!
           <br />
           🚧 ¡Versión para móviles próximamente!
