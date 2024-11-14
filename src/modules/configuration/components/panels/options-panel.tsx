@@ -19,7 +19,7 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
   return (
     <div className='flex flex-col items-center'>
       <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
-        <h2 className='w-full text-center text-lg font-medium'>
+        <h2 className='w-full text-center font-medium'>
           {t('settings')}
         </h2>
       </div>
