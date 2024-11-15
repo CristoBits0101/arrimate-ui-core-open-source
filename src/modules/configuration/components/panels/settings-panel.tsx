@@ -1,5 +1,10 @@
-import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
+'use client'
+
+// Panels
 import OptionPanel from '@/modules/configuration/components/panels/option-panel'
+import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
+
+// Custom hook
 import { useSettings } from '@/modules/configuration/hooks/useSettings'
 
 export default function SettingsPanel() {
@@ -10,6 +15,9 @@ export default function SettingsPanel() {
     handleSelectOption,
     handleBack
   } = useSettings()
+
+  // Wait for useEffect to finish getting values 
+  if (selectedLanguage === null || selectedTheme === null) return null
 
   return (
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid'>
