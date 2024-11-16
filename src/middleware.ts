@@ -7,4 +7,4 @@ export const config = {
   matcher: ['/', '/(en|es)/:path*']
 }
 
-export { auth as middleware } from '@/lib/auth'
+// export { auth as middleware } from '@/lib/auth'
