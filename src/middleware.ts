@@ -1,16 +1,20 @@
 import createMiddleware from 'next-intl/middleware'
 import { getToken } from 'next-auth/jwt'
-import { routing } from '@/i18n/routing'
 import { NextRequest, NextResponse } from 'next/server'
+import { routing } from '@/i18n/routing'
 
-// Localización
+/**
+ * Gets language from URL or headers
+ * Defaults if language not found
+ * Ensures paths have /es or /en prefixes
+ */
 const intlMiddleware = createMiddleware(routing)
 
-// Rutas protegidas
-const protectedRoutes = ['/(en|es)/dashboard', '/dashboard']
+// Set protected routes
+const protectedRoutes = ['/(en|es)/', '/']
 
 export async function middleware(request: NextRequest) {
-  // Usa nextUrl para obtener el pathname
+  // Use NextRequest to get the pathname
   const pathname = request.nextUrl.pathname
 
   // Localización con next-intl
@@ -23,9 +27,9 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith(route)
   )
 
+  // Redirigir al inicio de sesión
   if (!token && isProtectedRoute) {
-    // Redirigir al inicio de sesión
-    const redirectUrl = new URL('/sign-in', request.url)
+    const redirectUrl = new URL('/es/sign-in', request.url)
     redirectUrl.searchParams.set('callbackUrl', pathname)
     return NextResponse.redirect(redirectUrl)
   }
