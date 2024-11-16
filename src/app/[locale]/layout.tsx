@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import { standard } from '@/lib/fonts'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
+import { SessionProvider } from 'next-auth/react'
 
 export default async function LocaleLayout({
   children,
@@ -17,9 +18,11 @@ export default async function LocaleLayout({
       <body
         className={`${standard.className} grid sm:place-content-center sm:grid-cols-[100%] md:grid-cols-[20rem_1fr_20rem] min-h-screen min-w-80 w-full bg-[#ffffff] dark:bg-[#1D0F0F] text-[#1d0f0f] dark:text-[#ffffff] text-base`}
       >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <SessionProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </SessionProvider>
       </body>
     </html>
   )
