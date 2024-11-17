@@ -11,7 +11,7 @@ import { routing } from '@/i18n/routing'
 const intlMiddleware = createMiddleware(routing)
 
 // Set protected routes
-const protectedRoutes = ['/(en|es)/', '/']
+const protectedRoutes = ['/(en|es)/example', '/example']
 
 export async function middleware(request: NextRequest) {
   // Use NextRequest to get the pathname
