@@ -29,7 +29,8 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   // Check access
   if (!token && isProtectedRoute) {
-    const redirectUrl = new URL('/es/sign-in', request.url)
+    const locale = request.nextUrl.locale || 'en'
+    const redirectUrl = new URL(`/${locale}/sign-in`, request.url)
     redirectUrl.searchParams.set('callbackUrl', pathname)
     return NextResponse.redirect(redirectUrl)
   }
