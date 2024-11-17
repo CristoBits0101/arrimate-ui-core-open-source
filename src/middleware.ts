@@ -1,5 +1,5 @@
 import createMiddleware from 'next-intl/middleware'
-import { auth } from './lib/auth'
+import { auth } from '@/lib/auth'
 import { getToken } from 'next-auth/jwt'
 import { NextResponse } from 'next/server'
 import { routing } from '@/i18n/routing'
@@ -13,9 +13,11 @@ const protectedRoutes = ['/(en|es)/example', '/example']
 export default auth((request) => {
   // Get pathname
   const pathname = request.nextUrl.pathname
+  console.log('Pathname: ', pathname)
 
   // Token verification
   const token = getToken({ req: request })
+  console.log('Token: ', token)
 
   // Check protected
   const isProtectedRoute = protectedRoutes.some((route) =>
