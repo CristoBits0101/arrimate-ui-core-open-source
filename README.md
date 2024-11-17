@@ -65,4 +65,4 @@
       📦           Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
       📦          Generate both ➜ npx tailwindcss init -p
     Zod:
-      📦 
+      📦                    Zod ➜ npm install zod
