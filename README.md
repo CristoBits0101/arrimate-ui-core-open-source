@@ -57,6 +57,8 @@
       📦             Prisma CLI ➜ npm install prisma --save-dev
       📦         Prisma Queries ➜ npm install @prisma/client
       📦       Prisma + Auth.js ➜ npm install @auth/prisma-adapter
+    React Hook Form:
+      📦        React-hook-form ➜ npm install react-hook-form
     React Icons:
       📦            React-icons ➜ npm install react-icons --save
     Shadcn UI:
