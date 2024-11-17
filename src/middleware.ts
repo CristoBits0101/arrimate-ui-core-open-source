@@ -11,7 +11,7 @@ const protectedRoutes = ['/(en|es)/example', '/example']
 
 /**
  * Middleware to handle language localization and access control
- * 
+ *
  * @param {NextRequest} request - The incoming request object
  * @returns {Promise<NextResponse>} - The response object after processing
  */
@@ -43,5 +43,5 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
 // Allows middleware
 export const config = {
-  matcher: ['/', '/(en|es)/:path*']
+  matcher: ['/', '/:path*', '/(en|es)/:path*']
 }
