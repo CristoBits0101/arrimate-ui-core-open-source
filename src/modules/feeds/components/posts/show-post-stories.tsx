@@ -24,7 +24,6 @@ type Photo = {
 }
 
 export default function ShowPostStories() {
-  // const { photos, loading, error } = useFetchPhotos({
   const { photos, error } = useFetchPhotos({
     query: 'person',
     orientation: 'square',
@@ -38,7 +37,6 @@ export default function ShowPostStories() {
     [key: number]: boolean
   }>({})
 
-  // Function to update slidesPerView based on container width
   const updateSlidesPerView = useCallback(() => {
     if (containerRef.current) {
       const containerWidth = containerRef.current.offsetWidth
@@ -57,8 +55,6 @@ export default function ShowPostStories() {
     if (photos.length > 0) updateSlidesPerView()
   }, [photos, updateSlidesPerView])
 
-  // Return null if the photos array is empty
-  // if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   if (photos.length === 0) return null
 
@@ -70,7 +66,6 @@ export default function ShowPostStories() {
 
   const effectiveSlidesPerView = Math.min(slidesPerView, uniquePhotos.length)
 
-  // Function to handle image loading error
   const handleImageError = (photoId: number) => {
     setIsImageErrorMap((prev) => ({ ...prev, [photoId]: true }))
   }
@@ -86,11 +81,9 @@ export default function ShowPostStories() {
         slidesPerView={effectiveSlidesPerView}
         navigation
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         className='relative w-full flex justify-between items-center'
       >
-        {uniquePhotos.map((photo) =>
+        {uniquePhotos.map((photo, index) =>
           photo && photo.src && !isImageErrorMap[photo.id] ? (
             <SwiperSlide key={photo.id} className='relative'>
               <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full'>
@@ -99,9 +92,8 @@ export default function ShowPostStories() {
                   alt={photo.alt || 'Image from Pexels'}
                   width={photo.width}
                   height={photo.height}
-                  layout='responsive'
-                  objectFit='cover'
-                  className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#EBEAEB]'
+                  priority={index === 0}
+                  className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#EBEAEB] object-cover'
                   onError={() => handleImageError(photo.id)}
                 />
               </div>
