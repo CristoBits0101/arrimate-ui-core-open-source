@@ -74,6 +74,7 @@ export default function ShowPostImages() {
                 src={photo.src.large2x}
                 alt={photo.alt || 'Image from Pexels'}
                 fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='rounded-3xl drop-shadow-sm object-cover w-full h-full'
               />
             </section>
