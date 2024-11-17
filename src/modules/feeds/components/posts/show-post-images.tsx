@@ -11,7 +11,7 @@ export default function ShowPostImages() {
     query: 'couple',
     orientation: 'portrait',
     per_page: 10,
-    page: 2,
+    page: 2
   })
 
   // Show loading message while fetching photos
@@ -74,7 +74,14 @@ export default function ShowPostImages() {
                 src={photo.src.large2x}
                 alt={photo.alt || 'Image from Pexels'}
                 fill
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                sizes='
+                  (max-width: 1023px) 100vw,
+                  (max-width: 1279px) 50vw,
+                  (max-width: 1365px) 50vw,
+                  (max-width: 1439px) 50vw,
+                  (max-width: 1599px) 33vw,
+                  (max-width: 1920px) 33vw,
+                  25vw'
                 className='rounded-3xl drop-shadow-sm object-cover w-full h-full'
               />
             </section>
