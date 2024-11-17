@@ -43,5 +43,5 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
 // Allows middleware
 export const config = {
-  matcher: ['/', '/:path*', '/(en|es)/:path*']
+  matcher: ['/', '/(en|es)/:path*']
 }
