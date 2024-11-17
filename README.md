@@ -7,7 +7,7 @@
       🔄                Sign In ➜ 
       🚧               Sign Out ➜ 
       🚧                Sign Up ➜ Forms + Prisma + Zod + Neon
-      🚧  Two-Factor Auth (2FA) ➜  
+      🚧  Two-Factor Auth (2FA) ➜ 
     Branding:
       ✅      Reusable App Logo ➜ next/image
     Configuration:
@@ -41,9 +41,9 @@
       🚧            Stream LIVE ➜ 
     Styles:
       ✅   Active Route Styling ➜ next/navigation
-      ✅       Stories carousel ➜ component
+      ✅       Stories carousel ➜ swiper
       ✅    Font Implementation ➜ next/font/google
-      🚧       Responsive Pages ➜ 
+      🚧       Responsive Pages ➜ flexbox + grid + @media
       🚧       Sound Animations ➜ 
 
 # Dependencies
@@ -63,6 +63,8 @@
       📦            React-icons ➜ npm install react-icons --save
     Shadcn UI:
       📦              Shadcn/UI ➜ npx shadcn@latest init
+    Swiper:
+      📦                 Swiper ➜ npm install swiper
     Tailwind CSS:
       📦           Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
       📦          Generate both ➜ npx tailwindcss init -p
