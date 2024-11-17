@@ -5,7 +5,12 @@ import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 import React from 'react'
 
-export default function HomePanel({ emoji = '', title = '', emojiTwo = '', titleTwo = '' }) {
+export default function HomePanel({
+  emoji = '',
+  title = '',
+  emojiTwo = '',
+  titleTwo = ''
+}) {
   const { photos } = useFetchPhotos({
     query: 'personas',
     orientation: 'square',
@@ -13,8 +18,12 @@ export default function HomePanel({ emoji = '', title = '', emojiTwo = '', title
     per_page: 10
   })
 
+  if (!photos || photos.length === 0) return null
+
   const uniquePhotos = photos
-    .filter((photo, index, self) => index === self.findIndex((p) => p.id === photo.id))
+    .filter(
+      (photo, index, self) => index === self.findIndex((p) => p.id === photo.id)
+    )
     .slice(0, 4)
 
   return (
