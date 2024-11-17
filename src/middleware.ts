@@ -3,40 +3,44 @@ import { getToken } from 'next-auth/jwt'
 import { NextRequest, NextResponse } from 'next/server'
 import { routing } from '@/i18n/routing'
 
-/**
- * Gets language from URL or headers
- * Defaults if language not found
- * Ensures paths have /es or /en prefixes
- */
+// Language enforcement
 const intlMiddleware = createMiddleware(routing)
 
-// Set protected routes
+// Protected routes
 const protectedRoutes = ['/(en|es)/example', '/example']
 
-export async function middleware(request: NextRequest) {
-  // Use NextRequest to get the pathname
+/**
+ * Middleware to handle language localization and access control
+ * 
+ * @param {NextRequest} request - The incoming request object
+ * @returns {Promise<NextResponse>} - The response object after processing
+ */
+export async function middleware(request: NextRequest): Promise<NextResponse> {
+  // Get pathname
   const pathname = request.nextUrl.pathname
 
-  // Localización con next-intl
-  const response = intlMiddleware(request)
-
-  // Verificar si el usuario está autenticado
+  // Login verification
   const token = await getToken({ req: request })
 
+  // Check protected
   const isProtectedRoute = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   )
 
-  // Redirigir al inicio de sesión
+  // Check access
   if (!token && isProtectedRoute) {
     const redirectUrl = new URL('/es/sign-in', request.url)
     redirectUrl.searchParams.set('callbackUrl', pathname)
     return NextResponse.redirect(redirectUrl)
   }
 
+  // Handles language
+  const response = intlMiddleware(request)
+
   return response
 }
 
+// Allows middleware
 export const config = {
   matcher: ['/', '/(en|es)/:path*']
 }
