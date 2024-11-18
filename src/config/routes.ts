@@ -8,7 +8,12 @@ export const publicRoutes: string[] = ['/(en|es)']
  * An array of routes that are used for authentication
  * These routes will redirect logged in users to /(en|es)/settings
  */
-export const authRoutes: string[] = ['/(en|es)/sign-in', '/(en|es)/sign-up']
+export const authRoutes: string[] = [
+  '/en/sign-in',
+  '/en/sign-up',
+  '/es/sign-in',
+  '/es/sign-up'
+]
 
 /**
  * A prefix for API authentication routes
