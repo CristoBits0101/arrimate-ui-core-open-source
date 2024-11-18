@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@/modules/ui/button'
 import Link from 'next/link'
+import { Button } from '@/modules/ui/button'
 
 interface RedirectButtonProps {
   href: string
