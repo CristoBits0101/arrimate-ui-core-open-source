@@ -1,44 +1,60 @@
+// next-auth
+import authConfig from '@/lib/auth.config'
+import NextAuth from 'next-auth'
+
+// next-intl
 import createMiddleware from 'next-intl/middleware'
-import { auth } from '@/lib/auth'
-import { getToken } from 'next-auth/jwt'
-import { NextResponse } from 'next/server'
 import { routing } from '@/i18n/routing'
 
-// Language enforcement
+// next/server
+import { NextResponse } from 'next/server'
+
+// Route definition
+import {
+  apiAuthPrefix,
+  authRoutes,
+  DEFAULT_LOGIN_REDIRECT,
+  publicRoutes
+} from '@/config/routes'
+
+//
+const { auth } = NextAuth(authConfig)
+
+// Language routing
 const intlMiddleware = createMiddleware(routing)
 
-// Protected routes
-const protectedRoutes = ['/(en|es)/example', '/example']
-
 export default auth((request) => {
-  // Get pathname
-  const pathname = request.nextUrl.pathname
-  console.log('Pathname: ', pathname)
+  //
+  const { nextUrl } = request
 
-  // Token verification
-  const token = getToken({ req: request })
-  console.log('Token: ', token)
+  // Check login
+  const isLoggedIn = !!request.auth
 
-  // Check protected
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
-  )
+  //
+  const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix)
+  const isAuthRoute = authRoutes.includes(nextUrl.pathname)
+  const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
 
-  // Check access
-  if (!token && isProtectedRoute) {
-    const locale = request.nextUrl.locale || 'en'
-    const redirectUrl = new URL(`/${locale}/sign-in`, request.url)
-    redirectUrl.searchParams.set('callbackUrl', pathname)
-    return NextResponse.redirect(redirectUrl)
-  }
+  //
+  if (isApiAuthRoute) return new Response(null, { status: 204 })
 
-  // Handles language
+  //
+  if (isAuthRoute && isLoggedIn)
+    return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, request.url))
+
+  // Apply language
   const response = intlMiddleware(request)
 
   return response
 })
 
-// Allows middleware
+// Run middleware
 export const config = {
-  matcher: ['/', '/(en|es)/:path*']
+  matcher: [
+    '/',
+    '/(en|es)',
+    '/(en|es)/:path*',
+    '/((?!.*\\.[\\w]+$|_next).*)',
+    '/(api|trpc)(.*)'
+  ]
 }
