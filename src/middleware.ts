@@ -6,16 +6,8 @@ import NextAuth from 'next-auth'
 import createMiddleware from 'next-intl/middleware'
 import { routing } from '@/i18n/routing'
 
-// next/server
-import { NextResponse } from 'next/server'
-
-// Route definition
-import {
-  API_AUTH_PREFIX,
-  AUTH_ROUTES,
-  DEFAULT_LOGIN_REDIRECT,
-  PUBLIC_ROUTES
-} from '@/config/routes'
+// config/routes
+import { API_AUTH_ROUTE, AUTH_ROUTES, PUBLIC_ROUTES } from '@/config/routes'
 
 //
 const { auth } = NextAuth(authConfig)
@@ -24,39 +16,28 @@ const { auth } = NextAuth(authConfig)
 const intlMiddleware = createMiddleware(routing)
 
 export default auth((request) => {
-  // Get URL
-  const { nextUrl } = request
+  // Get origin
+  const origin = request.nextUrl.origin
 
-  // Get language
-  const locale = request.nextUrl.locale || 'en'
-
-  // Add language
-  // const apiAuthRoute = `/${locale}${API_AUTH_PREFIX}`
-  // const defaultLoginRedirect = `/${locale}${DEFAULT_LOGIN_REDIRECT}`
-
-  // Remove language
-  const pathname = nextUrl.pathname
-
-  // Check routes
-  const isApiAuthRoute = pathname.includes(API_AUTH_PREFIX)
-  const isAuthRoute = AUTH_ROUTES.includes(pathname)
-  const isPublicRoute = PUBLIC_ROUTES.includes(pathname)
+  // Get pathname
+  const pathname = request.nextUrl.pathname
 
   // Check login
   const isLoggedIn = !!request.auth
 
-  //
-  if (isApiAuthRoute) return new Response(null, { status: 204 })
+  // Check routes
+  const isApiAuthRoute = pathname.startsWith(API_AUTH_ROUTE)
+  const isAuthRoute = AUTH_ROUTES.includes(pathname)
+  const isPublicRoute = PUBLIC_ROUTES.includes(pathname)
+
+  // Check API
+  if (isApiAuthRoute) return
 
   // Redirect home
-  if (isLoggedIn && isAuthRoute)
-    return NextResponse.redirect(
-      new URL(`${DEFAULT_LOGIN_REDIRECT}/${locale}`, nextUrl)
-    )
+  if (isLoggedIn && isAuthRoute) request.nextUrl.href = `${origin}/`
 
   // Redirect sign-in
-  if (!isLoggedIn && !isPublicRoute)
-    return NextResponse.redirect(new URL(`/${locale}/sign-in`, nextUrl))
+  if (!isLoggedIn && !isPublicRoute) request.nextUrl.href = `${origin}/sign-in`
 
   // Apply language
   const response = intlMiddleware(request)
