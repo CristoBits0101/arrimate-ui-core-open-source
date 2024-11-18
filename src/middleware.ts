@@ -11,10 +11,10 @@ import { NextResponse } from 'next/server'
 
 // Route definition
 import {
-  apiAuthPrefix,
-  authRoutes,
+  API_AUTH_PREFIX,
+  AUTH_ROUTES,
   DEFAULT_LOGIN_REDIRECT,
-  publicRoutes
+  PUBLIC_ROUTES
 } from '@/config/routes'
 
 //
@@ -24,23 +24,39 @@ const { auth } = NextAuth(authConfig)
 const intlMiddleware = createMiddleware(routing)
 
 export default auth((request) => {
-  //
+  // Get URL
   const { nextUrl } = request
+
+  // Get language
+  const locale = request.nextUrl.locale || 'en'
+
+  // Add language
+  // const apiAuthRoute = `/${locale}${API_AUTH_PREFIX}`
+  // const defaultLoginRedirect = `/${locale}${DEFAULT_LOGIN_REDIRECT}`
+
+  // Remove language
+  const pathname = nextUrl.pathname
+
+  // Check routes
+  const isApiAuthRoute = pathname.includes(API_AUTH_PREFIX)
+  const isAuthRoute = AUTH_ROUTES.includes(pathname)
+  const isPublicRoute = PUBLIC_ROUTES.includes(pathname)
 
   // Check login
   const isLoggedIn = !!request.auth
 
   //
-  const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix)
-  const isAuthRoute = authRoutes.includes(nextUrl.pathname)
-  const isPublicRoute = publicRoutes.includes(nextUrl.pathname)
-
-  //
   if (isApiAuthRoute) return new Response(null, { status: 204 })
 
-  //
-  if (isAuthRoute && isLoggedIn)
-    return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, request.url))
+  // Redirect home
+  if (isLoggedIn && isAuthRoute)
+    return NextResponse.redirect(
+      new URL(`${DEFAULT_LOGIN_REDIRECT}/${locale}`, nextUrl)
+    )
+
+  // Redirect sign-in
+  if (!isLoggedIn && !isPublicRoute)
+    return NextResponse.redirect(new URL(`/${locale}/sign-in`, nextUrl))
 
   // Apply language
   const response = intlMiddleware(request)

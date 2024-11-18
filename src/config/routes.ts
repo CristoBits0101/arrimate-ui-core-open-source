@@ -1,27 +1,11 @@
-/**
- * An array of routes that are accessible to the public
- * These routes do not require authentication
- */
-export const publicRoutes: string[] = ['/(en|es)']
+// Api prefix
+export const API_AUTH_PREFIX: string = '/api/auth'
 
-/**
- * An array of routes that are used for authentication
- * These routes will redirect logged in users to /(en|es)/settings
- */
-export const authRoutes: string[] = [
-  '/en/sign-in',
-  '/en/sign-up',
-  '/es/sign-in',
-  '/es/sign-up'
-]
+// Auth routes
+export const AUTH_ROUTES: string[] = ['/sign-in', '/sign-up']
 
-/**
- * A prefix for API authentication routes
- * Routes that start with this prefix are used for API authentication purposes
- */
-export const apiAuthPrefix: string = '/(en|es)/api/auth'
+// Default redirect
+export const DEFAULT_LOGIN_REDIRECT: string = '/'
 
-/**
- * The default redirect path after logging in
- */
-export const DEFAULT_LOGIN_REDIRECT: string = '/(en|es)/settings'
+// Public routes
+export const PUBLIC_ROUTES: string[] = ['/', '/sign-in', '/sign-up']
