@@ -53,6 +53,9 @@
     Bcrypt: 
       📦       Encrypt Password ➜ npm install bcrypt
       📦           Bcrypt Types ➜ npm install --save-dev @types/bcrypt
+    Bcryptjs: 
+      📦       Encrypt Password ➜ npm i bcryptjs
+      📦         Bcryptjs Types ➜ npm install --save-dev @types/bcryptjs
     Prisma:
       📦             Prisma CLI ➜ npm install prisma --save-dev
       📦         Prisma Queries ➜ npm install @prisma/client
