@@ -26,7 +26,7 @@ const FollowButton: FC<FollowButtonProps> = ({
   }
   return (
     <button
-      className={`outline-none w-full h-fit flex justify-center items-center py-1.5 mx-1.5 transition-colors duration-300 ${
+      className={`outline-none w-full h-fit flex justify-center items-center py-1.5 transition-colors duration-300 transform-none border-none ${
         isRound ? 'rounded-full' : 'rounded-md'
       }`}
       style={{
