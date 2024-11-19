@@ -9,7 +9,7 @@ export default function UserCard() {
           </figure>
           <section className='w-full h-full flex flex-col items-start justify-center'>
             {/* <p className=''>{session?.user?.email ?? ''}</p> */}
-            <p>Email</p>
+            <p>CristoBits0101</p>
           </section>
         </article>
       )
