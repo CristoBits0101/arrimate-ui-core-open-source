@@ -1,40 +1,41 @@
 'use client'
 
-// Actions
+// Actions: Encapsulates logic to interact with the backend
 import SignUp from '@/modules/auth/actions/sign-up'
 
-// Alerts
+// Alerts: Show error or success messages to the user
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// Buttons
+// Buttons:
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
-// Cards
+// Cards:
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
-// Inputs
+// Inputs: Input fields optimized for reusability and control
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import NameInput from '@/modules/auth/components/inputs/name-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
-// Next
+// Next:
 import { useLocale } from 'next-intl'
 
-// React
+// React:
 import { useState, useTransition } from 'react'
+
+// Form: Makes it easy to manage form status and validation
 import { useForm, FormProvider } from 'react-hook-form'
 
-// Shadcn
+// Shadcn: Contains the form component
 import { Form } from '@/modules/ui/form'
 
-// Zod
+// Zod: Define data validation rules
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 export default function SignUpForm() {
-
   // Receive messages indicating the outcome of the form submission
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
@@ -42,13 +43,11 @@ export default function SignUpForm() {
   // Manage asynchronous operations
   const [isPending, startTransition] = useTransition()
 
-  // Used to initialize the form and manage its state when rendering
+  // Initializes the form and manages its state when rendering
   const form = useForm<z.infer<typeof SignUpSchema>>({
-
-    // Validates each time the form is submitted
+    // This validates the form data every time it is submitted
     resolver: zodResolver(SignUpSchema),
-
-    // Values ​​before submitting the form
+    // Sets the default values for the form fields before any user interaction
     defaultValues: {
       name: '',
       email: '',
@@ -56,23 +55,26 @@ export default function SignUpForm() {
     }
   })
 
-  // Values is initialized with user data received from the schema
+  // The form values are initialized with data validated by the schema
   const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
-
-    // Reset values
+    // Reset the error and success messages before attempting submission
     setError('')
     setSuccess('')
-
-    // Sent data to server
+    // Send the form data to the server asynchronously
     startTransition(() => {
+      // Calls the SignUp action with the submitted form values
       SignUp(values)
         .then((data) => {
+          // Set the error message if the server returns one
           setError(data.error)
+          // Set the success message if the server confirms success
           setSuccess(data.success)
         })
         .catch((err) => {
-          console.error('Error en SignUp:', err)
-          setError('Ocurrió un error inesperado.')
+          // Handle unexpected errors during submission
+          console.error('Error in SignUp:', err)
+          // Display a generic error message
+          setError('An unexpected error occurred.')
         })
     })
   }

@@ -17,7 +17,8 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
    */
   const validatedFields = SignUpSchema.safeParse(values)
 
-  if (!validatedFields.success) return { error: 'Invalid!' }
+  // Returns an error object
+  if (!validatedFields.success) return { error: 'Invalid data!' }
 
   /**
    * Check existence
@@ -30,6 +31,7 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
     }
   })
 
+  // Returns an error object
   if (existingUser) return { error: 'Email already in use!' }
 
   /**
@@ -44,8 +46,10 @@ export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
         password: hashedPassword
       }
     })
+    // Returns an success object
     return { success: 'Registration completed!' }
   } catch (error) {
+    // Returns an error object
     return { error: 'Registration failed. Please try again.' }
   }
 }
