@@ -34,7 +34,10 @@ a {
 }
 
 button {
+  backface-visibility: hidden;
   cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  will-change: transform, border;
 }
 
 h1,
