@@ -7,10 +7,10 @@ import SignUp from '@/modules/auth/actions/sign-up'
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// Buttons:
+// Buttons: Button to send the form
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
-// Cards:
+// Cards: Contains the design of the form
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // Inputs: Input fields optimized for reusability and control
@@ -18,10 +18,10 @@ import EmailInput from '@/modules/auth/components/inputs/email-input'
 import NameInput from '@/modules/auth/components/inputs/name-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
-// Next:
+// Next: To get the client language
 import { useLocale } from 'next-intl'
 
-// React:
+// React: Hooks from React
 import { useState, useTransition } from 'react'
 
 // Form: Makes it easy to manage form status and validation
@@ -47,6 +47,7 @@ export default function SignUpForm() {
   const form = useForm<z.infer<typeof SignUpSchema>>({
     // This validates the form data every time it is submitted
     resolver: zodResolver(SignUpSchema),
+    mode: 'onSubmit',
     // Sets the default values for the form fields before any user interaction
     defaultValues: {
       name: '',
