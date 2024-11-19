@@ -5,13 +5,13 @@ import Image from 'next/image'
 export default function UserCard() {
   // const session = await auth()
   return (
-    <article className='flex w-full h-12 gap-4'>
-      <figure className='w-10 h-full flex items-center justify-center'>
+    <article className='flex w-full h-14 gap-4'>
+      <figure className='w-14 h-full flex items-center justify-center'>
         <Image
           src={defaultUserImage ?? 'Photo'}
           alt='User profile picture'
-          width={40}
-          height={40}
+          width={56}
+          height={56}
           className='aspect-square object-cover drop-shadow-sm rounded-full'
         />
       </figure>
