@@ -108,7 +108,7 @@ export default function ArrimateFollowCard({
           <span className='absolute inset-[-1000%] bg-[#453C41]'></span>
         )}
         <header
-          className='relative w-20 h-w-20 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
+          className='relative w-16 h-16 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
           style={{ backgroundImage: `url(${userImage || unknownImage})` }}
         ></header>
       </span>
