@@ -13,6 +13,8 @@ export const AUTH_ROUTES: string[] = [
   '/es/sign-in'
 ]
 
+export const DEFAULT_LOGIN_REDIRECT = '/'
+
 // Public routes
 export const PUBLIC_ROUTES: string[] = [
   // sign-in
