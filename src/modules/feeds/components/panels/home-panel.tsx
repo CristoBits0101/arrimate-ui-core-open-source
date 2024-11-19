@@ -27,7 +27,7 @@ export default function HomePanel({
     .slice(0, 4)
 
   return (
-    <section className='w-full h-full flex flex-col gap-4 text-sm'>
+    <section className='w-full h-fit flex flex-col gap-4 text-sm'>
       {title && (
         <h2 className='font-medium uppercase w-full'>
           {emoji && <span className='text-lg'>{emoji}</span>} {title}
