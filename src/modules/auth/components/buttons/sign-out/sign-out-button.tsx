@@ -1,11 +1,16 @@
-'use client'
+import { signOut } from '@/lib/auth'
+import { useTranslations } from 'next-intl'
 
-import { signOutAction } from '@/modules/auth/actions/sign-out'
-
-export function SignOutButton() {
+export function SignOut() {
+  const t = useTranslations('Button')
   return (
-    <form action={signOutAction}>
-      <button type='submit'>Sign Out</button>
+    <form
+      action={async () => {
+        'use server'
+        await signOut()
+      }}
+    >
+      <button type='submit'>{t('SignOut')}</button>
     </form>
   )
 }
