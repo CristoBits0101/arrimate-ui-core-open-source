@@ -1,7 +1,7 @@
 import { signOut } from '@/lib/auth'
 import { useTranslations } from 'next-intl'
 
-export function SignOut() {
+export default function SignOut() {
   const t = useTranslations('Button')
   return (
     <form
