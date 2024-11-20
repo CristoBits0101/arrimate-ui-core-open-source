@@ -4,6 +4,7 @@ import { getUserByEmail } from '@/modules/auth/data/user-data'
 import { SignInSchema } from '@/modules/auth/schemas/index'
 import type { NextAuthConfig } from 'next-auth'
 
+// Backend code
 export default {
   providers: [
     Credentials({

@@ -49,16 +49,15 @@ export default function SignInForm() {
     // Reset values
     setError('')
     setSuccess('')
-
-    // Enviar datos al servidor
+    // Sent data to server
     startTransition(() => {
       SignIn(values)
         .then((data) => {
           setError(data.error)
           setSuccess(data.success)
         })
-        .catch((err) => {
-          console.error('Error en SignIn:', err)
+        .catch((error) => {
+          console.error('Error en SignIn:', error)
           setError('Ocurrió un error inesperado.')
         })
     })
