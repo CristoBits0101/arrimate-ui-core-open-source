@@ -1,5 +1,5 @@
 .form div:hover .search {
-  background-color: #EBEAEB;
+  background-color: #ebeaeb;
   fill: #1d0f0f;
 }
 
@@ -21,7 +21,7 @@
 
 .form input:focus ~ .search,
 .form input:hover ~ .search {
-  background-color: #EBEAEB;
+  background-color: #ebeaeb;
   fill: #1d0f0f;
   transition: background-color 0.3s ease, fill 0.3s ease;
 }

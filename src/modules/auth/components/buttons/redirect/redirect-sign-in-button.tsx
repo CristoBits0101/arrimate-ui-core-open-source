@@ -14,8 +14,7 @@ interface LoginButtonProps {
 export default function LoginButton({
   children,
   mode = 'redirect'
-}:
-LoginButtonProps) {
+}: LoginButtonProps) {
   const router = useRouter()
   const clicked = () => router.push('/sign-in')
   if (mode === 'modal') {

@@ -22,11 +22,7 @@ const SectionButton: React.FC<OptionButtonProps> = ({
     onClick={onClick}
   >
     {label}
-    <Image
-      src={iconSrc}
-      alt={altText}
-      className='w-5 object-contain'
-    />
+    <Image src={iconSrc} alt={altText} className='w-5 object-contain' />
   </button>
 )
 

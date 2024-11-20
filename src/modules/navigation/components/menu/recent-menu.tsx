@@ -14,7 +14,7 @@ interface RecentContentProps {
 }
 
 export default function RecentMenu({
-  setIsFocused
+  setIsFocused,
 }: // locale
 RecentContentProps) {
   const t = useTranslations('Searcher')

@@ -1,5 +1,3 @@
 export default function LivePanel() {
-  return (
-    <div>live-panel</div>
-  )
+  return <div>live-panel</div>
 }

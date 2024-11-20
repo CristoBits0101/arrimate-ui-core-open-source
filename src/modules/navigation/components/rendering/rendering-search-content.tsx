@@ -25,9 +25,6 @@ export default function ReturnContent({
       locale={locale}
     />
   ) : (
-    <RecentContent
-      setIsFocused={setIsFocused}
-      locale={locale}
-    />
+    <RecentContent setIsFocused={setIsFocused} locale={locale} />
   )
 }

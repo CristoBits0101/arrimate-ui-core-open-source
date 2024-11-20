@@ -11,20 +11,20 @@ const LanguageSelector = () => {
   const t = useTranslations('SettingsPanel')
 
   return (
-    <section className="w-full h-fit flex flex-col">
+    <section className='w-full h-fit flex flex-col'>
       <OptionButton
         label={t('language.english')}
         isSelected={locale === 'en'}
         onClick={() => changeLanguage('en')}
         iconSrc={enIcon}
-        altText="English icon"
+        altText='English icon'
       />
       <OptionButton
         label={t('language.spanish')}
         isSelected={locale === 'es'}
         onClick={() => changeLanguage('es')}
         iconSrc={esIcon}
-        altText="Spanish icon"
+        altText='Spanish icon'
       />
     </section>
   )
