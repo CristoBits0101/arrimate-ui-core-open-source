@@ -8,6 +8,7 @@ import { routing } from '@/i18n/routing'
 
 // config/routes
 import { API_AUTH_ROUTE, AUTH_ROUTES, PUBLIC_ROUTES } from '@/config/routes'
+import { NextResponse } from 'next/server'
 
 //
 const { auth } = NextAuth(authConfig)
@@ -34,10 +35,10 @@ export default auth((request) => {
   if (isApiAuthRoute) return
 
   // Redirect home
-  if (isLoggedIn && isAuthRoute) request.nextUrl.href = `${origin}/`
+  if (isLoggedIn && isAuthRoute) return NextResponse.redirect(new URL('/', origin))
 
   // Redirect sign-in
-  if (!isLoggedIn && !isPublicRoute) request.nextUrl.href = `${origin}/sign-in`
+  if (!isLoggedIn && !isPublicRoute) return NextResponse.redirect(new URL('/sign-in', origin))
 
   // Apply language
   const response = intlMiddleware(request)

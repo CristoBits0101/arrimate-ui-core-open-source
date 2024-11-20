@@ -39,6 +39,7 @@ export default function SignInForm() {
 
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
+    mode: 'onSubmit',
     defaultValues: {
       email: '',
       password: ''
