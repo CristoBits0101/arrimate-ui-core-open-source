@@ -2,7 +2,6 @@
 
 import * as z from 'zod'
 import { AuthError } from 'next-auth'
-import { DEFAULT_LOGIN_REDIRECT } from '@/config/routes'
 import { signIn } from '@/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
 
@@ -15,7 +14,7 @@ export default async function SignIn(values: z.infer<typeof SignInSchema>) {
     await signIn('credentials', {
       email,
       password,
-      redirectTo: DEFAULT_LOGIN_REDIRECT
+      redirect: false
     })
     return { success: 'Sign-in successful!' }
   } catch (error) {
