@@ -17,7 +17,7 @@ import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
-// Next
+// Intl
 import { useLocale } from 'next-intl'
 
 // React
@@ -36,6 +36,7 @@ export default function SignInForm() {
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
+  const locale = useLocale()
 
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
@@ -56,6 +57,9 @@ export default function SignInForm() {
         .then((data) => {
           setError(data.error)
           setSuccess(data.success)
+          if (data.success) {
+            window.location.href = `/${locale}`
+          }
         })
         .catch((error) => {
           console.error('Error en SignIn:', error)
