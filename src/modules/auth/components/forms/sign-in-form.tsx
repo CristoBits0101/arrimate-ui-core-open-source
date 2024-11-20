@@ -21,6 +21,7 @@ import PasswordInput from '@/modules/auth/components/inputs/password-input'
 import { useLocale, useTranslations } from 'next-intl'
 
 // React
+import React from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import { useState, useTransition } from 'react'
 
@@ -58,9 +59,7 @@ export default function SignInForm() {
         .then((data) => {
           setError(data.error)
           setSuccess(data.success)
-          if (data.success) {
-            window.location.href = `/${locale}`
-          }
+          if (data.success) window.location.href = `/${locale}`
         })
         .catch((error) => {
           console.error('Error en SignIn:', error)
@@ -69,11 +68,14 @@ export default function SignInForm() {
     })
   }
 
-  return (
+  const [hydrated, setHydrated] = React.useState(false)
+  React.useEffect(() => setHydrated(true), [])
+
+  return hydrated ? (
     <CardWrapper
       pageNameRedirect='Sign Up'
       redirectButtonLabel="Don't have an account? "
-      redirectButtonHref={`/${useLocale()}/sign-up`}
+      redirectButtonHref={`/${locale}/sign-up`}
       showSocial={true}
     >
       <FormProvider {...form}>
@@ -90,5 +92,5 @@ export default function SignInForm() {
         </Form>
       </FormProvider>
     </CardWrapper>
-  )
+  ) : null
 }
