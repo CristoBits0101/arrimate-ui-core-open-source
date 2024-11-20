@@ -20,26 +20,26 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
 
   return (
     <div className='flex flex-col items-center'>
-      {/* Título del panel general */}
+      {/* Panel title */}
       <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
         <h2 className='w-full text-center text-lg font-medium'>
-          {t('settings')} {/* Siempre muestra "Settings" o "Ajustes" */}
+          {' '}
+          {t('settings')}
         </h2>
       </div>
-
-      {/* Botones de selección */}
+      {/* Selection buttons */}
       <div className='w-full h-fit flex flex-col'>
         <OptionsButton
           icon={languageIcon}
           label={languageLabel}
           onClick={() => handleSelectOption('language')}
-          altText={t('languageIconAlt')}
+          altText='Language icon'
         />
         <OptionsButton
           icon={themesIcon}
-          label={themeLabel} 
+          label={themeLabel}
           onClick={() => handleSelectOption('theme')}
-          altText={t('themesIconAlt')}
+          altText='Themes icon'
         />
       </div>
     </div>

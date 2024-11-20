@@ -4,15 +4,16 @@ import { useTranslations } from 'next-intl'
 
 export default function SignOutButton() {
   const t = useTranslations('Button')
+
+  const handleSignOut = async (e: React.FormEvent<HTMLFormElement>) => {
+    'use server'
+    e.preventDefault() // Prevenir el comportamiento por defecto del formulario.
+    await signOut() // Ejecutar la función de cierre de sesión.
+  }
+
   return (
-    <div>
-      <form
-        action={async () => {
-          'use server'
-          await signOut()
-        }}
-      ></form>
+    <form onSubmit={handleSignOut}>
       <Button type='submit'>{t('SignOut')}</Button>
-    </div>
+    </form>
   )
 }
