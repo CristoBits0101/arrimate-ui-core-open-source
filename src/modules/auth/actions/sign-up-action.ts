@@ -11,7 +11,7 @@ import * as z from 'zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 // The data that the user's schema received is saved in value
-export default async function SignUp(values: z.infer<typeof SignUpSchema>) {
+export default async function SignUpAction(values: z.infer<typeof SignUpSchema>) {
   /**
    * Data validation
    */

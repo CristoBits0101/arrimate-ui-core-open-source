@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates logic to interact with the backend
-import SignUp from '@/modules/auth/actions/sign-up'
+import SignUpAction from '@/modules/auth/actions/sign-up-action'
 
 // Alerts: Show error or success messages to the user
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -64,7 +64,7 @@ export default function SignUpForm() {
     // Send the form data to the server asynchronously
     startTransition(() => {
       // Calls the SignUp action with the submitted form values
-      SignUp(values)
+      SignUpAction(values)
         .then((data) => {
           // Set the error message if the server returns one
           setError(data.error)

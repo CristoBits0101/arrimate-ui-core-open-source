@@ -5,7 +5,7 @@ import { AuthError } from 'next-auth'
 import { signIn } from '@/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
 
-export default async function SignIn(values: z.infer<typeof SignInSchema>) {
+export default async function SignInAction(values: z.infer<typeof SignInSchema>) {
   const validatedFields = SignInSchema.safeParse(values)
   if (!validatedFields.success)
     return { error: 'Invalid email or password format!' }

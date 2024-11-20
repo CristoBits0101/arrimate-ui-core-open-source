@@ -1,6 +1,6 @@
 'use client'
 
-import signOutAction from '@/modules/auth/actions/sign-out'
+import signOutAction from '@/modules/auth/actions/sign-out-action'
 import { useTranslations } from 'next-intl'
 import { useTransition } from 'react'
 

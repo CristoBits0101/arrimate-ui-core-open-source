@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignIn from '@/modules/auth/actions/sign-in'
+import SignInAction from '@/modules/auth/actions/sign-in-action'
 
 // Alerts
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -53,7 +53,7 @@ export default function SignInForm() {
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      SignIn(values)
+      SignInAction(values)
         .then((data) => {
           setError(data.error)
           setSuccess(data.success)
