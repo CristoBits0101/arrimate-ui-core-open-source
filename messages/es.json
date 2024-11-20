@@ -11,7 +11,9 @@
     "following": "Siguiendo",
     "like": "Me gusta",
     "share": "Compartir",
-    "SignOut": "Cerrar sesión",
+    "SignIn": "Entrar",
+    "SignOut": "Salir",
+    "SignUp": "Registrarse",
     "submit": "Enviar",
     "unfollow": "Dejar de seguir",
     "unlike": "Ya no me gusta"

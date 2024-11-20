@@ -18,7 +18,7 @@ import EmailInput from '@/modules/auth/components/inputs/email-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
 // Intl
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 // React
 import { useForm, FormProvider } from 'react-hook-form'
@@ -37,6 +37,7 @@ export default function SignInForm() {
   const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
   const locale = useLocale()
+  const t = useTranslations('Button')
 
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
@@ -84,7 +85,7 @@ export default function SignInForm() {
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
-            <SubmitButton message='Sign In' isPending={isPending} />
+            <SubmitButton message={t('SignIn')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

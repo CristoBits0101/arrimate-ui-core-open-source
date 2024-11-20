@@ -11,7 +11,9 @@
     "following": "Following",
     "like": "Like",
     "share": "Share",
-    "SignOut": "Sign out",
+    "SignIn": "Sign In",
+    "SignOut": "Sign Out",
+    "SignUp": "Sign Up",
     "submit": "Submit",
     "unfollow": "Unfollow",
     "unlike": "Unlike"

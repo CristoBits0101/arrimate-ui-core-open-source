@@ -1,8 +1,21 @@
 'use client'
 
+// Actions
 import signOutAction from '@/modules/auth/actions/sign-out-action'
-import { useTranslations } from 'next-intl'
-import { useTransition } from 'react'
+
+// Alerts
+import FormError from '@/modules/auth/components/alerts/alert-errors'
+import FormSuccess from '@/modules/auth/components/alerts/alert-success'
+
+// Buttons
+import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
+
+// Intl
+import { useLocale, useTranslations } from 'next-intl'
+
+// React
+import { useForm, FormProvider } from 'react-hook-form'
+import { useState, useTransition } from 'react'
 
 export default function SignOut() {
   const t = useTranslations('Button')
@@ -22,9 +35,9 @@ export default function SignOut() {
 
   return (
     <form onSubmit={handleSignOut}>
-      <button type='submit' disabled={isPending}>
+      <SubmitButton message='Sign Out' disabled={isPending}>
         {isPending ? t('SigningOut') : t('SignOut')}
-      </button>
+      </SubmitButton>
     </form>
   )
 }
