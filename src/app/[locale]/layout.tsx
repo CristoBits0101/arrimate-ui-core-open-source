@@ -3,6 +3,15 @@ import { standard } from '@/lib/fonts'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { SessionProvider } from 'next-auth/react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Arrímate',
+  description: '',
+  icons: {
+    icon: '/favicon.ico'
+  }
+}
 
 export default async function LocaleLayout({
   children,

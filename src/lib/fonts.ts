@@ -1,7 +1,6 @@
 import { Dancing_Script } from 'next/font/google'
 import { Figtree } from 'next/font/google'
 
-
 export const ds = Dancing_Script({
   display: 'swap',
   subsets: ['latin'],
