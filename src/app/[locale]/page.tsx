@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className='hidden md:flex min-w-[46rem] col-span-1 flex-col items-center gap-16'>
+      <main className='hidden md:flex min-w-[46rem] h-fit col-span-1 flex-col items-center gap-16'>
         <ShowPostStories />
         <ShowPostImages />
       </main>

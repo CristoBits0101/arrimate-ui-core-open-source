@@ -9,7 +9,7 @@ export default function FeaturesLayout({
   return (
     <>
       <Header />
-      <main className='min-w-52 col-span-1' >{children}</main>
+      <main className='min-w-52 col-span-1 h-fit'>{children}</main>
       <Aside />
     </>
   )
