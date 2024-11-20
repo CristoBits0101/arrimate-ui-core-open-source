@@ -1,5 +1,3 @@
 export default function ChatsPanel() {
-  return (
-    <div>chats-panel</div>
-  )
+  return <div>chats-panel</div>
 }

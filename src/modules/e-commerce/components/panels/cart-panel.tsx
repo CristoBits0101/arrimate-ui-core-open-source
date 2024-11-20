@@ -1,5 +1,3 @@
 export default function CartPanel() {
-  return (
-    <div>cart-panel</div>
-  )
+  return <div>cart-panel</div>
 }

@@ -1,5 +1,3 @@
 export default function ProductsPanel() {
-  return (
-    <div>products-panel</div>
-  )
+  return <div>products-panel</div>
 }

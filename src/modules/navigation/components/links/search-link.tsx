@@ -11,7 +11,7 @@ interface SearchLinkProps {
   // altText: string
 }
 
-export default function SearchLink({iconSrc}: SearchLinkProps) {
+export default function SearchLink({ iconSrc }: SearchLinkProps) {
   return (
     <li className='truncate w-full pr-4 pl-4 pt-1 pb-1 hover:bg-[#F4F4F4]'>
       <Link
