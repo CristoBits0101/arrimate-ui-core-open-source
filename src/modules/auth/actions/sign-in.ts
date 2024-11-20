@@ -14,7 +14,7 @@ export default async function SignIn(values: z.infer<typeof SignInSchema>) {
     await signIn('credentials', {
       email,
       password,
-      redirect: false
+      redirectTo: '/es'
     })
     return { success: 'Sign-in successful!' }
   } catch (error) {
