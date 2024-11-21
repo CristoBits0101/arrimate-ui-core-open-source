@@ -1,8 +1,16 @@
 'use client'
 
+// Buttons
 import OptionsButton from '@/modules/configuration/components/buttons/options-button'
+
+// Forms
+import SignOutForm from '@/modules/auth/components/forms/sign-out-form'
+
+// Icons
 import languageIcon from '@/modules/configuration/assets/icons/buttons/settings/language.svg'
 import themesIcon from '@/modules/configuration/assets/icons/buttons/settings/themes.svg'
+
+// next-intl
 import { useTranslations } from 'next-intl'
 
 interface OptionsPanelProps {
@@ -42,6 +50,7 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
           onClick={() => handleSelectOption('theme')}
           altText='Themes icon'
         />
+        <SignOutForm />
       </div>
     </div>
   )

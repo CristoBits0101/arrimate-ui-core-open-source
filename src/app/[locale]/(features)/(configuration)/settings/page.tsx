@@ -1,5 +1,4 @@
 import { auth } from '@/lib/auth'
-import SignOutForm from '@/modules/auth/components/forms/sign-out-form'
 
 const SettingsPage = async () => {
   const session = await auth()
@@ -7,7 +6,6 @@ const SettingsPage = async () => {
   return (
     <div>
       <h2>{JSON.stringify(session)}</h2>
-      <SignOutForm />
     </div>
   )
 }

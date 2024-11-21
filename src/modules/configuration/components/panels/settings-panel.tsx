@@ -1,13 +1,14 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
-
 // Panels
 import OptionPanel from '@/modules/configuration/components/panels/option-panel'
 import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
 
 // Custom hook
 import { useSettings } from '@/modules/configuration/hooks/useSettings'
+
+// next-intl
+import { useTranslations } from 'next-intl'
 
 // Renders the settings options or the values ​​of the selected option
 export default function SettingsPanel() {

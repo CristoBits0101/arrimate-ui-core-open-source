@@ -12,7 +12,7 @@
     "like": "Like",
     "share": "Share",
     "SignIn": "Sign In",
-    "SignOut": "Sign Out",
+    "SignOut": "Sign out",
     "SignUp": "Sign Up",
     "submit": "Submit",
     "unfollow": "Unfollow",
@@ -62,7 +62,7 @@
   "SettingsPanel": {
     "settings": "Settings",
     "language": {
-      "title": "Language",
+      "title": "Languages",
       "english": "English",
       "spanish": "Spanish"
     },
