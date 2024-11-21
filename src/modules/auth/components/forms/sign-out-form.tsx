@@ -3,9 +3,8 @@
 // Actions
 import signOutAction from '@/modules/auth/actions/sign-out-action'
 
-// Alerts
-import FormError from '@/modules/auth/components/alerts/alert-errors'
-import FormSuccess from '@/modules/auth/components/alerts/alert-success'
+// Components
+import OptionsButton from '@/modules/configuration/components/buttons/options-button'
 
 // Icons
 import signOutIcon from '@/modules/auth/assets/icons/sign-out.svg'
@@ -14,32 +13,20 @@ import signOutIcon from '@/modules/auth/assets/icons/sign-out.svg'
 import { useLocale, useTranslations } from 'next-intl'
 
 // React
-import React, { useState } from 'react'
-
-// Components
-import OptionsButton from '@/modules/configuration/components/buttons/options-button'
+import React from 'react'
 
 export default function SignOutForm() {
-  const [error, setError] = useState<string | undefined>('')
-  const [success, setSuccess] = useState<string | undefined>('')
   const locale = useLocale()
   const t = useTranslations('Button')
 
   const handleSignOut = () => {
-    // Reset states
-    setError('')
-    setSuccess('')
     // Trigger sign-out action
     signOutAction()
       .then((result) => {
-        if (result.success) {
-          setSuccess('Sesión cerrada exitosamente.')
-          window.location.href = `/${locale}/sign-in`
-        } else setError(result.error || 'Ocurrió un error al cerrar sesión.')
+        if (result.success) window.location.href = `/${locale}/sign-in`
       })
       .catch((error) => {
         console.error('Error al cerrar sesión:', error)
-        setError('Ocurrió un error inesperado.')
       })
   }
 
@@ -49,8 +36,6 @@ export default function SignOutForm() {
 
   return hydrated ? (
     <div className='space-y-5 w-full'>
-      <FormError message={error} />
-      <FormSuccess message={success} />
       <OptionsButton
         icon={signOutIcon}
         label={t('SignOut')}
