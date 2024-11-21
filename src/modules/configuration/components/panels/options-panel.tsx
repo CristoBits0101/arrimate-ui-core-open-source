@@ -11,6 +11,7 @@ interface OptionsPanelProps {
   handleSelectOption: (option: 'language' | 'theme') => void
 }
 
+// Settings panel
 const OptionsPanel: React.FC<OptionsPanelProps> = ({
   languageLabel,
   themeLabel,

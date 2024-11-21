@@ -10,6 +10,7 @@ interface OptionPanelProps {
   handleBack: () => void
 }
 
+// Renders the language or theme panel
 export default function OptionPanel({
   component,
   handleBack

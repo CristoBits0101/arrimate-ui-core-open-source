@@ -9,13 +9,14 @@ import OptionsPanel from '@/modules/configuration/components/panels/options-pane
 // Custom hook
 import { useSettings } from '@/modules/configuration/hooks/useSettings'
 
+// Renders the settings options or the values ​​of the selected option
 export default function SettingsPanel() {
   const t = useTranslations('SettingsPanel')
-
   const { selectedOption, handleSelectOption, handleBack } = useSettings()
 
   return (
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid'>
+      {/* If you click on the options panel the option panel is rendered */}
       {selectedOption === null ? (
         <OptionsPanel
           languageLabel={t('language.title')}
