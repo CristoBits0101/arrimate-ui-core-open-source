@@ -4,9 +4,9 @@
       🚧     Email Verification ➜ 
       🚧            OAuth Login ➜ 
       🚧       Recover Password ➜ 
-      🔄                Sign In ➜ 
-      🚧               Sign Out ➜ 
-      🚧                Sign Up ➜ Forms + Prisma + Zod + Neon
+      ✅                Sign In ➜ Auth.js + Prisma + Zod + Neon
+      ✅               Sign Out ➜ Auth.js
+      ✅                Sign Up ➜ Auth.js + Prisma + Zod + Neon
       🚧  Two-Factor Auth (2FA) ➜ 
     Branding:
       ✅      Reusable App Logo ➜ next/image
