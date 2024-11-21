@@ -22,6 +22,7 @@ import PasswordInput from '@/modules/auth/components/inputs/password-input'
 import { useLocale } from 'next-intl'
 
 // React: Hooks from React
+import React from 'react'
 import { useState, useTransition } from 'react'
 
 // Form: Makes it easy to manage form status and validation
@@ -36,6 +37,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 export default function SignUpForm() {
+  const locale = useLocale()
+
   // Receive messages indicating the outcome of the form submission
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
@@ -80,11 +83,15 @@ export default function SignUpForm() {
     })
   }
 
-  return (
+  // Ensure client-side rendering
+  const [hydrated, setHydrated] = React.useState(false)
+  React.useEffect(() => setHydrated(true), [])
+
+  return hydrated ? (
     <CardWrapper
       pageNameRedirect='Sign In'
       redirectButtonLabel='Already have an account? '
-      redirectButtonHref={`/${useLocale()}/sign-in`}
+      redirectButtonHref={`/${locale}/sign-in`}
       showSocial={true}
     >
       <FormProvider {...form}>
@@ -102,5 +109,5 @@ export default function SignUpForm() {
         </Form>
       </FormProvider>
     </CardWrapper>
-  )
+  ) : null
 }

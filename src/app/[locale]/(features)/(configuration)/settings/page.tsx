@@ -1,5 +1,5 @@
 import { auth } from '@/lib/auth'
-import SignOutButton from '@/modules/auth/components/buttons/sign-out/sign-out-form'
+import SignOutForm from '@/modules/auth/components/forms/sign-out-form'
 
 const SettingsPage = async () => {
   const session = await auth()
@@ -7,7 +7,7 @@ const SettingsPage = async () => {
   return (
     <div>
       <h2>{JSON.stringify(session)}</h2>
-      <SignOutButton />
+      <SignOutForm />
     </div>
   )
 }

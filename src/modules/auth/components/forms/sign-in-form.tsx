@@ -75,7 +75,7 @@ export default function SignInForm() {
 
   return hydrated ? (
     <CardWrapper
-      pageNameRedirect='Sign Up'
+      pageNameRedirect={t('SignUp')}
       redirectButtonLabel="Don't have an account? "
       redirectButtonHref={`/${locale}/sign-up`}
       showSocial={true}

@@ -3,6 +3,10 @@
 // Actions
 import signOutAction from '@/modules/auth/actions/sign-out-action'
 
+// Alerts
+import FormError from '@/modules/auth/components/alerts/alert-errors'
+import FormSuccess from '@/modules/auth/components/alerts/alert-success'
+
 // Buttons
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
@@ -10,30 +14,57 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 import { useLocale, useTranslations } from 'next-intl'
 
 // React
-import { useTransition } from 'react'
+import React, { useState, useTransition } from 'react'
+import { useForm, FormProvider } from 'react-hook-form'
+
+// Shadcn
+import { Form } from '@/modules/ui/form'
 
 export default function SignOut() {
-  const t = useTranslations('Button')
-  const locale = useLocale()
+  const [error, setError] = useState<string | undefined>('')
+  const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
+  const locale = useLocale()
+  const t = useTranslations('Button')
 
-  const handleSignOut = async (e: React.FormEvent) => {
-    e.preventDefault()
-    startTransition(async () => {
-      const result = await signOutAction()
-      if (result.success) window.location.href = `/${locale}/sign-up`
-      else {
-        console.error('Error al cerrar sesión:', result.error)
-        alert('Ocurrió un error al cerrar sesión.')
-      }
+  // Initializes the form and manages its state when rendering
+  const form = useForm({
+    mode: 'onSubmit'
+  })
+
+  const onSubmit = () => {
+    // Reset states
+    setError('')
+    setSuccess('')
+    // Sent data to server
+    startTransition(() => {
+      signOutAction()
+        .then((result) => {
+          if (result.success) {
+            setSuccess('Sesión cerrada exitosamente.')
+            window.location.href = `/${locale}/sign-in`
+          } else setError(result.error || 'Ocurrió un error al cerrar sesión.')
+        })
+        .catch((error) => {
+          console.error('Error al cerrar sesión:', error)
+          setError('Ocurrió un error inesperado.')
+        })
     })
   }
 
-  return (
-    <form onSubmit={handleSignOut}>
-      <SubmitButton message='Sign Out' disabled={isPending}>
-        {isPending ? t('SigningOut') : t('SignOut')}
-      </SubmitButton>
-    </form>
-  )
+  // Ensure client-side rendering
+  const [hydrated, setHydrated] = React.useState(false)
+  React.useEffect(() => setHydrated(true), [])
+
+  return hydrated ? (
+    <FormProvider {...form}>
+      <Form {...form}>
+        <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
+          <FormError message={error} />
+          <FormSuccess message={success} />
+          <SubmitButton message={t('SignOut')} isPending={isPending} />
+        </form>
+      </Form>
+    </FormProvider>
+  ) : null
 }
