@@ -18,12 +18,12 @@ export default function LanguageButton({
   return (
     <button
       onClick={() => onClick(language)}
-      className='w-fit h-fit flex items-center'
+      className='w-fit h-fit flex items-center border-0 outline-0'
     >
       <Image
         src={iconSrc}
         alt={altText}
-        className='w-5 aspect-video h-auto object-scale-down'
+        className='w-5 h-5 aspect-video object-scale-down border-0 outline-0 drop-shadow-sm'
       />
     </button>
   )
