@@ -40,6 +40,7 @@ export default function SignInForm() {
   const locale = useLocale()
   const t = useTranslations('Button')
 
+  // Initializes the form and manages its state when rendering
   const form = useForm<z.infer<typeof SignInSchema>>({
     resolver: zodResolver(SignInSchema),
     mode: 'onSubmit',
@@ -68,6 +69,7 @@ export default function SignInForm() {
     })
   }
 
+  // Ensure client-side rendering
   const [hydrated, setHydrated] = React.useState(false)
   React.useEffect(() => setHydrated(true), [])
 
