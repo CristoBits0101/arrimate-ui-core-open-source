@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 interface OptionButtonProps {
-  label: string
+  label?: string
   isSelected: boolean
   onClick: () => void
   iconSrc: string
@@ -22,7 +22,7 @@ const SectionButton: React.FC<OptionButtonProps> = ({
     onClick={onClick}
   >
     {label}
-    <Image src={iconSrc} alt={altText} className='w-5 object-contain' />
+    <Image src={iconSrc} alt={altText} className='w-5 h-auto object-contain' />
   </button>
 )
 
