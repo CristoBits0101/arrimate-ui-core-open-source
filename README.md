@@ -26,7 +26,7 @@
       🚧          Share Content ➜ 
     Languages:
       ✅  Interface Translation ➜ next-intl
-      🔄        Change Language ➜ 
+      ✅        Change Language ➜ next-intl
     Messages:
       🚧 Activity Notifications ➜ 
       🚧    Email Notifications ➜ 
