@@ -9,12 +9,16 @@ import {
 import { Input } from '@/modules/ui/input'
 import { useFormContext } from 'react-hook-form'
 
+// Intl
+import { useTranslations } from 'next-intl'
+
 interface NameInputProps {
   name: string
   isPending: boolean
 }
 
 const NameInput = ({ name, isPending }: NameInputProps) => {
+  const t = useTranslations('Forms')
   const { control } = useFormContext()
 
   return (
@@ -27,7 +31,7 @@ const NameInput = ({ name, isPending }: NameInputProps) => {
             <Input
               {...field}
               disabled={isPending}
-              placeholder='Name'
+              placeholder={t('inputs.name')}
               className='bg-[#F4F4F4] rounded-none border-[0.094rem] border-solid border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] placeholder:text-[#1d0f0f]'
             />
           </FormControl>

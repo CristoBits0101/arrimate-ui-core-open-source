@@ -24,6 +24,23 @@
     "titleTwo": "SUGERENCIAS",
     "emojiTwo": "💡"
   },
+  "Forms": {
+    "inputs": {
+      "name": "Nombre",
+      "username": "Nombre de usuario",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña"
+    },
+    "signInForm": {
+      "pageNameRedirect": "Regístrate",
+      "redirectButtonLabel": "¿No tienes una cuenta?"
+    },
+    "signUpForm": {
+      "pageNameRedirect": "Entrar",
+      "redirectButtonLabel": "¿Ya tienes una cuenta?"
+    }
+  },
   "SidebarLayout": {
     "home": "Inicio",
     "events": "Eventos",

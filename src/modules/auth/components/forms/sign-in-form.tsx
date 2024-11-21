@@ -39,6 +39,7 @@ export default function SignInForm() {
   const [isPending, startTransition] = useTransition()
   const locale = useLocale()
   const t = useTranslations('Button')
+  const f = useTranslations('Forms')
 
   // Initializes the form and manages its state when rendering
   const form = useForm<z.infer<typeof SignInSchema>>({
@@ -75,8 +76,8 @@ export default function SignInForm() {
 
   return hydrated ? (
     <CardWrapper
-      pageNameRedirect={t('SignUp')}
-      redirectButtonLabel="Don't have an account? "
+      pageNameRedirect={f('signInForm.pageNameRedirect')}
+      redirectButtonLabel={f('signInForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
       showSocial={true}
     >

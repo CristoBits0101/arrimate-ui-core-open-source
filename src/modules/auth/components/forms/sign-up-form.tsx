@@ -19,7 +19,7 @@ import NameInput from '@/modules/auth/components/inputs/name-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
 // Next: To get the client language
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 // React: Hooks from React
 import React from 'react'
@@ -37,6 +37,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 export default function SignUpForm() {
+  const t = useTranslations('Button')
+  const f = useTranslations('Forms')
   const locale = useLocale()
 
   // Receive messages indicating the outcome of the form submission
@@ -89,8 +91,8 @@ export default function SignUpForm() {
 
   return hydrated ? (
     <CardWrapper
-      pageNameRedirect='Sign In'
-      redirectButtonLabel='Already have an account? '
+      pageNameRedirect={f('signUpForm.pageNameRedirect')}
+      redirectButtonLabel={f('signUpForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-in`}
       showSocial={true}
     >
@@ -104,7 +106,7 @@ export default function SignUpForm() {
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
-            <SubmitButton message='Sign Up' isPending={isPending} />
+            <SubmitButton message={t('SignUp')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

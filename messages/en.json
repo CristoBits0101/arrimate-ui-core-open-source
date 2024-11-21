@@ -24,6 +24,23 @@
     "titleTwo": "SUGGESTIONS",
     "emojiTwo": "💡"
   },
+  "Forms": {
+    "inputs": {
+      "name": "Name",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "signInForm": {
+      "pageNameRedirect": "Sign Up",
+      "redirectButtonLabel": "Don't have an account?"
+    },
+    "signUpForm": {
+      "pageNameRedirect": "Sign In",
+      "redirectButtonLabel": "Already have an account?"
+    }
+  },
   "SidebarLayout": {
     "home": "Home",
     "events": "Events",
