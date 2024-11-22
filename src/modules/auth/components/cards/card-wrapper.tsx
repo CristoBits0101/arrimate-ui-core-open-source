@@ -20,7 +20,7 @@ export default function CardWrapper({
   pageNameRedirect,
   redirectButtonLabel,
   redirectButtonHref,
-  showSocial = false,
+  showSocial = false
 }: CardWrapperProps) {
   return (
     <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid border-[#EBEAEB]'>
