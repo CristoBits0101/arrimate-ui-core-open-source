@@ -45,29 +45,34 @@ const EmailInput = ({ name, isPending }: EmailInputProps) => {
           <Label
             className='
               absolute 
-              left-2 
+              left-3 
                     
               transition-all 
               duration-150 
-
-              peer-placeholder-shown:px-1 
-              peer-focus:px-1 
-              px-1 
 
               peer-placeholder-shown:top-0 
               peer-focus:-top-0 
               top-0 
 
               peer-placeholder-shown:translate-y-[-8%] 
-              -translate-y-1/2 
+              peer-focus:-translate-y-7 
+              -translate-y-7
 
               peer-placeholder-shown:text-base 
               peer-focus:text-sm 
-              text-xs
+              text-sm
               
-              peer-placeholder-shown:text-[#1d0f0f] 
-              peer-focus:text-[#1d0f0f]
-              text-[#1d0f0f]'
+              peer-placeholder-shown:text-[#453C41] 
+              peer-focus:text-[#453C41]
+              text-[#453C41]
+              
+              peer-placeholder-shown:tracking-wide 
+              peer-focus:tracking-wide
+              tracking-wide
+
+              peer-placeholder-shown:font-normal 
+              peer-focus:font-normal
+              font-normal'
             htmlFor={name}
           >
             {t('inputs.email')}
