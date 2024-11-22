@@ -4,6 +4,7 @@ import Header from '@/modules/auth/components/cards/card-header'
 import LanguagePanel from '@/modules/auth/components/panels/language-panel'
 import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
 import SocialButtons from '@/modules/auth/components/buttons/sign-in/sign-in-social-buttons'
+import ThemePanel from '@/modules/auth/components/panels/theme-panel'
 import { Card, CardContent, CardFooter, CardHeader } from '@/modules/ui/card'
 
 interface CardWrapperProps {
@@ -19,10 +20,11 @@ export default function CardWrapper({
   pageNameRedirect,
   redirectButtonLabel,
   redirectButtonHref,
-  showSocial = false
+  showSocial = false,
 }: CardWrapperProps) {
   return (
     <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid border-[#EBEAEB]'>
+      <ThemePanel />
       <LanguagePanel />
       <CardHeader>
         <Header />

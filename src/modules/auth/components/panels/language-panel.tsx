@@ -1,6 +1,6 @@
 'use client'
 
-import LanguageButton from '@/modules/auth/components/buttons/languages/language-button'
+import LanguageButton from '@/modules/auth/components/buttons/configuration/language-button'
 import enIcon from '@/modules/configuration/assets/icons/buttons/languages/gb.svg'
 import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.svg'
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'
