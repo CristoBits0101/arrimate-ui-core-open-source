@@ -19,7 +19,7 @@ interface SearchContentProps {
 
 export default function RecommendedMenu({
   setResetSearchInput,
-  setIsFocused,
+  setIsFocused
 }: // searchTerm,
 // locale
 SearchContentProps) {
