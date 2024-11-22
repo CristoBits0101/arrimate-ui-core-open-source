@@ -33,7 +33,7 @@ const EmailInput = ({ name, isPending }: EmailInputProps) => {
               disabled={isPending}
               placeholder={t('inputs.email')}
               type='email'
-               className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] placeholder:text-[#453c41]'
+               className='rounded-none border-[0.094rem] border-solid dark:bg-[#D4DBE2] bg-[#F4F4F4] dark:border-[#7B7C81] border-[#EBEAEB] dark:hover:bg-[#453C41] dark:focus:bg-[#453C41] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:text-[#D4DBE2] text-[#1d0f0f] dark:placeholder:text-[#1d0f0f] placeholder:text-[#453c41]'
             />
           </FormControl>
           <FormMessage />
