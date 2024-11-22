@@ -7,7 +7,6 @@ import {
   FormMessage
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
-import { Label } from '@/modules/ui/label'
 import { useFormContext } from 'react-hook-form'
 
 // Intl
@@ -32,51 +31,11 @@ const EmailInput = ({ name, isPending }: EmailInputProps) => {
             <Input
               {...field}
               disabled={isPending}
-              placeholder=' '
+              placeholder={t('inputs.email')}
               type='email'
-              className='bg-[#F4F4F4] rounded-none border-[0.094rem] border-solid border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] placeholder:text-transparent focus:outline-none focus:ring-0 peer'
+               className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] placeholder:text-[#453c41]'
             />
           </FormControl>
-          {/* 
-            Placeholder: Initial styles 
-            Focus: Focus styles
-            Base: Losing focus
-            */}
-          <Label
-            className='
-              absolute 
-              left-3 
-                    
-              transition-all 
-              duration-150 
-
-              peer-placeholder-shown:top-0 
-              peer-focus:-top-0 
-              top-0 
-
-              peer-placeholder-shown:translate-y-[-8%] 
-              peer-focus:-translate-y-7 
-              -translate-y-7
-
-              peer-placeholder-shown:text-base 
-              peer-focus:text-sm 
-              text-sm
-              
-              peer-placeholder-shown:text-[#453C41] 
-              peer-focus:text-[#453C41]
-              text-[#453C41]
-              
-              peer-placeholder-shown:tracking-wide 
-              peer-focus:tracking-wide
-              tracking-wide
-
-              peer-placeholder-shown:font-normal 
-              peer-focus:font-normal
-              font-normal'
-            htmlFor={name}
-          >
-            {t('inputs.email')}
-          </Label>
           <FormMessage />
         </FormItem>
       )}

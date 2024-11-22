@@ -50,11 +50,15 @@ h6 {
   margin-block-end: 0%;
 }
 
+input {
+  letter-spacing: 0.0375rem;
+}
+
 input::placeholder,
 textarea::placeholder {
-  color: #1d0f0f;
+  color: #453c41;
   font-weight: 400;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.0375rem;
   opacity: 1;
 }
 
