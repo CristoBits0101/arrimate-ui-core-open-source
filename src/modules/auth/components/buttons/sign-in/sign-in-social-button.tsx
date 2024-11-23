@@ -14,7 +14,7 @@ export default function SignInButton({
   return (
     <Button
       size='lg'
-      className='dark:bg-[#1d0f0f] w-full rounded-none border-[0.094rem] border-solid dark:border-[#D4DBE2] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
+      className='bg-transparent w-full rounded-none border-[0.094rem] border-solid dark:border-[#7B7C81] dark:hover:bg-[#7B7C81] border-[#EBEAEB] hover:bg-[#EBEAEB] outline-0'
       variant='outline'
       onClick={onClick}
     >
