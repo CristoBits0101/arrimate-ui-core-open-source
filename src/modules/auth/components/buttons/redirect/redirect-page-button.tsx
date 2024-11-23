@@ -17,13 +17,13 @@ export default function RedirectButton({
   return (
     <Button
       variant='link'
-      className='mx-auto font-normal w-full hover:no-underline text-[#1d0f0f] dark:text-[#FFFFFF]'
+      className='mx-auto font-normal w-full hover:no-underline text-[#1d0f0f] dark:text-[#B9BBDE]'
       asChild
     >
       <Link className='text-base' href={href}>
         {label}
         <span className='mx-1'> </span>
-        <span className='font-medium text-blue-600/75'>{page}</span>
+        <span className='font-medium text-blue-600/75 dark:text-[#7B586B]'>{page}</span>
       </Link>
     </Button>
   )

@@ -9,7 +9,7 @@ export default function SocialButtons() {
     <div className='flex items-center w-full gap-x-5'>
       <Button
         size='lg'
-        className='dark:bg-[#1D0F0F] w-full rounded-none border-[0.094rem] border-solid dark:border-[#7B7C81] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
+        className='dark:bg-[#030305] w-full rounded-none border-[0.094rem] border-solid dark:border-[#16354D] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
         variant='outline'
         onClick={() => {}}
       >
@@ -17,7 +17,7 @@ export default function SocialButtons() {
       </Button>
       <Button
         size='lg'
-        className='dark:bg-[#1D0F0F] w-full rounded-none border-[0.094rem] border-solid dark:border-[#7B7C81] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
+        className='dark:bg-[#030305] w-full rounded-none border-[0.094rem] border-solid dark:border-[#16354D] border-[#EBEAEB] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] text-[#1d0f0f] focus:border-[#1d0f0f] outline-0'
         variant='outline'
         onClick={() => {}}
       >
