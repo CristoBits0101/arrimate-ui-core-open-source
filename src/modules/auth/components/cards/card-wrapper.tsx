@@ -20,10 +20,10 @@ export default function CardWrapper({
   pageNameRedirect,
   redirectButtonLabel,
   redirectButtonHref,
-  showSocial = false
+  showSocial = false,
 }: CardWrapperProps) {
   return (
-    <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid dark:border-[#16354D] border-[#EBEAEB] dark:bg-[#030305]'>
+    <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid dark:border-[#D4DBE2] border-[#EBEAEB] dark:bg-[#1d0f0f]'>
       <ThemePanel />
       <LanguagePanel />
       <CardHeader>
