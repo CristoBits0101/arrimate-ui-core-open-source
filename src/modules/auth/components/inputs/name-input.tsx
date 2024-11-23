@@ -32,7 +32,7 @@ const NameInput = ({ name, isPending }: NameInputProps) => {
               {...field}
               disabled={isPending}
               placeholder={t('inputs.name')}
-              className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#0C151C] border-[#EBEAEB] dark:border-[#16354D] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#7B7C81] dark:focus:bg-[#7B7C81] text-[#1D0F0F] dark:text-[#B9BBDE] placeholder:text-[#1D0F0F] dark:placeholder:text-[#D4DBE2]'
+              className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#303032] border-[#EBEAEB] dark:border-[#424246] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#424246] text-[#1D0F0F] dark:text-[#B9BBDE] placeholder:text-[#1D0F0F] dark:placeholder:text-[#D4DBE2]'
             />
           </FormControl>
           <FormMessage />
