@@ -26,13 +26,13 @@ const ThemeButton: React.FC = () => {
 
   return (
     <button
-      className='w-fit h-fit outline-none border-none  transition-colors bg-transparent'
+      className='w-fit h-fit flex items-center justify-center border-0 outline-none'
       onClick={handleThemeToggle}
     >
       <Image
         src={iconSrc}
         alt={altText}
-        className='w-5 h-auto object-cover aspect-square'
+        className='w-5 h-5 aspect-square object-cover border-0 outline-0 drop-shadow-sm'
       />
     </button>
   )

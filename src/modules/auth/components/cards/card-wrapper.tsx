@@ -1,10 +1,9 @@
 'use client'
 
 import Header from '@/modules/auth/components/cards/card-header'
-import LanguagePanel from '@/modules/auth/components/panels/language-panel'
 import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
+import SettingsPanel from '@/modules/auth/components/panels/settings-panel'
 import SocialPanel from '@/modules/auth/components/panels/social-panel'
-import ThemePanel from '@/modules/auth/components/panels/theme-panel'
 import { Card, CardContent, CardFooter, CardHeader } from '@/modules/ui/card'
 
 interface CardWrapperProps {
@@ -24,8 +23,7 @@ export default function CardWrapper({
 }: CardWrapperProps) {
   return (
     <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid dark:border-[#424246] border-[#EBEAEB] dark:bg-[#1d0f0f]'>
-      <ThemePanel />
-      <LanguagePanel />
+      <SettingsPanel />
       <CardHeader>
         <Header />
       </CardHeader>
