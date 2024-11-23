@@ -4,7 +4,7 @@ import ThemeButton from '@/modules/auth/components/buttons/configuration/theme-b
 
 export default function ThemePanel() {
   return (
-    <section className='h-fit w-fit bg-transparent'>
+    <section className='h-fit w-fit rounded-full'>
       <ThemeButton />
     </section>
   )

@@ -4,7 +4,7 @@ import ThemePanel from '@/modules/auth/components/sections/theme-panel'
 
 export default function SettingsPanel() {
   return (
-    <div className='flex items-center justify-between absolute w-full h-fit top-0 left-0 bg-red-100'>
+    <div className='flex items-center justify-between absolute w-[calc(100%-40px)] h-fit top-5 left-5'>
       <ThemePanel />
       <LanguagePanel />
     </div>
