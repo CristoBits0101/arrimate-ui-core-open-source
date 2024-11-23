@@ -13,7 +13,7 @@ export default function SubmitButton({
     <Button
       disabled={isPending}
       type='submit'
-      className='w-full rounded-full bg-[#453C41] hover:bg-[#1d0f0f]'
+      className='w-full rounded-full dark:bg-[#7B586B] bg-[#453C41] dark:hover:bg-[#6F4F60] hover:bg-[#1d0f0f] dark:text-[#1d0f0f] shadow-sm'
     >
       {isPending ? 'Processing...' : message}
     </Button>
