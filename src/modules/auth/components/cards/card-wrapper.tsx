@@ -3,7 +3,7 @@
 import Header from '@/modules/auth/components/cards/card-header'
 import LanguagePanel from '@/modules/auth/components/panels/language-panel'
 import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
-import SocialButtons from '@/modules/auth/components/buttons/sign-in/sign-in-social-buttons'
+import SocialPanel from '@/modules/auth/components/panels/social-panel'
 import ThemePanel from '@/modules/auth/components/panels/theme-panel'
 import { Card, CardContent, CardFooter, CardHeader } from '@/modules/ui/card'
 
@@ -32,7 +32,7 @@ export default function CardWrapper({
       <CardContent>{children}</CardContent>
       {showSocial && (
         <CardFooter>
-          <SocialButtons />
+          <SocialPanel />
         </CardFooter>
       )}
       <CardFooter className='p-0'>
