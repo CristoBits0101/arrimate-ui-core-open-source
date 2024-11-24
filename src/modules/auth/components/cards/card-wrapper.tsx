@@ -22,7 +22,7 @@ export default function CardWrapper({
   showSocial = false
 }: CardWrapperProps) {
   return (
-    <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid dark:border-[#424246] border-[#EBEAEB] bg-transparent'>
+    <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid dark:border-[#5E5E66] border-[#EBEAEB] bg-transparent'>
       <SettingsPanel />
       <CardHeader>
         <Header />
