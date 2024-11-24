@@ -6,21 +6,25 @@ import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.sv
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'
 
 export default function LanguagePanel() {
-  const { changeLanguage } = useLanguageSection()
+  const { locale, changeLanguage } = useLanguageSection()
+
   return (
     <section className='w-fit h-fit flex items-center justify-center gap-1 bg-transparent'>
-      <LanguageButton
-        language='en'
-        onClick={changeLanguage}
-        iconSrc={enIcon}
-        altText='English icon'
-      />
-      <LanguageButton
-        language='es'
-        onClick={changeLanguage}
-        iconSrc={esIcon}
-        altText='Spanish icon'
-      />
+      {locale === 'es' ? (
+        <LanguageButton
+          language='en'
+          onClick={() => changeLanguage('en')}
+          iconSrc={enIcon}
+          altText='English icon'
+        />
+      ) : (
+        <LanguageButton
+          language='es'
+          onClick={() => changeLanguage('es')}
+          iconSrc={esIcon}
+          altText='Spanish icon'
+        />
+      )}
     </section>
   )
 }
