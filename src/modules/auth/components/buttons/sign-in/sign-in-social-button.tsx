@@ -14,7 +14,7 @@ export default function SignInSocialButton({
 }: SignInButtonProps) {
   return (
     <Button
-      className='p-2 bg-transparent w-fit h-fit rounded-none border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] dark:hover:bg-[#3b3b40] hover:bg-[#EBEAEB] outline-0'
+      className='p-2 bg-transparent w-9 h-9 rounded-none border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] dark:hover:bg-[#3b3b40] hover:bg-[#EBEAEB] outline-0'
       variant='outline'
       onClick={onClick}
     >
