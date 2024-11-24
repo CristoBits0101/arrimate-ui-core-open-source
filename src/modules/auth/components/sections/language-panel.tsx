@@ -9,7 +9,7 @@ export default function LanguagePanel() {
   const { locale, changeLanguage } = useLanguageSection()
 
   return (
-    <section className='w-fit h-fit flex items-center justify-center gap-1 bg-transparent'>
+    <section className='w-fit h-fit flex items-end justify-center gap-1 bg-transparent'>
       {locale === 'es' ? (
         <LanguageButton
           language='en'

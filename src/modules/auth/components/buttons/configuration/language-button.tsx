@@ -18,7 +18,7 @@ export default function LanguageButton({
   return (
     <button
       onClick={() => onClick(language)}
-      className='w-fit h-fit flex items-center border-0 outline-0'
+      className='w-fit h-fit flex items-center justify-end border-0 outline-0'
     >
       <Image
         src={iconSrc}
