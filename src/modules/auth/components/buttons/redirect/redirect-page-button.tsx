@@ -23,7 +23,7 @@ export default function RedirectButton({
       <Link className='text-base' href={href}>
         {label}
         <span className='mx-1'> </span>
-        <span className='font-medium text-blue-600/75 dark:text-[#B96B85]'>{page}</span>
+        <span className='font-medium text-blue-600/75 dark:text-[#AE5471]'>{page}</span>
       </Link>
     </Button>
   )
