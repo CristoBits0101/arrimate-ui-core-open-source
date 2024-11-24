@@ -14,11 +14,11 @@ export default function SocialPanel() {
       />
       <SignInSocialButton
         iconSrc={microsoft}
-        onClick={() => alert('Sign in with Microsoft')}
+        onClick={() => alert('Sign in with Microsoft is coming soon!')}
       />
       <SignInSocialButton
         iconSrc={appleL}
-        onClick={() => alert('Sign in with Apple')}
+        onClick={() => alert('Sign in with Apple is coming soon!')}
       />
     </div>
   )
