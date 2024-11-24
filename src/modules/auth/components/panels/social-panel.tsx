@@ -1,13 +1,28 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import SignInSocialButton from '@/modules/auth/components/buttons/sign-in/sign-in-social-button'
+import appleD from '@/modules/auth/assets/icons/buttons/o-auth/dark/apple.svg'
 import appleL from '@/modules/auth/assets/icons/buttons/o-auth/light/apple.svg'
 import facebook from '@/modules/auth/assets/icons/buttons/o-auth/light/facebook.svg'
 import google from '@/modules/auth/assets/icons/buttons/o-auth/light/google.svg'
 import microsoft from '@/modules/auth/assets/icons/buttons/o-auth/light/microsoft.svg'
-import X from '@/modules/auth/assets/icons/buttons/o-auth/light/x.svg'
+import xD from '@/modules/auth/assets/icons/buttons/o-auth/dark/x.svg'
+import xL from '@/modules/auth/assets/icons/buttons/o-auth/light/x.svg'
 
 export default function SocialPanel() {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme')
+    if (storedTheme === 'dark') 
+      setIsDarkMode(true)
+     else if (storedTheme === 'light') 
+      setIsDarkMode(false)
+    else 
+      setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches)
+  }, [])
+
   return (
     <div className='flex items-center w-full h-fit justify-between'>
       <SignInSocialButton
@@ -19,7 +34,7 @@ export default function SocialPanel() {
         onClick={() => alert('Sign in with Microsoft is coming soon!')}
       />
       <SignInSocialButton
-        iconSrc={appleL}
+        iconSrc={isDarkMode ? appleD : appleL}
         onClick={() => alert('Sign in with Apple is coming soon!')}
       />
       <SignInSocialButton
@@ -27,7 +42,7 @@ export default function SocialPanel() {
         onClick={() => alert('Sign in with Facebook is coming soon!')}
       />
       <SignInSocialButton
-        iconSrc={X}
+        iconSrc={isDarkMode ? xD : xL}
         onClick={() => alert('Sign in with X is coming soon!')}
       />
     </div>
