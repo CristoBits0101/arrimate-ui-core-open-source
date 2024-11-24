@@ -10,15 +10,15 @@ export default function SocialPanel() {
     <div className='flex items-center w-full gap-x-5'>
       <SignInSocialButton
         iconSrc={google}
-        onClick={() => console.log('Sign in with Google')}
+        onClick={() => alert('Sign in with Google is coming soon!')}
       />
       <SignInSocialButton
         iconSrc={microsoft}
-        onClick={() => console.log('Sign in with GitHub')}
+        onClick={() => alert('Sign in with Microsoft')}
       />
       <SignInSocialButton
         iconSrc={appleL}
-        onClick={() => console.log('Sign in with Google')}
+        onClick={() => alert('Sign in with Apple')}
       />
     </div>
   )
