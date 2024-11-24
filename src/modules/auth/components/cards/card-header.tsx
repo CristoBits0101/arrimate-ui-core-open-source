@@ -4,7 +4,7 @@ import { ds } from '@/lib/fonts'
 export default function CardHeader() {
   return (
     <div className='w-full flex flex-col gap-y-3 items-center justify-center'>
-      <h1 className={cn('text-5xl dark:text-[#D4DBE2]', ds.className)}>
+      <h1 className={cn('text-5xl dark:text-[#f3f4f5]', ds.className)}>
         Arrímate
       </h1>
     </div>
