@@ -8,7 +8,7 @@ import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection
 export default function LanguagePanel() {
   const { changeLanguage } = useLanguageSection()
   return (
-    <section className='w-fit h-fit flex items-center justify-center gap-2 bg-transparent'>
+    <section className='w-fit h-fit flex items-center justify-center gap-1 bg-transparent'>
       <LanguageButton
         language='en'
         onClick={changeLanguage}
