@@ -17,7 +17,7 @@ export default function RedirectButton({
   return (
     <Button
       variant='link'
-      className='mx-auto font-normal w-full hover:no-underline text-[#1d0f0f] dark:text-[#f3f4f5]'
+      className='mx-auto font-normal w-full hover:no-underline text-[#1d0f0f] dark:text-[#ececed]'
       asChild
     >
       <Link className='text-base' href={href}>

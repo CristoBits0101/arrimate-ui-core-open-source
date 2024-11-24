@@ -24,7 +24,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} data-mode=''>
       <body
-        className={`${standard.className} grid sm:place-content-center sm:grid-cols-[100%] md:grid-cols-[20rem_1fr_20rem] min-h-screen max-h-fit h-auto min-w-80 w-full bg-[#ffffff] dark:bg-[#1B1A1F] text-[#1d0f0f] dark:text-[#ffffff] text-base`}
+        className={`${standard.className} grid sm:place-content-center sm:grid-cols-[100%] md:grid-cols-[20rem_1fr_20rem] min-h-screen max-h-fit h-auto min-w-80 w-full bg-[#ffffff] dark:bg-[#1B1A1F] text-[#1d0f0f] dark:text-[#ececed] text-base`}
       >
         <SessionProvider>
           <NextIntlClientProvider messages={messages}>
