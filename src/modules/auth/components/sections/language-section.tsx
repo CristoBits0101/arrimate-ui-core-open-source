@@ -5,7 +5,7 @@ import enIcon from '@/modules/configuration/assets/icons/buttons/languages/gb.sv
 import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.svg'
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'
 
-export default function LanguagePanel() {
+export default function LanguageSection() {
   const { locale, changeLanguage } = useLanguageSection()
 
   return (
