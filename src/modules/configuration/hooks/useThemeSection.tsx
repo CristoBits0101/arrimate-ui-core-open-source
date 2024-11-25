@@ -1,5 +1,6 @@
 'use client'
 
+import { PUBLIC_ROUTES } from '@/config/routes'
 import { useEffect, useState } from 'react'
 import { usePathname } from '@/i18n/routing'
 
@@ -32,7 +33,7 @@ const useThemeSection = () => {
       ? localStorage.removeItem('theme')
       : localStorage.setItem('theme', selectedTheme)
 
-    if (!['/sign-in', '/sign-up'].includes(path)) window.location.reload()
+    if (!PUBLIC_ROUTES.includes(path)) window.location.reload()
   }
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const useThemeSection = () => {
 
   return {
     theme,
-    changeTheme,
+    changeTheme
   }
 }
 
