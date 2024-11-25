@@ -15,12 +15,24 @@ export default function SocialPanel() {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme')
-    if (storedTheme === 'dark') 
-      setIsDarkMode(true)
-     else if (storedTheme === 'light') 
-      setIsDarkMode(false)
-    else 
-      setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches)
+    const defaultDark =
+      storedTheme === 'dark' ||
+      (!storedTheme &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    setIsDarkMode(defaultDark)
+
+    const handleThemeChange = (event: CustomEvent) => {
+      setIsDarkMode(event.detail === 'dark')
+    }
+
+    window.addEventListener('theme-change', handleThemeChange as EventListener)
+
+    return () => {
+      window.removeEventListener(
+        'theme-change',
+        handleThemeChange as EventListener
+      )
+    }
   }, [])
 
   return (

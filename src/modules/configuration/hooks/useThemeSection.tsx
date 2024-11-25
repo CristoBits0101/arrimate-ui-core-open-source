@@ -33,17 +33,20 @@ const useThemeSection = () => {
       ? localStorage.removeItem('theme')
       : localStorage.setItem('theme', selectedTheme)
 
+    applyTheme(selectedTheme)
+
+    window.dispatchEvent(
+      new CustomEvent('theme-change', { detail: selectedTheme })
+    )
+
     if (!PUBLIC_ROUTES.includes(path)) window.location.reload()
   }
 
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null
     setTheme(storedTheme || 'system')
+    applyTheme(storedTheme || 'system')
   }, [])
-
-  useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
 
   return {
     theme,
