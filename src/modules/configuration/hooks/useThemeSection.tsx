@@ -1,10 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from '@/i18n/routing'
 
 type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
+  const path = usePathname()
   const [theme, setTheme] = useState<Theme>('system')
 
   const applyTheme = (selectedTheme: Theme): void => {
@@ -29,7 +31,8 @@ const useThemeSection = () => {
     selectedTheme === 'system'
       ? localStorage.removeItem('theme')
       : localStorage.setItem('theme', selectedTheme)
-    window.location.reload()
+
+    if (!['/sign-in', '/sign-up'].includes(path)) window.location.reload()
   }
 
   useEffect(() => {
@@ -43,7 +46,7 @@ const useThemeSection = () => {
 
   return {
     theme,
-    changeTheme
+    changeTheme,
   }
 }
 
