@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import SignInSocialButton from '@/modules/auth/components/buttons/sign-in/sign-in-social-button'
 import appleD from '@/modules/auth/assets/icons/buttons/o-auth/dark/apple.svg'
 import appleL from '@/modules/auth/assets/icons/buttons/o-auth/light/apple.svg'
@@ -9,6 +8,7 @@ import google from '@/modules/auth/assets/icons/buttons/o-auth/light/google.svg'
 import microsoft from '@/modules/auth/assets/icons/buttons/o-auth/light/microsoft.svg'
 import xD from '@/modules/auth/assets/icons/buttons/o-auth/dark/x.svg'
 import xL from '@/modules/auth/assets/icons/buttons/o-auth/light/x.svg'
+import { useEffect, useState } from 'react'
 
 export default function SocialPanel() {
   const [isDarkMode, setIsDarkMode] = useState(false)
