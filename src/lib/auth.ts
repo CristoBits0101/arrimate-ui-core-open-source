@@ -16,7 +16,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     // Checks user existence and email verified before sign-in
     async signIn({ user }) {
-      if (!user.id) return false // Verificar que el ID exista
+      if (!user.id) return false
       const existingUser = await getUserById(user.id)
       if (!existingUser || !existingUser.emailVerified) return false
       return true
