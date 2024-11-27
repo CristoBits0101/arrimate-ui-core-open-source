@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs'
 import Credentials from 'next-auth/providers/credentials'
 import { getUserByEmail } from '@/modules/auth/data/user-data'
 import { SignInSchema } from '@/modules/auth/schemas/index'
-import type { NextAuthConfig } from 'next-auth'
+import type { NextAuthOptions } from 'next-auth'
 
 // Backend code
 export default {
@@ -30,4 +30,4 @@ export default {
       }
     })
   ]
-} satisfies NextAuthConfig
+} satisfies NextAuthOptions
