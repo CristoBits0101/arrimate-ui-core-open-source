@@ -1,20 +1,22 @@
 import { DefaultSession } from 'next-auth'
 
-// Extend the Session type to include user.role
+// Extend user.role to the Session type
 declare module 'next-auth' {
+  // Session data allowed 
   interface Session {
     user: {
-      role: 'ADMIN' | 'USER'
+      customField: string
       id: string
+      role: 'ADMIN' | 'USER'
     } & DefaultSession['user']
   }
-
+  // Roles allowed in users
   interface User {
     role: 'ADMIN' | 'USER'
   }
 }
 
-// Extend the JWT type to include role
+// Extend role to the JWT type
 declare module 'next-auth/jwt' {
   interface JWT {
     role?: 'ADMIN' | 'USER'
