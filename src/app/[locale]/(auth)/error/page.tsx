@@ -1,3 +1,5 @@
+import ErrorCard from '@/modules/auth/components/cards/error-card'
+
 export default function AuthErrorPage() {
-  return <div>page</div>
+  return <ErrorCard />
 }
