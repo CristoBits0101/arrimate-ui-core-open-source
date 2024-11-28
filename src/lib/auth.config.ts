@@ -12,7 +12,6 @@ import type { NextAuthOptions } from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 import Apple from 'next-auth/providers/apple'
 import Google from 'next-auth/providers/google'
-import Microsoft from 'next-auth/providers/azure-ad-b2c'
 
 // Backend code
 export default {
@@ -24,10 +23,6 @@ export default {
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    }),
-    Microsoft({
-      clientId: process.env.MICROSOFT_CLIENT_ID,
-      clientSecret: process.env.MICROSOFT_CLIENT_SECRET
     }),
     Credentials({
       // Verify login
