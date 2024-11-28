@@ -5,9 +5,18 @@ import appleD from '@/modules/auth/assets/icons/buttons/o-auth/dark/apple.svg'
 import appleL from '@/modules/auth/assets/icons/buttons/o-auth/light/apple.svg'
 import google from '@/modules/auth/assets/icons/buttons/o-auth/light/google.svg'
 import microsoft from '@/modules/auth/assets/icons/buttons/o-auth/light/microsoft.svg'
+import { signIn } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 
 export default function SocialPanel() {
+  // Try to log in with the selected provider
+  const onClick = (provider: 'apple' | 'google' | 'microsoft') => {
+    signIn(provider, {
+      callbackUrl: '/'
+    })
+  }
+
+  // Sets whether dark mode is active
   const [isDarkMode, setIsDarkMode] = useState(false)
 
   useEffect(() => {
@@ -34,17 +43,14 @@ export default function SocialPanel() {
 
   return (
     <div className='flex items-center w-full h-fit justify-evenly'>
-      <SignInSocialButton
-        iconSrc={google}
-        onClick={() => alert('Sign in with Google is coming soon!')}
-      />
+      <SignInSocialButton iconSrc={google} onClick={() => onClick('google')} />
       <SignInSocialButton
         iconSrc={microsoft}
-        onClick={() => alert('Sign in with Microsoft is coming soon!')}
+        onClick={() => onClick('microsoft')}
       />
       <SignInSocialButton
         iconSrc={isDarkMode ? appleD : appleL}
-        onClick={() => alert('Sign in with Apple is coming soon!')}
+        onClick={() => onClick('apple')}
       />
     </div>
   )

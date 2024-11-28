@@ -11,10 +11,8 @@ import type { NextAuthOptions } from 'next-auth'
 // Providers
 import Credentials from 'next-auth/providers/credentials'
 import Apple from 'next-auth/providers/apple'
-import Facebook from 'next-auth/providers/facebook'
 import Google from 'next-auth/providers/google'
-import Microsoft from 'next-auth/providers/microsoft-entra-id'
-import Twitter from 'next-auth/providers/twitter'
+import Microsoft from 'next-auth/providers/azure-ad-b2c'
 
 // Backend code
 export default {
@@ -23,10 +21,6 @@ export default {
       clientId: process.env.APPLE_CLIENT_ID,
       clientSecret: process.env.APPLE_CLIENT_SECRET
     }),
-    Facebook({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET
-    }),
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET
@@ -34,10 +28,6 @@ export default {
     Microsoft({
       clientId: process.env.MICROSOFT_CLIENT_ID,
       clientSecret: process.env.MICROSOFT_CLIENT_SECRET
-    }),
-    Twitter({
-      clientId: process.env.TWITTER_CLIENT_ID,
-      clientSecret: process.env.TWITTER_CLIENT_SECRET
     }),
     Credentials({
       // Verify login

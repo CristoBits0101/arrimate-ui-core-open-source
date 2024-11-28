@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@/modules/ui/button'
 import Image from 'next/image'
+import { Button } from '@/modules/ui/button'
 
 interface SignInButtonProps {
   iconSrc: string
