@@ -1,12 +1,29 @@
+// bcryptjs
 import bcrypt from 'bcryptjs'
-import Credentials from 'next-auth/providers/credentials'
+
+// modules/auth
 import { getUserByEmail } from '@/modules/auth/data/user-data'
 import { SignInSchema } from '@/modules/auth/schemas/index'
+
+// next-auth
 import type { NextAuthOptions } from 'next-auth'
+
+// Providers
+import Credentials from 'next-auth/providers/credentials'
+import Apple from 'next-auth/providers/apple'
+import Facebook from 'next-auth/providers/facebook'
+import Google from 'next-auth/providers/google'
+import Microsoft from 'next-auth/providers/microsoft-entra-id'
+import Twitter from 'next-auth/providers/twitter'
 
 // Backend code
 export default {
   providers: [
+    Apple,
+    Facebook,
+    Google,
+    Microsoft,
+    Twitter,
     Credentials({
       // Verify login
       async authorize(credentials) {
