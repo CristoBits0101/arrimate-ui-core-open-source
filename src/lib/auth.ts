@@ -16,7 +16,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: '/sign-in',
     error: '/auth/error',
     verifyRequest: '/auth/verify-request',
-    newUser: '/auth/new-user'
+    newUser: '/'
   },
   events: {
     async linkAccount({ user }) {
