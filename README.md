@@ -71,5 +71,7 @@
     Tailwind CSS:
       📦           Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
       📦          Generate both ➜ npx tailwindcss init -p
+    UUID:
+      📦                   UUID ➜ npm i uuid
     Zod:
       📦                    Zod ➜ npm install zod
