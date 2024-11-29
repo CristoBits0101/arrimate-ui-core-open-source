@@ -1,16 +1,18 @@
-import Header from '@/modules/auth/components/cards/card-header'
-import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
-import { Card, CardFooter, CardHeader } from '@/modules/ui/card'
+import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
 export default function ErrorCard() {
   return (
-    <Card className='w-96 shadow-sm'>
-      <CardHeader>
-        <Header />
-      </CardHeader>
-      <CardFooter>
-        <RedirectButton href='/sign-in' label='Back to' page='Sign In' />
-      </CardFooter>
-    </Card>
+    <CardWrapper
+      pageNameRedirect='Sign In'
+      redirectButtonLabel='Back to'
+      redirectButtonHref='/sign-in'
+    >
+      <div className='w-full flex items-center justify-center'>
+        <h2>Please try again in a moment.</h2>
+        <br />
+        <ExclamationTriangleIcon className='text-destructive' />
+      </div>
+    </CardWrapper>
   )
 }

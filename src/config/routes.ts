@@ -4,7 +4,9 @@ export const API_AUTH_ROUTE: string = '/api/auth'
 // Auth routes
 export const AUTH_ROUTES: string[] = [
   // error
-  'error',
+  '/error',
+  '/en/error',
+  '/es/error',
   // sign-in
   '/sign-in',
   '/en/sign-in',
@@ -20,7 +22,9 @@ export const DEFAULT_LOGIN_REDIRECT = '/'
 // Public routes
 export const PUBLIC_ROUTES: string[] = [
   // error
-  'error',
+  '/error',
+  '/en/error',
+  '/es/error',
   // sign-in
   '/sign-in',
   '/en/sign-in',
