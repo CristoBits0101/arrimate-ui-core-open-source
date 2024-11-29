@@ -1,17 +1,22 @@
 'use server'
 
-// Prisma client
-import { db } from '@/lib/db'
-
 // Bcrypt
 import bcrypt from 'bcrypt'
+
+// Lib
+import { generateVerificationToken } from '@/lib/token'
+
+// Prisma client
+import { db } from '@/lib/db'
 
 // Zod
 import * as z from 'zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 // The data that the user's schema received is saved in value
-export default async function SignUpAction(values: z.infer<typeof SignUpSchema>) {
+export default async function SignUpAction(
+  values: z.infer<typeof SignUpSchema>
+) {
   /**
    * Data validation
    */
@@ -46,8 +51,12 @@ export default async function SignUpAction(values: z.infer<typeof SignUpSchema>)
         password: hashedPassword
       }
     })
+
+    const verificationToken = await generateVerificationToken(email)
+    // TODO: Send verification token email
+
     // Returns an success object
-    return { success: 'Registration completed!' }
+    return { success: 'Confirmation email sent!' }
   } catch (error) {
     // Returns an error object
     return { error: 'Registration failed. Please try again.' }

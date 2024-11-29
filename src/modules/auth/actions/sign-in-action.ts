@@ -2,14 +2,37 @@
 
 import * as z from 'zod'
 import { AuthError } from 'next-auth'
+import { generateVerificationToken } from '@/lib/token'
 import { signIn } from '@/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
+import { getUserByEmail } from '../data/user-data'
 
-export default async function SignInAction(values: z.infer<typeof SignInSchema>) {
+export default async function SignInAction(
+  values: z.infer<typeof SignInSchema>
+) {
   const validatedFields = SignInSchema.safeParse(values)
+
+  //
   if (!validatedFields.success)
     return { error: 'Invalid email or password format!' }
+
+  //
   const { email, password } = validatedFields.data
+  const existingUser = await getUserByEmail(email)
+
+  //
+  if (!existingUser || !existingUser.email || !existingUser.password)
+    return { error: 'Email does not exist!' }
+
+  //
+  if (!existingUser.emailVerified) {
+    const verificationToken = await generateVerificationToken(
+      existingUser.email
+    )
+    return { success: 'Confirmation email sent!' }
+  }
+
+  //
   try {
     await signIn('credentials', {
       email,

@@ -29,33 +29,61 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   // Configure what user data is returned
   callbacks: {
     // Checks user existence and email verified before sign-in
-    async signIn({ user }) {
+    async signIn({ user, account }) {
+      // Allow OAuth without email verification
+      if (account?.provider !== 'credentials') return true
+
+      //
       if (!user.id) return false
       const existingUser = await getUserById(user.id)
-      if (!existingUser || !existingUser.emailVerified) return false
+
+      // Prevent sign in without email verification
+      if (!existingUser?.emailVerified) return false
+
+      // TODO: Add 2FA check
+
+      // 
       return true
     },
+
     // Adds user ID and role to the session
     async session({ token, session }) {
+      //
       if (token.sub && session.user) session.user.id = token.sub
+
+      //
       if (token.role && session.user)
         session.user.role = token.role as 'ADMIN' | 'USER'
+
+      //
       return session
     },
+
     // Adds user role to the JWT token
     async jwt({ token }) {
+      //
       if (!token.sub) return token
+
+      //
       const userId = token.sub
       const existingUser = await getUserById(userId)
+
+      //
       if (!existingUser) return token
+
+      //
       token.role = existingUser.role as 'ADMIN' | 'USER'
+
+      //
       return token
     }
   },
   // Configures Prisma adapter for database connection with NextAuth
   adapter: PrismaAdapter(db),
+
   // Uses JSON Web Tokens (JWT) for session management
   session: { strategy: 'jwt' },
+
   // Adds custom settings to authentication configurations
   ...authConfig
 })
