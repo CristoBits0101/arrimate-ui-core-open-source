@@ -34,7 +34,8 @@
     },
     "signInForm": {
       "pageNameRedirect": "Regístrate",
-      "redirectButtonLabel": "¿No tienes una cuenta?"
+      "redirectButtonLabel": "¿No tienes una cuenta?",
+      "forgotPassword": "¿Has olvidado tu contraseña?"
     },
     "signUpForm": {
       "pageNameRedirect": "Entrar",

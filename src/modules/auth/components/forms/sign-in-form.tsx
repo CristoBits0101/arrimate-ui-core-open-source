@@ -93,6 +93,7 @@ export default function SignInForm() {
       redirectButtonLabel={f('signInForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
       showSocial={true}
+      showForgotPassword={true}
     >
       <FormProvider {...form}>
         <Form {...form}>

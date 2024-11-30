@@ -42,7 +42,7 @@ export default function SocialPanel() {
   }, [])
 
   return (
-    <div className='flex items-center w-full h-fit justify-evenly'>
+    <div className='flex items-center w-full h-fit justify-evenly space-x-5'>
       <SignInSocialButton iconSrc={google} onClick={() => onClick('google')} />
       <SignInSocialButton
         iconSrc={microsoft}

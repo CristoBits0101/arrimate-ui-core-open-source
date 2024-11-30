@@ -5,8 +5,8 @@ import { Button } from '@/modules/ui/button'
 
 interface RedirectButtonProps {
   href: string
-  label: string
-  page: string
+  label?: string
+  page?: string
 }
 
 export default function RedirectButton({
