@@ -2,8 +2,24 @@
 
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 import { BeatLoader } from 'react-spinners'
+import { useCallback, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 export default function NewVerificationForm() {
+  // Get the token from the path parameters
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token')
+
+  //
+  const onSubmit = useCallback(() => {
+    console.log(token)
+  }, [token])
+
+  // 
+  useEffect(() => {
+    onSubmit()
+  }, [onSubmit])
+
   return (
     <CardWrapper
       pageNameRedirect='Sign In'
