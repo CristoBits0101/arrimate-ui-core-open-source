@@ -66,6 +66,8 @@
       📦            React-icons ➜ npm install react-icons --save
     Resend:
       📦                 Resend ➜ npm install resend
+    React Spinners: 
+      📦         react-spinners ➜ npm i react-spinners
     Shadcn UI:
       📦              Shadcn/UI ➜ npx shadcn@latest init
     Swiper:

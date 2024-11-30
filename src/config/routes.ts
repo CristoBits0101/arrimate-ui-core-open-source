@@ -15,10 +15,10 @@ export const AUTH_ROUTES: string[] = [
   '/sign-up',
   '/en/sign-up',
   '/es/sign-in',
-  // Verify
+  // new-verification
   '/verification',
-  '/en/verification',
-  '/es/verification'
+  '/en/new-verification',
+  '/es/new-verification'
 ]
 
 export const DEFAULT_LOGIN_REDIRECT = '/'
@@ -37,8 +37,8 @@ export const PUBLIC_ROUTES: string[] = [
   '/sign-up',
   '/en/sign-up',
   '/es/sign-up',
-  // Verify
-  '/verification',
+  // new-verification
+  '/new-verification',
   '/en/new-verification',
   '/es/new-verification'
 ]
