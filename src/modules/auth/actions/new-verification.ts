@@ -7,7 +7,7 @@ import { getVerificationTokenByToken } from '@/modules/auth/data/verification-to
 // Lib
 import { db } from '@/lib/db'
 
-const newVerification = async (token: string) => {
+export default async function newVerification(token: string) {
   // We check if the token exists
   const existingToken = await getVerificationTokenByToken(token)
 
@@ -40,5 +40,3 @@ const newVerification = async (token: string) => {
   // Return a success message if verified correctly
   return { success: 'Email verified!' }
 }
-
-export default newVerification
