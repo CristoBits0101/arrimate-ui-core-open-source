@@ -3,6 +3,7 @@
 import * as z from 'zod'
 import { AuthError } from 'next-auth'
 import { generateVerificationToken } from '@/lib/token'
+import { sendVerificationEmail } from '@/lib/mail'
 import { signIn } from '@/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
 import { getUserByEmail } from '../data/user-data'
@@ -28,6 +29,10 @@ export default async function SignInAction(
   if (!existingUser.emailVerified) {
     const verificationToken = await generateVerificationToken(
       existingUser.email
+    )
+    await sendVerificationEmail(
+      verificationToken.email,
+      verificationToken.token
     )
     return { success: 'Confirmation email sent!' }
   }
