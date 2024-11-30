@@ -6,6 +6,9 @@ import bcrypt from 'bcrypt'
 // Lib
 import { generateVerificationToken } from '@/lib/token'
 
+// Mail
+import { sendVerificationEmail } from '@/lib/mail'
+
 // Prisma client
 import { db } from '@/lib/db'
 
@@ -52,8 +55,12 @@ export default async function SignUpAction(
       }
     })
 
+    // Send verification email
     const verificationToken = await generateVerificationToken(email)
-    // TODO: Send verification token email
+    await sendVerificationEmail(
+      verificationToken.email,
+      verificationToken.token
+    )
 
     // Returns an success object
     return { success: 'Confirmation email sent!' }

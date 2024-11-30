@@ -64,6 +64,8 @@
       📦        React-hook-form ➜ npm install react-hook-form
     React Icons:
       📦            React-icons ➜ npm install react-icons --save
+    Resend:
+      📦                 Resend ➜ npm install resend
     Shadcn UI:
       📦              Shadcn/UI ➜ npx shadcn@latest init
     Swiper:
