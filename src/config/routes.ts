@@ -7,6 +7,10 @@ export const AUTH_ROUTES: string[] = [
   '/error',
   '/en/error',
   '/es/error',
+  // reset-password
+  '/reset-password',
+  '/en/reset-password',
+  '/es/reset-password',
   // sign-in
   '/sign-in',
   '/en/sign-in',
@@ -29,6 +33,10 @@ export const PUBLIC_ROUTES: string[] = [
   '/error',
   '/en/error',
   '/es/error',
+  // reset-password
+  '/reset-password',
+  '/en/reset-password',
+  '/es/reset-password',
   // sign-in
   '/sign-in',
   '/en/sign-in',
