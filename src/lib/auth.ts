@@ -14,7 +14,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter'
 export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     signIn: '/sign-in',
-    error: '/error',
+    error: '/unauthorized-access',
     verifyRequest: '/auth/verify-request',
     newUser: '/'
   },

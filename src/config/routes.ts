@@ -3,10 +3,10 @@ export const API_AUTH_ROUTE: string = '/api/auth'
 
 // Auth routes
 export const AUTH_ROUTES: string[] = [
-  // error
-  '/error',
-  '/en/error',
-  '/es/error',
+  // unauthorized-access
+  '/unauthorized-access',
+  '/en/unauthorized-access',
+  '/es/unauthorized-access',
   // reset-password
   '/reset-password',
   '/en/reset-password',
@@ -29,10 +29,10 @@ export const DEFAULT_LOGIN_REDIRECT = '/'
 
 // Public routes
 export const PUBLIC_ROUTES: string[] = [
-  // error
-  '/error',
-  '/en/error',
-  '/es/error',
+  // unauthorized-access
+  '/unauthorized-access',
+  '/en/unauthorized-access',
+  '/es/unauthorized-access',
   // reset-password
   '/reset-password',
   '/en/reset-password',
