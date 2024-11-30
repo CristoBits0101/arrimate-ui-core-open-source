@@ -10,7 +10,7 @@ export default function NewVerificationForm() {
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
 
-  //
+  // 
   const onSubmit = useCallback(() => {
     console.log(token)
   }, [token])
