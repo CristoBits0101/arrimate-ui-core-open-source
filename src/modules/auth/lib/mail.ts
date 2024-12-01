@@ -6,27 +6,25 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export const sendVerificationEmail = async (email: string, token: string, emailMessage: string) => {
   try {
-    // Verification link
+    // Verification link data
+    const companyEmail = 'arrimate.team@gmail.com'
     const confirmLink = `http://localhost:3000/new-verification?token=${token}`
+    const messageLink = `<p>Click <a href='${confirmLink}'>here</a> to confirm your registration.</p>`
 
     // Message sent to user
     await resend.emails.send({
-      from: 'arrimate.team@gmail.com',
+      from: companyEmail,
       to: email,
       subject: emailMessage,
-      html: `<p>Click <a href='${confirmLink}'>here</a> to confirm your registration.</p>`
+      html: messageLink
     })
   } catch (error) {
-    //
     if (error instanceof Error) {
-      console.error(`Failed to send verification email to ${email}: `, error)
-      throw new Error(`Email sending failed: ${error.message}`)
+      console.error(`Error sending email to ${email}:`, error.message)
+      throw new Error('Failed to send verification email. Please try again later.')
     } else {
-      console.error(
-        `Unknown error while sending verification email to ${email}: `,
-        error
-      )
-      throw new Error('Email sending failed due to an unknown error')
+      console.error(`Unexpected error for ${email}:`, error)
+      throw new Error('Unexpected error occurred while sending the email.')
     }
   }
 }
