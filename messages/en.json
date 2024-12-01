@@ -25,6 +25,9 @@
     "emojiTwo": "💡"
   },
   "Forms": {
+    "errors": {
+      
+    },
     "inputs": {
       "name": "Name",
       "username": "Username",
