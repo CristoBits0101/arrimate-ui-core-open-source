@@ -42,8 +42,8 @@ export default function HomePanel({
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            profesion={randomUtils.getRandomProfesion()}
-            intereses={randomUtils.getRandomIntereses()}
+            profesion={randomUtils.getRandomProfession()}
+            intereses={randomUtils.getRandomInterests()}
             slogan={randomUtils.getRandomSlogan()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}
@@ -70,8 +70,8 @@ export default function HomePanel({
             height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
-            profesion={randomUtils.getRandomProfesion()}
-            intereses={randomUtils.getRandomIntereses()}
+            profesion={randomUtils.getRandomProfession()}
+            intereses={randomUtils.getRandomInterests()}
             slogan={randomUtils.getRandomSlogan()}
             trending={randomUtils.getRandomBoolean()}
             followers={randomUtils.getRandomFollowers()}

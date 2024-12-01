@@ -1,10 +1,17 @@
+// Random test data
 export const randomUtils = {
+  // Likes
   getRandomLikes: () => Math.floor(Math.random() * (100000 - 1 + 1)) + 10,
+  // Interactions
   getRandomInteractions: () => Math.floor(Math.random() * (5000 - 1 + 1)) + 1,
+  // Page number
   getRandomPage: () => Math.floor(Math.random() * 5) + 1,
+  // True or False
   getRandomBoolean: () => Math.random() < 0.5,
+  // Followers
   getRandomFollowers: () =>
     Math.floor(Math.random() * (2000000 - 500 + 1)) + 500,
+  // Time
   getRandomTime: () => {
     const minutesInHour = 60
     const minutesInDay = minutesInHour * 24
@@ -25,6 +32,7 @@ export const randomUtils = {
       return `${Math.round(randomMinutes / minutesInWeek)} weeks`
     }
   },
+  // Capital
   getRandomCapital: () => {
     const capitals = [
       'Washington D.C',
@@ -51,8 +59,9 @@ export const randomUtils = {
     const randomIndex = Math.floor(Math.random() * capitals.length)
     return capitals[randomIndex]
   },
-  getRandomProfesion: () => {
-    const profesiones = [
+  // Professions
+  getRandomProfession: () => {
+    const Professions = [
       'Frontend Developer',
       'Social Media Expert',
       'Pro Gamer',
@@ -97,10 +106,11 @@ export const randomUtils = {
       'Fitness Influencer',
       'Financial Analyst'
     ]
-    return profesiones[Math.floor(Math.random() * profesiones.length)]
+    return Professions[Math.floor(Math.random() * Professions.length)]
   },
-  getRandomIntereses: () => {
-    const intereses = [
+  // Interests
+  getRandomInterests: () => {
+    const Interests = [
       'React & Next.js',
       'Strategy & Engagement',
       'FPS & Strategy',
@@ -145,8 +155,9 @@ export const randomUtils = {
       'Workouts & Motivation',
       'Trends & Forecasting'
     ]
-    return intereses[Math.floor(Math.random() * intereses.length)]
+    return Interests[Math.floor(Math.random() * Interests.length)]
   },
+  // Slogans
   getRandomSlogan: () => {
     const slogans = [
       'Crafting Sleek Applications',
@@ -195,6 +206,7 @@ export const randomUtils = {
     ]
     return slogans[Math.floor(Math.random() * slogans.length)]
   },
+  // Hashtag
   getRandomHashtag: () => {
     const popularHashtags = [
       'love',
@@ -300,6 +312,7 @@ export const randomUtils = {
     ]
     return popularHashtags[Math.floor(Math.random() * popularHashtags.length)]
   },
+  // Descriptions
   getRandomImageDescription: () => {
     const intros = [
       'Check out this amazing capture, a beautiful moment to enjoy and share.',
@@ -365,6 +378,7 @@ export const randomUtils = {
       hashtags: hashtags
     }
   },
+  // Countries
   getRandomCountryCode: () => {
     const countryCodes = [
       'US',

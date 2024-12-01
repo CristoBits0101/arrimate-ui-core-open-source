@@ -52,8 +52,8 @@ export default function ShowPostImages() {
             <header className='col-span-1 row-span-1 w-full h-fit flex flex-col gap-4'>
               <ArrimateImagesCard
                 nickname={photo.photographer}
-                profesion={randomUtils.getRandomProfesion()}
-                intereses={randomUtils.getRandomIntereses()}
+                profesion={randomUtils.getRandomProfession()}
+                intereses={randomUtils.getRandomInterests()}
                 slogan={randomUtils.getRandomSlogan()}
                 date={randomUtils.getRandomTime()}
                 location={randomUtils.getRandomCapital()}
