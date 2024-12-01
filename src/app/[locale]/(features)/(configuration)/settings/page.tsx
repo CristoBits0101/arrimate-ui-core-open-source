@@ -1,5 +1,6 @@
 // import { auth } from '@/lib/auth'
 
+// Settings page
 const SettingsPage = async () => {
   // const session = await auth()
 
