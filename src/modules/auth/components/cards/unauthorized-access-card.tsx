@@ -19,8 +19,9 @@ export default function UnauthorizedAccessCard() {
       pageNameRedirect={t('unauthorizedAccessCard.pageNameRedirect')}
       redirectButtonLabel={t('unauthorizedAccessCard.redirectButtonLabel')}
       redirectButtonHref='/sign-in'
+      showDividingLine={true}
     >
-      <div className='w-full flex flex-col items-center justify-center'>
+      <div className='w-full flex flex-col items-center justify-center gap-2'>
         <h2>{t('unauthorizedAccessCard.title')}</h2>
         <ExclamationTriangleIcon className='text-destructive' />
       </div>

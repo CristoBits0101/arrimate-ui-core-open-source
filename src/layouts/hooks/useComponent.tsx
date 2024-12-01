@@ -1,7 +1,12 @@
+// next-intl
+import { useLocale, useTranslations } from 'next-intl'
+
+// next/navigation
+import { usePathname } from 'next/navigation'
+
+// panels
 import HomePanel from '@/modules/feeds/components/panels/home-panel'
 import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
-import { useLocale, useTranslations } from 'next-intl'
-import { usePathname } from 'next/navigation'
 
 export function usePageComponent() {
   // Get translations
