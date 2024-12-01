@@ -2,9 +2,9 @@
 
 import * as z from 'zod'
 import { AuthError } from 'next-auth'
-import { generateVerificationToken } from '@/lib/token'
+import { generateVerificationToken } from '@/modules/auth/data/token'
 import { sendVerificationEmail } from '@/lib/mail'
-import { signIn } from '@/lib/auth'
+import { signIn } from '@/modules/auth/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
 import { getUserByEmail } from '../data/user-data'
 

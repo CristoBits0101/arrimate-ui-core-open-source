@@ -5,7 +5,7 @@ import { db } from '@/lib/db'
 import { getUserById } from '@/modules/auth/data/user-data'
 
 // next-auth
-import authConfig from '@/lib/auth.config'
+import authConfig from '@/modules/auth/lib/auth.config'
 import NextAuth from 'next-auth'
 
 // Prisma

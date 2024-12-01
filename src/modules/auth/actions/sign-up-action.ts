@@ -4,7 +4,7 @@
 import bcrypt from 'bcrypt'
 
 // Lib
-import { generateVerificationToken } from '@/lib/token'
+import { generateVerificationToken } from '@/modules/auth/data/token'
 
 // Mail
 import { sendVerificationEmail } from '@/lib/mail'
