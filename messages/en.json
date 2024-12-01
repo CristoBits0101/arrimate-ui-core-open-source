@@ -18,12 +18,6 @@
     "unfollow": "Unfollow",
     "unlike": "Unlike"
   },
-  "HomePanel": {
-    "title": "HIGHLIGHTS",
-    "emoji": "🏆",
-    "titleTwo": "SUGGESTIONS",
-    "emojiTwo": "💡"
-  },
   "Forms": {
     "errors": {
       
@@ -50,6 +44,15 @@
       "pageNameRedirect": "Sign In",
       "redirectButtonLabel": "Already have an account?"
     }
+  },
+  "HomePanel": {
+    "title": "HIGHLIGHTS",
+    "emoji": "🏆",
+    "titleTwo": "SUGGESTIONS",
+    "emojiTwo": "💡"
+  },
+  "Mail": {
+    "subject": "Confirm your registration on Arrímate"
   },
   "SidebarLayout": {
     "home": "Home",

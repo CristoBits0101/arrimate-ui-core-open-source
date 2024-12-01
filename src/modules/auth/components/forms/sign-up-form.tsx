@@ -37,8 +37,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 export default function SignUpForm() {
-  const t = useTranslations('Button')
   const f = useTranslations('Forms')
+  const m = useTranslations('Mail.subject')
+  const subject = m('subject')
+  const b = useTranslations('Button')
   const locale = useLocale()
 
   // Receive messages indicating the outcome of the form submission
@@ -69,7 +71,7 @@ export default function SignUpForm() {
     // Send the form data to the server asynchronously
     startTransition(() => {
       // Calls the SignUp action with the submitted form values
-      SignUpAction(values)
+      SignUpAction(values, subject ?? 'Confirm your registration on Arrímate')
         .then((data) => {
           // Set the error message if the server returns one
           setError(data.error)
@@ -106,7 +108,7 @@ export default function SignUpForm() {
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
-            <SubmitButton message={t('SignUp')} isPending={isPending} />
+            <SubmitButton message={b('SignUp')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

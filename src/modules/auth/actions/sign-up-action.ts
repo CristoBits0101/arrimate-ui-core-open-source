@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt'
 import { generateVerificationToken } from '@/modules/auth/data/token'
 
 // Mail
-import { sendVerificationEmail } from '@/lib/mail'
+import { sendVerificationEmail } from '@/modules/auth/lib/mail'
 
 // Prisma client
 import { db } from '@/lib/db'
@@ -18,7 +18,8 @@ import { SignUpSchema } from '@/modules/auth/schemas'
 
 // The data that the user's schema received is saved in value
 export default async function SignUpAction(
-  values: z.infer<typeof SignUpSchema>
+  values: z.infer<typeof SignUpSchema>,
+  emailMessage: string
 ) {
   /**
    * Data validation
@@ -68,7 +69,8 @@ export default async function SignUpAction(
     const verificationToken = await generateVerificationToken(email)
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
+      emailMessage
     )
 
     // Returns an success object
