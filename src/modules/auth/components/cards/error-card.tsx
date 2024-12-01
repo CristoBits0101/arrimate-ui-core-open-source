@@ -1,7 +1,7 @@
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
-export default function ErrorCard() {
+export default function UnauthorizedAccessCard() {
   return (
     <CardWrapper
       pageNameRedirect='Sign In'
