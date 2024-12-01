@@ -13,20 +13,30 @@ export default async function newVerification(token: string, locale: string) {
 
   // Return an error if the token does not exist
   if (!existingToken)
-    return { error: locale === 'en' ? 'Token does not exist!' : '¡El token no existe!' }
+    return {
+      error: locale === 'en' ? 'Token does not exist!' : '¡El token no existe!'
+    }
 
   // We check if the token expired
   const hasExpired = new Date(existingToken.expiresAt) < new Date()
 
   // Return an error if the token expired
-  if (hasExpired) return { error: locale === 'en' ? 'Token has expired!' : '¡El token ha expirado!' }
+  if (hasExpired)
+    return {
+      error: locale === 'en' ? 'Token has expired!' : '¡El token ha expirado!'
+    }
 
   // We check if the user exists
   const existingUser = await getUserByEmail(existingToken.email)
 
   // Return an error if the user does not exist
   if (!existingUser)
-    return { error: locale === 'en' ? 'Email does not exist!' : '¡El correo electrónico no existe!' }
+    return {
+      error:
+        locale === 'en'
+          ? 'Email does not exist!'
+          : '¡El correo electrónico no existe!'
+    }
 
   // Update the user profile
   await db.user.update({
@@ -40,5 +50,8 @@ export default async function newVerification(token: string, locale: string) {
   })
 
   // Return a success message if verified correctly
-  return { success: locale === 'en' ? 'Email verified!' : '¡Correo electrónico verificado!' }
+  return {
+    success:
+      locale === 'en' ? 'Email verified!' : '¡Correo electrónico verificado!'
+  }
 }
