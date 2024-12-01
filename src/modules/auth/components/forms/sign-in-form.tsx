@@ -94,6 +94,7 @@ export default function SignInForm() {
       redirectButtonHref={`/${locale}/sign-up`}
       showSocial={true}
       showForgotPassword={true}
+      showDividingLine={true}
     >
       <FormProvider {...form}>
         <Form {...form}>

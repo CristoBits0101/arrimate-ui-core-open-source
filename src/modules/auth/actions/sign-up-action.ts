@@ -28,10 +28,19 @@ export default async function SignUpAction(
   // Returns an error object
   if (!validatedFields.success) return { error: 'Invalid data!' }
 
-  /**
-   * Check existence
-   */
+  // Extract fields
   const { name, email, password } = validatedFields.data
+
+  // Check password and email match
+  if (email.toLocaleLowerCase().trim() === password.toLocaleLowerCase().trim())
+    return { error: 'Password cannot match email!' }
+
+  // Regex for special characters
+  const specialCharsRegex = /^[a-zA-Z\u00C0-\u024F\u0400-\u04FF\s]+$/
+
+  // Check for special characters in the name
+  if (!specialCharsRegex.test(name))
+    return { error: 'Name cannot contain special characters!' }
 
   const existingUser = await db.user.findUnique({
     where: {
