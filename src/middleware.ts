@@ -42,6 +42,7 @@ export default auth((request) => {
   // Apply language
   const response = intlMiddleware(request)
 
+  // Return path
   return response
 })
 
