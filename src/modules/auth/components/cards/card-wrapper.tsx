@@ -42,9 +42,9 @@ export default function CardWrapper({
           <RedirectButton href='/reset-password' label={t('signInForm.forgotPassword')} />
         )}
         <div className='w-full flex justify-center items-center space-x-4 font-light'>
-          <p className='text-[#EBEAEB]'>━━━━━━━</p>
-          <p className='text-[#767576]'>O</p>
-          <p className='text-[#EBEAEB]'>━━━━━━━</p>
+          <p className='text-[#EBEAEB] dark:text-[#3b3b40]'>━━━━━━━</p>
+          <p className='text-[#767576] dark:text-[#848489]'>O</p>
+          <p className='text-[#EBEAEB] dark:text-[#3b3b40]'>━━━━━━━</p>
         </div>
         <RedirectButton
           href={redirectButtonHref}
