@@ -15,7 +15,7 @@ export const sendVerificationEmail = async (
     const confirmLink = `http://localhost:3000/new-verification?token=${token}`
 
     // Verification link message
-    const word = 'Confirm';
+    const word = 'registration';
     const messageLink = emailMessage.includes(word)
       ? `<p>Click <a href='${confirmLink}'>here</a> to confirm your registration.</p>`
       : `<p>Hacer clic <a href='${confirmLink}'>aquí</a> para confirmar el registro.</p>`
