@@ -2,7 +2,7 @@
     Auth:
       🚧        Change Password ➜ 
       🚧     Email Verification ➜ 
-      🚧            OAuth Login ➜ 
+      ✅            OAuth Login ➜ Auth.js + Prisma + Providers + Neon
       🚧       Recover Password ➜ 
       ✅                Sign In ➜ Auth.js + Prisma + Zod + Neon
       ✅               Sign Out ➜ Auth.js
@@ -64,6 +64,10 @@
       📦        React-hook-form ➜ npm install react-hook-form
     React Icons:
       📦            React-icons ➜ npm install react-icons --save
+    Resend:
+      📦                 Resend ➜ npm install resend
+    React Spinners: 
+      📦         react-spinners ➜ npm i react-spinners
     Shadcn UI:
       📦              Shadcn/UI ➜ npx shadcn@latest init
     Swiper:
@@ -71,5 +75,8 @@
     Tailwind CSS:
       📦           Tailwind CSS ➜ npm install -D tailwindcss postcss autoprefixer
       📦          Generate both ➜ npx tailwindcss init -p
+    UUID:
+      📦                   UUID ➜ npm i uuid
+      📦             UUID types ➜ npm i --save-dev @types/uuid
     Zod:
       📦                    Zod ➜ npm install zod

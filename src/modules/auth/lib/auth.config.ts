@@ -1,12 +1,29 @@
+// bcryptjs
 import bcrypt from 'bcryptjs'
-import Credentials from 'next-auth/providers/credentials'
+
+// modules/auth
 import { getUserByEmail } from '@/modules/auth/data/user-data'
 import { SignInSchema } from '@/modules/auth/schemas/index'
-import type { NextAuthConfig } from 'next-auth'
+
+// next-auth
+import type { NextAuthOptions } from 'next-auth'
+
+// Providers
+import Credentials from 'next-auth/providers/credentials'
+import Apple from 'next-auth/providers/apple'
+import Google from 'next-auth/providers/google'
 
 // Backend code
 export default {
   providers: [
+    Apple({
+      clientId: process.env.APPLE_CLIENT_ID,
+      clientSecret: process.env.APPLE_CLIENT_SECRET
+    }),
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    }),
     Credentials({
       // Verify login
       async authorize(credentials) {
@@ -30,4 +47,4 @@ export default {
       }
     })
   ]
-} satisfies NextAuthConfig
+} satisfies NextAuthOptions

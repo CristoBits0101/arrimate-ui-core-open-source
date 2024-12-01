@@ -1,6 +1,6 @@
 'use server'
 
-import { signOut } from '@/lib/auth'
+import { signOut } from '@/modules/auth/lib/auth'
 
 export default async function signOutAction() {
   try {
