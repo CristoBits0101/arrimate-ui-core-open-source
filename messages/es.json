@@ -33,6 +33,10 @@
       "pageSignUpRedirect": "Volver",
       "redirectButtonLabel": "👉"
     },
+    "resetPasswordForm": {
+      "forgotPassword": "¿Has olvidado tu contraseña?",
+      "redirectButtonLabel": "Forgot"
+    },
     "signInForm": {
       "forgotPassword": "¿Has olvidado tu contraseña?",
       "pageNameRedirect": "Regístrate",
