@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates logic to interact with the backend
-import SignUpAction from '@/modules/auth/actions/sign-up-action'
+import signUpAction from '@/modules/auth/actions/sign-up-action'
 
 // Alerts: Show error or success messages to the user
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -71,7 +71,7 @@ export default function SignUpForm() {
     // Send the form data to the server asynchronously
     startTransition(() => {
       // Calls the SignUp action with the submitted form values
-      SignUpAction(values, subject ?? 'Confirm your registration on Arrímate')
+      signUpAction(values, subject ?? 'Confirm your registration on Arrímate')
         .then((data) => {
           // Set the error message if the server returns one
           setError(data.error)

@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignInAction from '@/modules/auth/actions/sign-in-action'
+import signInAction from '@/modules/auth/actions/sign-in-action'
 
 // Alerts
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -72,7 +72,7 @@ export default function SignInForm() {
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      SignInAction(values, subject ?? 'Confirm your registration on Arrímate')
+      signInAction(values, subject ?? 'Confirm your registration on Arrímate')
         .then((data) => {
           setError(data?.error)
           setSuccess(data?.success)

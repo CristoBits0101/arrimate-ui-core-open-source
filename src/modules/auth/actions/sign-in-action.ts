@@ -8,7 +8,7 @@ import { signIn } from '@/modules/auth/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
 import { getUserByEmail } from '../data/user-data'
 
-export default async function SignInAction(
+export default async function signInAction(
   values: z.infer<typeof SignInSchema>,
   emailMessage: string
 ) {
@@ -18,7 +18,7 @@ export default async function SignInAction(
   if (!validatedFields.success)
     return { error: 'Invalid email or password format!' }
 
-  //
+   // Extract fields
   const { email, password } = validatedFields.data
   const existingUser = await getUserByEmail(email)
 

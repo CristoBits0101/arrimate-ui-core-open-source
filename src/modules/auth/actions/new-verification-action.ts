@@ -7,7 +7,7 @@ import { getVerificationTokenByToken } from '@/modules/auth/data/verification-to
 // Lib
 import { db } from '@/lib/db'
 
-export default async function newVerification(token: string, locale: string) {
+export default async function newVerificationAction(token: string, locale: string) {
   // We check if the token exists
   const existingToken = await getVerificationTokenByToken(token)
 

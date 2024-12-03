@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignInAction from '@/modules/auth/actions/sign-in-action'
+import resetPasswordAction from '@/modules/auth/actions/reset-password-action'
 
 // Alerts
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -15,13 +15,9 @@ import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // Inputs
 import EmailInput from '@/modules/auth/components/inputs/email-input'
-import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
 // Intl
 import { useLocale, useTranslations } from 'next-intl'
-
-// Navigation
-import { useSearchParams } from 'next/navigation'
 
 // React
 import React from 'react'
@@ -34,7 +30,7 @@ import { Form } from '@/modules/ui/form'
 // Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { SignInSchema } from '@/modules/auth/schemas'
+import { ResetPasswordSchema } from '@/modules/auth/schemas'
 
 export default function ResetPasswordForm() {
   // States
@@ -44,33 +40,26 @@ export default function ResetPasswordForm() {
 
   // Navigation
   const locale = useLocale()
-  const searchParams = useSearchParams()
-  const urlError =
-    searchParams.get('error') === 'OAuthAccountNotLinked'
-      ? 'Email in use.'
-      : ''
 
   // Translations
-  const t = useTranslations('Button')
   const f = useTranslations('Forms')
 
   // Initializes the form and manages its state when rendering
-  const form = useForm<z.infer<typeof SignInSchema>>({
-    resolver: zodResolver(SignInSchema),
+  const form = useForm<z.infer<typeof ResetPasswordSchema>>({
+    resolver: zodResolver(ResetPasswordSchema),
     mode: 'onSubmit',
     defaultValues: {
-      email: '',
-      password: ''
+      email: ''
     }
   })
 
-  const onSubmit = (values: z.infer<typeof SignInSchema>) => {
+  const onSubmit = (values: z.infer<typeof ResetPasswordSchema>) => {
     // Reset values
     setError('')
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      SignInAction(values)
+      resetPasswordAction(values)
         .then((data) => {
           setError(data?.error)
           setSuccess(data?.success)
@@ -89,21 +78,18 @@ export default function ResetPasswordForm() {
 
   return hydrated ? (
     <CardWrapper
-      pageNameRedirect={f('signInForm.pageNameRedirect')}
-      redirectButtonLabel={f('signInForm.redirectButtonLabel')}
+      redirectButtonLabel={f('resetPasswordForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
-      showForgotPassword={true}
     >
       <FormProvider {...form}>
         <Form {...form}>
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
               <EmailInput name='email' isPending={isPending} />
-              <PasswordInput name='password' isPending={isPending} />
             </div>
-            <FormError message={error || urlError} />
+            <FormError message={error} />
             <FormSuccess message={success} />
-            <SubmitButton message={t('SignIn')} isPending={isPending} />
+            <SubmitButton message={f('resetPasswordForm.recoveryButton')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

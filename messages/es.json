@@ -34,8 +34,8 @@
       "redirectButtonLabel": "👉"
     },
     "resetPasswordForm": {
-      "forgotPassword": "¿Has olvidado tu contraseña?",
-      "redirectButtonLabel": "Forgot"
+      "redirectButtonLabel": "Volver a Iniciar Sesión",
+      "recoveryButton": "Recuperar"
     },
     "signInForm": {
       "forgotPassword": "¿Has olvidado tu contraseña?",

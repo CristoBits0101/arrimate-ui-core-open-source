@@ -1,7 +1,7 @@
 'use client'
 
 // actions
-import newVerification from '@/modules/auth/actions/new-verification'
+import newVerificationAction from '@/modules/auth/actions/new-verification-action'
 
 // alerts
 import AlertError from '@/modules/auth/components/alerts/alert-errors'
@@ -40,7 +40,7 @@ export default function NewVerificationForm() {
       setError(locale === 'en' ? 'Request not found!' : '¡Solicitud no encontrada!')
       return
     }
-    newVerification(token, locale)
+    newVerificationAction(token, locale)
       .then((data) => {
         setSuccess(data.success)
         setError(data.error)
