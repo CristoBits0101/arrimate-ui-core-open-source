@@ -52,8 +52,8 @@ export default function SignInForm() {
 
   // Translations
   const f = useTranslations('Forms')
-  const m = useTranslations('Mail.subject')
-  const subject = m('subject')
+  const m = useTranslations('Mail')
+  const subject = m('confirmRegistrationSubject')
   const b = useTranslations('Button')
 
   // Initializes the form and manages its state when rendering
@@ -72,7 +72,7 @@ export default function SignInForm() {
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      signInAction(values, subject ?? 'Confirm your registration on Arrímate')
+      signInAction(values, subject ?? 'registration')
         .then((data) => {
           setError(data?.error)
           setSuccess(data?.success)

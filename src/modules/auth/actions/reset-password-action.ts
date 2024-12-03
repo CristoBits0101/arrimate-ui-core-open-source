@@ -1,11 +1,14 @@
 'use server'
 
 import * as z from 'zod'
+import { generatePasswordResetToken } from '@/modules/auth/data/token'
 import { getUserByEmail } from '@/modules/auth/data/user-data'
 import { ResetPasswordSchema } from '@/modules/auth/schemas'
+import { sendPasswordResetEmail } from '@/modules/auth/lib/mail'
 
 const resetPasswordSchema = async (
-  values: z.infer<typeof ResetPasswordSchema>
+  values: z.infer<typeof ResetPasswordSchema>,
+  emailMessage: string
 ) => {
   const validatedFields = ResetPasswordSchema.safeParse(values)
 
@@ -21,7 +24,15 @@ const resetPasswordSchema = async (
   // Check if the user exists
   if (!existingUser) return { error: 'Email not found!' }
 
-  // TODO: Generate token & send email
+  //
+  const resetPasswordToken = await generatePasswordResetToken(email)
+
+  //
+  await sendPasswordResetEmail(
+    resetPasswordToken.email,
+    resetPasswordToken.token,
+    emailMessage
+  )
 
   return { success: 'Reset email sent!' }
 }

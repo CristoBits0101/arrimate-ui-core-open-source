@@ -11,10 +11,10 @@ export const sendPasswordResetEmail = async (email: string, token: string, email
   const resetLink = `http://localhost:3000/new-verification?token=${token}`
 
   // Verification link message
-  const word = 'registration'
+  const word = 'reset'
   const messageLink = emailMessage.includes(word)
     ? `<p>Click <a href='${resetLink}'>here</a> to reset your password.</p>`
-    : `<p>Hacer clic <a href='${resetLink}'>aquí</a> para resetear su contraseña.</p>`
+    : `<p>Hacer clic <a href='${resetLink}'>aquí</a> para reiniciar su contraseña.</p>`
 
   // Message sent to user
   await resend.emails.send({

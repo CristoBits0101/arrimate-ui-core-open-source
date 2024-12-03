@@ -38,8 +38,8 @@ import { SignUpSchema } from '@/modules/auth/schemas'
 
 export default function SignUpForm() {
   const f = useTranslations('Forms')
-  const m = useTranslations('Mail.subject')
-  const subject = m('subject')
+  const m = useTranslations('Mail')
+  const subject = m('confirmRegistrationSubject')
   const b = useTranslations('Button')
   const locale = useLocale()
 

@@ -43,6 +43,8 @@ export default function ResetPasswordForm() {
 
   // Translations
   const f = useTranslations('Forms')
+  const m = useTranslations('Mail')
+  const subject = m('subject')
 
   // Initializes the form and manages its state when rendering
   const form = useForm<z.infer<typeof ResetPasswordSchema>>({
@@ -59,7 +61,7 @@ export default function ResetPasswordForm() {
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      resetPasswordAction(values)
+      resetPasswordAction(values, subject ?? 'reset')
         .then((data) => {
           setError(data?.error)
           setSuccess(data?.success)

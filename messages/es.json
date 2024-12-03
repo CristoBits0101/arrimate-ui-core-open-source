@@ -59,7 +59,8 @@
     "titleTwo": "SUGERENCIAS"
   },
   "Mail": {
-    "subject": "Confirmación de registro en Arrímate"
+    "resetPasswordSubject": "reiniciar",
+    "confirmRegistrationSubject": "confirmar"
   },
   "Searcher": {
     "article": "Artículo",
