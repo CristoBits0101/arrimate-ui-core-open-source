@@ -101,9 +101,9 @@ export default function ArrimateFollowCard({
           {countryCode}
         </span>
       )}
-      <span className='shadow-sm relative inline-flex overflow-hidden rounded-full p-1'>
+      <span className='shadow-sm relative inline-flex overflow-hidden rounded-full border border-solid border-[#EBEAEB] p-1'>
         {isOnline ? (
-          <span className='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#68EF00_0%,#5EBAA6_50%,#68EF00_100%)]'></span>
+          <span className='absolute inset-[-1000%] animate-spin bg-[conic-gradient(from_90deg_at_50%_50%,#68EF00_0%,#5EBAA6_50%,#68EF00_100%)]'></span>
         ) : (
           <span className='absolute inset-[-1000%] bg-[#453C41]'></span>
         )}
@@ -112,6 +112,7 @@ export default function ArrimateFollowCard({
           style={{ backgroundImage: `url(${userImage || unknownImage})` }}
         ></header>
       </span>
+
       {userName && (
         <section className='w-full h-fit flex flex-col justify-center items-center mb-1'>
           <p className='truncate w-full h-fit text-center font-medium'>
