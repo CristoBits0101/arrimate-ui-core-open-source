@@ -1,13 +1,15 @@
 # Features
     Auth:
-      🚧        Change Password ➜ 
-      🚧     Email Verification ➜ 
-      ✅            OAuth Login ➜ Auth.js + Prisma + Providers + Neon
-      🚧       Recover Password ➜ 
-      ✅                Sign In ➜ Auth.js + Prisma + Zod + Neon
-      ✅               Sign Out ➜ Auth.js
-      ✅                Sign Up ➜ Auth.js + Prisma + Zod + Neon
-      🚧  Two-Factor Auth (2FA) ➜ 
+# Features
+    Auth:
+      🚧        Change Password ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
+      ✅     Email Verification ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod
+      ✅            OAuth Login ➜ Auth.js + Prisma + Providers + Shadcn/UI
+      🚧       Recover Password ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod + React Hook Form + Shadcn/UI
+      ✅                Sign In ➜ Auth.js + Prisma + bcrypt/bcryptjs + Zod + React Hook Form + Shadcn/UI
+      ✅               Sign Out ➜ Auth.js + Shadcn/UI
+      ✅                Sign Up ➜ Auth.js + Prisma + bcrypt/bcryptjs + Resend + UUID + Zod + React Hook Form + Shadcn/UI
+      🚧  Two-Factor Auth (2FA) ➜ Auth.js + Prisma + UUID + Neon + OTP Library + Shadcn/UI
     Branding:
       ✅      Reusable App Logo ➜ next/image
     Configuration:
@@ -41,9 +43,9 @@
       🚧            Stream LIVE ➜ 
     Styles:
       ✅   Active Route Styling ➜ next/navigation
-      ✅       Stories carousel ➜ swiper
+      ✅       Stories carousel ➜ Swiper
       ✅    Font Implementation ➜ next/font/google
-      🚧       Responsive Pages ➜ flexbox + grid + @media
+      🚧       Responsive Pages ➜ Flexbox + Grid + @media
       🚧       Sound Animations ➜ 
 
 # Dependencies
@@ -80,3 +82,9 @@
       📦             UUID types ➜ npm i --save-dev @types/uuid
     Zod:
       📦                    Zod ➜ npm install zod
+
+# Methodologies
+    Development:
+      🔄                  Agile ➜ Scrum 
+    Repository:
+      🔄                 GitHub ➜ Trunk Based Development
