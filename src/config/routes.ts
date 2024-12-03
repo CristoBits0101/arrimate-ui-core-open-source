@@ -3,6 +3,12 @@ export const API_AUTH_ROUTE: string = '/api/auth'
 
 // Auth routes
 export const AUTH_ROUTES: string[] = [
+  // new-password
+  '/new-password',
+  // new-verification
+  '/verification',
+  '/en/new-verification',
+  '/es/new-verification',
   // reset-password
   '/reset-password',
   '/en/reset-password',
@@ -15,10 +21,6 @@ export const AUTH_ROUTES: string[] = [
   '/sign-up',
   '/en/sign-up',
   '/es/sign-in',
-  // new-verification
-  '/verification',
-  '/en/new-verification',
-  '/es/new-verification',
   // unauthorized-access
   '/unauthorized-access',
   '/en/unauthorized-access',
@@ -29,6 +31,12 @@ export const DEFAULT_LOGIN_REDIRECT = '/'
 
 // Public routes
 export const PUBLIC_ROUTES: string[] = [
+  // new-password
+  '/new-password',
+  // new-verification
+  '/new-verification',
+  '/en/new-verification',
+  '/es/new-verification',
   // reset-password
   '/reset-password',
   '/en/reset-password',
@@ -41,10 +49,6 @@ export const PUBLIC_ROUTES: string[] = [
   '/sign-up',
   '/en/sign-up',
   '/es/sign-up',
-  // new-verification
-  '/new-verification',
-  '/en/new-verification',
-  '/es/new-verification',
   // unauthorized-access
   '/unauthorized-access',
   '/en/unauthorized-access',

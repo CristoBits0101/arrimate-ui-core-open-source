@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 //
 export const sendPasswordResetEmail = async (email: string, token: string, emailMessage: string) => {
   // Verification link data
-  const companyEmail = 'arrimate.team@gmail.com'
+  const companyEmail = 'onboarding@resend.dev'
   const resetLink = `http://localhost:3000/new-verification?token=${token}`
 
   // Verification link message
@@ -33,7 +33,7 @@ export const sendVerificationEmail = async (
 ) => {
   try {
     // Verification link data
-    const companyEmail = 'arrimate.team@gmail.com'
+    const companyEmail = 'onboarding@resend.dev'
     const confirmLink = `http://localhost:3000/new-verification?token=${token}`
 
     // Verification link message
