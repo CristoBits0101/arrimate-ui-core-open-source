@@ -17,7 +17,6 @@ export default function UnauthorizedAccessCard() {
   return (
     <CardWrapper
       pageNameRedirect={t('unauthorizedAccessCard.pageNameRedirect')}
-      redirectButtonLabel={t('unauthorizedAccessCard.redirectButtonLabel')}
       redirectButtonHref='/sign-in'
       showDividingLine={true}
     >

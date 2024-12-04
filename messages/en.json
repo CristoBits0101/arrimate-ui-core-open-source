@@ -30,11 +30,10 @@
     "newVerificationForm": {
       "confirmingVerification": "Confirmation verification",
       "pageSignInRedirect": "Sign In",
-      "pageSignUpRedirect": "Return",
-      "redirectButtonLabel": "👉"
+      "pageSignUpRedirect": "Sign Up"
     },
     "resetPasswordForm": {
-      "redirectButtonLabel": "Return to Sign In",
+      "pageNameRedirect": "Sign In",
       "recoveryButton": "Recover"
     },
     "signInForm": {

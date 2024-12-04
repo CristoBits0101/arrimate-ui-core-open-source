@@ -58,7 +58,6 @@ export default function NewVerificationForm() {
   return (
     <CardWrapper
       pageNameRedirect={error ? f('newVerificationForm.pageSignUpRedirect') : f('newVerificationForm.pageSignInRedirect')}
-      redirectButtonLabel={f('newVerificationForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
       showDividingLine={true}
     >
