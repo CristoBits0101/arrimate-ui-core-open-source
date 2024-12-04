@@ -8,7 +8,7 @@ export default function Aside() {
   const component = usePageComponent()
   return (
     <aside
-      className={`hidden md:flex col-span-1 flex-col gap-8 min-h-screen max-h-fit h-auto p-8 sticky top-0 overflow-y-auto ${styles.noScrollbar}`}
+      className={`dark:bg-[#26272C] hidden md:flex col-span-1 flex-col gap-8 min-h-screen max-h-fit h-auto p-8 sticky top-0 overflow-y-auto ${styles.noScrollbar}`}
     >
       <Sidebar />
       {component}

@@ -31,7 +31,7 @@ export default function PostButton({
     textDisplay = (likes / 1_000_000_000).toFixed(1) + ' B'
   return (
     <div className='w-fit h-fit flex flex-col gap-2 justify-center items-center'>
-      <button className='w-fit h-fit p-3 rounded-full bg-[#F4F4F4] hover:bg-[#EBEAEB]'>
+      <button className='w-fit h-fit p-3 rounded-full bg-[#F4F4F4] hover:bg-[#EBEAEB] dark:bg-[#3b3b40]'>
         {iconDisplay === 'like' && (
           <IoIosHeart
             style={{ fill: iconColor }}
