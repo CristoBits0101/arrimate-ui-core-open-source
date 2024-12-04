@@ -27,6 +27,11 @@
       "password": "Contraseña",
       "username": "Nombre de usuario"
     },
+    "newPasswordSchema": {
+      "changeButton": "Cambiar",
+      "pageNameRedirect": "Entrar",
+      "title": "Introduce una nueva contraseña"
+    },
     "newVerificationForm": {
       "confirmingVerification": "Verificación de confirmación",
       "pageSignInRedirect": "Entrar",

@@ -27,6 +27,11 @@
       "password": "Password",
       "username": "Username"
     },
+    "newPasswordSchema": {
+      "changeButton": "Change",
+      "pageNameRedirect": "Sign In",
+      "title": "Enter a new password"
+    },
     "newVerificationForm": {
       "confirmingVerification": "Confirmation verification",
       "pageSignInRedirect": "Sign In",
@@ -46,7 +51,7 @@
       "redirectButtonLabel": "Already have an account?"
     },
     "unauthorizedAccessCard": {
-      "pageNameRedirect": "Sign Up",
+      "pageNameRedirect": "Sign In",
       "redirectButtonLabel": "👉",
       "title": "Please try again in a moment"
     }

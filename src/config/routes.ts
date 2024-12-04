@@ -5,6 +5,8 @@ export const API_AUTH_ROUTE: string = '/api/auth'
 export const AUTH_ROUTES: string[] = [
   // new-password
   '/new-password',
+  '/en/new-password',
+  '/es/new-password',
   // new-verification
   '/verification',
   '/en/new-verification',
@@ -33,6 +35,8 @@ export const DEFAULT_LOGIN_REDIRECT = '/'
 export const PUBLIC_ROUTES: string[] = [
   // new-password
   '/new-password',
+  '/en/new-password',
+  '/es/new-password',
   // new-verification
   '/new-verification',
   '/en/new-verification',

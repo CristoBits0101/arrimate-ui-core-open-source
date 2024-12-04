@@ -51,8 +51,8 @@ export default function ResetPasswordForm() {
     resolver: zodResolver(ResetPasswordSchema),
     mode: 'onSubmit',
     defaultValues: {
-      email: '',
-    },
+      email: ''
+    }
   })
 
   const onSubmit = (values: z.infer<typeof ResetPasswordSchema>) => {
@@ -81,7 +81,7 @@ export default function ResetPasswordForm() {
   return hydrated ? (
     <CardWrapper
       pageNameRedirect={f('resetPasswordForm.pageNameRedirect')}
-      redirectButtonHref={`/${locale}/sign-up`}
+      redirectButtonHref={`/${locale}/sign-in`}
     >
       <FormProvider {...form}>
         <Form {...form}>
