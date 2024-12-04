@@ -43,9 +43,11 @@ export default async function signUpAction(
   if (!specialCharsRegex.test(name))
     return { error: 'Name cannot contain special characters!' }
 
+  const cleanedEmail = email.toLocaleLowerCase().trim()
+
   const existingUser = await db.user.findUnique({
     where: {
-      email
+      email: cleanedEmail
     }
   })
 
