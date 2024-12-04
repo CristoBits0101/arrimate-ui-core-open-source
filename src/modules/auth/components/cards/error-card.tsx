@@ -8,9 +8,8 @@ export default function UnauthorizedAccessCard() {
       redirectButtonLabel='Back to'
       redirectButtonHref='/sign-in'
     >
-      <div className='w-full flex items-center justify-center'>
+      <div className='w-full flex flex-col gap-2 items-center justify-center'>
         <h2>Please try again in a moment</h2>
-        <br />
         <ExclamationTriangleIcon className='text-destructive' />
       </div>
     </CardWrapper>
