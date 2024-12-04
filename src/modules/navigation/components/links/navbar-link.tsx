@@ -22,7 +22,7 @@ export default function NavbarItem({
   const t = useTranslations('SidebarLayout')
   const href = route === 'home' ? `/${locale}` : `/${locale}/${route}`
   return (
-    <li className='flex items-center justify-center rounded-[2.5rem] w-full h-full pt-2 pb-2 pr-8 pl-8 hover:bg-[#F4F4F4] hover:cursor-pointer transition-colors duration-300'>
+    <li className='flex items-center justify-center rounded-[2.5rem] w-full h-full pt-2 pb-2 pr-8 pl-8 hover:bg-[#F4F4F4] hover:cursor-pointer transition-colors duration-300 dark:text-[#ecece]'>
       <Link
         className='truncate flex items-center h-full w-full gap-4'
         href={href}
