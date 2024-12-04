@@ -2,10 +2,10 @@
     Auth:
 # Features
     Auth:
-      🚧        Change Password ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
+      ✅        Change Password ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
       ✅     Email Verification ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod
       ✅            OAuth Login ➜ Auth.js + Prisma + Providers + Shadcn/UI
-      🚧       Recover Password ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod + React Hook Form + Shadcn/UI
+      ✅       Recover Password ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod + React Hook Form + Shadcn/UI
       ✅                Sign In ➜ Auth.js + Prisma + bcrypt/bcryptjs + Zod + React Hook Form + Shadcn/UI
       ✅               Sign Out ➜ Auth.js + Shadcn/UI
       ✅                Sign Up ➜ Auth.js + Prisma + bcrypt/bcryptjs + Resend + UUID + Zod + React Hook Form + Shadcn/UI
@@ -13,7 +13,7 @@
     Branding:
       ✅      Reusable App Logo ➜ next/image
     Configuration:
-      🚧         Settings Panel ➜ 
+      ✅         Settings Panel ➜ Change language component + Change theme component + Sign Out
     Data:
       ✅        Data Validation ➜ Zod
       ✅    Database Management ➜ Prisma
