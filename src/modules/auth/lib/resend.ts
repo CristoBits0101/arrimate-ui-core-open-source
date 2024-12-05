@@ -8,7 +8,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export const sendPasswordResetEmail = async (email: string, token: string, emailMessage: string) => {
   // Verification link data
   const companyEmail = 'onboarding@resend.dev'
-  const resetLink = `http://localhost:3000/new-password?token=${token}`
+  const resetLink = `https://arrimate.vercel.app/?token=${token}`
 
   // Verification link message
   const word = 'reset'
@@ -34,7 +34,7 @@ export const sendVerificationEmail = async (
   try {
     // Verification link data
     const companyEmail = 'onboarding@resend.dev'
-    const confirmLink = `http://localhost:3000/new-verification?token=${token}`
+    const confirmLink = `https://arrimate.vercel.app/new-verification?token=${token}`
 
     // Verification link message
     const word = 'registration'
