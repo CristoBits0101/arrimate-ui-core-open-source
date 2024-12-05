@@ -5,8 +5,8 @@ import bcrypt from 'bcryptjs'
 
 import { db } from '@/lib/db'
 import { NewPasswordSchema } from '@/modules/auth/schemas'
-import { getPasswordResetTokenByToken } from '../data/password-reset-token'
-import { getUserByEmail } from '../data/user-data'
+import { getPasswordResetTokenByToken } from '@/modules/auth/data/password-reset-token'
+import { getUserByEmail } from '@/modules/auth/data/user-data'
 
 const newPassword = async (
   values: z.infer<typeof NewPasswordSchema>,
@@ -34,7 +34,8 @@ const newPassword = async (
   const hasExpired = new Date(existingToken?.expiresAt) < new Date()
 
   // Check if token has expired
-  if (hasExpired) return { error: 'Token has expired!' }
+  // if (hasExpired) return { error: 'Token has expired!' }
+  if (hasExpired) return { error: '' }
 
   // Get user by email
   const existingUser = await getUserByEmail(existingToken.email)
@@ -57,7 +58,7 @@ const newPassword = async (
   })
 
   // Return confirmation of password is changed
-  return { success: 'Password updated successfully!' }
+  return { success: 'Password updated!' }
 }
 
 export default newPassword
