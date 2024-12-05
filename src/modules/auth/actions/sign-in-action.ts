@@ -3,13 +3,14 @@
 import * as z from 'zod'
 import { AuthError } from 'next-auth'
 import { generateVerificationToken } from '@/modules/auth/data/token'
-import { sendVerificationEmail } from '@/lib/mail'
+import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 import { signIn } from '@/modules/auth/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
 import { getUserByEmail } from '../data/user-data'
 
-export default async function SignInAction(
-  values: z.infer<typeof SignInSchema>
+export default async function signInAction(
+  values: z.infer<typeof SignInSchema>,
+  emailMessage: string
 ) {
   const validatedFields = SignInSchema.safeParse(values)
 
@@ -17,7 +18,7 @@ export default async function SignInAction(
   if (!validatedFields.success)
     return { error: 'Invalid email or password format!' }
 
-  //
+   // Extract fields
   const { email, password } = validatedFields.data
   const existingUser = await getUserByEmail(email)
 
@@ -32,7 +33,8 @@ export default async function SignInAction(
     )
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
+      emailMessage
     )
     return { success: 'Confirmation email sent!' }
   }

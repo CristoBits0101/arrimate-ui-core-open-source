@@ -53,7 +53,9 @@ export default function CardWrapper({
         {showDividingLine && (
           <div
             className={`w-full flex justify-center items-center space-x-4 font-light ${
-              path === '/new-verification' ? 'pt-0 pb-5' : 'py-5'
+              path === '/new-verification' || path === '/unauthorized-access'
+                ? 'pt-0 pb-5'
+                : 'py-5'
             }`}
           >
             <p className='text-[#EBEAEB] dark:text-[#3b3b40]'>━━━━━━━</p>

@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import SignInAction from '@/modules/auth/actions/sign-in-action'
+import signInAction from '@/modules/auth/actions/sign-in-action'
 
 // Alerts
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -51,8 +51,10 @@ export default function SignInForm() {
       : ''
 
   // Translations
-  const t = useTranslations('Button')
   const f = useTranslations('Forms')
+  const m = useTranslations('Mail')
+  const subject = m('confirmRegistrationSubject')
+  const b = useTranslations('Button')
 
   // Initializes the form and manages its state when rendering
   const form = useForm<z.infer<typeof SignInSchema>>({
@@ -70,7 +72,7 @@ export default function SignInForm() {
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      SignInAction(values)
+      signInAction(values, subject ?? 'registration')
         .then((data) => {
           setError(data?.error)
           setSuccess(data?.success)
@@ -105,7 +107,7 @@ export default function SignInForm() {
             </div>
             <FormError message={error || urlError} />
             <FormSuccess message={success} />
-            <SubmitButton message={t('SignIn')} isPending={isPending} />
+            <SubmitButton message={b('SignIn')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

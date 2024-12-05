@@ -1,3 +1,4 @@
+/* No scrollbar */
 .noScrollbar::-webkit-scrollbar {
   /* Google Chrome */
   display: none;
@@ -10,6 +11,7 @@
   scrollbar-width: none;
 }
 
+/* Scrollbar left */
 .scrollbarLeft {
   direction: rtl;
   overflow-y: hidden;

@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt'
 import { generateVerificationToken } from '@/modules/auth/data/token'
 
 // Mail
-import { sendVerificationEmail } from '@/lib/mail'
+import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 // Prisma client
 import { db } from '@/lib/db'
@@ -17,8 +17,9 @@ import * as z from 'zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 // The data that the user's schema received is saved in value
-export default async function SignUpAction(
-  values: z.infer<typeof SignUpSchema>
+export default async function signUpAction(
+  values: z.infer<typeof SignUpSchema>,
+  emailMessage: string
 ) {
   /**
    * Data validation
@@ -42,9 +43,11 @@ export default async function SignUpAction(
   if (!specialCharsRegex.test(name))
     return { error: 'Name cannot contain special characters!' }
 
+  const cleanedEmail = email.toLocaleLowerCase().trim()
+
   const existingUser = await db.user.findUnique({
     where: {
-      email
+      email: cleanedEmail
     }
   })
 
@@ -68,7 +71,8 @@ export default async function SignUpAction(
     const verificationToken = await generateVerificationToken(email)
     await sendVerificationEmail(
       verificationToken.email,
-      verificationToken.token
+      verificationToken.token,
+      emailMessage
     )
 
     // Returns an success object

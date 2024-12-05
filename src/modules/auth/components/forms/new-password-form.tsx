@@ -1,7 +1,7 @@
 'use client'
 
 // Actions
-import resetPasswordAction from '@/modules/auth/actions/reset-password-action'
+import newPasswordAction from '@/modules/auth/actions/new-password-action'
 
 // Alerts
 import FormError from '@/modules/auth/components/alerts/alert-errors'
@@ -14,10 +14,13 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // Inputs
-import EmailInput from '@/modules/auth/components/inputs/email-input'
+import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
 // Intl
 import { useLocale, useTranslations } from 'next-intl'
+
+// Navigation
+import { useSearchParams } from 'next/navigation'
 
 // React
 import React from 'react'
@@ -30,9 +33,9 @@ import { Form } from '@/modules/ui/form'
 // Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ResetPasswordSchema } from '@/modules/auth/schemas'
+import { NewPasswordSchema } from '@/modules/auth/schemas'
 
-export default function ResetPasswordForm() {
+export default function NewPasswordForm() {
   // States
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
@@ -40,28 +43,28 @@ export default function ResetPasswordForm() {
 
   // Navigation
   const locale = useLocale()
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token')
 
   // Translations
   const f = useTranslations('Forms')
-  const m = useTranslations('Mail')
-  const subject = m('subject')
 
   // Initializes the form and manages its state when rendering
-  const form = useForm<z.infer<typeof ResetPasswordSchema>>({
-    resolver: zodResolver(ResetPasswordSchema),
+  const form = useForm<z.infer<typeof NewPasswordSchema>>({
+    resolver: zodResolver(NewPasswordSchema),
     mode: 'onSubmit',
     defaultValues: {
-      email: ''
+      password: ''
     }
   })
 
-  const onSubmit = (values: z.infer<typeof ResetPasswordSchema>) => {
-    // Reset values
+  const onSubmit = (values: z.infer<typeof NewPasswordSchema>) => {
+    // Change values
     setError('')
     setSuccess('')
     // Sent data to server
     startTransition(() => {
-      resetPasswordAction(values, subject ?? 'reset')
+      newPasswordAction(values, token)
         .then((data) => {
           setError(data?.error)
           setSuccess(data?.success)
@@ -80,19 +83,19 @@ export default function ResetPasswordForm() {
 
   return hydrated ? (
     <CardWrapper
-      pageNameRedirect={f('resetPasswordForm.pageNameRedirect')}
+      pageNameRedirect={f('newPasswordSchema.pageNameRedirect')}
       redirectButtonHref={`/${locale}/sign-in`}
     >
       <FormProvider {...form}>
         <Form {...form}>
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
-              <EmailInput name='email' isPending={isPending} />
+              <PasswordInput name='password' isPending={isPending} />
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
             <SubmitButton
-              message={f('resetPasswordForm.recoveryButton')}
+              message={f('newPasswordSchema.changeButton')}
               isPending={isPending}
             />
           </form>

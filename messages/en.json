@@ -4,6 +4,9 @@
     "signUp": "Sign Up"
   },
   "Button": {
+    "SignIn": "Sign In",
+    "SignOut": "Sign out",
+    "SignUp": "Sign Up",
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
@@ -11,73 +14,88 @@
     "following": "Following",
     "like": "Like",
     "share": "Share",
-    "SignIn": "Sign In",
-    "SignOut": "Sign out",
-    "SignUp": "Sign Up",
     "submit": "Submit",
     "unfollow": "Unfollow",
     "unlike": "Unlike"
   },
-  "HomePanel": {
-    "title": "HIGHLIGHTS",
-    "emoji": "🏆",
-    "titleTwo": "SUGGESTIONS",
-    "emojiTwo": "💡"
-  },
   "Forms": {
+    "errors": {},
     "inputs": {
-      "name": "Name",
-      "username": "Username",
+      "confirmPassword": "Confirm password",
       "email": "Email",
+      "name": "Name",
       "password": "Password",
-      "confirmPassword": "Confirm password"
+      "username": "Username"
+    },
+    "newPasswordSchema": {
+      "changeButton": "Change",
+      "pageNameRedirect": "Sign In",
+      "title": "Enter a new password"
     },
     "newVerificationForm": {
       "confirmingVerification": "Confirmation verification",
       "pageSignInRedirect": "Sign In",
-      "pageSignUpRedirect": "Return",
-      "redirectButtonLabel": "👉"
+      "pageSignUpRedirect": "Sign Up"
+    },
+    "resetPasswordForm": {
+      "pageNameRedirect": "Sign In",
+      "recoveryButton": "Recover"
     },
     "signInForm": {
+      "forgotPassword": "Forgot password?",
       "pageNameRedirect": "Sign Up",
-      "redirectButtonLabel": "Don't have an account?",
-      "forgotPassword": "Forgot password?"
+      "redirectButtonLabel": "Don't have an account?"
     },
     "signUpForm": {
       "pageNameRedirect": "Sign In",
       "redirectButtonLabel": "Already have an account?"
+    },
+    "unauthorizedAccessCard": {
+      "pageNameRedirect": "Sign In",
+      "redirectButtonLabel": "👉",
+      "title": "Please try again in a moment"
     }
   },
-  "SidebarLayout": {
-    "home": "Home",
-    "events": "Events",
-    "shorts": "Shorts",
-    "videos": "Videos",
-    "live": "LIVE",
-    "products": "Products",
-    "reviews": "Reviews",
-    "following": "Following",
-    "community": "Community"
+  "HomePanel": {
+    "emoji": "🏆",
+    "emojiTwo": "💡",
+    "title": "HIGHLIGHTS",
+    "titleTwo": "SUGGESTIONS"
+  },
+  "Mail": {
+    "resetPasswordSubject": "reset",
+    "confirmRegistrationSubject": "registration"
   },
   "Searcher": {
+    "article": "Article",
     "placeholder": "Search",
     "recent": "Recents",
     "recommended": "Recommended",
-    "article": "Article",
     "result": "Result"
   },
   "SettingsPanel": {
-    "settings": "Settings",
     "language": {
-      "title": "Languages",
       "english": "English",
-      "spanish": "Spanish"
+      "spanish": "Spanish",
+      "title": "Languages"
     },
+    "settings": "Settings",
     "themes": {
-      "title": "Themes",
-      "system": "System",
       "dark": "Dark",
-      "light": "Light"
+      "light": "Light",
+      "system": "System",
+      "title": "Themes"
     }
+  },
+  "SidebarLayout": {
+    "community": "Community",
+    "events": "Events",
+    "following": "Following",
+    "home": "Home",
+    "live": "LIVE",
+    "products": "Products",
+    "reviews": "Reviews",
+    "shorts": "Shorts",
+    "videos": "Videos"
   }
 }

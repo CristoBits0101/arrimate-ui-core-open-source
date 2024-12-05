@@ -4,6 +4,9 @@
     "signUp": "Registrarse"
   },
   "Button": {
+    "SignIn": "Entrar",
+    "SignOut": "Salir",
+    "SignUp": "Registrarse",
     "cancel": "Cancelar",
     "delete": "Eliminar",
     "edit": "Editar",
@@ -11,72 +14,88 @@
     "following": "Siguiendo",
     "like": "Me gusta",
     "share": "Compartir",
-    "SignIn": "Entrar",
-    "SignOut": "Salir",
-    "SignUp": "Registrarse",
     "submit": "Enviar",
     "unfollow": "Dejar de seguir",
     "unlike": "Ya no me gusta"
   },
-  "HomePanel": {
-    "title": "DESTACADOS",
-    "emoji": "🏆",
-    "titleTwo": "SUGERENCIAS",
-    "emojiTwo": "💡"
-  },
   "Forms": {
+    "errors": {},
     "inputs": {
-      "name": "Nombre",
-      "username": "Nombre de usuario",
+      "confirmPassword": "Confirmar contraseña",
       "email": "Correo electrónico",
+      "name": "Nombre",
       "password": "Contraseña",
-      "confirmPassword": "Confirmar contraseña"
+      "username": "Nombre de usuario"
+    },
+    "newPasswordSchema": {
+      "changeButton": "Cambiar",
+      "pageNameRedirect": "Entrar",
+      "title": "Introduce una nueva contraseña"
     },
     "newVerificationForm": {
       "confirmingVerification": "Verificación de confirmación",
       "pageSignInRedirect": "Entrar",
-      "pageSignUpRedirect": "Volver",
+      "pageSignUpRedirect": "Registrarse",
       "redirectButtonLabel": "👉"
     },
+    "resetPasswordForm": {
+      "pageNameRedirect": "Entrar",
+      "recoveryButton": "Recuperar"
+    },
     "signInForm": {
+      "forgotPassword": "¿Has olvidado tu contraseña?",
       "pageNameRedirect": "Regístrate",
-      "redirectButtonLabel": "¿No tienes una cuenta?",
-      "forgotPassword": "¿Has olvidado tu contraseña?"
+      "redirectButtonLabel": "¿No tienes una cuenta?"
     },
     "signUpForm": {
       "pageNameRedirect": "Entrar",
       "redirectButtonLabel": "¿Ya tienes una cuenta?"
+    },
+    "unauthorizedAccessCard": {
+      "pageNameRedirect": "Entrar",
+      "redirectButtonLabel": "👉",
+      "title": "Inténtelo de nuevo más tarde"
     }
   },
-  "SidebarLayout": {
-    "home": "Inicio",
-    "events": "Eventos",
-    "videos": "Vídeos",
-    "shorts": "Cortos",
-    "live": "Directos",
-    "products": "Productos",
-    "reviews": "Reseñas",
-    "community": "Comunidad"
+  "HomePanel": {
+    "emoji": "🏆",
+    "emojiTwo": "💡",
+    "title": "DESTACADOS",
+    "titleTwo": "SUGERENCIAS"
+  },
+  "Mail": {
+    "resetPasswordSubject": "reiniciar",
+    "confirmRegistrationSubject": "confirmar"
   },
   "Searcher": {
+    "article": "Artículo",
     "placeholder": "Buscar",
     "recent": "Recientes",
     "recommended": "Recomendado",
-    "article": "Artículo",
     "result": "Resultado"
   },
   "SettingsPanel": {
-    "settings": "Ajustes",
     "language": {
-      "title": "Idiomas",
       "english": "Inglés",
-      "spanish": "Español"
+      "spanish": "Español",
+      "title": "Idiomas"
     },
+    "settings": "Ajustes",
     "themes": {
-      "title": "Temas",
-      "system": "Sistema",
       "dark": "Oscuro",
-      "light": "Claro"
+      "light": "Claro",
+      "system": "Sistema",
+      "title": "Temas"
     }
+  },
+  "SidebarLayout": {
+    "community": "Comunidad",
+    "events": "Eventos",
+    "home": "Inicio",
+    "live": "Directos",
+    "products": "Productos",
+    "reviews": "Reseñas",
+    "shorts": "Cortos",
+    "videos": "Vídeos"
   }
 }

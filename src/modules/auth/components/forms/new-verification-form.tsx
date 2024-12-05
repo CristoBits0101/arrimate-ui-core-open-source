@@ -1,21 +1,31 @@
 'use client'
 
-import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
-import newVerification from '@/modules/auth/actions/new-verification'
+// actions
+import newVerificationAction from '@/modules/auth/actions/new-verification-action'
+
+// alerts
 import AlertError from '@/modules/auth/components/alerts/alert-errors'
 import AlertSuccess from '@/modules/auth/components/alerts/alert-success'
-import { BeatLoader } from 'react-spinners'
+
+// cards
+import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+
+// hooks
 import { useCallback, useEffect, useState } from 'react'
+
+// spinners
+import { BeatLoader } from 'react-spinners'
+
 // Intl
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 
 export default function NewVerificationForm() {
-  //
+  // 
   const [error, setError] = useState<string | undefined>()
   const [success, setSuccess] = useState<string | undefined>()
 
-  //
+  // Translations
   const locale = useLocale()
   const f = useTranslations('Forms')
 
@@ -23,22 +33,22 @@ export default function NewVerificationForm() {
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
 
-  //
+  // 
   const onSubmit = useCallback(() => {
     if (success || error) return
     if (!token) {
-      setError('Missing token!')
+      setError(locale === 'en' ? 'Request not found!' : '¡Solicitud no encontrada!')
       return
     }
-    newVerification(token)
+    newVerificationAction(token, locale)
       .then((data) => {
         setSuccess(data.success)
         setError(data.error)
       })
       .catch(() => {
-        setError('Something went wrong!')
+        setError(locale === 'en' ? 'Something went wrong!' : '¡Algo salió mal!')
       })
-  }, [token, success, error])
+  }, [token, success, error, locale])
 
   //
   useEffect(() => {
@@ -48,7 +58,6 @@ export default function NewVerificationForm() {
   return (
     <CardWrapper
       pageNameRedirect={error ? f('newVerificationForm.pageSignUpRedirect') : f('newVerificationForm.pageSignInRedirect')}
-      redirectButtonLabel={f('newVerificationForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
       showDividingLine={true}
     >

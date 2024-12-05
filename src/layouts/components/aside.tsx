@@ -1,9 +1,15 @@
 'use client'
 
-import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'
-import styles from '@/layouts/styles/scrollbar.module.css'
+// hooks
 import { usePageComponent } from '@/layouts/hooks/useComponent'
 
+// navigation
+import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'
+
+// styles
+import styles from '@/layouts/styles/scrollbar.module.css'
+
+// Layout
 export default function Aside() {
   const component = usePageComponent()
   return (
