@@ -58,7 +58,7 @@ export default function NewVerificationForm() {
   return (
     <CardWrapper
       pageNameRedirect={error ? f('newVerificationForm.pageSignUpRedirect') : f('newVerificationForm.pageSignInRedirect')}
-      redirectButtonHref={`/${locale}/sign-up`}
+      redirectButtonHref={`/${locale}/sign-in`}
       showDividingLine={true}
     >
       <div className='w-full flex flex-col items-center justify-center gap-2'>
