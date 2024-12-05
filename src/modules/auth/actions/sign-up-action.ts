@@ -1,17 +1,25 @@
 'use server'
 
-// Prisma client
-import { db } from '@/lib/db'
-
 // Bcrypt
 import bcrypt from 'bcrypt'
+
+// Lib
+import { generateVerificationToken } from '@/modules/auth/data/token'
+
+// Mail
+import { sendVerificationEmail } from '@/lib/mail'
+
+// Prisma client
+import { db } from '@/lib/db'
 
 // Zod
 import * as z from 'zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 
 // The data that the user's schema received is saved in value
-export default async function SignUpAction(values: z.infer<typeof SignUpSchema>) {
+export default async function SignUpAction(
+  values: z.infer<typeof SignUpSchema>
+) {
   /**
    * Data validation
    */
@@ -20,10 +28,19 @@ export default async function SignUpAction(values: z.infer<typeof SignUpSchema>)
   // Returns an error object
   if (!validatedFields.success) return { error: 'Invalid data!' }
 
-  /**
-   * Check existence
-   */
+  // Extract fields
   const { name, email, password } = validatedFields.data
+
+  // Check password and email match
+  if (email.toLocaleLowerCase().trim() === password.toLocaleLowerCase().trim())
+    return { error: 'Password cannot match email!' }
+
+  // Regex for special characters
+  const specialCharsRegex = /^[a-zA-Z\u00C0-\u024F\u0400-\u04FF\s]+$/
+
+  // Check for special characters in the name
+  if (!specialCharsRegex.test(name))
+    return { error: 'Name cannot contain special characters!' }
 
   const existingUser = await db.user.findUnique({
     where: {
@@ -46,8 +63,16 @@ export default async function SignUpAction(values: z.infer<typeof SignUpSchema>)
         password: hashedPassword
       }
     })
+
+    // Send verification email
+    const verificationToken = await generateVerificationToken(email)
+    await sendVerificationEmail(
+      verificationToken.email,
+      verificationToken.token
+    )
+
     // Returns an success object
-    return { success: 'Registration completed!' }
+    return { success: 'Confirmation email sent!' }
   } catch (error) {
     // Returns an error object
     return { error: 'Registration failed. Please try again.' }

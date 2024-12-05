@@ -1,3 +1,5 @@
+import { PulseLoader
+ } from 'react-spinners'
 import { Button } from '@/modules/ui/button'
 
 interface SubmitButtonProps {
@@ -13,9 +15,10 @@ export default function SubmitButton({
     <Button
       disabled={isPending}
       type='submit'
-      className='w-full rounded-full bg-[#453C41] hover:bg-[#1d0f0f]'
+      className='w-full rounded-full dark:bg-[#848489] bg-[#453C41] dark:hover:bg-[#b8b8bb] hover:bg-[#1d0f0f] text-[#FFFFFF] dark:text-[#1B1A1F] shadow-sm flex items-center justify-center'
     >
-      {isPending ? 'Processing...' : message}
+      {isPending ? <PulseLoader
+ /> : message}
     </Button>
   )
 }

@@ -26,7 +26,7 @@ export default function SidebarItem({
   return (
     <li className='flex items-center justify-center w-fit h-fit hover:cursor-pointer'>
       <Link
-        className='flex items-center justify-center h-fit w-fit'
+        className='flex items-center justify-center h-fit w-fit dark:text-[#ecece]'
         href={href}
       >
         <Image

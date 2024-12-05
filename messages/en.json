@@ -32,9 +32,16 @@
       "password": "Password",
       "confirmPassword": "Confirm password"
     },
+    "newVerificationForm": {
+      "confirmingVerification": "Confirmation verification",
+      "pageSignInRedirect": "Sign In",
+      "pageSignUpRedirect": "Return",
+      "redirectButtonLabel": "👉"
+    },
     "signInForm": {
       "pageNameRedirect": "Sign Up",
-      "redirectButtonLabel": "Don't have an account?"
+      "redirectButtonLabel": "Don't have an account?",
+      "forgotPassword": "Forgot password?"
     },
     "signUpForm": {
       "pageNameRedirect": "Sign In",

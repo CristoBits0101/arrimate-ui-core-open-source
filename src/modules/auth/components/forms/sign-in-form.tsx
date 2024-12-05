@@ -20,6 +20,9 @@ import PasswordInput from '@/modules/auth/components/inputs/password-input'
 // Intl
 import { useLocale, useTranslations } from 'next-intl'
 
+// Navigation
+import { useSearchParams } from 'next/navigation'
+
 // React
 import React from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
@@ -34,10 +37,20 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { SignInSchema } from '@/modules/auth/schemas'
 
 export default function SignInForm() {
+  // States
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
+
+  // Navigation
   const locale = useLocale()
+  const searchParams = useSearchParams()
+  const urlError =
+    searchParams.get('error') === 'OAuthAccountNotLinked'
+      ? 'Email in use.'
+      : ''
+
+  // Translations
   const t = useTranslations('Button')
   const f = useTranslations('Forms')
 
@@ -59,8 +72,8 @@ export default function SignInForm() {
     startTransition(() => {
       SignInAction(values)
         .then((data) => {
-          setError(data.error)
-          setSuccess(data.success)
+          setError(data?.error)
+          setSuccess(data?.success)
           if (data.success) window.location.href = `/${locale}`
         })
         .catch((error) => {
@@ -80,6 +93,8 @@ export default function SignInForm() {
       redirectButtonLabel={f('signInForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
       showSocial={true}
+      showForgotPassword={true}
+      showDividingLine={true}
     >
       <FormProvider {...form}>
         <Form {...form}>
@@ -88,7 +103,7 @@ export default function SignInForm() {
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
             </div>
-            <FormError message={error} />
+            <FormError message={error || urlError} />
             <FormSuccess message={success} />
             <SubmitButton message={t('SignIn')} isPending={isPending} />
           </form>

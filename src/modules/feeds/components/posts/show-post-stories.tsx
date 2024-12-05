@@ -102,7 +102,7 @@ export default function ShowPostStories() {
                   onError={() => handleImageError(photo.id)}
                 />
               </div>
-              <p className='w-full mt-2 text-center text-sm text-gray-700 truncate'>
+              <p className='w-full mt-2 text-center text-sm text-gray-700 truncate dark:text-[#ecece]'>
                 {photo.photographer}
               </p>
             </SwiperSlide>
