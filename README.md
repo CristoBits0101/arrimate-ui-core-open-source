@@ -86,6 +86,6 @@
 # Methodologies
 
   ## Development
-  - 🔄                    **Agile** ➜ Scrum
+    - 🔄                  **Agile** ➜ Scrum
   ## Repository
-  - 🔄                   **GitHub** ➜ Trunk Based Development
+    - 🔄                 **GitHub** ➜ Trunk Based Development
