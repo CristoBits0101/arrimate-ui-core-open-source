@@ -13,7 +13,8 @@ const newPassword = async (
   token?: string | null,
 ) => {
   // Check if token exists
-  if (!token) return { error: 'Missing token' }
+  // if (!token) return { error: 'Missing token' }
+  if (!token) return { error: '' }
 
   // Check if data passed validations
   const validatedFields = NewPasswordSchema.safeParse(values)
