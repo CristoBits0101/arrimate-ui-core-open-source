@@ -1,8 +1,8 @@
 'use server'
 
 import * as z from 'zod'
-import { generatePasswordResetToken } from '@/modules/auth/data/token'
-import { getUserByEmail } from '@/modules/auth/data/user-data'
+import { generatePasswordResetToken } from '@/modules/auth/data/token-generator'
+import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { ResetPasswordSchema } from '@/modules/auth/schemas'
 import { sendPasswordResetEmail } from '@/modules/auth/lib/resend'
 

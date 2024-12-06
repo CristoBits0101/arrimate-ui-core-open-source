@@ -2,7 +2,7 @@
 import bcrypt from 'bcryptjs'
 
 // modules/auth
-import { getUserByEmail } from '@/modules/auth/data/user-data'
+import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { SignInSchema } from '@/modules/auth/schemas/index'
 
 // next-auth

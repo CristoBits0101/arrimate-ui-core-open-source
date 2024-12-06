@@ -2,7 +2,7 @@
 import { db } from '@/lib/db'
 
 // modules/auth
-import { getUserById } from '@/modules/auth/data/user-data'
+import { getUserById } from '@/modules/auth/data/users/user-data'
 
 // next-auth
 import authConfig from '@/modules/auth/lib/auth.config'

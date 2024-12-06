@@ -1,7 +1,7 @@
 'use server'
 
 // Data
-import { getUserByEmail } from '@/modules/auth/data/user-data'
+import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { getVerificationTokenByToken } from '@/modules/auth/data/verification-token-exists'
 
 // Lib
