@@ -2,11 +2,11 @@
 
 import * as z from 'zod'
 import { AuthError } from 'next-auth'
-import { generateVerificationToken } from '@/modules/auth/data/token'
+import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
 import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 import { signIn } from '@/modules/auth/lib/auth'
 import { SignInSchema } from '@/modules/auth/schemas'
-import { getUserByEmail } from '../data/user-data'
+import { getUserByEmail } from '../data/users/user-data'
 
 export default async function signInAction(
   values: z.infer<typeof SignInSchema>,
