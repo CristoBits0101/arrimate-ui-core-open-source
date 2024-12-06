@@ -14,7 +14,7 @@ import * as z from 'zod'
 import { SignUpSchema } from '@/modules/auth/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export function useSignUpForm(locale: string, subject: string) {
+export function useSignUpForm(subject: string) {
   const [error, setError] = useState<string | undefined>('')
   const [success, setSuccess] = useState<string | undefined>('')
   const [hydrated, setHydrated] = useState(false)

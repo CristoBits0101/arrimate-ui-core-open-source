@@ -38,9 +38,10 @@ export default function SignUpForm(): React.ReactElement | null {
   const s = m('confirm')
 
   // Managing form logic
-  const { form, error, success, isPending, hydrated, onSubmit } = useSignUpForm(locale, s)
+  const { form, error, success, isPending, hydrated, onSubmit } =
+    useSignUpForm(s)
 
-  // Render the form if the component has hydrated
+  // Render the form on the frontend
   return hydrated ? (
     <CardWrapper
       pageNameRedirect={f('signUpForm.pageNameRedirect')}
