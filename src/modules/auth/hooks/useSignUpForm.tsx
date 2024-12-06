@@ -56,10 +56,12 @@ export function useSignUpForm(subject: string) {
     startTransition(() => {
       // Send input values and email subject to backend
       signUpAction(values, subject)
+        // Transaction completed
         .then((data) => {
           if (data.error) setError(data.error)
           if (data.success) setSuccess(data.success)
         })
+        // Failed transaction
         .catch((err) => {
           setError(t('unavailable'))
           console.error('Error in SignUp: ', err)
