@@ -1,16 +1,19 @@
 {
   "AuthActions": {
-    "confirmation": "¡Correo enviado!",
-    "invalidPassword": "¡Correo y contraseña iguales!",
-    "contain": "¡El nombre no puede contener caracteres especiales!",
-    "email": "¡El correo electrónico ya está en uso!",
-    "validationFailed": "¡Datos inválidos!",
-    "registration": "El registro falló. Por favor, inténtelo de nuevo.",
-    "unavailable": "El registro falló. Por favor, inténtelo de nuevo."
+    "invalidData": "¡Datos inválidos!",
+    "invalidEmail": "¡Correo en uso!",
+    "invalidName": "¡Nombre sin símbolos!",
+    "invalidPassword": "¡Correo y contraseña idénticos!",
+    "notifyConfirmation": "¡Correo de confirmación enviado!",
+    "notifyUnregister": "¡Registro fallido!"
   },
   "AuthButtons": {
     "signIn": "Acceder",
     "signUp": "Registrarse"
+  },
+  "AuthSchemas": {
+    "maxPassword": "Sign In",
+    "minPassword": "Sign In"
   },
   "Button": {
     "SignIn": "Entrar",

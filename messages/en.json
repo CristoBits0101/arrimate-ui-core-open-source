@@ -12,6 +12,10 @@
     "signIn": "Sign In",
     "signUp": "Sign Up"
   },
+  "AuthSchemas": {
+    "minPassword": "Sign In",
+    "signUp": "Sign Up"
+  },
   "Button": {
     "SignIn": "Sign In",
     "SignOut": "Sign out",

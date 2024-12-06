@@ -30,7 +30,7 @@ export default async function signUpAction(
   const validatedFields = SignUpSchema.safeParse(values)
 
   // Returns an error object
-  if (!validatedFields.success) return { error: 'invalid' }
+  if (!validatedFields.success) return { error: 'invalidData' }
 
   /**
    * Validation
@@ -42,7 +42,7 @@ export default async function signUpAction(
   const { name, email, password } = validatedFields.data
 
   if (email.toLocaleLowerCase().trim() === password.toLocaleLowerCase().trim())
-    return { error: 'cannot' }
+    return { error: 'invalidPassword' }
 
   /**
    * Validation
@@ -52,7 +52,7 @@ export default async function signUpAction(
    */
   const specialCharsRegex = /^[a-zA-Z\u00C0-\u024F\u0400-\u04FF\s]+$/
 
-  if (!specialCharsRegex.test(name)) return { error: 'contain' }
+  if (!specialCharsRegex.test(name)) return { error: 'invalidName' }
 
   /**
    * Validation
@@ -69,14 +69,14 @@ export default async function signUpAction(
     }
   })
 
-  if (existingUser) return { error: 'email' }
+  if (existingUser) return { error: 'invalidEmail' }
 
   /**
    * Registration
    *
    * 1. Encrypt the password
    * 2. Create a new user
-   * 3. 
+   * 3. Verify token exists
    * 4. Send verification email
    * 5. Returns an success object
    * 6. Returns an error object
@@ -100,8 +100,8 @@ export default async function signUpAction(
       emailMessage
     )
 
-    return { success: 'confirmation' }
+    return { success: 'notifyConfirmation' }
   } catch (error) {
-    return { error: 'registration' }
+    return { error: 'notifyUnregister' }
   }
 }
