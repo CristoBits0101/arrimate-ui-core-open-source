@@ -10,6 +10,12 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 // Cards: Card to wrap inputs
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
+// Custom: Encapsulates form logic
+import { useSignUpForm } from '@/modules/auth/hooks/useSignUpForm'
+
+// Form: Hooks from React
+import { FormProvider } from 'react-hook-form'
+
 // Inputs: Fillable fields in forms
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import NameInput from '@/modules/auth/components/inputs/name-input'
@@ -18,16 +24,10 @@ import PasswordInput from '@/modules/auth/components/inputs/password-input'
 // Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
 
-// React form: Hooks from React
-import { FormProvider } from 'react-hook-form'
-
 // Shadcn: Contains the form component
 import { Form } from '@/modules/ui/form'
 
-// Custom hook: Encapsulates form logic
-import { useSignUpForm } from '@/modules/auth/hooks/useSignUpForm'
-
-export default function SignUpForm() {
+export default function SignUpForm(): React.ReactElement | null {
   // Get locale
   const locale = useLocale()
 
@@ -35,7 +35,7 @@ export default function SignUpForm() {
   const b = useTranslations('Button')
   const f = useTranslations('Forms')
   const m = useTranslations('Mail')
-  const s = m('confirmRegistrationSubject')
+  const s = m('confirm')
 
   // Managing form logic
   const { form, error, success, isPending, hydrated, onSubmit } = useSignUpForm(locale, s)

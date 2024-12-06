@@ -64,7 +64,7 @@
   },
   "Mail": {
     "resetPasswordSubject": "reset",
-    "confirmRegistrationSubject": "registration"
+    "confirm": "registration"
   },
   "Searcher": {
     "article": "Article",
