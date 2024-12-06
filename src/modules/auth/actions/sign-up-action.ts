@@ -21,27 +21,24 @@ export default async function signUpAction(
   values: z.infer<typeof SignUpSchema>,
   emailMessage: string
 ) {
-  /**
-   * Data validation
-   */
+  // Data validation
   const validatedFields = SignUpSchema.safeParse(values)
 
   // Returns an error object
-  if (!validatedFields.success) return { error: 'Invalid data!' }
+  if (!validatedFields.success) return { error: 'invalid' }
 
   // Extract fields
   const { name, email, password } = validatedFields.data
 
   // Check password and email match
   if (email.toLocaleLowerCase().trim() === password.toLocaleLowerCase().trim())
-    return { error: 'Password cannot match email!' }
+    return { error: 'cannot' }
 
   // Regex for special characters
   const specialCharsRegex = /^[a-zA-Z\u00C0-\u024F\u0400-\u04FF\s]+$/
 
   // Check for special characters in the name
-  if (!specialCharsRegex.test(name))
-    return { error: 'Name cannot contain special characters!' }
+  if (!specialCharsRegex.test(name)) return { error: 'contain' }
 
   const cleanedEmail = email.toLocaleLowerCase().trim()
 
@@ -52,7 +49,7 @@ export default async function signUpAction(
   })
 
   // Returns an error object
-  if (existingUser) return { error: 'Email already in use!' }
+  if (existingUser) return { error: 'email' }
 
   /**
    * Try registration
@@ -76,9 +73,9 @@ export default async function signUpAction(
     )
 
     // Returns an success object
-    return { success: 'Confirmation email sent!' }
+    return { success: 'confirmation' }
   } catch (error) {
     // Returns an error object
-    return { error: 'Registration failed. Please try again.' }
+    return { error: 'registration' }
   }
 }

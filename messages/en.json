@@ -1,4 +1,12 @@
 {
+  "AuthActions": {
+    "confirmation": "Confirmation email sent!",
+    "cannot": "Password cannot match email!",
+    "contain": "Name cannot contain special characters!",
+    "email": "Email already in use!",
+    "invalid": "Invalid data!",
+    "registration": "Registration failed. Please try again."
+  },
   "AuthButtons": {
     "signIn": "Sign In",
     "signUp": "Sign Up"
