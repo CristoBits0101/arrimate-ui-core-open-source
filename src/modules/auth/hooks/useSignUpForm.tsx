@@ -14,12 +14,16 @@ import { useEffect, useState, useTransition } from 'react'
 
 // Zod: Define data validation rules
 import * as z from 'zod'
-import { SignUpSchema } from '@/modules/auth/schemas'
+import { getSignUpSchema } from '@/modules/auth/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSignUpForm(subject: string) {
   // Get translations
   const t = useTranslations('AuthActions')
+  const z = useTranslations('AuthSchemas')
+
+  // Pass translations to Zod schema
+  const SignUpSchema = getSignUpSchema(z);
 
   // Save action errors
   const [error, setError] = useState<string | undefined>('')
@@ -63,7 +67,7 @@ export function useSignUpForm(subject: string) {
         })
         // Failed transaction
         .catch((err) => {
-          setError(t('unavailable'))
+          setError(t('notifyUnregister'))
           console.error('Error in SignUp: ', err)
         })
     })

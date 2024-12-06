@@ -1,20 +1,22 @@
 {
   "AuthActions": {
-    "confirmation": "Confirmation email sent!",
-    "cannot": "Password cannot match email!",
-    "contain": "Name cannot contain special characters!",
-    "email": "Email already in use!",
-    "invalid": "Invalid data!",
-    "registration": "Registration failed. Please try again.",
-    "unavailable": "Registration failed. Please try again."
+    "invalidData": "Invalid data!",
+    "invalidEmail": "Email in use!",
+    "invalidName": "Name without symbols!",
+    "invalidPassword": "Email and password are identical!",
+    "notifyConfirmation": "Confirmation email sent!",
+    "notifyUnregister": "Registration failed!"
   },
   "AuthButtons": {
     "signIn": "Sign In",
     "signUp": "Sign Up"
   },
   "AuthSchemas": {
-    "minPassword": "Sign In",
-    "signUp": "Sign Up"
+    "emptyEmail": "Email is required.",
+    "emptyName": "Name is required.",
+    "invalidEmail": "Invalid email address.",
+    "maxPassword": "Maximum 64 characters.",
+    "minPassword": "Minimum 12 characters."
   },
   "Button": {
     "SignIn": "Sign In",
