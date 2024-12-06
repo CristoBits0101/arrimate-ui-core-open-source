@@ -27,13 +27,13 @@ export const ResetPasswordSchema = z.object({
 // Backend validations
 export const SignInSchema = z.object({
   email: z
-  .string()
-  .min(1, {
-    message: 'Email is required.'
-  })
-  .email({
-    message: 'Invalid email address.'
-  }),
+    .string()
+    .min(1, {
+      message: 'Email is required.'
+    })
+    .email({
+      message: 'Invalid email address.'
+    }),
   password: z
     .string()
     .min(12, {
@@ -74,23 +74,7 @@ export const getSignUpSchema = (t: (key: string) => string) =>
 
 // Backend validations
 export const SignUpSchema = z.object({
-  name: z.string().min(1, {
-    message: 'Name is required.'
-  }),
-  email: z
-  .string()
-  .min(1, {
-    message: 'Email is required.'
-  })
-  .email({
-    message: 'Invalid email address.'
-  }),
-  password: z
-    .string()
-    .min(12, {
-      message: 'Minimum 12 characters.'
-    })
-    .max(64, {
-      message: 'Maximum 64 characters.'
-    })
+  name: z.string().min(1),
+  email: z.string().min(1).email(),
+  password: z.string().min(12).max(64)
 })
