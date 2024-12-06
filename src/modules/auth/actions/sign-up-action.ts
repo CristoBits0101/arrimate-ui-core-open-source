@@ -75,9 +75,10 @@ export default async function signUpAction(
    *
    * 1. Encrypt the password
    * 2. Create a new user
-   * 3. Send verification email
-   * 4. Returns an success object
-   * 5. Returns an error object
+   * 3. 
+   * 4. Send verification email
+   * 5. Returns an success object
+   * 6. Returns an error object
    */
   try {
     const hashedPassword = await bcrypt.hash(password, 10)
