@@ -2,7 +2,7 @@
 
 // Data
 import { getUserByEmail } from '@/modules/auth/data/user-data'
-import { getVerificationTokenByToken } from '@/modules/auth/data/verification-token'
+import { getVerificationTokenByToken } from '@/modules/auth/data/verification-token-exists'
 
 // Lib
 import { db } from '@/lib/db'
