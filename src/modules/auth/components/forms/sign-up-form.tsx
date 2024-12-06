@@ -43,22 +43,30 @@ export default function SignUpForm(): React.ReactElement | null {
 
   // Render the form on the frontend
   return hydrated ? (
+    // Content that is rendered
     <CardWrapper
       pageNameRedirect={f('signUpForm.pageNameRedirect')}
       redirectButtonLabel={f('signUpForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-in`}
       showSocial={true}
     >
+      {/* Form structure provider */}
       <FormProvider {...form}>
+        {/* Extend structure for Shadcn form */}
         <Form {...form}>
+          {/* Form */}
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
+              {/* Inputs */}
               <NameInput name='name' isPending={isPending} />
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
             </div>
+            {/* Show errors */}
             <FormError message={error} />
+            {/* Show success */}
             <FormSuccess message={success} />
+            {/* Submit button */}
             <SubmitButton message={b('SignUp')} isPending={isPending} />
           </form>
         </Form>
