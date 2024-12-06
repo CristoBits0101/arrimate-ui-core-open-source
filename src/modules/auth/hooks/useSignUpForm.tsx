@@ -15,15 +15,25 @@ import { SignUpSchema } from '@/modules/auth/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSignUpForm(subject: string) {
+  // Save action errors
   const [error, setError] = useState<string | undefined>('')
+
+  // Save action success
   const [success, setSuccess] = useState<string | undefined>('')
+
+  // To control component rendering
   const [hydrated, setHydrated] = useState(false)
+
+  // Indicates code execution finished
   const [isPending, startTransition] = useTransition()
 
-  // Initialize form with react-hook-form
+  // Type form with SignUpSchema
   const form = useForm<z.infer<typeof SignUpSchema>>({
+    // Validate before sending
     resolver: zodResolver(SignUpSchema),
+    // Runs on every shipment
     mode: 'onSubmit',
+    // Initial state of the fields
     defaultValues: {
       name: '',
       email: '',
@@ -33,21 +43,25 @@ export function useSignUpForm(subject: string) {
 
   // Handle form submission
   const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
+    // Clear previous messages before sending
     setError('')
     setSuccess('')
+    // Checks backend request status
     startTransition(() => {
+      // Send input values and email subject to backend
       signUpAction(values, subject)
         .then((data) => {
-          setError(data.error)
-          setSuccess(data.success)
+          if (data.error) setError(data.error)
+          if (data.success) setSuccess(data.success)
         })
         .catch((err) => {
-          console.error('Error in SignUp:', err)
-          setError('An unexpected error occurred.')
+          setError('Registration unavailable.')
+          console.error('Error in SignUp: ', err)
         })
     })
   }
 
+  // Backend finished allowing frontend to render
   useEffect(() => setHydrated(true), [])
 
   return {
