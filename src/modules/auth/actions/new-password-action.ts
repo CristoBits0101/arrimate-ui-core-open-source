@@ -13,8 +13,7 @@ const newPassword = async (
   token?: string | null,
 ) => {
   // Check if token exists
-  // if (!token) return { error: 'Missing token' }
-  if (!token) return { error: '' }
+  if (!token) return { error: 'Missing token' }
 
   // Check if data passed validations
   const validatedFields = NewPasswordSchema.safeParse(values)
@@ -35,8 +34,7 @@ const newPassword = async (
   const hasExpired = new Date(existingToken?.expiresAt) < new Date()
 
   // Check if token has expired
-  // if (hasExpired) return { error: 'Token has expired!' }
-  if (hasExpired) return { error: '' }
+  if (hasExpired) return { error: 'Token has expired!' }
 
   // Get user by email
   const existingUser = await getUserByEmail(existingToken.email)

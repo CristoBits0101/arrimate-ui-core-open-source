@@ -1,32 +1,31 @@
 'use client'
 
-// Actions: Encapsulates logic to interact with the backend
+// Actions: Encapsulates backend logic
 import signUpAction from '@/modules/auth/actions/sign-up-action'
 
-// Alerts: Show error or success messages to the user
+// Alerts: Serialize backend messages
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// Buttons: Button to send the form
+// Buttons: Button to send form
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
-// Cards: Contains the design of the form
+// Cards: Card to wrap inputs
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
-// Inputs: Input fields optimized for reusability and control
+// Form: Manage form status and validation
+import { useForm, FormProvider } from 'react-hook-form'
+
+// Inputs: Fillable fields in forms
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import NameInput from '@/modules/auth/components/inputs/name-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
-// Next: To get the client language
+// Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
 
 // React: Hooks from React
-import React from 'react'
-import { useState, useTransition } from 'react'
-
-// Form: Makes it easy to manage form status and validation
-import { useForm, FormProvider } from 'react-hook-form'
+import { useEffect, useState, useTransition } from 'react'
 
 // Shadcn: Contains the form component
 import { Form } from '@/modules/ui/form'
@@ -88,8 +87,8 @@ export default function SignUpForm() {
   }
 
   // Ensure client-side rendering
-  const [hydrated, setHydrated] = React.useState(false)
-  React.useEffect(() => setHydrated(true), [])
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => setHydrated(true), [])
 
   return hydrated ? (
     <CardWrapper

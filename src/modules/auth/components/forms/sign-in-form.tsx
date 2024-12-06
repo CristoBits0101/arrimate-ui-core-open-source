@@ -1,32 +1,33 @@
 'use client'
 
-// Actions
+// Actions: Encapsulates backend logic
 import signInAction from '@/modules/auth/actions/sign-in-action'
 
-// Alerts
+// Alerts: Serialize backend messages
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// Buttons
+// Buttons: Button to send form
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
-// Cards
+// Cards: Card to wrap inputs
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
-// Inputs
+// Form: Manage form status and validation
+import { useForm, FormProvider } from 'react-hook-form'
+
+// Inputs: Fillable fields in forms
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
-// Intl
+// Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
 
-// Navigation
+// Navigation: To get URL parameter
 import { useSearchParams } from 'next/navigation'
 
-// React
-import React from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
-import { useState, useTransition } from 'react'
+// React: Hooks from React
+import { useEffect, useState, useTransition } from 'react'
 
 // Shadcn
 import { Form } from '@/modules/ui/form'
@@ -86,8 +87,8 @@ export default function SignInForm() {
   }
 
   // Ensure client-side rendering
-  const [hydrated, setHydrated] = React.useState(false)
-  React.useEffect(() => setHydrated(true), [])
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => setHydrated(true), [])
 
   return hydrated ? (
     <CardWrapper

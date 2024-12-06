@@ -1,19 +1,19 @@
 'use client'
 
-// Actions
+// Actions: Encapsulates backend logic
 import signOutAction from '@/modules/auth/actions/sign-out-action'
 
-// Components
+// Components: 
 import OptionsButton from '@/modules/configuration/components/buttons/options-button'
 
-// Icons
+// Icons: 
 import signOutIcon from '@/modules/auth/assets/icons/buttons/session/sign-out.svg'
 
-// Intl
+// Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
 
-// React
-import React from 'react'
+// React: Hooks from React
+import { useEffect, useState } from 'react'
 
 export default function SignOutForm() {
   const locale = useLocale()
@@ -31,8 +31,8 @@ export default function SignOutForm() {
   }
 
   // Ensure client-side rendering
-  const [hydrated, setHydrated] = React.useState(false)
-  React.useEffect(() => setHydrated(true), [])
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => setHydrated(true), [])
 
   return hydrated ? (
     <div className='space-y-5 w-full'>

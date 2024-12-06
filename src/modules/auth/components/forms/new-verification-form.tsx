@@ -1,13 +1,13 @@
 'use client'
 
-// actions
+// Actions: Encapsulates backend logic
 import newVerificationAction from '@/modules/auth/actions/new-verification-action'
 
-// alerts
+// Alerts: Serialize backend messages
 import AlertError from '@/modules/auth/components/alerts/alert-errors'
 import AlertSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// cards
+// Cards: Card to wrap inputs
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // hooks
@@ -16,7 +16,7 @@ import { useCallback, useEffect, useState } from 'react'
 // spinners
 import { BeatLoader } from 'react-spinners'
 
-// Intl
+// Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
 
