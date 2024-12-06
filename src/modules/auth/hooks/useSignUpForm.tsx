@@ -6,6 +6,9 @@ import signUpAction from '@/modules/auth/actions/sign-up-action'
 // Form: Manage form status and validation
 import { useForm } from 'react-hook-form'
 
+// Intl: To get language and set translations
+import { useTranslations } from 'next-intl'
+
 // React: Hooks from React
 import { useEffect, useState, useTransition } from 'react'
 
@@ -15,6 +18,9 @@ import { SignUpSchema } from '@/modules/auth/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSignUpForm(subject: string) {
+  // Get translations
+  const t = useTranslations('AuthActions')
+
   // Save action errors
   const [error, setError] = useState<string | undefined>('')
 
@@ -55,7 +61,7 @@ export function useSignUpForm(subject: string) {
           if (data.success) setSuccess(data.success)
         })
         .catch((err) => {
-          setError('Registration unavailable.')
+          setError(t('unavailable'))
           console.error('Error in SignUp: ', err)
         })
     })

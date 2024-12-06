@@ -5,7 +5,8 @@
     "contain": "Name cannot contain special characters!",
     "email": "Email already in use!",
     "invalid": "Invalid data!",
-    "registration": "Registration failed. Please try again."
+    "registration": "Registration failed. Please try again.",
+    "unavailable": "Registration failed. Please try again."
   },
   "AuthButtons": {
     "signIn": "Sign In",
