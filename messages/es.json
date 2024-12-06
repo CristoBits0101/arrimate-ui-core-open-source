@@ -1,10 +1,10 @@
 {
   "AuthActions": {
-    "confirmation": "¡Correo de confirmación enviado!",
-    "cannot": "¡La contraseña no puede coincidir con el correo electrónico!",
+    "confirmation": "¡Correo enviado!",
+    "invalidPassword": "¡Correo y contraseña iguales!",
     "contain": "¡El nombre no puede contener caracteres especiales!",
     "email": "¡El correo electrónico ya está en uso!",
-    "invalid": "¡Datos inválidos!",
+    "validationFailed": "¡Datos inválidos!",
     "registration": "El registro falló. Por favor, inténtelo de nuevo.",
     "unavailable": "El registro falló. Por favor, inténtelo de nuevo."
   },

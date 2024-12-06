@@ -58,8 +58,8 @@ export function useSignUpForm(subject: string) {
       signUpAction(values, subject)
         // Transaction completed
         .then((data) => {
-          if (data.error) setError(data.error)
-          if (data.success) setSuccess(data.success)
+          if (data.error) setError(t(data.error))
+          if (data.success) setSuccess(t(data.success))
         })
         // Failed transaction
         .catch((err) => {

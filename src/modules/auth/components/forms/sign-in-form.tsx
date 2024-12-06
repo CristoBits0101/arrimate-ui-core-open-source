@@ -54,7 +54,7 @@ export default function SignInForm() {
   // Translations
   const f = useTranslations('Forms')
   const m = useTranslations('Mail')
-  const subject = m('confirmRegistrationSubject')
+  const subject = m('confirm')
   const b = useTranslations('Button')
 
   // Initializes the form and manages its state when rendering

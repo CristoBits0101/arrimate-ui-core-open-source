@@ -25,7 +25,7 @@ export default async function signUpAction(
   const validatedFields = SignUpSchema.safeParse(values)
 
   // Returns an error object
-  if (!validatedFields.success) return { error: 'invalid' }
+  if (!validatedFields.success) return { error: 'validationFailed' }
 
   // Extract fields
   const { name, email, password } = validatedFields.data
