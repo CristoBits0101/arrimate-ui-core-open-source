@@ -4,7 +4,7 @@
 import bcrypt from 'bcrypt'
 
 // Data: Function that queries the database
-import { generateVerificationToken } from '@/modules/auth/data/token-generator'
+import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
 
 // Mail: To send verification email
 import { sendVerificationEmail } from '@/modules/auth/lib/resend'
