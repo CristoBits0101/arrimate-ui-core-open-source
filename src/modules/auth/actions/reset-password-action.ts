@@ -1,7 +1,7 @@
 'use server'
 
 import * as z from 'zod'
-import { generatePasswordResetToken } from '@/modules/auth/data/token-generator'
+import { generateTokenResetPassword } from '@/modules/auth/data/tokens/token-generator'
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { ResetPasswordSchema } from '@/modules/auth/schemas'
 import { sendPasswordResetEmail } from '@/modules/auth/lib/resend'
@@ -25,7 +25,7 @@ const resetPasswordSchema = async (
   if (!existingUser) return { error: 'Email not found!' }
 
   //
-  const resetPasswordToken = await generatePasswordResetToken(email)
+  const resetPasswordToken = await generateTokenResetPassword(email)
 
   //
   await sendPasswordResetEmail(
