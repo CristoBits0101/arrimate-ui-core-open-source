@@ -2,10 +2,10 @@
 import { db } from '@/lib/db'
 
 // Query: Get password reset token by email
-import { getPasswordResetTokenByEmail } from '@/modules/auth/data/verification-reset-token'
+import { getPasswordResetTokenByEmail } from '@/modules/auth/data/tokens/verification-reset-token'
 
 // Query: Checks in bd if an email has an associated token
-import { getVerificationTokenByEmail } from '@/modules/auth/data/verification-token-exists'
+import { getVerificationTokenByEmail } from '@/modules/auth/data/tokens/verification-token-exists'
 
 // UUID: To generate unique tokens
 import { v4 as uuidv4 } from 'uuid'
