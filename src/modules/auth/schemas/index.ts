@@ -49,7 +49,7 @@ export const SignInSchema = z.object({
  */
 
 // Frontend validations
-export const getSignUpSchema = (t: (key: string) => string) =>
+export const FrontendSignUpSchema = (t: (key: string) => string) =>
   z.object({
     name: z.string().min(1, {
       message: t('emptyName')
@@ -73,7 +73,7 @@ export const getSignUpSchema = (t: (key: string) => string) =>
   })
 
 // Backend validations
-export const SignUpSchema = z.object({
+export const BackendSignUpSchema = z.object({
   name: z.string().min(1),
   email: z.string().min(1).email(),
   password: z.string().min(12).max(64)

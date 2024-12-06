@@ -14,11 +14,11 @@ import { db } from '@/lib/db'
 
 // Zod: To validate data in backend
 import * as z from 'zod'
-import { SignUpSchema } from '@/modules/auth/schemas'
+import { BackendSignUpSchema } from '@/modules/auth/schemas'
 
 // Receive input values ​​and email message
 export default async function signUpAction(
-  values: z.infer<typeof SignUpSchema>,
+  values: z.infer<typeof BackendSignUpSchema>,
   emailMessage: string
 ) {
   /**
@@ -27,7 +27,7 @@ export default async function signUpAction(
    * 1. Data validation
    * 2. Returns an error object
    */
-  const validatedFields = SignUpSchema.safeParse(values)
+  const validatedFields = BackendSignUpSchema.safeParse(values)
 
   // Returns an error object
   if (!validatedFields.success) return { error: 'invalidData' }

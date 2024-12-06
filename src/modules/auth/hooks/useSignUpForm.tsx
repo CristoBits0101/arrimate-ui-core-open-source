@@ -14,7 +14,7 @@ import { useEffect, useState, useTransition } from 'react'
 
 // Zod: Define data validation rules
 import * as z from 'zod'
-import { getSignUpSchema } from '@/modules/auth/schemas'
+import { FrontendSignUpSchema } from '@/modules/auth/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSignUpForm(subject: string) {
@@ -23,7 +23,7 @@ export function useSignUpForm(subject: string) {
   const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
-  const SignUpSchema = getSignUpSchema(z);
+  const SignUpSchema = FrontendSignUpSchema(z);
 
   // Save action errors
   const [error, setError] = useState<string | undefined>('')
