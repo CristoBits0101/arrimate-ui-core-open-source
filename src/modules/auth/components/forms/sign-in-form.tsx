@@ -22,21 +22,23 @@ import { Form } from '@/modules/ui/form'
 export default function SignInForm() {
   // Get locale and translations
   const locale = useLocale()
-  const f = useTranslations('Forms') // Form-related translations
-  const b = useTranslations('Button') // Button labels
+  const f = useTranslations('Forms')
+  const b = useTranslations('Button')
+  const m = useTranslations('Mail')
+  const s = m('confirm')
 
   // Use hook to manage form logic
   const { form, error, success, isPending, hydrated, onSubmit } =
-    useSignInForm()
+    useSignInForm(s)
 
   return hydrated ? (
     <CardWrapper
-      pageNameRedirect={f('signInForm.pageNameRedirect')} // Redirect to sign-up
+      pageNameRedirect={f('signInForm.pageNameRedirect')}
       redirectButtonLabel={f('signInForm.redirectButtonLabel')}
       redirectButtonHref={`/${locale}/sign-up`}
-      showSocial={true} // Show social login buttons
-      showForgotPassword={true} // Show forgot password link
-      showDividingLine={true} // Divider between sections
+      showSocial={true}
+      showForgotPassword={true}
+      showDividingLine={true}
     >
       <FormProvider {...form}>
         <Form {...form}>

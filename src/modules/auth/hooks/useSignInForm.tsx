@@ -17,17 +17,10 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FrontendSignInSchema } from '@/modules/auth/schemas'
 
-/**
- * Hook: useSignInForm
- *
- * 1. Manages form validation and submission
- * 2. Uses translations for error/success messages
- * 3. Tracks pending state for form submission
- */
-export function useSignInForm() {
+export function useSignInForm(subject: string) {
   // Get translations
-  const t = useTranslations('AuthActions') // Error/success messages
-  const z = useTranslations('AuthSchemas') // Validation messages
+  const t = useTranslations('AuthActions')
+  const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
   const SignInSchema = FrontendSignInSchema(z)
@@ -57,33 +50,30 @@ export function useSignInForm() {
     }
   })
 
-  /**
-   * Handle form submission
-   *
-   * 1. Clear previous messages
-   * 2. Execute backend action
-   * 3. Handle success or error messages
-   */
+  // Handle form submission
   const onSubmit = (values: z.infer<typeof SignInSchema>) => {
+    // Clear previous messages before sending
     setError('')
     setSuccess('')
+
+    // Checks backend request status
     startTransition(() => {
-      signInAction(values)
+      // Send input values and email subject to backend
+      signInAction(values, subject)
+        // Transaction completed
         .then((data) => {
-          // Translate error
           if (data.error) setError(t(data.error))
-          // Translate success
           if (data.success) setSuccess(t(data.success))
         })
+        // Failed transaction
         .catch((err) => {
-          // Generic error
           setError(t('notifyUnregister'))
           console.error('Error in SignIn: ', err)
         })
     })
   }
 
-  // Ensure client-side rendering
+  // Backend finished allowing frontend to render
   useEffect(() => setHydrated(true), [])
 
   return {
