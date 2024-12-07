@@ -17,6 +17,9 @@ export const useNewVerification = () => {
   const [error, setError] = useState<string | undefined>()
   const [success, setSuccess] = useState<string | undefined>()
 
+  // Hydration: Ensure client-side rendering
+  const [hydrated, setHydrated] = useState(false)
+
   // Translations: Access localized strings for feedback messages
   const t = useTranslations('AuthActions')
 
@@ -30,6 +33,7 @@ export const useNewVerification = () => {
     if (success || error) return 
     // Show error if token is missing
     if (!token) {
+      console.error('Token no encontrado en la URL');
       setError(t('lostProcess'))
       return
     }
@@ -40,7 +44,8 @@ export const useNewVerification = () => {
         if (data.error) setError(t(data.error))
       })
       .catch(() => {
-        setError(t('notifyDisconnect')) // Handle request failure
+         // Handle request failurey
+        setError(t('notifyDisconnect'))
       })
   }, [token, success, error, t])
 
@@ -49,10 +54,14 @@ export const useNewVerification = () => {
     onSubmit()
   }, [onSubmit])
 
+  // Backend finished allowing frontend to render
+  useEffect(() => setHydrated(true), [])
+
   // Return values: Error, success, and loading state
   return {
     success,
     error,
-    isLoading: !success && !error
+    isLoading: !success && !error,
+    hydrated
   }
 }

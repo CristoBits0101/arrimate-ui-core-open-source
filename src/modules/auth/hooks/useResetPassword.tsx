@@ -24,6 +24,9 @@ export const useResetPassword = () => {
   const [success, setSuccess] = useState<string | undefined>('')
   const [isPending, startTransition] = useTransition()
 
+  // Hydration: Ensure client-side rendering
+  const [hydrated, setHydrated] = useState(false)
+
   // Navigation: Get locale for redirection
   const locale = useLocale()
 
@@ -60,8 +63,7 @@ export const useResetPassword = () => {
     })
   }
 
-  // Hydration: Ensure client-side rendering
-  const [hydrated, setHydrated] = useState(false)
+  // Backend finished allowing frontend to render
   useEffect(() => setHydrated(true), [])
 
   return { form, error, success, isPending, hydrated, f, onSubmit, locale }

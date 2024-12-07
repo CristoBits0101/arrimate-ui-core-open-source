@@ -18,7 +18,7 @@ import { useNewVerification } from '@/modules/auth/hooks/useNewVerification'
 
 export default function NewVerificationForm(): React.ReactElement | null {
   // Hook: Handle logic for new verification
-  const { success, error, isLoading } = useNewVerification()
+  const { success, error, isLoading, hydrated } = useNewVerification()
 
   // Translations: Get form-related text
   const f = useTranslations('Forms')
@@ -26,7 +26,7 @@ export default function NewVerificationForm(): React.ReactElement | null {
   // Locale: Determine the current language for redirects
   const locale = useLocale()
 
-  return (
+  return hydrated ? (
     <CardWrapper
       pageNameRedirect={
         error
@@ -49,5 +49,5 @@ export default function NewVerificationForm(): React.ReactElement | null {
         <AlertSuccess message={success} />
       </div>
     </CardWrapper>
-  )
+  ) : null
 }

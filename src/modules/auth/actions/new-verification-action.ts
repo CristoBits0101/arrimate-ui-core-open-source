@@ -12,19 +12,19 @@ export default async function newVerificationAction(token: string) {
   const existingToken = await getVerificationTokenByToken(token)
 
   // Return an error if the token does not exist
-  if (!existingToken) return { error: 'lostProcess', success: null }
+  if (!existingToken) return { error: 'lostProcess' }
 
   // Check if the token expired
   const hasExpired = new Date(existingToken.expiresAt) < new Date()
 
   // Return an error if the token expired
-  if (hasExpired) return { error: 'lostVerification', success: null }
+  if (hasExpired) return { error: 'lostVerification' }
 
   // Check if the user exists
   const existingUser = await getUserByEmail(existingToken.email)
 
   // Return an error if the user does not exist
-  if (!existingUser) return { error: 'lostEmail', success: null }
+  if (!existingUser) return { error: 'lostEmail' }
 
   // Update the user profile
   await db.user.update({
@@ -38,5 +38,5 @@ export default async function newVerificationAction(token: string) {
   })
 
   // Return success
-  return { error: null, success: 'notifyVerification' }
+  return { success: 'notifyVerification' }
 }
