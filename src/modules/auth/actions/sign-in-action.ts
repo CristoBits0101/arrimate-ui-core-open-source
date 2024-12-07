@@ -100,6 +100,6 @@ export default async function signInAction(
     }
 
     console.error('Unexpected error in SignIn:', error)
-    return { error: 'Unexpected server error.' }
+    return { error: 'notifyServer' }
   }
 }
