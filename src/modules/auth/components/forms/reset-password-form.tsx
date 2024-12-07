@@ -1,8 +1,5 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import resetPasswordAction from '@/modules/auth/actions/reset-password-action'
-
 // Alerts: Serialize backend messages
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
@@ -13,72 +10,24 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 // Cards: Card to wrap inputs
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
-// Form: Manage form status and validation
-import { useForm, FormProvider } from 'react-hook-form'
+// Form: Hook form provider
+import { FormProvider } from 'react-hook-form'
+
+// Hook: Encapsulates reset password logic
+import { useResetPassword } from '@/modules/auth/hooks/useResetPassword'
 
 // Inputs: Fillable fields in forms
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 
-// Intl: To get language and set translations
-import { useLocale, useTranslations } from 'next-intl'
-
-// React: Hooks from React
-import { useEffect, useState, useTransition } from 'react'
-
-// Shadcn
+// Shadcn: Contains the form component
 import { Form } from '@/modules/ui/form'
 
-// Zod
-import * as z from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { ResetPasswordSchema } from '@/modules/auth/schemas'
-
 export default function ResetPasswordForm() {
-  // States
-  const [error, setError] = useState<string | undefined>('')
-  const [success, setSuccess] = useState<string | undefined>('')
-  const [isPending, startTransition] = useTransition()
+  // Hook: Destructure reset password logic
+  const { form, error, success, isPending, hydrated, f, onSubmit, locale } =
+    useResetPassword()
 
-  // Navigation
-  const locale = useLocale()
-
-  // Translations
-  const f = useTranslations('Forms')
-  const m = useTranslations('Mail')
-  const subject = m('subject')
-
-  // Initializes the form and manages its state when rendering
-  const form = useForm<z.infer<typeof ResetPasswordSchema>>({
-    resolver: zodResolver(ResetPasswordSchema),
-    mode: 'onSubmit',
-    defaultValues: {
-      email: ''
-    }
-  })
-
-  const onSubmit = (values: z.infer<typeof ResetPasswordSchema>) => {
-    // Reset values
-    setError('')
-    setSuccess('')
-    // Sent data to server
-    startTransition(() => {
-      resetPasswordAction(values, subject ?? 'reset')
-        .then((data) => {
-          setError(data?.error)
-          setSuccess(data?.success)
-          if (data.success) window.location.href = `/${locale}`
-        })
-        .catch((error) => {
-          console.error('Error en SignIn:', error)
-          setError('Ocurrió un error inesperado.')
-        })
-    })
-  }
-
-  // Ensure client-side rendering
-  const [hydrated, setHydrated] = useState(false)
-  useEffect(() => setHydrated(true), [])
-
+  // Render: Display form only after hydration
   return hydrated ? (
     <CardWrapper
       pageNameRedirect={f('resetPasswordForm.pageNameRedirect')}
