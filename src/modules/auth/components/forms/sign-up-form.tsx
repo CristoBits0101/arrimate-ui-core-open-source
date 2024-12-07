@@ -11,13 +11,14 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // Custom: Encapsulates form logic
-import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
+import { useSignUpForm } from '@/modules/auth/hooks/useSignUpForm'
 
 // Form: Hooks from React
 import { FormProvider } from 'react-hook-form'
 
 // Inputs: Fillable fields in forms
 import EmailInput from '@/modules/auth/components/inputs/email-input'
+import NameInput from '@/modules/auth/components/inputs/name-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
 // Intl: To get language and set translations
@@ -26,54 +27,47 @@ import { useLocale, useTranslations } from 'next-intl'
 // Shadcn: Contains the form component
 import { Form } from '@/modules/ui/form'
 
-/**
- * Component: SignInForm
- *
- * 1. Renders the sign-in form
- * 2. Handles validation, submission, and rendering
- * 3. Displays success/error messages
- */
-export default function SignInForm() {
-  // Get locale and translations
+export default function SignUpForm(): React.ReactElement | null {
+  // Get locale
   const locale = useLocale()
-  const f = useTranslations('Forms')
+
+  // Get translations
   const b = useTranslations('Button')
+  const f = useTranslations('Forms')
   const m = useTranslations('Mail')
   const s = m('confirm')
 
-  // Use hook to manage form logic
+  // Managing form logic
   const { form, error, success, isPending, hydrated, onSubmit } =
-    useSignInForm(s)
+    useSignUpForm(s)
 
-  // Render the hydrated form on the frontend
+  // Render the form on the frontend
   return hydrated ? (
-    // Wrapper for the card layout
+    // Content that is rendered
     <CardWrapper
-      pageNameRedirect={f('signInForm.pageNameRedirect')}
-      redirectButtonLabel={f('signInForm.redirectButtonLabel')}
-      redirectButtonHref={`/${locale}/sign-up`}
+      pageNameRedirect={f('signUpForm.pageNameRedirect')}
+      redirectButtonLabel={f('signUpForm.redirectButtonLabel')}
+      redirectButtonHref={`/${locale}/sign-in`}
       showSocial={true}
-      showForgotPassword={true}
-      showDividingLine={true}
     >
-      {/* Form provider for React Hook Form */}
+      {/* Form structure provider */}
       <FormProvider {...form}>
         {/* Extend structure for Shadcn form */}
         <Form {...form}>
-          {/* Form element */}
+          {/* Form */}
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
-              {/* Email input */}
+              {/* Inputs */}
+              <NameInput name='name' isPending={isPending} />
               <EmailInput name='email' isPending={isPending} />
-              {/* Password input */}
               <PasswordInput name='password' isPending={isPending} />
             </div>
-            {/* Display errors */}
+            {/* Show errors */}
             <FormError message={error} />
-            {/* Display success */}
+            {/* Show success */}
             <FormSuccess message={success} />
             {/* Submit button */}
-            <SubmitButton message={b('SignIn')} isPending={isPending} />
+            <SubmitButton message={b('SignUp')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

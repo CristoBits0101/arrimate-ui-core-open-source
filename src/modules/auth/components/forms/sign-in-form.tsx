@@ -1,37 +1,48 @@
 'use client'
 
-// Hooks and components
-import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
-import { FormProvider } from 'react-hook-form'
-import { useLocale, useTranslations } from 'next-intl'
-import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
-import EmailInput from '@/modules/auth/components/inputs/email-input'
-import PasswordInput from '@/modules/auth/components/inputs/password-input'
-import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
+// Alerts: Serialize backend messages
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
+
+// Buttons: Button to send form
+import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
+
+// Cards: Card to wrap inputs
+import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+
+// Custom: Encapsulates form logic
+import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
+
+// Form: Hooks from React
+import { FormProvider } from 'react-hook-form'
+
+// Inputs: Fillable fields in forms
+import EmailInput from '@/modules/auth/components/inputs/email-input'
+import PasswordInput from '@/modules/auth/components/inputs/password-input'
+
+// Intl: To get language and set translations
+import { useLocale, useTranslations } from 'next-intl'
+
+// Shadcn: Contains the form component
 import { Form } from '@/modules/ui/form'
 
-/**
- * Component: SignInForm
- *
- * 1. Renders the sign-in form
- * 2. Handles validation, submission, and rendering
- * 3. Displays success/error messages
- */
-export default function SignInForm() {
-  // Get locale and translations
+export default function SignInForm(): React.ReactElement | null {
+  // Get locale
   const locale = useLocale()
-  const f = useTranslations('Forms')
+
+  // Get translations
   const b = useTranslations('Button')
+  const f = useTranslations('Forms')
   const m = useTranslations('Mail')
   const s = m('confirm')
 
-  // Use hook to manage form logic
+  // Managing form logic
   const { form, error, success, isPending, hydrated, onSubmit } =
     useSignInForm(s)
 
+  // Render the form on the frontend
   return hydrated ? (
+    // Content that is rendered
     <CardWrapper
       pageNameRedirect={f('signInForm.pageNameRedirect')}
       redirectButtonLabel={f('signInForm.redirectButtonLabel')}
@@ -40,15 +51,22 @@ export default function SignInForm() {
       showForgotPassword={true}
       showDividingLine={true}
     >
+      {/* Form structure provider */}
       <FormProvider {...form}>
+        {/* Extend structure for Shadcn form */}
         <Form {...form}>
+          {/* Form */}
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
+              {/* Inputs */}
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
             </div>
+            {/* Show errors */}
             <FormError message={error} />
+            {/* Show success */}
             <FormSuccess message={success} />
+            {/* Submit button */}
             <SubmitButton message={b('SignIn')} isPending={isPending} />
           </form>
         </Form>
