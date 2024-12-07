@@ -1,61 +1,53 @@
 'use server'
 
 import * as z from 'zod'
-import { AuthError } from 'next-auth'
-import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
-import { sendVerificationEmail } from '@/modules/auth/lib/resend'
+import { BackendSignInSchema } from '@/modules/auth/schemas'
+import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { signIn } from '@/modules/auth/lib/auth'
-import { SignInSchema } from '@/modules/auth/schemas'
-import { getUserByEmail } from '../data/users/user-data'
 
+/**
+ * Action: signInAction
+ *
+ * 1. Validate input values
+ * 2. Fetch user from database
+ * 3. Validate credentials and authentication
+ * 4. Return error/success messages
+ */
 export default async function signInAction(
-  values: z.infer<typeof SignInSchema>,
-  emailMessage: string
+  values: z.infer<typeof BackendSignInSchema>
 ) {
-  const validatedFields = SignInSchema.safeParse(values)
+  // Validate input fields
+  const validatedFields = BackendSignInSchema.safeParse(values)
+  if (!validatedFields.success) return { error: 'invalidData' }
 
-  //
-  if (!validatedFields.success)
-    return { error: 'Invalid email or password format!' }
-
-   // Extract fields
+  // Extract fields
   const { email, password } = validatedFields.data
+
+  /**
+   * User validation
+   *
+   * 1. Check if user exists
+   * 2. Verify email format
+   */
   const existingUser = await getUserByEmail(email)
+  if (!existingUser) return { error: 'invalidEmail' }
 
-  //
-  if (!existingUser || !existingUser.email || !existingUser.password)
-    return { error: 'Email does not exist!' }
-
-  //
-  if (!existingUser.emailVerified) {
-    const verificationToken = await generateVerificationToken(
-      existingUser.email
-    )
-    await sendVerificationEmail(
-      verificationToken.email,
-      verificationToken.token,
-      emailMessage
-    )
-    return { success: 'Confirmation email sent!' }
-  }
-
-  //
+  /**
+   * Authentication
+   *
+   * 1. Sign in with credentials
+   * 2. Handle errors or successful authentication
+   */
   try {
-    await signIn('credentials', {
+    const signInResult = await signIn('credentials', {
       email,
       password,
       redirect: false
     })
-    return { success: 'Sign-in successful!' }
+    if (!signInResult?.ok) return { error: 'invalidCredentials' }
+    return { success: 'signInSuccess' }
   } catch (error) {
-    if (error instanceof AuthError)
-      switch (error.type) {
-        case 'CredentialsSignin':
-          return { error: 'Invalid credentials!' }
-        default:
-          return { error: 'Something went wrong!' }
-      }
-    console.error('Unexpected error in SignIn:', error)
-    return { error: 'Unexpected server error.' }
+    console.error('Error in SignInAction:', error)
+    return { error: 'unexpectedError' }
   }
 }

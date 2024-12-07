@@ -21,27 +21,26 @@ export const ResetPasswordSchema = z.object({
 })
 
 /**
- * Sign in validations
+ * Sign In Validations
  */
 
+// Frontend validations
+export const FrontendSignInSchema = (t: (key: string) => string) =>
+  z.object({
+    email: z
+      .string()
+      .min(1, { message: t('emptyEmail') })
+      .email({ message: t('invalidEmail') }),
+    password: z
+      .string()
+      .min(12, { message: t('minPassword') })
+      .max(64, { message: t('maxPassword') })
+  })
+
 // Backend validations
-export const SignInSchema = z.object({
-  email: z
-    .string()
-    .min(1, {
-      message: 'Email is required.'
-    })
-    .email({
-      message: 'Invalid email address.'
-    }),
-  password: z
-    .string()
-    .min(12, {
-      message: 'Minimum 12 characters.'
-    })
-    .max(64, {
-      message: 'Maximum 64 characters.'
-    })
+export const BackendSignInSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(12).max(64)
 })
 
 /**
