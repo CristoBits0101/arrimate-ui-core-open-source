@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs'
 
 // modules/auth
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
-import { SignInSchema } from '@/modules/auth/schemas/index'
+import { BackendSignInSchema } from '@/modules/auth/schemas/index'
 
 // next-auth
 import type { NextAuthOptions } from 'next-auth'
@@ -28,7 +28,7 @@ export default {
       // Verify login
       async authorize(credentials) {
         // 1. Validate inputs
-        const validatedFields = SignInSchema.safeParse(credentials)
+        const validatedFields = BackendSignInSchema.safeParse(credentials)
         // 2. Validate success
         if (validatedFields.success) {
           // 3. Get data
