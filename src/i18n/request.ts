@@ -1,26 +1,13 @@
-/**
- * Internationalized Request Configuration
- *
- * This file configures the server-side behavior for handling internationalized
- * requests in a Next.js application using the `next-intl` library
- */
-
-// Import the `getRequestConfig` function from `next-intl/server`
-// This function generates the necessary server configuration for handling localized requests
+// Import configuration function for server-side localization
 import { getRequestConfig } from 'next-intl/server'
 
-// Import the routing configuration that defines supported locales and the default locale
+// Import routing settings with supported and default locales
 import { routing } from '@/i18n/routing'
 
-/**
- * Export a request configuration function
- * This function determines the appropriate locale and messages for each request
- */
+// Export function to configure locale and load translation messages
 export default getRequestConfig(async ({ requestLocale }) => {
-  // Attempt to determine the locale from the incoming request
+  // Get locale from the request or use the default if invalid
   let locale = await requestLocale
-
-  // If the locale is invalid or not supported, fall back to the default locale
   if (
     !locale ||
     !routing.locales.includes(locale as (typeof routing)['locales'][number])
@@ -28,12 +15,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = routing.defaultLocale
   }
 
-  // Return the locale and its associated translation messages
+  // Return locale and its translation messages
   return {
-    // Ensure the locale is one of the supported values
     locale: locale as (typeof routing)['locales'][number],
-
-    // Dynamically import the appropriate translation messages for the determined locale
     messages: (await import(`../../messages/${locale}.json`)).default
   }
 })

@@ -1,3 +1,4 @@
+// Auth: Contain user information
 import { auth } from '@/modules/auth/lib/auth'
 
 // Settings page
