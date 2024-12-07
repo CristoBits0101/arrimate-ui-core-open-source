@@ -10,6 +10,8 @@
     "notifyConfirmation": "¡Correo de confirmación enviado!",
     "notifyDisconnect": "¡Conexión fallida!",
     "notifyDisconnection": "¡Cierre de sesión fallido!",
+    "notifyResend": "¡Correo reenviado!",
+    "notifyReset": "¡Correo de reseteo enviado!",
     "notifyServer": "¡Registro no disponible!",
     "notifyUnregister": "¡Registro fallido!"
   },

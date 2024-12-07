@@ -58,7 +58,8 @@ export default async function signUpAction(
    * Validation
    *
    * 1. Format email before storing it
-   * 2. We check if the user exists
+   * 2. We check if the user exists and email is not verified
+   * 3. We check if the user exists and email is verified
    * 3. Returns an error object
    */
   const cleanedEmail = email.toLocaleLowerCase().trim()
@@ -69,7 +70,21 @@ export default async function signUpAction(
     }
   })
 
-  if (existingUser) return { error: 'invalidEmail' }
+  if (existingUser && !existingUser.emailVerified) {
+    const verificationToken = await generateVerificationToken(
+      existingUser.email
+    )
+
+    await sendVerificationEmail(
+      verificationToken.email,
+      verificationToken.token,
+      emailMessage
+    )
+
+    return { success: 'notifyResend' }
+  } else if (existingUser && existingUser.emailVerified) {
+    return { error: 'invalidEmail' }
+  }
 
   /**
    * Registration

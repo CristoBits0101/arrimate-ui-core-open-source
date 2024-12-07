@@ -24,7 +24,7 @@ const resetPasswordSchema = async (
   const validatedFields = ResetPasswordSchema.safeParse(values)
 
   // Return error if validation fails
-  if (!validatedFields.success) return { error: 'Invalid email!' }
+  if (!validatedFields.success) return { error: 'invalidData' }
 
   // Extract validated email from fields
   const { email } = validatedFields.data
@@ -33,7 +33,7 @@ const resetPasswordSchema = async (
   const existingUser = await getUserByEmail(email)
 
   // Return error if user is not found
-  if (!existingUser) return { error: 'Email not found!' }
+  if (!existingUser) return { error: 'lostEmail' }
 
   // Generate password reset token for the user
   const resetPasswordToken = await generateTokenResetPassword(email)
@@ -46,7 +46,7 @@ const resetPasswordSchema = async (
   )
 
   // Return success message after sending email
-  return { success: 'Reset email sent!' }
+  return { success: 'notifyReset' }
 }
 
 // Export the resetPasswordSchema function as default

@@ -10,6 +10,8 @@
     "notifyConfirmation": "Confirmation email sent!",
     "notifyDisconnect": "Sign In failed!",
     "notifyDisconnection": "Sign out failed!",
+    "notifyResend": "Email forwarded!",
+    "notifyReset": "Reset email sent!",
     "notifyServer": "Registration not available!",
     "notifyUnregister": "Sign up failed!"
   },

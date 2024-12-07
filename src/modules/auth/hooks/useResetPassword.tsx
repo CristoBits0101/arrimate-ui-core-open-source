@@ -28,6 +28,8 @@ export const useResetPassword = () => {
   const locale = useLocale()
 
   // Translations: Access translations for forms and email subject
+  // Get translations
+  const t = useTranslations('AuthActions')
   const f = useTranslations('Forms')
   const m = useTranslations('Mail')
   const subject = m('subject')
@@ -48,8 +50,8 @@ export const useResetPassword = () => {
     startTransition(() => {
       resetPasswordAction(values, subject ?? 'reset')
         .then((data) => {
-          setError(data?.error)
-          setSuccess(data?.success)
+          setError(t(data?.error))
+          setSuccess(t(data?.success))
           if (data.success) window.location.href = `/${locale}`
         })
         .catch((error) => {
