@@ -44,6 +44,7 @@ export default async function signInAction(
    * 1. Extract email and password
    * 2. Check if the user exists in the database
    * 3. Return an error object if the user does not exist
+   * 4. Check password and email match
    */
   const { email, password } = validatedFields.data
   const existingUser = await getUserByEmail(email)
@@ -51,6 +52,9 @@ export default async function signInAction(
   if (!existingUser || !existingUser.email || !existingUser.password) {
     return { error: 'lostEmail' }
   }
+
+  if (email.toLocaleLowerCase().trim() === password.toLocaleLowerCase().trim())
+    return { error: 'invalidPassword' }
 
   /**
    * Validation
