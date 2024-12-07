@@ -1,39 +1,26 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import signOutAction from '@/modules/auth/actions/sign-out-action'
-
-// Components: 
+// Button for handling sign-out action
 import OptionsButton from '@/modules/configuration/components/buttons/options-button'
 
-// Icons: 
+// Icon used in the sign-out button
 import signOutIcon from '@/modules/auth/assets/icons/buttons/session/sign-out.svg'
 
-// Intl: To get language and set translations
-import { useLocale, useTranslations } from 'next-intl'
+// Next.js internationalization utilities
+import { useTranslations } from 'next-intl'
 
-// React: Hooks from React
-import { useEffect, useState } from 'react'
+// Hook for handling sign-out logic and hydration
+import { useSignOut } from '@/modules/auth/hooks/useSignOut'
 
-export default function SignOutForm() {
-  const locale = useLocale()
+// Component to render a sign-out button
+export default function SignOutForm(): JSX.Element | null {
+  // Load button translations
   const t = useTranslations('Button')
 
-  const handleSignOut = () => {
-    // Trigger sign-out action
-    signOutAction()
-      .then((result) => {
-        if (result.success) window.location.href = `/${locale}/sign-in`
-      })
-      .catch((error) => {
-        console.error('Error al cerrar sesión:', error)
-      })
-  }
+  // Manage hydration state and sign-out action
+  const { hydrated, handleSignOut } = useSignOut()
 
-  // Ensure client-side rendering
-  const [hydrated, setHydrated] = useState(false)
-  useEffect(() => setHydrated(true), [])
-
+  // Render the sign-out button when hydrated
   return hydrated ? (
     <div className='space-y-5 w-full'>
       <OptionsButton
