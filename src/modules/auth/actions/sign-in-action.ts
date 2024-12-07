@@ -35,7 +35,7 @@ export default async function signInAction(
   const validatedFields = BackendSignInSchema.safeParse(values)
 
   if (!validatedFields.success) {
-    return { error: 'Invalid email or password format!' }
+    return { error: 'invalidData' }
   }
 
   /**
@@ -49,7 +49,7 @@ export default async function signInAction(
   const existingUser = await getUserByEmail(email)
 
   if (!existingUser || !existingUser.email || !existingUser.password) {
-    return { error: 'Email does not exist!' }
+    return { error: 'lostEmail' }
   }
 
   /**
@@ -71,7 +71,7 @@ export default async function signInAction(
       emailMessage
     )
 
-    return { success: 'Confirmation email sent!' }
+    return { success: 'notifyConfirmation' }
   }
 
   /**
@@ -84,14 +84,14 @@ export default async function signInAction(
    */
   try {
     await signIn('credentials', { email, password, redirect: false })
-    return { success: 'Sign-in successful!' }
+    return { success: 'notifyConnection' }
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
         case 'CredentialsSignin':
-          return { error: 'Invalid credentials!' }
+          return { error: 'invalidCredentials' }
         default:
-          return { error: 'Something went wrong!' }
+          return { error: 'notifyDisconnect' }
       }
     }
 

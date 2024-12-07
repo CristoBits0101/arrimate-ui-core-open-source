@@ -1,10 +1,15 @@
 {
   "AuthActions": {
+    "lostEmail": "¡El correo no existe!",
+    "invalidCredentials": "¡Credenciales no válidas!",
     "invalidData": "¡Datos no válidos!",
     "invalidEmail": "¡Correo en uso!",
     "invalidName": "¡Nombre sin símbolos!",
     "invalidPassword": "¡Correo y contraseña idénticos!",
+    "notifyConnection": "Sesión iniciada!",
     "notifyConfirmation": "¡Correo de confirmación enviado!",
+    "notifyDisconnect": "Conexión fallida!",
+    "notifyServer": "Registro no disponible!",
     "notifyUnregister": "¡Registro fallido!"
   },
   "AuthButtons": {

@@ -1,11 +1,16 @@
 {
   "AuthActions": {
+    "lostEmail": "Email does not exist!",
+    "invalidCredentials": "Invalid data!",
     "invalidData": "Invalid data!",
     "invalidEmail": "Email in use!",
     "invalidName": "Name without symbols!",
     "invalidPassword": "Email and password are identical!",
+    "notifyConnection": "Sign-in successful!",
     "notifyConfirmation": "Confirmation email sent!",
-    "notifyUnregister": "Registration failed!"
+    "notifyDisconnect": "Sign In failed!",
+    "notifyServer": "Registration not available!",
+    "notifyUnregister": "Sign up failed!"
   },
   "AuthButtons": {
     "signIn": "Sign In",
