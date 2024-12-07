@@ -1,13 +1,14 @@
 {
   "AuthActions": {
-    "lostEmail": "¡El correo no existe!",
     "invalidCredentials": "¡Credenciales no válidas!",
     "invalidData": "¡Datos no válidos!",
     "invalidEmail": "¡Correo en uso!",
     "invalidName": "¡Nombre sin símbolos!",
     "invalidPassword": "¡Correo y contraseña idénticos!",
+    "lostEmail": "¡El correo no existe!",
+    "lostProcess": "¡Solicitud no encontrada!",
     "notifyConnection": "¡Sesión iniciada!",
-    "notifyConfirmation": "¡Correo de confirmación enviado!",
+    "notifyConfirmation": "¡Revisa el correo!",
     "notifyDisconnect": "¡Conexión fallida!",
     "notifyDisconnection": "¡Cierre de sesión fallido!",
     "notifyResend": "¡Correo reenviado!",

@@ -1,69 +1,45 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import newVerificationAction from '@/modules/auth/actions/new-verification-action'
-
-// Alerts: Serialize backend messages
+// Actions: Handles feedback messages (error/success)
 import AlertError from '@/modules/auth/components/alerts/alert-errors'
 import AlertSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// Cards: Card to wrap inputs
+// Cards: Card to structure content
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
-// hooks
-import { useCallback, useEffect, useState } from 'react'
-
-// spinners
+// Spinners: Loading indicator
 import { BeatLoader } from 'react-spinners'
 
-// Intl: To get language and set translations
+// Intl: To access translations
 import { useLocale, useTranslations } from 'next-intl'
-import { useSearchParams } from 'next/navigation'
 
-export default function NewVerificationForm() {
-  // 
-  const [error, setError] = useState<string | undefined>()
-  const [success, setSuccess] = useState<string | undefined>()
+// Hooks: Encapsulates verification logic
+import { useNewVerification } from '@/modules/auth/hooks/useNewVerification'
 
-  // Translations
-  const locale = useLocale()
+export default function NewVerificationForm(): React.ReactElement | null {
+  // Hook: Handle logic for new verification
+  const { success, error, isLoading } = useNewVerification()
+
+  // Translations: Get form-related text
   const f = useTranslations('Forms')
 
-  // Get the token from the path parameters
-  const searchParams = useSearchParams()
-  const token = searchParams.get('token')
-
-  // 
-  const onSubmit = useCallback(() => {
-    if (success || error) return
-    if (!token) {
-      setError(locale === 'en' ? 'Request not found!' : '¡Solicitud no encontrada!')
-      return
-    }
-    newVerificationAction(token, locale)
-      .then((data) => {
-        setSuccess(data.success)
-        setError(data.error)
-      })
-      .catch(() => {
-        setError(locale === 'en' ? 'Something went wrong!' : '¡Algo salió mal!')
-      })
-  }, [token, success, error, locale])
-
-  //
-  useEffect(() => {
-    onSubmit()
-  }, [onSubmit])
+  // Locale: Determine the current language for redirects
+  const locale = useLocale()
 
   return (
     <CardWrapper
-      pageNameRedirect={error ? f('newVerificationForm.pageSignUpRedirect') : f('newVerificationForm.pageSignInRedirect')}
+      pageNameRedirect={
+        error
+          ? f('newVerificationForm.pageSignUpRedirect')
+          : f('newVerificationForm.pageSignInRedirect')
+      }
       redirectButtonHref={`/${locale}/sign-in`}
       showDividingLine={true}
     >
+      {/* Content: Verification status */}
       <div className='w-full flex flex-col items-center justify-center gap-2'>
-        <h2>{f('newVerificationForm.confirmingVerification') && f('newVerificationForm.confirmingVerification')}</h2>
-        {!success && !error && <BeatLoader />}
+        <h2>{f('newVerificationForm.confirmingVerification')}</h2>
+        {isLoading && <BeatLoader />}
         <AlertError message={error} />
         {!success && <AlertSuccess message={success} />}
       </div>

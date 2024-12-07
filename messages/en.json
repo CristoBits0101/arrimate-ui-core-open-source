@@ -1,13 +1,15 @@
 {
   "AuthActions": {
-    "lostEmail": "Email does not exist!",
     "invalidCredentials": "Invalid data!",
     "invalidData": "Invalid data!",
     "invalidEmail": "Email in use!",
     "invalidName": "Name without symbols!",
     "invalidPassword": "Email and password are identical!",
+    "lostEmail": "Email does not exist!",
+    "lostProcess": "Email does not exist!",
+    "lostRequest": "Request not found!",
     "notifyConnection": "Sign-in successful!",
-    "notifyConfirmation": "Confirmation email sent!",
+    "notifyConfirmation": "Check your email!",
     "notifyDisconnect": "Sign In failed!",
     "notifyDisconnection": "Sign out failed!",
     "notifyResend": "Email forwarded!",

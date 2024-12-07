@@ -28,7 +28,6 @@ export const useResetPassword = () => {
   const locale = useLocale()
 
   // Translations: Access translations for forms and email subject
-  // Get translations
   const t = useTranslations('AuthActions')
   const f = useTranslations('Forms')
   const m = useTranslations('Mail')
