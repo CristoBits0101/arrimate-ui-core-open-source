@@ -9,6 +9,7 @@
     "notifyConnection": "Sign-in successful!",
     "notifyConfirmation": "Confirmation email sent!",
     "notifyDisconnect": "Sign In failed!",
+    "notifyDisconnection": "Sign out failed!",
     "notifyServer": "Registration not available!",
     "notifyUnregister": "Sign up failed!"
   },

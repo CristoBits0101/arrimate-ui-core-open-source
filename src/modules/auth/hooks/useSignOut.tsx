@@ -9,7 +9,7 @@ export const useSignOut = (): {
   handleSignOut: () => void
 } => {
   // Get translations
-  const b = useTranslations('AuthActions')
+  const t = useTranslations('AuthActions')
 
   const locale = useLocale()
   const [hydrated, setHydrated] = useState(false)
@@ -21,7 +21,7 @@ export const useSignOut = (): {
     signOutAction()
       .then((result) => {
         if (result.success) window.location.href = `/${locale}/sign-in`
-        if (!result.success) alert()
+        if (!result.success) alert(t('notifyDisconnection'))
       })
       .catch((error) => {
         console.error('Error during sign-out: ', error)

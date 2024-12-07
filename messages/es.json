@@ -6,10 +6,11 @@
     "invalidEmail": "¡Correo en uso!",
     "invalidName": "¡Nombre sin símbolos!",
     "invalidPassword": "¡Correo y contraseña idénticos!",
-    "notifyConnection": "Sesión iniciada!",
+    "notifyConnection": "¡Sesión iniciada!",
     "notifyConfirmation": "¡Correo de confirmación enviado!",
-    "notifyDisconnect": "Conexión fallida!",
-    "notifyServer": "Registro no disponible!",
+    "notifyDisconnect": "¡Conexión fallida!",
+    "notifyDisconnection": "¡Cierre de sesión fallido!",
+    "notifyServer": "¡Registro no disponible!",
     "notifyUnregister": "¡Registro fallido!"
   },
   "AuthButtons": {
