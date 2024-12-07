@@ -7,6 +7,7 @@
     "invalidPassword": "¡Correo y contraseña idénticos!",
     "lostEmail": "¡El correo no existe!",
     "lostProcess": "¡Solicitud no encontrada!",
+    "lostVerification": "¡Verificación caducada!",
     "notifyConnection": "¡Sesión iniciada!",
     "notifyConfirmation": "¡Revisa el correo!",
     "notifyDisconnect": "¡Conexión fallida!",
@@ -14,7 +15,8 @@
     "notifyResend": "¡Correo reenviado!",
     "notifyReset": "¡Correo de reseteo enviado!",
     "notifyServer": "¡Registro no disponible!",
-    "notifyUnregister": "¡Registro fallido!"
+    "notifyUnregister": "¡Registro fallido!",
+    "notifyVerification": "¡Correo verificado!"
   },
   "AuthButtons": {
     "signIn": "Acceder",

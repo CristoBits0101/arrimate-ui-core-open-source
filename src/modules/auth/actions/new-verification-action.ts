@@ -7,36 +7,24 @@ import { getVerificationTokenByToken } from '@/modules/auth/data/tokens/verifica
 // Prisma: Database queries
 import { db } from '@/lib/db'
 
-export default async function newVerificationAction(token: string, locale: string) {
-  // We check if the token exists
+export default async function newVerificationAction(token: string) {
+  // Check if the token exists
   const existingToken = await getVerificationTokenByToken(token)
 
   // Return an error if the token does not exist
-  if (!existingToken)
-    return {
-      error: locale === 'en' ? 'Token does not exist!' : '¡El token no existe!'
-    }
+  if (!existingToken) return { error: 'lostProcess', success: null }
 
-  // We check if the token expired
+  // Check if the token expired
   const hasExpired = new Date(existingToken.expiresAt) < new Date()
 
   // Return an error if the token expired
-  if (hasExpired)
-    return {
-      error: locale === 'en' ? 'Token has expired!' : '¡El token ha expirado!'
-    }
+  if (hasExpired) return { error: 'lostVerification', success: null }
 
-  // We check if the user exists
+  // Check if the user exists
   const existingUser = await getUserByEmail(existingToken.email)
 
   // Return an error if the user does not exist
-  if (!existingUser)
-    return {
-      error:
-        locale === 'en'
-          ? 'Email does not exist!'
-          : '¡El correo electrónico no existe!'
-    }
+  if (!existingUser) return { error: 'lostEmail', success: null }
 
   // Update the user profile
   await db.user.update({
@@ -49,9 +37,6 @@ export default async function newVerificationAction(token: string, locale: strin
     where: { id: existingToken.id }
   })
 
-  // Return a success message if verified correctly
-  return {
-    success:
-      locale === 'en' ? 'Email verified!' : '¡Correo electrónico verificado!'
-  }
+  // Return success
+  return { error: null, success: 'notifyVerification' }
 }

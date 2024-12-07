@@ -30,8 +30,10 @@ export default function NewVerificationForm(): React.ReactElement | null {
     <CardWrapper
       pageNameRedirect={
         error
-          ? f('newVerificationForm.pageSignUpRedirect')
-          : f('newVerificationForm.pageSignInRedirect')
+          ? // Redirect if error
+            f('newVerificationForm.pageSignUpRedirect')
+          : // Redirect if success
+            f('newVerificationForm.pageSignInRedirect')
       }
       redirectButtonHref={`/${locale}/sign-in`}
       showDividingLine={true}
@@ -39,9 +41,12 @@ export default function NewVerificationForm(): React.ReactElement | null {
       {/* Content: Verification status */}
       <div className='w-full flex flex-col items-center justify-center gap-2'>
         <h2>{f('newVerificationForm.confirmingVerification')}</h2>
+        {/* Show loading spinner */}
         {isLoading && <BeatLoader />}
+        {/* Display error message */}
         <AlertError message={error} />
-        {!success && <AlertSuccess message={success} />}
+        {/* Display success message */}
+        <AlertSuccess message={success} />
       </div>
     </CardWrapper>
   )

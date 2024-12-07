@@ -6,8 +6,8 @@
     "invalidName": "Name without symbols!",
     "invalidPassword": "Email and password are identical!",
     "lostEmail": "Email does not exist!",
-    "lostProcess": "Email does not exist!",
-    "lostRequest": "Request not found!",
+    "lostProcess": "Request not found!",
+    "lostVerification": "Verification expired!",
     "notifyConnection": "Sign-in successful!",
     "notifyConfirmation": "Check your email!",
     "notifyDisconnect": "Sign In failed!",
@@ -15,7 +15,8 @@
     "notifyResend": "Email forwarded!",
     "notifyReset": "Reset email sent!",
     "notifyServer": "Registration not available!",
-    "notifyUnregister": "Sign up failed!"
+    "notifyUnregister": "Sign up failed!",
+    "notifyVerification": "Email verified!"
   },
   "AuthButtons": {
     "signIn": "Sign In",

@@ -7,49 +7,49 @@ import newVerificationAction from '@/modules/auth/actions/new-verification-actio
 import { useCallback, useEffect, useState } from 'react'
 
 // Intl: To get translations
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 
 // Navigation: To retrieve URL parameters
 import { useSearchParams } from 'next/navigation'
 
 export const useNewVerification = () => {
-  // Manage error and success messages
+  // States: Manage error and success messages
   const [error, setError] = useState<string | undefined>()
   const [success, setSuccess] = useState<string | undefined>()
 
-  // Access localized strings for feedback messages
+  // Translations: Access localized strings for feedback messages
   const t = useTranslations('AuthActions')
 
-  // Retrieve current language
-  const locale = useLocale()
-
-  // Extract the token from the URL parameters
+  // Navigation: Extract the token from the URL parameters
   const searchParams = useSearchParams()
   const token = searchParams.get('token')
 
-  // Handle the verification process
+  // Submission: Handle the verification process
   const onSubmit = useCallback(() => {
-    if (success || error) return
+    // Prevent redundant submissions
+    if (success || error) return 
+    // Show error if token is missing
     if (!token) {
       setError(t('lostProcess'))
       return
     }
-    newVerificationAction(token, locale)
+    newVerificationAction(token)
+      // Set messages
       .then((data) => {
-        setSuccess(data.success)
-        setError(data.error)
+        if (data.success) setSuccess(t(data.success))
+        if (data.error) setError(t(data.error))
       })
       .catch(() => {
-        setError(t('notifyDisconnect'))
+        setError(t('notifyDisconnect')) // Handle request failure
       })
-  }, [token, success, error, locale, t])
+  }, [token, success, error, t])
 
-  // Trigger the verification process on component mount
+  // Effect: Trigger the verification process on component mount
   useEffect(() => {
     onSubmit()
   }, [onSubmit])
 
-  // Return values
+  // Return values: Error, success, and loading state
   return {
     success,
     error,
