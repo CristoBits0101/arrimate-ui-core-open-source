@@ -55,7 +55,6 @@ export function useSignInForm(subject: string) {
     // Clear previous messages before sending
     setError('')
     setSuccess('')
-
     // Checks backend request status
     startTransition(() => {
       // Send input values and email subject to backend
