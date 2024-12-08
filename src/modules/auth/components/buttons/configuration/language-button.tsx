@@ -23,7 +23,7 @@ export default function LanguageButton({
       <Image
         src={iconSrc}
         alt={altText}
-        className='w-auto h-3.5 aspect-video object-fill border-0 outline-0 drop-shadow-sm'
+        className='w-5 h-5 aspect-square object-cover border-0 outline-0 drop-shadow-sm rounded-full'
       />
     </button>
   )

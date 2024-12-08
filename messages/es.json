@@ -1,6 +1,7 @@
 {
   "Announcements": {
-    "development": "¡Funcionalidad en desarrollo!"
+    "apple": "Iniciar sesión con Apple próximamente!",
+    "microsoft": "Iniciar sesión con Microsoft próximamente!"
   },
   "AuthActions": {
     "invalidCredentials": "¡Credenciales no válidas!",

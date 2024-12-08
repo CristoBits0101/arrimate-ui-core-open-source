@@ -1,6 +1,7 @@
 {
   "Announcements": {
-    "development": "Functionality in development!"
+    "apple": "Sign in with Apple coming soon!",
+    "microsoft": "Sign in with Microsoft coming soon!"
   },
   "AuthActions": {
     "invalidCredentials": "Invalid data!",
