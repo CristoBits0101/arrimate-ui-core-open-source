@@ -86,6 +86,14 @@
 # Methodologies
 
   ## Development
-    - 🔄                  **Agile** ➜ Scrum
+    - 🔄                    **Agile** ➜ Scrum
   ## Repository
-    - 🔄                 **GitHub** ➜ Trunk Based Development
+    - 🔄                   **GitHub** ➜ Trunk Based Development
+
+# Prisma
+
+  ## Commands
+    - 🕹️               Check database ➜ npx prisma studio
+    - 🕹️   Synchronize prism & models ➜ npx prisma generate
+    - 🕹️               Reset database ➜ npx prisma migrate reset
+    - 🕹️                   Push model ➜ npx prisma db push

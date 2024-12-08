@@ -1,6 +1,4 @@
-// npx prisma studio: Check database
-
-// prisma/schema.prisma
+// Datasource configuration
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -8,37 +6,18 @@ datasource db {
   // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
-// npx prisma generate: Synchronize prism with the models.
+// Generator configuration
 generator client {
   provider = "prisma-client-js"
 }
 
-// npx prisma migrate reset: Reset database
+// Enums
 enum userRole {
   USER
   ADMIN
 }
 
-// npx prisma db push: Push model
-model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  role          userRole  @default(USER)
-  accounts      Account[]
-
-  // sessions      Session[]
-  // Optional for WebAuthn support
-  // Authenticator Authenticator[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-// Account model
+// Models
 model Account {
   userId            String
   type              String
@@ -60,7 +39,6 @@ model Account {
   @@id([provider, providerAccountId])
 }
 
-// Reset password model
 model ResetPasswordToken {
   id        String   @id @default(cuid())
   email     String
@@ -70,7 +48,24 @@ model ResetPasswordToken {
   @@unique([email, token])
 }
 
-// Verification token model
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          userRole  @default(USER)
+  accounts      Account[]
+
+  // sessions      Session[]
+  // Optional for WebAuthn support
+  // Authenticator Authenticator[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model VerificationToken {
   id        String   @id @default(cuid())
   email     String
