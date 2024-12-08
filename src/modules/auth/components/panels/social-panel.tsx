@@ -60,11 +60,11 @@ export default function SocialPanel() {
       <SignInSocialButton iconSrc={google} onClick={() => onClick('google')} />
       <SignInSocialButton
         iconSrc={microsoft}
-        onClick={() => alert(t('development'))}
+        onClick={() => alert(t('microsoft'))}
       />
       <SignInSocialButton
         iconSrc={isDarkMode ? appleD : appleL}
-        onClick={() => alert(t('development'))}
+        onClick={() => alert(t('apple'))}
       />
     </div>
   )

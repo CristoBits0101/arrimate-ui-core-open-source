@@ -32,7 +32,7 @@ const ThemeButton: React.FC = () => {
       <Image
         src={iconSrc}
         alt={altText}
-        className='w-5 h-5 aspect-square object-cover border-0 outline-0 drop-shadow-sm'
+        className='w-5 h-5 raspect-square object-cover border-0 outline-0 drop-shadow-sm'
       />
     </button>
   )

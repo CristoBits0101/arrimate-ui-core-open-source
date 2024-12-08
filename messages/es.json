@@ -1,7 +1,7 @@
 {
   "Announcements": {
-    "apple": "Iniciar sesión con Apple próximamente!",
-    "microsoft": "Iniciar sesión con Microsoft próximamente!"
+    "apple": "Inicio de sesión con Apple próximamente disponible!",
+    "microsoft": "Inicio de sesión con Microsoft próximamente disponible!"
   },
   "AuthActions": {
     "invalidCredentials": "¡Credenciales no válidas!",
