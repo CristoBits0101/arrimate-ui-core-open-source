@@ -1,12 +1,22 @@
 'use server'
 
-import * as z from 'zod'
+// Bcrypt: To encrypt the password
 import bcrypt from 'bcryptjs'
 
-import { db } from '@/lib/db'
-import { NewPasswordSchema } from '@/modules/auth/schemas'
+// Data: Get token for reset password
 import { getPasswordResetTokenByToken } from '@/modules/auth/data/tokens/verification-reset-token'
+
+// Data: Function that queries the database
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
+
+// Prisma: To consult the database
+import { db } from '@/lib/db'
+
+// Schema: Validation schema for new password
+import { NewPasswordSchema } from '@/modules/auth/schemas'
+
+// Zod: To validate data in the backend
+import * as z from 'zod'
 
 const newPassword = async (
   values: z.infer<typeof NewPasswordSchema>,
