@@ -1,4 +1,7 @@
 {
+  "Announcements": {
+    "development": "Functionality in development!"
+  },
   "AuthActions": {
     "invalidCredentials": "Invalid data!",
     "invalidData": "Invalid data!",

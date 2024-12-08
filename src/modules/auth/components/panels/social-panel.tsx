@@ -1,14 +1,28 @@
 'use client'
 
+// button
 import SignInSocialButton from '@/modules/auth/components/buttons/sign-in/sign-in-social-button'
+
+// next-auth
+import { signIn } from 'next-auth/react'
+
+// next-intl
+import { useTranslations } from 'next-intl'
+
+// hooks
+import { useEffect, useState } from 'react'
+
+// svg
 import appleD from '@/modules/auth/assets/icons/buttons/o-auth/dark/apple.svg'
 import appleL from '@/modules/auth/assets/icons/buttons/o-auth/light/apple.svg'
 import google from '@/modules/auth/assets/icons/buttons/o-auth/light/google.svg'
 import microsoft from '@/modules/auth/assets/icons/buttons/o-auth/light/microsoft.svg'
-import { signIn } from 'next-auth/react'
-import { useEffect, useState } from 'react'
 
 export default function SocialPanel() {
+
+  // Translations
+  const t = useTranslations('Announcements')
+
   // Try to log in with the selected provider
   const onClick = (provider: 'apple' | 'google' | 'microsoft') => {
     signIn(provider, {
@@ -46,11 +60,11 @@ export default function SocialPanel() {
       <SignInSocialButton iconSrc={google} onClick={() => onClick('google')} />
       <SignInSocialButton
         iconSrc={microsoft}
-        onClick={() => onClick('microsoft')}
+        onClick={() => alert(t('development'))}
       />
       <SignInSocialButton
         iconSrc={isDarkMode ? appleD : appleL}
-        onClick={() => onClick('apple')}
+        onClick={() => alert(t('development'))}
       />
     </div>
   )
