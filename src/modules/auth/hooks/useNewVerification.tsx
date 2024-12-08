@@ -24,17 +24,18 @@ export const useNewVerification = () => {
   const t = useTranslations('AuthActions')
 
   // Navigation: Extract the token from the URL parameters
+  const [token, setNewToken] = useState<string | null>()
   const searchParams = useSearchParams()
-  const token = searchParams.get('token')
-
+ 
   // Submission: Handle the verification process
   const onSubmit = useCallback(() => {
+    setNewToken(searchParams.get('token'))
     // Prevent redundant submissions
     if (success || error) return 
     // Show error if token is missing
     if (!token) {
       console.error('Token no encontrado en la URL');
-      setError(t('lostProcess'))
+      // setError(t('lostProcess'))
       return
     }
     newVerificationAction(token)
@@ -47,7 +48,7 @@ export const useNewVerification = () => {
          // Handle request failurey
         setError(t('notifyDisconnect'))
       })
-  }, [token, success, error, t])
+  }, [token, success, error, t, searchParams])
 
   // Effect: Trigger the verification process on component mount
   useEffect(() => {
