@@ -16,10 +16,13 @@
     "notifyConfirmation": "¡Revisa el correo!",
     "notifyDisconnect": "¡Conexión fallida!",
     "notifyDisconnection": "¡Cierre de sesión fallido!",
+    "notifyExpired": "¡El proceso ha caducado!",
+    "notifyRequest": "¡Solicitud no encontrada!",
     "notifyResend": "¡Correo reenviado!",
     "notifyReset": "¡Correo de reseteo enviado!",
     "notifyServer": "¡Registro no disponible!",
     "notifyUnregister": "¡Registro fallido!",
+    "notifyUpdated": "¡Contraseña actualizada!",
     "notifyVerification": "¡Correo verificado!"
   },
   "AuthButtons": {

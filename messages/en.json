@@ -16,10 +16,13 @@
     "notifyConfirmation": "Check your email!",
     "notifyDisconnect": "Sign In failed!",
     "notifyDisconnection": "Sign out failed!",
+    "notifyExpired": "¡The process has expired!",
+    "notifyRequest": "¡Request not found!",
     "notifyResend": "Email forwarded!",
     "notifyReset": "Reset email sent!",
     "notifyServer": "Registration not available!",
     "notifyUnregister": "Sign up failed!",
+    "notifyUpdated": "¡Updated password!",
     "notifyVerification": "Email verified!"
   },
   "AuthButtons": {

@@ -29,7 +29,7 @@ const newPassword = async (
   const validatedFields = NewPasswordSchema.safeParse(values)
 
   // Check validations
-  if (!validatedFields.success) return { error: 'Invalid data!' }
+  if (!validatedFields.success) return { error: 'invalidData' }
 
   // Extract fields
   const { password } = validatedFields.data
@@ -38,19 +38,19 @@ const newPassword = async (
   const existingToken = await getPasswordResetTokenByToken(token)
 
   // Check if the user exists
-  if (!existingToken) return { error: 'Invalid token!' }
+  if (!existingToken) return { error: 'notifyRequest' }
 
   // Get token timestamp is activated
   const hasExpired = new Date(existingToken?.expiresAt) < new Date()
 
   // Check if token has expired
-  if (hasExpired) return { error: 'Token has expired!' }
+  if (hasExpired) return { error: 'notifyExpired' }
 
   // Get user by email
   const existingUser = await getUserByEmail(existingToken.email)
 
   // Check if the user exists
-  if (!existingUser) return { error: 'Email does not exist!' }
+  if (!existingUser) return { error: 'lostEmail' }
 
   // Hash the password
   const hashedPassword = await bcrypt.hash(password, 10)
@@ -67,7 +67,7 @@ const newPassword = async (
   })
 
   // Return confirmation of password is changed
-  return { success: 'Password updated!' }
+  return { success: 'notifyUpdated' }
 }
 
 export default newPassword
