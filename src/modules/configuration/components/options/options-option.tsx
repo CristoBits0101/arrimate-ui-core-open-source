@@ -5,7 +5,7 @@ import LanguageSection from '@/modules/configuration/components/sections/languag
 import ThemeSection from '@/modules/configuration/components/sections/theme-section'
 import { useTranslations } from 'next-intl'
 
-interface OptionPanelProps {
+interface OptionsOptionProps {
   component: 'language' | 'theme'
   handleBack: () => void
 }
@@ -14,7 +14,7 @@ interface OptionPanelProps {
 export default function OptionPanel({
   component,
   handleBack
-}: OptionPanelProps) {
+}: OptionsOptionProps) {
   const t = useTranslations('SettingsPanel')
 
   return (

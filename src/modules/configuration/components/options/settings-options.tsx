@@ -13,14 +13,14 @@ import themesIcon from '@/modules/configuration/assets/icons/buttons/settings/th
 // next-intl
 import { useTranslations } from 'next-intl'
 
-interface OptionsPanelProps {
+interface SettingsOptionsProps {
   languageLabel: string
   themeLabel: string
   handleSelectOption: (option: 'language' | 'theme') => void
 }
 
 // Settings panel
-const OptionsPanel: React.FC<OptionsPanelProps> = ({
+const OptionsPanel: React.FC<SettingsOptionsProps> = ({
   languageLabel,
   themeLabel,
   handleSelectOption

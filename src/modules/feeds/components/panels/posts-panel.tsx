@@ -1,6 +1,6 @@
 'use client'
 
-import PostOptionsPanel from '@/modules/feeds/components/options/post-options-panel'
+import PostOptions from '@/modules/feeds/components/options/post-options'
 import PublishOptions from '@/modules/feeds/components/options/publish-options'
 import ManageOptions from '@/modules/feeds/components/options/manage-options'
 import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
@@ -16,7 +16,7 @@ export default function PostsPanel() {
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40]'>
       {selectedOption === null ? (
         // Renderiza las opciones principales
-        <PostOptionsPanel handleSelectOption={handleSelectOption} />
+        <PostOptions handleSelectOption={handleSelectOption} />
       ) : (
         // Renderiza el título, botón de volver y opciones seleccionadas
         <div className='flex flex-col items-center py-4'>

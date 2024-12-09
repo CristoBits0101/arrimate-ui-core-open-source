@@ -4,13 +4,13 @@ import SettingButton from '@/modules/configuration/components/buttons/options-bu
 import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
 import { useTranslations } from 'next-intl'
 
-interface PostOptionsPanelProps {
+interface PostOptionsProps {
   handleSelectOption: (
     option: 'publish' | 'broadcast' | 'manage' | 'performance'
   ) => void
 }
 
-const PostOptionsPanel: React.FC<PostOptionsPanelProps> = ({
+const PostOptionsPanel: React.FC<PostOptionsProps> = ({
   handleSelectOption
 }) => {
   const t = useTranslations('Publish')

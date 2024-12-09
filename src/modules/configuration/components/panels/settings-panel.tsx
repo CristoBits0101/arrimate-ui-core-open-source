@@ -1,8 +1,8 @@
 'use client'
 
 // Panels
-import OptionPanel from '@/modules/configuration/components/panels/option-panel'
-import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
+import OptionPanel from '@/modules/configuration/components/options/options-option'
+import OptionsPanel from '@/modules/configuration/components/options/settings-options'
 
 // Custom hook
 import { useSettings } from '@/modules/configuration/hooks/useSettings'
