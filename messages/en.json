@@ -100,6 +100,16 @@
     "resetPasswordSubject": "reset",
     "confirm": "registration"
   },
+  "Publish": {
+    "publish": "Publish",
+    "broadcast": "Broadcast",
+    "manage": "Manage",
+    "performance": "Performance",
+    "story": "Story",
+    "image": "Image",
+    "event": "Event",
+    "product": "Product"
+  },
   "Searcher": {
     "article": "Article",
     "placeholder": "Search",

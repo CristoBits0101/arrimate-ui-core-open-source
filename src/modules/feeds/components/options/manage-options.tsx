@@ -1,73 +1,55 @@
 'use client'
 
-import icon from '@/modules/feeds/assets/icons/links/white/home.svg'
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
+import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
+import { useTranslations } from 'next-intl'
 
 const ManageOptions = () => {
+  const t = useTranslations('Publish')
+
   return (
     <section className='w-full h-fit flex flex-col'>
       <OptionButton
-        label='Historia'
+        label={t('story')}
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
-        altText='Historia icon'
+        altText={t('story')}
       />
       <OptionButton
-        label='Imagen'
+        label={t('image')}
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
-        altText='Imagen icon'
+        altText={t('image')}
       />
       <OptionButton
-        label='Evento'
+        label={t('event')}
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
-        altText='Evento icon'
+        altText={t('event')}
       />
       <OptionButton
-        label='Producto'
+        label={t('product')}
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
-        altText='Producto icon'
+        altText={t('product')}
       />
       <OptionButton
-        label='Corto'
+        label={t('comments')} // Nueva clave
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
-        altText='Corto icon'
+        altText={t('comments')}
       />
       <OptionButton
-        label='Video'
+        label={t('tags')} // Nueva clave
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
-        altText='Video icon'
-      />
-      <OptionButton
-        label='Reseña'
-        isSelected={false}
-        onClick={() => {}}
-        iconSrc={icon}
-        altText='Reseña icon'
-      />
-      <OptionButton
-        label='Comentarios'
-        isSelected={false}
-        onClick={() => {}}
-        iconSrc={icon}
-        altText='Comentarios icon'
-      />
-      <OptionButton
-        label='Etiquetas'
-        isSelected={false}
-        onClick={() => {}}
-        iconSrc={icon}
-        altText='Etiquetas icon'
+        altText={t('tags')}
       />
     </section>
   )

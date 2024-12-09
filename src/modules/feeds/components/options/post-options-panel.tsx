@@ -1,7 +1,8 @@
 'use client'
 
-import icon from '@/modules/feeds/assets/icons/links/white/home.svg'
 import SettingButton from '@/modules/configuration/components/buttons/options-button'
+import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
+import { useTranslations } from 'next-intl'
 
 interface PostOptionsPanelProps {
   handleSelectOption: (
@@ -12,31 +13,33 @@ interface PostOptionsPanelProps {
 const PostOptionsPanel: React.FC<PostOptionsPanelProps> = ({
   handleSelectOption
 }) => {
+  const t = useTranslations('Publish')
+
   return (
     <div className='flex flex-col items-center'>
       <SettingButton
         icon={icon}
-        label='Publicar'
+        label={t('publish')}
         onClick={() => handleSelectOption('publish')}
-        altText='Publicar icon'
+        altText={t('publish')}
       />
       <SettingButton
         icon={icon}
-        label='Transmitir'
+        label={t('broadcast')}
         onClick={() => handleSelectOption('broadcast')}
-        altText='Transmitir icon'
+        altText={t('broadcast')}
       />
       <SettingButton
         icon={icon}
-        label='Gestionar'
+        label={t('manage')}
         onClick={() => handleSelectOption('manage')}
-        altText='Gestionar icon'
+        altText={t('manage')}
       />
       <SettingButton
         icon={icon}
-        label='Rendimiento'
+        label={t('performance')}
         onClick={() => handleSelectOption('performance')}
-        altText='Rendimiento icon'
+        altText={t('performance')}
       />
     </div>
   )

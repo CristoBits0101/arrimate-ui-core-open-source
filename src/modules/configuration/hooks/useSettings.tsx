@@ -32,6 +32,6 @@ export function useSettings() {
     selectedLanguage,
     selectedTheme,
     handleSelectOption,
-    handleBack
+    handleBack,
   }
 }
