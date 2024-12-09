@@ -13,7 +13,7 @@ interface PostOptionsProps {
 const PostOptionsPanel: React.FC<PostOptionsProps> = ({
   handleSelectOption
 }) => {
-  const t = useTranslations('Publish')
+  const t = useTranslations('Posts')
 
   return (
     <div className='flex flex-col items-center'>

@@ -101,6 +101,16 @@
     "resetPasswordSubject": "reiniciar",
     "confirm": "confirmar"
   },
+  "Posts": {
+    "publish": "Publicar",
+    "broadcast": "Transmitir",
+    "manage": "Gestionar",
+    "performance": "Rendimiento",
+    "story": "Historia",
+    "image": "Imagen",
+    "event": "Evento",
+    "product": "Producto"
+  },
   "Searcher": {
     "article": "Artículo",
     "placeholder": "Buscar",
