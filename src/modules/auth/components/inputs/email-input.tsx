@@ -27,11 +27,10 @@ interface EmailInputProps {
 
 // Defines the EmailInput component
 const EmailInput = ({ name, isPending }: EmailInputProps) => {
-  // Fetches translations from the "Forms" namespace
+  // Fetches translations from the forms namespace
   const t = useTranslations('Forms')
   // Gets form control methods
   const { control } = useFormContext()
-
   return (
     // Renders a FormField with the provided control and name
     <FormField
