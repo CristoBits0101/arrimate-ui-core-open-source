@@ -4,7 +4,7 @@
 import OptionsButton from '@/modules/configuration/components/buttons/options-button'
 
 // Icon used in the sign-out button
-import signOutIcon from '@/modules/auth/assets/icons/buttons/session/sign-out.svg'
+import signOutIcon from '@/modules/auth/assets/icons/session/sign-out.svg'
 
 // Next.js internationalization utilities
 import { useTranslations } from 'next-intl'
