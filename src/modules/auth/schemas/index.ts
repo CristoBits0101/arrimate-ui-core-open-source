@@ -40,10 +40,7 @@ export const FrontendSignInSchema = (t: (key: string) => string) =>
 // Backend validations
 export const BackendSignInSchema = z.object({
   email: z.string().email(),
-  password: z
-    .string()
-    .min(12)
-    .max(64)
+  password: z.string().min(12).max(64)
 })
 
 /**
