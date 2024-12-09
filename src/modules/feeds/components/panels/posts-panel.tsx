@@ -17,7 +17,7 @@ export default function PostsPanel() {
       {/* Panel Principal con Título */}
       <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
         <h2 className='w-full text-center text-lg font-medium'>
-          {t('publish')}
+          {t('posts')}
         </h2>
       </div>
 

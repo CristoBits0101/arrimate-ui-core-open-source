@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 
 interface PostOptionsProps {
   handleSelectOption: (
-    option: 'publish' | 'broadcast' | 'manage' | 'performance'
+    option: 'publish' | 'stream' | 'manage' | 'performance'
   ) => void
 }
 
@@ -25,9 +25,9 @@ const PostOptionsPanel: React.FC<PostOptionsProps> = ({
       />
       <SettingButton
         icon={icon}
-        label={t('broadcast')}
-        onClick={() => handleSelectOption('broadcast')}
-        altText={t('broadcast')}
+        label={t('stream')}
+        onClick={() => handleSelectOption('stream')}
+        altText={t('stream')}
       />
       <SettingButton
         icon={icon}

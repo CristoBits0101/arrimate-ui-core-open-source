@@ -102,8 +102,9 @@
     "confirm": "confirmar"
   },
   "Posts": {
+    "posts": "Publicaciones",
     "publish": "Publicar",
-    "broadcast": "Transmitir",
+    "stream": "Transmitir",
     "manage": "Gestionar",
     "performance": "Rendimiento",
     "story": "Historia",
