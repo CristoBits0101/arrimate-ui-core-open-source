@@ -1,7 +1,7 @@
 'use client'
 
 // Imports the BackButton component for navigating back
-import BackButton from '@/modules/configuration/components/buttons/back-button'
+import BackButton from '@/modules/configuration/assets/icons/buttons/navigation/back.svg'
 
 // Imports the LanguageSection component for the language settings
 import LanguageSection from '@/modules/configuration/components/sections/language-section'

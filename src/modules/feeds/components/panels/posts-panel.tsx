@@ -4,20 +4,20 @@ import PostOptions from '@/modules/feeds/components/options/post-options'
 import PublishOptions from '@/modules/feeds/components/options/publish-options'
 import ManageOptions from '@/modules/feeds/components/options/manage-options'
 import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
-import BackButton from '@/modules/configuration/components/buttons/back-button'
+import BackButton from '@/modules/configuration/assets/icons/buttons/navigation/back.svg'
 import { usePostSettings } from '@/modules/feeds/hooks/usePostSettings'
 import { useTranslations } from 'next-intl'
 
 export default function PostsPanel() {
   const { selectedOption, handleSelectOption, handleBack } = usePostSettings()
-  const t = useTranslations('Publish') // Traducciones bajo el namespace "Publish"
+  const t = useTranslations('Posts')
 
   return (
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40]'>
       {/* Panel Principal con Título */}
       <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
         <h2 className='w-full text-center text-lg font-medium'>
-          {t('postsTitle')} {/* Traducción de "Posts Publicaciones" */}
+          {t('publish')}
         </h2>
       </div>
 

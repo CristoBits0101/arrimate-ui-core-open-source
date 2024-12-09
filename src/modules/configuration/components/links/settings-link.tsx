@@ -12,9 +12,9 @@ export default function Settings() {
   // Renders a NavigationItem component with settings-specific props
   return (
     <NavigationItem
-      route='settings' // The route associated with the settings link
-      blackIcon={settingsBlackSVG} // Black icon for inactive state
-      whiteIcon={settingsWhiteSVG} // White icon for active state
+      route='settings'
+      blackIcon={settingsBlackSVG}
+      whiteIcon={settingsWhiteSVG}
     />
   )
 }

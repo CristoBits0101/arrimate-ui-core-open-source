@@ -100,7 +100,7 @@
     "resetPasswordSubject": "reset",
     "confirm": "registration"
   },
-  "Publish": {
+  "Posts": {
     "publish": "Publish",
     "broadcast": "Broadcast",
     "manage": "Manage",
