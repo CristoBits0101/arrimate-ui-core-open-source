@@ -62,7 +62,10 @@ export function useSignInForm(subject: string) {
         // Transaction completed
         .then((data) => {
           if (data.error) setError(t(data.error))
-          if (data.success) setSuccess(t(data.success))
+          else if (data.success) {
+            setSuccess(t(data.success))
+            window.location.href = '/'
+          }
         })
         // Failed transaction
         .catch((err) => {

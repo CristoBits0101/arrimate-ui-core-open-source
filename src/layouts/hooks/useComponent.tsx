@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 
 // panels
 import HomePanel from '@/modules/feeds/components/panels/home-panel'
+import PostsPanel from '@/modules/feeds/components/panels/posts-panel'
 import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
 
 export function usePageComponent() {
@@ -67,7 +68,7 @@ export function usePageComponent() {
       return 'COMMUNITY PANEL'
 
     case paths.post:
-      return 'POST PANEL'
+      return <PostsPanel />
 
     case paths.chats:
       return 'CHATS PANEL'

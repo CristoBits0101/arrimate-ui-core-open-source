@@ -13,10 +13,10 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 // svg
-import appleD from '@/modules/auth/assets/icons/buttons/o-auth/dark/apple.svg'
-import appleL from '@/modules/auth/assets/icons/buttons/o-auth/light/apple.svg'
-import google from '@/modules/auth/assets/icons/buttons/o-auth/light/google.svg'
-import microsoft from '@/modules/auth/assets/icons/buttons/o-auth/light/microsoft.svg'
+import appleD from '@/modules/auth/assets/icons/o-auth/dark/apple.svg'
+import appleL from '@/modules/auth/assets/icons/o-auth/light/apple.svg'
+import google from '@/modules/auth/assets/icons/o-auth/light/google.svg'
+import microsoft from '@/modules/auth/assets/icons/o-auth/light/microsoft.svg'
 
 export default function SocialPanel() {
 
