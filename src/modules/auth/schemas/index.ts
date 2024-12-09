@@ -44,9 +44,6 @@ export const BackendSignInSchema = z.object({
     .string()
     .min(12)
     .max(64)
-    .regex(/[A-Z]/)
-    .regex(/[a-z]/)
-    .regex(/[^a-zA-Z0-9]/)
 })
 
 /**
