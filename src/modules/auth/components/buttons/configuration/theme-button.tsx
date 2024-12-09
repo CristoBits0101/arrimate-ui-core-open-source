@@ -25,10 +25,12 @@ const ThemeButton: React.FC = () => {
   }
 
   return (
+    // Button
     <button
       className='w-fit h-fit flex items-center justify-center border-0 outline-none'
       onClick={handleThemeToggle}
     >
+      {/* Icon */}
       <Image
         src={iconSrc}
         alt={altText}
