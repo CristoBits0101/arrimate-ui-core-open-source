@@ -1,7 +1,7 @@
 'use client'
 
 // Imports the BackButton component for navigating back
-import BackButton from '@/modules/configuration/assets/icons/buttons/navigation/back.svg'
+import BackButton from '@/modules/configuration/assets/buttons/navigation/back.svg'
 
 // Imports the LanguageSection component for the language settings
 import LanguageSection from '@/modules/configuration/components/sections/language-section'
@@ -21,8 +21,8 @@ interface OptionsOptionProps {
   handleBack: () => void
 }
 
-// Defines the OptionPanel component to display language or theme settings
-export default function OptionPanel({
+// Defines the OptionsOption component to display language or theme settings
+export default function OptionsOption({
   component,
   handleBack
 }: OptionsOptionProps) {

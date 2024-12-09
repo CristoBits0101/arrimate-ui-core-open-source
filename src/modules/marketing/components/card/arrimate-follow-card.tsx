@@ -1,6 +1,6 @@
 'use client'
 
-import unknownImage from '@/modules/marketing/assets/images/profile/aspect-ratio-1-1/unknownImage.jpg'
+import unknownImage from '@/modules/marketing/assets/unknownImage.jpg'
 import FollowButton from '@/modules/marketing/components/buttons/follow-button'
 import { useState, useEffect } from 'react'
 

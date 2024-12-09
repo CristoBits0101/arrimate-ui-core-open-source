@@ -4,8 +4,8 @@
 import LanguageButton from '@/modules/auth/components/buttons/configuration/language-button'
 
 // Imports icons for English and Spanish languages
-import enIcon from '@/modules/auth/assets/icons/languages/gb.svg'
-import esIcon from '@/modules/auth/assets/icons/languages/es.svg'
+import enIcon from '@/modules/auth/assets/languages/gb.svg'
+import esIcon from '@/modules/auth/assets/languages/es.svg'
 
 // Imports the custom hook for handling language selection
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'

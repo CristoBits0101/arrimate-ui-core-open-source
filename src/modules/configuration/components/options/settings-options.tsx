@@ -7,8 +7,8 @@ import OptionsButton from '@/modules/configuration/components/buttons/options-bu
 import SignOutForm from '@/modules/auth/components/forms/sign-out-form'
 
 // Icons
-import languageIcon from '@/modules/configuration/assets/icons/buttons/settings/language.svg'
-import themesIcon from '@/modules/configuration/assets/icons/buttons/settings/themes.svg'
+import languageIcon from '@/modules/configuration/assets/buttons/settings/language.svg'
+import themesIcon from '@/modules/configuration/assets/buttons/settings/themes.svg'
 
 // next-intl
 import { useTranslations } from 'next-intl'

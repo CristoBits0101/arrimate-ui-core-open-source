@@ -4,16 +4,16 @@
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
 
 // Imports icons for active and inactive dark theme states
-import activeDarkIcon from '@/modules/configuration/assets/icons/buttons/themes/active/dark.svg'
-import inactiveDarkIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/dark.svg'
+import activeDarkIcon from '@/modules/configuration/assets/buttons/themes/active/dark.svg'
+import inactiveDarkIcon from '@/modules/configuration/assets/buttons/themes/inactive/dark.svg'
 
 // Imports icons for active and inactive light theme states
-import activeLightIcon from '@/modules/configuration/assets/icons/buttons/themes/active/light.svg'
-import inactiveLightIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/light.svg'
+import activeLightIcon from '@/modules/configuration/assets/buttons/themes/active/light.svg'
+import inactiveLightIcon from '@/modules/configuration/assets/buttons/themes/inactive/light.svg'
 
 // Imports icons for active and inactive system theme states
-import activeSystemIcon from '@/modules/configuration/assets/icons/buttons/themes/active/system.svg'
-import inactiveSystemIcon from '@/modules/configuration/assets/icons/buttons/themes/inactive/system.svg'
+import activeSystemIcon from '@/modules/configuration/assets/buttons/themes/active/system.svg'
+import inactiveSystemIcon from '@/modules/configuration/assets/buttons/themes/inactive/system.svg'
 
 // Imports a custom hook to manage theme selection
 import useThemeSection from '@/modules/configuration/hooks/useThemeSection'

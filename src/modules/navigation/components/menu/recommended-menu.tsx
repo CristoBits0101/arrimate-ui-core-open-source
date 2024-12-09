@@ -1,10 +1,15 @@
 'use client'
 
-import clear from '@/modules/navigation/assets/icons/searcher/clear.svg'
-import close from '@/modules/navigation/assets/icons/searcher/close.svg'
-import Image from 'next/image'
-import searchIcon from '@/modules/navigation/assets/icons/searcher/search.svg'
+// Icons
+import clear from '@/modules/navigation/assets/clear.svg'
+import close from '@/modules/navigation/assets/close.svg'
+import searchIcon from '@/modules/navigation/assets/search.svg'
 import SearchLink from '@/modules/navigation/components/links/search-link'
+
+// next/image
+import Image from 'next/image'
+
+// next-intl
 import { useTranslations } from 'next-intl'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>

@@ -4,7 +4,7 @@
 import Image from 'next/image'
 
 // Imports the SVG icon for the back button
-import backIcon from '@/modules/configuration/assets/icons/buttons/navigation/back.svg'
+import backIcon from '@/modules/configuration/assets/buttons/navigation/back.svg'
 
 // Imports a hook for handling translations in different languages
 import { useTranslations } from 'next-intl'

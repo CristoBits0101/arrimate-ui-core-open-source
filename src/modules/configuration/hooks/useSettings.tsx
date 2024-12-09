@@ -17,10 +17,10 @@ export default function useSettings() {
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null)
 
   useEffect(() => {
-    // Retrieves stored language or defaults to 'en'
+    // Retrieves stored language or defaults to en
     const storedLanguage = localStorage.getItem('language') || 'en'
 
-    // Retrieves stored theme or defaults to 'system'
+    // Retrieves stored theme or defaults to system
     const storedTheme = localStorage.getItem('theme') || 'system'
 
     // Updates the state with the stored values

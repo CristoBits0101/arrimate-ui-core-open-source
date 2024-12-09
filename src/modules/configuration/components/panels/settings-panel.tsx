@@ -1,7 +1,7 @@
 'use client'
 
 // Panels
-import OptionPanel from '@/modules/configuration/components/options/options-option'
+import OptionsOption from '@/modules/configuration/components/options/options-option'
 import OptionsPanel from '@/modules/configuration/components/options/settings-options'
 
 // Custom hook
@@ -25,7 +25,7 @@ export default function SettingsPanel() {
           handleSelectOption={handleSelectOption}
         />
       ) : (
-        <OptionPanel component={selectedOption} handleBack={handleBack} />
+        <OptionsOption component={selectedOption} handleBack={handleBack} />
       )}
     </div>
   )

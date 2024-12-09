@@ -4,10 +4,10 @@
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
 
 // Imports the English language icon
-import enIcon from '@/modules/configuration/assets/icons/buttons/languages/gb.svg'
+import enIcon from '@/modules/configuration/assets/buttons/languages/gb.svg'
 
 // Imports the Spanish language icon
-import esIcon from '@/modules/configuration/assets/icons/buttons/languages/es.svg'
+import esIcon from '@/modules/configuration/assets/buttons/languages/es.svg'
 
 // Imports a custom hook to manage language selection and locale changes
 import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'

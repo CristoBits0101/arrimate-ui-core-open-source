@@ -4,7 +4,7 @@ import PostOptions from '@/modules/feeds/components/options/post-options'
 import PublishOptions from '@/modules/feeds/components/options/publish-options'
 import ManageOptions from '@/modules/feeds/components/options/manage-options'
 import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
-import BackButton from '@/modules/configuration/assets/icons/buttons/navigation/back.svg'
+import BackButton from '@/modules/configuration/assets/buttons/navigation/back.svg'
 import { usePostSettings } from '@/modules/feeds/hooks/usePostSettings'
 import { useTranslations } from 'next-intl'
 

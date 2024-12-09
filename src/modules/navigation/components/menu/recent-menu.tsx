@@ -1,7 +1,7 @@
 'use client'
 
-import close from '@/modules/navigation/assets/icons/searcher/close.svg'
-import historyIcon from '@/modules/navigation/assets/icons/searcher/history.svg'
+import close from '@/modules/navigation/assets/close.svg'
+import historyIcon from '@/modules/navigation/assets/history.svg'
 import Image from 'next/image'
 import SearchLink from '@/modules/navigation/components/links/search-link'
 import { useTranslations } from 'next-intl'
