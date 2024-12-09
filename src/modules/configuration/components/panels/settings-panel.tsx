@@ -1,11 +1,11 @@
 'use client'
 
 // Panels
-import OptionsOption from '@/modules/configuration/components/options/options-option'
-import OptionsPanel from '@/modules/configuration/components/options/settings-options'
+import OptionPanel from '@/modules/configuration/components/panels/option-panel'
+import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
 
 // Custom hook
-import useSettings from '@/modules/configuration/hooks/useSettings'
+import { useSettings } from '@/modules/configuration/hooks/useSettings'
 
 // next-intl
 import { useTranslations } from 'next-intl'
@@ -25,7 +25,7 @@ export default function SettingsPanel() {
           handleSelectOption={handleSelectOption}
         />
       ) : (
-        <OptionsOption component={selectedOption} handleBack={handleBack} />
+        <OptionPanel component={selectedOption} handleBack={handleBack} />
       )}
     </div>
   )

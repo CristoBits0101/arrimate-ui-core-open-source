@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-// Defines the props expected by the OptionButton component
 interface OptionButtonProps {
   label?: string
   isSelected: boolean
@@ -9,8 +8,7 @@ interface OptionButtonProps {
   altText: string
 }
 
-// Defines the OptionButton functional component
-const OptionButton: React.FC<OptionButtonProps> = ({
+const SectionButton: React.FC<OptionButtonProps> = ({
   label,
   isSelected,
   onClick,
@@ -28,4 +26,4 @@ const OptionButton: React.FC<OptionButtonProps> = ({
   </button>
 )
 
-export default OptionButton
+export default SectionButton
