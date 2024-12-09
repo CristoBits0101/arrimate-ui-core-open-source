@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+// Defines the props expected by the SettingButton component
 interface SettingButtonProps {
   icon: string
   label: string
@@ -8,6 +9,7 @@ interface SettingButtonProps {
   isActive?: boolean
 }
 
+// Defines the SettingButton functional component
 const SettingButton: React.FC<SettingButtonProps> = ({
   icon,
   label,
@@ -15,6 +17,7 @@ const SettingButton: React.FC<SettingButtonProps> = ({
   altText,
   isActive = false
 }) => (
+  // Renders a button with dynamic styles based on the isActive prop
   <button
     className={`w-full text-left cursor-pointer px-8 py-4 flex justify-between items-center border-b-[0.05rem] border-[#EBEAEB] border-solid ${
       isActive ? 'bg-black text-white' : 'bg-white text-black'
