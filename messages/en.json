@@ -11,6 +11,7 @@
     "invalidPassword": "Email and password are identical!",
     "lostEmail": "Email does not exist!",
     "lostProcess": "Request not found!",
+    "lostUser": "¡User not found!",
     "lostVerification": "Verification expired!",
     "notifyConnection": "Sign-in successful!",
     "notifyConfirmation": "Check your email!",

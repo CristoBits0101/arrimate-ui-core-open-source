@@ -11,6 +11,7 @@
     "invalidPassword": "¡Correo y contraseña idénticos!",
     "lostEmail": "¡El correo no existe!",
     "lostProcess": "¡Solicitud no encontrada!",
+    "lostUser": "¡Usuario no encontrado!",
     "lostVerification": "¡Verificación caducada!",
     "notifyConnection": "¡Sesión iniciada!",
     "notifyConfirmation": "¡Revisa el correo!",
