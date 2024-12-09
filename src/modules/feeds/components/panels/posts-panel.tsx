@@ -1,9 +1,9 @@
 'use client'
 
-import PostOptionsPanel from '@/modules/feeds/components/x/post-options-panel'
-import PublishOptions from '@/modules/feeds/components/x/publish-options'
-import ManageOptions from '@/modules/feeds/components/x/manage-options'
-import PerformanceOptions from '@/modules/feeds/components/x/performance-options'
+import PostOptionsPanel from '@/modules/feeds/components/options/post-options-panel'
+import PublishOptions from '@/modules/feeds/components/options/publish-options'
+import ManageOptions from '@/modules/feeds/components/options/manage-options'
+import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
 import BackButton from '@/modules/configuration/components/buttons/back-button'
 import { usePostSettings } from '@/modules/feeds/hooks/usePostSettings'
 
