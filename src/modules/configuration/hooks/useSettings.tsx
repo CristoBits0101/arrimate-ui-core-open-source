@@ -5,33 +5,41 @@ import { useState, useEffect } from 'react'
 // Setting options available
 type OptionType = 'language' | 'theme' | null
 
-export function useSettings() {
-  // Initially selected option
+// Custom hook to manage settings
+export default function useSettings() {
+  // State for the currently selected option
   const [selectedOption, setSelectedOption] = useState<OptionType>(null)
-  // Initially selected language
+
+  // State for the currently selected language
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null)
-  // Initially selected theme
+
+  // State for the currently selected theme
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null)
 
   useEffect(() => {
-    // Returns the values stored in localStorage
+    // Retrieves stored language or defaults to 'en'
     const storedLanguage = localStorage.getItem('language') || 'en'
+
+    // Retrieves stored theme or defaults to 'system'
     const storedTheme = localStorage.getItem('theme') || 'system'
-    // Update the states with the localStorage values
+
+    // Updates the state with the stored values
     setSelectedLanguage(storedLanguage)
     setSelectedTheme(storedTheme)
   }, [])
 
-  // Allows you to set which panel is rendered
+  // Sets the selected option for rendering
   const handleSelectOption = (option: OptionType) => setSelectedOption(option)
-  // Allows you to return to the initial panel
+
+  // Resets to the initial panel
   const handleBack = () => setSelectedOption(null)
 
+  // Returns states and handlers for settings
   return {
     selectedOption,
     selectedLanguage,
     selectedTheme,
     handleSelectOption,
-    handleBack,
+    handleBack
   }
 }
