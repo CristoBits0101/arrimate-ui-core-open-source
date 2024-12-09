@@ -40,7 +40,13 @@ export const FrontendSignInSchema = (t: (key: string) => string) =>
 // Backend validations
 export const BackendSignInSchema = z.object({
   email: z.string().email(),
-  password: z.string().min(12).max(64)
+  password: z
+    .string()
+    .min(12)
+    .max(64)
+    .regex(/[A-Z]/)
+    .regex(/[a-z]/)
+    .regex(/[^a-zA-Z0-9]/)
 })
 
 /**
@@ -75,5 +81,11 @@ export const FrontendSignUpSchema = (t: (key: string) => string) =>
 export const BackendSignUpSchema = z.object({
   name: z.string().min(1),
   email: z.string().min(1).email(),
-  password: z.string().min(12).max(64)
+  password: z
+    .string()
+    .min(12)
+    .max(64)
+    .regex(/[A-Z]/)
+    .regex(/[a-z]/)
+    .regex(/[^a-zA-Z0-9]/)
 })
