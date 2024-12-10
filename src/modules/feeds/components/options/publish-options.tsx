@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl'
 
 const PublishOptions = () => {
   const t = useTranslations('Publish')
-
   return (
     <section className='w-full h-fit flex flex-col'>
       <OptionButton

@@ -10,11 +10,8 @@ interface PostOptionsProps {
   ) => void
 }
 
-const PostOptionsPanel: React.FC<PostOptionsProps> = ({
-  handleSelectOption
-}) => {
+const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
   const t = useTranslations('Posts')
-
   return (
     <div className='flex flex-col items-center'>
       <SettingButton
@@ -45,4 +42,4 @@ const PostOptionsPanel: React.FC<PostOptionsProps> = ({
   )
 }
 
-export default PostOptionsPanel
+export default PostOptions

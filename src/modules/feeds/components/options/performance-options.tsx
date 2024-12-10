@@ -5,7 +5,7 @@ import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
 import { useTranslations } from 'next-intl'
 
 const PerformanceOptions = () => {
-  const t = useTranslations('Publish')
+  const t = useTranslations('Performance')
 
   return (
     <section className='w-full h-fit flex flex-col'>

@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl'
 
 const ManageOptions = () => {
   const t = useTranslations('Posts')
-
   return (
     <section className='w-full h-fit flex flex-col'>
       <OptionButton
@@ -38,14 +37,14 @@ const ManageOptions = () => {
         altText={t('product')}
       />
       <OptionButton
-        label={t('comments')} // Nueva clave
+        label={t('comments')}
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
         altText={t('comments')}
       />
       <OptionButton
-        label={t('tags')} // Nueva clave
+        label={t('tags')}
         isSelected={false}
         onClick={() => {}}
         iconSrc={icon}
