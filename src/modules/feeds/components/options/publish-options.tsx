@@ -5,7 +5,7 @@ import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
 import { useTranslations } from 'next-intl'
 
 const PublishOptions = () => {
-  const t = useTranslations('Publish')
+  const t = useTranslations('Posts')
   return (
     <section className='w-full h-fit flex flex-col'>
       <OptionButton
@@ -35,6 +35,20 @@ const PublishOptions = () => {
         onClick={() => {}}
         iconSrc={icon}
         altText={t('product')}
+      />
+      <OptionButton
+        label={t('shorts')}
+        isSelected={false}
+        onClick={() => {}}
+        iconSrc={icon}
+        altText={t('shorts')}
+      />
+      <OptionButton
+        label={t('videos')}
+        isSelected={false}
+        onClick={() => {}}
+        iconSrc={icon}
+        altText={t('videos')}
       />
     </section>
   )

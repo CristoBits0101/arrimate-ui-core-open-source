@@ -37,6 +37,20 @@ const ManageOptions = () => {
         altText={t('product')}
       />
       <OptionButton
+        label={t('shorts')}
+        isSelected={false}
+        onClick={() => {}}
+        iconSrc={icon}
+        altText={t('shorts')}
+      />
+      <OptionButton
+        label={t('videos')}
+        isSelected={false}
+        onClick={() => {}}
+        iconSrc={icon}
+        altText={t('videos')}
+      />
+      <OptionButton
         label={t('comments')}
         isSelected={false}
         onClick={() => {}}
