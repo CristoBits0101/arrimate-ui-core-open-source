@@ -1,6 +1,12 @@
 'use client'
 
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
+import storyWhiteSVG from '@/modules/feeds/assets/icons/panels/story.svg'
+import imageWhiteSVG from '@/modules/feeds/assets/icons/panels/image.svg'
+import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
+import productsWhiteSVG from '@/modules/e-commerce/assets/white/products.svg'
+import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
+import videosWhiteSVG from '@/modules/streaming/assets/white/videos.svg'
 import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
 import { useTranslations } from 'next-intl'
 
@@ -9,45 +15,45 @@ const ManageOptions = () => {
   return (
     <section className='w-full h-fit flex flex-col'>
       <OptionButton
-        label={t('story')}
+        label={t('stories')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
-        altText={t('story')}
+        iconSrc={storyWhiteSVG}
+        altText={t('stories')}
       />
       <OptionButton
-        label={t('image')}
+        label={t('images')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
-        altText={t('image')}
+        iconSrc={imageWhiteSVG}
+        altText={t('images')}
       />
       <OptionButton
-        label={t('event')}
+        label={t('events')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
-        altText={t('event')}
+        iconSrc={eventsWhiteSVG}
+        altText={t('events')}
       />
       <OptionButton
-        label={t('product')}
+        label={t('products')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
-        altText={t('product')}
+        iconSrc={productsWhiteSVG}
+        altText={t('products')}
       />
       <OptionButton
         label={t('shorts')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={shortsWhiteSVG}
         altText={t('shorts')}
       />
       <OptionButton
         label={t('videos')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={videosWhiteSVG}
         altText={t('videos')}
       />
       <OptionButton

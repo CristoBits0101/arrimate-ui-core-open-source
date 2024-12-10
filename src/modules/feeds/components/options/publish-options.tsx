@@ -1,7 +1,12 @@
 'use client'
 
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
-import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
+import storyWhiteSVG from '@/modules/feeds/assets/icons/panels/story.svg'
+import imageWhiteSVG from '@/modules/feeds/assets/icons/panels/image.svg'
+import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
+import productsWhiteSVG from '@/modules/e-commerce/assets/white/products.svg'
+import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
+import videosWhiteSVG from '@/modules/streaming/assets/white/videos.svg'
 import { useTranslations } from 'next-intl'
 
 const PublishOptions = () => {
@@ -12,43 +17,43 @@ const PublishOptions = () => {
         label={t('story')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={storyWhiteSVG}
         altText={t('story')}
       />
       <OptionButton
         label={t('image')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={imageWhiteSVG}
         altText={t('image')}
       />
       <OptionButton
         label={t('event')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={eventsWhiteSVG}
         altText={t('event')}
       />
       <OptionButton
         label={t('product')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={productsWhiteSVG}
         altText={t('product')}
       />
       <OptionButton
-        label={t('shorts')}
+        label={t('short')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
-        altText={t('shorts')}
+        iconSrc={shortsWhiteSVG}
+        altText={t('short')}
       />
       <OptionButton
-        label={t('videos')}
+        label={t('video')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
-        altText={t('videos')}
+        iconSrc={videosWhiteSVG}
+        altText={t('video')}
       />
     </section>
   )
