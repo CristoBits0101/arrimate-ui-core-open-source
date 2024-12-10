@@ -1,7 +1,10 @@
 'use client'
 
 import SettingButton from '@/modules/configuration/components/buttons/options-button'
-import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
+import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
+import streamIcon from '@/modules/feeds/assets/icons/panels/stream.svg'
+import manageIcon from '@/modules/feeds/assets/icons/panels/manage.svg'
+import performanceIcon from '@/modules/feeds/assets/icons/panels/performance.svg'
 import { useTranslations } from 'next-intl'
 
 interface PostOptionsProps {
@@ -15,25 +18,25 @@ const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
   return (
     <div className='flex flex-col items-center'>
       <SettingButton
-        icon={icon}
+        icon={publishIcon}
         label={t('publish')}
         onClick={() => handleSelectOption('publish')}
         altText={t('publish')}
       />
       <SettingButton
-        icon={icon}
+        icon={streamIcon}
         label={t('stream')}
         onClick={() => handleSelectOption('stream')}
         altText={t('stream')}
       />
       <SettingButton
-        icon={icon}
+        icon={manageIcon}
         label={t('manage')}
         onClick={() => handleSelectOption('manage')}
         altText={t('manage')}
       />
       <SettingButton
-        icon={icon}
+        icon={performanceIcon}
         label={t('performance')}
         onClick={() => handleSelectOption('performance')}
         altText={t('performance')}

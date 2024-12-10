@@ -1,7 +1,8 @@
 'use client'
 
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
-import icon from '@/modules/feeds/assets/icons/links/black/home.svg'
+import activityIcon from '@/modules/feeds/assets/icons/panels/activity.svg'
+import analysisIcon from '@/modules/feeds/assets/icons/panels/analysis.svg'
 import { useTranslations } from 'next-intl'
 
 const PerformanceOptions = () => {
@@ -13,14 +14,14 @@ const PerformanceOptions = () => {
         label={t('activity')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={activityIcon}
         altText={t('activity')}
       />
       <OptionButton
         label={t('analysis')}
         isSelected={false}
         onClick={() => {}}
-        iconSrc={icon}
+        iconSrc={analysisIcon}
         altText={t('analysis')}
       />
     </section>
