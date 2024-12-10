@@ -7,6 +7,7 @@ import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
 import productsWhiteSVG from '@/modules/e-commerce/assets/white/products.svg'
 import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
 import videosWhiteSVG from '@/modules/streaming/assets/white/videos.svg'
+import AudioWhiteSVG from '@/modules/streaming/assets/white/audio.svg'
 import { useTranslations } from 'next-intl'
 
 const PublishOptions = () => {
@@ -54,6 +55,13 @@ const PublishOptions = () => {
         onClick={() => {}}
         iconSrc={videosWhiteSVG}
         altText={t('video')}
+      />
+      <OptionButton
+        label={t('audio')}
+        isSelected={false}
+        onClick={() => {}}
+        iconSrc={AudioWhiteSVG}
+        altText={t('audio')}
       />
     </section>
   )

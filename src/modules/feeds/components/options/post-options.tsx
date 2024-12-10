@@ -2,7 +2,7 @@
 
 import SettingButton from '@/modules/configuration/components/buttons/options-button'
 import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
-import streamIcon from '@/modules/feeds/assets/icons/panels/stream.svg'
+import streamIcon from '@/modules/streaming/assets/white/live.svg'
 import manageIcon from '@/modules/feeds/assets/icons/panels/manage.svg'
 import performanceIcon from '@/modules/feeds/assets/icons/panels/performance.svg'
 import { useTranslations } from 'next-intl'

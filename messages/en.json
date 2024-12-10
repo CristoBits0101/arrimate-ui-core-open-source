@@ -103,6 +103,8 @@
   "Posts": {
     "activity": "Activity",
     "analysis": "Analysis",
+    "audios": "Audios",
+    "audio": "Audio",
     "comment": "Comment",
     "comments": "Comments",
     "event": "Event",
@@ -152,6 +154,7 @@
     }
   },
   "SidebarLayout": {
+    "audios": "Audios",
     "community": "Community",
     "events": "Events",
     "following": "Following",

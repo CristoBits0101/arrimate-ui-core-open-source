@@ -4,6 +4,7 @@ import Home from '@/modules/feeds/components/links/home-link'
 import Live from '@/modules/streaming/components/links/live-link'
 import Products from '@/modules/e-commerce/components/links/products-link'
 import Reviews from '@/modules/feeds/components/links/reviews-link'
+import Audios from '@/modules/streaming/components/links/audios-link'
 import Shorts from '@/modules/streaming/components/links/shorts-link'
 import Videos from '@/modules/streaming/components/links/videos-link'
 
@@ -17,6 +18,7 @@ export default function NavbarMenu() {
         <Shorts />
         <Videos />
         <Live />
+        <Audios />
         <Reviews />
         <Community />
       </ul>

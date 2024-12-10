@@ -104,6 +104,8 @@
   "Posts": {
     "activity": "Actividad",
     "analysis": "Análisis",
+    "audios": "Audios",
+    "audio": "Audio",
     "comment": "Comentario",
     "comments": "Comentarios",
     "event": "Evento",
@@ -124,7 +126,7 @@
     "shorts": "Cortos",
     "story": "Historia",
     "stories": "Historias",
-    "stream": "Transmisión",
+    "stream": "Transmitir",
     "streams": "Transmisiones",
     "tag": "Etiqueta",
     "tags": "Etiquetas",
@@ -153,6 +155,7 @@
     }
   },
   "SidebarLayout": {
+    "audios": "Audios",
     "community": "Comunidad",
     "events": "Eventos",
     "home": "Inicio",
