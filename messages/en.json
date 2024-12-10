@@ -101,6 +101,8 @@
     "confirm": "registration"
   },
   "Posts": {
+    "activity": "Activity",
+    "analysis": "Analysis",
     "comment": "Comment",
     "comments": "Comments",
     "event": "Event",

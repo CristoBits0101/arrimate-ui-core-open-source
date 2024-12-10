@@ -6,7 +6,7 @@ import analysisIcon from '@/modules/feeds/assets/icons/panels/analysis.svg'
 import { useTranslations } from 'next-intl'
 
 const PerformanceOptions = () => {
-  const t = useTranslations('Performance')
+  const t = useTranslations('Posts')
 
   return (
     <section className='w-full h-fit flex flex-col'>
