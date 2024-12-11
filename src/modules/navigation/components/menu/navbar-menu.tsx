@@ -11,7 +11,7 @@ import Videos from '@/modules/streaming/components/links/videos-link'
 export default function NavbarMenu() {
   return (
     <nav className='flex h-full justify-center w-full mt-6'>
-      <ul className='flex flex-col h-fit w-fit gap-2'>
+      <ul className='flex flex-col w-full h-full gap-2'>
         <Home />
         <Events />
         <Products />
