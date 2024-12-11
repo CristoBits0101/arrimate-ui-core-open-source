@@ -15,7 +15,7 @@ export default function ReturnContent({
   setIsFocused,
   searchTerm,
   locale,
-  setResetSearchInput,
+  setResetSearchInput
 }: ReturnContentProps) {
   return (
     <div className='h-fit w-full px-8'>
