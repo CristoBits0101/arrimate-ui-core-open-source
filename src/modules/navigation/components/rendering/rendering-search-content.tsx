@@ -15,16 +15,20 @@ export default function ReturnContent({
   setIsFocused,
   searchTerm,
   locale,
-  setResetSearchInput
+  setResetSearchInput,
 }: ReturnContentProps) {
-  return searchTerm ? (
-    <RecommendedContent
-      setResetSearchInput={setResetSearchInput}
-      setIsFocused={setIsFocused}
-      searchTerm={searchTerm}
-      locale={locale}
-    />
-  ) : (
-    <RecentContent setIsFocused={setIsFocused} locale={locale} />
+  return (
+    <div className='h-fit w-full px-8'>
+      {searchTerm ? (
+        <RecommendedContent
+          setResetSearchInput={setResetSearchInput}
+          setIsFocused={setIsFocused}
+          searchTerm={searchTerm}
+          locale={locale}
+        />
+      ) : (
+        <RecentContent setIsFocused={setIsFocused} locale={locale} />
+      )}
+    </div>
   )
 }
