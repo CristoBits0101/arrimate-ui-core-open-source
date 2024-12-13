@@ -1,6 +1,6 @@
 'use client'
 
-// Gif
+// GIF
 import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
 
 // next/image
