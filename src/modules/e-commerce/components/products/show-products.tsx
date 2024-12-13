@@ -1,5 +1,8 @@
 'use client'
 
+// Gif
+import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
+
 // next/image
 import Image from 'next/image'
 
@@ -28,28 +31,10 @@ interface Product {
   has_variations: boolean
 }
 
-// ApiResponse type
-interface ApiResponse {
-  status: string
-  request_id: string
-  parameters: {
-    seller_id: string
-    country: string
-    page: number
-    sort_by: string
-  }
-  data: {
-    seller_id: string
-    total_products: number
-    country: string
-    domain: string
-    seller_products: Product[]
-  }
-}
-
 export default function ShowProducts() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
 
   // Load products when rendering the component
   useEffect(() => {
@@ -67,11 +52,16 @@ export default function ShowProducts() {
           }
         )
 
-        const data: ApiResponse = await response.json()
-        console.log('API Response:', data)
+        if (!response.ok) {
+          setHasError(true)
+          return
+        }
+
+        const data = await response.json()
         setProducts(data.data.seller_products)
       } catch (error) {
-        console.error('Error fetching products:', error)
+        console.error('Error fetching products: ', error)
+        setHasError(true)
       } finally {
         setLoading(false)
       }
@@ -84,8 +74,18 @@ export default function ShowProducts() {
     return <p>Loading products...</p>
   }
 
-  if (!products.length) {
-    return <p>No products found.</p>
+  if (hasError || !products.length) {
+    return (
+      <div className='text-center'>
+        <h2>No Products Available</h2>
+        <Image
+          src={noProductsAvailable}
+          alt='No products available'
+          width={300}
+          height={300}
+        />
+      </div>
+    )
   }
 
   return (
