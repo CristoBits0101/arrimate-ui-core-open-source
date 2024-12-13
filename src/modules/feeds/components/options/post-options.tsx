@@ -5,6 +5,7 @@ import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
 import streamIcon from '@/modules/streaming/assets/white/live.svg'
 import manageIcon from '@/modules/feeds/assets/icons/panels/manage.svg'
 import performanceIcon from '@/modules/feeds/assets/icons/panels/performance.svg'
+import { usePostForm } from '@/modules/feeds/hooks/panels/usePostForm'
 import { useTranslations } from 'next-intl'
 
 interface PostOptionsProps {
@@ -14,6 +15,7 @@ interface PostOptionsProps {
 }
 
 const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
+  const { handleSelectForm } = usePostForm()
   const t = useTranslations('Posts')
   return (
     <div className='flex flex-col items-center'>
@@ -26,7 +28,7 @@ const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
       <SettingButton
         icon={streamIcon}
         label={t('stream')}
-        onClick={() => handleSelectOption('stream')}
+        onClick={() => handleSelectForm('stream')}
         altText={t('stream')}
       />
       <SettingButton

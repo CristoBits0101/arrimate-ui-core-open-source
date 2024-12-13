@@ -1,4 +1,6 @@
+import PublishFormCard from '@/modules/feeds/components/cards/publish-form-card'
+
 // Post page
 export default function PostPage() {
-  return <h2>POST PAGE</h2>
+  return <PublishFormCard />
 }
