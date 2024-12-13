@@ -11,6 +11,18 @@ const nextConfig = {
         hostname: 'images.pexels.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'real-time-amazon-data.p.rapidapi.com',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        port: '',
+        hostname: 'm.media-amazon.com',
+        pathname: '/**'
       }
     ]
   }
