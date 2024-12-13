@@ -38,7 +38,9 @@ export default function ShowProducts() {
 
   // Load products when rendering the component
   useEffect(() => {
+    // Search products
     async function fetchProducts() {
+      // Make the request
       try {
         const response = await fetch(
           'https://real-time-amazon-data.p.rapidapi.com/seller-products?seller_id=A02211013Q5HP3OMSZC7W&country=US&page=1&sort_by=RELEVANCE',
@@ -51,13 +53,9 @@ export default function ShowProducts() {
             }
           }
         )
-
-        if (!response.ok) {
-          setHasError(true)
-          return
-        }
-
+        // Store the response
         const data = await response.json()
+        // Filters the response and passes it to the state
         setProducts(data.data.seller_products)
       } catch (error) {
         console.error('Error fetching products: ', error)
@@ -76,7 +74,7 @@ export default function ShowProducts() {
 
   if (hasError || !products.length) {
     return (
-      <div className='text-center'>
+      <div className='w-full h-full grid place-content-center text-center gap-2'>
         <h2>No Products Available</h2>
         <Image
           src={noProductsAvailable}
@@ -91,23 +89,20 @@ export default function ShowProducts() {
   return (
     <ul className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8'>
       {products.map((product) => (
-        <li
-          key={product.asin}
-          className='border rounded-lg shadow-md overflow-hidden bg-blue-500'
-        >
+        <li key={product.asin}>
           <article>
-            <header className='relative w-full h-48'>
+            <header className='relative w-full h-40'>
               <Image
                 src={product.product_photo}
                 alt={product.product_title}
                 fill
                 loading='lazy'
-                className='object-cover'
+                className='object-contain'
               />
             </header>
             <section className='p-4'>
               <h2 className='text-lg font-semibold'>{product.product_title}</h2>
-              <p className='text-gray-700'>Price: {product.product_price}</p>
+              <p className='text-gray-700'>{product.product_price}</p>
               {product.product_original_price && (
                 <p className='line-through text-gray-500'>
                   Original Price: {product.product_original_price}
@@ -115,9 +110,6 @@ export default function ShowProducts() {
               )}
               <p className='text-yellow-500 font-medium'>
                 Rating: ⭐ {product.product_star_rating}
-              </p>
-              <p className='text-gray-600'>
-                Ratings Count: {product.product_num_ratings}
               </p>
               <p className='mt-4'>
                 <a

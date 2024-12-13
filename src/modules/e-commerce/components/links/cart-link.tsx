@@ -1,6 +1,6 @@
 // Import SVG icons for the cart
-import cartBlackSVG from '@/modules/e-commerce/assets/black/cart.svg'
-import cartWhiteSVG from '@/modules/e-commerce/assets/white/cart.svg'
+import cartBlackSVG from '@/modules/e-commerce/assets/icons/black/cart.svg'
+import cartWhiteSVG from '@/modules/e-commerce/assets/icons/white/cart.svg'
 
 // Import reusable component for navigation links
 import NavigationItem from '@/modules/navigation/components/links/sidebar-link'
