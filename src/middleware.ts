@@ -33,7 +33,7 @@ export default auth((request) => {
   // Check API
   if (isApiAuthRoute) return
 
-  // Redirect home
+  // Redirect stories
   if (isLoggedIn && isAuthRoute) request.nextUrl.href = `${origin}/`
 
   // Redirect sign-in

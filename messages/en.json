@@ -90,7 +90,7 @@
       "title": "Please try again in a moment"
     }
   },
-  "HomePanel": {
+  "StoriesPanel": {
     "emoji": "🏆",
     "emojiTwo": "💡",
     "title": "HIGHLIGHTS",
@@ -158,7 +158,7 @@
     "community": "Community",
     "events": "Events",
     "following": "Following",
-    "home": "Home",
+    "stories": "Stories",
     "live": "LIVE",
     "products": "Products",
     "reviews": "Reviews",

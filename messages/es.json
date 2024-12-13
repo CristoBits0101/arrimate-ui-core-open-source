@@ -91,7 +91,7 @@
       "title": "Inténtelo de nuevo más tarde"
     }
   },
-  "HomePanel": {
+  "StoriesPanel": {
     "emoji": "🏆",
     "emojiTwo": "💡",
     "title": "DESTACADOS",
@@ -158,7 +158,7 @@
     "audios": "Audios",
     "community": "Comunidad",
     "events": "Eventos",
-    "home": "Inicio",
+    "stories": "Historias",
     "live": "Directos",
     "products": "Productos",
     "reviews": "Reseñas",

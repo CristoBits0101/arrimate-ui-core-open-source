@@ -33,7 +33,7 @@ interface CarouselProps {
   photos: Photo[]
 }
 
-const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
+const StoriesCarousel: React.FC<CarouselProps> = ({ photos }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [maxVisibleImages, setMaxVisibleImages] = useState<number>(13)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -144,4 +144,4 @@ const HomeCarousel: React.FC<CarouselProps> = ({ photos }) => {
   )
 }
 
-export default HomeCarousel
+export default StoriesCarousel

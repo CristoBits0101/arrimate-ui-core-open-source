@@ -21,7 +21,7 @@ export default function SidebarItem({
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
 
-  const href = route === 'home' ? `/${locale}` : `/${locale}/${route}`
+  const href = route === 'stories' ? `/${locale}` : `/${locale}/${route}`
 
   return (
     <li className='flex items-center justify-center w-fit h-fit hover:cursor-pointer'>

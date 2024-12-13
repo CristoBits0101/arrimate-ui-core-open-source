@@ -11,12 +11,12 @@ import ShowPostStories from '@/modules/feeds/components/posts/show-post-stories'
 // styles
 import '@/styles/globals.css'
 
-export default function HomePage() {
+export default function StoriesPage() {
   return (
     <>
       {/* Header layout */}
       <Header />
-      {/* Home page content */}
+      {/* Stories page content */}
       <main className='hidden md:flex min-w-[46rem] h-fit col-span-1 flex-col items-center gap-16 dark:bg-[#26272C]'>
         <ShowPostStories />
         <ShowPostImages />

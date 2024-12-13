@@ -1,6 +1,6 @@
 import Community from '@/modules/network/components/links/community-link'
 import Events from '@/modules/feeds/components/links/events-link'
-import Home from '@/modules/feeds/components/links/home-link'
+import Stories from '@/modules/feeds/components/links/stories-link'
 import Live from '@/modules/streaming/components/links/live-link'
 import Products from '@/modules/e-commerce/components/links/products-link'
 import Reviews from '@/modules/feeds/components/links/reviews-link'
@@ -12,7 +12,7 @@ export default function NavbarMenu() {
   return (
     <nav className='flex h-full justify-center w-full mt-6'>
       <ul className='flex flex-col w-full h-full gap-2'>
-        <Home />
+        <Stories />
         <Events />
         <Products />
         <Shorts />

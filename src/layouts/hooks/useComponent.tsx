@@ -5,21 +5,21 @@ import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
 // panels
-import HomePanel from '@/modules/feeds/components/panels/home-panel'
+import StoriesPanel from '@/modules/feeds/components/panels/stories-panel'
 import PostsPanel from '@/modules/feeds/components/panels/posts-panel'
 import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
 
 export function usePageComponent() {
   // Get translations
-  const hpt = useTranslations('HomePanel')
-  // Get -> /en/home
+  const hpt = useTranslations('StoriesPanel')
+  // Get -> /en/stories
   const path = usePathname()
   // Get -> en
   const locale = useLocale()
 
   // Paths
   const paths = {
-    home: `/${locale}`,
+    stories: `/${locale}`,
     events: `/${locale}/events`,
     shorts: `/${locale}/shorts`,
     videos: `/${locale}/videos`,
@@ -36,9 +36,9 @@ export function usePageComponent() {
 
   // Check if current path is active
   switch (path) {
-    case paths.home:
+    case paths.stories:
       return (
-        <HomePanel
+        <StoriesPanel
           emoji={hpt('emoji')}
           emojiTwo={hpt('emojiTwo')}
           title={hpt('title')}

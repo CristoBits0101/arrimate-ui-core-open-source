@@ -20,7 +20,7 @@ export default function NavbarItem({
   const isActive = usePageIcon(route)
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
-  const href = route === 'home' ? `/${locale}` : `/${locale}/${route}`
+  const href = route === 'stories' ? `/${locale}` : `/${locale}/${route}`
   return (
     <li className='flex items-center justify-center w-full h-full pt-2 pb-2 pr-8 pl-8 hover:bg-[#F4F4F4] hover:cursor-pointer transition-colors duration-300'>
       <Link
