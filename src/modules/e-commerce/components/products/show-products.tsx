@@ -15,6 +15,9 @@ import { useEffect, useState } from 'react'
 // Spinner
 import { PuffLoader } from 'react-spinners'
 
+// Styles
+import '@/modules/e-commerce/styles/show-products.css'
+
 // Product type
 interface Product {
   asin: string
@@ -91,7 +94,7 @@ export default function ShowProducts() {
   if (hasError || !products.length) {
     return (
       <div className='w-full h-full grid place-content-center text-center gap-8'>
-        <h2 className='text-4xl font-medium'>{t('noProducts')}</h2>
+        <h2 className='text-5xl font-medium shakeFix'>{t('noProducts')}</h2>
         <Image
           src={noProductsAvailable}
           alt='No products available'
