@@ -97,7 +97,7 @@ export default function ShowProducts() {
           alt='No products available'
           width={400}
           height={400}
-          className='m-auto drop-shadow-sm'
+          className='m-auto drop-shadow-sm aspect-square object-contain'
         />
       </div>
     )
