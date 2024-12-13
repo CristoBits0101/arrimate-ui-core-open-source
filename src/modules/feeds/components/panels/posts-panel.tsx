@@ -5,7 +5,7 @@ import PublishOptions from '@/modules/feeds/components/options/publish-options'
 import ManageOptions from '@/modules/feeds/components/options/manage-options'
 import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
 import BackButton from '@/modules/configuration/components/buttons/back-button'
-import { usePostSettings } from '@/modules/feeds/hooks/usePostSettings'
+import { usePostSettings } from '@/modules/feeds/hooks/panels/usePostSettings'
 import { useTranslations } from 'next-intl'
 
 export default function PostsPanel() {

@@ -1,8 +1,7 @@
 'use client'
 
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
-import storyWhiteSVG from '@/modules/feeds/assets/icons/panels/story.svg'
-import imageWhiteSVG from '@/modules/feeds/assets/icons/panels/image.svg'
+import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories.svg'
 import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
 import productsWhiteSVG from '@/modules/e-commerce/assets/white/products.svg'
 import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
@@ -20,13 +19,6 @@ const ManageOptions = () => {
         onClick={() => {}}
         iconSrc={storyWhiteSVG}
         altText={t('stories')}
-      />
-      <OptionButton
-        label={t('images')}
-        isSelected={false}
-        onClick={() => {}}
-        iconSrc={imageWhiteSVG}
-        altText={t('images')}
       />
       <OptionButton
         label={t('events')}

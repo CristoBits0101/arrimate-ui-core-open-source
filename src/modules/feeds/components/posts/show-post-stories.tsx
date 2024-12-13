@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useFetchPhotos } from '@/modules/feeds/hooks/useFetchPhotos'
+import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 // Import Swiper styles

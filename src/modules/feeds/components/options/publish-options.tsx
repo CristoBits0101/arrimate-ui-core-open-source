@@ -2,7 +2,6 @@
 
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
 import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories.svg'
-import imageWhiteSVG from '@/modules/feeds/assets/icons/panels/image.svg'
 import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
 import productsWhiteSVG from '@/modules/e-commerce/assets/white/products.svg'
 import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
@@ -20,13 +19,6 @@ const PublishOptions = () => {
         onClick={() => {}}
         iconSrc={storyWhiteSVG}
         altText={t('story')}
-      />
-      <OptionButton
-        label={t('image')}
-        isSelected={false}
-        onClick={() => {}}
-        iconSrc={imageWhiteSVG}
-        altText={t('image')}
       />
       <OptionButton
         label={t('event')}
