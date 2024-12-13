@@ -52,6 +52,9 @@
     "unfollow": "Unfollow",
     "unlike": "Unlike"
   },
+  "ECommerce": {
+    "noProducts": "No Products Available"
+  },
   "Forms": {
     "errors": {},
     "inputs": {

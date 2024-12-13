@@ -6,8 +6,14 @@ import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_
 // next/image
 import Image from 'next/image'
 
+// next-intl
+import { useTranslations } from 'next-intl'
+
 // react
 import { useEffect, useState } from 'react'
+
+// Spinner
+import { PuffLoader } from 'react-spinners'
 
 // Product type
 interface Product {
@@ -36,6 +42,9 @@ export default function ShowProducts() {
   const [loading, setLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
+  // Translations
+  const t = useTranslations('ECommerce')
+
   // Load products when rendering the component
   useEffect(() => {
     // Search products
@@ -59,28 +68,36 @@ export default function ShowProducts() {
         setProducts(data.data.seller_products)
       } catch (error) {
         console.error('Error fetching products: ', error)
+        // Update search status an error
         setHasError(true)
       } finally {
+        // Indicate that the product search has ended
         setLoading(false)
       }
     }
 
+    // Fetch products when the component mounts
     fetchProducts()
   }, [])
 
-  if (loading) {
-    return <p>Loading products...</p>
-  }
+  // Show banner when the query is process
+  if (loading)
+    return (
+      <div className='w-full h-full grid place-content-center'>
+        <PuffLoader color='' />
+      </div>
+    )
 
   if (hasError || !products.length) {
     return (
-      <div className='w-full h-full grid place-content-center text-center gap-2'>
-        <h2>No Products Available</h2>
+      <div className='w-full h-full grid place-content-center text-center gap-8'>
+        <h2 className='text-4xl font-medium'>{t('noProducts')}</h2>
         <Image
           src={noProductsAvailable}
           alt='No products available'
-          width={300}
-          height={300}
+          width={400}
+          height={400}
+          className='m-auto drop-shadow-sm'
         />
       </div>
     )

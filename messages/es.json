@@ -52,6 +52,9 @@
     "unfollow": "Dejar de seguir",
     "unlike": "Ya no me gusta"
   },
+  "ECommerce": {
+    "noProducts": "No Hay Productos Disponibles"
+  },
   "Forms": {
     "errors": {},
     "inputs": {
