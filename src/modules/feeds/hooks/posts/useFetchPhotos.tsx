@@ -27,9 +27,7 @@ export const useFetchPhotos = ({
 
   useEffect(() => {
     if (query !== prevQuery) {
-      const client = createClient(
-        'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
-      )
+      const client = createClient(`${process.env.PEXELS_CLIENT_SECRET}`)
       setLoading(true)
       setError(null)
       client.photos

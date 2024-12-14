@@ -52,29 +52,39 @@ export default function ShowProducts() {
   useEffect(() => {
     // Search products
     async function fetchProducts() {
-      // Make the request
       try {
+        // Check API key
+        if (!process.env.AMAZON_CLIENT_SECRET)
+          throw new Error('Secret key not obtained!')
+
+        // Make query
         const response = await fetch(
           'https://real-time-amazon-data.p.rapidapi.com/seller-products?seller_id=A02211013Q5HP3OMSZC7W&country=US&page=1&sort_by=RELEVANCE',
           {
             method: 'GET',
             headers: {
               'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
-              'x-rapidapi-key':
-                'ef988b195emshb65eb6ea77beacap16ea5ajsn5a86d4e4b901'
+              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET
             }
           }
         )
-        // Store the response
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+
         const data = await response.json()
-        // Filters the response and passes it to the state
+
+        // Verifica la estructura de la respuesta
+        if (!data.data || !Array.isArray(data.data.seller_products)) {
+          throw new Error('Invalid API response structure')
+        }
+
         setProducts(data.data.seller_products)
       } catch (error) {
-        console.error('Error fetching products: ', error)
-        // Update search status an error
+        console.error('Error fetching products:', error)
         setHasError(true)
       } finally {
-        // Indicate that the product search has ended
         setLoading(false)
       }
     }
