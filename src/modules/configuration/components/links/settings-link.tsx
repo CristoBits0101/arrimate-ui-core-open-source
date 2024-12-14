@@ -29,9 +29,12 @@ const SettingsLinkClient = () => {
       >
         {/* User image */}
         <Image
-          className='w-7 h-7 object-contain aspect-square'
+          className='w-9 h-9 object-contain aspect-square rounded-full'
           src={session?.user?.image || defaultUserImage}
           alt='Settings'
+          width={40}
+          height={40}
+          loading='lazy'
         />
       </Link>
     </li>
