@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: 'Arrímate',
   description: '',
   icons: {
-    icon: '/favicon.ico'
+    icon: '/arrimate.ico'
   }
 }
 
