@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePageIcon } from '@/modules/navigation/hooks/useIcon'
@@ -34,7 +35,7 @@ export default function SidebarItem({
           src={isActive ? blackIcon : whiteIcon}
           alt={route}
         />
-        {textKey && t(textKey)}
+        {textKey && t(textKey)} {/* Render text if textKey is provided */}
       </Link>
     </li>
   )

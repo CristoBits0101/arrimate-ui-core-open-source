@@ -1,13 +1,23 @@
-import settingsBlackSVG from '@/modules/configuration/assets/links/black/settings.svg'
-import settingsWhiteSVG from '@/modules/configuration/assets/links/white/settings.svg'
-import NavigationItem from '@/modules/navigation/components/links/sidebar-link'
+// Auth: Contain user information
+import { auth } from '@/modules/auth/lib/auth'
 
-export default function Settings() {
+// User: Default image
+import dafaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
+
+// Client Component
+import SidebarItem from '@/modules/navigation/components/links/sidebar-link'
+
+const SettingsLink = async () => {
+  const session = await auth() // Fetch session data on the server
+  console.log(JSON.stringify(session))
+
   return (
-    <NavigationItem
+    <SidebarItem
       route='settings'
-      blackIcon={settingsBlackSVG}
-      whiteIcon={settingsWhiteSVG}
+      blackIcon={dafaultUserImage.src}
+      whiteIcon={dafaultUserImage.src}
     />
   )
 }
+
+export default SettingsLink
