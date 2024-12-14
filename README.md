@@ -3,7 +3,7 @@
   ## Auth
     - ✅        **Change Password** ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
     - ✅     **Email Verification** ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod
-    - ✅            **OAuth Login** ➜ Auth.js + Prisma + Providers + Shadcn/UI
+    - ✅            **OAuth Login** ➜ Google Cloud + Azure + Auth.js + Prisma + Shadcn/UI
     - ✅       **Recover Password** ➜ Auth.js + Prisma + Resend + Neon + UUID + Zod + React Hook Form + Shadcn/UI
     - ✅                **Sign In** ➜ Auth.js + Prisma + bcrypt/bcryptjs + Zod + React Hook Form + Shadcn/UI
     - ✅               **Sign Out** ➜ Auth.js + Shadcn/UI
@@ -12,13 +12,14 @@
   ## Branding
     - ✅      **Reusable App Logo** ➜ next/image
   ## Configuration
-    - ✅         **Settings Panel** ➜ Change language component + Change theme component + Sign Out
+    - ✅         **Settings Panel** ➜ Change language component + Change theme component + Sign Out component
   ## Data
     - ✅        **Data Validation** ➜ Zod
     - ✅    **Database Management** ➜ Prisma
   ## E-commerce
     - 🚧        **Online Payments** ➜
-    - 🚧          **Shopping Cart** ➜
+    - 🚧          **Shopping Cart** ➜ Partner API
+    - ✅        **Partner API** ➜ Zod
   ## Feeds
     - 🚧        **Comment Content** ➜
     - 🚧           **Post Content** ➜
