@@ -50,6 +50,7 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
           onClick={() => handleSelectOption('theme')}
           altText='Themes icon'
         />
+        {/* Sign out */}
         <SignOutForm />
       </div>
     </div>

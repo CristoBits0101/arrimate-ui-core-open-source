@@ -1,8 +1,7 @@
-// Auth: User information
-import { auth } from '@/modules/auth/lib/auth'
+'use client'
 
-// Image: Default image
-import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
+// Custom hooks
+import { useUserSession } from '@/modules/configuration/hooks/useUserSession'
 
 // next/image
 import Image from 'next/image'
@@ -10,22 +9,28 @@ import Image from 'next/image'
 // next/link
 import Link from 'next/link'
 
-const SettingsLink = async () => {
-  // Get user session
-  const session = await auth()
-  console.log(JSON.stringify(session))
+// User default image
+import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
+
+const SettingsLinkClient = () => {
+  // Get session and hydrated states
+  const { session, hydrated } = useUserSession()
+
+  // Wait for component to be confirmed renderable
+  if (!hydrated) return null
+
   return (
-    
+    // List element
     <li className='flex items-center justify-center w-fit h-fit hover:cursor-pointer'>
-      {/* Link */}
+      {/* Link page */}
       <Link
         className='flex items-center justify-center h-fit w-fit dark:text-[#ecece]'
         href='/settings'
       >
-        {/* Image */}
+        {/* User image */}
         <Image
           className='w-7 h-7 object-contain aspect-square'
-          src={defaultUserImage}
+          src={session?.user?.image || defaultUserImage}
           alt='Settings'
         />
       </Link>
@@ -33,4 +38,4 @@ const SettingsLink = async () => {
   )
 }
 
-export default SettingsLink
+export default SettingsLinkClient
