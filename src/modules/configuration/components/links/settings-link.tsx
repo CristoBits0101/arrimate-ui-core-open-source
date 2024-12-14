@@ -8,7 +8,7 @@ import dafaultUserImage from '@/modules/auth/assets/images/default_user_image.pn
 import SidebarItem from '@/modules/navigation/components/links/sidebar-link'
 
 const SettingsLink = async () => {
-  const session = await auth() // Fetch session data on the server
+  const session = await auth()
   console.log(JSON.stringify(session))
 
   return (
