@@ -98,7 +98,7 @@ export default function ShowPostStories() {
                   width={photo.width}
                   height={photo.height}
                   priority={true}
-                  className='rounded-full drop-shadow-sm border-solid border-[0.05rem] border-[#EBEAEB] object-cover'
+                  className='rounded-full drop-shadow-sm object-cover hover:cursor-pointer hover:border-4 hover:border-[#1D0F0F] hover:border-solid'
                   onError={() => handleImageError(photo.id)}
                 />
               </div>
