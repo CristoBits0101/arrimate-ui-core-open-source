@@ -146,7 +146,7 @@ export default function ArrimateFollowCard({
           isFollowing={isFollowing}
           onToggleFollow={handleToggleFollowing}
           text={isFollowing ? 'Following' : 'Follow'}
-          bgColor={isFollowing ? '#1D0F0F' : '#68EF00'}
+          bgColor={isFollowing ? '#1D0F0F' : '#453C41'}
           hoverBgColor={'#1D0F0F'}
           textColor='#FFFFFF'
           isRound={true}
