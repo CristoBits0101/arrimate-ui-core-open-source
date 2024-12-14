@@ -14,13 +14,15 @@ const SettingsLink = async () => {
   // Get user session
   const session = await auth()
   console.log(JSON.stringify(session))
-
   return (
+    
     <li className='flex items-center justify-center w-fit h-fit hover:cursor-pointer'>
+      {/* Link */}
       <Link
         className='flex items-center justify-center h-fit w-fit dark:text-[#ecece]'
         href='/settings'
       >
+        {/* Image */}
         <Image
           className='w-7 h-7 object-contain aspect-square'
           src={defaultUserImage}
