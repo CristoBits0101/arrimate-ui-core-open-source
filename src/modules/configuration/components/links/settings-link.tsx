@@ -9,6 +9,9 @@ import Image from 'next/image'
 // next/link
 import Link from 'next/link'
 
+// React
+import { useEffect, useState } from 'react'
+
 // User default image
 import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
 
@@ -16,8 +19,16 @@ const SettingsLinkClient = () => {
   // Get session and hydrated states
   const { session, hydrated } = useUserSession()
 
+  // Local state for the user image
+  const [userImage, setUserImage] = useState<string | null>(null)
+
+  // Update the user image when the session is hydrated
+  useEffect(() => {
+    if (hydrated) setUserImage(session?.user?.image || defaultUserImage)
+  }, [hydrated, session])
+
   // Wait for component to be confirmed renderable
-  if (!hydrated) return null
+  if (!hydrated || userImage === null) return null
 
   return (
     // List element
@@ -30,7 +41,7 @@ const SettingsLinkClient = () => {
         {/* User image */}
         <Image
           className='w-9 h-9 object-contain aspect-square rounded-full'
-          src={session?.user?.image || defaultUserImage}
+          src={userImage}
           alt='Settings'
           width={40}
           height={40}

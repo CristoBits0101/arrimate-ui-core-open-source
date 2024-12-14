@@ -7,17 +7,17 @@ import getUserSessionAction from '@/modules/configuration/actions/getUserSession
 import { useState, useEffect } from 'react'
 
 export const useUserSession = (): { session: any; hydrated: boolean } => {
-  // Estado para los datos de la sesión
+  // Manage session data
   const [session, setSession] = useState<any>(null)
 
-  // Estado para manejar la hidratación
+  // Manage hydrated
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
-    // Marca que el cliente está hidratado
+    // Set hydrated for current session
     setHydrated(true)
 
-    // Obtén los datos de la sesión desde el backend
+    // Get user session
     getUserSessionAction()
       .then((data) => {
         setSession(data)
