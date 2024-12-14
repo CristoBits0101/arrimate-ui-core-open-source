@@ -1,47 +1,57 @@
-import { FC } from 'react'
+// next/image
+import Image from 'next/image'
+
+// next-intl
 import { useTranslations } from 'next-intl'
 
+// React
+import { FC, useState } from 'react'
+
+// SVG
+import cancel from '@/modules/marketing/assets/icons/cancel.svg'
+import follow from '@/modules/marketing/assets/icons/follow.svg'
+import followHover from '@/modules/marketing/assets/icons/follow_hover.svg'
+import following from '@/modules/marketing/assets/icons/following.svg'
+
+// Props interface
 interface FollowButtonProps {
   isFollowing: boolean
   onToggleFollow: (newState: boolean) => void
-  text: string
-  bgColor: string
-  hoverBgColor: string
-  textColor: string
-  isRound: boolean
 }
 
 const FollowButton: FC<FollowButtonProps> = ({
   isFollowing,
-  onToggleFollow,
-  bgColor,
-  hoverBgColor,
-  textColor,
-  isRound
+  onToggleFollow
 }) => {
   const t = useTranslations('Button')
+  const [hoverState, setHoverState] = useState(false)
+
   const handleClick = () => {
     const newState = !isFollowing
     onToggleFollow(newState)
+    // Reset hover state on click
+    setHoverState(false)
   }
+
+  const getIcon = () => {
+    if (isFollowing && hoverState) return cancel // Show cancel icon on hover
+    if (!isFollowing && hoverState) return followHover // Show followHover icon if not following and on hover
+    if (isFollowing) return following // Show following icon if already following
+    return follow // Show follow icon otherwise
+  }
+
   return (
     <button
-      className={`outline-none w-8 h-8 flex justify-center items-center py-1.5 transition-colors duration-300 transform-none border-none ${
-        isRound ? 'rounded-full' : 'rounded-md'
-      }`}
-      style={{
-        backgroundColor: bgColor,
-        color: textColor
-      }}
+      className='outline-none w-7 h-7 flex justify-center items-center py-1.5 transition-transform duration-300 transform-none border-none bg-transparent'
       onClick={handleClick}
-      onMouseOver={(e) =>
-        (e.currentTarget.style.backgroundColor = hoverBgColor)
-      }
-      onMouseOut={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
+      onMouseOver={() => setHoverState(true)}
+      onMouseOut={() => setHoverState(false)}
     >
-      <span className='w-full flex justify-center items-center text-sm'>
-        {isFollowing ? t('following') : t('follow')}
-      </span>
+      <Image
+        src={getIcon()}
+        alt={t(isFollowing ? 'following' : 'follow')}
+        className='w-7 h-7 aspect-square object-contain'
+      />
     </button>
   )
 }

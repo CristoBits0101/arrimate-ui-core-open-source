@@ -145,11 +145,6 @@ export default function ArrimateFollowCard({
         <FollowButton
           isFollowing={isFollowing}
           onToggleFollow={handleToggleFollowing}
-          text={isFollowing ? 'Following' : 'Follow'}
-          bgColor={isFollowing ? '#1D0F0F' : '#453C41'}
-          hoverBgColor={'#1D0F0F'}
-          textColor='#FFFFFF'
-          isRound={true}
         />
         {(!publicationDate || !publicationLocation) && (
           <section className='w-full h-fit flex gap-1 justify-center items-center'>

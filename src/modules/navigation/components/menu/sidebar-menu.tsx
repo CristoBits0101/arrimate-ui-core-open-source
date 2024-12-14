@@ -9,9 +9,9 @@ export default function SidebarMenu() {
     <nav className='flex w-full items-center justify-center h-fit'>
       <ul className='flex items-center justify-between w-full h-fit'>
         <Post />
-        <Chats />
-        <Notifications />
         <Cart />
+        <Notifications />
+        <Chats />
         <Settings />
       </ul>
     </nav>
