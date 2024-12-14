@@ -1,6 +1,9 @@
 'use client'
 
+// next/image
 import Image from 'next/image'
+
+// next/link
 import Link from 'next/link'
 import { usePageIcon } from '@/modules/navigation/hooks/useIcon'
 import { useLocale, useTranslations } from 'next-intl'
