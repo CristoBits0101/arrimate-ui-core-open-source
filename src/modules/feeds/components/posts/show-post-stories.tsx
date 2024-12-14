@@ -24,7 +24,6 @@ type Photo = {
 }
 
 export default function ShowPostStories() {
-  // const { photos, loading, error } = useFetchPhotos({
   const { photos, error } = useFetchPhotos({
     query: 'person',
     orientation: 'square',
@@ -57,8 +56,6 @@ export default function ShowPostStories() {
     if (photos.length > 0) updateSlidesPerView()
   }, [photos, updateSlidesPerView])
 
-  // Return null if the photos array is empty
-  // if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   if (photos.length === 0) return null
 
