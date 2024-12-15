@@ -1,7 +1,7 @@
 'use client'
 
 // Custom hook
-import { usePostForm } from '@/modules/feeds/hooks/panels/usePostForm'
+import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 
 // Post Forms
 import AudioForm from '@/modules/feeds/components/forms/audio-form'
@@ -12,13 +12,13 @@ import StoryForm from '@/modules/feeds/components/forms/story-form'
 import StreamForm from '@/modules/feeds/components/forms/stream-form'
 import VideoForm from '@/modules/feeds/components/forms/video-form'
 
-export default function PublishFormCard() {
-  const { activePostForm } = usePostForm()
+export default function PublishCard() {
+  const { activePost } = usePost()
   // Return forms
   return (
-    <div>
+    <div className='min-h-full max-h-fit h-auto'>
       {(() => {
-        switch (activePostForm) {
+        switch (activePost) {
           case 'audio':
             return <AudioForm />
           case 'event':

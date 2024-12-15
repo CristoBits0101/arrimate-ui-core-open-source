@@ -3,7 +3,7 @@
 import { createContext, useState } from 'react'
 
 // Allowed string types
-export type PostFormType =
+export type PostType =
   | 'story'
   | 'event'
   | 'product'
@@ -16,29 +16,29 @@ export type PostFormType =
   | null
 
 // Creating the context
-const PostFormContext = createContext<{
+const PostContext = createContext<{
   // Context values
-  activePostForm: PostFormType
+  activePost: PostType
   // Change values from the current context
-  changePostForm: (form: PostFormType) => void
+  changePost: (option: PostType) => void
 } | null>(null)
 
 // Context provider
-export function PostFormProvider({ children }: { children: React.ReactNode }) {
+export function PostProvider({ children }: { children: React.ReactNode }) {
   // Controls the states of the context
-  const [activePostForm, setActivePostForm] = useState<PostFormType>(null)
+  const [activePost, setActivePost] = useState<PostType>(null)
 
   // Context function updates the state with state function
-  const changePostForm = (form: PostFormType) => {
-    setActivePostForm(form)
+  const changePost = (option: PostType) => {
+    setActivePost(option)
   }
 
   // Returns the provider with the context values and the context function
   return (
-    <PostFormContext.Provider value={{ activePostForm, changePostForm }}>
+    <PostContext.Provider value={{ activePost, changePost }}>
       {children}
-    </PostFormContext.Provider>
+    </PostContext.Provider>
   )
 }
 
-export { PostFormContext }
+export { PostContext }

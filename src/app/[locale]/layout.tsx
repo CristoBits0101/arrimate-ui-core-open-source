@@ -1,5 +1,5 @@
 // Custom context
-import { PostFormProvider  } from '@/modules/feeds/contexts/PostFormContext'
+import { PostProvider  } from '@/modules/feeds/contexts/PostContext'
 
 // fonts
 import { standard } from '@/lib/fonts'
@@ -45,10 +45,10 @@ export default async function LocaleLayout({
         {/* Providers */}
         <SessionProvider>
           <NextIntlClientProvider messages={messages}>
-            <PostFormProvider>
+            <PostProvider>
               {/* Pages */}
               {children}
-            </PostFormProvider>
+            </PostProvider>
           </NextIntlClientProvider>
         </SessionProvider>
       </body>

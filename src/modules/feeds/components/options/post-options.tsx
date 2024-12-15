@@ -5,7 +5,7 @@ import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
 import streamIcon from '@/modules/streaming/assets/white/live.svg'
 import manageIcon from '@/modules/feeds/assets/icons/panels/manage.svg'
 import performanceIcon from '@/modules/feeds/assets/icons/panels/performance.svg'
-import { usePostForm } from '@/modules/feeds/hooks/panels/usePostForm'
+import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 import { useTranslations } from 'next-intl'
 
 interface PostOptionsProps {
@@ -16,7 +16,7 @@ interface PostOptionsProps {
 
 const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
   // Access the function to update context
-  const { changePostForm } = usePostForm()
+  const { changePost } = usePost()
   // Get translations
   const t = useTranslations('Posts')
   return (
@@ -30,7 +30,7 @@ const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
       <SettingButton
         icon={streamIcon}
         label={t('stream')}
-        onClick={() => changePostForm('stream')}
+        onClick={() => changePost('stream')}
         altText={t('stream')}
       />
       <SettingButton
