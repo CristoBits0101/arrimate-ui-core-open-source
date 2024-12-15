@@ -40,7 +40,7 @@ const SettingsLinkClient = () => {
       >
         {/* User image */}
         <Image
-          className='w-9 h-9 object-contain aspect-square rounded-full'
+          className='w-7 h-7 object-contain aspect-square rounded-full'
           src={userImage}
           alt='Settings'
           width={40}
