@@ -1,8 +1,19 @@
+// Custom hook
+import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
+
+// next/image
 import Image from 'next/image'
+
+// React hooks
+import { useState, useEffect, useRef, useCallback } from 'react'
+
+// SVG
+import leftArrow from '@/modules/feeds/assets/icons/buttons/arrow_left.svg'
+import rightArrow from '@/modules/feeds/assets/icons/buttons/arrow_right.svg'
+
+// Swiper
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
-import { useState, useEffect, useRef, useCallback } from 'react'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -112,20 +123,34 @@ export default function ShowPostStories() {
             </SwiperSlide>
           ) : null
         )}
+        {/* Swiper arrows */}
+        <div className='custom-prev absolute left-0 top-[calc(50%-14px)] transform -translate-y-1/2 z-10'>
+          {/* Previous arrow */}
+          <button className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
+            <Image
+              src={leftArrow}
+              alt='Left arrow'
+              width={40}
+              height={40}
+              loading='lazy'
+              className='opacity-85'
+            />
+          </button>
+        </div>
+        <div className='custom-next absolute right-0 top-[calc(50%-14px)] transform -translate-y-1/2 z-10'>
+          {/* Next arrow */}
+          <button className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
+            <Image
+              src={rightArrow}
+              alt='Right arrow'
+              width={40}
+              height={40}
+              loading='lazy'
+              className='opacity-85'
+            />
+          </button>
+        </div>
       </Swiper>
-      {/* Swiper arrows */}
-      <div className='custom-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10'>
-        {/* Previous arrow */}
-        <button className='p-2 bg-black rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
-          <span className='material-icons'>chevron_left</span>
-        </button>
-      </div>
-      <div className='custom-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10'>
-        {/* Next arrow */}
-        <button className='p-2 bg-black rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
-          <span className='material-icons'>chevron_right</span>
-        </button>
-      </div>
     </div>
   )
 }
