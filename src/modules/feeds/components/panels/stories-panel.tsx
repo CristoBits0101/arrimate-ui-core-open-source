@@ -49,8 +49,6 @@ export default function HomePanel({
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
             verified={randomUtils.getRandomBoolean()}
-            date={randomUtils.getRandomTime()}
-            location={randomUtils.getRandomCapital()}
             connection={randomUtils.getRandomBoolean()}
             countryCode={randomUtils.getRandomCountryCode()}
           />
@@ -77,8 +75,6 @@ export default function HomePanel({
             followers={randomUtils.getRandomFollowers()}
             reliable={randomUtils.getRandomBoolean()}
             verified={randomUtils.getRandomBoolean()}
-            date={randomUtils.getRandomTime()}
-            location={randomUtils.getRandomCapital()}
             connection={randomUtils.getRandomBoolean()}
             countryCode={randomUtils.getRandomCountryCode()}
           />
