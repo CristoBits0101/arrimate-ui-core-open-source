@@ -15,7 +15,9 @@ interface PostOptionsProps {
 }
 
 const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
-  const { handleSelectForm } = usePostForm()
+  // Access the function to update context
+  const { changePostForm } = usePostForm()
+  // Get translations
   const t = useTranslations('Posts')
   return (
     <div className='flex flex-col items-center'>
@@ -28,7 +30,7 @@ const PostOptions: React.FC<PostOptionsProps> = ({ handleSelectOption }) => {
       <SettingButton
         icon={streamIcon}
         label={t('stream')}
-        onClick={() => handleSelectForm('stream')}
+        onClick={() => changePostForm('stream')}
         altText={t('stream')}
       />
       <SettingButton

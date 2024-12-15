@@ -11,6 +11,8 @@ export type PostFormType =
   | 'video'
   | 'stream'
   | 'audio'
+  | 'manage'
+  | 'performance'
   | null
 
 // Creating the context

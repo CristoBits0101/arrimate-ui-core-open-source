@@ -55,13 +55,6 @@ const ManageOptions = () => {
         iconSrc={icon}
         altText={t('comments')}
       />
-      <OptionButton
-        label={t('tags')}
-        isSelected={false}
-        onClick={() => {}}
-        iconSrc={icon}
-        altText={t('tags')}
-      />
     </section>
   )
 }
