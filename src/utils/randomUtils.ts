@@ -312,7 +312,7 @@ export const randomUtils = {
     ]
     return popularHashtags[Math.floor(Math.random() * popularHashtags.length)]
   },
-  // Descriptions
+  // Descriptions: Max 64
   getRandomImageDescription: () => {
     const intros = [
       'Check out this amazing capture, a beautiful moment to share.',
