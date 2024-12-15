@@ -1,3 +1,5 @@
+'use client'
+
 // Custom hook
 import { usePostForm } from '@/modules/feeds/hooks/panels/usePostForm'
 

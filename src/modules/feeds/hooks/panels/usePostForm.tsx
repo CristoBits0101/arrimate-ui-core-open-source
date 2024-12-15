@@ -1,3 +1,5 @@
+'use client'
+
 // Custom context
 import { PostFormContext } from '@/modules/feeds/contexts/PostFormContext'
 
