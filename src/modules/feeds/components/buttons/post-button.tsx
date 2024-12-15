@@ -15,7 +15,7 @@ interface PostButtonProps {
 
 export default function PostButton({
   textDisplay = '',
-  textColor = '',
+  textColor = '#1D0F0F',
   iconDisplay = '',
   iconColor = '#1D0F0F',
   iconAlt = '',
@@ -34,42 +34,42 @@ export default function PostButton({
       <button className='w-fit h-fit p-3 rounded-full bg-[#F4F4F4] hover:bg-[#EBEAEB] dark:bg-[#848489] dark:hover:bg-[#b8b8bb] dark:text-[#ececed]'>
         {iconDisplay === 'like' && (
           <IoIosHeart
-            style={{ fill: iconColor }}
-            className='drop-shadow-sm opacity-85 w-7 h-7'
+            className='drop-shadow-sm w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
+            color={iconColor}
           />
         )}
         {iconDisplay === 'comments' && (
           <IoChatbubbleEllipsesSharp
-            style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
+            color={iconColor}
           />
         )}
         {iconDisplay === 'save' && (
           <IoBookmarkSharp
-            style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
+            color={iconColor}
           />
         )}
         {iconDisplay === 'share' && (
           <RiShareForwardFill
-            style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
+            color={iconColor}
           />
         )}
         {iconDisplay === 'options' && (
           <SlOptionsVertical
-            style={{ fill: iconColor }}
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
+            color={iconColor}
           />
         )}
       </button>

@@ -88,26 +88,26 @@ export default function ShowPostImages() {
             {/* Buttons */}
             <aside className='col-span-1 row-span-1 w-full h-full flex flex-col gap-2 justify-center items-center'>
               <PostButton
-                iconAlt=''
+                iconAlt='Like icon'
                 iconDisplay='like'
                 textDisplay={randomUtils.getRandomLikes().toString()}
               />
               <PostButton
-                iconAlt=''
+                iconAlt='Comment icon'
                 iconDisplay='comments'
                 textDisplay={randomUtils.getRandomInteractions().toString()}
               />
               <PostButton
-                iconAlt=''
+                iconAlt='Save icon'
                 iconDisplay='save'
                 textDisplay={randomUtils.getRandomInteractions().toString()}
               />
               <PostButton
-                iconAlt=''
+                iconAlt='Share icon'
                 iconDisplay='share'
                 textDisplay={randomUtils.getRandomInteractions().toString()}
               />
-              <PostButton iconAlt='' iconDisplay='options' />
+              <PostButton iconAlt='Options icon' iconDisplay='options' />
             </aside>
             {/* Footer with Description and Hashtags */}
             <footer className='col-span-1 row-span-1 w-full h-fit flex flex-col'>
