@@ -77,11 +77,15 @@ export default function ShowPostStories() {
       ref={containerRef}
       className='relative w-5/6 flex justify-between items-center'
     >
+      {/* Swiper container */}
       <Swiper
         modules={[Navigation]}
         spaceBetween={20}
         slidesPerView={effectiveSlidesPerView}
-        navigation
+        navigation={{
+          nextEl: '.custom-next',
+          prevEl: '.custom-prev'
+        }}
         pagination={{ clickable: true }}
         className='relative w-full flex justify-between items-center'
       >
@@ -109,6 +113,19 @@ export default function ShowPostStories() {
           ) : null
         )}
       </Swiper>
+      {/* Swiper arrows */}
+      <div className='custom-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10'>
+        {/* Previous arrow */}
+        <button className='p-2 bg-black rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
+          <span className='material-icons'>chevron_left</span>
+        </button>
+      </div>
+      <div className='custom-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10'>
+        {/* Next arrow */}
+        <button className='p-2 bg-black rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
+          <span className='material-icons'>chevron_right</span>
+        </button>
+      </div>
     </div>
   )
 }
