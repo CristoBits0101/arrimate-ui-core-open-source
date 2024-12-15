@@ -19,7 +19,7 @@
   ## E-commerce
     - 🚧        **Online Payments** ➜
     - 🚧          **Shopping Cart** ➜ Partner API
-    - ✅        **Partner API** ➜ Zod
+    - ✅            **Partner API** ➜ Zod
   ## Feeds
     - 🚧        **Comment Content** ➜
     - 🚧           **Post Content** ➜
