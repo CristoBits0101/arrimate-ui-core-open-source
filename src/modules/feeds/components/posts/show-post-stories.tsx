@@ -130,8 +130,8 @@ export default function ShowPostStories() {
             <Image
               src={leftArrow}
               alt='Left arrow'
-              width={40}
-              height={40}
+              width={32}
+              height={32}
               loading='lazy'
               className='opacity-85'
             />
@@ -143,8 +143,8 @@ export default function ShowPostStories() {
             <Image
               src={rightArrow}
               alt='Right arrow'
-              width={40}
-              height={40}
+              width={32}
+              height={32}
               loading='lazy'
               className='opacity-85'
             />
