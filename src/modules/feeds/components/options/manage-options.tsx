@@ -6,7 +6,7 @@ import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
 import productsWhiteSVG from '@/modules/e-commerce/assets/icons/white/products.svg'
 import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
 import videosWhiteSVG from '@/modules/streaming/assets/white/videos.svg'
-import icon from '@/modules/feeds/assets/icons/links/black/stories.svg'
+import icon from '@/modules/messages/assets/white/chats.svg'
 import { useTranslations } from 'next-intl'
 
 const ManageOptions = () => {
