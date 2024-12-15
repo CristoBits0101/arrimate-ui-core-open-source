@@ -87,15 +87,20 @@
 # Methodologies
 
   ## Development
-    - 🔄                    **Agile** ➜ Scrum
+    - 🔄                  **Agile** ➜ Scrum
   ## Repository
-    - 🔄                   **GitHub** ➜ Trunk Based Development
+    - 🔄                 **GitHub** ➜ Trunk Based Development
+
+# Architectures
+
+  ## Frontend
+    - 📁 **Screaming Architecture** ➜ Domain-driven Design (DDD)
 
 # Prisma
 
   ## Commands
-    - 🕹️               Check database ➜ npx prisma studio
-    - 🕹️   Synchronize prism & models ➜ npx prisma generate
-    - 🕹️               Reset database ➜ npx prisma migrate reset
-    - 🕹️                   Push model ➜ npx prisma db push
-    - 🕹️        Applies the migration ➜ npx prisma migrate dev
+    - 🕹️             Check database ➜ npx prisma studio
+    - 🕹️ Synchronize prism & models ➜ npx prisma generate
+    - 🕹️             Reset database ➜ npx prisma migrate reset
+    - 🕹️                 Push model ➜ npx prisma db push
+    - 🕹️      Applies the migration ➜ npx prisma migrate dev

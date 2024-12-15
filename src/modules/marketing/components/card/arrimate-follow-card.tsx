@@ -7,7 +7,7 @@ import FollowButton from '@/modules/marketing/components/buttons/follow-button'
 import { useMounted } from '@/modules/marketing/hooks/useMounted'
 
 // Span
-import CountrySpan from '@/modules/marketing/components/span/country-span'
+// import CountrySpan from '@/modules/marketing/components/span/country-span'
 import HeaderSpan from '@/modules/marketing/components/span/header-span'
 
 // Sections
@@ -44,8 +44,8 @@ export default function ArrimateFollowCard({
   reliable,
   verified,
   follower,
-  connection,
-  countryCode
+  connection
+  // countryCode
 }: ArrimateFollowCardProps) {
   const {
     isMounted,
@@ -77,9 +77,9 @@ export default function ArrimateFollowCard({
 
   return (
     <article className='relative border-solid border-[0.05rem] border-[#EBEAEB] rounded-xl w-full min-h-52 max-h-fit h-auto flex flex-col p-3 justify-between items-center'>
-      {countryCode && (
+      {/* {countryCode && (
         <CountrySpan countryCode={countryCode} />
-      )}
+      )} */}
       <HeaderSpan src={userImage} connection={isOnline} />
       {userName && (
         <UserInfoSection
