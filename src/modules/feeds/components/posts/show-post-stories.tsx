@@ -75,7 +75,7 @@ export default function ShowPostStories() {
   return (
     <div
       ref={containerRef}
-      className='relative w-3/4 flex justify-between items-center'
+      className='relative w-5/6 flex justify-between items-center'
     >
       <Swiper
         modules={[Navigation]}
@@ -87,19 +87,22 @@ export default function ShowPostStories() {
       >
         {uniquePhotos.map((photo) =>
           photo && photo.src && !isImageErrorMap[photo.id] ? (
-            <SwiperSlide key={photo.id} className='relative'>
-              <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full'>
+            // Swiper element
+            <SwiperSlide key={photo.id} className='relative w-fit h-fit'>
+              {/* Swiper image */}
+              <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full m-auto'>
                 <Image
                   src={photo.src.small}
                   alt={photo.alt || 'Image from Pexels'}
                   width={photo.width}
                   height={photo.height}
                   priority={true}
-                  className='rounded-full drop-shadow-sm object-cover hover:cursor-pointer hover:border-4 hover:border-[#1D0F0F] hover:border-solid'
+                  className='rounded-full drop-shadow-sm object-cover hover:cursor-pointer'
                   onError={() => handleImageError(photo.id)}
                 />
               </div>
-              <p className='w-full mt-2 text-center text-sm text-gray-700 truncate dark:text-[#ecece]'>
+              {/* Swiper text */}
+              <p className='w-11/12 mt-2 m-auto text-center text-sm text-gray-700 truncate dark:text-[#ecece]'>
                 {photo.photographer}
               </p>
             </SwiperSlide>
