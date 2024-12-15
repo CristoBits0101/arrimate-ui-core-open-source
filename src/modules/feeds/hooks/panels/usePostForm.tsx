@@ -1,33 +1,14 @@
-import { createContext, useContext, useState } from 'react'
+// Custom context
+import { PostFormContext } from '@/modules/feeds/contexts/PostFormContext'
 
-type FormOptionType =
-  | 'story'
-  | 'event'
-  | 'product'
-  | 'short'
-  | 'video'
-  | 'stream'
-  | 'audio'
-  | null
+// React hook
+import { useContext } from 'react'
 
-const PostFormContext = createContext<{
-  selectedForm: FormOptionType
-  handleSelectForm: (form: FormOptionType) => void
-} | null>(null)
-
-export function PostFormProvider({ children }: { children: React.ReactNode }) {
-  const [selectedForm, setSelectedForm] = useState<FormOptionType>(null)
-  const handleSelectForm = (form: FormOptionType) => setSelectedForm(form)
-  return (
-    <PostFormContext.Provider value={{ selectedForm, handleSelectForm }}>
-      {children}
-    </PostFormContext.Provider>
-  )
-}
-
-export function usePostForm() {
+export const usePostForm = () => {
+  // Get the context value
   const context = useContext(PostFormContext)
-  if (!context)
-    throw new Error('usePostForm must be used within a PostFormProvider')
+  // Check if the context is provided
+  if (!context) throw new Error('Supplier context not found in usePostForm!')
+  // Return the context value
   return context
 }
