@@ -75,7 +75,7 @@ export default function ShowPostStories() {
   return (
     <div
       ref={containerRef}
-      className='relative w-full flex justify-between items-center'
+      className='relative w-3/4 flex justify-between items-center'
     >
       <Swiper
         modules={[Navigation]}
