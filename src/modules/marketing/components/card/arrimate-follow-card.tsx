@@ -77,9 +77,6 @@ export default function ArrimateFollowCard({
 
   return (
     <article className='relative border-solid border-[0.05rem] border-[#EBEAEB] rounded-xl w-full min-h-52 max-h-fit h-auto flex flex-col p-3 justify-between items-center'>
-      {countryCode && (
-        <CountrySpan countryCode={countryCode} />
-      )}
       <HeaderSpan src={userImage} connection={isOnline} />
       {userName && (
         <UserInfoSection
@@ -94,11 +91,12 @@ export default function ArrimateFollowCard({
           isVerified={isVerified}
         />
       )}
-      <footer className='w-full h-fit flex flex-col justify-center items-center'>
+      <footer className='w-full h-fit flex justify-evenly items-center'>
         <FollowButton
           isFollowing={isFollowing}
           onToggleFollow={handleToggleFollowing}
         />
+        {countryCode && <CountrySpan countryCode={countryCode} />}
         <PublicationDate date={date} location={location} />
       </footer>
     </article>
