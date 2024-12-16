@@ -7,7 +7,7 @@ import FollowButton from '@/modules/marketing/components/buttons/follow-button'
 import { useMounted } from '@/modules/marketing/hooks/useMounted'
 
 // Span
-import CountrySpan from '@/modules/marketing/components/span/country-flag-span'
+import CountrySpan from '@/modules/marketing/components/span/country-span'
 import HeaderSpan from '@/modules/marketing/components/span/header-span'
 
 // Sections
@@ -88,12 +88,12 @@ export default function ArrimateFollowCard({
           isVerified={isVerified}
         />
       )}
-      <footer className='w-full h-fit flex justify-evenly items-center'>
+      <footer className='w-full h-fit flex justify-between items-center p-2'>
+        {countryCode && <CountrySpan countryCode={countryCode} />}
         <FollowButton
           isFollowing={isFollowing}
           onToggleFollow={handleToggleFollowing}
         />
-        {countryCode && <CountrySpan countryCode={countryCode} />}
       </footer>
     </article>
   )

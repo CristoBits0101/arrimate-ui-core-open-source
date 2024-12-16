@@ -7,7 +7,7 @@ interface HeaderSpanProps {
 
 export default function HeaderSpan({ src, connection }: HeaderSpanProps) {
   return (
-    <span className='shadow-sm relative inline-flex overflow-hidden rounded-full border border-solid border-[#EBEAEB] p-1'>
+    <span className='shadow-sm relative inline-flex overflow-hidden rounded-full border border-solid border-[#EBEAEB] p-1 mb-1'>
       {connection ? (
         <span className='absolute inset-[-1000%] animate-spin bg-[conic-gradient(from_90deg_at_50%_50%,#68EF00_0%,#5EBAA6_50%,#68EF00_100%)]'></span>
       ) : (
