@@ -1,6 +1,6 @@
 import { IoIosHeart } from 'react-icons/io'
 import { IoChatbubbleEllipsesSharp } from 'react-icons/io5'
-import { IoBookmarkSharp } from 'react-icons/io5'
+import { MdOutlineBookmark } from 'react-icons/md'
 import { RiShareForwardFill } from 'react-icons/ri'
 import { SlOptionsVertical } from 'react-icons/sl'
 
@@ -49,7 +49,7 @@ export default function PostButton({
           />
         )}
         {iconDisplay === 'save' && (
-          <IoBookmarkSharp
+          <MdOutlineBookmark
             className='drop-shadow-sm opacity-85 w-7 h-7'
             size={iconSize}
             aria-label={iconAlt}
