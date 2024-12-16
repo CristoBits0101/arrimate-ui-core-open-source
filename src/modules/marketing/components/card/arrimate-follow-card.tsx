@@ -7,11 +7,10 @@ import FollowButton from '@/modules/marketing/components/buttons/follow-button'
 import { useMounted } from '@/modules/marketing/hooks/useMounted'
 
 // Span
-import CountrySpan from '@/modules/marketing/components/span/country-span'
+import CountrySpan from '@/modules/marketing/components/span/country-flag-span'
 import HeaderSpan from '@/modules/marketing/components/span/header-span'
 
 // Sections
-import PublicationDate from '@/modules/marketing/components/sections/publication-date-section'
 import UserInfoSection from '@/modules/marketing/components/sections/user-info-section'
 
 interface ArrimateFollowCardProps {
@@ -37,8 +36,6 @@ export default function ArrimateFollowCard({
   profesion,
   intereses,
   slogan,
-  date,
-  location,
   trending,
   followers,
   reliable,
@@ -97,7 +94,6 @@ export default function ArrimateFollowCard({
           onToggleFollow={handleToggleFollowing}
         />
         {countryCode && <CountrySpan countryCode={countryCode} />}
-        <PublicationDate date={date} location={location} />
       </footer>
     </article>
   )
