@@ -37,9 +37,6 @@ export default function HomePanel({
         {uniquePhotos.slice(0, 2).map((photo) => (
           <ArrimateFollowCard
             src={photo?.src?.small}
-            alt={photo?.alt || 'Image from Pexels'}
-            width={photo?.width}
-            height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
             profesion={randomUtils.getRandomProfession()}
@@ -63,9 +60,6 @@ export default function HomePanel({
         {uniquePhotos.slice(2, 4).map((photo) => (
           <ArrimateFollowCard
             src={photo?.src?.small}
-            alt={photo?.alt || 'Image from Pexels'}
-            width={photo?.width}
-            height={photo?.height}
             key={photo?.id}
             nickname={photo?.photographer}
             profesion={randomUtils.getRandomProfession()}
