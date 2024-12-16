@@ -16,7 +16,7 @@ export default function PublishCard() {
   const { activePost } = usePost()
   // Return forms
   return (
-    <div className='min-h-full max-h-fit h-auto'>
+    <div className='w-full h-full flex justify-center items-center'>
       {(() => {
         switch (activePost) {
           case 'audio':
