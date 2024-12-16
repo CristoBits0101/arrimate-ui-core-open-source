@@ -14,7 +14,7 @@ export default function HeaderSpan({ src, connection }: HeaderSpanProps) {
         <span className='absolute inset-[-1000%] bg-[#453C41]'></span>
       )}
       <header
-        className='relative w-16 h-16 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10'
+        className='relative w-16 h-16 flex items-center justify-center bg-cover bg-center bg-no-repeat aspect-square rounded-full z-10 hover:cursor-pointer'
         style={{ backgroundImage: `url(${src || unknownImage})` }}
       ></header>
     </span>
