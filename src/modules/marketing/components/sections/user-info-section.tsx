@@ -35,12 +35,16 @@ export default function UserInfoSection({
         {(userProfession || userInterests) && userSlogan && ' | '}
         {userSlogan && userSlogan}
       </p>
-      {isMounted && (isTrending || isPopular || isTrusted || isVerified) && (
+      {isMounted && (isTrending || isPopular || isTrusted || isVerified) ? (
         <p className='truncate w-full h-fit flex justify-center items-start gap-1'>
           {isTrending && <span>🔥</span>}
           {isPopular && <span>⭐</span>}
           {isTrusted && <span>💸</span>}
           {isVerified && <span>✔️</span>}
+        </p>
+      ) : (
+        <p className='truncate w-full h-fit flex justify-center items-start gap-1'>
+          ㅤ
         </p>
       )}
     </section>
