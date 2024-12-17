@@ -57,12 +57,12 @@
   },
   "feedForms": {
     "stories": "Create a new story",
-    "events": "Crear una nueva historia",
-    "products": "Crear una nueva historia",
-    "shorts": "Crear una nueva historia",
-    "videos": "Crear una nueva historia",
-    "audios": "Crear una nueva historia",
-    "reviews": "Crear una nueva historia"
+    "events": "Create a new event",
+    "products": "Create a new product",
+    "shorts": "Create a new short",
+    "videos": "Create a new video",
+    "audios": "Create a new audio",
+    "reviews": "Create a new review"
   },
   "Forms": {
     "errors": {},
