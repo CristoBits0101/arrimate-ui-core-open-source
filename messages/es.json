@@ -56,7 +56,14 @@
     "noProducts": "¿No hay productos?"
   },
   "feedForms": {
-    "story": "Crear una nueva historia"
+    "stories": "Crear una nueva historia",
+    "events": "Crear una nueva historia",
+    "products": "Crear una nueva historia",
+    "shorts": "Crear una nueva historia",
+    "videos": "Crear una nueva historia",
+    "audios": "Crear una nueva historia",
+    "reviews": "Crear una nueva historia"
+
   },
   "Forms": {
     "errors": {},

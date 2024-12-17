@@ -22,7 +22,9 @@ export default function CardWrapper({
       className={`w-3/4 h-3/4 grid grid-rows-[auto,1fr] ${styles.cardBorder} rounded-tr-3xl rounded-bl-3xl`}
     >
       <Header title={headerTitle} />
-      <div className='overflow-auto'>{children}</div>
+      <div className='w-full h-full flex items-center justify-center bg-[#F4F4F4] rounded-bl-3xl'>
+        {children}
+      </div>
     </div>
   )
 }

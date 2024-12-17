@@ -4,13 +4,13 @@
 import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 
 // Post Forms
-import AudioForm from '@/modules/feeds/components/forms/audio-form'
+import AudioForm from '@/modules/streaming/components/forms/audio-form'
 import EventForm from '@/modules/feeds/components/forms/event-form'
-import ProductForm from '@/modules/feeds/components/forms/product-form'
-import ShortForm from '@/modules/feeds/components/forms/short-form'
+import ProductForm from '@/modules/e-commerce/components/forms/product-form'
+import ShortForm from '@/modules/streaming/components/forms/short-form'
 import StoryForm from '@/modules/feeds/components/forms/story-form'
-import StreamForm from '@/modules/feeds/components/forms/stream-form'
-import VideoForm from '@/modules/feeds/components/forms/video-form'
+import StreamForm from '@/modules/streaming/components/forms/stream-form'
+import VideoForm from '@/modules/streaming/components/forms/video-form'
 
 export default function PublishCard() {
   const { activePost } = usePost()
