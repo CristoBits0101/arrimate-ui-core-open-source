@@ -1,7 +1,7 @@
 import ArrimateImagesCard from '@/modules/feeds/components/cards/arrimate-images-card'
 import Image from 'next/image'
 import PostButton from '@/modules/feeds/components/buttons/post-button'
-import styles from '@/modules/feeds/styles/show-post-images.module.css'
+import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
 import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
