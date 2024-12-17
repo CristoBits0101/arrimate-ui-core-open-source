@@ -55,6 +55,9 @@
   "ECommerce": {
     "noProducts": "¿No hay productos?"
   },
+  "feedForms": {
+    "story": "Crear una nueva historia"
+  },
   "Forms": {
     "errors": {},
     "inputs": {
