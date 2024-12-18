@@ -10,7 +10,6 @@ export default function StoryForm() {
       <input
         type='file'
         onChange={(e) => {
-          e.preventDefault
           console.log(e.target.files)
         }}
         className=''
