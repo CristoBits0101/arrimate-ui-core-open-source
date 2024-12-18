@@ -14,7 +14,6 @@ export default function StoryForm() {
   return (
     <CardWrapper headerTitle={t('stories')}>
       <form
-        method='post'
         encType='multipart/form-data'
         onSubmit={onSubmit}
       >
