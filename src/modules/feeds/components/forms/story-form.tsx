@@ -7,7 +7,14 @@ export default function StoryForm() {
   const t = useTranslations('feedForms')
   return (
     <CardWrapper headerTitle={t('stories')}>
-      <input type='file' />
+      <input
+        type='file'
+        onChange={(e) => {
+          e.preventDefault
+          console.log(e.target.files)
+        }}
+        className=''
+      />
     </CardWrapper>
   )
 }
