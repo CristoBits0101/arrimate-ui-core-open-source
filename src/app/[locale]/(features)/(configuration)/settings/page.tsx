@@ -1,6 +1,8 @@
+import UserArticle from '@/modules/configuration/components/articles/user-article'
+
 // Settings page
 const SettingsPage = async () => {
-  return <div>Settings page</div>
+  return <UserArticle />
 }
 
 export default SettingsPage
