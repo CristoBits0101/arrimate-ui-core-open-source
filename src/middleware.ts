@@ -52,7 +52,7 @@ export const config = {
     '/',
     '/(en|es)',
     '/(en|es)/:path*',
-    '/((?!.*\\.[\\w]+$|_next).*)',
+    '/((?!.*\\.[\\w]+$|_next|api).*)',
     '/(api|trpc)(.*)'
   ]
 }
