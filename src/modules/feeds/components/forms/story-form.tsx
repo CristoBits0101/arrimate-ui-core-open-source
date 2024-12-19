@@ -1,13 +1,16 @@
 'use client'
 
+// Buttons
+import SubmitButton from '@/modules/feeds/components/buttons/submit-button'
+
 // Components
 import CardWrapper from '@/modules/feeds/components/cards/card-wrapper'
 
-// next-intl
-import { useTranslations } from 'next-intl'
-
 // Hooks
 import { useState } from 'react'
+
+// next-intl
+import { useTranslations } from 'next-intl'
 
 export default function StoryForm() {
   // State for uploaded file
@@ -25,7 +28,7 @@ export default function StoryForm() {
     // Send form data to server
     const response = await fetch('/api/stories', {
       method: 'POST',
-      body: formData
+      body: formData,
     })
     // Get the response data from server
     const data = await response.json()
@@ -51,7 +54,7 @@ export default function StoryForm() {
           }}
           accept='image/*'
         />
-        <button type='submit'>Submit</button>
+        <SubmitButton />
       </form>
     </CardWrapper>
   )
