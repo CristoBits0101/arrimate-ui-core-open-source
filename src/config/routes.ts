@@ -1,5 +1,5 @@
 // Api route
-export const API_AUTH_ROUTE: string = '/api/auth'
+export const API_AUTH_ROUTE: string = '/api'
 
 // Auth routes
 export const AUTH_ROUTES: string[] = [
