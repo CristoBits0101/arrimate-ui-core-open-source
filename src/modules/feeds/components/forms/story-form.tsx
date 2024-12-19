@@ -1,8 +1,13 @@
 'use client'
 
+// Components
 import CardWrapper from '@/modules/feeds/components/cards/card-wrapper'
-import { useState } from 'react'
+
+// next-intl
 import { useTranslations } from 'next-intl'
+
+// Hooks
+import { useState } from 'react'
 
 export default function StoryForm() {
   // State for uploaded file
@@ -24,12 +29,17 @@ export default function StoryForm() {
     })
     // Get the response data from server
     const data = await response.json()
-    console.log(data)
+    if (data) console.log(data)
   }
   // Return component
   return (
     <CardWrapper headerTitle={t('stories')}>
-      <form encType='multipart/form-data' onSubmit={onSubmit}>
+      <form
+        encType='multipart/form-data'
+        onSubmit={onSubmit}
+        className='flex flex-col gap-4'
+      >
+        <h3></h3>
         <input
           type='file'
           name='file'
