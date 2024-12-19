@@ -50,7 +50,8 @@
     "share": "Share",
     "submit": "Submit",
     "unfollow": "Unfollow",
-    "unlike": "Unlike"
+    "unlike": "Unlike",
+    "post": "Post"
   },
   "ECommerce": {
     "noProducts": "No products?"

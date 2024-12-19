@@ -50,7 +50,8 @@
     "share": "Compartir",
     "submit": "Enviar",
     "unfollow": "Dejar de seguir",
-    "unlike": "Ya no me gusta"
+    "unlike": "Ya no me gusta",
+    "post": "Publicar"
   },
   "ECommerce": {
     "noProducts": "¿No hay productos?"
