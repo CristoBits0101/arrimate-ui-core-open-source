@@ -20,7 +20,6 @@ export default function StoryForm() {
     // Send form data to server
     const response = await fetch('/api/upload', {
       method: 'POST',
-      headers: { 'content-type': 'multipart/form-data' },
       body: formData
     })
     // Get the response data from server
