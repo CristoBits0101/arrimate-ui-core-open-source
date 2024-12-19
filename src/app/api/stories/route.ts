@@ -32,37 +32,13 @@ export async function POST(request: Request) {
   const buffer = Buffer.from(bytes)
 
   // Upload an image
-  const uploadResult = await cloudinary.uploader
-    .upload(
-      'https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg',
-      {
-        public_id: 'shoes'
-      }
-    )
-    .catch((error) => {
-      console.log(error)
-    })
-
-  console.log(uploadResult)
-
-  // Optimize delivery by resizing and applying auto-format and auto-quality
-  const optimizeUrl = cloudinary.url('shoes', {
-    fetch_format: 'auto',
-    quality: 'auto'
+  const response = await new Promise<{ secure_url: string }>((resolve, reject)=>{
+    cloudinary.uploader.upload_stream({}, (error, result) => {
+      if (error) reject(error)
+      resolve(result as { secure_url: string })
+    }).end(buffer)
   })
-
-  console.log(optimizeUrl)
-
-  // Transform the image: auto-crop to square aspect_ratio
-  const autoCropUrl = cloudinary.url('shoes', {
-    crop: 'auto',
-    gravity: 'auto',
-    width: 500,
-    height: 500
-  })
-
-  console.log(autoCropUrl)
 
   // Confirm upload
-  return NextResponse.json({ message: 'File uploaded successfully' })
+  return NextResponse.json({ message: 'File uploaded successfully', url: response.secure_url })
 }
