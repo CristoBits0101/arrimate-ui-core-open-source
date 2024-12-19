@@ -18,7 +18,7 @@ export default function StoryForm() {
     // Add file to form data
     formData.append('file', file as Blob)
     // Send form data to server
-    const response = await fetch('/api/upload', {
+    const response = await fetch('/api/stories', {
       method: 'POST',
       body: formData
     })
