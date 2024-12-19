@@ -28,7 +28,7 @@ export default function StoryForm() {
     // Send form data to server
     const response = await fetch('/api/stories', {
       method: 'POST',
-      body: formData,
+      body: formData
     })
     // Get the response data from server
     const data = await response.json()
