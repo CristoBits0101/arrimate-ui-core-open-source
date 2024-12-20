@@ -11,7 +11,7 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 import CardWrapper from '@/modules/configuration/cards/card-wrapper'
 
 // Customized
-import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
+import { useProfileForm } from '@/modules/configuration/hooks/useProfileForm'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
@@ -20,6 +20,9 @@ import { FormProvider } from 'react-hook-form'
 import NameInput from '@/modules/auth/components/inputs/name-input'
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
+
+// Intl
+import { useTranslations } from 'next-intl'
 
 // Shadcn
 import { Form } from '@/modules/ui/form'

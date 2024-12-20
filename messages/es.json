@@ -38,9 +38,9 @@
     "minPassword": "Mínimo 12 caracteres."
   },
   "Button": {
-    "SignIn": "Entrar",
-    "SignOut": "Salir",
-    "SignUp": "Registrarse",
+    "signIn": "Entrar",
+    "signOut": "Salir",
+    "signUp": "Registrarse",
     "cancel": "Cancelar",
     "delete": "Eliminar",
     "edit": "Editar",

@@ -38,9 +38,9 @@
     "minPassword": "Minimum 12 characters."
   },
   "Button": {
-    "SignIn": "Sign In",
-    "SignOut": "Sign out",
-    "SignUp": "Sign Up",
+    "signIn": "Sign In",
+    "signOut": "Sign out",
+    "signUp": "Sign Up",
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
@@ -53,7 +53,6 @@
     "unlike": "Unlike",
     "post": "Post",
     "save": "Save"
-
   },
   "ECommerce": {
     "noProducts": "No products?"
