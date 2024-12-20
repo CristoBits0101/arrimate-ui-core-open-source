@@ -116,6 +116,13 @@
     "resetPasswordSubject": "reset",
     "confirm": "registration"
   },
+  "ProfileForm": {
+    "contact": "Contact",
+    "description": "Description",
+    "name": "Name",
+    "phone": "Phone",
+    "username": "Username"
+  },
   "Posts": {
     "activity": "Activity",
     "analysis": "Analysis",

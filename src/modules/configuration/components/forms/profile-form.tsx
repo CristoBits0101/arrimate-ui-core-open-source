@@ -17,9 +17,11 @@ import { useProfileForm } from '@/modules/configuration/hooks/forms/useProfileFo
 import { FormProvider } from 'react-hook-form'
 
 // Inputs
-import NameInput from '@/modules/auth/components/inputs/name-input'
-import EmailInput from '@/modules/auth/components/inputs/email-input'
-import PasswordInput from '@/modules/auth/components/inputs/password-input'
+import NameInput from '@/modules/configuration/components/inputs/name-input'
+import EmailInput from '@/modules/configuration/components/inputs/email-input'
+import PasswordInput from '@/modules/configuration/components/inputs/password-input'
+import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
+import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -28,6 +30,7 @@ import { useTranslations } from 'next-intl'
 import { Form } from '@/modules/ui/form'
 
 export default function ProfileForm() {
+  const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   // Managing form logic
   const { form, error, success, isPending, hydrated, onSubmit } =
@@ -37,14 +40,20 @@ export default function ProfileForm() {
       <FormProvider {...form}>
         <Form {...form}>
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
-            <div className='space-y-8 mt-3'>
-              {/*  */}
-              <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
-                <NameInput name='name' isPending={isPending} />
-              </div>
+            <div className='space-y-8 mt-8'>
               {/*  */}
               <div className='w-full h-fit'>
                 <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                  <NameInput name='name' isPending={isPending} />
+                  <NameInput name='name' isPending={isPending} />
+                </div>
+              </div>
+              {/*  */}
+              <div className='w-full h-fit'>
+                <h2 className='w-full text-lg font-medium mb-2'>
+                  {f('contact')}
+                </h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
                   <EmailInput name='email' isPending={isPending} />
                   <EmailInput name='email' isPending={isPending} />
@@ -52,10 +61,22 @@ export default function ProfileForm() {
               </div>
               {/*  */}
               <div className='w-full h-fit'>
-                <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
+                <h2 className='w-full text-lg font-medium mb-2'>
+                  {f('contact')}
+                </h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
                   <PasswordInput name='password' isPending={isPending} />
                   <PasswordInput name='password' isPending={isPending} />
+                </div>
+              </div>
+              {/*  */}
+              <div className='w-full h-fit'>
+                <h2 className='w-full text-lg font-medium mb-2'>
+                  {f('description')}
+                </h2>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                  <InterestsInput name='password' isPending={isPending} />
+                  <SloganInput name='password' isPending={isPending} />
                 </div>
               </div>
             </div>
