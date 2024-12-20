@@ -8,7 +8,7 @@ import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
 // Cards
-import CardWrapper from '@/modules/configuration/cards/card-wrapper'
+import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 
 // Customized
 import { useProfileForm } from '@/modules/configuration/hooks/forms/useProfileForm'
