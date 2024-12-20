@@ -27,16 +27,16 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
       .max(64, {
         message: t('maxPassword')
       }),
-    telefonoPrefijo: z.string().regex(/^\+\d{1,4}$/, {
+    phonePrefix: z.string().regex(/^\+\d{1,4}$/, {
       message: t('invalidPhonePrefix')
     }),
-    telefonoNumero: z.string().regex(/^\d{6,15}$/, {
+    phoneNumber: z.string().regex(/^\d{6,15}$/, {
       message: t('invalidPhoneNumber')
     }),
-    intereses: z.string().optional(),
+    interests: z.string().optional(),
     slogan: z.string().optional(),
-    profesion: z.string().optional(),
-    localizacion: z.string().optional()
+    profession: z.string().optional(),
+    location: z.string().optional()
   })
 
 // Backend validations
@@ -50,14 +50,10 @@ export const BackendProfileSchema = z.object({
     .regex(/[A-Z]/)
     .regex(/[a-z]/)
     .regex(/[^a-zA-Z0-9]/),
-  telefonoPrefijo: z
-    .string()
-    .regex(/^\+\d{1,4}$/),
-  telefonoNumero: z
-    .string()
-    .regex(/^\d{6,15}$/),
-  intereses: z.string().optional(),
+  phonePrefix: z.string().regex(/^\+\d{1,4}$/),
+  phoneNumber: z.string().regex(/^\d{6,15}$/),
+  interests: z.string().optional(),
   slogan: z.string().optional(),
-  profesion: z.string().optional(),
-  localizacion: z.string().optional()
+  profession: z.string().optional(),
+  location: z.string().optional()
 })

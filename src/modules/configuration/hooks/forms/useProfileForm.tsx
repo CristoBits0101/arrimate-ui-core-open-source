@@ -14,16 +14,16 @@ import { useEffect, useState, useTransition } from 'react'
 
 // Zod: Define data validation rules
 import * as z from 'zod'
-import { FrontendProfileSchema } from '@/modules/configuration/schemas'
+import { FrontendProfileSchema } from '@/modules/configuration/schemas/index'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSignUpForm(subject: string) {
   // Get translations
-  const t = useTranslations('AuthActions')
+  const t = useTranslations('ProfileActions')
   const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
-  const SignUpSchema = FrontendSignUpSchema(z)
+  const ProfileSchema = FrontendProfileSchema(z)
 
   // Save action errors
   const [error, setError] = useState<string | undefined>('')
@@ -37,10 +37,10 @@ export function useSignUpForm(subject: string) {
   // Indicates code execution finished
   const [isPending, startTransition] = useTransition()
 
-  // Type form with SignUpSchema
-  const form = useForm<z.infer<typeof SignUpSchema>>({
+  // Type form with ProfileSchema
+  const form = useForm<z.infer<typeof ProfileSchema>>({
     // Validate before sending
-    resolver: zodResolver(SignUpSchema),
+    resolver: zodResolver(ProfileSchema),
     // Runs on every shipment
     mode: 'onSubmit',
     // Initial state of the fields
@@ -52,7 +52,7 @@ export function useSignUpForm(subject: string) {
   })
 
   // Handle form submission
-  const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
+  const onSubmit = (values: z.infer<typeof ProfileSchema>) => {
     // Clear previous messages before sending
     setError('')
     setSuccess('')
@@ -82,6 +82,6 @@ export function useSignUpForm(subject: string) {
     success,
     isPending,
     hydrated,
-    onSubmit,
+    onSubmit
   }
 }
