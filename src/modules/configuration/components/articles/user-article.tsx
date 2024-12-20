@@ -4,7 +4,7 @@
 import Image from 'next/image'
 
 // Custom hooks
-import { useUserSession } from '@/modules/configuration/hooks/useUserSession'
+import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 
 // React
 import { useEffect, useState } from 'react'

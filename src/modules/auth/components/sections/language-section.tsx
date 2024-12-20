@@ -8,7 +8,7 @@ import enIcon from '@/modules/auth/assets/icons/languages/gb.svg'
 import esIcon from '@/modules/auth/assets/icons/languages/es.svg'
 
 // Imports the custom hook for handling language selection
-import useLanguageSection from '@/modules/configuration/hooks/useLanguageSection'
+import useLanguageSection from '@/modules/configuration/hooks/sections/useLanguageSection'
 
 // Defines the LanguageSection component
 export default function LanguageSection() {

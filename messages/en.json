@@ -51,7 +51,9 @@
     "submit": "Submit",
     "unfollow": "Unfollow",
     "unlike": "Unlike",
-    "post": "Post"
+    "post": "Post",
+    "save": "Save"
+
   },
   "ECommerce": {
     "noProducts": "No products?"

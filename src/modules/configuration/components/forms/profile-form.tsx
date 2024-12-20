@@ -1,42 +1,45 @@
 'use client'
 
-// Alerts: Serialize backend messages
+// Alerts
 import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
-// Buttons: Button to send form
+// Buttons
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
 
-// Cards: Card to wrap inputs
-import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+// Cards
+import CardWrapper from '@/modules/configuration/cards/card-wrapper'
 
-// Custom: Encapsulates form logic
+// Customized
 import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
 
-// Form: Hooks from React
+// Forms
 import { FormProvider } from 'react-hook-form'
 
-// Inputs: Fillable fields in forms
+// Inputs
 import NameInput from '@/modules/auth/components/inputs/name-input'
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
-// Intl: To get language and set translations
-import { useLocale, useTranslations } from 'next-intl'
-
-// Shadcn: Contains the form component
+// Shadcn
 import { Form } from '@/modules/ui/form'
 
 export default function ProfileForm() {
+  const t = useTranslations('Button')
   return (
-    <FormProvider {...form}>
-      <Form {...form}>
-        <div className='space-y-5'>
-          <NameInput name='name' isPending={isPending} />
-          <EmailInput name='email' isPending={isPending} />
-          <PasswordInput name='password' isPending={isPending} />
-        </div>
-      </Form>
-    </FormProvider>
+    <CardWrapper>
+      <FormProvider {...form}>
+        <Form {...form}>
+          <div className='space-y-5'>
+            <NameInput name='name' isPending={isPending} />
+            <EmailInput name='email' isPending={isPending} />
+            <PasswordInput name='password' isPending={isPending} />
+          </div>
+          <FormError message={error} />
+          <FormSuccess message={success} />
+          <SubmitButton message={t('save')} isPending={isPending} />
+        </Form>
+      </FormProvider>
+    </CardWrapper>
   )
 }

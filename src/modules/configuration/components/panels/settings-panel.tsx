@@ -5,7 +5,7 @@ import OptionPanel from '@/modules/configuration/components/panels/option-panel'
 import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
 
 // Custom hook
-import { useSettings } from '@/modules/configuration/hooks/useSettings'
+import { useSettings } from '@/modules/configuration/hooks/panels/useSettings'
 
 // next-intl
 import { useTranslations } from 'next-intl'

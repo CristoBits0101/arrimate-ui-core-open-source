@@ -51,7 +51,8 @@
     "submit": "Enviar",
     "unfollow": "Dejar de seguir",
     "unlike": "Ya no me gusta",
-    "post": "Publicar"
+    "post": "Publicar",
+    "save": "Guardar"
   },
   "ECommerce": {
     "noProducts": "¿No hay productos?"

@@ -1,7 +1,7 @@
 'use client'
 
 // Custom hooks
-import { useUserSession } from '@/modules/configuration/hooks/useUserSession'
+import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 
 // next/image
 import Image from 'next/image'

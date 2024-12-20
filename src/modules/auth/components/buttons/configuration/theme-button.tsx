@@ -1,7 +1,7 @@
 'use client'
 
 // Custom hook
-import useThemeSection from '@/modules/configuration/hooks/useThemeSection'
+import useThemeSection from '@/modules/configuration/hooks/sections/useThemeSection'
 
 // Icons
 import darkIcon from '@/modules/auth/assets/icons/themes/dark.svg'
