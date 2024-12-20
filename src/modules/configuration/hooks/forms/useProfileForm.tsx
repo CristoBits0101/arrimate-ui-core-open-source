@@ -17,7 +17,7 @@ import * as z from 'zod'
 import { FrontendProfileSchema } from '@/modules/configuration/schemas/index'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export function useSignUpForm(subject: string) {
+export function useProfileForm() {
   // Get translations
   const t = useTranslations('AuthActions')
   const z = useTranslations('AuthSchemas')
@@ -58,8 +58,8 @@ export function useSignUpForm(subject: string) {
     setSuccess('')
     // Checks backend request status
     startTransition(() => {
-      // Send input values and email subject to backend
-      profileAction(values, subject)
+      // Send input values
+      profileAction(values)
         // Transaction completed
         .then((data) => {
           if (data.error) setError(t(data.error))
@@ -68,7 +68,7 @@ export function useSignUpForm(subject: string) {
         // Failed transaction
         .catch((err) => {
           setError(t('notifyUnregister'))
-          console.error('Error in SignUp: ', err)
+          console.error('Error updating profile: ', err)
         })
     })
   }

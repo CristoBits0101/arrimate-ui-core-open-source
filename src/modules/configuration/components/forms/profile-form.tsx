@@ -11,7 +11,7 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 import CardWrapper from '@/modules/configuration/cards/card-wrapper'
 
 // Customized
-import { useProfileForm } from '@/modules/configuration/hooks/useProfileForm'
+import { useProfileForm } from '@/modules/configuration/hooks/forms/useProfileForm'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
@@ -29,20 +29,25 @@ import { Form } from '@/modules/ui/form'
 
 export default function ProfileForm() {
   const t = useTranslations('Button')
-  return (
+  // Managing form logic
+  const { form, error, success, isPending, hydrated, onSubmit } =
+    useProfileForm()
+  return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
         <Form {...form}>
-          <div className='space-y-5'>
-            <NameInput name='name' isPending={isPending} />
-            <EmailInput name='email' isPending={isPending} />
-            <PasswordInput name='password' isPending={isPending} />
-          </div>
-          <FormError message={error} />
-          <FormSuccess message={success} />
-          <SubmitButton message={t('save')} isPending={isPending} />
+          <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
+            <div className='space-y-5'>
+              <NameInput name='name' isPending={isPending} />
+              <EmailInput name='email' isPending={isPending} />
+              <PasswordInput name='password' isPending={isPending} />
+            </div>
+            <FormError message={error} />
+            <FormSuccess message={success} />
+            <SubmitButton message={t('save')} isPending={isPending} />
+          </form>
         </Form>
       </FormProvider>
     </CardWrapper>
-  )
+  ) : null
 }
