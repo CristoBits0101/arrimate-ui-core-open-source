@@ -67,7 +67,7 @@ export default function SignInForm(): React.ReactElement | null {
             {/* Show success */}
             <FormSuccess message={success} />
             {/* Submit button */}
-            <SubmitButton message={b('SignIn')} isPending={isPending} />
+            <SubmitButton message={b('signIn')} isPending={isPending} />
           </form>
         </Form>
       </FormProvider>

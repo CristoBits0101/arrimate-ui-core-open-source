@@ -25,7 +25,7 @@ export default function SignOutForm(): JSX.Element | null {
     <div className='space-y-5 w-full'>
       <OptionsButton
         icon={signOutIcon}
-        label={t('SignOut')}
+        label={t('signOut')}
         onClick={handleSignOut}
         altText='Sign-out icon'
       />
