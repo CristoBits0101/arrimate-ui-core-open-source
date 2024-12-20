@@ -17,6 +17,7 @@ import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
 import { FormProvider } from 'react-hook-form'
 
 // Inputs: Fillable fields in forms
+import NameInput from '@/modules/auth/components/inputs/name-input'
 import EmailInput from '@/modules/auth/components/inputs/email-input'
 import PasswordInput from '@/modules/auth/components/inputs/password-input'
 
@@ -27,5 +28,15 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Form } from '@/modules/ui/form'
 
 export default function ProfileForm() {
-  return <form>profile-form</form>
+  return (
+    <FormProvider {...form}>
+      <Form {...form}>
+        <div className='space-y-5'>
+          <NameInput name='name' isPending={isPending} />
+          <EmailInput name='email' isPending={isPending} />
+          <PasswordInput name='password' isPending={isPending} />
+        </div>
+      </Form>
+    </FormProvider>
+  )
 }
