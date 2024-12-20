@@ -1,4 +1,4 @@
-import ProfileSettings from '@/modules/configuration/components/content/profile-settings'
+import ProfileSettings from '@/modules/configuration/components/forms/profile-form'
 
 // Settings page
 const SettingsPage = async () => {
