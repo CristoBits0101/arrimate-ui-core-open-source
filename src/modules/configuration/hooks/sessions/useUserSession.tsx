@@ -1,7 +1,7 @@
 'use client'
 
 // Action: Get users information
-import getUserSessionAction from '@/modules/configuration/actions/getUserSessionAction'
+import getUserSessionAction from '@/modules/configuration/actions/userSessionAction'
 
 // React: Hooks
 import { useState, useEffect } from 'react'
