@@ -35,7 +35,9 @@
     "emptyName": "El nombre es obligatorio.",
     "invalidEmail": "Correo no válido.",
     "maxPassword": "Máximo 64 caracteres.",
-    "minPassword": "Mínimo 12 caracteres."
+    "minPassword": "Mínimo 12 caracteres.",
+    "invalidPhonePrefix": "Prefijo inválido.",
+    "invalidPhoneNumber": "Número no válido."
   },
   "Button": {
     "signIn": "Entrar",

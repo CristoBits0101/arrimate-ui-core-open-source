@@ -35,7 +35,9 @@
     "emptyName": "Name is required.",
     "invalidEmail": "Invalid email address.",
     "maxPassword": "Maximum 64 characters.",
-    "minPassword": "Minimum 12 characters."
+    "minPassword": "Minimum 12 characters.",
+    "invalidPhonePrefix": "Invalid prefix.",
+    "invalidPhoneNumber": "Invalid number."
   },
   "Button": {
     "signIn": "Sign In",

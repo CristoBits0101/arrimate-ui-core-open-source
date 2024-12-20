@@ -19,7 +19,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSignUpForm(subject: string) {
   // Get translations
-  const t = useTranslations('ProfileActions')
+  const t = useTranslations('AuthActions')
   const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
