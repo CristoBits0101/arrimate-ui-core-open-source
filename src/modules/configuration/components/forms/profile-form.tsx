@@ -37,10 +37,27 @@ export default function ProfileForm() {
       <FormProvider {...form}>
         <Form {...form}>
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
-            <div className='space-y-8'>
-              <NameInput name='name' isPending={isPending} />
-              <EmailInput name='email' isPending={isPending} />
-              <PasswordInput name='password' isPending={isPending} />
+            <div className='space-y-8 mt-3'>
+              {/*  */}
+              <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                <NameInput name='name' isPending={isPending} />
+              </div>
+              {/*  */}
+              <div className='w-full h-fit'>
+                <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                  <EmailInput name='email' isPending={isPending} />
+                  <EmailInput name='email' isPending={isPending} />
+                </div>
+              </div>
+              {/*  */}
+              <div className='w-full h-fit'>
+                <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                  <PasswordInput name='password' isPending={isPending} />
+                  <PasswordInput name='password' isPending={isPending} />
+                </div>
+              </div>
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
