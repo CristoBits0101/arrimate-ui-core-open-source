@@ -36,8 +36,8 @@ export default function ProfileForm() {
     <CardWrapper>
       <FormProvider {...form}>
         <Form {...form}>
-          <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
-            <div className='space-y-5'>
+          <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
+            <div className='space-y-8'>
               <NameInput name='name' isPending={isPending} />
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
