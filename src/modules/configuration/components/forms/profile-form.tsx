@@ -25,6 +25,9 @@ import InterestsInput from '@/modules/configuration/components/inputs/interests-
 import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
 import ProfessionInput from '@/modules/configuration/components/inputs/profession-input'
 import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-input'
+import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-input'
+import CountryInput from '@/modules/configuration/components/inputs/country-input'
+import CityInput from '@/modules/configuration/components/inputs/city-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -75,13 +78,9 @@ export default function ProfileForm() {
                   {f('location')}
                 </legend>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
-                  <PhoneInput
-                    phonePrefixName='prefix'
-                    phoneNumberName='number'
-                    isPending={isPending}
-                  />
-                  <EmailInput name='email' isPending={isPending} />
-                  <PasswordInput name='password' isPending={isPending} />
+                  <CountryInput name='country' isPending={isPending} />
+                  <ZipCodeInput name='zipCode' isPending={isPending} />
+                  <CityInput name='city' isPending={isPending} />
                 </div>
               </fieldset>
               {/* Vocation */}

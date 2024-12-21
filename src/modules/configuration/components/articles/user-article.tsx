@@ -49,7 +49,6 @@ export default function UserArticle() {
       {/* Information */}
       <section className='w-fit h-fit p-4'>
         <h2 className='text-lg font-bold'>{userName}</h2>
-        <p className='text-sm text-gray-700'>+34 610 210 969</p>
         <p className='text-sm text-gray-700'>{userEmail}</p>
       </section>
     </article>
