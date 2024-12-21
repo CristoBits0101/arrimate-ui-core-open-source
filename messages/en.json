@@ -69,12 +69,17 @@
     "reviews": "Create a new review"
   },
   "Forms": {
-    "errors": {},
     "inputs": {
       "confirmPassword": "Confirm password",
       "email": "Email",
+      "email2": "Email",
       "name": "Name",
       "password": "Password",
+      "phonePrefix": "Prefix",
+      "phoneNumber": "Phone",
+      "profession": "Profession",
+      "interests": "Interests",
+      "slogan": "Slogan",
       "username": "Username"
     },
     "newPasswordSchema": {

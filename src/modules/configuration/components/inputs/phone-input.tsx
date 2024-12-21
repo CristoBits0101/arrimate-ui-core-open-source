@@ -17,18 +17,24 @@ interface PhoneInputProps {
   isPending: boolean
 }
 
-const PhoneInput = ({ phonePrefixName, phoneNumberName, isPending }: PhoneInputProps) => {
+const PhoneInput = ({
+  phonePrefixName,
+  phoneNumberName,
+  isPending
+}: PhoneInputProps) => {
   const t = useTranslations('Forms')
   const { control } = useFormContext()
 
   return (
-    <>
+    <div className='flex w-full h-fit gap-2'>
       <FormField
         control={control}
         name={phonePrefixName}
         render={({ field }) => (
-          <FormItem>
-            <FormLabel htmlFor='phonePrefix'>{t('inputs.phonePrefix')}</FormLabel>
+          <FormItem className='w-[5rem] flex-shrink-0'>
+            <FormLabel htmlFor='phonePrefix'>
+              {t('inputs.phonePrefix')}
+            </FormLabel>
             <FormControl>
               <Input
                 {...field}
@@ -46,8 +52,10 @@ const PhoneInput = ({ phonePrefixName, phoneNumberName, isPending }: PhoneInputP
         control={control}
         name={phoneNumberName}
         render={({ field }) => (
-          <FormItem>
-            <FormLabel htmlFor='phoneNumber'>{t('inputs.phoneNumber')}</FormLabel>
+          <FormItem className='flex-grow'>
+            <FormLabel htmlFor='phoneNumber' className='uppercase text-sm'>
+              {t('inputs.phoneNumber')}
+            </FormLabel>
             <FormControl>
               <Input
                 {...field}
@@ -61,7 +69,7 @@ const PhoneInput = ({ phonePrefixName, phoneNumberName, isPending }: PhoneInputP
           </FormItem>
         )}
       />
-    </>
+    </div>
   )
 }
 

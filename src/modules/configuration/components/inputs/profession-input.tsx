@@ -37,7 +37,9 @@ const ProfessionInput = ({ name, isPending }: ProfessionInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='profession'>{t('inputs.profession')}</FormLabel>
+          <FormLabel htmlFor='profession' className='uppercase text-sm'>
+            {t('inputs.profession')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

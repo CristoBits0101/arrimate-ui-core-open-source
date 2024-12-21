@@ -35,7 +35,9 @@ const EmailInput = ({ name, isPending }: EmailInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className='relative h-fit'>
-          <FormLabel htmlFor='email'>{t('inputs.email')}</FormLabel>
+          <FormLabel htmlFor='email' className='uppercase text-sm'>
+            {t('inputs.email2')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

@@ -35,7 +35,9 @@ const NameInput = ({ name, isPending }: NameInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='name'>{t('inputs.name')}</FormLabel>
+          <FormLabel htmlFor='name' className='uppercase text-sm'>
+            {t('inputs.name')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

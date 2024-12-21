@@ -26,7 +26,9 @@ const SloganInput = ({ name, isPending }: SloganInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='slogan'>{t('inputs.slogan')}</FormLabel>
+          <FormLabel htmlFor='slogan' className='uppercase text-sm'>
+            {t('inputs.slogan')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

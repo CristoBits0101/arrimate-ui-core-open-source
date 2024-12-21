@@ -35,7 +35,9 @@ const InterestsInput = ({ name, isPending }: InterestsInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='interests'>{t('inputs.interests')}</FormLabel>
+          <FormLabel htmlFor='interests' className='uppercase text-sm'>
+            {t('inputs.interests')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

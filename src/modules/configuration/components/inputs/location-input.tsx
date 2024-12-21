@@ -37,7 +37,9 @@ const LocationInput = ({ name, isPending }: LocationInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='location'>{t('inputs.location')}</FormLabel>
+          <FormLabel htmlFor='location' className='uppercase text-sm'>
+            {t('inputs.location')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

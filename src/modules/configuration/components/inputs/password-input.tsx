@@ -37,7 +37,9 @@ const PasswordInput = ({ name, isPending }: PasswordInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='password'>{t('inputs.password')}</FormLabel>
+          <FormLabel htmlFor='password' className='uppercase text-sm'>
+            {t('inputs.password')}
+          </FormLabel>
           <FormControl>
             <Input
               {...field}

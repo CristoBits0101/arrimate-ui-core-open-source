@@ -69,12 +69,17 @@
     "reviews": "Crear una nueva reseña"
   },
   "Forms": {
-    "errors": {},
     "inputs": {
       "confirmPassword": "Confirmar contraseña",
       "email": "Correo electrónico",
+      "email2": "Correo",
       "name": "Nombre",
       "password": "Contraseña",
+      "phonePrefix": "Prefijo",
+      "phoneNumber": "Teléfono",
+      "profession": "Profesión",
+      "interests": "Intereses",
+      "slogan": "Eslogan",
       "username": "Nombre de usuario"
     },
     "newPasswordSchema": {
@@ -116,6 +121,10 @@
   "Mail": {
     "resetPasswordSubject": "reiniciar",
     "confirm": "confirmar"
+  },
+  "ProfileForm": {
+    "credentials": "Credenciales",
+    "vocation": "Vocación"
   },
   "Posts": {
     "activity": "Actividad",
