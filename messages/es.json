@@ -126,6 +126,7 @@
   "ProfileForm": {
     "identity": "Identidad",
     "credentials": "Credenciales",
+    "location": "Ubicación",
     "vocation": "Vocación"
   },
   "Posts": {

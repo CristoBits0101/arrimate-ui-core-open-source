@@ -50,6 +50,6 @@
       rgb(100, 100, 100) 92%,
       rgb(100, 100, 100) 100%
     ),
-    linear-gradient(90deg, rgb(195, 195, 195), rgb(235, 235, 235));
+    linear-gradient(90deg, #d8d7d8, #ebebeb);
   background-blend-mode: overlay, overlay, overlay, normal;
 }

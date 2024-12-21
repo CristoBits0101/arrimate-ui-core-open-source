@@ -36,7 +36,8 @@ export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   // Managing form logic
-  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } =
+    useProfileForm()
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -57,6 +58,21 @@ export default function ProfileForm() {
               <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
                 <legend className='text-lg font-medium px-2'>
                   {f('credentials')}
+                </legend>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
+                  <PhoneInput
+                    phonePrefixName='prefix'
+                    phoneNumberName='number'
+                    isPending={isPending}
+                  />
+                  <EmailInput name='email' isPending={isPending} />
+                  <PasswordInput name='password' isPending={isPending} />
+                </div>
+              </fieldset>
+              {/* Location */}
+              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+                <legend className='text-lg font-medium px-2'>
+                  {f('location')}
                 </legend>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <PhoneInput
