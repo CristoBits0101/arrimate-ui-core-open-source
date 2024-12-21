@@ -13,6 +13,9 @@ import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 // Customized
 import { useProfileForm } from '@/modules/configuration/hooks/forms/useProfileForm'
 
+// Fieldset
+import ProfileFormFieldset from '@/modules/configuration/components/fieldsets/profile-form-fieldset'
+
 // Forms
 import { FormProvider } from 'react-hook-form'
 
@@ -38,9 +41,7 @@ import { Form } from '@/modules/ui/form'
 export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
-  // Managing form logic
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -48,52 +49,32 @@ export default function ProfileForm() {
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-8 mt-8'>
               {/* Identity */}
-              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
-                <legend className='text-lg font-medium px-2'>
-                  {f('identity')}
-                </legend>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
-                  <NameInput name='name' isPending={isPending} />
-                  <BirthdateInput name='birthdate' isPending={isPending} />
-                </div>
-              </fieldset>
+              <ProfileFormFieldset legend={f('identity')}>
+                <NameInput name='name' isPending={isPending} />
+                <BirthdateInput name='birthdate' isPending={isPending} />
+              </ProfileFormFieldset>
               {/* Credentials */}
-              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
-                <legend className='text-lg font-medium px-2'>
-                  {f('credentials')}
-                </legend>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
-                  <PhoneInput
-                    phonePrefixName='prefix'
-                    phoneNumberName='number'
-                    isPending={isPending}
-                  />
-                  <EmailInput name='email' isPending={isPending} />
-                  <PasswordInput name='password' isPending={isPending} />
-                </div>
-              </fieldset>
+              <ProfileFormFieldset legend={f('credentials')}>
+                <PhoneInput
+                  phonePrefixName='prefix'
+                  phoneNumberName='number'
+                  isPending={isPending}
+                />
+                <EmailInput name='email' isPending={isPending} />
+                <PasswordInput name='password' isPending={isPending} />
+              </ProfileFormFieldset>
               {/* Location */}
-              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
-                <legend className='text-lg font-medium px-2'>
-                  {f('location')}
-                </legend>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
+              <ProfileFormFieldset legend={f('location')}>
                   <CountryInput name='country' isPending={isPending} />
                   <ZipCodeInput name='zipCode' isPending={isPending} />
                   <CityInput name='city' isPending={isPending} />
-                </div>
-              </fieldset>
+              </ProfileFormFieldset>
               {/* Vocation */}
-              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
-                <legend className='text-lg font-medium px-2'>
-                  {f('vocation')}
-                </legend>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
+              <ProfileFormFieldset legend={f('vocation')}>
                   <ProfessionInput name='profession' isPending={isPending} />
                   <InterestsInput name='interests' isPending={isPending} />
                   <SloganInput name='slogan' isPending={isPending} />
-                </div>
-              </fieldset>
+              </ProfileFormFieldset>
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />

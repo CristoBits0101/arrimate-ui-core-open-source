@@ -81,6 +81,9 @@
       "interests": "Intereses",
       "slogan": "Eslogan",
       "birthdate": "Cumpleaños",
+      "country": "País",
+      "zipCode": "Código postal",
+      "city": "Ciudad",
       "username": "Nombre de usuario"
     },
     "newPasswordSchema": {

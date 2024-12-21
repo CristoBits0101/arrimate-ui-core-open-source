@@ -81,6 +81,9 @@
       "interests": "Interests",
       "slogan": "Slogan",
       "birthdate": "Birthdate",
+      "country": "Country",
+      "zipCode": "Zip code",
+      "city": "City",
       "username": "Username"
     },
     "newPasswordSchema": {
