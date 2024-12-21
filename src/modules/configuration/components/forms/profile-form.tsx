@@ -36,8 +36,7 @@ export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   // Managing form logic
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -69,7 +68,6 @@ export default function ProfileForm() {
                   <PasswordInput name='password' isPending={isPending} />
                 </div>
               </fieldset>
-
               {/* Vocation */}
               <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
                 <legend className='text-lg font-medium px-2'>
