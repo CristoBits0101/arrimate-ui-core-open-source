@@ -5,7 +5,7 @@ import FormError from '@/modules/auth/components/alerts/alert-errors'
 import FormSuccess from '@/modules/auth/components/alerts/alert-success'
 
 // Buttons
-import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
+import SubmitButton from '@/modules/configuration/components/buttons/submit-button'
 
 // Cards
 import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
@@ -81,7 +81,9 @@ export default function ProfileForm() {
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
-            <SubmitButton message={t('save')} isPending={isPending} />
+            <div className='w-full h-fit flex justify-end'>
+              <SubmitButton message={t('save')} isPending={isPending} />
+            </div>
           </form>
         </Form>
       </FormProvider>
