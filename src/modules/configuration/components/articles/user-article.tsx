@@ -34,7 +34,7 @@ export default function UserArticle() {
   if (!hydrated || userImage === null) return null
 
   return (
-    <article className='flex items-center w-full h-fit bg-red-200 grid-cols-[auto,1fr] py-4 px-16 min-w-[31.25rem]'>
+    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr] py-4 px-16 min-w-[31.25rem] border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2]'>
       {/* Imagen */}
       <header className='bg-[#1D0F0F] flex justify-center p-1 rounded-full'>
         <div className='w-full h-fit p-1 bg-white rounded-full'>
