@@ -7,12 +7,13 @@ import PerformanceOptions from '@/modules/feeds/components/options/performance-o
 import BackButton from '@/modules/configuration/components/buttons/back-button'
 import { usePostSettings } from '@/modules/feeds/hooks/panels/usePostSettings'
 import { useTranslations } from 'next-intl'
+import '@/modules/configuration/styles/gradient-collection.css'
 
 export default function PostsPanel() {
   const { selectedOption, handleSelectOption, handleBack } = usePostSettings()
   const t = useTranslations('Posts')
   return (
-    <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40]'>
+    <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] gradient-glass shadow-sm'>
       {selectedOption === null ? (
         <>
           <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
