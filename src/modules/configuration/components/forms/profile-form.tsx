@@ -23,6 +23,7 @@ import EmailInput from '@/modules/configuration/components/inputs/email-input'
 import PasswordInput from '@/modules/configuration/components/inputs/password-input'
 import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
 import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
+import ProfessionInput from '@/modules/configuration/components/inputs/profession-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -47,7 +48,6 @@ export default function ProfileForm() {
                 <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <NameInput name='name' isPending={isPending} />
-                  <NameInput name='name' isPending={isPending} />
                 </div>
               </div>
               {/*  */}
@@ -56,7 +56,11 @@ export default function ProfileForm() {
                   {f('credentials')}
                 </h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
-                  <PhoneInput phonePrefixName='prefix' phoneNumberName='number' isPending={isPending} />
+                  <PhoneInput
+                    phonePrefixName='prefix'
+                    phoneNumberName='number'
+                    isPending={isPending}
+                  />
                   <EmailInput name='email' isPending={isPending} />
                   <PasswordInput name='password' isPending={isPending} />
                 </div>
@@ -64,9 +68,10 @@ export default function ProfileForm() {
               {/*  */}
               <div className='w-full h-fit'>
                 <h2 className='w-full text-lg font-medium mb-2'>
-                  {f('description')}
+                  {f('vocation')}
                 </h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
+                  <ProfessionInput name='profession' isPending={isPending} />
                   <InterestsInput name='password' isPending={isPending} />
                   <SloganInput name='password' isPending={isPending} />
                 </div>

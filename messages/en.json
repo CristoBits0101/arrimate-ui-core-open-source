@@ -118,10 +118,8 @@
   },
   "ProfileForm": {
     "credentials": "Credentials",
-    "description": "Description",
-    "name": "Name",
-    "phone": "Phone",
-    "username": "Username"
+    "credentials": "Credentials",
+    "vocation": "Vocation"
   },
   "Posts": {
     "activity": "Activity",

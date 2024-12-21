@@ -5,7 +5,7 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage
+  FormMessage,
 } from '@/modules/ui/form'
 
 // Imports the Input component
@@ -31,27 +31,27 @@ interface PhoneInputProps {
 const PhoneInput = ({
   phonePrefixName,
   phoneNumberName,
-  isPending
+  isPending,
 }: PhoneInputProps) => {
   // Fetches translations from the forms namespace
   const t = useTranslations('Forms')
   // Gets form control methods
   const { control } = useFormContext()
   return (
-    <div className='flex gap-2'>
+    <div className='flex w-full h-fit gap-2'>
       {/* Phone prefix field */}
       <FormField
         control={control}
         name={phonePrefixName}
         render={({ field }) => (
-          <FormItem className='relative h-fit'>
+          <FormItem className='w-[5rem] flex-shrink-0'>
             <FormControl>
               <Input
                 {...field}
                 disabled={isPending}
                 placeholder={t('inputs.phonePrefix')}
                 type='text'
-                className='w-20 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
+                className='w-full rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
               />
             </FormControl>
             <FormMessage />
@@ -63,14 +63,14 @@ const PhoneInput = ({
         control={control}
         name={phoneNumberName}
         render={({ field }) => (
-          <FormItem className='relative h-fit'>
+          <FormItem className='flex-grow'>
             <FormControl>
               <Input
                 {...field}
                 disabled={isPending}
                 placeholder={t('inputs.phoneNumber')}
                 type='text'
-                className='flex-grow rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
+                className='w-full rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
               />
             </FormControl>
             <FormMessage />
