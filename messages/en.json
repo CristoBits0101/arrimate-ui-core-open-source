@@ -117,7 +117,7 @@
     "confirm": "registration"
   },
   "ProfileForm": {
-    "contact": "Contact",
+    "credentials": "Credentials",
     "description": "Description",
     "name": "Name",
     "phone": "Phone",

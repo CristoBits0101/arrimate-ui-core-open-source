@@ -44,7 +44,7 @@ export default function ProfileForm() {
               {/*  */}
               <div className='w-full h-fit'>
                 <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-8'>
                   <NameInput name='name' isPending={isPending} />
                   <NameInput name='name' isPending={isPending} />
                 </div>
@@ -52,20 +52,10 @@ export default function ProfileForm() {
               {/*  */}
               <div className='w-full h-fit'>
                 <h2 className='w-full text-lg font-medium mb-2'>
-                  {f('contact')}
+                  {f('credentials')}
                 </h2>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-8'>
                   <EmailInput name='email' isPending={isPending} />
-                  <EmailInput name='email' isPending={isPending} />
-                </div>
-              </div>
-              {/*  */}
-              <div className='w-full h-fit'>
-                <h2 className='w-full text-lg font-medium mb-2'>
-                  {f('contact')}
-                </h2>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
-                  <PasswordInput name='password' isPending={isPending} />
                   <PasswordInput name='password' isPending={isPending} />
                 </div>
               </div>
@@ -74,7 +64,7 @@ export default function ProfileForm() {
                 <h2 className='w-full text-lg font-medium mb-2'>
                   {f('description')}
                 </h2>
-                <div className='w-full h-fit grid grid-cols-[1fr,1fr] gap-8'>
+                <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-8'>
                   <InterestsInput name='password' isPending={isPending} />
                   <SloganInput name='password' isPending={isPending} />
                 </div>
