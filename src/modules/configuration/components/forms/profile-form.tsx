@@ -24,6 +24,7 @@ import PasswordInput from '@/modules/configuration/components/inputs/password-in
 import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
 import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
 import ProfessionInput from '@/modules/configuration/components/inputs/profession-input'
+import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -48,6 +49,7 @@ export default function ProfileForm() {
                 <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <NameInput name='name' isPending={isPending} />
+                  <BirthdateInput name='birthdate' isPending={isPending} />
                 </div>
               </div>
               {/* Credentials */}

@@ -33,6 +33,21 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
     phoneNumber: z.string().regex(/^\d{6,15}$/, {
       message: t('invalidPhoneNumber')
     }),
+    birthdate: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, {
+        message: t('invalidBirthdate')
+      })
+      .refine(
+        (date) => {
+          const today = new Date()
+          const birthDate = new Date(date)
+          return birthDate < today
+        },
+        {
+          message: t('futureBirthdate')
+        }
+      ),
     interests: z.string().optional(),
     slogan: z.string().optional(),
     profession: z.string().optional(),
@@ -52,6 +67,14 @@ export const BackendProfileSchema = z.object({
     .regex(/[^a-zA-Z0-9]/),
   phonePrefix: z.string().regex(/^\+\d{1,4}$/),
   phoneNumber: z.string().regex(/^\d{6,15}$/),
+  birthdate: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/)
+    .refine((date) => {
+      const today = new Date()
+      const birthDate = new Date(date)
+      return birthDate < today
+    }),
   interests: z.string().optional(),
   slogan: z.string().optional(),
   profession: z.string().optional(),

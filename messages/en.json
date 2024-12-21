@@ -80,6 +80,7 @@
       "profession": "Profession",
       "interests": "Interests",
       "slogan": "Slogan",
+      "birthdate ": "Birthdate",
       "username": "Username"
     },
     "newPasswordSchema": {
