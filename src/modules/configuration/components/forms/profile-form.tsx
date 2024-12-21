@@ -46,7 +46,9 @@ export default function ProfileForm() {
             <div className='space-y-8 mt-8'>
               {/*  */}
               <div className='w-full h-fit'>
-                <h2 className='w-full text-lg font-medium mb-2'>Hola</h2>
+                <h2 className='w-full text-lg font-medium mb-2'>
+                  {f('identity')}
+                </h2>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <NameInput name='name' isPending={isPending} />
                   <BirthdateInput name='birthdate' isPending={isPending} />

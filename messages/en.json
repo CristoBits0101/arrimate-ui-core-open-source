@@ -123,6 +123,7 @@
     "confirm": "registration"
   },
   "ProfileForm": {
+    "identity": "Identity",
     "credentials": "Credentials",
     "vocation": "Vocation"
   },

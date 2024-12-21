@@ -124,6 +124,7 @@
     "confirm": "confirmar"
   },
   "ProfileForm": {
+    "identity": "Identidad",
     "credentials": "Credenciales",
     "vocation": "Vocación"
   },
