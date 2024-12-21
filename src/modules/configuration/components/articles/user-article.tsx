@@ -38,7 +38,7 @@ export default function UserArticle() {
       {/* Imagen */}
       <header className='flex justify-center'>
           <Image
-            className='w-20 h-w-20 object-cover aspect-square rounded-full'
+            className='w-28 h-w-28 object-cover aspect-square rounded-full'
             src={userImage}
             alt={`${userName}'s profile picture`}
             width={80}
