@@ -40,7 +40,7 @@ const PhoneInput = ({
 
   return (
     <div className='flex gap-2'>
-      {/* Phone Prefix Field */}
+      {/* Phone prefix field */}
       <FormField
         control={control}
         name={phonePrefixName}
@@ -59,8 +59,7 @@ const PhoneInput = ({
           </FormItem>
         )}
       />
-
-      {/* Phone Number Field */}
+      {/* Phone number field */}
       <FormField
         control={control}
         name={phoneNumberName}
