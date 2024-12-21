@@ -45,7 +45,7 @@ export default function ProfileForm() {
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-8 mt-8'>
               {/* Identity */}
-              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
                 <legend className='text-lg font-medium px-2'>
                   {f('identity')}
                 </legend>
@@ -55,7 +55,7 @@ export default function ProfileForm() {
                 </div>
               </fieldset>
               {/* Credentials */}
-              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
                 <legend className='text-lg font-medium px-2'>
                   {f('credentials')}
                 </legend>
@@ -70,7 +70,7 @@ export default function ProfileForm() {
                 </div>
               </fieldset>
               {/* Location */}
-              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
                 <legend className='text-lg font-medium px-2'>
                   {f('location')}
                 </legend>
@@ -85,7 +85,7 @@ export default function ProfileForm() {
                 </div>
               </fieldset>
               {/* Vocation */}
-              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+              <fieldset className='flex flex-col border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
                 <legend className='text-lg font-medium px-2'>
                   {f('vocation')}
                 </legend>
