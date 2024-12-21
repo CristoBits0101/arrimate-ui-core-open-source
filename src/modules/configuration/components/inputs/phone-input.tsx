@@ -32,7 +32,7 @@ const PhoneInput = ({
         name={phonePrefixName}
         render={({ field }) => (
           <FormItem className='w-[5rem] flex-shrink-0'>
-            <FormLabel htmlFor='phonePrefix'>
+            <FormLabel htmlFor='phonePrefix' className='uppercase text-sm'>
               {t('inputs.phonePrefix')}
             </FormLabel>
             <FormControl>

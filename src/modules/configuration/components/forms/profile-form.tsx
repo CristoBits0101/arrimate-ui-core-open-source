@@ -50,7 +50,7 @@ export default function ProfileForm() {
                   <NameInput name='name' isPending={isPending} />
                 </div>
               </div>
-              {/*  */}
+              {/* Credentials */}
               <div className='w-full h-fit'>
                 <h2 className='w-full text-lg font-medium mb-2'>
                   {f('credentials')}
@@ -65,7 +65,7 @@ export default function ProfileForm() {
                   <PasswordInput name='password' isPending={isPending} />
                 </div>
               </div>
-              {/*  */}
+              {/* Vocation */}
               <div className='w-full h-fit'>
                 <h2 className='w-full text-lg font-medium mb-2'>
                   {f('vocation')}
