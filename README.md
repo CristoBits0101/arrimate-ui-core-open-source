@@ -103,4 +103,4 @@
     - 🕹️ Synchronize prism & models ➜ npx prisma generate
     - 🕹️             Reset database ➜ npx prisma migrate reset
     - 🕹️                 Push model ➜ npx prisma db push
-    - 🕹️      Applies the migration ➜ npx prisma migrate dev
+    - 🕹️            Apply migration ➜ npx prisma migrate dev
