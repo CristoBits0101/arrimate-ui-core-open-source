@@ -44,21 +44,21 @@ export default function ProfileForm() {
         <Form {...form}>
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-8 mt-8'>
-              {/*  */}
-              <div className='w-full h-fit'>
-                <h2 className='w-full text-lg font-medium mb-2'>
+              {/* Identity */}
+              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+                <legend className='text-lg font-medium px-2'>
                   {f('identity')}
-                </h2>
+                </legend>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <NameInput name='name' isPending={isPending} />
                   <BirthdateInput name='birthdate' isPending={isPending} />
                 </div>
-              </div>
+              </fieldset>
               {/* Credentials */}
-              <div className='w-full h-fit'>
-                <h2 className='w-full text-lg font-medium mb-2'>
+              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+                <legend className='text-lg font-medium px-2'>
                   {f('credentials')}
-                </h2>
+                </legend>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <PhoneInput
                     phonePrefixName='prefix'
@@ -68,18 +68,19 @@ export default function ProfileForm() {
                   <EmailInput name='email' isPending={isPending} />
                   <PasswordInput name='password' isPending={isPending} />
                 </div>
-              </div>
+              </fieldset>
+
               {/* Vocation */}
-              <div className='w-full h-fit'>
-                <h2 className='w-full text-lg font-medium mb-2'>
+              <fieldset className='border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] p-4'>
+                <legend className='text-lg font-medium px-2'>
                   {f('vocation')}
-                </h2>
+                </legend>
                 <div className='w-full h-fit grid grid-cols-[1fr,1fr,1fr] gap-4'>
                   <ProfessionInput name='profession' isPending={isPending} />
-                  <InterestsInput name='password' isPending={isPending} />
-                  <SloganInput name='password' isPending={isPending} />
+                  <InterestsInput name='interests' isPending={isPending} />
+                  <SloganInput name='slogan' isPending={isPending} />
                 </div>
-              </div>
+              </fieldset>
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />

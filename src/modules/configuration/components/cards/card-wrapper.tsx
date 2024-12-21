@@ -9,7 +9,7 @@ interface CardWrapperProps {
 
 export default function CardWrapper({ children }: CardWrapperProps) {
   return (
-    <Card className='relative w-4/5 h-full rounded-none border-none text-inherit mx-auto'>
+    <Card className='relative w-4/5 h-full rounded-none border-none text-inherit mx-auto bg-transparent shadow-none'>
       <UserArticle />
       {children}
     </Card>
