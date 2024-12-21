@@ -1,0 +1,47 @@
+.gradient-flash {
+  background-image: radial-gradient(
+      circle at center center,
+      transparent,
+      rgb(255, 255, 255)
+    ),
+    linear-gradient(
+      309deg,
+      rgba(117, 117, 117, 0.05) 0%,
+      rgba(117, 117, 117, 0.05) 50%,
+      rgba(221, 221, 221, 0.05) 50%,
+      rgba(221, 221, 221, 0.05) 100%
+    ),
+    linear-gradient(
+      39deg,
+      rgba(49, 49, 49, 0.05) 0%,
+      rgba(49, 49, 49, 0.05) 50%,
+      rgba(217, 217, 217, 0.05) 50%,
+      rgba(217, 217, 217, 0.05) 100%
+    ),
+    linear-gradient(
+      144deg,
+      rgba(254, 254, 254, 0.05) 0%,
+      rgba(254, 254, 254, 0.05) 50%,
+      rgba(139, 139, 139, 0.05) 50%,
+      rgba(139, 139, 139, 0.05) 100%
+    ),
+    linear-gradient(
+      166deg,
+      rgba(242, 242, 242, 0.05) 0%,
+      rgba(242, 242, 242, 0.05) 50%,
+      rgba(236, 236, 236, 0.05) 50%,
+      rgba(236, 236, 236, 0.05) 100%
+    ),
+    linear-gradient(
+      212deg,
+      rgba(125, 125, 125, 0.05) 0%,
+      rgba(125, 125, 125, 0.05) 50%,
+      rgba(249, 249, 249, 0.05) 50%,
+      rgba(249, 249, 249, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at center center,
+      hsl(107, 19%, 100%),
+      hsl(107, 19%, 100%)
+    );
+}
