@@ -2,8 +2,6 @@
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  // Prisma < 5.10
-  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 // Generator configuration
@@ -64,19 +62,17 @@ model ResetPasswordToken {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String        @id @default(cuid())
   name          String?
-  email         String    @unique
+  email         String        @unique
   emailVerified DateTime?
   image         String?
   password      String?
-  role          userRole  @default(USER)
+  role          userRole      @default(USER)
   accounts      Account[]
   photos        Photo[]
-
-  // sessions      Session[]
-  // Optional for WebAuthn support
-  // Authenticator Authenticator[]
+  phonePrefixId String?
+  phonePrefix   PhonePrefix?  @relation(fields: [phonePrefixId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -89,4 +85,13 @@ model VerificationToken {
   expiresAt DateTime
 
   @@unique([email, token])
+}
+
+model PhonePrefix {
+  id      String   @id @default(cuid())
+  prefix  String
+  country String
+  users   User[]
+
+  @@unique([prefix, country])
 }
