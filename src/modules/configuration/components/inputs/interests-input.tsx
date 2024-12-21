@@ -1,5 +1,6 @@
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 import {
+  FormLabel,
   FormControl,
   FormField,
   FormItem,
@@ -16,22 +17,16 @@ interface InterestsInputProps {
 }
 
 const InterestsInput = ({ name, isPending }: InterestsInputProps) => {
-  // Get session and hydrated states
   const { session, hydrated } = useUserSession()
-  // Local state for the interests input
   const [userInterests, setUserInterests] = useState<string | undefined>(
     undefined
   )
-  // Fetches translations from the forms namespace
   const t = useTranslations('Forms')
 
-  // Update the user interests when the session is hydrated
   useEffect(() => {
-    if (hydrated)
-      setUserInterests(session?.user?.interests || t('inputs.interests'))
+    if (hydrated) setUserInterests(session?.user?.interests || '')
   }, [hydrated, session, t])
 
-  // Gets form control methods
   const { control } = useFormContext()
 
   return hydrated ? (
@@ -40,10 +35,13 @@ const InterestsInput = ({ name, isPending }: InterestsInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
+          <FormLabel htmlFor='interests'>{t('inputs.interests')}</FormLabel>
           <FormControl>
             <Input
               {...field}
               disabled={isPending}
+              type='text'
+              id='interests'
               placeholder={userInterests}
               className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
             />

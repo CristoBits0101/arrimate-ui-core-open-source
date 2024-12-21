@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 import {
+  FormLabel,
   FormControl,
   FormField,
   FormItem,
@@ -18,22 +19,16 @@ interface LocationInputProps {
 }
 
 const LocationInput = ({ name, isPending }: LocationInputProps) => {
-  // Get session and hydrated states
   const { session, hydrated } = useUserSession()
-  // Local state for the location input
   const [userLocation, setUserLocation] = useState<string | undefined>(
     undefined
   )
-  // Fetches translations from the forms namespace
   const t = useTranslations('Forms')
 
-  // Update the user location when the session is hydrated
   useEffect(() => {
-    if (hydrated)
-      setUserLocation(session?.user?.location || t('inputs.location'))
+    if (hydrated) setUserLocation(session?.user?.location || '')
   }, [hydrated, session, t])
 
-  // Gets form control methods
   const { control } = useFormContext()
 
   return hydrated ? (
@@ -42,10 +37,13 @@ const LocationInput = ({ name, isPending }: LocationInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
+          <FormLabel htmlFor='location'>{t('inputs.location')}</FormLabel>
           <FormControl>
             <Input
               {...field}
               disabled={isPending}
+              id='location'
+              type='text'
               placeholder={userLocation}
               className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
             />
