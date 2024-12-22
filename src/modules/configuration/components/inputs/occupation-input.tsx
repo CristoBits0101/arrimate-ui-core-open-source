@@ -13,20 +13,20 @@ import { Input } from '@/modules/ui/input'
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
 
-interface ProfessionInputProps {
+interface OccupationInputProps {
   name: string
   isPending: boolean
 }
 
-const ProfessionInput = ({ name, isPending }: ProfessionInputProps) => {
+const OccupationInput = ({ name, isPending }: OccupationInputProps) => {
   const t = useTranslations('Forms')
   const { session, hydrated } = useUserSession()
-  const [userProfession, setUserProfession] = useState<string | undefined>(
+  const [userOccupation, setUserOccupation] = useState<string | undefined>(
     undefined
   )
 
   useEffect(() => {
-    if (hydrated) setUserProfession(session?.user?.profession || '')
+    if (hydrated) setUserOccupation(session?.user?.occupation || '')
   }, [hydrated, session, t])
 
   const { control } = useFormContext()
@@ -37,16 +37,16 @@ const ProfessionInput = ({ name, isPending }: ProfessionInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel htmlFor='profession' className='uppercase text-sm'>
-            {t('inputs.profession')}
+          <FormLabel htmlFor='occupation' className='uppercase text-sm'>
+            {t('inputs.occupation')}
           </FormLabel>
           <FormControl>
             <Input
               {...field}
               disabled={isPending}
               type='text'
-              placeholder={userProfession}
-              id='profession'
+              placeholder={userOccupation}
+              id='occupation'
               className='rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
             />
           </FormControl>
@@ -57,4 +57,4 @@ const ProfessionInput = ({ name, isPending }: ProfessionInputProps) => {
   ) : null
 }
 
-export default ProfessionInput
+export default OccupationInput

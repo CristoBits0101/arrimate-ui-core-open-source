@@ -26,7 +26,7 @@ import EmailInput from '@/modules/configuration/components/inputs/email-input'
 import PasswordInput from '@/modules/configuration/components/inputs/password-input'
 import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
 import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
-import ProfessionInput from '@/modules/configuration/components/inputs/profession-input'
+import OccupationInput from '@/modules/configuration/components/inputs/occupation-input'
 import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-input'
 import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-input'
 import CountryInput from '@/modules/configuration/components/inputs/country-input'
@@ -41,7 +41,8 @@ import { Form } from '@/modules/ui/form'
 export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
-  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } =
+    useProfileForm()
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -65,15 +66,15 @@ export default function ProfileForm() {
               </ProfileFormFieldset>
               {/* Location */}
               <ProfileFormFieldset legend={f('location')}>
-                  <CountryInput name='country' isPending={isPending} />
-                  <ZipCodeInput name='zipCode' isPending={isPending} />
-                  <CityInput name='city' isPending={isPending} />
+                <CountryInput name='country' isPending={isPending} />
+                <ZipCodeInput name='zipCode' isPending={isPending} />
+                <CityInput name='city' isPending={isPending} />
               </ProfileFormFieldset>
               {/* Vocation */}
               <ProfileFormFieldset legend={f('vocation')}>
-                  <ProfessionInput name='profession' isPending={isPending} />
-                  <InterestsInput name='interests' isPending={isPending} />
-                  <SloganInput name='slogan' isPending={isPending} />
+                <OccupationInput name='profession' isPending={isPending} />
+                <InterestsInput name='interests' isPending={isPending} />
+                <SloganInput name='slogan' isPending={isPending} />
               </ProfileFormFieldset>
             </div>
             <FormError message={error} />
