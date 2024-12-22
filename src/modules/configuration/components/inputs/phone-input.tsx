@@ -103,7 +103,7 @@ const PhoneInput = ({
                           setFilteredPrefixes([])
                         }}
                       >
-                        {prefix}
+                        {`+${prefix}`}
                       </li>
                     ))}
                   </ul>
