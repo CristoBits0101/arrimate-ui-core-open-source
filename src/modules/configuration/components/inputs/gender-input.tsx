@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useState } from 'react'
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 import {
@@ -24,6 +22,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
   const { session, hydrated } = useUserSession()
   const [userGender, setUserGender] = useState<string | undefined>(undefined)
   const [genders, setGenders] = useState<{ id: string; name: string }[]>([])
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const { control } = useFormContext()
 
@@ -55,30 +54,44 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
             {t('inputs.gender')}
           </FormLabel>
           <FormControl>
-            <select
-              {...field}
-              value={userGender || ''}
-              onChange={(e) => {
-                field.onChange(e.target.value)
-                setUserGender(e.target.value)
-              }}
-              disabled={isPending}
-              id='gender'
-              className='outline-none select w-full h-9 px-3 py-1 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
-            >
-              <option value="" className='capitalize'>
-                {t('inputs.genders.reserved')}
-              </option>
-              {genders.map(({ id, name }) => (
-                <option
-                  key={id}
-                  value={id}
-                  className='capitalize'
-                >
-                  {t(`inputs.genders.${name}`)}
-                </option>
-              ))}
-            </select>
+            <div className='relative w-full'>
+              <button
+                type='button'
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className='outline-none select w-full h-9 px-3 py-1 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489] text-left'
+                disabled={isPending}
+              >
+                {genders.find((g) => g.id === userGender)?.name ||
+                  t('inputs.genders.reserved')}
+              </button>
+              {isDropdownOpen && (
+                <ul className='absolute z-10 bg-white dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] border-[0.094rem] rounded-none w-full border-t-0'>
+                  <li
+                    onClick={() => {
+                      field.onChange('')
+                      setUserGender('')
+                      setIsDropdownOpen(false)
+                    }}
+                    className='px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none'
+                  >
+                    {t('inputs.genders.reserved')}
+                  </li>
+                  {genders.map(({ id, name }) => (
+                    <li
+                      key={id}
+                      onClick={() => {
+                        field.onChange(id)
+                        setUserGender(id)
+                        setIsDropdownOpen(false)
+                      }}
+                      className='px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none'
+                    >
+                      {t(`inputs.genders.${name}`)}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </FormControl>
           <FormMessage />
         </FormItem>
