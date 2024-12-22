@@ -28,7 +28,7 @@ const UserArticle = () => {
   if (!hydrated || userImage === null) return null
 
   return (
-    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
+    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr] bg-red-500'>
       {/* Image */}
       <header className='flex justify-center'>
         <Image
