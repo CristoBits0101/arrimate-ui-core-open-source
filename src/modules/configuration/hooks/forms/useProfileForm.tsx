@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates backend logic
-import profileAction from '@/modules/configuration/actions/profileAction'
+import profileAction from '@/modules/configuration/actions/profile-action'
 
 // Form: Manage form status and validation
 import { useForm } from 'react-hook-form'
@@ -62,8 +62,8 @@ export function useProfileForm() {
       profileAction(values)
         // Transaction completed
         .then((data) => {
-          if (data.error) setError(t(data.error))
-          if (data.success) setSuccess(t(data.success))
+          if (data?.error) setError(t(data.error))
+          if (data?.success) setSuccess(t(data.success))
         })
         // Failed transaction
         .catch((err) => {

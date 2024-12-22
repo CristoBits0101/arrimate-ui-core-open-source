@@ -34,57 +34,48 @@
     "emptyEmail": "Email is required.",
     "emptyName": "Name is required.",
     "invalidEmail": "Invalid email address.",
-    "maxPassword": "Maximum 64 characters.",
-    "minPassword": "Minimum 12 characters.",
+    "invalidPhoneNumber": "Invalid number.",
     "invalidPhonePrefix": "Invalid prefix.",
-    "invalidPhoneNumber": "Invalid number."
+    "maxPassword": "Maximum 64 characters.",
+    "minPassword": "Minimum 12 characters."
   },
   "Button": {
-    "signIn": "Sign In",
-    "signOut": "Sign out",
-    "signUp": "Sign Up",
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
     "follow": "Follow",
     "following": "Following",
     "like": "Like",
+    "post": "Post",
+    "save": "Save",
     "share": "Share",
+    "signIn": "Sign In",
+    "signOut": "Sign out",
+    "signUp": "Sign Up",
     "submit": "Submit",
     "unfollow": "Unfollow",
-    "unlike": "Unlike",
-    "post": "Post",
-    "save": "Save"
+    "unlike": "Unlike"
   },
   "ECommerce": {
     "noProducts": "No products?"
   },
-  "feedForms": {
-    "stories": "Create a new story",
-    "events": "Create a new event",
-    "products": "Create a new product",
-    "shorts": "Create a new short",
-    "videos": "Create a new video",
-    "audios": "Create a new audio",
-    "reviews": "Create a new review"
-  },
   "Forms": {
     "inputs": {
+      "birthdate": "Birthdate",
+      "city": "City",
       "confirmPassword": "Confirm password",
+      "country": "Country",
       "email": "Email",
       "email2": "Email",
+      "interests": "Interests",
       "name": "Name",
       "password": "Password",
-      "phonePrefix": "Prefix",
       "phoneNumber": "Phone",
+      "phonePrefix": "Prefix",
       "profession": "Profession",
-      "interests": "Interests",
       "slogan": "Slogan",
-      "birthdate": "Birthdate",
-      "country": "Country",
-      "zipCode": "Zip code",
-      "city": "City",
-      "username": "Username"
+      "username": "Username",
+      "zipCode": "Zip code"
     },
     "newPasswordSchema": {
       "changeButton": "Change",
@@ -115,27 +106,15 @@
       "title": "Please try again in a moment"
     }
   },
-  "StoriesPanel": {
-    "emoji": "🏆",
-    "emojiTwo": "💡",
-    "title": "HIGHLIGHTS",
-    "titleTwo": "SUGGESTIONS"
-  },
   "Mail": {
-    "resetPasswordSubject": "reset",
-    "confirm": "registration"
-  },
-  "ProfileForm": {
-    "identity": "Identity",
-    "credentials": "Credentials",
-    "location": "Location",
-    "vocation": "Vocation"
+    "confirm": "registration",
+    "resetPasswordSubject": "reset"
   },
   "Posts": {
     "activity": "Activity",
     "analysis": "Analysis",
-    "audios": "Audios",
     "audio": "Audio",
+    "audios": "Audios",
     "comment": "Comment",
     "comments": "Comments",
     "event": "Event",
@@ -155,14 +134,20 @@
     "reviews": "Reviews",
     "short": "Short",
     "shorts": "Shorts",
-    "story": "Story",
     "stories": "Stories",
+    "story": "Story",
     "stream": "Stream",
     "streams": "Streams",
     "tag": "Tag",
     "tags": "Tags",
     "video": "Video",
     "videos": "Videos"
+  },
+  "ProfileForm": {
+    "credentials": "Credentials",
+    "identity": "Identity",
+    "location": "Location",
+    "vocation": "Vocation"
   },
   "Searcher": {
     "article": "Article",
@@ -190,11 +175,26 @@
     "community": "Community",
     "events": "Events",
     "following": "Following",
-    "stories": "Stories",
     "live": "LIVE",
     "products": "Products",
     "reviews": "Reviews",
     "shorts": "Shorts",
+    "stories": "Stories",
     "videos": "Videos"
+  },
+  "StoriesPanel": {
+    "emoji": "🏆",
+    "emojiTwo": "💡",
+    "title": "HIGHLIGHTS",
+    "titleTwo": "SUGGESTIONS"
+  },
+  "feedForms": {
+    "audios": "Create a new audio",
+    "events": "Create a new event",
+    "products": "Create a new product",
+    "reviews": "Create a new review",
+    "shorts": "Create a new short",
+    "stories": "Create a new story",
+    "videos": "Create a new video"
   }
 }
