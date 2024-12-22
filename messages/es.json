@@ -199,8 +199,8 @@
     "titleTwo": "SUGERENCIAS"
   },
   "Usuario": {
-    "seguidores": "Seguidores",
-    "siguiendo": "Siguiendo",
-    "publicaciones": "Publicaciones"
+    "followers": "Seguidores",
+    "following": "Siguiendo",
+    "posts": "Publicaciones"
   }
 }
