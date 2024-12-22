@@ -16,17 +16,13 @@ export default function UserArticle() {
   // Get session and hydrated states
   const { session, hydrated } = useUserSession()
 
-  // Local states for the user image, name, and email
+  // Local states for the user image
   const [userImage, setUserImage] = useState<string | null>(null)
-  const [userName, setUserName] = useState<string | null>(null)
-  const [userEmail, setUserEmail] = useState<string | null>(null)
 
   // Update states when the session is hydrated
   useEffect(() => {
     if (hydrated) {
       setUserImage(session?.user?.image || defaultUserImage)
-      setUserName(session?.user?.name || 'Guest User')
-      setUserEmail(session?.user?.email || 'No email provided')
     }
   }, [hydrated, session])
 
@@ -37,19 +33,20 @@ export default function UserArticle() {
     <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
       {/* Imagen */}
       <header className='flex justify-center'>
-          <Image
-            className='w-28 h-w-28 object-cover aspect-square rounded-full'
-            src={userImage}
-            alt={`${userName}'s profile picture`}
-            width={80}
-            height={80}
-            loading='lazy'
-          />
+        <Image
+          className='w-28 h-w-28 object-cover aspect-square rounded-full'
+          src={userImage}
+          alt='Profile picture'
+          width={80}
+          height={80}
+          loading='lazy'
+        />
       </header>
       {/* Information */}
       <section className='w-fit h-fit p-4'>
-        <h2 className='text-lg font-bold'>{userName}</h2>
-        <p className='text-sm text-gray-700'>{userEmail}</p>
+        <p className='text-sm text-gray-700'>Seguidores</p>
+        <p className='text-sm text-gray-700'>Seguidos</p>
+        <p className='text-sm text-gray-700'>Publicaciones</p>
       </section>
     </article>
   )

@@ -59,6 +59,15 @@
   "ECommerce": {
     "noProducts": "No products?"
   },
+  "FeedForms": {
+    "audios": "Create a new audio",
+    "events": "Create a new event",
+    "products": "Create a new product",
+    "reviews": "Create a new review",
+    "shorts": "Create a new short",
+    "stories": "Create a new story",
+    "videos": "Create a new video"
+  },
   "Forms": {
     "inputs": {
       "birthdate": "Birthdate",
@@ -189,14 +198,5 @@
     "emojiTwo": "💡",
     "title": "HIGHLIGHTS",
     "titleTwo": "SUGGESTIONS"
-  },
-  "feedForms": {
-    "audios": "Create a new audio",
-    "events": "Create a new event",
-    "products": "Create a new product",
-    "reviews": "Create a new review",
-    "shorts": "Create a new short",
-    "stories": "Create a new story",
-    "videos": "Create a new video"
   }
 }

@@ -16,7 +16,7 @@ export default function StoryForm() {
   // State for uploaded file
   const [file, setFile] = useState<File | null>(null)
   // Translations
-  const t = useTranslations('feedForms')
+  const t = useTranslations('FeedForms')
   // Transition state
   const [isPending, startTransition] = useTransition()
 
