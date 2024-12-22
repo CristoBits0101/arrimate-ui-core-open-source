@@ -11,6 +11,7 @@ export type PostType =
   | 'video'
   | 'stream'
   | 'audio'
+  | 'review'
   | 'manage'
   | 'performance'
   | null
