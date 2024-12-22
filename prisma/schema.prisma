@@ -62,17 +62,19 @@ model ResetPasswordToken {
 }
 
 model User {
-  id            String        @id @default(cuid())
+  id            String       @id @default(cuid())
   name          String?
-  email         String        @unique
+  email         String       @unique
   emailVerified DateTime?
   image         String?
   password      String?
-  role          userRole      @default(USER)
+  role          userRole     @default(USER)
   accounts      Account[]
   photos        Photo[]
   phonePrefixId String?
-  phonePrefix   PhonePrefix?  @relation(fields: [phonePrefixId], references: [id])
+  phonePrefix   PhonePrefix? @relation(fields: [phonePrefixId], references: [id])
+  genderId      String?
+  gender        Genders?     @relation(fields: [genderId], references: [id])
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -88,10 +90,16 @@ model VerificationToken {
 }
 
 model PhonePrefix {
-  id      String   @id @default(cuid())
+  id      String @id @default(cuid())
   prefix  String
   country String
   users   User[]
 
   @@unique([prefix, country])
+}
+
+model Genders {
+  id    String @id @default(cuid())
+  name  String @unique
+  users User[]
 }

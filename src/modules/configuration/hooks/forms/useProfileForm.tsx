@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates backend logic
-import profileAction from '@/modules/configuration/actions/profile-action'
+import profileAction from '@/modules/configuration/actions/user-profile-action'
 
 // Form: Manage form status and validation
 import { useForm } from 'react-hook-form'

@@ -87,7 +87,15 @@
       "select": "Select",
       "slogan": "Slogan",
       "username": "Username",
-      "zipCode": "Zip code"
+      "zipCode": "Zip code",
+      "gender": "Gender",
+      "genders": {
+        "reserved": "Reserved",
+        "male": "Male",
+        "female": "Female",
+        "nonbinary": "Non-binary",
+        "other": "Other"
+      }
     },
     "newPasswordSchema": {
       "changeButton": "Change",

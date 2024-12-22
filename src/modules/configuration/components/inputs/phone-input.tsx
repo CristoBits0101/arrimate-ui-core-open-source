@@ -12,7 +12,7 @@ import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
-import { getPhonePrefixes } from '@/modules/configuration/actions/phone-prefix'
+import { getPhonePrefixes } from '@/modules/configuration/actions/phone-prefix-action'
 
 interface PhoneInputProps {
   phonePrefixName: string

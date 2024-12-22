@@ -86,7 +86,15 @@
       "select": "Seleccionar",
       "slogan": "Eslogan",
       "username": "Nombre de usuario",
-      "zipCode": "Código postal"
+      "zipCode": "Código postal",
+      "gender": "Género",
+      "genders": {
+        "reserved": "Reservado",
+        "male": "Masculino",
+        "female": "Femenino",
+        "nonbinary": "No binario",
+        "other": "Otro"
+      }
     },
     "newPasswordSchema": {
       "changeButton": "Cambiar",

@@ -32,6 +32,7 @@ import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-inp
 import CountryInput from '@/modules/configuration/components/inputs/country-input'
 import CityInput from '@/modules/configuration/components/inputs/city-input'
 import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
+import GenderInput from '@/modules/configuration/components/inputs/gender-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -54,7 +55,10 @@ export default function ProfileForm() {
               <ProfileFormFieldset legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
                 <NicknameInput name='nickname' isPending={isPending} />
-                <BirthdateInput name='birthdate' isPending={isPending} />
+                <div className='flex w-full h-fit gap-2'>
+                  <BirthdateInput name='birthdate' isPending={isPending} />
+                  <GenderInput name='gender' isPending={isPending} />
+                </div>
               </ProfileFormFieldset>
               {/* Credentials */}
               <ProfileFormFieldset legend={f('credentials')}>
