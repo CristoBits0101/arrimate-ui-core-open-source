@@ -1,28 +1,26 @@
 'use client'
 
-// next/image
 import Image from 'next/image'
-
-// Custom hooks
+import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 
-// React
-import { useEffect, useState } from 'react'
+const defaultUserImage = '/path/to/default/image.jpg'
 
-// User default image
-import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
-
-export default function UserArticle() {
-  // Get session and hydrated states
+const UserArticle = () => {
   const { session, hydrated } = useUserSession()
-
-  // Local states for the user image
   const [userImage, setUserImage] = useState<string | null>(null)
+  const [followers, setFollowers] = useState<number>(0)
+  const [following, setFollowing] = useState<number>(0)
+  const [posts, setPosts] = useState<number>(0)
+  const t = useTranslations('User')
 
-  // Update states when the session is hydrated
   useEffect(() => {
     if (hydrated) {
       setUserImage(session?.user?.image || defaultUserImage)
+      setFollowers(session?.user?.followers || 0)
+      setFollowing(session?.user?.following || 0)
+      setPosts(session?.user?.posts || 0)
     }
   }, [hydrated, session])
 
@@ -31,7 +29,7 @@ export default function UserArticle() {
 
   return (
     <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
-      {/* Imagen */}
+      {/* Image */}
       <header className='flex justify-center'>
         <Image
           className='w-28 h-w-28 object-cover aspect-square rounded-full'
@@ -44,10 +42,18 @@ export default function UserArticle() {
       </header>
       {/* Information */}
       <section className='w-fit h-fit p-4'>
-        <p className='text-sm text-gray-700'>Seguidores</p>
-        <p className='text-sm text-gray-700'>Seguidos</p>
-        <p className='text-sm text-gray-700'>Publicaciones</p>
+        <p className='text-sm text-gray-700'>
+          <span className='font-bold'>{followers}</span> {t('followers')}
+        </p>
+        <p className='text-sm text-gray-700'>
+          <span className='font-bold'>{following}</span> {t('following')}
+        </p>
+        <p className='text-sm text-gray-700'>
+          <span className='font-bold'>{posts}</span> {t('posts')}
+        </p>
       </section>
     </article>
   )
 }
+
+export default UserArticle

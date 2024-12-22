@@ -197,5 +197,10 @@
     "emojiTwo": "💡",
     "title": "DESTACADOS",
     "titleTwo": "SUGERENCIAS"
+  },
+  "Usuario": {
+    "seguidores": "Seguidores",
+    "siguiendo": "Siguiendo",
+    "publicaciones": "Publicaciones"
   }
 }

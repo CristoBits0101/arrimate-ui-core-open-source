@@ -198,5 +198,10 @@
     "emojiTwo": "💡",
     "title": "HIGHLIGHTS",
     "titleTwo": "SUGGESTIONS"
+  },
+  "User": {
+    "followers": "Followers",
+    "following": "Following",
+    "posts": "Posts"
   }
 }
