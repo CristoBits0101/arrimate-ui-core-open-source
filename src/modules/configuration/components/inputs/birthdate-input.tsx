@@ -9,10 +9,10 @@ import {
   FormItem,
   FormMessage
 } from '@/modules/ui/form'
-
 import { Input } from '@/modules/ui/input'
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
+import '@/modules/configuration/styles/birthdate-input.css'
 
 interface BirthdateInputProps {
   name: string
