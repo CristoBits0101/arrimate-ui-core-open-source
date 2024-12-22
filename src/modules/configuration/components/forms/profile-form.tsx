@@ -31,6 +31,7 @@ import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-
 import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-input'
 import CountryInput from '@/modules/configuration/components/inputs/country-input'
 import CityInput from '@/modules/configuration/components/inputs/city-input'
+import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -52,6 +53,7 @@ export default function ProfileForm() {
               {/* Identity */}
               <ProfileFormFieldset legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
+                <NicknameInput name='nickname' isPending={isPending} />
                 <BirthdateInput name='birthdate' isPending={isPending} />
               </ProfileFormFieldset>
               {/* Credentials */}
