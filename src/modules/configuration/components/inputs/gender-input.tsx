@@ -12,6 +12,7 @@ import {
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
 import { getGenders } from '@/modules/configuration/actions/user-gender-action'
+import '@/modules/configuration/styles/select-apperance.css'
 
 interface GenderInputProps {
   name: string
@@ -43,7 +44,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
     }
     fetchGenders()
   }, [])
-  console.log(userGender)
+
   return hydrated ? (
     <FormField
       control={control}
@@ -56,20 +57,22 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
           <FormControl>
             <select
               {...field}
-              defaultValue={userGender || t('inputs.genders.reserved')}
+              value={userGender || ''}
               onChange={(e) => {
                 field.onChange(e.target.value)
                 setUserGender(e.target.value)
               }}
               disabled={isPending}
               id='gender'
-              className='w-full h-9 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
+              className='outline-none select w-full h-9 px-3 py-1 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
             >
+              <option value="" className='capitalize'>
+                {t('inputs.genders.reserved')}
+              </option>
               {genders.map(({ id, name }) => (
                 <option
                   key={id}
                   value={id}
-                  selected={id === userGender}
                   className='capitalize'
                 >
                   {t(`inputs.genders.${name}`)}
