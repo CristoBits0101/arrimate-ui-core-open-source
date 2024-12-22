@@ -13,6 +13,7 @@ const UserArticle = () => {
   const [followers, setFollowers] = useState<number>(0)
   const [following, setFollowing] = useState<number>(0)
   const [posts, setPosts] = useState<number>(0)
+  const [memberSince, setMemberSince] = useState<string | null>(null)
   const t = useTranslations('User')
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const UserArticle = () => {
       setFollowers(session?.user?.followers || 0)
       setFollowing(session?.user?.following || 0)
       setPosts(session?.user?.posts || 0)
+      setMemberSince(session?.user?.createdAt || null)
     }
   }, [hydrated, session])
 
@@ -28,7 +30,7 @@ const UserArticle = () => {
   if (!hydrated || userImage === null) return null
 
   return (
-    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr] bg-red-500'>
+    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
       {/* Image */}
       <header className='flex justify-center'>
         <Image
@@ -43,13 +45,13 @@ const UserArticle = () => {
       {/* Information */}
       <section className='w-fit h-fit p-4 flex flex-col gap-1'>
         <p>
-          <span className='font-semibold'>{followers}</span> {t('followers')}
-        </p>
-        <p>
-          <span className='font-semibold'>{following}</span> {t('following')}
-        </p>
-        <p>
+          <span className='font-semibold'>{followers}</span> {t('followers')} •{' '}
+          <span className='font-semibold'>{following}</span> {t('following')} •{' '}
           <span className='font-semibold'>{posts}</span> {t('posts')}
+        </p>
+        <p>
+          {t('memberSince')}{': '}
+          <span className='font-semibold'>{memberSince}</span>
         </p>
       </section>
     </article>

@@ -202,6 +202,7 @@
   "User": {
     "followers": "Followers",
     "following": "Following",
+    "memberSince": "Member since",
     "posts": "Posts"
   }
 }

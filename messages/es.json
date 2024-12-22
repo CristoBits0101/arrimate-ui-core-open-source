@@ -201,6 +201,7 @@
   "User": {
     "followers": "Seguidores",
     "following": "Siguiendo",
+    "memberSince": "Miembro desde",
     "posts": "Publicaciones"
   }
 }
