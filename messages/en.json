@@ -79,6 +79,7 @@
       "email2": "Email",
       "interests": "Interests",
       "name": "Name",
+      "nickname": "Nickname",
       "occupation": "Occupation",
       "password": "Password",
       "phoneNumber": "Phone",

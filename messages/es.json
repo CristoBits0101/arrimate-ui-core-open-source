@@ -78,6 +78,7 @@
       "email2": "Correo",
       "interests": "Intereses",
       "name": "Nombre",
+      "nickname": "Apodo",
       "occupation": "Ocupación",
       "password": "Contraseña",
       "phoneNumber": "Teléfono",
