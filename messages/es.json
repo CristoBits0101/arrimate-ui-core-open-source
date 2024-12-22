@@ -13,8 +13,8 @@
     "lostProcess": "¡Solicitud no encontrada!",
     "lostUser": "¡Usuario no encontrado!",
     "lostVerification": "¡Verificación caducada!",
-    "notifyConnection": "¡Sesión iniciada!",
     "notifyConfirmation": "¡Revisa el correo!",
+    "notifyConnection": "¡Sesión iniciada!",
     "notifyDisconnect": "¡Conexión fallida!",
     "notifyDisconnection": "¡Cierre de sesión fallido!",
     "notifyExpired": "¡El proceso ha caducado!",
@@ -34,57 +34,49 @@
     "emptyEmail": "El correo es obligatorio.",
     "emptyName": "El nombre es obligatorio.",
     "invalidEmail": "Correo no válido.",
-    "maxPassword": "Máximo 64 caracteres.",
-    "minPassword": "Mínimo 12 caracteres.",
+    "invalidPhoneNumber": "Número no válido.",
     "invalidPhonePrefix": "Prefijo inválido.",
-    "invalidPhoneNumber": "Número no válido."
+    "maxPassword": "Máximo 64 caracteres.",
+    "minPassword": "Mínimo 12 caracteres."
   },
   "Button": {
-    "signIn": "Entrar",
-    "signOut": "Salir",
-    "signUp": "Registrarse",
     "cancel": "Cancelar",
     "delete": "Eliminar",
     "edit": "Editar",
     "follow": "Seguir",
     "following": "Siguiendo",
     "like": "Me gusta",
+    "post": "Publicar",
+    "save": "Guardar",
     "share": "Compartir",
+    "signIn": "Entrar",
+    "signOut": "Salir",
+    "signUp": "Registrarse",
     "submit": "Enviar",
     "unfollow": "Dejar de seguir",
-    "unlike": "Ya no me gusta",
-    "post": "Publicar",
-    "save": "Guardar"
+    "unlike": "Ya no me gusta"
   },
   "ECommerce": {
     "noProducts": "¿No hay productos?"
   },
-  "feedForms": {
-    "stories": "Crear una nueva historia",
-    "events": "Crear un nuevo evento",
-    "products": "Crear un nuevo producto",
-    "shorts": "Crear un nuevo corto",
-    "videos": "Crear un nuevo video",
-    "audios": "Crear un nuevo audio",
-    "reviews": "Crear una nueva reseña"
-  },
   "Forms": {
     "inputs": {
+      "birthdate": "Cumpleaños",
+      "city": "Ciudad",
       "confirmPassword": "Confirmar contraseña",
+      "country": "País",
       "email": "Correo electrónico",
       "email2": "Correo",
+      "interests": "Intereses",
       "name": "Nombre",
       "password": "Contraseña",
-      "phonePrefix": "Prefijo",
       "phoneNumber": "Teléfono",
+      "phonePrefix": "Prefijo",
       "profession": "Profesión",
-      "interests": "Intereses",
+      "select": "Seleccionar",
       "slogan": "Eslogan",
-      "birthdate": "Cumpleaños",
-      "country": "País",
-      "zipCode": "Código postal",
-      "city": "Ciudad",
-      "username": "Nombre de usuario"
+      "username": "Nombre de usuario",
+      "zipCode": "Código postal"
     },
     "newPasswordSchema": {
       "changeButton": "Cambiar",
@@ -116,27 +108,15 @@
       "title": "Inténtelo de nuevo más tarde"
     }
   },
-  "StoriesPanel": {
-    "emoji": "🏆",
-    "emojiTwo": "💡",
-    "title": "DESTACADOS",
-    "titleTwo": "SUGERENCIAS"
-  },
   "Mail": {
-    "resetPasswordSubject": "reiniciar",
-    "confirm": "confirmar"
-  },
-  "ProfileForm": {
-    "identity": "Identidad",
-    "credentials": "Credenciales",
-    "location": "Ubicación",
-    "vocation": "Vocación"
+    "confirm": "confirmar",
+    "resetPasswordSubject": "reiniciar"
   },
   "Posts": {
     "activity": "Actividad",
     "analysis": "Análisis",
-    "audios": "Audios",
     "audio": "Audio",
+    "audios": "Audios",
     "comment": "Comentario",
     "comments": "Comentarios",
     "event": "Evento",
@@ -156,14 +136,20 @@
     "reviews": "Reseñas",
     "short": "Corto",
     "shorts": "Cortos",
-    "story": "Historia",
     "stories": "Historias",
+    "story": "Historia",
     "stream": "Transmitir",
     "streams": "Transmisiones",
     "tag": "Etiqueta",
     "tags": "Etiquetas",
     "video": "Vídeo",
     "videos": "Vídeos"
+  },
+  "ProfileForm": {
+    "credentials": "Credenciales",
+    "identity": "Identidad",
+    "location": "Ubicación",
+    "vocation": "Vocación"
   },
   "Searcher": {
     "article": "Artículo",
@@ -190,11 +176,26 @@
     "audios": "Audios",
     "community": "Comunidad",
     "events": "Eventos",
-    "stories": "Historias",
     "live": "Directos",
     "products": "Productos",
     "reviews": "Reseñas",
     "shorts": "Cortos",
+    "stories": "Historias",
     "videos": "Vídeos"
+  },
+  "StoriesPanel": {
+    "emoji": "🏆",
+    "emojiTwo": "💡",
+    "title": "DESTACADOS",
+    "titleTwo": "SUGERENCIAS"
+  },
+  "feedForms": {
+    "audios": "Crear un nuevo audio",
+    "events": "Crear un nuevo evento",
+    "products": "Crear un nuevo producto",
+    "reviews": "Crear una nueva reseña",
+    "shorts": "Crear un nuevo corto",
+    "stories": "Crear una nueva historia",
+    "videos": "Crear un nuevo video"
   }
 }
