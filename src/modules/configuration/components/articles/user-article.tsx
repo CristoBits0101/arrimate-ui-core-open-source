@@ -41,15 +41,15 @@ const UserArticle = () => {
         />
       </header>
       {/* Information */}
-      <section className='w-fit h-fit p-4'>
-        <p className='text-sm text-gray-700'>
-          <span className='font-bold'>{followers}</span> {t('followers')}
+      <section className='w-fit h-fit p-4 flex flex-col gap-1'>
+        <p>
+          <span className='font-semibold'>{followers}</span> {t('followers')}
         </p>
-        <p className='text-sm text-gray-700'>
-          <span className='font-bold'>{following}</span> {t('following')}
+        <p>
+          <span className='font-semibold'>{following}</span> {t('following')}
         </p>
-        <p className='text-sm text-gray-700'>
-          <span className='font-bold'>{posts}</span> {t('posts')}
+        <p>
+          <span className='font-semibold'>{posts}</span> {t('posts')}
         </p>
       </section>
     </article>
