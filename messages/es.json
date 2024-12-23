@@ -85,6 +85,8 @@
       "phonePrefix": "Prefijo",
       "select": "Seleccionar",
       "slogan": "Eslogan",
+      "street": "Calle",
+      "number": "N.º",
       "username": "Nombre de usuario",
       "zipCode": "Código postal",
       "gender": "Género",

@@ -35,6 +35,8 @@ import CountryInput from '@/modules/configuration/components/inputs/country-inpu
 import CityInput from '@/modules/configuration/components/inputs/city-input'
 import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
 import GenderInput from '@/modules/configuration/components/inputs/gender-input'
+import AddressInput from '@/modules/configuration/components/inputs/address-input'
+import StreetNumberInput from '@/modules/configuration/components/inputs/street-number-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -73,8 +75,15 @@ export default function ProfileForm() {
               {/* Location */}
               <ProfileFormFieldsetCols4 legend={f('location')}>
                 <CountryInput name='country' isPending={isPending} />
-                <ZipCodeInput name='zipCode' isPending={isPending} />
                 <CityInput name='city' isPending={isPending} />
+                <AddressInput name='address' isPending={isPending} />
+                <div className='grid w-full h-fit grid-cols-[1fr,1fr] gap-2'>
+                  <StreetNumberInput
+                    name='streetNumber'
+                    isPending={isPending}
+                  />
+                  <ZipCodeInput name='zipCode' isPending={isPending} />
+                </div>
               </ProfileFormFieldsetCols4>
               {/* Vocation */}
               <ProfileFormFieldsetCols4 legend={f('vocation')}>

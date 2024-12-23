@@ -87,6 +87,8 @@
       "phonePrefix": "Prefix",
       "select": "Select",
       "slogan": "Slogan",
+      "street": "Street",
+      "number": "No.",
       "username": "Username",
       "zipCode": "Zip code",
       "gender": "Gender",
