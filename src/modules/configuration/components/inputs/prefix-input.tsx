@@ -52,7 +52,7 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
     <FormField
       name={name}
       render={({ field }) => (
-        <FormItem className='w-[6rem] flex-shrink-0 relative'>
+        <FormItem className='w-full flex-shrink-0 relative'>
           <FormLabel htmlFor='phonePrefix' className='uppercase text-sm'>
             {t('inputs.phonePrefix')}
           </FormLabel>
