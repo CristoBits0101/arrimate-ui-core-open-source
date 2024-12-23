@@ -81,6 +81,7 @@
       "nickname": "Apodo",
       "occupation": "Ocupación",
       "password": "Contraseña",
+      "newPassword": "Nueva contraseña",
       "phoneNumber": "Teléfono",
       "phonePrefix": "Prefijo",
       "select": "Seleccionar",
