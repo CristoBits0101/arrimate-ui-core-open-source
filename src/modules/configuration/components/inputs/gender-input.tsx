@@ -17,12 +17,6 @@ interface GenderInputProps {
   isPending: boolean
 }
 
-// Formato personalizado para mostrar "Non-binary" correctamente
-function formatGenderText(text: string): string {
-  if (text.toLowerCase() === 'non-binary') return 'Non-binary'
-  return text
-}
-
 export default function GenderInput({ name, isPending }: GenderInputProps) {
   const t = useTranslations('Forms')
   const { session, hydrated } = useUserSession()
@@ -50,6 +44,11 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
     fetchGenders()
   }, [])
 
+  const capitalizeFirstWord = (text: string): string => {
+    const lowerCasedText = text.toLowerCase()
+    return lowerCasedText.charAt(0).toUpperCase() + lowerCasedText.slice(1)
+  }
+
   return hydrated ? (
     <FormField
       control={control}
@@ -67,9 +66,13 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                 className='text-sm outline-none select w-full h-9 px-3 py-1 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489] text-left'
                 disabled={isPending}
               >
-                {formatGenderText(
-                  genders.find((g) => g.id === userGender)?.name ||
-                    t('inputs.genders.reserved')
+                {capitalizeFirstWord(
+                  t(
+                    `inputs.genders.${
+                      genders.find((g) => g.id === userGender)?.name ||
+                      'reserved'
+                    }`
+                  )
                 )}
               </button>
               {isDropdownOpen && (
@@ -80,9 +83,9 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                       setUserGender('')
                       setIsDropdownOpen(false)
                     }}
-                    className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none'
+                    className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
                   >
-                    {t('inputs.genders.reserved')}
+                    {capitalizeFirstWord(t('inputs.genders.reserved'))}
                   </li>
                   {genders.map(({ id, name }) => (
                     <li
@@ -92,9 +95,9 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                         setUserGender(id)
                         setIsDropdownOpen(false)
                       }}
-                      className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none'
+                      className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
                     >
-                      {formatGenderText(t(`inputs.genders.${name}`))}
+                      {capitalizeFirstWord(t(`inputs.genders.${name}`))}
                     </li>
                   ))}
                 </ul>
