@@ -5,7 +5,7 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage
+  FormMessage,
 } from '@/modules/ui/form'
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
@@ -15,6 +15,14 @@ import '@/modules/configuration/styles/select-apperance.css'
 interface GenderInputProps {
   name: string
   isPending: boolean
+}
+
+// Formato personalizado para mostrar "Non-binary" correctamente
+function formatGenderText(text: string): string {
+  if (text.toLowerCase() === 'non-binary') {
+    return 'Non-binary'
+  }
+  return text
 }
 
 export default function GenderInput({ name, isPending }: GenderInputProps) {
@@ -61,8 +69,10 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                 className='outline-none select w-full h-9 px-3 py-1 rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489] text-left'
                 disabled={isPending}
               >
-                {genders.find((g) => g.id === userGender)?.name ||
-                  t('inputs.genders.reserved')}
+                {formatGenderText(
+                  genders.find((g) => g.id === userGender)?.name ||
+                    t('inputs.genders.reserved')
+                )}
               </button>
               {isDropdownOpen && (
                 <ul className='absolute z-10 bg-white dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] border-[0.094rem] rounded-none w-full border-t-0'>
@@ -86,7 +96,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                       }}
                       className='px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none'
                     >
-                      {t(`inputs.genders.${name}`)}
+                      {formatGenderText(t(`inputs.genders.${name}`))}
                     </li>
                   ))}
                 </ul>
