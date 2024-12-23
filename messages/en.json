@@ -82,6 +82,7 @@
       "nickname": "Nickname",
       "occupation": "Occupation",
       "password": "Password",
+      "newPassword": "New password",
       "phoneNumber": "Phone",
       "phonePrefix": "Prefix",
       "select": "Select",

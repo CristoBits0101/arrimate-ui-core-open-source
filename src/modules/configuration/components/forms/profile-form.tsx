@@ -14,17 +14,18 @@ import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 import { useProfileForm } from '@/modules/configuration/hooks/forms/useProfileForm'
 
 // Fieldset
-import ProfileFormFieldset from '@/modules/configuration/components/fieldsets/profile-form-fieldset'
+import ProfileFormFieldsetCols4 from '@/modules/configuration/components/fieldsets/profile-form-fieldset-cols-4'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
 
 // Inputs
 import NameInput from '@/modules/configuration/components/inputs/name-input'
-import PrefixInput from '@/modules/configuration/components/inputs/prefix-input'
-import NumberInput from '@/modules/configuration/components/inputs/number-input'
+import PhonePrefixInput from '@/modules/configuration/components/inputs/phone-prefix-input'
+import PhoneNumberInput from '@/modules/configuration/components/inputs/phone-number-input'
 import EmailInput from '@/modules/configuration/components/inputs/email-input'
 import PasswordInput from '@/modules/configuration/components/inputs/password-input'
+import NewPasswordInput from '@/modules/configuration/components/inputs/new-password-input'
 import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
 import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
 import OccupationInput from '@/modules/configuration/components/inputs/occupation-input'
@@ -53,35 +54,34 @@ export default function ProfileForm() {
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-8 mt-8'>
               {/* Identity */}
-              <ProfileFormFieldset legend={f('identity')}>
+              <ProfileFormFieldsetCols4 legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
                 <NicknameInput name='nickname' isPending={isPending} />
-                <div className='grid w-full h-fit grid-cols-[1fr,1fr] gap-2'>
-                  <BirthdateInput name='birthdate' isPending={isPending} />
-                  <GenderInput name='gender' isPending={isPending} />
-                </div>
-              </ProfileFormFieldset>
+                <BirthdateInput name='birthdate' isPending={isPending} />
+                <GenderInput name='gender' isPending={isPending} />
+              </ProfileFormFieldsetCols4>
               {/* Credentials */}
-              <ProfileFormFieldset legend={f('credentials')}>
-                <div className='grid w-full h-fit grid-cols-[1fr,2fr] gap-2'>
-                  <PrefixInput name='prefix' isPending={isPending} />
-                  <NumberInput name='number' isPending={isPending} />
+              <ProfileFormFieldsetCols4 legend={f('credentials')}>
+                <div className='grid w-full h-fit grid-cols-[2fr,3fr] gap-2'>
+                  <PhonePrefixInput name='prefix' isPending={isPending} />
+                  <PhoneNumberInput name='number' isPending={isPending} />
                 </div>
                 <EmailInput name='email' isPending={isPending} />
                 <PasswordInput name='password' isPending={isPending} />
-              </ProfileFormFieldset>
+                <NewPasswordInput name='newPassword' isPending={isPending} />
+              </ProfileFormFieldsetCols4>
               {/* Location */}
-              <ProfileFormFieldset legend={f('location')}>
+              <ProfileFormFieldsetCols4 legend={f('location')}>
                 <CountryInput name='country' isPending={isPending} />
                 <ZipCodeInput name='zipCode' isPending={isPending} />
                 <CityInput name='city' isPending={isPending} />
-              </ProfileFormFieldset>
+              </ProfileFormFieldsetCols4>
               {/* Vocation */}
-              <ProfileFormFieldset legend={f('vocation')}>
+              <ProfileFormFieldsetCols4 legend={f('vocation')}>
                 <OccupationInput name='profession' isPending={isPending} />
                 <InterestsInput name='interests' isPending={isPending} />
                 <SloganInput name='slogan' isPending={isPending} />
-              </ProfileFormFieldset>
+              </ProfileFormFieldsetCols4>
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
