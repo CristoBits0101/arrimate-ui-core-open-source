@@ -62,7 +62,7 @@ export default function ProfileForm() {
               </ProfileFormFieldsetCols4>
               {/* Credentials */}
               <ProfileFormFieldsetCols4 legend={f('credentials')}>
-                <div className='grid w-full h-fit grid-cols-[2fr,3fr] gap-2'>
+                <div className='grid w-full h-fit grid-cols-[1fr,1fr] gap-2'>
                   <PhonePrefixInput name='prefix' isPending={isPending} />
                   <PhoneNumberInput name='number' isPending={isPending} />
                 </div>
