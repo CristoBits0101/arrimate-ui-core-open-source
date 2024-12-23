@@ -53,7 +53,7 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className='w-full flex-shrink-0 relative'>
-          <FormLabel htmlFor='phonePrefix' className='uppercase text-sm'>
+          <FormLabel htmlFor='phone-prefix' className='uppercase text-sm'>
             {t('inputs.phonePrefix')}
           </FormLabel>
           <FormControl>
@@ -66,7 +66,8 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
                   field.onChange(e.target.value)
                 }}
                 disabled={isPending}
-                id='phonePrefix'
+                type='text'
+                id='phone-prefix'
                 className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
               />
               {filteredPrefixes.length > 0 && (
