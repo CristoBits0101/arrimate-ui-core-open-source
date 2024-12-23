@@ -56,7 +56,7 @@ export default function ProfileForm() {
               <ProfileFormFieldset legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
                 <NicknameInput name='nickname' isPending={isPending} />
-                <div className='flex w-full h-fit gap-2'>
+                <div className='grid w-full h-fit grid-cols-[1fr,1fr] gap-2'>
                   <BirthdateInput name='birthdate' isPending={isPending} />
                   <GenderInput name='gender' isPending={isPending} />
                 </div>
