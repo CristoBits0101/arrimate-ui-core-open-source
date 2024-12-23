@@ -19,9 +19,7 @@ interface GenderInputProps {
 
 // Formato personalizado para mostrar "Non-binary" correctamente
 function formatGenderText(text: string): string {
-  if (text.toLowerCase() === 'non-binary') {
-    return 'Non-binary'
-  }
+  if (text.toLowerCase() === 'non-binary') return 'Non-binary'
   return text
 }
 
