@@ -5,7 +5,7 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
+  FormMessage
 } from '@/modules/ui/form'
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
