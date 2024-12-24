@@ -80,7 +80,8 @@ model User {
   country       Country?     @relation(fields: [countryId], references: [id])
   cityId        String?
   city          City?        @relation(fields: [cityId], references: [id])
-  zipCode       String?
+  zipCodeId     String?
+  zipCode       ZipCode?     @relation(fields: [zipCodeId], references: [id]) // Relación con ZipCode
   address       String?
   occupation    String?
   interests     String[]
@@ -101,13 +102,24 @@ model Country {
 }
 
 model City {
-  id        String  @id @default(cuid())
+  id        String    @id @default(cuid())
   name      String
   countryId String
-  country   Country @relation(fields: [countryId], references: [id])
+  country   Country   @relation(fields: [countryId], references: [id])
+  zipCodes  ZipCode[]
   users     User[]
 
   @@unique([name, countryId])
+}
+
+model ZipCode {
+  id     String @id @default(cuid())
+  code   String
+  cityId String
+  city   City   @relation(fields: [cityId], references: [id])
+  User   User[]
+
+  @@unique([code, cityId])
 }
 
 model VerificationToken {
