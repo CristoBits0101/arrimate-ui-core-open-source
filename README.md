@@ -12,7 +12,7 @@
   ## Branding
     - ✅      **Reusable App Logo** ➜ next/image
   ## Configuration
-    - ✅         **Settings Panel** ➜ Change language component + Change theme component + Sign Out component
+    - ✅         **Settings Panel** ➜ Language/Theme Switcher Components + Sign Out Button + 
   ## Data
     - ✅        **Data Validation** ➜ Zod
     - ✅    **Database Management** ➜ Prisma
