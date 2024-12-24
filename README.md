@@ -60,6 +60,8 @@
   ## Bcryptjs
     - 📦       **Encrypt Password** ➜ `npm i bcryptjs`
     - 📦         **Bcryptjs Types** ➜ `npm install --save-dev @types/bcryptjs`
+  ## Google
+    - 📦            **Google Maps** ➜ `npm i @googlemaps/google-maps-services-js`
   ## Prisma
     - 📦             **Prisma CLI** ➜ `npm install prisma --save-dev`
     - 📦         **Prisma Queries** ➜ `npm install @prisma/client`
