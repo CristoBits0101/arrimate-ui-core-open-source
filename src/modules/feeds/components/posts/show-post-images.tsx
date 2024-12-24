@@ -28,8 +28,7 @@ export default function ShowPostImages() {
     return (
       <div className='w-full h-full flex justify-center items-center'>
         <h2 className='text-center text-gray-500'>
-          ⚠️ Vaya, no hay fotos disponibles. 😓 Intenta recargar o explorar con
-          otro hashtag.
+          ⚠️ Vaya, no hay fotos disponibles.
         </h2>
       </div>
     )
