@@ -63,14 +63,13 @@ export default function ProfileForm() {
   // Fetch predictions useEffect
   useEffect(() => {
     const fetchPredictions = async () => {
-      const staticInput = 'New York'
-      console.log('Fetching predictions for:', staticInput)
+      const staticSearch = 'New York'
       try {
-        const results = await autocomplete(staticInput)
+        const results = await autocomplete(staticSearch)
         setPredictions(results)
         console.log('Fetched predictions:', results)
       } catch (error) {
-        console.error('Error fetching predictions:', error)
+        console.error('Error fetching predictions: ', error)
       }
     }
     fetchPredictions()

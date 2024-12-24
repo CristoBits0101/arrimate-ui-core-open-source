@@ -1,3 +1,5 @@
+'use server'
+
 // googlemaps/google-maps-services-js
 import { Client } from '@googlemaps/google-maps-services-js'
 
@@ -10,7 +12,7 @@ const autocomplete = async (input: string) => {
     const response = await client.placeAutocomplete({
       params: {
         input,
-        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!
+        key: process.env.GOOGLE_MAPS_API_KEY!
       },
       timeout: 1000
     })
