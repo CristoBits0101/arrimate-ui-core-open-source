@@ -60,12 +60,13 @@ export default function ProfileForm() {
     useProfileForm()
   // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
+  // Value predictions
+  const [value, setValue] = useState<string>('')
   // Fetch predictions useEffect
   useEffect(() => {
     const fetchPredictions = async () => {
-      const staticSearch = 'New York'
       try {
-        const results = await autocomplete(staticSearch)
+        const results = await autocomplete(value)
         setPredictions(results)
         console.log('Fetched predictions:', results)
       } catch (error) {
@@ -73,7 +74,7 @@ export default function ProfileForm() {
       }
     }
     fetchPredictions()
-  }, [])
+  }, [value])
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -99,7 +100,7 @@ export default function ProfileForm() {
               </ProfileFormFieldsetCols4>
               {/* Location */}
               <ProfileFormFieldsetCols4 legend={f('location')}>
-                <CountryInput name='country' isPending={isPending} />
+                <CountryInput setValue={setValue} name='country' isPending={isPending} />
                 <ZipCodeInput name='zipCode' isPending={isPending} />
                 <CityInput name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />

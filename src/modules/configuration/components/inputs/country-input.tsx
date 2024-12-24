@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react'
 interface InputProps {
   name: string
   isPending: boolean
+  setValue(value: string): void
 }
 
 const CountryInput = ({ name, isPending }: InputProps) => {
