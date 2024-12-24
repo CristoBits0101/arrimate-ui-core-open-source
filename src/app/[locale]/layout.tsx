@@ -2,7 +2,7 @@
 import { PostProvider  } from '@/modules/feeds/contexts/PostContext'
 
 // fonts
-import { standard } from '@/lib/fonts'
+import { figtree } from '@/lib/fonts'
 
 // next
 import type { Metadata } from 'next'
@@ -40,7 +40,7 @@ export default async function LocaleLayout({
     <html lang={locale} data-mode=''>
       {/* Body */}
       <body
-        className={`${standard.className} grid sm:place-content-center sm:grid-cols-[100%] md:grid-cols-[20rem_1fr_20rem] min-h-screen max-h-fit h-auto min-w-80 w-full bg-[#ffffff] dark:bg-[#1B1A1F] text-[#1d0f0f] dark:text-[#ececed] text-base`}
+        className={`${figtree.className} grid sm:place-content-center sm:grid-cols-[100%] md:grid-cols-[20rem_1fr_20rem] min-h-screen max-h-fit h-auto min-w-80 w-full bg-[#ffffff] dark:bg-[#1B1A1F] text-[#1d0f0f] dark:text-[#ececed] text-base`}
       >
         {/* Providers */}
         <SessionProvider>

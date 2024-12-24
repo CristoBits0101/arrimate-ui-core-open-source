@@ -1,12 +1,10 @@
 import ArrimateImagesCard from '@/modules/feeds/components/cards/arrimate-images-card'
 import Image from 'next/image'
+import NoContent from '@/modules/navigation/components/notification/no-content'
 import PostButton from '@/modules/feeds/components/buttons/post-button'
 import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
 import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
-
-// GIF
-import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
 
 // Styles
 import '@/modules/e-commerce/styles/show-products.css'
@@ -36,20 +34,7 @@ export default function ShowPostImages() {
   }
 
   // Show no photos available message if photos array is empty
-  if (!photos || photos.length === 0) {
-    return (
-      <div className='w-full h-full grid place-content-center text-center gap-8'>
-        <h2 className='text-5xl font-medium shakeFix'>{t('noStories')}</h2>
-        <Image
-          src={noProductsAvailable}
-          alt='No images available'
-          width={400}
-          height={400}
-          className='m-auto drop-shadow-sm aspect-square object-contain'
-        />
-      </div>
-    )
-  }
+  if (!photos || photos.length === 0) return <NoContent text={t('noStories')} />
 
   // Render photos if available
   return (

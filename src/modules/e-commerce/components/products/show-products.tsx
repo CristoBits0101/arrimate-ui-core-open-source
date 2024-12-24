@@ -1,22 +1,19 @@
 'use client'
 
-// GIF
-import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
-
 // next/image
 import Image from 'next/image'
 
 // next-intl
 import { useTranslations } from 'next-intl'
 
+// Notifications
+import NoContent from '@/modules/navigation/components/notification/no-content'
+
 // react
 import { useEffect, useState } from 'react'
 
 // Spinner
 import { PuffLoader } from 'react-spinners'
-
-// Styles
-import '@/modules/e-commerce/styles/show-products.css'
 
 // Product type
 interface Product {
@@ -56,7 +53,6 @@ export default function ShowProducts() {
         // Check API key
         if (!process.env.AMAZON_CLIENT_SECRET)
           throw new Error('Secret key not obtained!')
-
         // Make query
         const response = await fetch(
           'https://real-time-amazon-data.p.rapidapi.com/seller-products?seller_id=A02211013Q5HP3OMSZC7W&country=US&page=1&sort_by=RELEVANCE',
@@ -68,18 +64,14 @@ export default function ShowProducts() {
             }
           }
         )
-
-        if (!response.ok) {
+        // Check if response is successful
+        if (!response.ok)
           throw new Error(`HTTP error! Status: ${response.status}`)
-        }
-
+        // Parse JSON response and set products
         const data = await response.json()
-
         // Verify data structure in the response
-        if (!data.data || !Array.isArray(data.data.seller_products)) {
+        if (!data.data || !Array.isArray(data.data.seller_products))
           throw new Error('Invalid API response structure')
-        }
-
         setProducts(data.data.seller_products)
       } catch (error) {
         console.error('Error fetching products:', error)
@@ -101,20 +93,7 @@ export default function ShowProducts() {
       </div>
     )
 
-  if (hasError || !products.length) {
-    return (
-      <div className='w-full h-full grid place-content-center text-center gap-8'>
-        <h2 className='text-5xl font-medium shakeFix'>{t('noProducts')}</h2>
-        <Image
-          src={noProductsAvailable}
-          alt='No products available'
-          width={400}
-          height={400}
-          className='m-auto drop-shadow-sm aspect-square object-contain'
-        />
-      </div>
-    )
-  }
+  if (hasError || !products.length) return <NoContent text={t('noProducts')} />
 
   return (
     <ul className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8'>
