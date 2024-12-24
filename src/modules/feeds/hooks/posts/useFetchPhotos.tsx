@@ -38,12 +38,10 @@ export const useFetchPhotos = ({
             setPrevQuery(query)
           } else {
             console.error('Error fetching photos: ', response.error)
-            setError('Error fetching photos: ' + response.error)
           }
         })
         .catch((error) => {
           console.error('Error fetching photos: ', error)
-          setError('Error fetching photos: ' + error.message)
         })
         .finally(() => {
           setLoading(false)
