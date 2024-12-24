@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 import {
   FormLabel,
@@ -23,6 +23,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
   const [userGender, setUserGender] = useState<string | undefined>(undefined)
   const [genders, setGenders] = useState<{ id: string; name: string }[]>([])
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   const { control } = useFormContext()
 
@@ -44,6 +45,26 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
     fetchGenders()
   }, [])
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsDropdownOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isDropdownOpen])
+
   const capitalizeFirstWord = (text: string): string => {
     const lowerCasedText = text.toLowerCase()
     return lowerCasedText.charAt(0).toUpperCase() + lowerCasedText.slice(1)
@@ -59,7 +80,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
             {t('inputs.gender')}
           </FormLabel>
           <FormControl>
-            <div className='relative w-full'>
+            <div className='relative w-full' ref={dropdownRef}>
               <button
                 type='button'
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
