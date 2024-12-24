@@ -11,8 +11,9 @@
     - 🚧  **Two-Factor Auth (2FA)** ➜ Auth.js + Prisma + UUID + Neon + OTP Library + Shadcn/UI
   ## Branding
     - ✅      **Reusable App Logo** ➜ next/image
-  ## Configuration
-    - ✅         **Settings Panel** ➜ Language/Theme Switcher Components + Sign Out Button + 
+  ## Configuration 
+    - ✅         **Settings Panel** ➜ Components + 
+    - ✅         **Settings Page**  ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
   ## Data
     - ✅        **Data Validation** ➜ Zod
     - ✅    **Database Management** ➜ Prisma
