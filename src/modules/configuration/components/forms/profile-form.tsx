@@ -21,6 +21,7 @@ import { FormProvider } from 'react-hook-form'
 
 // Google
 import autocomplete from '@/modules/configuration/lib/google-maps'
+import { PlaceAutocompleteResult } from '@googlemaps/google-maps-services-js'
 
 // Inputs
 import NameInput from '@/modules/configuration/components/inputs/name-input'
@@ -44,23 +45,28 @@ import PortfolioInput from '@/modules/configuration/components/inputs/portfolio-
 // Intl
 import { useTranslations } from 'next-intl'
 
+// React
+import { useEffect, useState } from 'react'
+
 // Shadcn
 import { Form } from '@/modules/ui/form'
-import { useEffect } from 'react'
 
 export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   const { form, error, success, isPending, hydrated, onSubmit } =
     useProfileForm()
+  const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
+  const [input, setInput] = useState('')
 
   useEffect(() => {
     const fetchPredictions = async () => {
-      const predictions = await autocomplete('Spain')
-      if (predictions) console.log(predictions)
+      const predictions = await autocomplete(input)
+      if (predictions) setPredictions(predictions ?? [])
     }
     fetchPredictions()
-  }, [])
+    alert(predictions)
+  }, [input, predictions])
 
   return hydrated ? (
     <CardWrapper>
@@ -87,10 +93,30 @@ export default function ProfileForm() {
               </ProfileFormFieldsetCols4>
               {/* Location */}
               <ProfileFormFieldsetCols4 legend={f('location')}>
-                <CountryInput name='country' isPending={isPending} />
-                <ZipCodeInput name='zipCode' isPending={isPending} />
-                <CityInput name='city' isPending={isPending} />
-                <AddressInput name='address' isPending={isPending} />
+                <CountryInput
+                  value='input'
+                  onValueChange={setInput}
+                  name='country'
+                  isPending={isPending}
+                />
+                <ZipCodeInput
+                  value='input'
+                  onValueChange={setInput}
+                  name='zipCode'
+                  isPending={isPending}
+                />
+                <CityInput
+                  value='input'
+                  onValueChange={setInput}
+                  name='city'
+                  isPending={isPending}
+                />
+                <AddressInput
+                  value='input'
+                  onValueChange={setInput}
+                  name='address'
+                  isPending={isPending}
+                />
               </ProfileFormFieldsetCols4>
               {/* Vocation */}
               <ProfileFormFieldsetCols4 legend={f('vocation')}>
