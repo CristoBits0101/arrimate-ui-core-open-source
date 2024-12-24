@@ -13,7 +13,7 @@
     - ✅      **Reusable App Logo** ➜ next/image
   ## Configuration 
     - ✅         **Settings Panel** ➜ Components + Buttons
-    - ✅         **Settings Page**  ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
+    - ✅         **Settings Page**  ➜ Google Cloud + Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
   ## Data
     - ✅        **Data Validation** ➜ Zod
     - ✅    **Database Management** ➜ Prisma
