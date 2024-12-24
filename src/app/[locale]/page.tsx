@@ -17,7 +17,7 @@ export default function StoriesPage() {
       {/* Header layout */}
       <Header />
       {/* Stories page content */}
-      <main className='hidden md:flex min-w-[46rem] h-fit col-span-1 flex-col items-center gap-16 dark:bg-[#26272C]'>
+      <main className='hidden md:flex min-w-[46rem] min-h-screen max-h-fit h-auto col-span-1 flex-col items-center gap-16 dark:bg-[#26272C]'>
         <ShowPostStories />
         <ShowPostImages />
       </main>

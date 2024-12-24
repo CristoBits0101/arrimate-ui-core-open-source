@@ -27,7 +27,7 @@ export default function ShowPostImages() {
   if (!photos || photos.length === 0) {
     return (
       <div className='w-full h-full flex justify-center items-center'>
-        <h2 className='text-center text-gray-500'>
+        <h2 className='text-center text-2xl text-gray-500'>
           ⚠️ Vaya, no hay fotos disponibles.
         </h2>
       </div>
