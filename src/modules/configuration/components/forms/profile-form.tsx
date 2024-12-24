@@ -59,8 +59,8 @@ export default function ProfileForm() {
               <ProfileFormFieldsetCols4 legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
                 <NicknameInput name='nickname' isPending={isPending} />
-                <BirthdateInput name='birthdate' isPending={isPending} />
                 <GenderInput name='gender' isPending={isPending} />
+                <BirthdateInput name='birthdate' isPending={isPending} />
               </ProfileFormFieldsetCols4>
               {/* Credentials */}
               <ProfileFormFieldsetCols4 legend={f('credentials')}>
