@@ -36,6 +36,7 @@ import CityInput from '@/modules/configuration/components/inputs/city-input'
 import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
 import GenderInput from '@/modules/configuration/components/inputs/gender-input'
 import AddressInput from '@/modules/configuration/components/inputs/address-input'
+import PortfolioInput from '@/modules/configuration/components/inputs/portfolio-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -83,6 +84,7 @@ export default function ProfileForm() {
                 <OccupationInput name='profession' isPending={isPending} />
                 <InterestsInput name='interests' isPending={isPending} />
                 <SloganInput name='slogan' isPending={isPending} />
+                <PortfolioInput name='portfolio' isPending={isPending} />
               </ProfileFormFieldsetCols4>
             </div>
             <FormError message={error} />
