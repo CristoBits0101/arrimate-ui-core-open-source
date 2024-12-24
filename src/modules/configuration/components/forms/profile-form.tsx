@@ -68,7 +68,7 @@ export default function ProfileForm() {
       try {
         const results = await autocomplete(staticInput)
         setPredictions(results)
-        console.log('Fetched predictions:', results) // Mostrar resultados en consola
+        console.log('Fetched predictions:', results)
       } catch (error) {
         console.error('Error fetching predictions:', error)
       }
