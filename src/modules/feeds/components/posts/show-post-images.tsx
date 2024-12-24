@@ -5,7 +5,19 @@ import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
 import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
+// GIF
+import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
+
+// Styles
+import '@/modules/e-commerce/styles/show-products.css'
+
+// Translations
+import { useTranslations } from 'next-intl'
+
 export default function ShowPostImages() {
+  // Translations
+  const t = useTranslations('Feeds')
+
   // Query images
   const { photos, loading } = useFetchPhotos({
     query: 'couple',
@@ -26,10 +38,15 @@ export default function ShowPostImages() {
   // Show no photos available message if photos array is empty
   if (!photos || photos.length === 0) {
     return (
-      <div className='w-full h-full flex justify-center items-center'>
-        <h2 className='text-center text-2xl text-gray-500'>
-          ⚠️ Vaya, no hay fotos disponibles.
-        </h2>
+      <div className='w-full h-full grid place-content-center text-center gap-8'>
+        <h2 className='text-5xl font-medium shakeFix'>{t('noStories')}</h2>
+        <Image
+          src={noProductsAvailable}
+          alt='No images available'
+          width={400}
+          height={400}
+          className='m-auto drop-shadow-sm aspect-square object-contain'
+        />
       </div>
     )
   }

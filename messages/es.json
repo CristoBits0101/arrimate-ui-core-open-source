@@ -59,6 +59,9 @@
   "ECommerce": {
     "noProducts": "¿No hay productos?"
   },
+  "Feeds": {
+    "noStories": "¿No hay historias?"
+  },
   "FeedForms": {
     "audios": "Crear un nuevo audio",
     "events": "Crear un nuevo evento",

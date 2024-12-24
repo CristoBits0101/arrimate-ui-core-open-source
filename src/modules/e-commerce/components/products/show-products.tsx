@@ -75,7 +75,7 @@ export default function ShowProducts() {
 
         const data = await response.json()
 
-        // Verifica la estructura de la respuesta
+        // Verify data structure in the response
         if (!data.data || !Array.isArray(data.data.seller_products)) {
           throw new Error('Invalid API response structure')
         }
