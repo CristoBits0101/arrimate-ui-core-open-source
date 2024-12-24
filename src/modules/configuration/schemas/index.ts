@@ -45,7 +45,7 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
           return birthDate < today
         },
         {
-          message: t('futureBirthdate')
+          message: t('invalidBirthdate')
         }
       ),
     interests: z.string().optional(),
