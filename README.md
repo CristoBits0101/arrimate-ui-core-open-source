@@ -12,7 +12,7 @@
   ## Branding
     - ✅      **Reusable App Logo** ➜ next/image
   ## Configuration 
-    - ✅         **Settings Panel** ➜ Components + 
+    - ✅         **Settings Panel** ➜ Components + Buttons
     - ✅         **Settings Page**  ➜ Auth.js + Prisma + Zod + bcrypt/bcryptjs + React Hook Form + Shadcn/UI
   ## Data
     - ✅        **Data Validation** ➜ Zod
