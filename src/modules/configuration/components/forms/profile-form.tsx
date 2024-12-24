@@ -62,11 +62,10 @@ export default function ProfileForm() {
   useEffect(() => {
     const fetchPredictions = async () => {
       const predictions = await autocomplete(input)
-      if (predictions) setPredictions(predictions ?? [])
+      setPredictions(predictions ?? [])
     }
     fetchPredictions()
-    alert(predictions)
-  }, [input, predictions])
+  }, [input])
 
   return hydrated ? (
     <CardWrapper>
@@ -93,30 +92,10 @@ export default function ProfileForm() {
               </ProfileFormFieldsetCols4>
               {/* Location */}
               <ProfileFormFieldsetCols4 legend={f('location')}>
-                <CountryInput
-                  value='input'
-                  onValueChange={setInput}
-                  name='country'
-                  isPending={isPending}
-                />
-                <ZipCodeInput
-                  value='input'
-                  onValueChange={setInput}
-                  name='zipCode'
-                  isPending={isPending}
-                />
-                <CityInput
-                  value='input'
-                  onValueChange={setInput}
-                  name='city'
-                  isPending={isPending}
-                />
-                <AddressInput
-                  value='input'
-                  onValueChange={setInput}
-                  name='address'
-                  isPending={isPending}
-                />
+                <CountryInput name='country' isPending={isPending} />
+                <ZipCodeInput name='zipCode' isPending={isPending} />
+                <CityInput name='city' isPending={isPending} />
+                <AddressInput name='address' isPending={isPending} />
               </ProfileFormFieldsetCols4>
               {/* Vocation */}
               <ProfileFormFieldsetCols4 legend={f('vocation')}>

@@ -1,3 +1,5 @@
+'use client'
+
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 import {
   FormLabel,
@@ -9,31 +11,21 @@ import {
 import { Input } from '@/modules/ui/input'
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 interface InputProps {
   name: string
   isPending: boolean
-  value: string
-  onValueChange: (value: string) => void
-  predictions?: string[]
 }
 
-const CountryInput = ({
-  name,
-  isPending,
-  value,
-  onValueChange,
-  predictions
-}: InputProps) => {
+const CountryInput = ({ name, isPending }: InputProps) => {
   const { session, hydrated } = useUserSession()
+  const [userCountry, setUserCountry] = useState<string | undefined>(undefined)
   const t = useTranslations('Forms')
 
   useEffect(() => {
-    if (hydrated && !value) {
-      onValueChange(session?.user?.country || '')
-    }
-  }, [hydrated, session, value, onValueChange])
+    if (hydrated) setUserCountry(session?.user?.country || '')
+  }, [hydrated, session])
 
   const { control } = useFormContext()
 
@@ -49,26 +41,12 @@ const CountryInput = ({
           <FormControl>
             <Input
               {...field}
-              value={value}
-              onChange={(e) => onValueChange(e.target.value)}
               disabled={isPending}
+              placeholder={userCountry}
               type='text'
               id='country'
               className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
             />
-            {predictions && (
-              <ul className='absolute bg-white shadow-lg z-10 max-h-60 overflow-auto w-full'>
-                {predictions.map((prediction, index) => (
-                  <li
-                    key={index}
-                    className='p-2 hover:bg-gray-200 cursor-pointer'
-                    onClick={() => onValueChange(prediction)}
-                  >
-                    {prediction}
-                  </li>
-                ))}
-              </ul>
-            )}
           </FormControl>
           <FormMessage />
         </FormItem>
