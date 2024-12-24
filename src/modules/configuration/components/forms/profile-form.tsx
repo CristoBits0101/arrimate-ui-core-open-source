@@ -52,21 +52,29 @@ import { useEffect, useState } from 'react'
 import { Form } from '@/modules/ui/form'
 
 export default function ProfileForm() {
+  // Translations
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
+  // Custom hook
   const { form, error, success, isPending, hydrated, onSubmit } =
     useProfileForm()
+  // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
-  const [input, setInput] = useState('')
-
+  // Fetch predictions useEffect
   useEffect(() => {
     const fetchPredictions = async () => {
-      const predictions = await autocomplete(input)
-      setPredictions(predictions ?? [])
+      const staticInput = 'New York'
+      console.log('Fetching predictions for:', staticInput)
+      try {
+        const results = await autocomplete(staticInput)
+        setPredictions(results)
+        console.log('Fetched predictions:', results) // Mostrar resultados en consola
+      } catch (error) {
+        console.error('Error fetching predictions:', error)
+      }
     }
     fetchPredictions()
-  }, [input])
-
+  }, [])
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -97,6 +105,15 @@ export default function ProfileForm() {
                 <CityInput name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />
               </ProfileFormFieldsetCols4>
+              {/* Mostrar predicciones */}
+              <div>
+                <h3>Predictions</h3>
+                <ul>
+                  {predictions.map((prediction) => (
+                    <li key={prediction.place_id}>{prediction.description}</li>
+                  ))}
+                </ul>
+              </div>
               {/* Vocation */}
               <ProfileFormFieldsetCols4 legend={f('vocation')}>
                 <OccupationInput name='profession' isPending={isPending} />

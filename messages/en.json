@@ -33,6 +33,7 @@
   "AuthSchemas": {
     "emptyEmail": "Email is required.",
     "emptyName": "Name is required.",
+    "invalidBirthdate": "Invalid date.",
     "invalidEmail": "Invalid email address.",
     "invalidPhoneNumber": "Invalid number.",
     "invalidPhonePrefix": "Invalid prefix.",

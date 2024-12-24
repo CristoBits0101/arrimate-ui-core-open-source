@@ -9,18 +9,20 @@ const autocomplete = async (input: string) => {
   try {
     const response = await client.placeAutocomplete({
       params: {
-        // Types restricts the autocomplete suggestions to places
         input,
-        // ! -> Google Maps api key always exists
-        key: process.env.GOOGLE_MAPS_API_KEY!
-      }
+        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!
+      },
+      timeout: 1000
     })
     // Return the autocomplete predictions
-    if (response) return response.data.predictions
+    if (response.data && response.data.predictions) 
+      return response.data.predictions
+    console.warn('No predictions found for input: ', input)
+    return []
   } catch (err) {
     // Log any error that occurs during the autocomplete request
     console.error('Error performing autocomplete request: ', err)
-    return null
+    return []
   }
 }
 
