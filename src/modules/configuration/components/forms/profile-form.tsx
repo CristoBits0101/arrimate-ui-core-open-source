@@ -19,6 +19,9 @@ import ProfileFormFieldsetCols4 from '@/modules/configuration/components/fieldse
 // Forms
 import { FormProvider } from 'react-hook-form'
 
+// Google
+import autocomplete from '@/modules/configuration/lib/google-maps'
+
 // Inputs
 import NameInput from '@/modules/configuration/components/inputs/name-input'
 import PhonePrefixInput from '@/modules/configuration/components/inputs/phone-prefix-input'
@@ -43,12 +46,22 @@ import { useTranslations } from 'next-intl'
 
 // Shadcn
 import { Form } from '@/modules/ui/form'
+import { useEffect } from 'react'
 
 export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   const { form, error, success, isPending, hydrated, onSubmit } =
     useProfileForm()
+
+  useEffect(() => {
+    const fetchPredictions = async () => {
+      const predictions = await autocomplete('Spain')
+      if (predictions) console.log(predictions)
+    }
+    fetchPredictions()
+  }, [])
+
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
