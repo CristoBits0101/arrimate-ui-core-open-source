@@ -105,15 +105,6 @@ export default function ProfileForm() {
                 <CityInput name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />
               </ProfileFormFieldsetCols4>
-              {/* Mostrar predicciones */}
-              <div>
-                <h3>Predictions</h3>
-                <ul>
-                  {predictions.map((prediction) => (
-                    <li key={prediction.place_id}>{prediction.description}</li>
-                  ))}
-                </ul>
-              </div>
               {/* Vocation */}
               <ProfileFormFieldsetCols4 legend={f('vocation')}>
                 <OccupationInput name='profession' isPending={isPending} />
