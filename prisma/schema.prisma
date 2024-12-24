@@ -75,9 +75,39 @@ model User {
   phonePrefix   PhonePrefix? @relation(fields: [phonePrefixId], references: [id])
   genderId      String?
   gender        Genders?     @relation(fields: [genderId], references: [id])
+  birthdate     DateTime?
+  countryId     String?
+  country       Country?     @relation(fields: [countryId], references: [id])
+  cityId        String?
+  city          City?        @relation(fields: [cityId], references: [id])
+  zipCode       String?
+  address       String?
+  occupation    String?
+  interests     String[]
+  slogan        String?
+  portfolioUrl  String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Country {
+  id     String @id @default(cuid())
+  name   String @unique
+  // ISO 3166-1 Alpha-2 code
+  code   String @unique
+  cities City[]
+  users  User[]
+}
+
+model City {
+  id        String  @id @default(cuid())
+  name      String
+  countryId String
+  country   Country @relation(fields: [countryId], references: [id])
+  users     User[]
+
+  @@unique([name, countryId])
 }
 
 model VerificationToken {
