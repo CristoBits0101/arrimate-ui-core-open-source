@@ -1,18 +1,9 @@
 'use client'
 
-// Form
 import { useFormContext } from 'react-hook-form'
-
-// Hooks
-import { useEffect, useState } from 'react'
-
-// Intl
+import { useEffect, useState, useRef } from 'react'
 import { useTranslations } from 'next-intl'
-
-// Session
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
-
-// Shadcn
 import {
   FormLabel,
   FormControl,
@@ -22,20 +13,11 @@ import {
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
 
-// Allow types
 type Prediction = {
   description: string
   place_id: string
 }
 
-/**
- * Allow properties
- * 
- * name field
- * isPending state
- * setValue searched
- * prefictions returned
- */
 interface InputProps {
   name: string
   isPending: boolean
@@ -49,31 +31,45 @@ const CountryInput = ({
   predictions,
   setValue
 }: InputProps) => {
-  // Intl translations
+  const dropdownRef = useRef<HTMLUListElement>(null)
   const t = useTranslations('Forms')
-
-  // Get session and hydrated state
+  const { control } = useFormContext()
   const { session, hydrated } = useUserSession()
+  const [filteredPredictions, setFilteredPredictions] = useState<Prediction[]>(
+    []
+  )
 
-  // State for user's country
-  const [userCountry, setUserCountry] = useState<string | undefined>('')
-
-  const { control, setValue: setFormValue } = useFormContext()
-
-  // Try to get country from session
-  useEffect(() => {
-    if (hydrated) {
-      const country = session?.user?.country || ''
-      setUserCountry(country)
-      setFormValue(name, country)
-    }
-  }, [hydrated, session, setFormValue, name])
-
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
-    setUserCountry(value)
-    setFormValue(name, value)
+  const handleOnChange = (value: string, onChange: (value: string) => void) => {
     setValue(value)
+    onChange(value)
+    const filtered = predictions.filter((prediction) =>
+      prediction.description.toLowerCase().includes(value.toLowerCase())
+    )
+    setFilteredPredictions(filtered)
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setFilteredPredictions([])
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  const handlePredictionClick = (
+    prediction: Prediction,
+    onChange: (value: string) => void
+  ) => {
+    setValue(prediction.description)
+    onChange(prediction.description)
+    setFilteredPredictions([])
   }
 
   return hydrated ? (
@@ -83,30 +79,40 @@ const CountryInput = ({
       render={({ field }) => (
         <FormItem className='relative h-fit'>
           <FormLabel htmlFor='country' className='uppercase text-sm'>
-            {/* Label title */}
             {t('inputs.country')}
           </FormLabel>
           <FormControl>
-            <Input
-              {...field}
-              disabled={isPending}
-              type='search'
-              id='country'
-              placeholder={userCountry && userCountry}
-              value={field.value || ''}
-              onChange={handleOnChange}
-              className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
-            />
+            <div className='relative'>
+              <Input
+                {...field}
+                disabled={isPending}
+                type='search'
+                id='country'
+                placeholder={session?.user?.country || ''}
+                value={field.value || ''}
+                onChange={(e) => handleOnChange(e.target.value, field.onChange)}
+                className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
+              />
+              {filteredPredictions.length > 0 && (
+                <ul
+                  ref={dropdownRef}
+                  className='absolute z-10 bg-white dark:bg-[#26272c] border border-[#EBEAEB] dark:border-[#3b3b40] shadow-md w-full max-h-40 overflow-y-auto border-t-0'
+                >
+                  {filteredPredictions.map((prediction) => (
+                    <li
+                      key={prediction.place_id}
+                      className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none'
+                      onClick={() =>
+                        handlePredictionClick(prediction, field.onChange)
+                      }
+                    >
+                      {prediction.description}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </FormControl>
-          {/* Mostrar predicciones */}
-          <div>
-            <h3>Predictions</h3>
-            <ul>
-              {predictions.map((prediction) => (
-                <li key={prediction.place_id}>{prediction.description}</li>
-              ))}
-            </ul>
-          </div>
           <FormMessage />
         </FormItem>
       )}

@@ -24,23 +24,23 @@ import autocomplete from '@/modules/configuration/lib/google-maps'
 import { PlaceAutocompleteResult } from '@googlemaps/google-maps-services-js'
 
 // Inputs
-import NameInput from '@/modules/configuration/components/inputs/name-input'
-import PhonePrefixInput from '@/modules/configuration/components/inputs/phone-prefix-input'
-import PhoneNumberInput from '@/modules/configuration/components/inputs/phone-number-input'
-import EmailInput from '@/modules/configuration/components/inputs/email-input'
-import PasswordInput from '@/modules/configuration/components/inputs/password-input'
-import NewPasswordInput from '@/modules/configuration/components/inputs/new-password-input'
-import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
-import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
-import OccupationInput from '@/modules/configuration/components/inputs/occupation-input'
-import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-input'
-import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-input'
-import CountryInput from '@/modules/configuration/components/inputs/country-input'
-import CityInput from '@/modules/configuration/components/inputs/city-input'
-import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
-import GenderInput from '@/modules/configuration/components/inputs/gender-input'
 import AddressInput from '@/modules/configuration/components/inputs/address-input'
+import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-input'
+import CityInput from '@/modules/configuration/components/inputs/city-input'
+import CountryInput from '@/modules/configuration/components/inputs/country-input'
+import EmailInput from '@/modules/configuration/components/inputs/email-input'
+import GenderInput from '@/modules/configuration/components/inputs/gender-input'
+import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
+import NameInput from '@/modules/configuration/components/inputs/name-input'
+import NewPasswordInput from '@/modules/configuration/components/inputs/new-password-input'
+import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
+import OccupationInput from '@/modules/configuration/components/inputs/occupation-input'
+import PasswordInput from '@/modules/configuration/components/inputs/password-input'
+import PhoneNumberInput from '@/modules/configuration/components/inputs/phone-number-input'
+import PhonePrefixInput from '@/modules/configuration/components/inputs/phone-prefix-input'
 import PortfolioInput from '@/modules/configuration/components/inputs/portfolio-input'
+import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
+import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -56,8 +56,7 @@ export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   // Custom hook
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
   // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
   // Value predictions
@@ -68,7 +67,6 @@ export default function ProfileForm() {
       try {
         const results = await autocomplete(value)
         setPredictions(results)
-        console.log('Fetched predictions:', results)
       } catch (error) {
         console.error('Error fetching predictions: ', error)
       }

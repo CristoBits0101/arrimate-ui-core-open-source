@@ -1,5 +1,3 @@
-'use client'
-
 import {
   FormControl,
   FormField,
@@ -8,7 +6,7 @@ import {
   FormMessage
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { getPhonePrefixes } from '@/modules/configuration/actions/phone-prefix-action'
 
@@ -22,6 +20,8 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
   const [prefixes, setPrefixes] = useState<string[]>([])
   const [filteredPrefixes, setFilteredPrefixes] = useState<string[]>([])
   const [search, setSearch] = useState<string>('')
+  const [hasSelected, setHasSelected] = useState<boolean>(false) // Estado para controlar si se seleccionó un prefijo
+  const dropdownRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     async function fetchPrefixes() {
@@ -36,7 +36,8 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
   }, [])
 
   useEffect(() => {
-    if (search.trim() === '') {
+    if (search.trim() === '' || hasSelected) {
+      // No filtrar si se seleccionó un prefijo
       setFilteredPrefixes([])
     } else {
       const lowercasedSearch = search.toLowerCase()
@@ -46,7 +47,23 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
         )
       )
     }
-  }, [search, prefixes])
+  }, [search, prefixes, hasSelected])
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setFilteredPrefixes([])
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   return (
     <FormField
@@ -62,6 +79,7 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
                 {...field}
                 value={search}
                 onChange={(e) => {
+                  setHasSelected(false) // Reinicia el estado de selección al cambiar el valor manualmente
                   setSearch(e.target.value)
                   field.onChange(e.target.value)
                 }}
@@ -71,7 +89,10 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
                 className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
               />
               {filteredPrefixes.length > 0 && (
-                <ul className='absolute z-10 bg-white dark:bg-[#26272c] border border-[#EBEAEB] dark:border-[#3b3b40] shadow-md w-full max-h-40 overflow-y-auto border-t-0'>
+                <ul
+                  ref={dropdownRef}
+                  className='absolute z-10 bg-white dark:bg-[#26272c] border border-[#EBEAEB] dark:border-[#3b3b40] shadow-md w-full max-h-40 overflow-y-auto border-t-0'
+                >
                   {filteredPrefixes.map((prefix) => (
                     <li
                       key={prefix}
@@ -79,7 +100,8 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
                       onClick={() => {
                         setSearch(prefix)
                         field.onChange(prefix)
-                        setFilteredPrefixes([])
+                        setFilteredPrefixes([]) // Cerrar dropdown
+                        setHasSelected(true) // Marcar como seleccionado
                       }}
                     >
                       {prefix}
