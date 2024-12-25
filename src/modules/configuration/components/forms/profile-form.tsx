@@ -99,7 +99,7 @@ export default function ProfileForm() {
               {/* Location */}
               <ProfileFormFieldsetCols4 legend={f('location')}>
                 <CountryInput predictions={predictions} setValue={setValue} name='country' isPending={isPending} />
-                <ZipCodeInput name='zipCode' isPending={isPending} />
+                <ZipCodeInput predictions={predictions} setValue={setValue} name='zipCode' isPending={isPending} />
                 <CityInput name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />
               </ProfileFormFieldsetCols4>
