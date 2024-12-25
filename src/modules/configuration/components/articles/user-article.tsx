@@ -30,16 +30,16 @@ const UserArticle = () => {
   if (!hydrated || userImage === null) return null
 
   return (
-    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
+    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr] '>
       {/* Image */}
-      <header className='flex justify-center'>
+      <header className='w-fit h-fit flex items-center justify-center rounded-full bg-transparent p-1 border-4 border-solid border-[#EBEAEB]'>
         <Image
-          className='w-28 h-w-28 object-cover aspect-square rounded-full'
           src={userImage}
           alt='Profile picture'
-          width={80}
-          height={80}
+          width={112}
+          height={112}
           loading='lazy'
+          className='rounded-full aspect-square object-cover'
         />
       </header>
       {/* Information */}
@@ -50,7 +50,8 @@ const UserArticle = () => {
           <span className='font-semibold'>{posts}</span> {t('posts')}
         </p>
         <p>
-          {t('memberSince')}{': '}
+          {t('memberSince')}
+          {': '}
           <span className='font-semibold'>{memberSince}</span>
         </p>
       </section>
