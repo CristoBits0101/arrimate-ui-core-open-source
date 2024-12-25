@@ -40,8 +40,9 @@ const ZipCodeInput = ({
   )
 
   const handleOnChange = (value: string, onChange: (value: string) => void) => {
-    setValue(value)
-    onChange(value)
+    const numericValue = value.replace(/\D/g, '')
+    setValue(numericValue)
+    onChange(numericValue)
     const filtered = predictions.filter((prediction) =>
       prediction.description.toLowerCase().includes(value.toLowerCase())
     )
@@ -67,7 +68,6 @@ const ZipCodeInput = ({
     prediction: Prediction,
     onChange: (value: string) => void
   ) => {
-    // Extrae solo los números de la dirección seleccionada
     const extractedNumbers =
       prediction.description.match(/\d+/g)?.join('') || ''
     setValue(extractedNumbers)
@@ -89,11 +89,13 @@ const ZipCodeInput = ({
               <Input
                 {...field}
                 disabled={isPending}
-                type='search'
+                type='text'
                 id='zipCode'
                 placeholder={session?.user?.zipCode || ''}
                 value={field.value || ''}
                 onChange={(e) => handleOnChange(e.target.value, field.onChange)}
+                pattern='\d*'
+                inputMode='numeric'
                 className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
               />
               {filteredPredictions.length > 0 && (

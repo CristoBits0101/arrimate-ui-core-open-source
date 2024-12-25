@@ -56,7 +56,8 @@ export default function ProfileForm() {
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
   // Custom hook
-  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } =
+    useProfileForm()
   // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
   // Value predictions
@@ -98,8 +99,18 @@ export default function ProfileForm() {
               </ProfileFormFieldsetCols4>
               {/* Location */}
               <ProfileFormFieldsetCols4 legend={f('location')}>
-                <CountryInput predictions={predictions} setValue={setValue} name='country' isPending={isPending} />
-                <ZipCodeInput predictions={predictions} setValue={setValue} name='zipCode' isPending={isPending} />
+                <ZipCodeInput
+                  predictions={predictions}
+                  setValue={setValue}
+                  name='zipCode'
+                  isPending={isPending}
+                />
+                <CountryInput
+                  predictions={predictions}
+                  setValue={setValue}
+                  name='country'
+                  isPending={isPending}
+                />
                 <CityInput name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />
               </ProfileFormFieldsetCols4>
