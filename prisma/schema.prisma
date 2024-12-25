@@ -81,7 +81,7 @@ model User {
   cityId        String?
   city          City?        @relation(fields: [cityId], references: [id])
   zipCodeId     String?
-  zipCode       ZipCode?     @relation(fields: [zipCodeId], references: [id]) // Relación con ZipCode
+  zipCode       ZipCode?     @relation(fields: [zipCodeId], references: [id])
   address       String?
   occupation    String?
   interests     String[]
