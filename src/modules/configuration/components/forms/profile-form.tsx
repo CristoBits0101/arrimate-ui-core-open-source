@@ -55,13 +55,19 @@ export default function ProfileForm() {
   // Translations
   const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
+
   // Custom hook
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
+
   // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
+
+  // Confirmation state
+  const [country, setCountry] = useState<string>('')
+
   // Value predictions
   const [value, setValue] = useState<string>('')
+
   // Fetch predictions useEffect
   useEffect(() => {
     const fetchPredictions = async () => {
@@ -74,6 +80,7 @@ export default function ProfileForm() {
     }
     fetchPredictions()
   }, [value])
+
   return hydrated ? (
     <CardWrapper>
       <FormProvider {...form}>
@@ -104,10 +111,10 @@ export default function ProfileForm() {
                   setValue={setValue}
                   name='zipCode'
                   isPending={isPending}
+                  setCountry={setCountry}
                 />
                 <CountryInput
-                  predictions={predictions}
-                  setValue={setValue}
+                  country={country}
                   name='country'
                   isPending={isPending}
                 />
