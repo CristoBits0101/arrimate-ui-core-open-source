@@ -12,6 +12,9 @@ import { useTranslations } from 'next-intl'
 // React: Hooks from React
 import { useEffect, useState, useTransition } from 'react'
 
+// Session: Custom hook for get user profile
+import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
+
 // Zod: Define data validation rules
 import * as z from 'zod'
 import { FrontendProfileSchema } from '@/modules/configuration/schemas/index'
@@ -37,6 +40,14 @@ export function useProfileForm() {
   // Indicates code execution finished
   const [isPending, startTransition] = useTransition()
 
+  // Get session
+  const [userEmail, setUserEmail] = useState<string | undefined>(undefined)
+  const { session } = useUserSession()
+
+  useEffect(() => {
+    setUserEmail(session?.user?.email || '')
+  }, [session])
+
   // Type form with ProfileSchema
   const form = useForm<z.infer<typeof ProfileSchema>>({
     // Validate before sending
@@ -59,7 +70,7 @@ export function useProfileForm() {
     // Checks backend request status
     startTransition(() => {
       // Send input values
-      profileAction(values)
+      profileAction(values, userEmail)
         // Transaction completed
         .then((data) => {
           if (data?.error) setError(t(data.error))

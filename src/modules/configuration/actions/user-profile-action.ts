@@ -16,7 +16,7 @@ import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 export default async function profileAction(
   values: z.infer<typeof BackendProfileSchema>,
-  userEmail: string
+  userEmail: string | undefined,
 ) {
   // Validate input data using Zod
   const validatedFields = BackendProfileSchema.safeParse(values)
