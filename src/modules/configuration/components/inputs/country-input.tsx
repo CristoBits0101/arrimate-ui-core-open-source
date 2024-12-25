@@ -22,7 +22,7 @@ interface InputProps {
   name: string
   isPending: boolean
   setValue(value: string): void
-  predictions: Prediction[]
+  predictions?: Prediction[]
 }
 
 const CountryInput = ({
@@ -42,10 +42,10 @@ const CountryInput = ({
   const handleOnChange = (value: string, onChange: (value: string) => void) => {
     setValue(value)
     onChange(value)
-    const filtered = predictions.filter((prediction) =>
+    const filtered = predictions?.filter((prediction) =>
       prediction.description.toLowerCase().includes(value.toLowerCase())
     )
-    setFilteredPredictions(filtered)
+    if (filtered) setFilteredPredictions(filtered)
   }
 
   useEffect(() => {

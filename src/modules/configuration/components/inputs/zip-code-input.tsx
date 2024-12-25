@@ -1,5 +1,6 @@
 'use client'
 
+import { Dispatch, SetStateAction } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useEffect, useState, useRef } from 'react'
 import { useTranslations } from 'next-intl'
@@ -23,13 +24,15 @@ interface InputProps {
   isPending: boolean
   predictions: Prediction[]
   setValue(value: string): void
+  setCountry: Dispatch<SetStateAction<string>>
 }
 
 const ZipCodeInput = ({
   name,
   isPending,
   predictions,
-  setValue
+  setValue,
+  setCountry
 }: InputProps) => {
   const dropdownRef = useRef<HTMLUListElement>(null)
   const t = useTranslations('Forms')
@@ -68,10 +71,20 @@ const ZipCodeInput = ({
     prediction: Prediction,
     onChange: (value: string) => void
   ) => {
-    const extractedNumbers =
-      prediction.description.match(/\d+/g)?.join('') || ''
+    // Extracts the numeric values from the prediction's description
+    const extractedNumbers = prediction.description.match(/\d+/g)?.join('') || ''
+
+    // Extracts the last word from the prediction's description
+    const lastWord = prediction.description.trim().split(' ').pop() || ''
+
+    // Sets the numeric value for further processing
     setValue(extractedNumbers)
     onChange(extractedNumbers)
+
+    // Calls setCountry with the last word from the prediction
+    setCountry(lastWord)
+
+    // Clears the filtered predictions to hide the dropdown
     setFilteredPredictions([])
   }
 
