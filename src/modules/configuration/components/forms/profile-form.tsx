@@ -126,7 +126,7 @@ export default function ProfileForm() {
               </ProfileFormFieldsetCols4>
               {/* Vocation */}
               <ProfileFormFieldsetCols4 legend={f('vocation')}>
-                <OccupationInput name='profession' isPending={isPending} />
+                <OccupationInput name='occupation' isPending={isPending} />
                 <InterestsInput name='interests' isPending={isPending} />
                 <SloganInput name='slogan' isPending={isPending} />
                 <PortfolioInput name='portfolio' isPending={isPending} />
