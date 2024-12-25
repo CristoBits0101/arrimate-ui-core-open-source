@@ -113,24 +113,23 @@ const ZipCodeInput = ({
     prediction: Prediction,
     onChange: (value: string) => void
   ) => {
-    // Extract the numeric value from the prediction's description
-    const extractedNumbers =
-      prediction.description.match(/\d+/g)?.join('') || ''
-
-    // Extract the city (text before the last comma and after the first numbers)
-    const cityMatch = prediction.description.match(/^\d+.*?,(.*?),/)
+    // Extract the numeric value from the prediction's description (postal code)
+    const extractedNumbers = prediction.description.match(/^\d+/)?.[0] || ''
+  
+    // Extract the city (text between the postal code and the last comma)
+    const cityMatch = prediction.description.match(/^\d+\s+(.*?)\s*,.*?$/)
     const extractedCity = cityMatch ? cityMatch[1].trim() : ''
-
+  
     // Extract the country (last segment after the last comma)
     const countryMatch = prediction.description.match(/,([^,]+)$/)
     const extractedCountry = countryMatch ? countryMatch[1].trim() : ''
-
+  
     // Set the values accordingly
     setValue(extractedNumbers)
     onChange(extractedNumbers)
     setCity(extractedCity)
     setCountry(extractedCountry)
-
+  
     // Clear the filtered predictions
     setFilteredPredictions([])
   }
