@@ -38,8 +38,11 @@ const UserArticle = () => {
           alt='Profile picture'
           width={112}
           height={112}
-          loading='lazy'
           className='rounded-full aspect-square object-cover'
+          quality={100}
+          placeholder='blur'
+          blurDataURL='data:image/jpeg;base64,...'
+          priority
         />
       </header>
       {/* Information */}
