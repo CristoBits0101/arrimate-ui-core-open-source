@@ -3,6 +3,8 @@
 import { useFormContext } from 'react-hook-form'
 import { useTranslations } from 'next-intl'
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
+import { useState, useEffect } from 'react'
+import { Input } from '@/modules/ui/input'
 import {
   FormLabel,
   FormControl,
@@ -10,19 +12,21 @@ import {
   FormItem,
   FormMessage
 } from '@/modules/ui/form'
-import { Input } from '@/modules/ui/input'
 
 interface InputProps {
   name: string
   isPending: boolean
-  country: string
+  country?: string
 }
 
 const CountryInput = ({ name, isPending, country }: InputProps) => {
   const t = useTranslations('Forms')
   const { control } = useFormContext()
   const { hydrated } = useUserSession()
-
+  const [userCountry, setUserCountry] = useState<string | undefined>(undefined)
+  useEffect(() => {
+    if (hydrated) setUserCountry(country)
+  }, [country, hydrated])
   return hydrated ? (
     <FormField
       control={control}
@@ -38,7 +42,7 @@ const CountryInput = ({ name, isPending, country }: InputProps) => {
               disabled={isPending}
               type='text'
               id='country'
-              placeholder={country || ''}
+              placeholder={userCountry || ''}
               readOnly
               value={field.value || ''}
               onChange={(e) => field.onChange(e.target.value)}

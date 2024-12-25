@@ -1,10 +1,21 @@
 'use client'
 
-import { Dispatch, SetStateAction } from 'react'
+// Form
 import { useFormContext } from 'react-hook-form'
+
+// Hooks
 import { useEffect, useState, useRef } from 'react'
+
+// Intl
 import { useTranslations } from 'next-intl'
+
+// Types
+import { Dispatch, SetStateAction } from 'react'
+
+// Session
 import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
+
+// Shadcn
 import {
   FormLabel,
   FormControl,
@@ -12,19 +23,23 @@ import {
   FormItem,
   FormMessage
 } from '@/modules/ui/form'
+
 import { Input } from '@/modules/ui/input'
 
+// Prediction type
 type Prediction = {
   description: string
   place_id: string
 }
 
+// Props interface
 interface InputProps {
   name: string
   isPending: boolean
   predictions: Prediction[]
   setValue(value: string): void
   setCountry: Dispatch<SetStateAction<string>>
+  setCity: Dispatch<SetStateAction<string>>
 }
 
 const ZipCodeInput = ({
@@ -32,23 +47,50 @@ const ZipCodeInput = ({
   isPending,
   predictions,
   setValue,
-  setCountry
+  setCountry,
+  setCity
 }: InputProps) => {
-  const dropdownRef = useRef<HTMLUListElement>(null)
+  // Getting the translations
   const t = useTranslations('Forms')
+
+  // Creating a reference
+  const dropdownRef = useRef<HTMLUListElement>(null)
   const { control } = useFormContext()
+
+  // Session and hydrated state
   const { session, hydrated } = useUserSession()
+
+  // State for the filtered predictions
   const [filteredPredictions, setFilteredPredictions] = useState<Prediction[]>(
     []
   )
 
+  // Logic for the selected prediction
   const handleOnChange = (value: string, onChange: (value: string) => void) => {
-    const numericValue = value.replace(/\D/g, '')
-    setValue(numericValue)
-    onChange(numericValue)
+    // Allow only numbers and spaces
+    const sanitizedValue = value.replace(/[^\d\s]/g, '')
+
+    // If the values ​​are deleted, the country and city are reset
+    if (sanitizedValue.trim() === '') {
+      setCountry('')
+      setCity('')
+    } else {
+      setCountry('')
+      setCity('')
+    }
+
+    // Update the value and call the onChange function
+    setValue(sanitizedValue)
+    onChange(sanitizedValue)
+
+    // Filter the predictions based on the sanitized value
     const filtered = predictions.filter((prediction) =>
-      prediction.description.toLowerCase().includes(value.toLowerCase())
+      prediction.description
+        .toLowerCase()
+        .includes(sanitizedValue.trim().toLowerCase())
     )
+
+    // Set the filtered predictions
     setFilteredPredictions(filtered)
   }
 
@@ -71,20 +113,25 @@ const ZipCodeInput = ({
     prediction: Prediction,
     onChange: (value: string) => void
   ) => {
-    // Extracts the numeric values from the prediction's description
-    const extractedNumbers = prediction.description.match(/\d+/g)?.join('') || ''
+    // Extract the numeric value from the prediction's description
+    const extractedNumbers =
+      prediction.description.match(/\d+/g)?.join('') || ''
 
-    // Extracts the last word from the prediction's description
-    const lastWord = prediction.description.trim().split(' ').pop() || ''
+    // Extract the city (text before the last comma and after the first numbers)
+    const cityMatch = prediction.description.match(/^\d+.*?,(.*?),/)
+    const extractedCity = cityMatch ? cityMatch[1].trim() : ''
 
-    // Sets the numeric value for further processing
+    // Extract the country (last segment after the last comma)
+    const countryMatch = prediction.description.match(/,([^,]+)$/)
+    const extractedCountry = countryMatch ? countryMatch[1].trim() : ''
+
+    // Set the values accordingly
     setValue(extractedNumbers)
     onChange(extractedNumbers)
+    setCity(extractedCity)
+    setCountry(extractedCountry)
 
-    // Calls setCountry with the last word from the prediction
-    setCountry(lastWord)
-
-    // Clears the filtered predictions to hide the dropdown
+    // Clear the filtered predictions
     setFilteredPredictions([])
   }
 
@@ -112,6 +159,7 @@ const ZipCodeInput = ({
                 className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
               />
               {filteredPredictions.length > 0 && (
+                // Assigning reference
                 <ul
                   ref={dropdownRef}
                   className='absolute z-10 bg-white dark:bg-[#26272c] border border-[#EBEAEB] dark:border-[#3b3b40] shadow-md w-full max-h-40 overflow-y-auto border-t-0'
