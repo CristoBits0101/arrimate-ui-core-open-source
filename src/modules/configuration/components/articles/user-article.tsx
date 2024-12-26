@@ -10,6 +10,7 @@ const defaultUserImage = '/path/to/default/image.jpg'
 const UserArticle = () => {
   const { session, hydrated } = useUserSession()
   const [userImage, setUserImage] = useState<string | null>(null)
+  const [isImageLoaded, setIsImageLoaded] = useState(false)
   const [followers, setFollowers] = useState<number>(0)
   const [following, setFollowing] = useState<number>(0)
   const [posts, setPosts] = useState<number>(0)
@@ -30,19 +31,25 @@ const UserArticle = () => {
   if (!hydrated || userImage === null) return null
 
   return (
-    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr] '>
+    <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
       {/* Image */}
-      <header className='w-fit h-fit flex items-center justify-center rounded-full bg-transparent p-1 border-4 border-solid border-[#EBEAEB]'>
+      <header className='relative w-32 h-32 rounded-full bg-transparent p-2 border-4 border-solid border-[#EBEAEB] overflow-hidden flex items-center justify-center'>
+        {!isImageLoaded && (
+          <div className='absolute w-full h-full bg-[#F4F4F4] m-2 animate-pulse rounded-full'></div>
+        )}
         <Image
           src={userImage}
           alt='Profile picture'
-          width={112}
-          height={112}
-          className='rounded-full aspect-square object-cover'
+          width={228}
+          height={228}
+          className={`rounded-full object-cover transition-opacity duration-300 ${
+            !isImageLoaded ? 'opacity-0' : 'opacity-100'
+          }`}
           quality={100}
           placeholder='blur'
           blurDataURL='data:image/jpeg;base64,...'
           priority
+          onLoadingComplete={() => setIsImageLoaded(true)}
         />
       </header>
       {/* Information */}
