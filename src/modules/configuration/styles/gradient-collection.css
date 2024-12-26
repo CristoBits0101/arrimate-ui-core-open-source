@@ -1,2 +1,47 @@
 .gradient-glass {
+  background-image: radial-gradient(
+      circle at center center,
+      transparent,
+      rgb(255, 255, 255)
+    ),
+    linear-gradient(
+      309deg,
+      rgba(150, 150, 150, 0.04) 0%,
+      rgba(150, 150, 150, 0.04) 50%,
+      rgba(220, 220, 220, 0.04) 50%,
+      rgba(220, 220, 220, 0.04) 100%
+    ),
+    linear-gradient(
+      39deg,
+      rgba(100, 100, 100, 0.04) 0%,
+      rgba(100, 100, 100, 0.04) 50%,
+      rgba(210, 210, 210, 0.04) 50%,
+      rgba(210, 210, 210, 0.04) 100%
+    ),
+    linear-gradient(
+      144deg,
+      rgba(240, 240, 240, 0.04) 0%,
+      rgba(240, 240, 240, 0.04) 50%,
+      rgba(160, 160, 160, 0.04) 50%,
+      rgba(160, 160, 160, 0.04) 100%
+    ),
+    linear-gradient(
+      166deg,
+      rgba(240, 240, 240, 0.04) 0%,
+      rgba(240, 240, 240, 0.04) 50%,
+      rgba(230, 230, 230, 0.04) 50%,
+      rgba(230, 230, 230, 0.04) 100%
+    ),
+    linear-gradient(
+      212deg,
+      rgba(160, 160, 160, 0.04) 0%,
+      rgba(160, 160, 160, 0.04) 50%,
+      rgba(250, 250, 250, 0.04) 50%,
+      rgba(250, 250, 250, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at center center,
+      hsl(107, 19%, 100%),
+      hsl(107, 19%, 100%)
+    );
 }
