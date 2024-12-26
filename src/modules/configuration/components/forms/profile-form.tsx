@@ -57,8 +57,7 @@ export default function ProfileForm() {
   const t = useTranslations('Button')
 
   // Custom hook
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
 
   // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])

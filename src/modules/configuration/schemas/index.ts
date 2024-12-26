@@ -21,24 +21,16 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
       .string()
       .refine(
         (value) => !value || ['Male', 'Female', 'Other'].includes(value),
-        {
-          message: t('invalidGender')
-        }
+        { message: t('invalidGender') }
       )
       .optional(),
     birthdate: z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, { message: t('invalidBirthdate') })
       .optional()
-      .refine(
-        (date) => {
-          if (!date) return true
-          const today = new Date()
-          const birthDate = new Date(date)
-          return birthDate < today
-        },
-        { message: t('birthdateInFuture') }
-      ),
+      .refine((date) => !date || new Date(date) < new Date(), {
+        message: t('birthdateInFuture')
+      }),
     phonePrefix: z
       .string()
       .regex(/^\+\d{1,4}$/, { message: t('invalidPhonePrefix') })
@@ -87,7 +79,7 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
       .string()
       .max(128, { message: t('maxLength') })
       .optional(),
-    profession: z
+    occupation: z
       .string()
       .max(64, { message: t('maxLength') })
       .optional(),

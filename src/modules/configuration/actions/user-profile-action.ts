@@ -16,14 +16,14 @@ import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 export default async function profileAction(
   values: z.infer<typeof BackendProfileSchema>,
-  userEmail: string | undefined,
+  userEmail: string | undefined
 ) {
   // Validate input data using Zod
   const validatedFields = BackendProfileSchema.safeParse(values)
 
   // If validation fails, return an error
   if (!validatedFields.success) return { error: 'invalidData' }
-
+  console.log(validatedFields.data)
   const {
     name,
     email,
@@ -52,7 +52,8 @@ export default async function profileAction(
 
   // Validate password if changing sensitive data
   if (newPassword || email) {
-    if (!user.password) return { error: 'invalidCredentials' }
+    if (!user.password || password === undefined)
+      return { error: 'invalidCredentials' }
     const passwordMatches = await bcrypt.compare(password, user.password)
     if (!passwordMatches) return { error: 'invalidCredentials' }
   }
