@@ -9,6 +9,7 @@ import { Input } from '@/modules/ui/input'
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { getPhonePrefixes } from '@/modules/configuration/actions/phone-prefix-action'
+import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
 
 interface PhonePrefixInputProps {
   name: string
@@ -20,8 +21,14 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
   const [prefixes, setPrefixes] = useState<string[]>([])
   const [filteredPrefixes, setFilteredPrefixes] = useState<string[]>([])
   const [search, setSearch] = useState<string>('')
-  const [hasSelected, setHasSelected] = useState<boolean>(false) // Estado para controlar si se seleccionó un prefijo
+  const [hasSelected, setHasSelected] = useState<boolean>(false)
   const dropdownRef = useRef<HTMLUListElement>(null)
+  const { session, hydrated } = useUserSession()
+  const [userPhonePrefix, setuserPhonePrefix] = useState<string | undefined>('')
+
+  useEffect(() => {
+    if (hydrated) setuserPhonePrefix(session?.user?.prefix || '')
+  }, [hydrated, session, t])
 
   useEffect(() => {
     async function fetchPrefixes() {
@@ -36,10 +43,8 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
   }, [])
 
   useEffect(() => {
-    if (search.trim() === '' || hasSelected) {
-      // No filtrar si se seleccionó un prefijo
-      setFilteredPrefixes([])
-    } else {
+    if (search.trim() === '' || hasSelected) setFilteredPrefixes([])
+    else {
       const lowercasedSearch = search.toLowerCase()
       setFilteredPrefixes(
         prefixes.filter((prefix) =>
@@ -58,7 +63,6 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
         setFilteredPrefixes([])
       }
     }
-
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
@@ -79,10 +83,11 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
                 {...field}
                 value={search}
                 onChange={(e) => {
-                  setHasSelected(false) // Reinicia el estado de selección al cambiar el valor manualmente
+                  setHasSelected(false)
                   setSearch(e.target.value)
                   field.onChange(e.target.value)
                 }}
+                placeholder={userPhonePrefix || ''}
                 disabled={isPending}
                 type='text'
                 id='phone-prefix'
@@ -100,8 +105,8 @@ const PhonePrefixInput = ({ name, isPending }: PhonePrefixInputProps) => {
                       onClick={() => {
                         setSearch(prefix)
                         field.onChange(prefix)
-                        setFilteredPrefixes([]) // Cerrar dropdown
-                        setHasSelected(true) // Marcar como seleccionado
+                        setFilteredPrefixes([])
+                        setHasSelected(true)
                       }}
                     >
                       {prefix}

@@ -10,6 +10,7 @@ import {
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
 import { useFormContext } from 'react-hook-form'
+import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
 interface InputProps {
@@ -21,7 +22,17 @@ interface InputProps {
 const CityInput = ({ name, isPending, city }: InputProps) => {
   const t = useTranslations('Forms')
   const { control } = useFormContext()
-  const { hydrated } = useUserSession()
+  const { session, hydrated } = useUserSession()
+  const [userCity, setUserCity] = useState<string | undefined>('')
+
+  useEffect(() => {
+    if (hydrated) setUserCity(session?.user?.city || '')
+  }, [hydrated, session])
+
+  useEffect(() => {
+    if (city) setUserCity(city)
+    setUserCity(city)
+  }, [city])
 
   return hydrated ? (
     <FormField
@@ -36,7 +47,7 @@ const CityInput = ({ name, isPending, city }: InputProps) => {
             <Input
               {...field}
               disabled={isPending}
-              placeholder={city || ''}
+              placeholder={userCity || ''}
               type='text'
               id='city'
               value={field.value || ''}

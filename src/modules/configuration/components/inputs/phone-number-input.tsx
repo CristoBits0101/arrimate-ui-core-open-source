@@ -9,6 +9,8 @@ import {
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
 import { useTranslations } from 'next-intl'
+import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
+import { useState, useEffect } from 'react'
 
 interface PhoneNumberInputProps {
   name: string
@@ -17,7 +19,11 @@ interface PhoneNumberInputProps {
 
 const PhoneNumberInput = ({ name, isPending }: PhoneNumberInputProps) => {
   const t = useTranslations('Forms')
-
+  const { session, hydrated } = useUserSession()
+  const [userPhoneNumber, setuserPhoneNumber] = useState<string | undefined>('')
+  useEffect(() => {
+    if (hydrated) setuserPhoneNumber(session?.user?.number || '')
+  }, [hydrated, session, t])
   return (
     <FormField
       name={name}
@@ -32,6 +38,7 @@ const PhoneNumberInput = ({ name, isPending }: PhoneNumberInputProps) => {
               disabled={isPending}
               id='phone-number'
               type='tel'
+              placeholder={userPhoneNumber || ''}
               className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#D4DBE2] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'
             />
           </FormControl>

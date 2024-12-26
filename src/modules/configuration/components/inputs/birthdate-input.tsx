@@ -25,9 +25,7 @@ export default function BirthdateInput({
 }: BirthdateInputProps) {
   const t = useTranslations('Forms')
   const { session, hydrated } = useUserSession()
-  const [userBirthdate, setUserBirthdate] = useState<string | undefined>(
-    undefined
-  )
+  const [userBirthdate, setUserBirthdate] = useState<string | undefined>('')
 
   useEffect(() => {
     if (hydrated) setUserBirthdate(session?.user?.birthdate || '')

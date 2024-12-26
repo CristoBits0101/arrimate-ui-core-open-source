@@ -55,11 +55,9 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
   }
 
   useEffect(() => {
-    if (isDropdownOpen) {
+    if (isDropdownOpen)
       document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
+    else document.removeEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }

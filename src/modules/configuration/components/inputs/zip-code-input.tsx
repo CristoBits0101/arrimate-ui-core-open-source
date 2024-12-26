@@ -60,6 +60,12 @@ const ZipCodeInput = ({
   // Session and hydrated state
   const { session, hydrated } = useUserSession()
 
+  const [zipCode, setZipCode] = useState<string | undefined>('')
+
+  useEffect(() => {
+    if (hydrated) setZipCode(session?.user?.zipCode || '')
+  }, [hydrated, session])
+
   // State for the filtered predictions
   const [filteredPredictions, setFilteredPredictions] = useState<Prediction[]>(
     []
@@ -150,7 +156,7 @@ const ZipCodeInput = ({
                 disabled={isPending}
                 type='text'
                 id='zipCode'
-                placeholder={session?.user?.zipCode || ''}
+                placeholder={zipCode || ''}
                 value={field.value || ''}
                 onChange={(e) => handleOnChange(e.target.value, field.onChange)}
                 pattern='\d*'

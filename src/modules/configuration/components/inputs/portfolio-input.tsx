@@ -20,9 +20,7 @@ interface InputProps {
 
 const PortfolioInput = ({ name, isPending }: InputProps) => {
   const { session, hydrated } = useUserSession()
-  const [userPortfolio, setUserPortfolio] = useState<string | undefined>(
-    undefined
-  )
+  const [userPortfolio, setUserPortfolio] = useState<string | undefined>('')
   const t = useTranslations('Forms')
 
   useEffect(() => {

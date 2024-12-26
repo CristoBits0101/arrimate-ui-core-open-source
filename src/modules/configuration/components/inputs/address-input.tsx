@@ -20,17 +20,11 @@ interface AddressInputProps {
 
 const AddressInput = ({ name, isPending }: AddressInputProps) => {
   const { session, hydrated } = useUserSession()
-  const [userAddress, setUserAddress] = useState({
-    address: ''
-  })
+  const [userAddress, setUserAddress] = useState('')
   const t = useTranslations('Forms')
 
   useEffect(() => {
-    if (hydrated) {
-      setUserAddress({
-        address: session?.user?.address?.address || ''
-      })
-    }
+    if (hydrated) setUserAddress(session?.user?.address || '')
   }, [hydrated, session])
 
   const { control } = useFormContext()
@@ -48,7 +42,7 @@ const AddressInput = ({ name, isPending }: AddressInputProps) => {
             <Input
               {...field}
               disabled={isPending}
-              placeholder={userAddress.address}
+              placeholder={userAddress}
               type='text'
               id='address'
               className='text-sm rounded-none border-[0.094rem] border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#EBEBEC] placeholder:text-[#453C41] dark:placeholder:text-[#848489]'

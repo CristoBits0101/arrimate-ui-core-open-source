@@ -22,11 +22,17 @@ interface InputProps {
 const CountryInput = ({ name, isPending, country }: InputProps) => {
   const t = useTranslations('Forms')
   const { control } = useFormContext()
-  const { hydrated } = useUserSession()
+  const { hydrated, session } = useUserSession()
   const [userCountry, setUserCountry] = useState<string | undefined>(undefined)
+
   useEffect(() => {
-    if (hydrated) setUserCountry(country)
-  }, [country, hydrated])
+    if (hydrated) setUserCountry(session?.user?.country || '')
+  }, [hydrated, session])
+
+  useEffect(() => {
+    if (country) setUserCountry(country)
+  }, [country])
+
   return hydrated ? (
     <FormField
       control={control}
