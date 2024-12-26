@@ -11,21 +11,28 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
     name: z
       .string()
       .max(64, { message: t('maxLength') })
-      .min(1, { message: t('emptyName') }),
+      .min(1, { message: t('emptyName') })
+      .optional(),
     nickname: z
       .string()
       .max(64, { message: t('maxLength') })
       .optional(),
     gender: z
       .string()
-      .refine((value) => ['Male', 'Female', 'Other'].includes(value), {
-        message: t('invalidGender')
-      }),
+      .refine(
+        (value) => !value || ['Male', 'Female', 'Other'].includes(value),
+        {
+          message: t('invalidGender')
+        }
+      )
+      .optional(),
     birthdate: z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, { message: t('invalidBirthdate') })
+      .optional()
       .refine(
         (date) => {
+          if (!date) return true
           const today = new Date()
           const birthDate = new Date(date)
           return birthDate < today
@@ -35,15 +42,17 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
     phonePrefix: z
       .string()
       .regex(/^\+\d{1,4}$/, { message: t('invalidPhonePrefix') })
-      .max(64, { message: t('maxLength') }),
+      .max(64, { message: t('maxLength') })
+      .optional(),
     phoneNumber: z
       .string()
-      .regex(/^\d{6,15}$/, { message: t('invalidPhoneNumber') }),
+      .regex(/^\d{6,15}$/, { message: t('invalidPhoneNumber') })
+      .optional(),
     email: z
       .string()
       .max(64, { message: t('maxLength') })
-      .min(1, { message: t('emptyEmail') })
-      .email({ message: t('invalidEmail') }),
+      .email({ message: t('invalidEmail') })
+      .optional(),
     password: z
       .string()
       .min(12, { message: t('minPassword') })
@@ -51,7 +60,8 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
       .regex(/[A-Z]/, { message: t('uppercaseRequired') })
       .regex(/[a-z]/, { message: t('lowercaseRequired') })
       .regex(/\d/, { message: t('numberRequired') })
-      .regex(/[^a-zA-Z0-9]/, { message: t('specialCharacterRequired') }),
+      .regex(/[^a-zA-Z0-9]/, { message: t('specialCharacterRequired') })
+      .optional(),
     newPassword: z
       .string()
       .min(12, { message: t('minPassword') })
@@ -84,7 +94,7 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
     interests: z
       .array(z.string().max(64))
       .optional()
-      .refine((interests) => interests && interests.length <= 10, {
+      .refine((interests) => !interests || interests.length <= 10, {
         message: t('tooManyInterests')
       }),
     slogan: z
@@ -100,15 +110,18 @@ export const FrontendProfileSchema = (t: (key: string) => string) =>
 
 // Backend validations
 export const BackendProfileSchema = z.object({
-  name: z.string().min(1).max(64),
+  name: z.string().min(1).max(64).optional(),
   nickname: z.string().max(64).optional(),
   gender: z
     .string()
-    .refine((value) => ['Male', 'Female', 'Other'].includes(value)),
+    .refine((value) => !value || ['Male', 'Female', 'Other'].includes(value))
+    .optional(),
   birthdate: z
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/)
+    .optional()
     .refine((date) => {
+      if (!date) return true
       const today = new Date()
       const birthDate = new Date(date)
       return birthDate < today
@@ -116,9 +129,13 @@ export const BackendProfileSchema = z.object({
   phonePrefix: z
     .string()
     .regex(/^\+\d{1,4}$/)
-    .max(64),
-  phoneNumber: z.string().regex(/^\d{6,15}$/),
-  email: z.string().email().min(1).max(64),
+    .max(64)
+    .optional(),
+  phoneNumber: z
+    .string()
+    .regex(/^\d{6,15}$/)
+    .optional(),
+  email: z.string().email().max(64).optional(),
   password: z
     .string()
     .min(12)
@@ -126,7 +143,8 @@ export const BackendProfileSchema = z.object({
     .regex(/[A-Z]/)
     .regex(/[a-z]/)
     .regex(/\d/)
-    .regex(/[^a-zA-Z0-9]/),
+    .regex(/[^a-zA-Z0-9]/)
+    .optional(),
   newPassword: z
     .string()
     .min(12)

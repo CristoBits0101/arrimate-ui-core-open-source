@@ -32,13 +32,22 @@
   },
   "AuthSchemas": {
     "emptyEmail": "Email is required.",
-    "emptyName": "Name is required.",
     "invalidBirthdate": "Invalid date.",
     "invalidEmail": "Invalid email address.",
+    "maxPassword": "Maximum 64 characters.",
+    "minPassword": "Minimum 12 characters.",
+    "maxLength": "Too long.",
+    "emptyName": "Name required.",
+    "invalidGender": "Invalid gender.",
+    "birthdateInFuture": "Invalid date.",
     "invalidPhoneNumber": "Invalid number.",
     "invalidPhonePrefix": "Invalid prefix.",
-    "maxPassword": "Maximum 64 characters.",
-    "minPassword": "Minimum 12 characters."
+    "specialCharacterRequired": "Add a symbol.",
+    "uppercaseRequired": "Add an uppercase.",
+    "lowercaseRequired": "Add a lowercase.",
+    "numberRequired": "Add a number.",
+    "tooManyInterests": "Too many interests.",
+    "invalidPortfolio": "Invalid URL."
   },
   "Button": {
     "cancel": "Cancel",

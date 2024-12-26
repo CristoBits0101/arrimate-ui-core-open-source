@@ -35,10 +35,19 @@
     "emptyName": "El nombre es obligatorio.",
     "invalidBirthdate": "Fecha no valida.",
     "invalidEmail": "Correo no válido.",
-    "invalidPhoneNumber": "Número no válido.",
-    "invalidPhonePrefix": "Prefijo inválido.",
     "maxPassword": "Máximo 64 caracteres.",
-    "minPassword": "Mínimo 12 caracteres."
+    "minPassword": "Mínimo 12 caracteres.",
+    "maxLength": "Muy largo.",
+    "invalidGender": "Género no válido.",
+    "birthdateInFuture": "Fecha no válida.",
+    "invalidPhoneNumber": "Número no válido.",
+    "invalidPhonePrefix": "Prefijo no válido.",
+    "specialCharacterRequired": "Añade un símbolo.",
+    "uppercaseRequired": "Añade una mayúscula.",
+    "lowercaseRequired": "Añade una minúscula.",
+    "numberRequired": "Añade un número.",
+    "tooManyInterests": "Demasiados intereses.",
+    "invalidPortfolio": "URL no válida."
   },
   "Button": {
     "cancel": "Cancelar",
