@@ -18,10 +18,10 @@ export default function ShowPostImages() {
 
   // Query images
   const { photos, loading } = useFetchPhotos({
-    query: 'couple',
+    query: 'couples',
     orientation: 'portrait',
     per_page: 10,
-    page: 2
+    page: 3
   })
 
   // Show loading message while fetching photos

@@ -36,10 +36,10 @@ type Photo = {
 
 export default function ShowPostStories() {
   const { photos, error } = useFetchPhotos({
-    query: 'person',
+    query: 'face',
     orientation: 'square',
     per_page: 20,
-    page: 1
+    page: 5
   })
 
   const [slidesPerView, setSlidesPerView] = useState(1)
