@@ -24,12 +24,17 @@ export const useFetchPhotos = ({
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [prevQuery, setPrevQuery] = useState<string | null>(null)
+  
 
   useEffect(() => {
+    const key: string | undefined = process.env.PEXELS_CLIENT_SECRET
+    if (!key) {
+      setError('PEXELS_CLIENT_SECRET is not defined...')
+      setLoading(false)
+      return
+    }
     if (query !== prevQuery) {
-      const client = createClient(
-        'qz2aK1LrJu1CkDlnjMa4cPhukIrwl3Y0YUUhejUvpGvV9zSVTQTgbAT3'
-      )
+      const client = createClient(key)
       setLoading(true)
       setError(null)
       client.photos
