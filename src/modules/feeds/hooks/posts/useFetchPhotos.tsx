@@ -24,7 +24,7 @@ export const useFetchPhotos = ({
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [prevQuery, setPrevQuery] = useState<string | null>(null)
-  const key: string | undefined = process.env.PEXELS_CLIENT_SECRET
+  const key = process.env.NEXT_PUBLIC_PEXELS_CLIENT_SECRET
   
   useEffect(() => {
     if (!key) {
@@ -55,7 +55,7 @@ export const useFetchPhotos = ({
           setLoading(false)
         })
     }
-  }, [query, orientation, size, color, locale, page, per_page, prevQuery])
+  }, [query, orientation, size, color, locale, page, per_page, prevQuery, key])
 
   return { photos, loading, error }
 }
