@@ -24,10 +24,9 @@ export const useFetchPhotos = ({
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [prevQuery, setPrevQuery] = useState<string | null>(null)
+  const key: string | undefined = process.env.PEXELS_CLIENT_SECRET
   
-
   useEffect(() => {
-    const key: string | undefined = process.env.PEXELS_CLIENT_SECRET
     if (!key) {
       setError('PEXELS_CLIENT_SECRET is not defined...')
       setLoading(false)
