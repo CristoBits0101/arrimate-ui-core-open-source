@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import { createClient, PhotosWithTotalResults, ErrorResponse } from 'pexels'
+import { useEffect, useState } from 'react'
 
 interface UseFetchPhotosParams {
   query: string
