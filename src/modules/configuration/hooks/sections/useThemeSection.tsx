@@ -8,6 +8,7 @@ type Theme = 'system' | 'dark' | 'light'
 const useThemeSection = () => {
   // Initialize theme state from localStorage
   const [theme, setTheme] = useState<Theme>(() => {
+    // Verify if app execution is in the client
     if (typeof window !== 'undefined') {
       const storedTheme = localStorage.getItem('theme') as Theme | null
       return storedTheme || 'system'
