@@ -51,6 +51,7 @@ const useThemeSection = () => {
   }
 
   return {
+    theme,
     changeTheme
   }
 }

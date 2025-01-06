@@ -1,14 +1,14 @@
 'use client'
 
-// layouts
+// Layouts
 import Header from '@/layouts/components/header'
 import Aside from '@/layouts/components/aside'
 
-// posts
+// Posts
 import ShowPostImages from '@/modules/feeds/components/posts/show-post-images'
 import ShowPostStories from '@/modules/feeds/components/posts/show-post-stories'
 
-// styles
+// Styles
 import '@/styles/globals.css'
 
 export default function StoriesPage() {

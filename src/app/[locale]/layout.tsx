@@ -1,16 +1,16 @@
-// Custom context
-import { PostProvider  } from '@/modules/feeds/contexts/PostContext'
-
-// fonts
-import { figtree } from '@/lib/fonts'
-
-// next
-import type { Metadata } from 'next'
-
-// next-auth
+// Auth
 import { SessionProvider } from 'next-auth/react'
 
-// next-intl
+// Context
+import { PostProvider  } from '@/modules/feeds/contexts/PostContext'
+
+// Fonts
+import { figtree } from '@/lib/fonts'
+
+// Next
+import type { Metadata } from 'next'
+
+// Intl
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
