@@ -24,6 +24,10 @@ const useThemeSection = () => {
   const changeTheme = (selectedTheme: Theme): void => {
     setTheme(selectedTheme)
     applyTheme(selectedTheme)
+    // Notify that the theme has changed
+    window.dispatchEvent(
+      new CustomEvent('theme-change', { detail: selectedTheme })
+    )
   }
 
   /**
