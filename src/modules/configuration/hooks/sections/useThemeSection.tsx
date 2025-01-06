@@ -1,47 +1,53 @@
 'use client'
 
-import { PUBLIC_ROUTES } from '@/config/routes'
+// React hooks
 import { useEffect, useState } from 'react'
-import { usePathname } from '@/i18n/routing'
 
+// Allowed themes
 type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
-  const path = usePathname()
+  // Manage the status of selected theme
   const [theme, setTheme] = useState<Theme>('system')
 
-  const applyTheme = (selectedTheme: Theme): void => {
+  /**
+   * Change the selected theme
+   * @param selectedTheme
+   */
+  const changeTheme = (selectedTheme: Theme): void => {
+    // 1. Update the selected theme
+    setTheme(selectedTheme)
+
+    // 2. Apply the selected theme
+    applyTheme(theme)
+  }
+
+  /**
+   * Apply the theme selected
+   * @param selectedTheme
+   */
+  const applyTheme = (theme: Theme): void => {
+    // 1. Get the HTML element
     const root = document.documentElement
-    switch (selectedTheme) {
+
+    // 2. Apply the selected theme to the root element
+    switch (theme) {
       case 'dark':
         root.setAttribute('data-mode', 'dark')
+        localStorage.removeItem('theme')
+        localStorage.setItem('theme', theme)
         break
       case 'light':
         root.setAttribute('data-mode', 'light')
+        localStorage.removeItem('theme')
+        localStorage.setItem('theme', theme)
         break
       case 'system':
-        root.removeAttribute('data-mode')
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? root.setAttribute('data-mode', 'dark')
-          : root.setAttribute('data-mode', 'light')
+        break
     }
   }
 
-  const changeTheme = (selectedTheme: Theme): void => {
-    setTheme(selectedTheme)
-    selectedTheme === 'system'
-      ? localStorage.removeItem('theme')
-      : localStorage.setItem('theme', selectedTheme)
-
-    applyTheme(selectedTheme)
-
-    window.dispatchEvent(
-      new CustomEvent('theme-change', { detail: selectedTheme })
-    )
-
-    if (!PUBLIC_ROUTES.includes(path)) window.location.reload()
-  }
-
+  // Get the current theme stored
   useEffect(() => {
     const storedTheme = localStorage.getItem('theme') as Theme | null
     setTheme(storedTheme || 'system')
