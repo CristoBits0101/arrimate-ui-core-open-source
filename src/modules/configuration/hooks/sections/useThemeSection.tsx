@@ -50,9 +50,18 @@ const useThemeSection = () => {
     }
   }
 
+  /**
+   * Get the stored theme
+   */
+  const getTheme = () => {
+    const storedTheme = localStorage.getItem('theme') as Theme | null
+    changeTheme(storedTheme || 'system')
+  }
+
   return {
     theme,
-    changeTheme
+    changeTheme,
+    getTheme
   }
 }
 
