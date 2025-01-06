@@ -8,7 +8,10 @@ type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
   // Manage the status of selected theme
-  const [theme, setTheme] = useState<Theme>('system')
+  const [theme, setTheme] = useState<Theme>(() => {
+    const storedTheme = localStorage.getItem('theme') as Theme | null
+    return storedTheme || 'system'
+  })
 
   /**
    * Change the selected theme
