@@ -1,16 +1,19 @@
 'use client'
 
-// React hooks
 import { useEffect, useState } from 'react'
 
 // Allowed themes
 type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
-  // Manage the status of selected theme
+  // Initialize theme state from localStorage
   const [theme, setTheme] = useState<Theme>(() => {
-    const storedTheme = localStorage.getItem('theme') as Theme | null
-    return storedTheme || 'system'
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('theme') as Theme | null
+      return storedTheme || 'system'
+    }
+    // Fallback for server-side rendering
+    return 'system'
   })
 
   /**
@@ -19,22 +22,16 @@ const useThemeSection = () => {
    */
   const changeTheme = (selectedTheme: Theme): void => {
     setTheme(selectedTheme)
+    applyTheme(selectedTheme)
   }
 
-  // Detect the current theme
-  useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
-
   /**
-   * Apply the theme selected
-   * @param selectedTheme
+   * Apply the selected theme
+   * @param theme
    */
   const applyTheme = (theme: Theme): void => {
-    // 1. Get the HTML element
     const root = document.documentElement
 
-    // 2. Apply the selected theme to the root element
     switch (theme) {
       case 'dark':
         root.setAttribute('data-mode', 'dark')
@@ -51,18 +48,14 @@ const useThemeSection = () => {
     }
   }
 
-  /**
-   * Get the stored theme
-   */
-  const getTheme = () => {
-    const storedTheme = localStorage.getItem('theme') as Theme | null
-    changeTheme(storedTheme || 'system')
-  }
+  // Apply theme on mount if it changes
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   return {
     theme,
-    changeTheme,
-    getTheme
+    changeTheme
   }
 }
 
