@@ -44,6 +44,8 @@ const useThemeSection = () => {
         localStorage.setItem('theme', theme)
         break
       case 'system':
+        root.setAttribute('data-mode', '')
+        localStorage.removeItem('theme')
         break
     }
   }
