@@ -1,7 +1,7 @@
 'use client'
 
 // React hooks
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // Allowed themes
 type Theme = 'system' | 'dark' | 'light'
@@ -15,12 +15,13 @@ const useThemeSection = () => {
    * @param selectedTheme
    */
   const changeTheme = (selectedTheme: Theme): void => {
-    // 1. Update the selected theme
     setTheme(selectedTheme)
-
-    // 2. Apply the selected theme
-    applyTheme(selectedTheme)
   }
+
+  // Detect the current theme
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   /**
    * Apply the theme selected
@@ -48,8 +49,7 @@ const useThemeSection = () => {
   }
 
   return {
-    theme,
-    changeTheme,
+    changeTheme
   }
 }
 
