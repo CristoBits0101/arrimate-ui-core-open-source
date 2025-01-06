@@ -35,12 +35,10 @@ const useThemeSection = () => {
     switch (theme) {
       case 'dark':
         root.setAttribute('data-mode', 'dark')
-        localStorage.removeItem('theme')
         localStorage.setItem('theme', theme)
         break
       case 'light':
         root.setAttribute('data-mode', 'light')
-        localStorage.removeItem('theme')
         localStorage.setItem('theme', theme)
         break
       case 'system':

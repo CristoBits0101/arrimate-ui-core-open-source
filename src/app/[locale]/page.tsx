@@ -1,5 +1,8 @@
 'use client'
 
+// Custom hook
+import useThemeSection from '@/modules/configuration/hooks/sections/useThemeSection'
+
 // Layouts
 import Header from '@/layouts/components/header'
 import Aside from '@/layouts/components/aside'
@@ -12,6 +15,8 @@ import ShowPostStories from '@/modules/feeds/components/posts/show-post-stories'
 import '@/styles/globals.css'
 
 export default function StoriesPage() {
+  const { getTheme } = useThemeSection()
+  getTheme()
   return (
     <>
       {/* Header layout */}
