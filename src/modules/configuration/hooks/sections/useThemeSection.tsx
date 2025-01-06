@@ -1,7 +1,7 @@
 'use client'
 
 // React hooks
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 // Allowed themes
 type Theme = 'system' | 'dark' | 'light'
@@ -19,7 +19,7 @@ const useThemeSection = () => {
     setTheme(selectedTheme)
 
     // 2. Apply the selected theme
-    applyTheme(theme)
+    applyTheme(selectedTheme)
   }
 
   /**
@@ -47,16 +47,9 @@ const useThemeSection = () => {
     }
   }
 
-  // Get the current theme stored
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme') as Theme | null
-    setTheme(storedTheme || 'system')
-    applyTheme(storedTheme || 'system')
-  }, [])
-
   return {
     theme,
-    changeTheme
+    changeTheme,
   }
 }
 
