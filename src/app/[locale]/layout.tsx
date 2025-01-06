@@ -2,7 +2,8 @@
 import { SessionProvider } from 'next-auth/react'
 
 // Context
-import { PostProvider  } from '@/modules/feeds/contexts/PostContext'
+import { PostProvider } from '@/modules/feeds/contexts/PostContext'
+import { ThemeProvider } from '@/modules/configuration/contexts/ThemeContext'
 
 // Fonts
 import { figtree } from '@/lib/fonts'
@@ -46,8 +47,10 @@ export default async function LocaleLayout({
         <SessionProvider>
           <NextIntlClientProvider messages={messages}>
             <PostProvider>
-              {/* Pages */}
-              {children}
+              <ThemeProvider>
+                {/* Pages */}
+                {children}
+              </ThemeProvider>
             </PostProvider>
           </NextIntlClientProvider>
         </SessionProvider>

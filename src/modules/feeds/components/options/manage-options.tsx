@@ -1,7 +1,7 @@
 'use client'
 
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
-import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories.svg'
+import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-light.svg'
 import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
 import productsWhiteSVG from '@/modules/e-commerce/assets/icons/white/products.svg'
 import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
