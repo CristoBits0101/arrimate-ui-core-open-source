@@ -52,16 +52,17 @@ export default function ShowProducts() {
       try {
         // Check API key
         if (!process.env.AMAZON_CLIENT_SECRET)
-          throw new Error('Secret key not obtained!')
+          console.error('Secret key not obtained!')
+          setHasError(true)
         // Make query
         const response = await fetch(
           'https://real-time-amazon-data.p.rapidapi.com/seller-products?seller_id=A02211013Q5HP3OMSZC7W&country=US&page=1&sort_by=RELEVANCE',
           {
             method: 'GET',
-            headers: {
+            headers: new Headers({
               'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
-              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET
-            }
+              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET || ''
+            })
           }
         )
         // Check if response is successful
