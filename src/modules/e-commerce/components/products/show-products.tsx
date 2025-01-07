@@ -52,7 +52,7 @@ export default function ShowProducts() {
       try {
         // Check API key
         if (!process.env.AMAZON_CLIENT_SECRET)
-          alert('Unable to connect to the store!')
+          console.log('Unable to connect to the store!')
           setHasError(true)
         // Make query
         const response = await fetch(
@@ -67,12 +67,12 @@ export default function ShowProducts() {
         )
         // Check if response is successful
         if (!response.ok)
-          throw new Error(`HTTP error! Status: ${response.status}`)
+          console.log(`Status: ${response.status}`)
         // Parse JSON response and set products
         const data = await response.json()
         // Verify data structure in the response
         if (!data.data || !Array.isArray(data.data.seller_products))
-          throw new Error('Invalid API response structure')
+          console.log('Invalid API response structure!')
         setProducts(data.data.seller_products)
       } catch (error) {
         console.error('Error fetching products:', error)
