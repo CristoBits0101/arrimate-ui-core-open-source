@@ -52,7 +52,7 @@ export default function ShowProducts() {
       try {
         // Check API key
         if (!process.env.AMAZON_CLIENT_SECRET)
-          console.error('Secret key not obtained!')
+          alert('Unable to connect to the store!')
           setHasError(true)
         // Make query
         const response = await fetch(
