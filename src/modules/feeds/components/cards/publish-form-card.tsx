@@ -1,7 +1,7 @@
 'use client'
 
 // Custom hook
-import { usePost } from '@/modules/feeds/hooks/panels/usePostContext'
+import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 
 // Post Forms
 import AudioForm from '@/modules/streaming/components/forms/audio-form'

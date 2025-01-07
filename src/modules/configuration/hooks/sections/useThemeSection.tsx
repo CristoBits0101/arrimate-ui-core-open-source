@@ -1,40 +1,22 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+// Context
+import { useTheme } from '@/modules/configuration/hooks/sections/useThemeContext'
+
+// Hooks
+import { useEffect } from 'react'
 
 // Allowed themes
 type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
-  // Initialize theme state from localStorage
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Verify if app execution is in the client
-    if (typeof window !== 'undefined') {
-      const storedTheme = localStorage.getItem('theme') as Theme | null
-      return storedTheme || 'system'
-    }
-    // Fallback for server-side rendering
-    return 'system'
-  })
-
-  /**
-   * Change the selected theme
-   * @param selectedTheme
-   */
-  const changeTheme = (selectedTheme: Theme): void => {
-    setTheme(selectedTheme)
-    applyTheme(selectedTheme)
-    // Notify that the theme has changed
-    window.dispatchEvent(
-      new CustomEvent('theme-change', { detail: selectedTheme })
-    )
-  }
+  const { activeTheme, changeTheme } = useTheme()
 
   /**
    * Apply the selected theme
    * @param theme
    */
-  const applyTheme = (theme: Theme): void => {
+  const applyTheme = (theme: Theme) => {
     const root = document.documentElement
 
     switch (theme) {
@@ -53,13 +35,15 @@ const useThemeSection = () => {
     }
   }
 
-  // Apply theme on mount if it changes
+  // Apply theme directly on mount or when the active theme changes
   useEffect(() => {
-    applyTheme(theme)
-  }, [theme])
+    if (activeTheme) {
+      applyTheme(activeTheme)
+    }
+  }, [activeTheme])
 
   return {
-    theme,
+    theme: activeTheme,
     changeTheme
   }
 }

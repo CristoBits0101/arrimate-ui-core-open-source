@@ -5,7 +5,7 @@ import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
 import streamIcon from '@/modules/streaming/assets/white/live.svg'
 import manageIcon from '@/modules/feeds/assets/icons/panels/manage.svg'
 import performanceIcon from '@/modules/feeds/assets/icons/panels/performance.svg'
-import { usePost } from '@/modules/feeds/hooks/panels/usePostContext'
+import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 import { useTranslations } from 'next-intl'
 
 interface PostOptionsProps {

@@ -8,7 +8,7 @@ import productsWhiteSVG from '@/modules/e-commerce/assets/icons/white/products.s
 import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
 import videosWhiteSVG from '@/modules/streaming/assets/white/videos.svg'
 import audioWhiteSVG from '@/modules/streaming/assets/white/audio.svg'
-import { usePost } from '@/modules/feeds/hooks/panels/usePostContext'
+import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 import { useTranslations } from 'next-intl'
 
 const PublishOptions = () => {

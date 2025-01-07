@@ -1,9 +1,9 @@
 'use client'
 
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 // 1. Allowed string types
-export type ThemeType = 'dark' | 'light' | 'system'
+export type ThemeType = 'dark' | 'light' | 'system' | null
 
 // 2. Creating the context
 const ThemeContext = createContext<{
@@ -18,7 +18,17 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // 3.1. Controls the states of the context
   const [activeTheme, setActiveTheme] = useState<ThemeType>('system')
 
-  // 3.2. Context function updates the state with state function
+  // 3.2 Initial state for the context
+  useEffect(() => {
+    const theme = localStorage.getItem('theme')
+    const root = document.documentElement
+    if (theme === 'dark') root.setAttribute('data-mode', 'dark')
+    else if (theme === 'light') root.setAttribute('data-mode', 'light')
+    else root.setAttribute('data-mode', '')
+    changeTheme(theme as ThemeType)
+  }, [])
+
+  // 3.3. Context function updates the state with state function
   const changeTheme = (option: ThemeType) => {
     setActiveTheme(option)
   }
