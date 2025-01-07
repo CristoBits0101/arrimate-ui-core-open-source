@@ -1,13 +1,27 @@
-import eventsBlackSVG from '@/modules/feeds/assets/icons/links/black/events.svg'
-import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
+// Component
 import NavigationItem from '@/modules/navigation/components/links/navbar-link'
 
+// Context
+import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
+
+// Icons
+import eventsDarkBlackSVG from '@/modules/feeds/assets/icons/links/black/events-dark.svg'
+import eventsDarkWhiteSVG from '@/modules/feeds/assets/icons/links/white/events-dark.svg'
+import eventsLightBlackSVG from '@/modules/feeds/assets/icons/links/black/events-light.svg'
+import eventsLightWhiteSVG from '@/modules/feeds/assets/icons/links/white/events-light.svg'
+
 export default function Events() {
+  // Get the active theme from the context
+  const { activeTheme } = useThemeContext()
   return (
     <NavigationItem
       route='events'
-      blackIcon={eventsBlackSVG}
-      whiteIcon={eventsWhiteSVG}
+      blackIcon={
+        activeTheme === 'light' ? eventsLightBlackSVG : eventsDarkBlackSVG
+      }
+      whiteIcon={
+        activeTheme === 'light' ? eventsLightWhiteSVG : eventsDarkWhiteSVG
+      }
       textKey='events'
     />
   )

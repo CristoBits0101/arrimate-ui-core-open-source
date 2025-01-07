@@ -1,11 +1,18 @@
 'use client'
 
+// Buttons
 import SettingButton from '@/modules/configuration/components/buttons/options-button'
-import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
-import streamIcon from '@/modules/streaming/assets/white/live.svg'
+
+// Custom
+import { usePost } from '@/modules/feeds/hooks/panels/usePost'
+
+// Icons
 import manageIcon from '@/modules/feeds/assets/icons/panels/manage.svg'
 import performanceIcon from '@/modules/feeds/assets/icons/panels/performance.svg'
-import { usePost } from '@/modules/feeds/hooks/panels/usePost'
+import publishIcon from '@/modules/feeds/assets/icons/panels/publish.svg'
+import streamIcon from '@/modules/streaming/assets/white/live-light.svg'
+
+// Intl
 import { useTranslations } from 'next-intl'
 
 interface PostOptionsProps {

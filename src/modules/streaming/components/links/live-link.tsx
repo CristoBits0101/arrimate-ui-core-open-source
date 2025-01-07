@@ -1,13 +1,23 @@
-import liveBlackSVG from '@/modules/streaming/assets/black/live.svg'
-import liveWhiteSVG from '@/modules/streaming/assets/white/live.svg'
+// Component
 import NavigationItem from '@/modules/navigation/components/links/navbar-link'
 
+// Context
+import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
+
+// Icons
+import liveDarkBlackSVG from '@/modules/streaming/assets/black/live-dark.svg'
+import liveDarkWhiteSVG from '@/modules/streaming/assets/white/live-dark.svg'
+import liveLightBlackSVG from '@/modules/streaming/assets/black/live-light.svg'
+import liveLightWhiteSVG from '@/modules/streaming/assets/white/live-light.svg'
+
 export default function Live() {
+  // Get the active theme from the context
+  const { activeTheme } = useThemeContext()
   return (
     <NavigationItem
       route='live'
-      blackIcon={liveBlackSVG}
-      whiteIcon={liveWhiteSVG}
+      blackIcon={activeTheme === 'light' ? liveLightBlackSVG : liveDarkBlackSVG}
+      whiteIcon={activeTheme === 'light' ? liveLightWhiteSVG : liveDarkWhiteSVG}
       textKey='live'
     />
   )

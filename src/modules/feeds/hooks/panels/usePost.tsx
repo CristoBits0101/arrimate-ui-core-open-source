@@ -7,10 +7,10 @@ import { PostContext } from '@/modules/feeds/contexts/PostContext'
 import { useContext } from 'react'
 
 export const usePost = () => {
-  // Get the context value
+  // 1. Get the context value
   const context = useContext(PostContext)
-  // Check if the context is provided
+  // 2. Check if the context is provided
   if (!context) throw new Error('Supplier context not found in usePost!')
-  // Return the context value
+  // 3. Return the context value
   return context
 }

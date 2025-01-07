@@ -9,8 +9,8 @@ import { signIn } from 'next-auth/react'
 // Imports the useTranslations hook for localization
 import { useTranslations } from 'next-intl'
 
-// Imports React hooks
-import { useEffect, useState } from 'react'
+// Imports the useTheme hook to get theme from context
+import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
 
 // Imports SVG assets for social provider icons
 import appleD from '@/modules/auth/assets/icons/o-auth/dark/apple.svg'
@@ -23,39 +23,18 @@ export default function SocialPanel() {
   // Translations for announcements
   const t = useTranslations('Announcements')
 
+  // Gets the current theme from the ThemeContext
+  const { activeTheme } = useThemeContext()
+
+  // Determines if the current theme is dark
+  const isDarkMode = activeTheme === 'dark'
+
   // Handles sign-in logic for social providers
   const onClick = (provider: 'apple' | 'google' | 'microsoft') => {
     signIn(provider, {
       callbackUrl: '/'
     })
   }
-
-  // Tracks the current theme (dark or light)
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  useEffect(() => {
-    // Determines the default theme based on localStorage or system preferences
-    const storedTheme = localStorage.getItem('theme')
-    const defaultDark =
-      storedTheme === 'dark' ||
-      (!storedTheme &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    setIsDarkMode(defaultDark)
-
-    // Listens for theme change events
-    const handleThemeChange = (event: CustomEvent) => {
-      setIsDarkMode(event.detail === 'dark')
-    }
-
-    window.addEventListener('theme-change', handleThemeChange as EventListener)
-
-    return () => {
-      window.removeEventListener(
-        'theme-change',
-        handleThemeChange as EventListener
-      )
-    }
-  }, [])
 
   return (
     // Renders the social panel container

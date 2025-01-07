@@ -1,11 +1,12 @@
-// Import SVG icons for the cart
-import cartBlackSVG from '@/modules/e-commerce/assets/icons/black/cart.svg'
-import cartWhiteSVG from '@/modules/e-commerce/assets/icons/white/cart.svg'
+'use client'
 
-// Import reusable component for navigation links
+// Components
 import NavigationItem from '@/modules/navigation/components/links/sidebar-link'
 
-// Cart component representing a cart navigation link
+// Icons
+import cartBlackSVG from '@/modules/e-commerce/assets/icons/black/cart-light.svg'
+import cartWhiteSVG from '@/modules/e-commerce/assets/icons/white/cart-light.svg'
+
 export default function Cart() {
   return (
     <NavigationItem
