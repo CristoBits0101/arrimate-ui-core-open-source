@@ -29,12 +29,14 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: React.ReactNode
   params: { locale: string }
 }) {
-  // Example: messages/en.json/objects
+  // 
+  const { locale } = await params
+  // JSON
   const messages = await getMessages()
   return (
     // HTML
