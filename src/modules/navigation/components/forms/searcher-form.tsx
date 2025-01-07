@@ -40,11 +40,11 @@ export default function Searcher({
       className={`${styles.form} flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11 px-8`}
     >
       <div
-        className='flex items-center bg-[#f4f4f4] border border-[rgba(191,189,192,0.31)] rounded-full h-full w-full'
+        className='flex items-center bg-[#f4f4f4] dark:bg-[#26272C] border border-[#EBEAEB] dark:border-[#3b3b40] rounded-full h-full w-full'
         style={{}}
       >
         <input
-          className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#EBEAEB] h-1/2 outline-none p-4 w-full border-solid'
+          className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#EBEAEB] dark:border-r-[#3b3b40] h-1/2 outline-none p-4 w-full border-solid dark:placeholder-[#ececed]'
           placeholder={t('placeholder')}
           value={resetSearchInput ? '' : searchTerm}
           onChange={handleChange}
