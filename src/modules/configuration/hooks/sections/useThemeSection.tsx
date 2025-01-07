@@ -1,7 +1,7 @@
 'use client'
 
 // Context
-import { useTheme } from '@/modules/configuration/hooks/sections/useThemeContext'
+import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
 
 // Hooks
 import { useEffect } from 'react'
@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
-  const { activeTheme, changeTheme } = useTheme()
+  const { activeTheme, changeTheme } = useThemeContext()
 
   /**
    * Apply the selected theme

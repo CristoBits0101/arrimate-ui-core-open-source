@@ -3,7 +3,6 @@
 import ArrimateFollowCard from '@/modules/marketing/components/card/arrimate-follow-card'
 import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
-import React from 'react'
 
 export default function HomePanel({
   emoji = '',

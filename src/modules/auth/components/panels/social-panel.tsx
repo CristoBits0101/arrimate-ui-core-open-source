@@ -10,7 +10,7 @@ import { signIn } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
 
 // Imports the useTheme hook to get theme from context
-import { useTheme } from '@/modules/configuration/hooks/sections/useThemeContext'
+import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
 
 // Imports SVG assets for social provider icons
 import appleD from '@/modules/auth/assets/icons/o-auth/dark/apple.svg'
@@ -24,7 +24,7 @@ export default function SocialPanel() {
   const t = useTranslations('Announcements')
 
   // Gets the current theme from the ThemeContext
-  const { activeTheme } = useTheme()
+  const { activeTheme } = useThemeContext()
 
   // Determines if the current theme is dark
   const isDarkMode = activeTheme === 'dark'

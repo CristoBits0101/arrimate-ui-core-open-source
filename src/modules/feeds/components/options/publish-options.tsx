@@ -1,14 +1,21 @@
 'use client'
 
+// Buttons
 import OptionButton from '@/modules/configuration/components/buttons/option-button'
-import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-light.svg'
-import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events.svg'
-import reviewsWhiteSVG from '@/modules/feeds/assets/icons/links/white/reviews.svg'
-import productsWhiteSVG from '@/modules/e-commerce/assets/icons/white/products.svg'
-import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts.svg'
-import videosWhiteSVG from '@/modules/streaming/assets/white/videos.svg'
-import audioWhiteSVG from '@/modules/streaming/assets/white/audio.svg'
+
+// Custom
 import { usePost } from '@/modules/feeds/hooks/panels/usePost'
+
+// Icons
+import audioWhiteSVG from '@/modules/streaming/assets/white/audio-light.svg'
+import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events-light.svg'
+import productsWhiteSVG from '@/modules/e-commerce/assets/icons/white/products-light.svg'
+import reviewsWhiteSVG from '@/modules/feeds/assets/icons/links/white/reviews-light.svg'
+import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts-light.svg'
+import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-light.svg'
+import videosWhiteSVG from '@/modules/streaming/assets/white/videos-light.svg'
+
+// Intl
 import { useTranslations } from 'next-intl'
 
 const PublishOptions = () => {

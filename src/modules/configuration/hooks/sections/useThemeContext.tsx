@@ -6,7 +6,7 @@ import { ThemeContext } from '@/modules/configuration/contexts/ThemeContext'
 // React hook
 import { useContext } from 'react'
 
-export const useTheme = () => {
+export const useThemeContext = () => {
   // 1. Get the context value
   const context = useContext(ThemeContext)
   // 2. Check if the context is provided
