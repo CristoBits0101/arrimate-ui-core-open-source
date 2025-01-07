@@ -1,12 +1,12 @@
 'use client'
 
-// hooks
+// Hooks
 import { usePageComponent } from '@/layouts/hooks/useComponent'
 
-// navigation
+// Navigation
 import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'
 
-// styles
+// Styles
 import styles from '@/layouts/styles/scrollbar.module.css'
 
 // Layout

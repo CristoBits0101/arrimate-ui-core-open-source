@@ -1,9 +1,9 @@
 'use client'
 
-// branding
+// Branding
 import Logo from '@/modules/marketing/components/branding/branding-logo'
 
-// navigation
+// Navigation
 import ReturnSearchEngine from '@/modules/navigation/components/rendering/rendering-search-engine'
 
 // Layout
