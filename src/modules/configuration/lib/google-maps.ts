@@ -12,7 +12,7 @@ const autocomplete = async (input: string) => {
     const response = await client.placeAutocomplete({
       params: {
         input,
-        key: process.env.GOOGLE_MAPS_API_KEY!
+        key: process.env.GOOGLE_MAPS_API_KEY || ''
       },
       timeout: 1000
     })
