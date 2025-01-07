@@ -106,7 +106,6 @@ export const BackendProfileSchema = z.object({
   nickname: z.string().max(64).optional(),
   gender: z
     .string()
-    .refine((value) => !value || ['Male', 'Female', 'Other'].includes(value))
     .optional(),
   birthdate: z
     .string()
