@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 // Notifications
 import NoContent from '@/modules/navigation/components/notification/no-content'
 
-// react
+// React
 import { useEffect, useState } from 'react'
 
 // Spinner
@@ -47,13 +47,15 @@ export default function ShowProducts() {
 
   // Load products when rendering the component
   useEffect(() => {
-    // Search products
     async function fetchProducts() {
       try {
         // Check API key
-        if (!process.env.AMAZON_CLIENT_SECRET)
-          console.log('Unable to connect to the store!')
+        if (!process.env.AMAZON_CLIENT_SECRET) {
+          console.error('Unable to connect to the store! API key is missing.')
           setHasError(true)
+          return
+        }
+
         // Make query
         const response = await fetch(
           'https://real-time-amazon-data.p.rapidapi.com/seller-products?seller_id=A02211013Q5HP3OMSZC7W&country=US&page=1&sort_by=RELEVANCE',
@@ -61,19 +63,32 @@ export default function ShowProducts() {
             method: 'GET',
             headers: new Headers({
               'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
-              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET || ''
-            })
+              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET || '',
+            }),
           }
         )
+
         // Check if response is successful
-        if (!response.ok)
-          console.log(`Status: ${response.status}`)
-        // Parse JSON response and set products
+        if (!response.ok) {
+          console.error(`Failed to fetch products. Status: ${response.status}`)
+          setHasError(true)
+          return
+        }
+
+        // Parse JSON response
         const data = await response.json()
+        console.log('API Response:', data) // Log to inspect structure
+
         // Verify data structure in the response
-        if (!data.data || !Array.isArray(data.data.seller_products))
-          console.log('Invalid API response structure!')
-        setProducts(data.data.seller_products)
+        if (
+          data?.data?.seller_products &&
+          Array.isArray(data.data.seller_products)
+        ) {
+          setProducts(data.data.seller_products)
+        } else {
+          console.error('Invalid API response structure!', data)
+          setHasError(true)
+        }
       } catch (error) {
         console.error('Error fetching products:', error)
         setHasError(true)
@@ -86,7 +101,7 @@ export default function ShowProducts() {
     fetchProducts()
   }, [])
 
-  // Show banner when the query is process
+  // Show loading spinner
   if (loading)
     return (
       <div className='w-full h-full grid place-content-center'>
@@ -94,8 +109,10 @@ export default function ShowProducts() {
       </div>
     )
 
+  // Show no content message if there's an error or no products
   if (hasError || !products.length) return <NoContent text={t('noProducts')} />
 
+  // Show products
   return (
     <ul className='grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8'>
       {products.map((product) => (
