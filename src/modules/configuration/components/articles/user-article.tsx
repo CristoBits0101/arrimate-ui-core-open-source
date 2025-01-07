@@ -49,7 +49,7 @@ const UserArticle = () => {
           placeholder='blur'
           blurDataURL='data:image/jpeg;base64,...'
           priority
-          onLoadingComplete={() => setIsImageLoaded(true)}
+          onLoad={() => setIsImageLoaded(true)}
         />
       </header>
       {/* Information */}
