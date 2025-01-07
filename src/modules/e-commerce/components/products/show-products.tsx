@@ -51,7 +51,7 @@ export default function ShowProducts() {
       try {
         // Check API key
         if (!process.env.AMAZON_CLIENT_SECRET) {
-          console.error('Unable to connect to the store! API key is missing.')
+          console.log('Unable to connect to the store! API key is missing.')
           setHasError(true)
           return
         }
@@ -70,7 +70,7 @@ export default function ShowProducts() {
 
         // Check if response is successful
         if (!response.ok) {
-          console.error(`Failed to fetch products. Status: ${response.status}`)
+          console.log(`Failed to fetch products: ${response.status}`)
           setHasError(true)
           return
         }
@@ -86,11 +86,11 @@ export default function ShowProducts() {
         ) {
           setProducts(data.data.seller_products)
         } else {
-          console.error('Invalid API response structure!', data)
+          console.log('Invalid API response structure!', data)
           setHasError(true)
         }
       } catch (error) {
-        console.error('Error fetching products:', error)
+        console.log('Error fetching products:', error)
         setHasError(true)
       } finally {
         setLoading(false)
