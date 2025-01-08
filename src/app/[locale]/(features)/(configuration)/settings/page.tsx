@@ -1,8 +1,9 @@
-import ProfileSettings from '@/modules/configuration/components/forms/profile-form'
+// Settings form
+import SettingsForm from '@/modules/configuration/components/forms/settings-form'
 
 // Settings page
 const SettingsPage = async () => {
-  return <ProfileSettings />
+  return <SettingsForm />
 }
 
 export default SettingsPage

@@ -20,7 +20,7 @@ import * as z from 'zod'
 import { FrontendProfileSchema } from '@/modules/configuration/schemas/index'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export function useProfileForm() {
+export function useSettingsForm() {
   // Get translations
   const t = useTranslations('AuthActions')
   const z = useTranslations('AuthSchemas')

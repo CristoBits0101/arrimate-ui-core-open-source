@@ -11,10 +11,10 @@ import SubmitButton from '@/modules/configuration/components/buttons/submit-butt
 import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 
 // Customized
-import { useProfileForm } from '@/modules/configuration/hooks/forms/useProfileForm'
+import { useSettingsForm } from '@/modules/configuration/hooks/forms/useSettingsForm'
 
 // Fieldset
-import ProfileFormFieldsetCols4 from '@/modules/configuration/components/fieldsets/profile-form-fieldset-cols-4'
+import SettingsFormFieldsetCols4 from '@/modules/configuration/components/fieldsets/profile-form-fieldset-cols-4'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
@@ -51,13 +51,13 @@ import { useEffect, useState } from 'react'
 // Shadcn
 import { Form } from '@/modules/ui/form'
 
-export default function ProfileForm() {
+export default function SettingsForm() {
   // Translations
-  const f = useTranslations('ProfileForm')
+  const f = useTranslations('SettingsForm')
   const t = useTranslations('Button')
 
   // Custom hook
-  const { form, error, success, isPending, hydrated, onSubmit } = useProfileForm()
+  const { form, error, success, isPending, hydrated, onSubmit } = useSettingsForm()
 
   // Predictions state
   const [predictions, setPredictions] = useState<PlaceAutocompleteResult[]>([])
@@ -89,14 +89,14 @@ export default function ProfileForm() {
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-8 mt-8'>
               {/* Identity */}
-              <ProfileFormFieldsetCols4 legend={f('identity')}>
+              <SettingsFormFieldsetCols4 legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
                 <NicknameInput name='nickname' isPending={isPending} />
                 <GenderInput name='gender' isPending={isPending} />
                 <BirthdateInput name='birthdate' isPending={isPending} />
-              </ProfileFormFieldsetCols4>
+              </SettingsFormFieldsetCols4>
               {/* Credentials */}
-              <ProfileFormFieldsetCols4 legend={f('credentials')}>
+              <SettingsFormFieldsetCols4 legend={f('credentials')}>
                 <div className='grid w-full h-fit grid-cols-[1fr,1fr] gap-2'>
                   <PhonePrefixInput name='prefix' isPending={isPending} />
                   <PhoneNumberInput name='number' isPending={isPending} />
@@ -104,9 +104,9 @@ export default function ProfileForm() {
                 <EmailInput name='email' isPending={isPending} />
                 <PasswordInput name='password' isPending={isPending} />
                 <NewPasswordInput name='newPassword' isPending={isPending} />
-              </ProfileFormFieldsetCols4>
+              </SettingsFormFieldsetCols4>
               {/* Location */}
-              <ProfileFormFieldsetCols4 legend={f('location')}>
+              <SettingsFormFieldsetCols4 legend={f('location')}>
                 <ZipCodeInput
                   predictions={predictions}
                   setValue={setValue}
@@ -122,14 +122,14 @@ export default function ProfileForm() {
                 />
                 <CityInput city={city} name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />
-              </ProfileFormFieldsetCols4>
+              </SettingsFormFieldsetCols4>
               {/* Vocation */}
-              <ProfileFormFieldsetCols4 legend={f('vocation')}>
+              <SettingsFormFieldsetCols4 legend={f('vocation')}>
                 <OccupationInput name='occupation' isPending={isPending} />
                 <InterestsInput name='interests' isPending={isPending} />
                 <SloganInput name='slogan' isPending={isPending} />
                 <PortfolioInput name='portfolio' isPending={isPending} />
-              </ProfileFormFieldsetCols4>
+              </SettingsFormFieldsetCols4>
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />
