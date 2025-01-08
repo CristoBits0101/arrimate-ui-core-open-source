@@ -1,3 +1,4 @@
+// Publish form card
 import PublishFormCard from '@/modules/feeds/components/cards/publish-form-card'
 
 // Post page
