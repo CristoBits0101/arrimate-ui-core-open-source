@@ -1,6 +1,6 @@
-// Components to render
-import LanguageSection from '@/modules/auth/auth-settings/language-section'
-import ThemeSection from '@/modules/auth/auth-settings/theme-section'
+// Components
+import LanguageSection from '@/modules/auth/auth-settings/language-setting'
+import ThemeSection from '@/modules/auth/auth-settings/theme-setting'
 
 // Defines the SettingsPanel component
 export default function SettingsPanel() {
