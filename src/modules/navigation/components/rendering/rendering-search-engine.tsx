@@ -1,6 +1,6 @@
 'use-client'
 
-import Pages from '@/layouts/header/navbar/navbar-menu'
+import Navbar from '@/layouts/header/navbar/navbar-menu'
 import ReturnSearchContent from '@/modules/navigation/components/rendering/rendering-search-content'
 import Searcher from '@/layouts/header/searcher/searcher-form'
 import { useSearch } from '@/modules/navigation/hooks/useSearch'
@@ -42,7 +42,7 @@ export default function ReturnSearchEngine() {
           locale={locale}
         />
       ) : (
-        <Pages />
+        <Navbar />
       )}
     </div>
   )
