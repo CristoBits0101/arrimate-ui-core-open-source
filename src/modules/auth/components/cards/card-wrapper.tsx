@@ -7,7 +7,7 @@ import Header from '@/modules/auth/components/cards/card-header'
 import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
 
 // Imports the SettingsPanel component
-import SettingsPanel from '@/modules/auth/components/panels/settings-panel'
+import SettingsPanel from '@/modules/auth/auth-settings/settings-panel'
 
 // Imports the SocialPanel component
 import SocialPanel from '@/modules/auth/oauth-service/oauth-panel'
