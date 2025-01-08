@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils/classnames'
 // Imports the ds font utility
 import { ds } from '@/lib/google/google-fonts'
 
-// Defines the CardHeader component
 export default function CardHeader() {
   return (
     // Renders a container div with styling

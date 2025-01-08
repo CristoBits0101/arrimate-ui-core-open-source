@@ -35,7 +35,6 @@ interface CardWrapperProps {
   showDividingLine?: boolean
 }
 
-// Defines the CardWrapper component
 export default function CardWrapper({
   children,
   pageNameRedirect,

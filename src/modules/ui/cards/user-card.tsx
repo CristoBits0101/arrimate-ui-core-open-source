@@ -1,7 +1,5 @@
-// Imports the default user image asset
+// Image
 import defaultUserImage from '@/assets/images/default/default_user_image.png'
-
-// Imports the Next.js Image component
 import Image from 'next/image'
 
 // Placeholder for importing the auth library

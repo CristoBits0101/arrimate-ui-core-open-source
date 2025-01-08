@@ -1,10 +1,9 @@
-// Imports the CardWrapper component
+// Components
 import CardWrapper from '@/modules/ui/cards/card-wrapper'
 
-// Imports the ExclamationTriangleIcon component
+// Icons
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
-// Defines the UnauthorizedAccessCard component
 export default function UnauthorizedAccessCard() {
   return (
     // Renders the CardWrapper with redirect properties

@@ -1,19 +1,15 @@
 'use client'
 
-// Imports the Link component from Next.js
+// Next
 import Link from 'next/link'
 
-// Declares the interface for props
+// Type properties
 interface RedirectButtonProps {
-  // Destination URL
   href: string
-  // Optional label
   label?: string
-  // Optional page name
   page?: string
 }
 
-// Defines the RedirectButton functional component
 export default function RedirectButton({
   href,
   label,
