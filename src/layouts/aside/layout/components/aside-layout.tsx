@@ -7,7 +7,7 @@ import { usePageComponent } from '@/layouts/aside/layout/hooks/useAsidePanel'
 import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'
 
 // Styles
-import styles from '@/layouts/styles/scrollbar.module.css'
+import styles from '@/layouts/aside/layout/styles/scrollbar.module.css'
 
 // Layout
 export default function Aside() {
