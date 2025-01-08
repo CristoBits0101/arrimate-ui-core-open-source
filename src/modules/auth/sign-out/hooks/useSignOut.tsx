@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Handles backend sign-out logic
-import signOutAction from '@/modules/auth/actions/sign-out-action'
+import signOutAction from '@/modules/auth/sign-out/actions/sign-out-action'
 
 // Intl: Provides locale and translations for messages
 import { useLocale, useTranslations } from 'next-intl'

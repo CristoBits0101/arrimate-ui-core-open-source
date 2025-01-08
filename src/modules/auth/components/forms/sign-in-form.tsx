@@ -11,7 +11,7 @@ import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-b
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 
 // Custom: Encapsulates form logic
-import { useSignInForm } from '@/modules/auth/hooks/useSignInForm'
+import { useSignInForm } from '@/modules/auth/sign-in/hooks/useSignIn'
 
 // Form: Hooks from React
 import { FormProvider } from 'react-hook-form'

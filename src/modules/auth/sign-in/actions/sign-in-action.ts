@@ -16,7 +16,7 @@ import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 // Schema: Validation schema for sign-in
-import { BackendSignInSchema } from '@/modules/auth/schemas'
+import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'
 
 // Zod: To validate data in the backend
 import * as z from 'zod'

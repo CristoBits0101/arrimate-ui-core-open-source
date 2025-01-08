@@ -10,7 +10,7 @@ import signOutIcon from '@/modules/auth/assets/icons/session/sign-out.svg'
 import { useTranslations } from 'next-intl'
 
 // Hook for handling sign-out logic and hydration
-import { useSignOut } from '@/modules/auth/hooks/useSignOut'
+import { useSignOut } from '@/modules/auth/sign-out/hooks/useSignOut'
 
 // Component to render a sign-out button
 export default function SignOutForm(): JSX.Element | null {

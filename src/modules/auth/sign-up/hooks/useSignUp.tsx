@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates backend logic
-import signInAction from '@/modules/auth/actions/sign-in-action'
+import signUpAction from '@/modules/auth/sign-up/actions/sign-up-action'
 
 // Form: Manage form status and validation
 import { useForm } from 'react-hook-form'
@@ -14,16 +14,16 @@ import { useEffect, useState, useTransition } from 'react'
 
 // Zod: Define data validation rules
 import * as z from 'zod'
+import { FrontendSignUpSchema } from '@/modules/auth/schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { FrontendSignInSchema } from '@/modules/auth/schemas'
 
-export function useSignInForm(subject: string) {
+export function useSignUpForm(subject: string) {
   // Get translations
   const t = useTranslations('AuthActions')
   const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
-  const SignInSchema = FrontendSignInSchema(z)
+  const SignUpSchema = FrontendSignUpSchema(z);
 
   // Save action errors
   const [error, setError] = useState<string | undefined>('')
@@ -37,40 +37,38 @@ export function useSignInForm(subject: string) {
   // Indicates code execution finished
   const [isPending, startTransition] = useTransition()
 
-  // Type form with SignInSchema
-  const form = useForm<z.infer<typeof SignInSchema>>({
+  // Type form with SignUpSchema
+  const form = useForm<z.infer<typeof SignUpSchema>>({
     // Validate before sending
-    resolver: zodResolver(SignInSchema),
+    resolver: zodResolver(SignUpSchema),
     // Runs on every shipment
     mode: 'onSubmit',
     // Initial state of the fields
     defaultValues: {
+      name: '',
       email: '',
       password: ''
     }
   })
 
   // Handle form submission
-  const onSubmit = (values: z.infer<typeof SignInSchema>) => {
+  const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
     // Clear previous messages before sending
     setError('')
     setSuccess('')
     // Checks backend request status
     startTransition(() => {
       // Send input values and email subject to backend
-      signInAction(values, subject)
+      signUpAction(values, subject)
         // Transaction completed
         .then((data) => {
           if (data.error) setError(t(data.error))
-          else if (data.success) {
-            setSuccess(t(data.success))
-            window.location.href = '/'
-          }
+          if (data.success) setSuccess(t(data.success))
         })
         // Failed transaction
         .catch((err) => {
           setError(t('notifyUnregister'))
-          console.error('Error in SignIn: ', err)
+          console.error('Error in SignUp: ', err)
         })
     })
   }

@@ -13,7 +13,7 @@ import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { db } from '@/lib/db'
 
 // Schema: Validation schema for new password
-import { NewPasswordSchema } from '@/modules/auth/schemas'
+import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'
 
 // Zod: To validate data in the backend
 import * as z from 'zod'

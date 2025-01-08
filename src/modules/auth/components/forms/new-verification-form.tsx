@@ -14,7 +14,7 @@ import { BeatLoader } from 'react-spinners'
 import { useLocale, useTranslations } from 'next-intl'
 
 // Hooks: Encapsulates verification logic
-import { useNewVerification } from '@/modules/auth/hooks/useNewVerification'
+import { useNewVerification } from '@/modules/auth/new-verification/hooks/useNewVerification'
 
 export default function NewVerificationForm(): React.ReactElement | null {
   // Hook: Handle logic for new verification

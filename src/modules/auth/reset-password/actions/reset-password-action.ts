@@ -10,7 +10,7 @@ import { generateTokenResetPassword } from '@/modules/auth/data/tokens/token-gen
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 
 // Import validation schema for reset password
-import { ResetPasswordSchema } from '@/modules/auth/schemas'
+import { ResetPasswordSchema } from '@/modules/auth/reset-password/schemas'
 
 // Import function to send password reset email
 import { sendPasswordResetEmail } from '@/modules/auth/lib/resend'

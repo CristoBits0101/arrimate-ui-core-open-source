@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs'
 
 // modules/auth
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
-import { BackendSignInSchema } from '@/modules/auth/schemas/index'
+import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'
 
 // next-auth
 import type { NextAuthOptions } from 'next-auth'

@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates backend logic
-import newPasswordAction from '@/modules/auth/actions/new-password-action'
+import newPasswordAction from '@/modules/auth/new-password/actions/new-password-action'
 
 // Alerts: Serialize backend messages
 import FormError from '@/modules/auth/components/alerts/alert-errors'

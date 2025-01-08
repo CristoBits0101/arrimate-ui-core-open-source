@@ -14,7 +14,7 @@ import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
 import { FormProvider } from 'react-hook-form'
 
 // Hook: Encapsulates reset password logic
-import { useResetPassword } from '@/modules/auth/hooks/useResetPassword'
+import { useResetPassword } from '@/modules/auth/reset-password/hooks/useResetPassword'
 
 // Inputs: Fillable fields in forms
 import EmailInput from '@/modules/auth/components/inputs/email-input'

@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates backend logic
-import newVerificationAction from '@/modules/auth/actions/new-verification-action'
+import newVerificationAction from '@/modules/auth/new-verification/actions/new-verification-action'
 
 // Hooks: React hooks for state and effects
 import { useCallback, useEffect, useState } from 'react'

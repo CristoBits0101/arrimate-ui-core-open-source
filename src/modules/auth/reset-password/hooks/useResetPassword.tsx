@@ -1,7 +1,7 @@
 'use client'
 
 // Actions: Encapsulates backend logic
-import resetPasswordAction from '@/modules/auth/actions/reset-password-action'
+import resetPasswordAction from '@/modules/auth/reset-password/actions/reset-password-action'
 
 // Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
@@ -15,7 +15,7 @@ import { useForm } from 'react-hook-form'
 // Zod: Schema validation for the form
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ResetPasswordSchema } from '@/modules/auth/schemas'
+import { ResetPasswordSchema } from '@/modules/auth/reset-password/schemas'
 
 // Hook: Encapsulates logic for reset password functionality
 export const useResetPassword = () => {
