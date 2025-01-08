@@ -1,8 +1,8 @@
 'use client'
 
 // Alerts
-import FormError from '@/modules/auth/status-alerts/error-alert'
-import FormSuccess from '@/modules/auth/status-alerts/success-alert'
+import FormError from '@/modules/ui/alerts/error-alert'
+import FormSuccess from '@/modules/ui/alerts/success-alert'
 
 // Buttons
 import SubmitButton from '@/modules/configuration/components/buttons/submit-button'
@@ -49,7 +49,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 // Shadcn
-import { Form } from '@/modules/ui/form'
+import { Form } from '@/modules/ui/shadcn/form'
 
 export default function SettingsForm() {
   // Translations

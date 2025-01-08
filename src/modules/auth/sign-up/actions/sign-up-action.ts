@@ -4,10 +4,10 @@
 import bcrypt from 'bcrypt'
 
 // Data: Function that queries the database
-import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
+import { generateVerificationToken } from '@/data/tokens/generate-token'
 
 // Mail: To send verification email
-import { sendVerificationEmail } from '@/modules/auth/lib/resend'
+import { sendVerificationEmail } from '@/lib/email/resend'
 
 // Prisma: To consult the database
 import { db } from '@/lib/orm/prisma-client'

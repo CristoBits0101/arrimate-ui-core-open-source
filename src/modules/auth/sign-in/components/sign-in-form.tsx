@@ -1,14 +1,14 @@
 'use client'
 
 // Alerts: Serialize backend messages
-import FormError from '@/modules/auth/status-alerts/error-alert'
-import FormSuccess from '@/modules/auth/status-alerts/success-alert'
+import FormError from '@/modules/ui/alerts/error-alert'
+import FormSuccess from '@/modules/ui/alerts/success-alert'
 
 // Buttons: Button to send form
 import SubmitButton from '@/modules/ui/buttons/submit-form-button'
 
 // Cards: Card to wrap inputs
-import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+import CardWrapper from '@/modules/ui/cards/card-wrapper'
 
 // Custom: Encapsulates form logic
 import { useSignInForm } from '@/modules/auth/sign-in/hooks/useSignIn'
@@ -24,7 +24,7 @@ import PasswordInput from '@/modules/ui/inputs/password-input'
 import { useLocale, useTranslations } from 'next-intl'
 
 // Shadcn: Contains the form component
-import { Form } from '@/modules/ui/form'
+import { Form } from '@/modules/ui/shadcn/form'
 
 export default function SignInForm(): React.ReactElement | null {
   // Get locale

@@ -7,16 +7,16 @@ import { signIn } from '@/lib/auth/auth'
 import { AuthError } from 'next-auth'
 
 // Data: Function to generate verification tokens
-import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
+import { generateVerificationToken } from '@/data/tokens/generate-token'
 
 // Data: Function to retrieve user by email
-import { getUserByEmail } from '@/modules/auth/data/users/user-data'
+import { getUserByEmail } from '@/data/users/get-user'
 
 // Mail: To send verification email
-import { sendVerificationEmail } from '@/modules/auth/lib/resend'
+import { sendVerificationEmail } from '@/lib/email/resend'
 
 // Schema: Validation schema for sign-in
-import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'
+import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas/index'
 
 // Zod: To validate data in the backend
 import * as z from 'zod'
