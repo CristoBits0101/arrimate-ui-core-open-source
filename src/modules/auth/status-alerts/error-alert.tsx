@@ -1,15 +1,20 @@
-// icons
+// Icons
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
-// routing
+// Routing
 import { usePathname } from '@/i18n/routing'
 
-// interface
+// Type props
 interface FormErrorProps {
   message?: string
 }
 
-// Show error message
+/**
+ * Show error message
+ * 
+ * @param message 
+ * @returns 
+ */
 export default function FormError({ message }: FormErrorProps) {
   // Example: /settings
   const path = usePathname()

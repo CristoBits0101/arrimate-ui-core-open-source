@@ -1,15 +1,20 @@
-// icons
+// Icons
 import { CheckCircledIcon } from '@radix-ui/react-icons'
 
-// routing
+// Routing
 import { usePathname } from '@/i18n/routing'
 
-// interface
+// Type props
 interface FormSuccessProps {
   message?: string
 }
 
-// Show success message
+/**
+ * Show success message
+ * 
+ * @param message 
+ * @returns 
+ */
 export default function FormSuccess({ message }: FormSuccessProps) {
   // Example: /settings
   const path = usePathname()
