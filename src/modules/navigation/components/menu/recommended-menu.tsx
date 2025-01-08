@@ -4,7 +4,7 @@
 import clear from '@/modules/navigation/assets/clear.svg'
 import close from '@/modules/navigation/assets/close.svg'
 import searchIcon from '@/modules/navigation/assets/search.svg'
-import SearchLink from '@/modules/navigation/components/links/search-link'
+import SearchLink from '@/layouts/header/searcher/search-link'
 
 // next/image
 import Image from 'next/image'
