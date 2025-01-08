@@ -10,7 +10,7 @@ import { generateVerificationToken } from '@/modules/auth/data/tokens/token-gene
 import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 // Prisma: To consult the database
-import { db } from '@/lib/db'
+import { db } from '@/lib/prisma/prisma-client'
 
 // Zod: To validate data in backend
 import * as z from 'zod'

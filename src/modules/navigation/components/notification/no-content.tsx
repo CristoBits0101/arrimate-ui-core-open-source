@@ -1,5 +1,5 @@
 // fonts
-import { shadowsIntoLight } from '@/lib/fonts'
+import { shadowsIntoLight } from '@/lib/google/google-fonts'
 
 // GIF
 import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'

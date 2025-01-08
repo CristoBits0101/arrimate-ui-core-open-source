@@ -1,6 +1,6 @@
 'use server'
 
-import { auth } from '@/modules/auth/lib/auth'
+import { auth } from '@/lib/auth/auth'
 
 export default async function getUserSessionAction() {
   try {

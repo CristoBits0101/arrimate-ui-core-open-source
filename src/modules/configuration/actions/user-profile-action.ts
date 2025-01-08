@@ -1,7 +1,7 @@
 'use server'
 
 // Prisma: To consult the database
-import { db } from '@/lib/db'
+import { db } from '@/lib/prisma/prisma-client'
 
 // Bcrypt: For password validation
 import bcrypt from 'bcrypt'

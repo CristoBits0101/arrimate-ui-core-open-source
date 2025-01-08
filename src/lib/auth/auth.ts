@@ -1,11 +1,11 @@
 // Import the database instance
-import { db } from '@/lib/db'
+import { db } from '@/lib/prisma/prisma-client'
 
 // Import user-related functions
 import { getUserById } from '@/modules/auth/data/users/user-data'
 
 // Import authentication configurations
-import authConfig from '@/modules/auth/lib/auth.config'
+import authConfig from '@/lib/auth/auth.config'
 import NextAuth from 'next-auth'
 
 // Import Prisma adapter for NextAuth

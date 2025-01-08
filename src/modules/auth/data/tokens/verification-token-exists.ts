@@ -1,5 +1,5 @@
 // Prisma: To interact with the database
-import { db } from '@/lib/db'
+import { db } from '@/lib/prisma/prisma-client'
 
 // Get a verification token by token value
 export const getVerificationTokenByToken = async (token: string) => {

@@ -2,7 +2,7 @@
 import { API_AUTH_ROUTE, AUTH_ROUTES, PUBLIC_ROUTES } from '@/config/routes'
 
 // next-auth
-import authConfig from '@/modules/auth/lib/auth.config'
+import authConfig from '@/lib/auth/auth.config'
 import NextAuth from 'next-auth'
 
 // next-intl

@@ -20,7 +20,7 @@ import ProfileFormFieldsetCols4 from '@/modules/configuration/components/fieldse
 import { FormProvider } from 'react-hook-form'
 
 // Google
-import autocomplete from '@/modules/configuration/lib/google-maps'
+import autocomplete from '@/lib/google/google-maps'
 import { PlaceAutocompleteResult } from '@googlemaps/google-maps-services-js'
 
 // Inputs

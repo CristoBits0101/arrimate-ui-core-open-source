@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils'
 
 // Imports the ds font utility
-import { ds } from '@/lib/fonts'
+import { ds } from '@/lib/google/google-fonts'
 
 // Defines the CardHeader component
 export default function CardHeader() {

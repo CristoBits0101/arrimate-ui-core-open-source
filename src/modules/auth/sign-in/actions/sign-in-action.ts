@@ -1,7 +1,7 @@
 'use server'
 
 // Auth: To handle user sign-in
-import { signIn } from '@/modules/auth/lib/auth'
+import { signIn } from '@/lib/auth/auth'
 
 // AuthError: To handle authentication-specific errors
 import { AuthError } from 'next-auth'

@@ -6,7 +6,7 @@ import { PostProvider } from '@/modules/feeds/contexts/PostContext'
 import { ThemeProvider } from '@/modules/configuration/contexts/ThemeContext'
 
 // Fonts
-import { figtree } from '@/lib/fonts'
+import { figtree } from '@/lib/google/google-fonts'
 
 // Next
 import type { Metadata } from 'next'

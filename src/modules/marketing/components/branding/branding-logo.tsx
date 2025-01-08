@@ -1,4 +1,4 @@
-import { ds } from '@/lib/fonts'
+import { ds } from '@/lib/google/google-fonts'
 
 export default function Logo() {
   return (

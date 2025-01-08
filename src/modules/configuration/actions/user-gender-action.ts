@@ -1,6 +1,6 @@
 'use server'
 
-import { db } from '@/lib/db'
+import { db } from '@/lib/prisma/prisma-client'
 
 export async function getGenders() {
   try {
