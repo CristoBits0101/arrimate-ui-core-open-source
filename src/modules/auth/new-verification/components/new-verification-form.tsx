@@ -1,8 +1,8 @@
 'use client'
 
 // Actions: Handles feedback messages (error/success)
-import AlertError from '@/modules/auth/components/alerts/error-alert'
-import AlertSuccess from '@/modules/auth/components/alerts/success-alert'
+import AlertError from '@/modules/auth/status-alerts/error-alert'
+import AlertSuccess from '@/modules/auth/status-alerts/success-alert'
 
 // Cards: Card to structure content
 import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
