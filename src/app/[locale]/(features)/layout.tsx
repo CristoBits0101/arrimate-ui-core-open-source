@@ -1,5 +1,5 @@
 // layouts
-import Aside from '@/layouts/aside/components/aside'
+import Aside from '@/layouts/aside/components/aside-layout'
 import Header from '@/layouts/aside/components/header'
 
 export default function FeaturesLayout({
