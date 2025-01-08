@@ -1,8 +1,8 @@
 'use client'
 
 // Alerts
-import FormError from '@/modules/ui/alerts/error-alert'
-import FormSuccess from '@/modules/ui/alerts/success-alert'
+import FormError from '@/modules/auth/form-pieces/alerts/error-alert'
+import FormSuccess from '@/modules/auth/form-pieces/alerts/success-alert'
 
 // Buttons
 import SubmitButton from '@/modules/configuration/components/buttons/submit-button'
@@ -14,7 +14,7 @@ import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 import { useSettingsForm } from '@/modules/configuration/hooks/forms/useSettingsForm'
 
 // Fieldset
-import SettingsFormFieldsetCols4 from '@/modules/ui/fieldsets/profile-form-fieldset-cols-4'
+import SettingsFormFieldsetCols4 from '@/modules/configuration/fieldsets/profile-form-fieldset-cols-4'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
