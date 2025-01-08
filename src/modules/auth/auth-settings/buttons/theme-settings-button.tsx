@@ -10,7 +10,7 @@ import lightIcon from '@/modules/auth/assets/icons/themes/light.svg'
 // next/image
 import Image from 'next/image'
 
-const ThemeButton: React.FC = () => {
+const ThemeSettingsButton: React.FC = () => {
   const { theme, changeTheme } = useThemeSection()
 
   // Conditional rendering of icon and alt
@@ -40,4 +40,4 @@ const ThemeButton: React.FC = () => {
   )
 }
 
-export default ThemeButton
+export default ThemeSettingsButton

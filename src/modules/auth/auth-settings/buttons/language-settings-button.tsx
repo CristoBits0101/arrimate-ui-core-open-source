@@ -4,19 +4,19 @@
 import Image from 'next/image'
 
 // Type props
-export interface LanguageButtonProps {
+export interface LanguageSettingsButtonProps {
   language: 'en' | 'es'
   onClick: (language: 'en' | 'es') => void
   iconSrc: string
   altText: string
 }
 
-export default function LanguageButton({
+export default function LanguageSettingsButton({
   language,
   onClick,
   iconSrc,
   altText
-}: LanguageButtonProps) {
+}: LanguageSettingsButtonProps) {
   return (
     // Button
     <button
