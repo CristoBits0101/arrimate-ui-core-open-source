@@ -8,14 +8,14 @@ import { ThemeProvider } from '@/modules/configuration/contexts/ThemeContext'
 // Fonts
 import { figtree } from '@/lib/google/google-fonts'
 
-// Next
-import type { Metadata } from 'next'
-
 // Intl
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
-// styles
+// Next
+import type { Metadata } from 'next'
+
+// Styles
 import '@/styles/globals.css'
 
 // Metadata

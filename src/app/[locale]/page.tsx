@@ -5,7 +5,7 @@ import ShowPostImages from '@/modules/feeds/components/posts/show-post-images'
 import ShowPostStories from '@/modules/feeds/components/posts/show-post-stories'
 
 // Layouts
-import Header from '@/layouts/aside/components/header'
+import Header from '@/layouts/header/header-layout'
 import Aside from '@/layouts/aside/components/aside-layout'
 
 // Styles
