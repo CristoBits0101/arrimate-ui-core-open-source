@@ -1,13 +1,15 @@
-// next-intl
+'use client'
+
+// Intl
 import { useLocale, useTranslations } from 'next-intl'
 
-// next/navigation
+// Navigation
 import { usePathname } from 'next/navigation'
 
-// panels
-import StoriesPanel from '@/modules/feeds/components/panels/stories-panel'
+// Panels
 import PostsPanel from '@/modules/feeds/components/panels/posts-panel'
 import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
+import StoriesPanel from '@/modules/feeds/components/panels/stories-panel'
 
 export function usePageComponent() {
   // Get translations
