@@ -1,9 +1,4 @@
 /* No scrollbar */
-.noScrollbar::-webkit-scrollbar {
-  /* Google Chrome */
-  display: none;
-}
-
 .noScrollbar {
   /* IE and Edge */
   -ms-overflow-style: none;
@@ -11,20 +6,25 @@
   scrollbar-width: none;
 }
 
+.noScrollbar::-webkit-scrollbar {
+  /* Google Chrome */
+  display: none;
+}
+
 /* Scrollbar left */
 .scrollbarLeft {
   direction: rtl;
   overflow-y: hidden;
-  scrollbar-width: thin;
   padding-right: 12px;
-}
-
-.scrollbarLeft:hover {
-  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .scrollbarLeft > * {
   direction: ltr;
+}
+
+.scrollbarLeft:hover {
+  overflow-y: auto;
 }
 
 .scrollbarLeft::-webkit-scrollbar {
