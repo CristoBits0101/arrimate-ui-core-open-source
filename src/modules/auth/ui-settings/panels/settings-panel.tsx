@@ -1,6 +1,6 @@
 // Components
-import LanguageSettingSection from '@/modules/auth/auth-settings/sections/language-setting-section'
-import ThemeSettingSection from '@/modules/auth/auth-settings/sections/theme-setting-section'
+import LanguageSettingSection from '@/modules/auth/ui-settings/sections/language-setting-section'
+import ThemeSettingSection from '@/modules/auth/ui-settings/sections/theme-setting-section'
 
 export default function SettingsPanel() {
   return (

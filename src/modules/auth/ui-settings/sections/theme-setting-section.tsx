@@ -1,7 +1,7 @@
 'use client'
 
 // Buttons
-import ThemeButton from '@/modules/auth/auth-settings/buttons/theme-settings-button'
+import ThemeButton from '@/modules/auth/ui-settings/buttons/theme-settings-button'
 
 export default function ThemeSettingSection() {
   return (

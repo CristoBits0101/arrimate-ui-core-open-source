@@ -1,5 +1,5 @@
 // Shadcn
-import { Button } from '@/modules/ui/shadcn/button'
+import { Button } from '@/modules/ui/button'
 
 // Spinners
 import { PulseLoader } from 'react-spinners'

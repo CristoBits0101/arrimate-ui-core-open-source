@@ -1,7 +1,7 @@
 'use client'
 
 // Buttons
-import LanguageButton from '@/modules/auth/auth-settings/buttons/language-settings-button'
+import LanguageButton from '@/modules/auth/ui-settings/buttons/language-settings-button'
 
 // Custom
 import useLanguageSection from '@/modules/configuration/hooks/sections/useLanguageSection'

@@ -20,7 +20,7 @@ import { useResetPassword } from '@/modules/auth/reset-password/hooks/useResetPa
 import EmailInput from '@/modules/auth/form-pieces/inputs/email-input'
 
 // Shadcn: Contains the form component
-import { Form } from '@/modules/ui/shadcn/form'
+import { Form } from '@/modules/ui/form'
 
 export default function ResetPasswordForm() {
   // Hook: Destructure reset password logic

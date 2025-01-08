@@ -24,7 +24,7 @@ import PasswordInput from '@/modules/auth/form-pieces/inputs/password-input'
 import { useLocale, useTranslations } from 'next-intl'
 
 // Shadcn: Contains the form component
-import { Form } from '@/modules/ui/shadcn/form'
+import { Form } from '@/modules/ui/form'
 
 export default function SignInForm(): React.ReactElement | null {
   // Get locale

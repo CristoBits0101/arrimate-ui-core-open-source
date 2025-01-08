@@ -29,7 +29,7 @@ import { useSearchParams } from 'next/navigation'
 import { useEffect, useState, useTransition } from 'react'
 
 // Shadcn: Component library
-import { Form } from '@/modules/ui/shadcn/form'
+import { Form } from '@/modules/ui/form'
 
 // Zod: Validation library
 import * as z from 'zod'
