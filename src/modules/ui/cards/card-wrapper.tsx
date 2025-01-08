@@ -1,41 +1,37 @@
 'use client'
 
-// Imports the Header component
-import Header from '@/modules/auth/components/cards/card-header'
+// Buttons
+import RedirectButton from '@/modules/ui/buttons/redirect-page-button'
 
-// Imports the RedirectButton component
-import RedirectButton from '@/modules/auth/components/buttons/redirect/redirect-page-button'
+// Card
+import Header from '@/modules/ui/cards/card-header'
 
-// Imports the SettingsPanel component
-import SettingsPanel from '@/modules/auth/auth-settings/settings-panel'
-
-// Imports the SocialPanel component
-import SocialPanel from '@/modules/auth/oauth-service/oauth-panel'
-
-// Imports Card components
-import { Card, CardContent, CardFooter, CardHeader } from '@/modules/ui/card'
-
-// Imports the usePathname hook
-import { usePathname } from '@/i18n/routing'
-
-// Imports the useTranslations hook
+// Intl
 import { useTranslations } from 'next-intl'
 
-// Declares the CardWrapperProps interface
+// Panels
+import OAuthPanel from '@/modules/auth/oauth-service/oauth-panel'
+import SettingsPanel from '@/modules/auth/auth-settings/panel/settings-panel'
+
+// Routing
+import { usePathname } from '@/i18n/routing'
+
+// Shadcn
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader
+} from '@/modules/ui/shadcn/card'
+
+// Type props
 interface CardWrapperProps {
-  // Child components to render inside the card
   children: React.ReactNode
-  // Optional page name for redirection
   pageNameRedirect?: string
-  // Optional label for the redirect button
   redirectButtonLabel?: string
-  // Redirect URL for the button
   redirectButtonHref: string
-  // Flag to show social panel
   showSocial?: boolean
-  // Flag to show forgot password option
   showForgotPassword?: boolean
-  // Flag to show dividing line
   showDividingLine?: boolean
 }
 
@@ -62,9 +58,9 @@ export default function CardWrapper({
       </CardHeader>
       <CardContent>{children}</CardContent>
       {showSocial && (
-        // Renders the SocialPanel if showSocial is true
+        // Renders the OAuthPanel if showSocial is true
         <CardFooter>
-          <SocialPanel />
+          <OAuthPanel />
         </CardFooter>
       )}
       <CardFooter className='px-5 flex flex-col'>

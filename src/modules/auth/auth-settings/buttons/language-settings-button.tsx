@@ -1,16 +1,9 @@
 'use client'
 
-// next/image
+// Next
 import Image from 'next/image'
 
-/**
- * Props interface
- * 
- * Supported languages
- * Click handler
- * Icon source
- * Accessible alt text
- */
+// Type props
 export interface LanguageButtonProps {
   language: 'en' | 'es'
   onClick: (language: 'en' | 'es') => void
@@ -18,7 +11,6 @@ export interface LanguageButtonProps {
   altText: string
 }
 
-// Functional component
 export default function LanguageButton({
   language,
   onClick,
