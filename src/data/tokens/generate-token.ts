@@ -1,13 +1,13 @@
-// Prisma: To interact with the database
+// Database interaction
 import { db } from '@/lib/orm/prisma-client'
 
-// Query: Get password reset token by email
-import { getPasswordResetTokenByEmail } from '@/modules/auth/data/tokens/verification-reset-token'
+// Get password reset token by email
+import { getPasswordResetTokenByEmail } from '@/data/tokens/reset-token'
 
-// Query: Checks in bd if an email has an associated token
-import { getVerificationTokenByEmail } from '@/modules/auth/data/tokens/verification-token-exists'
+// Checks in bd if an email has an associated token
+import { getVerificationTokenByEmail } from '@/data/tokens/check-token'
 
-// UUID: To generate unique tokens
+// Generate unique tokens
 import { v4 as uuidv4 } from 'uuid'
 
 /**

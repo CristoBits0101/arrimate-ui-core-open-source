@@ -1,4 +1,4 @@
-// Prisma: To interact with the database
+// To interact with the database
 import { db } from '@/lib/orm/prisma-client'
 
 // Get a password reset token by token

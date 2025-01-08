@@ -1,32 +1,22 @@
-// Prisma: To interact with the database
+// Database interaction
 import { db } from '@/lib/orm/prisma-client'
 
-// Get a verification token by token value
+// Get token by value
 export const getVerificationTokenByToken = async (token: string) => {
   try {
-    const verificationToken = await db.verificationToken.findUnique({
-      where: {
-        token
-      }
-    })
-    return verificationToken
-  } catch (error) {
-    // Return null if an error occurs
+    return await db.verificationToken.findUnique({ where: { token } })
+  } catch {
+    // Return null on error
     return null
   }
 }
 
-// Get a verification token by email
+// Get token by email
 export const getVerificationTokenByEmail = async (email: string) => {
   try {
-    const verificationToken = await db.verificationToken.findFirst({
-      where: {
-        email
-      }
-    })
-    return verificationToken
-  } catch (error) {
-    // Return null if an error occurs
+    return await db.verificationToken.findFirst({ where: { email } })
+  } catch {
+    // Return null on error
     return null
   }
 }
