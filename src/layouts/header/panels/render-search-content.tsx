@@ -4,19 +4,19 @@ import RecommendedContent from '@/modules/navigation/components/menu/recommended
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
 type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
 
-interface ReturnContentProps {
+interface RenderSearchContentProps {
   searchTerm: string
   locale: string
   setIsFocused: SetIsFocused
   setResetSearchInput: SetResetSearchInput
 }
 
-export default function ReturnContent({
+export default function RenderSearchContent({
   setIsFocused,
   searchTerm,
   locale,
   setResetSearchInput
-}: ReturnContentProps) {
+}: RenderSearchContentProps) {
   return (
     <div className='h-fit w-full px-8'>
       {searchTerm ? (

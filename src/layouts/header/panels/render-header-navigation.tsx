@@ -1,11 +1,11 @@
 'use-client'
 
 import Navbar from '@/layouts/header/navbar/navbar-menu'
-import ReturnSearchContent from '@/layouts/header/rendering/rendering-search-content'
+import ReturnSearchContent from '@/layouts/header/panels/render-search-content'
 import Searcher from '@/layouts/header/searcher/searcher-form'
 import { useSearch } from '@/modules/navigation/hooks/useSearch'
 
-export default function RenderNavigation() {
+export default function RenderHeaderNavigation() {
   const {
     searchTerm,
     isFocused,
