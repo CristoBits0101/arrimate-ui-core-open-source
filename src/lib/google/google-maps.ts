@@ -17,7 +17,7 @@ const autocomplete = async (input: string) => {
       timeout: 1000
     })
     // Return the autocomplete predictions
-    if (response.data && response.data.predictions) 
+    if (response.data && response.data.predictions)
       return response.data.predictions
     console.warn('No predictions found for input: ', input)
     return []
