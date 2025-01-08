@@ -15,7 +15,7 @@ import Google from 'next-auth/providers/google'
 // Schemas
 import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'
 
-// Backend code
+// Server code
 export default {
   providers: [
     Apple({
