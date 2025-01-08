@@ -1,9 +1,9 @@
 'use server'
 
-// cloudinary
+// Cloudinary
 import { v2 as cloudinary } from 'cloudinary'
 
-// next/server
+// Response
 import { NextResponse } from 'next/server'
 
 // Configuration
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
 
   // Check if a file was uploaded
   if (!file || !(file instanceof Blob))
-    // Return a bad request if the file doesn't exist
+    // Bad request if file missing
     return NextResponse.json({ error: 'No file uploaded' }, { status: 400 })
 
   // Read the file as a buffer
@@ -32,13 +32,20 @@ export async function POST(request: Request) {
   const buffer = Buffer.from(bytes)
 
   // Upload an image
-  const response = await new Promise<{ secure_url: string }>((resolve, reject)=>{
-    cloudinary.uploader.upload_stream({}, (error, result) => {
-      if (error) reject(error)
-      resolve(result as { secure_url: string })
-    }).end(buffer)
-  })
+  const response = await new Promise<{ secure_url: string }>(
+    (resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream({}, (error, result) => {
+          if (error) reject(error)
+          resolve(result as { secure_url: string })
+        })
+        .end(buffer)
+    }
+  )
 
   // Confirm upload
-  return NextResponse.json({ message: 'File uploaded successfully', url: response.secure_url })
+  return NextResponse.json({
+    message: 'File uploaded successfully',
+    url: response.secure_url
+  })
 }
