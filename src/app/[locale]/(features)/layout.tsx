@@ -1,4 +1,4 @@
-// layouts
+// Layouts
 import Aside from '@/layouts/aside/components/aside-layout'
 import Header from '@/layouts/header/header-layout'
 
