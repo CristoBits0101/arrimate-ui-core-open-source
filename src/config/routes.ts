@@ -29,8 +29,6 @@ export const AUTH_ROUTES: string[] = [
   '/es/unauthorized-access'
 ]
 
-export const DEFAULT_LOGIN_REDIRECT = '/'
-
 // Public routes
 export const PUBLIC_ROUTES: string[] = [
   // new-password
@@ -58,3 +56,6 @@ export const PUBLIC_ROUTES: string[] = [
   '/en/unauthorized-access',
   '/es/unauthorized-access'
 ]
+
+// Redirect route
+export const DEFAULT_LOGIN_REDIRECT = '/'
