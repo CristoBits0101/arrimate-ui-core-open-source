@@ -1,6 +1,6 @@
 'use-client'
 
-import Pages from '@/modules/navigation/components/menu/navbar-menu'
+import Pages from '@/layouts/header/navbar/navbar-menu'
 import ReturnSearchContent from '@/modules/navigation/components/rendering/rendering-search-content'
 import Searcher from '@/modules/navigation/components/forms/searcher-form'
 import { useSearch } from '@/modules/navigation/hooks/useSearch'
