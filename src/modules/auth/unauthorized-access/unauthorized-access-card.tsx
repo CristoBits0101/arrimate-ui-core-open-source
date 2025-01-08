@@ -1,7 +1,7 @@
 'use client'
 
 // Imports the CardWrapper component
-import CardWrapper from '@/modules/auth/form-cards/card-wrapper'
+import CardWrapper from '@/modules/auth/form-components/cards/card-wrapper'
 
 // Imports the useTranslations hook for localization
 import { useTranslations } from 'next-intl'

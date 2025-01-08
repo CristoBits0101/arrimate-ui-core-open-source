@@ -4,7 +4,7 @@
 import RedirectButton from '@/modules/ui/buttons/redirect-page-button'
 
 // Card
-import Header from '@/modules/auth/form-cards/card-header'
+import Header from '@/modules/auth/form-components/cards/card-header'
 
 // Intl
 import { useTranslations } from 'next-intl'

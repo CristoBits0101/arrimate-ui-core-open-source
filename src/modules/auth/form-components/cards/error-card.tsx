@@ -1,5 +1,5 @@
 // Components
-import CardWrapper from '@/modules/auth/form-cards/card-wrapper'
+import CardWrapper from '@/modules/auth/form-components/cards/card-wrapper'
 
 // Icons
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
