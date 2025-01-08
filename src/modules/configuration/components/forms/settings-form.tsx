@@ -14,7 +14,7 @@ import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 import { useSettingsForm } from '@/modules/configuration/hooks/forms/useSettingsForm'
 
 // Fieldset
-import SettingsFormFieldsetCols4 from '@/modules/configuration/components/fieldsets/profile-form-fieldset-cols-4'
+import SettingsFormFieldsetCols4 from '@/modules/ui/fieldsets/profile-form-fieldset-cols-4'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
