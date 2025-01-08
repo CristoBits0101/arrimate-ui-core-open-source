@@ -1,5 +1,5 @@
 // Import the database instance
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 // Import user-related functions
 import { getUserById } from '@/modules/auth/data/users/user-data'

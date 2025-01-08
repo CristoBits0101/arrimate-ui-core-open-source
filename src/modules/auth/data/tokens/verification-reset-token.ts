@@ -1,5 +1,5 @@
 // Prisma: To interact with the database
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 // Get a password reset token by token
 export const getPasswordResetTokenByToken = async (token: string) => {

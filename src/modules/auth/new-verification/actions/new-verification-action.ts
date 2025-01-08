@@ -5,7 +5,7 @@ import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 import { getVerificationTokenByToken } from '@/modules/auth/data/tokens/verification-token-exists'
 
 // Prisma: To consult the database
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 export default async function newVerificationAction(token: string) {
   // Check if the token exists

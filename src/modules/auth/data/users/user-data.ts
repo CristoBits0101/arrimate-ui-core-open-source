@@ -1,4 +1,4 @@
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 // Find user by email
 export const getUserByEmail = async (email: string) => {

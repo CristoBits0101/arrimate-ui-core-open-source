@@ -10,7 +10,7 @@ import { getPasswordResetTokenByToken } from '@/modules/auth/data/tokens/verific
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 
 // Prisma: To consult the database
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 // Schema: Validation schema for new password
 import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'

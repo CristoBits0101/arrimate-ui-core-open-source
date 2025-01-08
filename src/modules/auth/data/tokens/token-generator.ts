@@ -1,5 +1,5 @@
 // Prisma: To interact with the database
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 // Query: Get password reset token by email
 import { getPasswordResetTokenByEmail } from '@/modules/auth/data/tokens/verification-reset-token'

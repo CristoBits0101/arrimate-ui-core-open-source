@@ -1,6 +1,6 @@
 'use server'
 
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 export async function getPhonePrefixes() {
   try {

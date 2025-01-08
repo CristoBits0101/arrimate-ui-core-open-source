@@ -7,10 +7,10 @@ import bcrypt from 'bcrypt'
 import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
 
 // Mail: To send verification email
-import { sendVerificationEmail } from '@/modules/auth/lib/resend'
+import { sendVerificationEmail } from '@/lib/email/resend'
 
 // Prisma: To consult the database
-import { db } from '@/lib/prisma/prisma-client'
+import { db } from '@/lib/orm/prisma-client'
 
 // Zod: To validate data in backend
 import * as z from 'zod'
