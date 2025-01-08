@@ -6,10 +6,10 @@ import {
   FormField,
   FormItem,
   FormMessage
-} from '@/modules/ui/form'
+} from '@/modules/ui/shadcn/form'
 
 // Imports the Input component for user input
-import { Input } from '@/modules/ui/input'
+import { Input } from '@/modules/ui/shadcn/input'
 
 // Imports the useFormContext hook for form control
 import { useFormContext } from 'react-hook-form'

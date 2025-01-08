@@ -1,5 +1,5 @@
 // Imports the default user image asset
-import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
+import defaultUserImage from '@/assets/images/default/default_user_image.png'
 
 // Imports the Next.js Image component
 import Image from 'next/image'
