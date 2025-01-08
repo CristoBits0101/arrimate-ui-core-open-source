@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl'
 
 // Panels
 import OAuthPanel from '@/modules/auth/oauth-service/oauth-panel'
-import SettingsPanel from '@/modules/auth/auth-settings/panel/settings-panel'
+import SettingsPanel from '@/modules/auth/auth-settings/panels/settings-panel'
 
 // Routing
 import { usePathname } from '@/i18n/routing'
