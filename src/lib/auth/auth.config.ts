@@ -5,7 +5,7 @@ import type { NextAuthOptions } from 'next-auth'
 import bcrypt from 'bcryptjs'
 
 // Data
-import { getUserByEmail } from '@/data/users/user-data'
+import { getUserByEmail } from '@/data/users/get-user'
 
 // Providers
 import Credentials from 'next-auth/providers/credentials'

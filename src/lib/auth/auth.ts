@@ -2,7 +2,7 @@
 import { db } from '@/lib/orm/prisma-client'
 
 // Import user-related functions
-import { getUserById } from '@/data/users/user-data'
+import { getUserById } from '@/data/users/get-user'
 
 // Import authentication configurations
 import authConfig from '@/lib/auth/auth.config'
