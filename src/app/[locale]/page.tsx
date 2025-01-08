@@ -6,7 +6,7 @@ import ShowPostStories from '@/modules/feeds/components/posts/show-post-stories'
 
 // Layouts
 import Header from '@/layouts/header/header-layout'
-import Aside from '@/layouts/aside/components/aside-layout'
+import Aside from '@/layouts/aside/layout/components/aside-layout'
 
 // Styles
 import '@/styles/globals.css'

@@ -4,8 +4,8 @@
 import '@/modules/configuration/styles/gradient-collection.css'
 
 // Panels
-import OptionPanel from '@/modules/configuration/components/panels/option-panel'
-import OptionsPanel from '@/modules/configuration/components/panels/options-panel'
+import OptionPanel from '@/layouts/aside/panels/components/option-panel'
+import OptionsPanel from '@/layouts/aside/panels/components/options-panel'
 
 // Custom hook
 import { useSettings } from '@/modules/configuration/hooks/panels/useSettings'

@@ -1,7 +1,7 @@
 'use client'
 
 // Hooks
-import { usePageComponent } from '@/layouts/aside/hooks/useAsidePanel'
+import { usePageComponent } from '@/layouts/aside/layout/hooks/useAsidePanel'
 
 // Navigation
 import Sidebar from '@/modules/navigation/components/menu/sidebar-menu'

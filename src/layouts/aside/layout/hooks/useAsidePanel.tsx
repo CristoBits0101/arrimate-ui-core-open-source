@@ -7,9 +7,9 @@ import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
 // Panels
-import PostsPanel from '@/modules/feeds/components/panels/posts-panel'
-import SettingsPanel from '@/modules/configuration/components/panels/settings-panel'
-import StoriesPanel from '@/modules/feeds/components/panels/stories-panel'
+import PostsPanel from '@/layouts/aside/panels/components/posts-panel'
+import SettingsPanel from '@/layouts/aside/panels/components/settings-panel'
+import StoriesPanel from '@/layouts/aside/panels/components/stories-panel'
 
 export function usePageComponent() {
   // Get translations
