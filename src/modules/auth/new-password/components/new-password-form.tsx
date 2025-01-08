@@ -34,7 +34,7 @@ import { Form } from '@/modules/ui/form'
 // Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { NewPasswordSchema } from '@/modules/auth/schemas'
+import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'
 
 export default function NewPasswordForm() {
   // States
