@@ -1,17 +1,19 @@
-// bcryptjs
+// Auth
+import type { NextAuthOptions } from 'next-auth'
+
+// Bcrypt.js
 import bcrypt from 'bcryptjs'
 
-// modules/auth
-import { getUserByEmail } from '@/modules/auth/data/users/user-data'
-import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'
-
-// next-auth
-import type { NextAuthOptions } from 'next-auth'
+// Data
+import { getUserByEmail } from '@/data/users/user-data'
 
 // Providers
 import Credentials from 'next-auth/providers/credentials'
 import Apple from 'next-auth/providers/apple'
 import Google from 'next-auth/providers/google'
+
+// Schemas
+import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'
 
 // Backend code
 export default {
