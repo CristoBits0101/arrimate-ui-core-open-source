@@ -8,7 +8,7 @@ import storiesLightBlackSVG from '@/modules/feeds/assets/icons/links/black/stori
 import storiesLightWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-light.svg'
 
 // Component
-import NavigationItem from '@/modules/navigation/components/links/navbar-link'
+import NavigationItem from '@/layouts/header/navbar/navbar-link'
 
 export default function Stories() {
   // Get the active theme from the context
