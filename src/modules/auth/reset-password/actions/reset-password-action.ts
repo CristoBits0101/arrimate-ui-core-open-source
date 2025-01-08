@@ -13,7 +13,7 @@ import { getUserByEmail } from '@/data/users/get-user'
 import { ResetPasswordSchema } from '@/modules/auth/reset-password/schemas'
 
 // Import function to send password reset email
-import { sendPasswordResetEmail } from '@/lib/email/resendresend'
+import { sendPasswordResetEmail } from '@/lib/email/resend'
 
 // Define function to handle reset password requests
 const resetPasswordSchema = async (

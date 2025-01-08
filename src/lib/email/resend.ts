@@ -1,3 +1,4 @@
+// Email sending library
 import { Resend } from 'resend'
 
 // Initialize Resend with the API key
