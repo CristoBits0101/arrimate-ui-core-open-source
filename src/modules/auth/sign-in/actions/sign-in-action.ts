@@ -13,7 +13,7 @@ import { generateVerificationToken } from '@/modules/auth/data/tokens/token-gene
 import { getUserByEmail } from '@/modules/auth/data/users/user-data'
 
 // Mail: To send verification email
-import { sendVerificationEmail } from '@/lib/email/resend'
+import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 // Schema: Validation schema for sign-in
 import { BackendSignInSchema } from '@/modules/auth/sign-in/schemas'

@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import { Button } from '@/modules/ui/button'
+import { Button } from '@/modules/ui/shadcn/button'
 
 // Images
 import Image from 'next/image'

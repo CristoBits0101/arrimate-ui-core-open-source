@@ -3,7 +3,7 @@
 // Buttons
 import ThemeButton from '@/modules/auth/auth-settings/buttons/theme-settings-button'
 
-export default function ThemeSection() {
+export default function ThemeSettingSection() {
   return (
     <section className='h-fit w-fit rounded-full'>
       <ThemeButton />

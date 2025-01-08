@@ -11,7 +11,7 @@ import FormSuccess from '@/modules/auth/status-alerts/success-alert'
 import SubmitButton from '@/modules/ui/buttons/submit-form-button'
 
 // Cards: Card to wrap inputs
-import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+import CardWrapper from '@/modules/ui/cards/card-wrapper'
 
 // Form: Manage form status and validation
 import { useForm, FormProvider } from 'react-hook-form'
@@ -28,10 +28,10 @@ import { useSearchParams } from 'next/navigation'
 // React: Hooks from React
 import { useEffect, useState, useTransition } from 'react'
 
-// Shadcn
-import { Form } from '@/modules/ui/form'
+// Shadcn: Component library
+import { Form } from '@/modules/ui/shadcn/form'
 
-// Zod
+// Zod: Validation library
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'

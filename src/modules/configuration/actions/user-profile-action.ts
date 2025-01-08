@@ -12,7 +12,7 @@ import { BackendProfileSchema } from '@/modules/configuration/schemas'
 
 // Utilities for email verification
 import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
-import { sendVerificationEmail } from '@/lib/email/resend'
+import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 export default async function profileAction(
   values: z.infer<typeof BackendProfileSchema>,

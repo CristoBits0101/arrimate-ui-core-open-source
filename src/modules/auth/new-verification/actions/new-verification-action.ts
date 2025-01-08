@@ -1,8 +1,8 @@
 'use server'
 
 // Data: Access user and token information
-import { getUserByEmail } from '@/modules/auth/data/users/user-data'
-import { getVerificationTokenByToken } from '@/modules/auth/data/tokens/verification-token-exists'
+import { getUserByEmail } from '@/data/users/get-user'
+import { getVerificationTokenByToken } from '@/data/tokens/check-token'
 
 // Prisma: To consult the database
 import { db } from '@/lib/orm/prisma-client'

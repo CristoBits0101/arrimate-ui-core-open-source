@@ -5,7 +5,7 @@ import AlertError from '@/modules/auth/status-alerts/error-alert'
 import AlertSuccess from '@/modules/auth/status-alerts/success-alert'
 
 // Cards: Card to structure content
-import CardWrapper from '@/modules/auth/components/cards/card-wrapper'
+import CardWrapper from '@/modules/ui/cards/card-wrapper'
 
 // Spinners: Loading indicator
 import { BeatLoader } from 'react-spinners'

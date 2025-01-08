@@ -10,7 +10,7 @@ import useLanguageSection from '@/modules/configuration/hooks/sections/useLangua
 import enIcon from '@/modules/auth/assets/icons/languages/gb.svg'
 import esIcon from '@/modules/auth/assets/icons/languages/es.svg'
 
-export default function LanguageSection() {
+export default function LanguageSettingSection() {
   // Change language
   const { locale, changeLanguage } = useLanguageSection()
   return (

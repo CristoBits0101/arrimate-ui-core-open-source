@@ -18,7 +18,7 @@ import microsoft from '@/modules/auth/assets/icons/o-auth/light/microsoft.svg'
 // Intl
 import { useTranslations } from 'next-intl'
 
-export default function SocialPanel() {
+export default function OAuthPanel() {
   // Context
   const { activeTheme } = useThemeContext()
 

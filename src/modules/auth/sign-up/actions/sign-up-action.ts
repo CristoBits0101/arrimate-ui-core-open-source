@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt'
 import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
 
 // Mail: To send verification email
-import { sendVerificationEmail } from '@/lib/email/resend'
+import { sendVerificationEmail } from '@/modules/auth/lib/resend'
 
 // Prisma: To consult the database
 import { db } from '@/lib/orm/prisma-client'

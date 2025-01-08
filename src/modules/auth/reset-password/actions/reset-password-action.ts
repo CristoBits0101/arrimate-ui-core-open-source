@@ -4,16 +4,16 @@
 import * as z from 'zod'
 
 // Import function to generate password reset tokens
-import { generateTokenResetPassword } from '@/modules/auth/data/tokens/token-generator'
+import { generateTokenResetPassword } from '@/data/tokens/generate-token'
 
 // Import function to retrieve user information
-import { getUserByEmail } from '@/modules/auth/data/users/user-data'
+import { getUserByEmail } from '@/data/users/get-user'
 
 // Import validation schema for reset password
 import { ResetPasswordSchema } from '@/modules/auth/reset-password/schemas'
 
 // Import function to send password reset email
-import { sendPasswordResetEmail } from '@/lib/email/resend'
+import { sendPasswordResetEmail } from '@/lib/email/resendresend'
 
 // Define function to handle reset password requests
 const resetPasswordSchema = async (

@@ -1,26 +1,24 @@
 'use server'
 
-// Bcrypt: To encrypt the password
+// Bcrypt
 import bcrypt from 'bcryptjs'
 
-// Data: Get token for reset password
-import { getPasswordResetTokenByToken } from '@/modules/auth/data/tokens/verification-reset-token'
-
-// Data: Function that queries the database
-import { getUserByEmail } from '@/modules/auth/data/users/user-data'
-
-// Prisma: To consult the database
+// Prisma
 import { db } from '@/lib/orm/prisma-client'
 
-// Schema: Validation schema for new password
+// Queries
+import { getPasswordResetTokenByToken } from '@/data/tokens/reset-token'
+import { getUserByEmail } from '@/data/users/get-user'
+
+// Validation
 import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'
 
-// Zod: To validate data in the backend
+// Zod
 import * as z from 'zod'
 
 const newPassword = async (
   values: z.infer<typeof NewPasswordSchema>,
-  token?: string | null,
+  token?: string | null
 ) => {
   // Check if token exists
   if (!token) return { error: 'notifyRequest' }

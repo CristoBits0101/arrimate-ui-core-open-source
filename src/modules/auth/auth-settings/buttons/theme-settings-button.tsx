@@ -1,24 +1,26 @@
 'use client'
 
-// Custom hook
+// Custom
 import useThemeSection from '@/modules/configuration/hooks/sections/useThemeSection'
 
 // Icons
 import darkIcon from '@/modules/auth/assets/icons/themes/dark.svg'
 import lightIcon from '@/modules/auth/assets/icons/themes/light.svg'
 
-// next/image
+// Image
 import Image from 'next/image'
 
 const ThemeSettingsButton: React.FC = () => {
   const { theme, changeTheme } = useThemeSection()
 
-  // Conditional rendering of icon and alt
+  // Get theme
   const isDarkMode = theme === 'dark'
+
+  // Conditional rendering
   const iconSrc = isDarkMode ? lightIcon : darkIcon
   const altText = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
 
-  // Switch between light and dark
+  // Switch between theme
   const handleThemeToggle = () => {
     const nextTheme = isDarkMode ? 'light' : 'dark'
     changeTheme(nextTheme)
