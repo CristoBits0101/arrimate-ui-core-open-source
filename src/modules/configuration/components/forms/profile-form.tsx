@@ -1,8 +1,8 @@
 'use client'
 
 // Alerts
-import FormError from '@/modules/auth/components/alerts/alert-errors'
-import FormSuccess from '@/modules/auth/components/alerts/alert-success'
+import FormError from '@/modules/auth/components/alerts/error-alert'
+import FormSuccess from '@/modules/auth/components/alerts/success-alert'
 
 // Buttons
 import SubmitButton from '@/modules/configuration/components/buttons/submit-button'

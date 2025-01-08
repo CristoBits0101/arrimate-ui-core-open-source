@@ -1,8 +1,8 @@
 'use client'
 
 // Alerts: Serialize backend messages
-import FormError from '@/modules/auth/components/alerts/alert-errors'
-import FormSuccess from '@/modules/auth/components/alerts/alert-success'
+import FormError from '@/modules/auth/components/alerts/error-alert'
+import FormSuccess from '@/modules/auth/components/alerts/success-alert'
 
 // Buttons: Button to send form
 import SubmitButton from '@/modules/auth/components/buttons/submit/submit-form-button'
