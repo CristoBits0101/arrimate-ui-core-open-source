@@ -1,5 +1,5 @@
 // Products view
-import ShowProducts from '@/modules/e-commerce/components/products/show-products'
+import ShowProducts from '@/modules/e-commerce/show-products/components/show-products'
 
 // Products page
 export default function ProductsPage() {
