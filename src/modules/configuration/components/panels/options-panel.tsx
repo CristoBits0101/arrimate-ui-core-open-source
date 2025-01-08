@@ -4,7 +4,7 @@
 import OptionsButton from '@/modules/configuration/components/buttons/options-button'
 
 // Forms
-import SignOutForm from '@/modules/auth/components/forms/sign-out-form'
+import SignOutForm from '@/modules/auth/sign-out/components/sign-out-form'
 
 // Icons
 import languageIcon from '@/modules/configuration/assets/buttons/settings/language.svg'
