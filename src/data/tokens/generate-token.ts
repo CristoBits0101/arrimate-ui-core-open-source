@@ -1,10 +1,10 @@
 // Database interaction
 import { db } from '@/lib/orm/prisma-client'
 
-// Get password reset token by email
+// Fetch reset token by email
 import { getPasswordResetTokenByEmail } from '@/data/tokens/reset-token'
 
-// Checks in bd if an email has an associated token
+// Verify if email has a token
 import { getVerificationTokenByEmail } from '@/data/tokens/check-token'
 
 // Generate unique tokens
@@ -13,12 +13,12 @@ import { v4 as uuidv4 } from 'uuid'
 /**
  * Generate a password reset token
  *
- * 1. Generate a unique token
- * 2. Set an expiration time (1 hour)
- * 3. Check if an existing token is already associated with the email
- * 4. Delete the existing token if found
- * 5. Create and store a new password reset token in the database
- * 6. Return the newly created token
+ * 1. Create a unique token
+ * 2. Set 1-hour expiration
+ * 3. Check for existing token by email
+ * 4. Remove existing token if found
+ * 5. Store new token in the database
+ * 6. Return the new token
  */
 export const generateTokenResetPassword = async (email: string) => {
   // Generate a new token
@@ -27,16 +27,16 @@ export const generateTokenResetPassword = async (email: string) => {
   // Set expiration date (1 hour from now)
   const expiresAt = new Date(new Date().getTime() + 3600 * 1000)
 
-  // Check for an existing token in the database
+  // Check for token in database
   const existingToken = await getPasswordResetTokenByEmail(email)
 
-  // If a token exists, delete it to avoid duplicates
+  // Delete existing token to prevent duplicates
   if (existingToken)
     await db.resetPasswordToken.delete({
       where: { id: existingToken.id }
     })
 
-  // Create a new password reset token in the database
+  // Create new reset token in database
   const passwordResetToken = await db.resetPasswordToken.create({
     data: {
       email,
@@ -45,38 +45,39 @@ export const generateTokenResetPassword = async (email: string) => {
     }
   })
 
-  // Return the newly generated token
+  // Return the new token
   return passwordResetToken
 }
 
 /**
  * Generate a verification token
  *
- * 1. Generate a unique token
- * 2. Set an expiration time (1 hour)
- * 3. Check if an existing verification token is already associated with the email
- * 4. Delete the existing token if found
- * 5. Create and store a new verification token in the database
- * 6. Return the newly created token
+ * 1. Create a unique token
+ * 2. Set 1-hour expiration
+ * 3. Check for existing token by email
+ * 4. Remove existing token if found
+ * 5. Store new token in the database
+ * 6. Return the new token
  */
+
 export const generateVerificationToken = async (email: string) => {
-  // Generate a new token
+  // Generate a unique token
   const token = uuidv4()
 
-  // Set expiration date of 1 hour
+  // Set 1-hour expiration
   const expiresAt = new Date(new Date().getTime() + 3600 * 1000)
 
-  // Check for an existing verification token in the database
+  // Check for existing verification token
   const existingToken = await getVerificationTokenByEmail(email)
 
-  // If a token exists, delete it to avoid duplicates
+  // Delete existing token to prevent duplicates
   if (existingToken) {
     await db.verificationToken.delete({
       where: { id: existingToken.id }
     })
   }
 
-  // Create a new verification token in the database
+  // Create new verification token in database
   const verificationToken = await db.verificationToken.create({
     data: {
       email,
@@ -85,6 +86,6 @@ export const generateVerificationToken = async (email: string) => {
     }
   })
 
-  // Return the newly generated token
+  // Return the new token
   return verificationToken
 }
