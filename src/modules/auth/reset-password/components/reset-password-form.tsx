@@ -8,7 +8,7 @@ import FormSuccess from '@/modules/ui/alerts/success-alert'
 import SubmitButton from '@/modules/ui/buttons/submit-form-button'
 
 // Cards: Card to wrap inputs
-import CardWrapper from '@/modules/ui/cards/card-wrapper'
+import CardWrapper from '@/modules/auth/form-cards/card-wrapper'
 
 // Form: Hook form provider
 import { FormProvider } from 'react-hook-form'
@@ -17,7 +17,7 @@ import { FormProvider } from 'react-hook-form'
 import { useResetPassword } from '@/modules/auth/reset-password/hooks/useResetPassword'
 
 // Inputs: Fillable fields in forms
-import EmailInput from '@/modules/ui/inputs/email-input'
+import EmailInput from '@/modules/auth/inputs/email-input'
 
 // Shadcn: Contains the form component
 import { Form } from '@/modules/ui/shadcn/form'

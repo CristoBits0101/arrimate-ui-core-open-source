@@ -4,14 +4,14 @@
 import RedirectButton from '@/modules/ui/buttons/redirect-page-button'
 
 // Card
-import Header from '@/modules/ui/cards/card-header'
+import Header from '@/modules/auth/form-cards/card-header'
 
 // Intl
 import { useTranslations } from 'next-intl'
 
 // Panels
 import OAuthPanel from '@/modules/auth/oauth-service/oauth-panel'
-import SettingsPanel from '@/modules/auth/auth-settings/panels/settings-panel'
+import SettingsPanel from '@/modules/auth/ui-settings/panels/settings-panel'
 
 // Routing
 import { usePathname } from '@/i18n/routing'
@@ -22,7 +22,7 @@ import {
   CardContent,
   CardFooter,
   CardHeader
-} from '@/modules/ui/shadcn/card'
+} from '@/modules/ui/card'
 
 // Type props
 interface CardWrapperProps {

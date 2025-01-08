@@ -8,7 +8,7 @@ import FormSuccess from '@/modules/ui/alerts/success-alert'
 import SubmitButton from '@/modules/ui/buttons/submit-form-button'
 
 // Cards: Card to wrap inputs
-import CardWrapper from '@/modules/ui/cards/card-wrapper'
+import CardWrapper from '@/modules/auth/form-cards/card-wrapper'
 
 // Custom: Encapsulates form logic
 import { useSignInForm } from '@/modules/auth/sign-in/hooks/useSignIn'
@@ -17,8 +17,8 @@ import { useSignInForm } from '@/modules/auth/sign-in/hooks/useSignIn'
 import { FormProvider } from 'react-hook-form'
 
 // Inputs: Fillable fields in forms
-import EmailInput from '@/modules/ui/inputs/email-input'
-import PasswordInput from '@/modules/ui/inputs/password-input'
+import EmailInput from '@/modules/auth/inputs/email-input'
+import PasswordInput from '@/modules/auth/inputs/password-input'
 
 // Intl: To get language and set translations
 import { useLocale, useTranslations } from 'next-intl'
