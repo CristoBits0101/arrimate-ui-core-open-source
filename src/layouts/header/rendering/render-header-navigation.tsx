@@ -5,7 +5,7 @@ import ReturnSearchContent from '@/layouts/header/rendering/rendering-search-con
 import Searcher from '@/layouts/header/searcher/searcher-form'
 import { useSearch } from '@/modules/navigation/hooks/useSearch'
 
-export default function ReturnSearchEngine() {
+export default function RenderNavigation() {
   const {
     searchTerm,
     isFocused,

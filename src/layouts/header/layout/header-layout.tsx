@@ -4,7 +4,7 @@
 import Logo from '@/modules/marketing/components/branding/branding-logo'
 
 // Navigation
-import ReturnSearchEngine from '@/layouts/header/rendering/render-navigation'
+import ReturnSearchEngine from '@/layouts/header/rendering/render-header-navigation'
 
 // Layout
 export default function Header() {
