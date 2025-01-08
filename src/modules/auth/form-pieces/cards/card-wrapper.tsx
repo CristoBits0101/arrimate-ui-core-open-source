@@ -1,10 +1,10 @@
 'use client'
 
 // Buttons
-import RedirectButton from '@/modules/ui/buttons/redirect-page-button'
+import RedirectButton from '@/modules/auth/form-pieces/buttons/redirect-page-button'
 
 // Card
-import Header from '@/modules/auth/form-components/cards/card-header'
+import Header from '@/modules/auth/form-pieces/cards/card-header'
 
 // Intl
 import { useTranslations } from 'next-intl'

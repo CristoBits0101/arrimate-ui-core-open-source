@@ -5,7 +5,7 @@ import AlertError from '@/modules/ui/alerts/error-alert'
 import AlertSuccess from '@/modules/ui/alerts/success-alert'
 
 // Cards: Card to structure content
-import CardWrapper from '@/modules/auth/form-components/cards/card-wrapper'
+import CardWrapper from '@/modules/auth/form-pieces/cards/card-wrapper'
 
 // Spinners: Loading indicator
 import { BeatLoader } from 'react-spinners'
