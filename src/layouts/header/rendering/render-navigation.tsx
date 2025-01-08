@@ -1,7 +1,7 @@
 'use-client'
 
 import Navbar from '@/layouts/header/navbar/navbar-menu'
-import ReturnSearchContent from '@/modules/navigation/components/rendering/rendering-search-content'
+import ReturnSearchContent from '@/layouts/header/rendering/rendering-search-content'
 import Searcher from '@/layouts/header/searcher/searcher-form'
 import { useSearch } from '@/modules/navigation/hooks/useSearch'
 
