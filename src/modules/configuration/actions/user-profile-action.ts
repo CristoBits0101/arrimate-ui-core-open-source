@@ -11,8 +11,8 @@ import * as z from 'zod'
 import { BackendProfileSchema } from '@/modules/configuration/schemas'
 
 // Utilities for email verification
-import { generateVerificationToken } from '@/modules/auth/data/tokens/token-generator'
-import { sendVerificationEmail } from '@/modules/auth/lib/resend'
+import { generateVerificationToken } from '@/data/tokens/generate-token'
+import { sendVerificationEmail } from '@/lib/email/resend'
 
 export default async function profileAction(
   values: z.infer<typeof BackendProfileSchema>,
