@@ -1,18 +1,16 @@
-// config/routes
-import { API_AUTH_ROUTE, AUTH_ROUTES, PUBLIC_ROUTES } from '@/config/routes'
-
-// next-auth
+// Auth
 import authConfig from '@/lib/auth/auth.config'
 import NextAuth from 'next-auth'
 
-// next-intl
+// Intl
 import createMiddleware from 'next-intl/middleware'
 import { routing } from '@/i18n/routing'
 
-// next-auth
-const { auth } = NextAuth(authConfig)
+// Routes
+import { API_AUTH_ROUTE, AUTH_ROUTES, PUBLIC_ROUTES } from '@/config/routes'
 
-// next-intl
+// Configuration
+const { auth } = NextAuth(authConfig)
 const intlMiddleware = createMiddleware(routing)
 
 export default auth((request) => {
