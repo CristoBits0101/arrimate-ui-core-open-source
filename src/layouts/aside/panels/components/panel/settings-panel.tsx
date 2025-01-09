@@ -1,8 +1,8 @@
 'use client'
 
 // Components
-import OptionPanel from '@/layouts/aside/panels/components/option-panel'
-import OptionsPanel from '@/layouts/aside/panels/components/options-panel'
+import OptionPanel from '@/layouts/aside/panels/components/option/option-panel'
+import OptionsPanel from '@/layouts/aside/panels/components/options/settings-options'
 
 // Custom
 import { useSettings } from '@/modules/configuration/settings-panel/hooks/useSettingsPanel'
