@@ -12,8 +12,9 @@ import SettingsPanel from '@/layouts/aside/panels/components/settings-panel'
 import StoriesPanel from '@/layouts/aside/panels/components/stories-panel'
 
 export function usePageComponent() {
-  // Get translations
+  // Translations
   const hpt = useTranslations('StoriesPanel')
+  
   // Get -> /en/stories
   const path = usePathname()
   // Get -> en
