@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 // Notifications
-import NoContent from '@/modules/navigation/components/notification/no-content'
+import NoContent from '@/modules/e-commerce/show-products/components/stock-empty'
 
 // React
 import { useEffect, useState } from 'react'

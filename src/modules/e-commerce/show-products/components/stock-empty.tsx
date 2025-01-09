@@ -10,11 +10,11 @@ import Image from 'next/image'
 // Styles
 import '@/modules/e-commerce/styles/show-products.css'
 
-interface NoContentProps {
+interface StockEmptyProps {
   text: string
 }
 
-export default function NoContent({ text }: NoContentProps) {
+export default function StockEmpty({ text }: StockEmptyProps) {
   return (
     <div className='w-full h-full grid place-content-center text-center gap-8'>
       <h2 className={`text-5xl font-medium shakeFix ${shadowsIntoLight.className}`}>
