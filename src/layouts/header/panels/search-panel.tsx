@@ -1,22 +1,22 @@
-import RecentContent from '@/modules/navigation/components/menu/recent-menu'
-import RecommendedContent from '@/modules/navigation/components/menu/recommended-menu'
+import RecentContent from '@/layouts/header/menu/recent-menu'
+import RecommendedContent from '@/layouts/header/menu/recommended-menu'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
 type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
 
-interface RenderSearchContentProps {
+interface SearchPanelProps {
   searchTerm: string
   locale: string
   setIsFocused: SetIsFocused
   setResetSearchInput: SetResetSearchInput
 }
 
-export default function RenderSearchContent({
+export default function SearchPanel({
   setIsFocused,
   searchTerm,
   locale,
   setResetSearchInput
-}: RenderSearchContentProps) {
+}: SearchPanelProps) {
   return (
     <div className='h-fit w-full px-8'>
       {searchTerm ? (
