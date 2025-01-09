@@ -6,7 +6,6 @@ import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
 export default function UnauthorizedAccessCard() {
   return (
-    // Renders the CardWrapper with redirect properties
     <CardWrapper
       // Redirect page name
       pageNameRedirect='Sign In'
@@ -17,10 +16,8 @@ export default function UnauthorizedAccessCard() {
     >
       {/* Content inside the card */}
       <div className='w-full flex flex-col gap-2 items-center justify-center'>
-        {/* Message */}
         <h2>Please try again in a moment</h2>
         <ExclamationTriangleIcon className='text-destructive' />{' '}
-        {/* Warning icon */}
       </div>
     </CardWrapper>
   )
