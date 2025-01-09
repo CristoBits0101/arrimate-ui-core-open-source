@@ -17,7 +17,7 @@ import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUser
 
 // Zod: Define data validation rules
 import * as z from 'zod'
-import { FrontendProfileSchema } from '@/modules/configuration/x/schemas/index'
+import { FrontendProfileSchema } from '@/modules/configuration/profile-update/schemas/index'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 export function useSettingsForm() {

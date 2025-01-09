@@ -8,7 +8,7 @@ import bcrypt from 'bcrypt'
 
 // Zod: Schema validation
 import * as z from 'zod'
-import { BackendProfileSchema } from '@/modules/configuration/x/schemas'
+import { BackendProfileSchema } from '@/modules/configuration/profile-update/schemas'
 
 // Utilities for email verification
 import { generateVerificationToken } from '@/data/tokens/generate-token'
