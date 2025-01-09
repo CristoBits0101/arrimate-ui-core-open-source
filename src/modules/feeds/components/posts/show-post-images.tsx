@@ -1,6 +1,6 @@
 import ArrimateImagesCard from '@/modules/feeds/components/cards/arrimate-images-card'
 import Image from 'next/image'
-import NoContent from '@/modules/e-commerce/show-products/components/stock-empty'
+import NoContent from '@/modules/e-commerce/show-products/components/alerts/stock-empty'
 import PostButton from '@/modules/feeds/components/buttons/post-button'
 import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
 import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'

@@ -1,16 +1,16 @@
 'use client'
 
-// next/image
+// Components
+import NoContent from '@/modules/e-commerce/show-products/components/alerts/stock-empty'
+
+// Hooks
+import { useEffect, useState } from 'react'
+
+// Image
 import Image from 'next/image'
 
-// next-intl
+// Intl
 import { useTranslations } from 'next-intl'
-
-// Notifications
-import NoContent from '@/modules/e-commerce/show-products/components/stock-empty'
-
-// React
-import { useEffect, useState } from 'react'
 
 // Spinner
 import { PuffLoader } from 'react-spinners'
@@ -63,8 +63,8 @@ export default function ShowProducts() {
             method: 'GET',
             headers: new Headers({
               'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
-              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET || '',
-            }),
+              'x-rapidapi-key': process.env.AMAZON_CLIENT_SECRET || ''
+            })
           }
         )
 

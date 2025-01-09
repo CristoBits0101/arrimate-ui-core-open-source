@@ -1,4 +1,4 @@
-import Cart from '@/modules/e-commerce/components/links/cart-link'
+import Cart from '@/modules/navigation/menu/components/sidebar-items/cart-link'
 import Chats from '@/modules/messages/components/links/chats-link'
 import Notifications from '@/modules/messages/components/links/notifications-link'
 import Post from '@/modules/feeds/components/links/post-link'

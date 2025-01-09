@@ -6,7 +6,7 @@ import { usePost } from '@/modules/feeds/hooks/panels/usePost'
 // Post Forms
 import AudioForm from '@/modules/streaming/components/forms/audio-form'
 import EventForm from '@/modules/feeds/components/forms/event-form'
-import ProductForm from '@/modules/e-commerce/components/forms/product-form'
+import ProductForm from '@/modules/e-commerce/show-products/components/forms/product-form'
 import ShortForm from '@/modules/streaming/components/forms/short-form'
 import StoryForm from '@/modules/feeds/components/forms/story-form'
 import StreamForm from '@/modules/streaming/components/forms/stream-form'

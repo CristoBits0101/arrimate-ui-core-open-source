@@ -1,5 +1,5 @@
 // E-commerce
-import Products from '@/modules/e-commerce/components/links/products-link'
+import Products from '@/modules/navigation/menu/components/navbar-items/products-link'
 
 // Feeds
 import Events from '@/modules/feeds/components/links/events-link'
