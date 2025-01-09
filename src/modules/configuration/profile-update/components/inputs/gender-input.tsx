@@ -1,5 +1,24 @@
+'use client'
+
+// Actions
+import { getGenders } from '@/modules/configuration/profile-update/actions/user-gender-action'
+
+// Form
+import { useFormContext } from 'react-hook-form'
+
+// Hooks
 import { useEffect, useState, useRef } from 'react'
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
+
+// Intl
+import { useTranslations } from 'next-intl'
+
+// Session
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
+
+// Styles
+import '@/modules/configuration/styles/select-apperance.css'
+
+// Shadcn
 import {
   FormLabel,
   FormControl,
@@ -7,11 +26,8 @@ import {
   FormItem,
   FormMessage
 } from '@/modules/ui/form'
-import { useFormContext } from 'react-hook-form'
-import { useTranslations } from 'next-intl'
-import { getGenders } from '@/modules/configuration/profile-update/actions/user-gender-action'
-import '@/modules/configuration/styles/select-apperance.css'
 
+// Type props
 interface GenderInputProps {
   name: string
   isPending: boolean

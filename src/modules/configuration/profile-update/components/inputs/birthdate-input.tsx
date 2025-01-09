@@ -1,7 +1,18 @@
 'use client'
 
+// Form
+import { useFormContext } from 'react-hook-form'
+
+// Hooks
 import { useEffect, useState } from 'react'
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
+
+// Intl
+import { useTranslations } from 'next-intl'
+
+// Session
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
+
+// Shadcn
 import {
   FormLabel,
   FormControl,
@@ -10,10 +21,11 @@ import {
   FormMessage
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
-import { useFormContext } from 'react-hook-form'
-import { useTranslations } from 'next-intl'
+
+// Styles
 import '@/modules/configuration/styles/birthdate-input.css'
 
+// Type props
 interface BirthdateInputProps {
   name: string
   isPending: boolean

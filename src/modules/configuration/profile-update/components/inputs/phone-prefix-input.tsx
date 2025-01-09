@@ -1,3 +1,18 @@
+'use client'
+
+// Actions
+import { getPhonePrefixes } from '@/modules/configuration/profile-update/actions/phone-prefix-action'
+
+// Hooks
+import { useEffect, useRef, useState } from 'react'
+
+// Intl
+import { useTranslations } from 'next-intl'
+
+// Session
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
+
+// Shadcn
 import {
   FormControl,
   FormField,
@@ -6,11 +21,8 @@ import {
   FormMessage
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
-import { useEffect, useRef, useState } from 'react'
-import { useTranslations } from 'next-intl'
-import { getPhonePrefixes } from '@/modules/configuration/profile-update/actions/phone-prefix-action'
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
 
+// Type props
 interface PhonePrefixInputProps {
   name: string
   isPending: boolean

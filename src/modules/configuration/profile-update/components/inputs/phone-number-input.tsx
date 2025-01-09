@@ -1,5 +1,15 @@
 'use client'
 
+// Hooks
+import { useState, useEffect } from 'react'
+
+// Intl
+import { useTranslations } from 'next-intl'
+
+// Session
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
+
+// Shadcn
 import {
   FormControl,
   FormField,
@@ -8,10 +18,8 @@ import {
   FormMessage
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
-import { useTranslations } from 'next-intl'
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
-import { useState, useEffect } from 'react'
 
+// Type props
 interface PhoneNumberInputProps {
   name: string
   isPending: boolean

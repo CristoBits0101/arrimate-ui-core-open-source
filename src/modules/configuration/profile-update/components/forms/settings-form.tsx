@@ -14,7 +14,7 @@ import CardWrapper from '@/modules/configuration/profile-update/components/cards
 import { useSettingsForm } from '@/modules/configuration/profile-update/hooks/useSettingsForm'
 
 // Fieldset
-import SettingsFormFieldsetCols4 from '@/modules/configuration/x/form-pieces/fieldsets/profile-form-fieldset-cols-4'
+import FormFieldset from '@/modules/configuration/profile-update/components/fieldsets/form-fieldset'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
@@ -89,14 +89,14 @@ export default function SettingsForm() {
           <form className='space-y-8' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-8 mt-8'>
               {/* Identity */}
-              <SettingsFormFieldsetCols4 legend={f('identity')}>
+              <FormFieldset legend={f('identity')}>
                 <NameInput name='name' isPending={isPending} />
                 <NicknameInput name='nickname' isPending={isPending} />
                 <GenderInput name='gender' isPending={isPending} />
                 <BirthdateInput name='birthdate' isPending={isPending} />
-              </SettingsFormFieldsetCols4>
+              </FormFieldset>
               {/* Credentials */}
-              <SettingsFormFieldsetCols4 legend={f('credentials')}>
+              <FormFieldset legend={f('credentials')}>
                 <div className='grid w-full h-fit grid-cols-[1fr,1fr] gap-2'>
                   <PhonePrefixInput name='prefix' isPending={isPending} />
                   <PhoneNumberInput name='number' isPending={isPending} />
@@ -104,9 +104,9 @@ export default function SettingsForm() {
                 <EmailInput name='email' isPending={isPending} />
                 <PasswordInput name='password' isPending={isPending} />
                 <NewPasswordInput name='newPassword' isPending={isPending} />
-              </SettingsFormFieldsetCols4>
+              </FormFieldset>
               {/* Location */}
-              <SettingsFormFieldsetCols4 legend={f('location')}>
+              <FormFieldset legend={f('location')}>
                 <ZipCodeInput
                   predictions={predictions}
                   setValue={setValue}
@@ -122,14 +122,14 @@ export default function SettingsForm() {
                 />
                 <CityInput city={city} name='city' isPending={isPending} />
                 <AddressInput name='address' isPending={isPending} />
-              </SettingsFormFieldsetCols4>
+              </FormFieldset>
               {/* Vocation */}
-              <SettingsFormFieldsetCols4 legend={f('vocation')}>
+              <FormFieldset legend={f('vocation')}>
                 <OccupationInput name='occupation' isPending={isPending} />
                 <InterestsInput name='interests' isPending={isPending} />
                 <SloganInput name='slogan' isPending={isPending} />
                 <PortfolioInput name='portfolio' isPending={isPending} />
-              </SettingsFormFieldsetCols4>
+              </FormFieldset>
             </div>
             <FormError message={error} />
             <FormSuccess message={success} />

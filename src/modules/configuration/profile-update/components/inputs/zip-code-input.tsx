@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl'
 import { Dispatch, SetStateAction } from 'react'
 
 // Session
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
 
 // Shadcn
 import {
@@ -32,7 +32,7 @@ type Prediction = {
   place_id: string
 }
 
-// Props interface
+// Type props
 interface InputProps {
   name: string
   isPending: boolean
@@ -121,21 +121,21 @@ const ZipCodeInput = ({
   ) => {
     // Extract the numeric value from the prediction's description (postal code)
     const extractedNumbers = prediction.description.match(/^\d+/)?.[0] || ''
-  
+
     // Extract the city (text between the postal code and the last comma)
     const cityMatch = prediction.description.match(/^\d+\s+(.*?)\s*,.*?$/)
     const extractedCity = cityMatch ? cityMatch[1].trim() : ''
-  
+
     // Extract the country (last segment after the last comma)
     const countryMatch = prediction.description.match(/,([^,]+)$/)
     const extractedCountry = countryMatch ? countryMatch[1].trim() : ''
-  
+
     // Set the values accordingly
     setValue(extractedNumbers)
     onChange(extractedNumbers)
     setCity(extractedCity)
     setCountry(extractedCountry)
-  
+
     // Clear the filtered predictions
     setFilteredPredictions([])
   }

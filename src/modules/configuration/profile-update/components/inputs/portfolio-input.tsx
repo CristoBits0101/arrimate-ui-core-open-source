@@ -1,6 +1,18 @@
 'use client'
 
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
+// Form
+import { useFormContext } from 'react-hook-form'
+
+// Hooks
+import { useEffect, useState } from 'react'
+
+// Intl
+import { useTranslations } from 'next-intl'
+
+// Session
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
+
+// Shadcn
 import {
   FormLabel,
   FormControl,
@@ -9,10 +21,8 @@ import {
   FormMessage
 } from '@/modules/ui/form'
 import { Input } from '@/modules/ui/input'
-import { useFormContext } from 'react-hook-form'
-import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
 
+// Type props
 interface InputProps {
   name: string
   isPending: boolean
