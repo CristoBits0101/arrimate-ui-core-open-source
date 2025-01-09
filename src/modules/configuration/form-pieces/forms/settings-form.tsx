@@ -14,7 +14,7 @@ import CardWrapper from '@/modules/configuration/components/cards/card-wrapper'
 import { useSettingsForm } from '@/modules/configuration/hooks/forms/useSettingsForm'
 
 // Fieldset
-import SettingsFormFieldsetCols4 from '@/modules/configuration/fieldsets/profile-form-fieldset-cols-4'
+import SettingsFormFieldsetCols4 from '@/modules/configuration/form-pieces/fieldsets/profile-form-fieldset-cols-4'
 
 // Forms
 import { FormProvider } from 'react-hook-form'
@@ -24,23 +24,23 @@ import autocomplete from '@/lib/google/google-maps'
 import { PlaceAutocompleteResult } from '@googlemaps/google-maps-services-js'
 
 // Inputs
-import AddressInput from '@/modules/configuration/components/inputs/address-input'
-import BirthdateInput from '@/modules/configuration/components/inputs/birthdate-input'
-import CityInput from '@/modules/configuration/components/inputs/city-input'
-import CountryInput from '@/modules/configuration/components/inputs/country-input'
-import EmailInput from '@/modules/configuration/components/inputs/email-input'
-import GenderInput from '@/modules/configuration/components/inputs/gender-input'
-import InterestsInput from '@/modules/configuration/components/inputs/interests-input'
-import NameInput from '@/modules/configuration/components/inputs/name-input'
-import NewPasswordInput from '@/modules/configuration/components/inputs/new-password-input'
-import NicknameInput from '@/modules/configuration/components/inputs/nickname-input'
-import OccupationInput from '@/modules/configuration/components/inputs/occupation-input'
-import PasswordInput from '@/modules/configuration/components/inputs/password-input'
-import PhoneNumberInput from '@/modules/configuration/components/inputs/phone-number-input'
-import PhonePrefixInput from '@/modules/configuration/components/inputs/phone-prefix-input'
-import PortfolioInput from '@/modules/configuration/components/inputs/portfolio-input'
-import SloganInput from '@/modules/configuration/components/inputs/slogan-input'
-import ZipCodeInput from '@/modules/configuration/components/inputs/zip-code-input'
+import AddressInput from '@/modules/configuration/form-pieces/inputs/address-input'
+import BirthdateInput from '@/modules/configuration/form-pieces/inputs/birthdate-input'
+import CityInput from '@/modules/configuration/form-pieces/inputs/city-input'
+import CountryInput from '@/modules/configuration/form-pieces/inputs/country-input'
+import EmailInput from '@/modules/configuration/form-pieces/inputs/email-input'
+import GenderInput from '@/modules/configuration/form-pieces/inputs/gender-input'
+import InterestsInput from '@/modules/configuration/form-pieces/inputs/interests-input'
+import NameInput from '@/modules/configuration/form-pieces/inputs/name-input'
+import NewPasswordInput from '@/modules/configuration/form-pieces/inputs/new-password-input'
+import NicknameInput from '@/modules/configuration/form-pieces/inputs/nickname-input'
+import OccupationInput from '@/modules/configuration/form-pieces/inputs/occupation-input'
+import PasswordInput from '@/modules/configuration/form-pieces/inputs/password-input'
+import PhoneNumberInput from '@/modules/configuration/form-pieces/inputs/phone-number-input'
+import PhonePrefixInput from '@/modules/configuration/form-pieces/inputs/phone-prefix-input'
+import PortfolioInput from '@/modules/configuration/form-pieces/inputs/portfolio-input'
+import SloganInput from '@/modules/configuration/form-pieces/inputs/slogan-input'
+import ZipCodeInput from '@/modules/configuration/form-pieces/inputs/zip-code-input'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -49,7 +49,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 // Shadcn
-import { Form } from '@/modules/ui/shadcn/form'
+import { Form } from '@/modules/ui/form'
 
 export default function SettingsForm() {
   // Translations
