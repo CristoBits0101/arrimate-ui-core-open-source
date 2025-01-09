@@ -2,7 +2,7 @@ import Cart from '@/modules/e-commerce/components/links/cart-link'
 import Chats from '@/modules/messages/components/links/chats-link'
 import Notifications from '@/modules/messages/components/links/notifications-link'
 import Post from '@/modules/feeds/components/links/post-link'
-import Settings from '@/modules/configuration/x/components/links/profile-link'
+import Settings from '@/modules/configuration/profile-update/components/links/profile-link'
 
 export default function SidebarMenu() {
   // Store the components in an array
