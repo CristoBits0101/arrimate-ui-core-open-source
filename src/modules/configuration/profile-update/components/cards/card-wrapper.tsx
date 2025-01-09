@@ -1,6 +1,6 @@
 'use client'
 
-import UserArticle from '@/modules/auth/session-data/components/articles/user-article'
+import UserArticle from '@/modules/auth/session-data/components/user-article'
 import { Card } from '@/modules/ui/card'
 
 interface CardWrapperProps {
