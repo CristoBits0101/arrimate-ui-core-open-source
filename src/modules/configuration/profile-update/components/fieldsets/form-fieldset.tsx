@@ -1,3 +1,4 @@
+// Types props
 interface FieldsetProps {
   legend: string
   children: React.ReactNode

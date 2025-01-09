@@ -1,8 +1,12 @@
 'use client'
 
+// Components
 import UserArticle from '@/modules/auth/session-data/components/user-article'
+
+// Shadcn
 import { Card } from '@/modules/ui/card'
 
+// Types props
 interface CardWrapperProps {
   children: React.ReactNode
 }

@@ -1,24 +1,20 @@
-// Imports the PulseLoader component
+// Spinners
 import { PulseLoader } from 'react-spinners'
 
-// Imports the Button component
+// Shadcn
 import { Button } from '@/modules/ui/button'
 
-// Declares the SubmitButtonProps interface
+// Types props
 interface SubmitButtonProps {
-  // Optional message
   message?: string
-  // Pending state flag
   isPending: boolean
 }
 
-// Defines the SubmitButton component
 export default function SubmitButton({
   message,
   isPending
 }: SubmitButtonProps) {
   return (
-    // Renders a Button component
     <Button
       // Disabled if pending
       disabled={isPending}
