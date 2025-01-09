@@ -1,5 +1,3 @@
 export default function EventsPanel() {
-  return (
-    <div>events-panel</div>
-  )
+  return <div>EVENTS PANEL</div>
 }

@@ -1,16 +1,25 @@
 'use client'
 
-import PostOptions from '@/modules/feeds/components/options/post-options'
-import PublishOptions from '@/modules/feeds/components/options/publish-options'
+// Components
+import BackButton from '@/modules/configuration/components/buttons/back-button'
 import ManageOptions from '@/modules/feeds/components/options/manage-options'
 import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
-import BackButton from '@/modules/configuration/components/buttons/back-button'
+import PostOptions from '@/modules/feeds/components/options/post-options'
+import PublishOptions from '@/modules/feeds/components/options/publish-options'
+
+// Custom
 import { usePostSettings } from '@/modules/feeds/hooks/panels/usePostSettings'
+
+// Intl
 import { useTranslations } from 'next-intl'
+
+// Styles
 import '@/modules/configuration/styles/gradient-collection.css'
 
 export default function PostsPanel() {
+  // Switch options
   const { selectedOption, handleSelectOption, handleBack } = usePostSettings()
+  // Translations
   const t = useTranslations('Posts')
   return (
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] gradient-glass shadow-sm'>

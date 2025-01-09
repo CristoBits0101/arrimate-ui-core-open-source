@@ -10,23 +10,26 @@ import SignOutForm from '@/modules/auth/sign-out/components/sign-out-form'
 import languageIcon from '@/modules/configuration/assets/buttons/settings/language.svg'
 import themesIcon from '@/modules/configuration/assets/buttons/settings/themes.svg'
 
-// next-intl
+// Intl
 import { useTranslations } from 'next-intl'
 
+// Type props
 interface OptionsPanelProps {
   languageLabel: string
   themeLabel: string
   handleSelectOption: (option: 'language' | 'theme') => void
 }
 
-// Settings panel
+/**
+ * Settings panel
+ */
 const OptionsPanel: React.FC<OptionsPanelProps> = ({
   languageLabel,
   themeLabel,
   handleSelectOption
 }) => {
+  // Translations
   const t = useTranslations('SettingsPanel')
-
   return (
     <div className='flex flex-col items-center'>
       {/* Panel title */}

@@ -1,22 +1,24 @@
 'use client'
 
+// Components
 import BackButton from '@/modules/configuration/components/buttons/back-button'
 import LanguageSection from '@/modules/configuration/components/sections/language-section'
 import ThemeSection from '@/modules/configuration/components/sections/theme-section'
+
+// Intl
 import { useTranslations } from 'next-intl'
 
+// Type props
 interface OptionPanelProps {
   component: 'language' | 'theme'
   handleBack: () => void
 }
 
-// Renders the language or theme panel
 export default function OptionPanel({
   component,
   handleBack
 }: OptionPanelProps) {
   const t = useTranslations('SettingsPanel')
-
   return (
     <div className='flex flex-col items-center py-4'>
       <div className='w-full h-fit flex items-center pb-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>

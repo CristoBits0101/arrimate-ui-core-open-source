@@ -1,6 +1,9 @@
 'use client'
 
+// Components
 import ArrimateFollowCard from '@/modules/marketing/components/card/arrimate-follow-card'
+
+// Custom
 import { useFetchPhotos } from '@/modules/feeds/hooks/posts/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
@@ -10,6 +13,7 @@ export default function HomePanel({
   emojiTwo = '',
   titleTwo = ''
 }) {
+  // Query images
   const { photos } = useFetchPhotos({
     query: 'personas',
     orientation: 'square',
@@ -17,8 +21,10 @@ export default function HomePanel({
     per_page: 10
   })
 
+  // Loading hidden content
   if (!photos || photos.length === 0) return null
 
+  // Filter and slice unique photos
   const uniquePhotos = photos
     .filter(
       (photo, index, self) => index === self.findIndex((p) => p.id === photo.id)

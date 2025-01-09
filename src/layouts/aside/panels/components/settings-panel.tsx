@@ -1,26 +1,26 @@
 'use client'
 
-// CSS
-import '@/modules/configuration/styles/gradient-collection.css'
-
-// Panels
+// Components
 import OptionPanel from '@/layouts/aside/panels/components/option-panel'
 import OptionsPanel from '@/layouts/aside/panels/components/options-panel'
 
-// Custom hook
+// Custom
 import { useSettings } from '@/modules/configuration/hooks/panels/useSettings'
 
-// next-intl
+// Intl
 import { useTranslations } from 'next-intl'
 
-// Renders the settings options or the values ​​of the selected option
-export default function SettingsPanel() {
-  const t = useTranslations('SettingsPanel')
-  const { selectedOption, handleSelectOption, handleBack } = useSettings()
+// Styles
+import '@/modules/configuration/styles/gradient-collection.css'
 
+export default function SettingsPanel() {
+  // Translations
+  const t = useTranslations('SettingsPanel')
+  // States
+  const { selectedOption, handleSelectOption, handleBack } = useSettings()
   return (
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] shadow-sm gradient-glass'>
-      {/* If you click on the options panel the option panel is rendered */}
+      {/* Renders the options panel on click */}
       {selectedOption === null ? (
         <OptionsPanel
           languageLabel={t('language.title')}

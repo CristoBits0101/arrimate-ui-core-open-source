@@ -1,3 +1,3 @@
 export default function LivePanel() {
-  return <div>live-panel</div>
+  return <div>LIVE PANEL</div>
 }
