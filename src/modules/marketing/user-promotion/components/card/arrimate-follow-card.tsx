@@ -1,17 +1,17 @@
 'use client'
 
 // Button
-import FollowButton from '@/modules/marketing/components/buttons/follow-button'
+import FollowButton from '@/modules/marketing/user-promotion/components/buttons/follow-button'
 
 // Custom hook
-import { useMounted } from '@/modules/marketing/hooks/useMounted'
+import { useMounted } from '@/modules/marketing/user-promotion/hooks/useMounted'
 
 // Span
-import CountrySpan from '@/modules/marketing/components/span/country-span'
-import HeaderSpan from '@/modules/marketing/components/span/header-span'
+import CountrySpan from '@/modules/marketing/user-promotion/components/span/country-span'
+import HeaderSpan from '@/modules/marketing/user-promotion/components/span/header-span'
 
 // Sections
-import UserInfoSection from '@/modules/marketing/components/sections/user-info-section'
+import UserInfoSection from '@/modules/marketing/user-promotion/components/sections/user-info-section'
 
 interface ArrimateFollowCardProps {
   src?: string

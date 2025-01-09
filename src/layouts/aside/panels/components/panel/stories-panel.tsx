@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import ArrimateFollowCard from '@/modules/marketing/components/card/arrimate-follow-card'
+import ArrimateFollowCard from '@/modules/marketing/user-promotion/components/card/arrimate-follow-card'
 
 // Custom
 import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
