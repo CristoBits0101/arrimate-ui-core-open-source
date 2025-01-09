@@ -1,18 +1,18 @@
 'use client'
 
-// Custom hook
+// Custom
 import { usePageIcon } from '@/modules/navigation/hooks/useIcon'
 
-// next/image
+// Image
 import Image from 'next/image'
 
-// next-intl
+// Intl
 import { useLocale, useTranslations } from 'next-intl'
 
-// next/link
+// Next
 import Link from 'next/link'
 
-// Props interface
+// Type props
 interface NavigationItemProps {
   route: string
   blackIcon: string
@@ -20,7 +20,6 @@ interface NavigationItemProps {
   textKey?: string
 }
 
-// Function for creating navigation
 export default function SidebarItem({
   route,
   blackIcon,
