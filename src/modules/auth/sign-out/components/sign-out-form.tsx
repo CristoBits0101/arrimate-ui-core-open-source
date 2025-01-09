@@ -1,25 +1,23 @@
 'use client'
 
-// Button for handling sign-out action
+// Components
 import OptionsButton from '@/modules/configuration/components/buttons/options-button'
 
-// Icon used in the sign-out button
+// Custom
+import { useSignOut } from '@/modules/auth/sign-out/hooks/useSignOut'
+
+// Icon
 import signOutIcon from '@/modules/auth/assets/icons/session/sign-out.svg'
 
-// Next.js internationalization utilities
+// Intl
 import { useTranslations } from 'next-intl'
-
-// Hook for handling sign-out logic and hydration
-import { useSignOut } from '@/modules/auth/sign-out/hooks/useSignOut'
 
 // Component to render a sign-out button
 export default function SignOutForm(): JSX.Element | null {
   // Load button translations
   const t = useTranslations('Button')
-
   // Manage hydration state and sign-out action
   const { hydrated, handleSignOut } = useSignOut()
-
   // Render the sign-out button when hydrated
   return hydrated ? (
     <div className='space-y-5 w-full'>
