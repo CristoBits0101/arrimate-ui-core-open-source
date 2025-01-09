@@ -4,7 +4,7 @@ import { Button } from '@/modules/ui/button'
 // Spinners
 import { PulseLoader } from 'react-spinners'
 
-// Type properties
+// Type props
 interface SubmitButtonProps {
   message?: string
   isPending: boolean
