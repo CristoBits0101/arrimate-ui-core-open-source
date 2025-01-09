@@ -2,9 +2,9 @@
 import Products from '@/modules/navigation/menu/components/navbar-items/products-link'
 
 // Feeds
-import Events from '@/modules/feeds/components/links/events-link'
-import Reviews from '@/modules/feeds/components/links/reviews-link'
-import Stories from '@/modules/feeds/components/links/stories-link'
+import Events from '@/modules/navigation/menu/components/navbar-items/events-link'
+import Reviews from '@/modules/navigation/menu/components/navbar-items/reviews-link'
+import Stories from '@/modules/navigation/menu/components/navbar-items/stories-link'
 
 // Network
 import Community from '@/modules/navigation/menu/components/navbar-items/community-link'

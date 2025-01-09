@@ -1,7 +1,7 @@
 import Cart from '@/modules/navigation/menu/components/sidebar-items/cart-link'
 import Chats from '@/modules/navigation/menu/components/sidebar-items/chats-link'
 import Notifications from '@/modules/navigation/menu/components/sidebar-items/notifications-link'
-import Post from '@/modules/feeds/components/links/post-link'
+import Post from '@/modules/navigation/menu/components/navbar-items/post-link'
 import Settings from '@/modules/configuration/profile-update/components/links/profile-link'
 
 export default function SidebarMenu() {
