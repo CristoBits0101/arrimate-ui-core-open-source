@@ -4,7 +4,7 @@
 import { usePageComponent } from '@/layouts/aside/layout/hooks/useAsidePanel'
 
 // Navigation
-import Sidebar from '@/layouts/aside/sidebar/sidebar-menu'
+import Sidebar from '@/layouts/aside/menu/sidebar-menu'
 
 // Styles
 import styles from '@/layouts/aside/layout/styles/aside.module.css'
