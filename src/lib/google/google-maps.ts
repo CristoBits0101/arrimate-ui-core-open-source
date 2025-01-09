@@ -1,12 +1,12 @@
 'use server'
 
-// googlemaps/google-maps-services-js
+// Google Maps API
 import { Client } from '@googlemaps/google-maps-services-js'
 
-// Initialize the Google Maps JavaScript API client
+// Initialize client
 const client = new Client()
 
-// Function to perform a place autocomplete request to the Google Maps API
+// Autocomplete function
 const autocomplete = async (input: string) => {
   try {
     const response = await client.placeAutocomplete({
@@ -16,14 +16,14 @@ const autocomplete = async (input: string) => {
       },
       timeout: 1000
     })
-    // Return the autocomplete predictions
+    // Return predictions
     if (response.data && response.data.predictions)
       return response.data.predictions
-    console.warn('No predictions found for input: ', input)
+    console.warn('No predictions for input:', input)
     return []
   } catch (err) {
-    // Log any error that occurs during the autocomplete request
-    console.error('Error performing autocomplete request: ', err)
+    // Log errors
+    console.error('Autocomplete error:', err)
     return []
   }
 }
