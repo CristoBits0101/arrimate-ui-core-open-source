@@ -1,7 +1,7 @@
 'use client'
 
 // Custom
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
 
 // Hooks
 import { useEffect, useState } from 'react'
