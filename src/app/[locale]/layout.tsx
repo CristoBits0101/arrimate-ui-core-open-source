@@ -3,7 +3,7 @@ import { SessionProvider } from 'next-auth/react'
 
 // Context
 import { PostProvider } from '@/modules/feeds/contexts/PostContext'
-import { ThemeProvider } from '@/modules/configuration/x/contexts/ThemeContext'
+import { ThemeProvider } from '@/modules/configuration/settings-panel/contexts/ThemeContext'
 
 // Fonts
 import { figtree } from '@/lib/google/google-fonts'

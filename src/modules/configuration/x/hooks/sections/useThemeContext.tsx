@@ -1,7 +1,7 @@
 'use client'
 
 // Custom context
-import { ThemeContext } from '@/modules/configuration/x/contexts/ThemeContext'
+import { ThemeContext } from '@/modules/configuration/settings-panel/contexts/ThemeContext'
 
 // React hook
 import { useContext } from 'react'
