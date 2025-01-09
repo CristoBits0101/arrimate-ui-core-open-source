@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import SearchLink from '@/layouts/header/searcher/search-link'
+import SearchLink from '@/layouts/header/searcher/components/search-link'
 
 // Icons
 import clear from '@/modules/navigation/assets/clear.svg'
