@@ -10,10 +10,10 @@ import Stories from '@/modules/feeds/components/links/stories-link'
 import Community from '@/modules/navigation/menu/components/navbar-items/community-link'
 
 // Streaming
-import Audios from '@/modules/streaming/components/links/audios-link'
-import Live from '@/modules/streaming/components/links/live-link'
-import Shorts from '@/modules/streaming/components/links/shorts-link'
-import Videos from '@/modules/streaming/components/links/videos-link'
+import Audios from '@/modules/navigation/menu/components/navbar-items/audios-link'
+import Live from '@/modules/navigation/menu/components/navbar-items/live-link'
+import Shorts from '@/modules/navigation/menu/components/navbar-items/shorts-link'
+import Videos from '@/modules/navigation/menu/components/navbar-items/videos-link'
 
 export default function NavbarMenu() {
   return (

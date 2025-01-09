@@ -1,6 +1,6 @@
 import Cart from '@/modules/navigation/menu/components/sidebar-items/cart-link'
-import Chats from '@/modules/messages/components/links/chats-link'
-import Notifications from '@/modules/messages/components/links/notifications-link'
+import Chats from '@/modules/navigation/menu/components/sidebar-items/chats-link'
+import Notifications from '@/modules/navigation/menu/components/sidebar-items/notifications-link'
 import Post from '@/modules/feeds/components/links/post-link'
 import Settings from '@/modules/configuration/profile-update/components/links/profile-link'
 
