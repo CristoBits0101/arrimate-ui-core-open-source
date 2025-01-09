@@ -41,7 +41,7 @@ export function useSearch() {
     }
   }
 
-  // Listen for outside clicks on search container
+  // Detect clicks outside search container
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
