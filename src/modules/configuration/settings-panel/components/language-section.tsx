@@ -3,7 +3,7 @@
 import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 import enIcon from '@/modules/configuration/assets/buttons/languages/gb.svg'
 import esIcon from '@/modules/configuration/assets/buttons/languages/es.svg'
-import useLanguageSection from '@/modules/configuration/x/hooks/sections/useLanguageSection'
+import useLanguageSection from '@/modules/configuration/settings-panel/hooks/useLanguageSection'
 import { useTranslations } from 'next-intl'
 
 const LanguageSelector = () => {

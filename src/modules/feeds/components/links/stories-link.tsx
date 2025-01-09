@@ -1,5 +1,5 @@
 // Context
-import { useThemeContext } from '@/modules/configuration/x/hooks/sections/useThemeContext'
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
 import storiesDarkBlackSVG from '@/modules/feeds/assets/icons/links/black/stories-dark.svg'

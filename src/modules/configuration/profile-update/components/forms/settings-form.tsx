@@ -11,7 +11,7 @@ import SubmitButton from '@/modules/configuration/profile-update/components/butt
 import CardWrapper from '@/modules/configuration/profile-update/components/cards/card-wrapper'
 
 // Customized
-import { useSettingsForm } from '@/modules/configuration/x/hooks/forms/useSettingsForm'
+import { useSettingsForm } from '@/modules/configuration/profile-update/hooks/useSettingsForm'
 
 // Fieldset
 import SettingsFormFieldsetCols4 from '@/modules/configuration/x/form-pieces/fieldsets/profile-form-fieldset-cols-4'

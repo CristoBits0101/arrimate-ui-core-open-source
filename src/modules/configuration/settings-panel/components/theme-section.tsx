@@ -7,7 +7,7 @@ import activeSystemIcon from '@/modules/configuration/assets/buttons/themes/acti
 import inactiveDarkIcon from '@/modules/configuration/assets/buttons/themes/inactive/dark.svg'
 import inactiveLightIcon from '@/modules/configuration/assets/buttons/themes/inactive/light.svg'
 import inactiveSystemIcon from '@/modules/configuration/assets/buttons/themes/inactive/system.svg'
-import useThemeSection from '@/modules/configuration/x/hooks/sections/useThemeSection'
+import useThemeSection from '@/modules/configuration/settings-panel/hooks/useThemeSection'
 import { useTranslations } from 'next-intl'
 
 const ThemeSection = () => {

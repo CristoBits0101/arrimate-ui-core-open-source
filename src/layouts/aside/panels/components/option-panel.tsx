@@ -2,8 +2,8 @@
 
 // Components
 import BackButton from '@/modules/configuration/settings-panel/buttons/back-button'
-import LanguageSection from '@/modules/configuration/settings-panel/components/sections/language-section'
-import ThemeSection from '@/modules/configuration/settings-panel/components/sections/theme-section'
+import LanguageSection from '@/modules/configuration/settings-panel/components/language-section'
+import ThemeSection from '@/modules/configuration/settings-panel/components/theme-section'
 
 // Intl
 import { useTranslations } from 'next-intl'

@@ -1,7 +1,7 @@
 'use client'
 
 // Context
-import { useThemeContext } from '@/modules/configuration/x/hooks/sections/useThemeContext'
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Hooks
 import { useEffect } from 'react'
