@@ -1,8 +1,8 @@
 'use client'
 
 // Components
-import ShowPostImages from '@/modules/feeds/show-post/components/images/show-post-images'
-import ShowPostStories from '@/modules/feeds/show-post/components/stories/show-post-stories'
+import ShowPostImages from '@/modules/publications/show-post/components/posts/show-post-images'
+import ShowPostStories from '@/modules/publications/show-post/components/posts/show-post-stories'
 
 // Layouts
 import Header from '@/layouts/header/layout/header-layout'
