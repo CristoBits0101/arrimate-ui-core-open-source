@@ -1,9 +1,9 @@
 'use-client'
 
 import Navbar from '@/layouts/header/menu/navbar-menu'
-import ReturnSearchContent from '@/layouts/header/panels/search-panel'
+import ReturnSearchContent from '@/layouts/header/panels/components/search-panel'
 import Searcher from '@/layouts/header/searcher/components/search-form'
-import { useSearch } from '@/modules/navigation/hooks/useSearch'
+import { useSearch } from '@/layouts/header/panels/hooks/useSearch'
 
 export default function NavigationPanel() {
   const {
