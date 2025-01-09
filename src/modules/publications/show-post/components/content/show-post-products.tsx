@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import NoContent from '@/modules/e-commerce/show-products/components/alerts/stock-empty'
+import NoContent from '@/modules/publications/show-post/components/alerts/stock-empty'
 
 // Hooks
 import { useEffect, useState } from 'react'

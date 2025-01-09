@@ -1,5 +1,5 @@
 // Components
-import CardWrapper from '@/modules/feeds/create-post/components/cards/card-wrapper'
+import CardWrapper from '@/modules/publications/create-post/components/cards/card-wrapper'
 
 // Intl
 import { useTranslations } from 'next-intl'
