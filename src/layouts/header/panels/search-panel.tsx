@@ -1,5 +1,5 @@
-import RecentContent from '@/layouts/header/menu/recent-menu'
-import RecommendedContent from '@/layouts/header/menu/recommended-menu'
+import RecentContent from '@/layouts/header/searcher/recent-search'
+import RecommendedContent from '@/layouts/header/searcher/recommended-search'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
 type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
