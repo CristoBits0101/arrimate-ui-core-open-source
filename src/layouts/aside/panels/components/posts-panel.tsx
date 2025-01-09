@@ -8,7 +8,7 @@ import PostOptions from '@/modules/feeds/components/options/post-options'
 import PublishOptions from '@/modules/feeds/components/options/publish-options'
 
 // Custom
-import { usePostSettings } from '@/modules/feeds/hooks/panels/usePostSettings'
+import { usePostSettings } from '@/layouts/aside/panels/hooks/usePostSettings'
 
 // Intl
 import { useTranslations } from 'next-intl'
