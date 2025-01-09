@@ -1,15 +1,16 @@
-// fonts
+// Fonts
 import { shadowsIntoLight } from '@/lib/google/google-fonts'
 
 // GIF
 import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
 
-// next/image
+// Image
 import Image from 'next/image'
 
 // Styles
 import '@/modules/e-commerce/styles/show-products.css'
 
+// Type props
 interface StockEmptyProps {
   text: string
 }
