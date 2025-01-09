@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import BackButton from '@/modules/configuration/components/buttons/back-button'
+import BackButton from '@/modules/configuration/settings-panel/buttons/back-button'
 import ManageOptions from '@/modules/feeds/components/options/manage-options'
 import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
 import PostOptions from '@/modules/feeds/components/options/post-options'

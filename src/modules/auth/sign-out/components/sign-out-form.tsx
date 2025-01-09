@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import OptionsButton from '@/modules/configuration/components/buttons/options-button'
+import OptionsButton from '@/modules/configuration/settings-panel/buttons/options-button'
 
 // Custom
 import { useSignOut } from '@/modules/auth/sign-out/hooks/useSignOut'

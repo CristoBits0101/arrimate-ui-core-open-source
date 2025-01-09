@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
-import { useUserSession } from '@/modules/configuration/hooks/sessions/useUserSession'
+import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
 
 const defaultUserImage = '/path/to/default/image.jpg'
 

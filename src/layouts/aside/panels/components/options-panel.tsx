@@ -1,7 +1,7 @@
 'use client'
 
 // Buttons
-import OptionsButton from '@/modules/configuration/components/buttons/options-button'
+import OptionsButton from '@/modules/configuration/settings-panel/buttons/options-button'
 
 // Forms
 import SignOutForm from '@/modules/auth/sign-out/components/sign-out-form'

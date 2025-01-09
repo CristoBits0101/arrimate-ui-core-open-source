@@ -4,7 +4,7 @@
 import LanguageButton from '@/modules/auth/ui-settings/buttons/language-settings-button'
 
 // Custom
-import useLanguageSection from '@/modules/configuration/hooks/sections/useLanguageSection'
+import useLanguageSection from '@/modules/configuration/x/hooks/sections/useLanguageSection'
 
 // Icons
 import enIcon from '@/modules/auth/assets/icons/languages/gb.svg'

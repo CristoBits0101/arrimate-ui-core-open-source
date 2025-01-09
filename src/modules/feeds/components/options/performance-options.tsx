@@ -1,7 +1,7 @@
 'use client'
 
 // Buttons
-import OptionButton from '@/modules/configuration/components/buttons/option-button'
+import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 // Icons
 import activityIcon from '@/modules/feeds/assets/icons/panels/activity.svg'

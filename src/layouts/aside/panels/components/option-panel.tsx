@@ -1,9 +1,9 @@
 'use client'
 
 // Components
-import BackButton from '@/modules/configuration/components/buttons/back-button'
-import LanguageSection from '@/modules/configuration/components/sections/language-section'
-import ThemeSection from '@/modules/configuration/components/sections/theme-section'
+import BackButton from '@/modules/configuration/settings-panel/buttons/back-button'
+import LanguageSection from '@/modules/configuration/settings-panel/components/sections/language-section'
+import ThemeSection from '@/modules/configuration/settings-panel/components/sections/theme-section'
 
 // Intl
 import { useTranslations } from 'next-intl'

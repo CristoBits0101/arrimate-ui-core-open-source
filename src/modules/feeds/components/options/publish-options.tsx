@@ -1,7 +1,7 @@
 'use client'
 
 // Buttons
-import OptionButton from '@/modules/configuration/components/buttons/option-button'
+import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 // Custom
 import { usePost } from '@/modules/feeds/hooks/panels/usePost'

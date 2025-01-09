@@ -7,7 +7,7 @@ import { signIn } from 'next-auth/react'
 import OAuthButton from '@/modules/auth/oauth-service/oauth-button'
 
 // Context
-import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
+import { useThemeContext } from '@/modules/configuration/x/hooks/sections/useThemeContext'
 
 // Icons
 import appleD from '@/modules/auth/assets/icons/o-auth/dark/apple.svg'

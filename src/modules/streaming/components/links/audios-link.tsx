@@ -2,7 +2,7 @@
 import NavigationItem from '@/modules/navigation/menu/components/navbar-link'
 
 // Context
-import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'
+import { useThemeContext } from '@/modules/configuration/x/hooks/sections/useThemeContext'
 
 // Icons
 import audioDarkBlackSVG from '@/modules/streaming/assets/black/audio-dark.svg'
