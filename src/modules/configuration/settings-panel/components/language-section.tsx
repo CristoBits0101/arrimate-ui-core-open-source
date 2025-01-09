@@ -1,10 +1,17 @@
 'use client'
 
-import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
+// Assets
 import enIcon from '@/modules/configuration/assets/buttons/languages/gb.svg'
 import esIcon from '@/modules/configuration/assets/buttons/languages/es.svg'
+
+// Hooks
 import useLanguageSection from '@/modules/configuration/settings-panel/hooks/useLanguageSection'
+
+// Intl
 import { useTranslations } from 'next-intl'
+
+// Shadcn
+import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 const LanguageSelector = () => {
   const { locale, changeLanguage } = useLanguageSection()

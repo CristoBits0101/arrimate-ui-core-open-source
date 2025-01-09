@@ -1,10 +1,6 @@
 // Zod: Validations management
 import * as z from 'zod'
 
-/**
- * Profile validations
- */
-
 // Frontend validations
 export const FrontendProfileSchema = (t: (key: string) => string) =>
   z.object({

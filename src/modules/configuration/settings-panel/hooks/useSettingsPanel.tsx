@@ -1,8 +1,9 @@
 'use client'
 
+// Hooks
 import { useState, useEffect } from 'react'
 
-// Setting options available
+// Types
 type OptionType = 'language' | 'theme' | null
 
 export function useSettings() {

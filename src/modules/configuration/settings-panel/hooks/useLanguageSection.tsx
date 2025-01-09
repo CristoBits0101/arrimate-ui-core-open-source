@@ -1,13 +1,14 @@
 'use client'
 
-// React
-import { useEffect } from 'react'
-
-// next-intl
+// Intl
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/routing'
 
+// Types
 type Locale = 'en' | 'es'
+
+// React
+import { useEffect } from 'react'
 
 const useLanguageSection = () => {
   /**

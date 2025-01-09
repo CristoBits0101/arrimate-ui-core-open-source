@@ -18,7 +18,11 @@ const SettingButton: React.FC<SettingButtonProps> = ({
     onClick={onClick}
   >
     {label}
-    <Image src={icon} alt={altText} className='w-5 h-5 aspect-square object-contain' />
+    <Image
+      src={icon}
+      alt={altText}
+      className='w-5 h-5 aspect-square object-contain'
+    />
   </button>
 )
 

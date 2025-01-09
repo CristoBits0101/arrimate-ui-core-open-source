@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl'
 import { useEffect, useState, useTransition } from 'react'
 
 // Session: Custom hook for get user profile
-import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
+import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
 
 // Zod: Define data validation rules
 import * as z from 'zod'

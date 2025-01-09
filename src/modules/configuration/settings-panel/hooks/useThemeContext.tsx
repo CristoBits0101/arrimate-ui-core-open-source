@@ -1,9 +1,9 @@
 'use client'
 
-// Custom context
+// Custom
 import { ThemeContext } from '@/modules/configuration/settings-panel/contexts/ThemeContext'
 
-// React hook
+// Hooks
 import { useContext } from 'react'
 
 export const useThemeContext = () => {

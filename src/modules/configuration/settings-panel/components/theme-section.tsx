@@ -1,14 +1,21 @@
 'use client'
 
-import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
+// Assets
 import activeDarkIcon from '@/modules/configuration/assets/buttons/themes/active/dark.svg'
 import activeLightIcon from '@/modules/configuration/assets/buttons/themes/active/light.svg'
 import activeSystemIcon from '@/modules/configuration/assets/buttons/themes/active/system.svg'
 import inactiveDarkIcon from '@/modules/configuration/assets/buttons/themes/inactive/dark.svg'
 import inactiveLightIcon from '@/modules/configuration/assets/buttons/themes/inactive/light.svg'
 import inactiveSystemIcon from '@/modules/configuration/assets/buttons/themes/inactive/system.svg'
+
+// Hooks
 import useThemeSection from '@/modules/configuration/settings-panel/hooks/useThemeSection'
+
+// Intl
 import { useTranslations } from 'next-intl'
+
+// Shadcn
+import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 const ThemeSection = () => {
   const { theme, changeTheme } = useThemeSection()

@@ -1,8 +1,10 @@
 'use client'
 
+// Image
 import Image from 'next/image'
 import backIcon from '@/modules/configuration/assets/buttons/navigation/back.svg'
 
+// Type props
 interface BackButtonProps {
   onClick: () => void
 }

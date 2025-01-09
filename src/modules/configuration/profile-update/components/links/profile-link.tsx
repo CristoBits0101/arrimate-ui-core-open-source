@@ -29,7 +29,6 @@ const ProfileLinkClient = () => {
   if (!hydrated || userImage === null) return null
 
   return (
-    // List element
     <li className='flex items-center justify-center w-fit h-fit hover:cursor-pointer'>
       {/* Link page */}
       <Link

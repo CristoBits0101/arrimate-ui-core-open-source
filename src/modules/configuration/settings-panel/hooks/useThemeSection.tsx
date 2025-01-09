@@ -6,7 +6,7 @@ import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/us
 // Hooks
 import { useEffect } from 'react'
 
-// Allowed themes
+// Types
 type Theme = 'system' | 'dark' | 'light'
 
 const useThemeSection = () => {
