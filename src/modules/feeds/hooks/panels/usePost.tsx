@@ -1,7 +1,7 @@
 'use client'
 
 // Custom context
-import { PostContext } from '@/modules/feeds/contexts/PostContext'
+import { PostContext } from '@/modules/feeds/create-post/contexts/PostContext'
 
 // React hook
 import { useContext } from 'react'

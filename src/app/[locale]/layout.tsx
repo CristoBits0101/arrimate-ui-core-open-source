@@ -2,7 +2,7 @@
 import { SessionProvider } from 'next-auth/react'
 
 // Context
-import { PostProvider } from '@/modules/feeds/contexts/PostContext'
+import { PostProvider } from '@/modules/feeds/create-post/contexts/PostContext'
 import { ThemeProvider } from '@/modules/configuration/settings-panel/contexts/ThemeContext'
 
 // Fonts
