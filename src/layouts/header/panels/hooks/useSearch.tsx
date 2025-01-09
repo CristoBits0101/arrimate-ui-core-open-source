@@ -1,4 +1,7 @@
+// Hooks
 import { useState, useRef, useEffect } from 'react'
+
+// Intl
 import { useLocale } from 'next-intl'
 
 export function useSearch() {
@@ -27,7 +30,7 @@ export function useSearch() {
     if (resetSearchInput) setSearchTerm('')
   }, [resetSearchInput])
 
-  // Closes the search menu if you click outside of it
+  // Closes search menu on outside click
   const handleClickOutside = (event: MouseEvent) => {
     if (
       searchContainerRef.current &&
@@ -38,7 +41,7 @@ export function useSearch() {
     }
   }
 
-  // Set up event listener for clicks outside of the search container
+  // Listen for outside clicks on search container
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
