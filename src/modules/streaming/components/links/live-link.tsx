@@ -1,5 +1,5 @@
 // Component
-import NavigationItem from '@/layouts/header/menu/navbar-link'
+import NavigationItem from '@/modules/navigation/menu/components/navbar-link'
 
 // Context
 import { useThemeContext } from '@/modules/configuration/hooks/sections/useThemeContext'

@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import NavigationItem from '@/layouts/aside/menu/sidebar-link'
+import NavigationItem from '@/modules/navigation/menu/components/sidebar-link'
 
 // Icons
 import chatBlackSVG from '@/modules/messages/assets/black/chats-light.svg'

@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import NavigationItem from '@/layouts/aside/menu/sidebar-link'
+import NavigationItem from '@/modules/navigation/menu/components/sidebar-link'
 
 // Icons
 import postBlackSVG from '@/modules/feeds/assets/icons/links/black/post-light.svg'
