@@ -1,9 +1,16 @@
-import ArrimateImagesCard from '@/modules/feeds/show-post/components/cards/arrimate-images-card'
-import Image from 'next/image'
-import PostButton from '@/modules/feeds/show-post/components/buttons/post-button'
-import styles from '@/modules/feeds/styles/show-post-images.module.css'
-import { useFetchPhotos } from '@/modules/feeds/show-post/hooks/useFetchPhotos'
+// Components
+import ArrimateImagesCard from '@/modules/publications/show-post/components/cards/arrimate-images-card'
+import PostButton from '@/modules/publications/show-post/components/buttons/post-button'
+
+// Custom
+import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
+
+// Image
+import Image from 'next/image'
+
+// Styles
+import styles from '@/modules/feeds/styles/show-post-images.module.css'
 
 export default function ShowPostImages() {
   // Query images

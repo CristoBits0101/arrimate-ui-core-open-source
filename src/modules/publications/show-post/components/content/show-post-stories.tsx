@@ -1,5 +1,7 @@
+'use client'
+
 // Custom hook
-import { useFetchPhotos } from '@/modules/feeds/show-post/hooks/useFetchPhotos'
+import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
 
 // next/image
 import Image from 'next/image'

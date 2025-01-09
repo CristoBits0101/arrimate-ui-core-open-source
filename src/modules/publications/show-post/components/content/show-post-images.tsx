@@ -1,12 +1,17 @@
-import ArrimateImagesCard from '@/modules/feeds/show-post/components/cards/arrimate-images-card'
-import Image from 'next/image'
+// Components
+import ArrimateImagesCard from '@/modules/publications/show-post/components/cards/arrimate-images-card'
 import NoContent from '@/modules/publications/show-post/components/alerts/stock-empty'
-import PostButton from '@/modules/feeds/show-post/components/buttons/post-button'
-import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
-import { useFetchPhotos } from '@/modules/feeds/show-post/hooks/useFetchPhotos'
+import PostButton from '@/modules/publications/show-post/components/buttons/post-button'
+
+// Custom
+import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
 import { randomUtils } from '@/utils/randomUtils'
 
+// Image
+import Image from 'next/image'
+
 // Styles
+import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
 import '@/modules/e-commerce/styles/show-products.css'
 
 // Translations
