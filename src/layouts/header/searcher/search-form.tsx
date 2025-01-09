@@ -2,19 +2,19 @@ import styles from '@/modules/navigation/styles/searcher-form.module.css'
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 
-interface SearcherProps {
+interface SearchFormProps {
   resetSearchInput: boolean
   setResetSearchInput: (value: boolean) => void
   onSearch: (term: string) => void
   onFocus: () => void
 }
 
-export default function Searcher({
+export default function SearchForm({
   resetSearchInput,
   setResetSearchInput,
   onSearch,
   onFocus
-}: SearcherProps) {
+}: SearchFormProps) {
   const t = useTranslations('Searcher')
   const [searchTerm, setSearchTerm] = useState<string>('')
 

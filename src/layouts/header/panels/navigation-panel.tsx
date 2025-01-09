@@ -2,7 +2,7 @@
 
 import Navbar from '@/layouts/header/navbar/navbar-menu'
 import ReturnSearchContent from '@/layouts/header/panels/search-panel'
-import Searcher from '@/layouts/header/searcher/searcher-form'
+import Searcher from '@/layouts/header/searcher/search-form'
 import { useSearch } from '@/modules/navigation/hooks/useSearch'
 
 export default function NavigationPanel() {

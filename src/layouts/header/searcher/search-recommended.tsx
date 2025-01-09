@@ -1,38 +1,59 @@
 'use client'
 
-import close from '@/modules/navigation/assets/close.svg'
-import historyIcon from '@/modules/navigation/assets/history.svg'
-import Image from 'next/image'
+// Components
 import SearchLink from '@/layouts/header/searcher/search-link'
+
+// Icons
+import clear from '@/modules/navigation/assets/clear.svg'
+import close from '@/modules/navigation/assets/close.svg'
+import searchIcon from '@/modules/navigation/assets/search.svg'
+
+// Image
+import Image from 'next/image'
+
+// Intl
 import { useTranslations } from 'next-intl'
 
+// Types
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
+type SetResetSearchInput = React.Dispatch<React.SetStateAction<boolean>>
 
-interface RecentContentProps {
-  locale: string
+// Type props
+interface SearchContentProps {
+  setResetSearchInput: SetResetSearchInput
   setIsFocused: SetIsFocused
+  searchTerm: string
+  locale: string
 }
 
-export default function RecentSearch({
+export default function SearchRecommended({
+  setResetSearchInput,
   setIsFocused
-}: // locale
-RecentContentProps) {
+}: // searchTerm,
+// locale
+SearchContentProps) {
   const t = useTranslations('Searcher')
   const handleFocus = () => {
     setIsFocused(false)
   }
+  const handleClearSearch = () => {
+    setResetSearchInput(true)
+  }
   return (
     <nav className='rounded-3xl mt-2 pt-4 pb-3 border-[0.05rem] border-solid border-[#EBEAEB] shadow-sm w-full h-fit flex flex-col gap-3'>
       <div className='font-medium pr-4 pl-4 w-full h-fit flex justify-between items-center'>
-        <h2>{t('recent')}</h2>
+        <h2>{t('recommended')}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
+          <button onClick={handleClearSearch}>
+            <Image className='w-4' src={clear} alt='Close' />
+          </button>
           <button onClick={handleFocus}>
             <Image className='w-4' src={close} alt='Close' />
           </button>
         </div>
       </div>
       <ul className='flex flex-col w-full h-fit'>
-        <SearchLink iconSrc={historyIcon} />
+        <SearchLink iconSrc={searchIcon} />
       </ul>
     </nav>
   )
