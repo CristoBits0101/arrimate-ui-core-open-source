@@ -2,10 +2,10 @@
 
 // Components
 import BackButton from '@/modules/configuration/settings-panel/buttons/back-button'
-import ManageOptions from '@/modules/feeds/components/options/manage-options'
-import PerformanceOptions from '@/modules/feeds/components/options/performance-options'
-import PostOptions from '@/modules/feeds/components/options/post-options'
-import PublishOptions from '@/modules/feeds/components/options/publish-options'
+import ManageOptions from '@/layouts/aside/panels/components/manage-options'
+import PerformanceOptions from '@/layouts/aside/panels/components/performance-options'
+import PostOptions from '@/layouts/aside/panels/components/post-options'
+import PublishOptions from '@/layouts/aside/panels/components/publish-options'
 
 // Custom
 import { usePostSettings } from '@/layouts/aside/panels/hooks/usePostSettings'
