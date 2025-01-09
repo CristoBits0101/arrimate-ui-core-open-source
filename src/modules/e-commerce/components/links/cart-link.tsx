@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import NavigationItem from '@/modules/navigation/menu/components/sidebar-link'
+import NavigationItem from '@/modules/navigation/menu/components/sidebar-link/sidebar-link'
 
 // Icons
 import cartBlackSVG from '@/modules/e-commerce/assets/icons/black/cart-light.svg'

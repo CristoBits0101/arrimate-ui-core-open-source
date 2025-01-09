@@ -1,28 +1,26 @@
 'use client'
 
-// Custom hooks
+// Custom
 import { useUserSession } from '@/modules/configuration/x/hooks/sessions/useUserSession'
 
-// next/image
-import Image from 'next/image'
-
-// next/link
-import Link from 'next/link'
-
-// React
+// Hooks
 import { useEffect, useState } from 'react'
 
-// User default image
+// Image
 import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
+import Image from 'next/image'
 
-const SettingsLinkClient = () => {
+// Link
+import Link from 'next/link'
+
+const ProfileLinkClient = () => {
   // Get session and hydrated states
   const { session, hydrated } = useUserSession()
 
   // Local state for the user image
   const [userImage, setUserImage] = useState<string | null>(null)
 
-  // Update the user image when the session is hydrated
+  // Update user image on session hydration
   useEffect(() => {
     if (hydrated) setUserImage(session?.user?.image || defaultUserImage)
   }, [hydrated, session])
@@ -52,4 +50,4 @@ const SettingsLinkClient = () => {
   )
 }
 
-export default SettingsLinkClient
+export default ProfileLinkClient

@@ -7,7 +7,7 @@ import Reviews from '@/modules/feeds/components/links/reviews-link'
 import Stories from '@/modules/feeds/components/links/stories-link'
 
 // Network
-import Community from '@/modules/network/components/links/community-link'
+import Community from '@/modules/navigation/menu/components/navbar-items/community-link'
 
 // Streaming
 import Audios from '@/modules/streaming/components/links/audios-link'
