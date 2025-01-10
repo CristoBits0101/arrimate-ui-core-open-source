@@ -1,7 +1,7 @@
 'use client'
 
 // Branding
-import Logo from '@/layouts/header/logo/branding-logo'
+import Logo from '@/layouts/header/logotype/branding-logo'
 
 // Navigation
 import ReturnSearchEngine from '@/layouts/header/panels/components/navigation-panel'
