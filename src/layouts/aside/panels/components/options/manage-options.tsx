@@ -4,13 +4,13 @@
 import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 // Icons
-import chatWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/chats-light-icon.svg'
-import eventsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/events-light-icon.svg'
-import liveWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/live-light-icon.svg'
-import productsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/products-light-icon.svg'
-import shortsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/shorts-light-icon.svg'
-import storyWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/stories-light-icon.svg'
-import videosWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/videos-light-icon.svg'
+import chatWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/messages/chats-light-icon.svg'
+import eventsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/feeds/events-light-icon.svg'
+import liveWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/streaming/live-light-icon.svg'
+import productsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/e-commerce/products-light-icon.svg'
+import shortsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/streaming/shorts-light-icon.svg'
+import storyWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/feeds/stories-light-icon.svg'
+import videosWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/streaming/videos-light-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'
