@@ -53,7 +53,7 @@ import { Form } from '@/modules/ui/form'
 
 export default function SettingsForm() {
   // Translations
-  const f = useTranslations('SettingsForm')
+  const f = useTranslations('ProfileForm')
   const t = useTranslations('Button')
 
   // Custom hook

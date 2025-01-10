@@ -4,7 +4,7 @@
 import Header from '@/modules/publications/create-post/components/cards/card-header'
 
 // Card styles
-import styles from '@/modules/feeds/styles/cards/card-wrapper.module.css'
+import styles from '@/modules/publications/create-post/styles/card-wrapper.module.css'
 
 // Types allowed
 interface CardWrapperProps {
