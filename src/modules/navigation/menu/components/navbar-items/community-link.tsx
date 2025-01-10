@@ -5,10 +5,10 @@ import NavigationItem from '@/modules/navigation/menu/components/navbar-link/nav
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import communityDarkBlackSVG from '@/modules/network/assets/black/community-dark.svg'
-import communityDarkWhiteSVG from '@/modules/network/assets/white/community-dark.svg'
-import communityLightBlackSVG from '@/modules/network/assets/black/community-light.svg'
-import communityLightWhiteSVG from '@/modules/network/assets/white/community-light.svg'
+import communityDarkBlackSVG from '@/assets/icons/navigation/active/dark-theme/networks/community-dark-icon.svg'
+import communityDarkWhiteSVG from '@/assets/icons/navigation/inactive/dark-theme/networks/community-dark-icon.svg'
+import communityLightBlackSVG from '@/assets/icons/navigation/active/light-theme/networks/community-light-icon.svg'
+import communityLightWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/networks/community-light-icon.svg'
 
 export default function Community() {
   // Get the active theme from the context
