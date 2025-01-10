@@ -23,7 +23,7 @@ import {
 import { Input } from '@/modules/ui/input'
 
 // Styles
-import '@/modules/configuration/styles/birthdate-input.css'
+import '@/modules/configuration/profile-update/styles/birthdate-input.css'
 
 // Type props
 interface BirthdateInputProps {

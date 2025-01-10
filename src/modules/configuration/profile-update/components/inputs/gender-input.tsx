@@ -16,7 +16,7 @@ import { useTranslations } from 'next-intl'
 import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
 
 // Styles
-import '@/modules/configuration/styles/select-apperance.css'
+import '@/modules/configuration/profile-update/styles/select-apperance.css'
 
 // Shadcn
 import {
