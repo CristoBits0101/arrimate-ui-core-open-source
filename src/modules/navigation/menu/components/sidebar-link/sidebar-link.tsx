@@ -46,6 +46,10 @@ export default function SidebarItem({
       <Link
         className='flex items-center justify-center h-fit w-fit dark:text-[#ecece]'
         href={href}
+        onClick={() => {
+          const audio = new Audio('/sounds/click.mp3')
+          audio.play()
+        }}
       >
         {/* Image */}
         <Image

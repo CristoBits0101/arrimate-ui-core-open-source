@@ -1,8 +1,16 @@
 'use client'
+
+// Image
 import Image from 'next/image'
-import Link from 'next/link'
+
+// Icon
 import { usePageIcon } from '@/modules/navigation/menu/hooks/useIcon'
+
+// Intl
 import { useLocale, useTranslations } from 'next-intl'
+
+// Link
+import Link from 'next/link'
 
 interface NavigationItemProps {
   route: string
@@ -26,6 +34,10 @@ export default function NavbarItem({
       <Link
         className='truncate flex items-center h-full w-32 gap-4 dark:text-[#ececed]'
         href={href}
+        onClick={() => {
+          const audio = new Audio('/sounds/click.mp3')
+          audio.play()
+        }}
       >
         <Image
           className='w-7 h-7 object-contain aspect-square'
