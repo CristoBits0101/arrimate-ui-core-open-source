@@ -5,10 +5,10 @@ import NavigationItem from '@/modules/navigation/menu/components/navbar-link/nav
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import audioDarkBlackSVG from '@/modules/streaming/assets/black/audio-dark.svg'
-import audioDarkWhiteSVG from '@/modules/streaming/assets/white/audio-dark.svg'
-import audioLightBlackSVG from '@/modules/streaming/assets/black/audio-light.svg'
-import audioLightWhiteSVG from '@/modules/streaming/assets/white/audio-light.svg'
+import audioDarkBlackSVG from '@/assets/icons/navigation/active/dark-theme/streaming/audio-dark-icon.svg'
+import audioDarkWhiteSVG from '@/assets/icons/navigation/inactive/dark-theme/streaming/audio-dark-icon.svg'
+import audioLightBlackSVG from '@/assets/icons/navigation/active/light-theme/streaming/audio-light-icon.svg'
+import audioLightWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/streaming/audio-light-icon.svg'
 
 export default function Audios() {
   // Get the active theme from the context
