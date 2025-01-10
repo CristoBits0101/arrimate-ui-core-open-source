@@ -7,7 +7,7 @@ import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession
 import { useEffect, useState } from 'react'
 
 // Image
-import defaultUserImage from '@/modules/auth/assets/images/default_user_image.png'
+import defaultUserImage from '@/assets/images/default/default_user_image.png'
 import Image from 'next/image'
 
 // Link

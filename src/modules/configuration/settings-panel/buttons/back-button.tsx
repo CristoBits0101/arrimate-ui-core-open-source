@@ -2,7 +2,7 @@
 
 // Image
 import Image from 'next/image'
-import backIcon from '@/modules/configuration/assets/buttons/navigation/back.svg'
+import backIcon from '@/assets/icons/buttons/inactive/light-theme/windows/back-light-icon.svg'
 
 // Type props
 interface BackButtonProps {

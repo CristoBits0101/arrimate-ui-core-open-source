@@ -1,12 +1,12 @@
 'use client'
 
 // Assets
-import activeDarkIcon from '@/modules/configuration/assets/buttons/themes/active/dark.svg'
-import activeLightIcon from '@/modules/configuration/assets/buttons/themes/active/light.svg'
-import activeSystemIcon from '@/modules/configuration/assets/buttons/themes/active/system.svg'
-import inactiveDarkIcon from '@/modules/configuration/assets/buttons/themes/inactive/dark.svg'
-import inactiveLightIcon from '@/modules/configuration/assets/buttons/themes/inactive/light.svg'
-import inactiveSystemIcon from '@/modules/configuration/assets/buttons/themes/inactive/system.svg'
+import activeDarkIcon from '@/assets/icons/buttons/active/light-theme/dark-light-icon.svg'
+import activeLightIcon from '@/assets/icons/buttons/active/light-theme/light-light-icon.svg'
+import activeSystemIcon from '@/assets/icons/buttons/active/light-theme/system-light-icon.svg'
+import inactiveDarkIcon from '@/assets/icons/buttons/inactive/light-theme/themes/dark-light-icon.svg'
+import inactiveLightIcon from '@/assets/icons/buttons/inactive/light-theme/themes/light-light-icon.svg'
+import inactiveSystemIcon from '@/assets/icons/buttons/inactive/light-theme/themes/system-light-icon.svg'
 
 // Hooks
 import useThemeSection from '@/modules/configuration/settings-panel/hooks/useThemeSection'

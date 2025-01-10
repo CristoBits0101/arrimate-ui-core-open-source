@@ -1,8 +1,8 @@
 'use client'
 
 // Assets
-import enIcon from '@/modules/configuration/assets/buttons/languages/gb.svg'
-import esIcon from '@/modules/configuration/assets/buttons/languages/es.svg'
+import enIcon from '@/assets/icons/languages/landscape/gb-landscape-icon.svg'
+import esIcon from '@/assets/icons/languages/landscape/es-landscape-icon.svg'
 
 // Hooks
 import useLanguageSection from '@/modules/configuration/settings-panel/hooks/useLanguageSection'

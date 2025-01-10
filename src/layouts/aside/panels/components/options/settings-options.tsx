@@ -7,8 +7,8 @@ import OptionsButton from '@/modules/configuration/settings-panel/buttons/option
 import SignOutForm from '@/modules/auth/sign-out/components/sign-out-form'
 
 // Icons
-import languageIcon from '@/assets/icons/buttons/inactive/light-theme/language-light-icon.svg'
-import themesIcon from '@/assets/icons/buttons/inactive/light-theme/themes-light-icon.svg'
+import languageIcon from '@/assets/icons/buttons/inactive/light-theme/languages/language-light-icon.svg'
+import themesIcon from '@/assets/icons/buttons/inactive/light-theme/themes/themes-light-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'

@@ -7,7 +7,7 @@ import OptionsButton from '@/modules/configuration/settings-panel/buttons/option
 import { useSignOut } from '@/modules/auth/sign-out/hooks/useSignOut'
 
 // Icon
-import signOutIcon from '@/modules/auth/assets/icons/session/sign-out.svg'
+import signOutIcon from '@/assets/icons/buttons/inactive/light-theme/auth/sign-out-light-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'

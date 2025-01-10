@@ -1,4 +1,4 @@
-import unknownImage from '@/modules/marketing/assets/images/unknownImage.jpg'
+import unknownImage from '@/assets/images/default/default-unknown-image.jpg'
 
 interface HeaderSpanProps {
   src?: string

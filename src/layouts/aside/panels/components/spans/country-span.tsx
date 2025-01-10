@@ -1,4 +1,4 @@
-import location from '@/modules/marketing/assets/icons/cards/location.svg'
+import location from '@/assets/icons/cards/location.svg'
 import Image from 'next/image'
 
 interface CountrySpanProps {

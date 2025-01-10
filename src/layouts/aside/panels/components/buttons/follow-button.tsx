@@ -8,10 +8,10 @@ import { useTranslations } from 'next-intl'
 import { FC, useState } from 'react'
 
 // SVG
-import cancel from '@/assets/icons/buttons/inactive/light-theme/cancel-light-icon.svg'
-import follow from '@/assets/icons/buttons/inactive/light-theme/follow-light-icon.svg'
-import followHover from '@/assets/icons/buttons/inactive/light-theme/follow-hover-light-icon.svg'
-import following from '@/assets/icons/buttons/inactive/light-theme/following-light-icon.svg'
+import cancel from '@/assets/icons/buttons/inactive/light-theme/follow/cancel-light-icon.svg'
+import follow from '@/assets/icons/buttons/inactive/light-theme/follow/follow-light-icon.svg'
+import followHover from '@/assets/icons/buttons/inactive/light-theme/follow/follow-hover-light-icon.svg'
+import following from '@/assets/icons/buttons/inactive/light-theme/follow/following-light-icon.svg'
 
 // Props interface
 interface FollowButtonProps {
