@@ -5,10 +5,10 @@ import NavigationItem from '@/modules/navigation/menu/components/navbar-link/nav
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import eventsDarkBlackSVG from '@/modules/feeds/assets/icons/links/black/events-dark.svg'
-import eventsDarkWhiteSVG from '@/modules/feeds/assets/icons/links/white/events-dark.svg'
-import eventsLightBlackSVG from '@/modules/feeds/assets/icons/links/black/events-light.svg'
-import eventsLightWhiteSVG from '@/modules/feeds/assets/icons/links/white/events-light.svg'
+import eventsDarkBlackSVG from '@/assets/icons/navigation/active/dark-theme/feeds/events-dark-icon.svg'
+import eventsDarkWhiteSVG from '@/assets/icons/navigation/inactive/dark-theme/feeds/events-dark-icon.svg'
+import eventsLightBlackSVG from '@/assets/icons/navigation/active/light-theme/feeds/events-light-icon.svg'
+import eventsLightWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/feeds/events-light-icon.svg'
 
 export default function Events() {
   // Get the active theme from the context
