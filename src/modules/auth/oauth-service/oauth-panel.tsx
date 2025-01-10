@@ -10,10 +10,10 @@ import OAuthButton from '@/modules/auth/oauth-service/oauth-button'
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import appleD from '@/modules/auth/assets/icons/o-auth/dark/apple.svg'
-import appleL from '@/modules/auth/assets/icons/o-auth/light/apple.svg'
-import google from '@/modules/auth/assets/icons/o-auth/light/google.svg'
-import microsoft from '@/modules/auth/assets/icons/o-auth/light/microsoft.svg'
+import appleD from '@/assets/icons/buttons/inactive/light-theme/companies/apple-light-icon.svg'
+import appleL from '@/assets/icons/buttons/inactive/light-theme/companies/apple-light-icon.svg'
+import google from '@/assets/icons/buttons/inactive/light-theme/companies/google-light-icon.svg'
+import microsoft from '@/assets/icons/buttons/inactive/light-theme/companies/microsoft-light-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'
