@@ -14,7 +14,7 @@ import { usePostSettings } from '@/layouts/aside/panels/hooks/usePostSettings'
 import { useTranslations } from 'next-intl'
 
 // Styles
-import '@/layouts/panels/styles/gradient-collection.css'
+import '@/layouts/aside/panels/styles/gradient-collection.css'
 
 export default function PostsPanel() {
   // Switch options

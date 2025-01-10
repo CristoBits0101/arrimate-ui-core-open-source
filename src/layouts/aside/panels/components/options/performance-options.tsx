@@ -4,8 +4,8 @@
 import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 // Icons
-import activityIcon from '@/modules/feeds/assets/icons/panels/activity.svg'
-import analysisIcon from '@/modules/feeds/assets/icons/panels/analysis.svg'
+import activityIcon from '@/assets/icons/panels/activity.svg'
+import analysisIcon from '@/assets/icons/panels/analysis.svg'
 
 // Hooks
 import { useTranslations } from 'next-intl'

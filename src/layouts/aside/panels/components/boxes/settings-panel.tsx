@@ -11,7 +11,7 @@ import { useSettings } from '@/modules/configuration/settings-panel/hooks/useSet
 import { useTranslations } from 'next-intl'
 
 // Styles
-import '@/modules/configuration/styles/gradient-collection.css'
+import '@/layouts/aside/panels/styles/gradient-collection.css'
 
 export default function SettingsPanel() {
   // Translations
