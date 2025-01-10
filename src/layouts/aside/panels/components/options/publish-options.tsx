@@ -7,13 +7,13 @@ import OptionButton from '@/modules/configuration/settings-panel/buttons/option-
 import { usePost } from '@/modules/publications/create-post/hooks/usePost'
 
 // Icons
-import audioWhiteSVG from '@/modules/streaming/assets/white/audio-light.svg'
-import eventsWhiteSVG from '@/modules/feeds/assets/icons/links/white/events-light.svg'
-import productsWhiteSVG from '@/modules/e-commerce/assets/icons/white/products-light.svg'
-import reviewsWhiteSVG from '@/modules/feeds/assets/icons/links/white/reviews-light.svg'
-import shortsWhiteSVG from '@/modules/streaming/assets/white/shorts-light.svg'
-import storyWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-light.svg'
-import videosWhiteSVG from '@/modules/streaming/assets/white/videos-light.svg'
+import audioWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/audio-light-icon.svg'
+import eventsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/events-light-icon.svg'
+import productsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/products-light-icon.svg'
+import reviewsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/reviews-light-icon.svg'
+import shortsWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/shorts-light-icon.svg'
+import storyWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/stories-light-icon.svg'
+import videosWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/videos-light-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'

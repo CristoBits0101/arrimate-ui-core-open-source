@@ -7,10 +7,10 @@ import SettingButton from '@/modules/configuration/settings-panel/buttons/option
 import { usePost } from '@/modules/publications/create-post/hooks/usePost'
 
 // Icons
-import manageIcon from '@/assets/icons/panels/manage.svg'
-import performanceIcon from '@/assets/icons/panels/performance.svg'
-import publishIcon from '@/assets/icons/panels/publish.svg'
-import streamIcon from '@/assets/icons/live-light.svg'
+import manageIcon from '@/assets/icons/panels/manage-icon.svg'
+import performanceIcon from '@/assets/icons/panels/performance-icon.svg'
+import publishIcon from '@/assets/icons/panels/publish-icon.svg'
+import streamIcon from '@/assets/icons/panels/stream-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'
