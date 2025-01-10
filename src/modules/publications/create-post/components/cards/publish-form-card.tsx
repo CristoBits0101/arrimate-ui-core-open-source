@@ -34,7 +34,7 @@ export default function PublishCard() {
           case 'video':
             return <VideoForm />
           default:
-            return <div>Post Page</div>
+            return <div>POST PAGE</div>
         }
       })()}
     </div>
