@@ -4,8 +4,8 @@
 import useThemeSection from '@/modules/configuration/settings-panel/hooks/useThemeSection'
 
 // Icons
-import darkIcon from '@/modules/auth/assets/icons/themes/dark.svg'
-import lightIcon from '@/modules/auth/assets/icons/themes/light.svg'
+import darkIcon from '@/assets/icons/themes/dark-icon.svg'
+import lightIcon from '@/assets/icons/themes/light-icon.svg'
 
 // Image
 import Image from 'next/image'

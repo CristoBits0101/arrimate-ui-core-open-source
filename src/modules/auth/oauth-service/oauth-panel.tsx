@@ -10,7 +10,7 @@ import OAuthButton from '@/modules/auth/oauth-service/oauth-button'
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import appleD from '@/assets/icons/buttons/inactive/light-theme/companies/apple-light-icon.svg'
+import appleD from '@/assets/icons/buttons/inactive/dark-theme/apple-dark-icon.svg'
 import appleL from '@/assets/icons/buttons/inactive/light-theme/companies/apple-light-icon.svg'
 import google from '@/assets/icons/buttons/inactive/light-theme/companies/google-light-icon.svg'
 import microsoft from '@/assets/icons/buttons/inactive/light-theme/companies/microsoft-light-icon.svg'

@@ -7,8 +7,8 @@ import LanguageButton from '@/modules/auth/ui-settings/buttons/language-settings
 import useLanguageSection from '@/modules/configuration/settings-panel/hooks/useLanguageSection'
 
 // Icons
-import enIcon from '@/modules/auth/assets/icons/languages/gb.svg'
-import esIcon from '@/modules/auth/assets/icons/languages/es.svg'
+import enIcon from '@/assets/icons/languages/square/gb-square-icon.svg'
+import esIcon from '@/assets/icons/languages/square/es-square-icon.svg'
 
 export default function LanguageSettingSection() {
   // Change language
