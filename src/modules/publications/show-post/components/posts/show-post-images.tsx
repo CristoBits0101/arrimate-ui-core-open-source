@@ -11,8 +11,8 @@ import { randomUtils } from '@/utils/randomUtils'
 import Image from 'next/image'
 
 // Styles
-import styles from '@/modules/feeds/styles/posts/show-post-images.module.css'
-import '@/modules/e-commerce/styles/show-products.css'
+import styles from '@/modules/publications/show-post/styles/show-post-images.module.css'
+import '@//modules/publications/show-post/styles/show-post-products-style.css'
 
 // Translations
 import { useTranslations } from 'next-intl'

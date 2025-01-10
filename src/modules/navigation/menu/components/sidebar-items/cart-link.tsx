@@ -4,8 +4,8 @@
 import NavigationItem from '@/modules/navigation/menu/components/sidebar-link/sidebar-link'
 
 // Icons
-import cartBlackSVG from '@/modules/e-commerce/assets/icons/black/cart-light.svg'
-import cartWhiteSVG from '@/modules/e-commerce/assets/icons/white/cart-light.svg'
+import cartBlackSVG from '@/assets/icons/navigation/active/light-theme/e-commerce/cart-light-icon.svg'
+import cartWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/e-commerce/cart-light-icon.svg'
 
 export default function Cart() {
   return (

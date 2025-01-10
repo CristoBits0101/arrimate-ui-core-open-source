@@ -2,10 +2,10 @@
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import storiesDarkBlackSVG from '@/modules/feeds/assets/icons/links/black/stories-dark.svg'
-import storiesDarkWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-dark.svg'
-import storiesLightBlackSVG from '@/modules/feeds/assets/icons/links/black/stories-light.svg'
-import storiesLightWhiteSVG from '@/modules/feeds/assets/icons/links/white/stories-light.svg'
+import storiesDarkBlackSVG from '@/assets/icons/navigation/active/dark-theme/feeds/stories-dark-icon.svg'
+import storiesDarkWhiteSVG from '@/assets/icons/navigation/inactive/dark-theme/feeds/stories-dark-icon.svg'
+import storiesLightBlackSVG from '@/assets/icons/navigation/active/light-theme/feeds/stories-light-icon.svg'
+import storiesLightWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/feeds/stories-light-icon.svg'
 
 // Component
 import NavigationItem from '@/modules/navigation/menu/components/navbar-link/navbar-link'

@@ -1,27 +1,27 @@
 'use client'
 
-// Custom hook
+// Custom
 import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
 
-// next/image
-import Image from 'next/image'
-
-// React hooks
+// Hooks
 import { useState, useEffect, useRef, useCallback } from 'react'
 
+// Image
+import Image from 'next/image'
+
+// Styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import '@/modules/publications/show-post/styles/show-post-stories-swiper.css'
+
 // SVG
-import leftArrow from '@/modules/feeds/assets/icons/buttons/arrow_left.svg'
-import rightArrow from '@/modules/feeds/assets/icons/buttons/arrow_right.svg'
+import leftArrow from '@/assets/icons/buttons/inactive/light-theme/arrows/arrow-left-light-icon.svg'
+import rightArrow from '@/assets/icons/buttons/inactive/light-theme/arrows/arrow-right-light-icon.svg'
 
 // Swiper
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
-// Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import '@/modules/feeds/styles/posts/show-post-stories-swiper.css'
 
 type Photo = {
   id: number

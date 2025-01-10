@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import unknownImage from '@/modules/feeds/assets/images/unknownImage.jpg'
+import unknownImage from '@/assets/images/default/default-unknown-image.jpg'
 import { useState, useEffect } from 'react'
 
 interface ArrimateFollowCardProps {

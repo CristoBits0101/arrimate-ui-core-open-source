@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 
 // Styles
-import styles from '@/modules/navigation/styles/searcher-form.module.css'
+import styles from '@/modules/navigation/searcher/styles/searcher-form.module.css'
 
 interface SearchFormProps {
   resetSearchInput: boolean

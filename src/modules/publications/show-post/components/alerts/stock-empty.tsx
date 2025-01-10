@@ -2,13 +2,13 @@
 import { shadowsIntoLight } from '@/lib/google/google-fonts'
 
 // GIF
-import noProductsAvailable from '@/modules/e-commerce/assets/images/no_products_available.webp'
+import noProductsAvailable from '@/assets/images/gifs/no_products_available.webp'
 
 // Image
 import Image from 'next/image'
 
 // Styles
-import '@/modules/e-commerce/styles/show-products.css'
+import '@/modules/publications/show-post/styles/show-post-products-style.css'
 
 // Type props
 interface StockEmptyProps {

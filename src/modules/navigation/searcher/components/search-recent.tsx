@@ -1,9 +1,9 @@
 'use client'
 
-import close from '@/modules/navigation/assets/close.svg'
-import historyIcon from '@/modules/navigation/assets/history.svg'
+import close from '@/assets/icons/buttons/inactive/light-theme/windows/close-light-icon.svg'
+import historyIcon from '@/assets/icons/buttons/inactive/light-theme/searcher/history-light-icon.svg'
 import Image from 'next/image'
-import SearchLink from '@/layouts/header/searcher/components/search-link'
+import SearchLink from '@/modules/navigation/searcher/components/search-link'
 import { useTranslations } from 'next-intl'
 
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>

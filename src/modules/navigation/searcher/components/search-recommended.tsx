@@ -1,12 +1,12 @@
 'use client'
 
 // Components
-import SearchLink from '@/layouts/header/searcher/components/search-link'
+import SearchLink from '@/modules/navigation/searcher/components/search-link'
 
 // Icons
-import clear from '@/modules/navigation/assets/clear.svg'
-import close from '@/modules/navigation/assets/close.svg'
-import searchIcon from '@/modules/navigation/assets/search.svg'
+import clear from '@/assets/icons/buttons/inactive/light-theme/windows/clear-light-icon.svg'
+import close from '@/assets/icons/buttons/inactive/light-theme/windows/close-light-icon.svg'
+import searchIcon from '@/assets/icons/buttons/inactive/light-theme/searcher/search-light-icon.svg'
 
 // Image
 import Image from 'next/image'

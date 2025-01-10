@@ -5,10 +5,10 @@ import NavigationItem from '@/modules/navigation/menu/components/navbar-link/nav
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Icons
-import videosDarkBlackSVG from '@/modules/streaming/assets/black/videos-dark.svg'
-import videosDarkWhiteSVG from '@/modules/streaming/assets/white/videos-dark.svg'
-import videosLightBlackSVG from '@/modules/streaming/assets/black/videos-light.svg'
-import videosLightWhiteSVG from '@/modules/streaming/assets/white/videos-light.svg'
+import videosDarkBlackSVG from '@/assets/icons/navigation/active/dark-theme/streaming/videos-dark-icon.svg'
+import videosDarkWhiteSVG from '@/assets/icons/navigation/inactive/dark-theme/streaming/videos-dark-icon.svg'
+import videosLightBlackSVG from '@/assets/icons/navigation/active/light-theme/streaming/videos-light-icon.svg'
+import videosLightWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/streaming/videos-light-icon.svg'
 
 export default function Videos() {
   // Get the active theme from the context
