@@ -13,7 +13,7 @@ import { API_AUTH_ROUTE, AUTH_ROUTES, PUBLIC_ROUTES } from '@/config/routes'
 const { auth } = NextAuth(authConfig)
 const intlMiddleware = createMiddleware(routing)
 
-export default auth((request) => {
+export default auth((request) => { 
   // Get origin
   const origin = request.nextUrl.origin
 
