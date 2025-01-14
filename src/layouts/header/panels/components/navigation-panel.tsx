@@ -3,7 +3,7 @@
 // Components
 import Navbar from '@/modules/navigation/menu/components/navbar-menu/navbar-menu'
 import ReturnSearchContent from '@/layouts/header/panels/components/search-panel'
-import Searcher from '@/modules/navigation/searcher/components/search-form'
+import Searcher from '@/modules/navigation/searcher/components/x'
 
 // Custom
 import { useSearch } from '@/layouts/header/panels/hooks/useSearch'
