@@ -10,6 +10,7 @@ import Image from 'next/image'
 export default function ClearButton() {
   // Decomposition
   const { updateReset } = useSearch()
+  
   return (
     <button
       onClick={() => {

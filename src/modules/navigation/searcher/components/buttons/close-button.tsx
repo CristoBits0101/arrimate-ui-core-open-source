@@ -10,6 +10,7 @@ import Image from 'next/image'
 export default function CloseButton() {
   // Decomposition
   const { updateFocus } = useSearch()
+  
   return (
     <button
       onClick={() => {

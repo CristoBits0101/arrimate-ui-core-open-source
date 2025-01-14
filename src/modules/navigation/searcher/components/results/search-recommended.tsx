@@ -17,7 +17,8 @@ export default function SearchRecommended() {
     <ResultsBox
       iconSrc={searchIcon}
       h2={t('recommended')}
-      closeButton={true}
+      clearButton
+      closeButton
     />
   )
 }
