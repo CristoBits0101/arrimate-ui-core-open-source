@@ -19,7 +19,7 @@ export default function SettingsPanel() {
   // States
   const { selectedOption, handleSelectOption, handleBack } = useSettings()
   return (
-    <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] shadow-sm gradient-glass'>
+    <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] shadow-sm bg-transparent'>
       {/* Renders the options panel on click */}
       {selectedOption === null ? (
         <OptionsPanel

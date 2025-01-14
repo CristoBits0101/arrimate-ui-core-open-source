@@ -22,7 +22,7 @@ export default function PostsPanel() {
   // Translations
   const t = useTranslations('Posts')
   return (
-    <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] gradient-glass shadow-sm'>
+    <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] bg-transparent shadow-sm'>
       {selectedOption === null ? (
         <>
           <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
