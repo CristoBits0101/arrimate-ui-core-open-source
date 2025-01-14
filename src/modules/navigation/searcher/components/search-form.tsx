@@ -6,7 +6,7 @@ import SearchButton from '@/modules/navigation/searcher/components/search-button
 import styles from '@/modules/navigation/searcher/styles/searcher-form.module.css'
 
 export default function SearchForm() {
-  const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
   }
   return (
