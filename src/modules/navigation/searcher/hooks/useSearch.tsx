@@ -14,34 +14,43 @@ export default function useSearch() {
   const updateFocus = (focus: boolean) => {
     setIsFocused(focus)
   }
+  
   const updateReset = (reset: boolean) => {
     setResetSearchInput(reset)
   }
+
   const updateSearch = (term: string) => {
     setSearchTerm(term)
   }
 
   // Handlers
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const term = event.target.value
-    if (!term) return
-    updateSearch(event.target.value)
+    setSearchTerm(event.target.value)
   }
+
   const handleClickOutside = (event: MouseEvent) => {
     if (
       searchContainerRef.current &&
-      !searchContainerRef.current.contains(event.target as Node)
+      searchContainerRef.current.contains(event.target as Node)
     ) {
-      setIsFocused(false)
-      setSearchTerm('')
+      return
     }
+    setIsFocused(false)
+    setSearchTerm('')
   }
+
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
   }
 
   // Effects
+  useEffect(() => {
+    if (resetSearchInput) {
+      updateSearch('')
+      updateReset(false)
+    }
+  }, [resetSearchInput])
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)

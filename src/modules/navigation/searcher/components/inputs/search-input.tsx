@@ -2,7 +2,6 @@
 
 // Hooks
 import useSearch from '@/modules/navigation/searcher/hooks/useSearch'
-import { useEffect } from 'react'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -12,22 +11,7 @@ export default function SearchInput() {
   const t = useTranslations('Searcher')
 
   // Decomposition
-  const {
-    handleChange,
-    resetSearchInput,
-    searchTerm,
-    updateFocus,
-    updateReset,
-    updateSearch
-  } = useSearch()
-
-  // Reset
-  useEffect(() => {
-    if (resetSearchInput) {
-      updateSearch('')
-      updateReset(false)
-    }
-  }, [resetSearchInput, updateSearch, updateReset])
+  const { handleChange, searchTerm, updateFocus } = useSearch()
 
   return (
     <input
@@ -37,9 +21,8 @@ export default function SearchInput() {
       onBlur={() => updateFocus(false)}
       pattern='.*'
       placeholder={t('placeholder')}
-      required
       type='search'
-      value={resetSearchInput ? '' : searchTerm}
+      value={searchTerm}
     />
   )
 }
