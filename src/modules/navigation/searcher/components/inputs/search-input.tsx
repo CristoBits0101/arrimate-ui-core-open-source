@@ -12,15 +12,14 @@ export default function SearchInput() {
   const t = useTranslations('Searcher')
 
   // Decomposition
-  const { resetSearchInput, updateReset, searchTerm, updateSearch } =
-    useSearch()
-
-  // Handle
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const term = event.target.value
-    if (!term) return
-    updateSearch(event.target.value)
-  }
+  const {
+    handleChange,
+    resetSearchInput,
+    searchTerm,
+    updateFocus,
+    updateReset,
+    updateSearch
+  } = useSearch()
 
   // Reset
   useEffect(() => {
@@ -34,6 +33,8 @@ export default function SearchInput() {
     <input
       className='appearance-[textfield] bg-transparent border-0 border-r-[0.05rem] border-r-[#EBEAEB] dark:border-r-[#3b3b40] h-1/2 outline-none p-4 w-full border-solid dark:placeholder-[#ececed]'
       onChange={handleChange}
+      onFocus={() => updateFocus(true)}
+      onBlur={() => updateFocus(false)}
       pattern='.*'
       placeholder={t('placeholder')}
       required

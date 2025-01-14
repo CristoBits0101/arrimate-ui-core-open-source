@@ -22,8 +22,11 @@ export default function useSearch() {
   }
 
   // Handlers
-  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault()
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const term = event.target.value
+    if (!term) return
+    updateSearch(event.target.value)
   }
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -34,6 +37,9 @@ export default function useSearch() {
       setSearchTerm('')
     }
   }
+  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault()
+  }
 
   // Effects
   useEffect(() => {
@@ -42,13 +48,14 @@ export default function useSearch() {
   }, [])
 
   return {
+    handleChange,
     handleSubmit,
     isFocused,
-    updateFocus,
     resetSearchInput,
-    updateReset,
+    searchContainerRef,
     searchTerm,
-    updateSearch,
-    searchContainerRef
+    updateFocus,
+    updateReset,
+    updateSearch
   }
 }
