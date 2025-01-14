@@ -52,6 +52,7 @@ export default function SearchForm({
           value={resetSearchInput ? '' : searchTerm}
           onChange={handleChange}
           onFocus={onFocus}
+          type='search'
         />
         <button
           className={`${styles.search} bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem]`}
