@@ -1,5 +1,5 @@
 // New password form
-import NewPasswordForm from '@/modules/auth/components/forms/new-password-form'
+import NewPasswordForm from '@/modules/auth/new-password/components/new-password-form'
 
 // New password page
 export default function NewPasswordPage() {

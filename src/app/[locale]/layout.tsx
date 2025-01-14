@@ -2,19 +2,20 @@
 import { SessionProvider } from 'next-auth/react'
 
 // Context
-import { PostProvider  } from '@/modules/feeds/contexts/PostContext'
+import { PostProvider } from '@/modules/publications/create-post/contexts/PostContext'
+import { ThemeProvider } from '@/modules/configuration/settings-panel/contexts/ThemeContext'
 
 // Fonts
-import { figtree } from '@/lib/fonts'
-
-// Next
-import type { Metadata } from 'next'
+import { figtree } from '@/lib/google/google-fonts'
 
 // Intl
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
-// styles
+// Next
+import type { Metadata } from 'next'
+
+// Styles
 import '@/styles/globals.css'
 
 // Metadata
@@ -28,12 +29,14 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params
 }: {
   children: React.ReactNode
   params: { locale: string }
 }) {
-  // Example: messages/en.json/objects
+  // 
+  const { locale } = await params
+  // JSON
   const messages = await getMessages()
   return (
     // HTML
@@ -46,8 +49,10 @@ export default async function LocaleLayout({
         <SessionProvider>
           <NextIntlClientProvider messages={messages}>
             <PostProvider>
-              {/* Pages */}
-              {children}
+              <ThemeProvider>
+                {/* Pages */}
+                {children}
+              </ThemeProvider>
             </PostProvider>
           </NextIntlClientProvider>
         </SessionProvider>
