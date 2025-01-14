@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import SearchContent from '@/modules/navigation/searcher/components/boxes/search-content'
+import ResultsBox from '@/modules/navigation/searcher/components/boxes/results-box'
 
 // Icons
 import historyIcon from '@/assets/icons/buttons/inactive/light-theme/searcher/history-light-icon.svg'
@@ -14,6 +14,6 @@ export default function SearchRecent() {
   const t = useTranslations('Searcher')
 
   return (
-    <SearchContent iconSrc={historyIcon} h2={t('recent')} closeButton={true} />
+    <ResultsBox iconSrc={historyIcon} h2={t('recent')} closeButton={true} />
   )
 }

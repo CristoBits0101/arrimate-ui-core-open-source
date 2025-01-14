@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import InputContainer from '@/modules/navigation/searcher/components/boxes/search-box'
+import InputsBox from '@/modules/navigation/searcher/components/boxes/inputs-box'
 import SearchButton from '@/modules/navigation/searcher/components/buttons/search-button'
 import SearchInput from '@/modules/navigation/searcher/components/inputs/search-input'
 
@@ -20,10 +20,10 @@ export default function SearchForm() {
       className={`${styles.form} flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11 px-8`}
       onSubmit={handleSubmit}
     >
-      <InputContainer>
+      <InputsBox>
         <SearchInput />
         <SearchButton />
-      </InputContainer>
+      </InputsBox>
     </form>
   )
 }

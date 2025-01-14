@@ -1,9 +1,9 @@
 // Types
-interface InputContainerProps {
+interface InputsBoxProps {
   children: React.ReactNode
 }
 
-export default function InputContainer({ children }: InputContainerProps) {
+export default function InputsBox({ children }: InputsBoxProps) {
   // Validation
   if (!children) return
 

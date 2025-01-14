@@ -1,7 +1,7 @@
 'use client'
 
 // Components
-import SearchContent from '@/modules/navigation/searcher/components/boxes/search-content'
+import ResultsBox from '@/modules/navigation/searcher/components/boxes/results-box'
 
 // Icons
 import searchIcon from '@/assets/icons/buttons/inactive/light-theme/searcher/search-light-icon.svg'
@@ -14,7 +14,7 @@ export default function SearchRecommended() {
   const t = useTranslations('Searcher')
 
   return (
-    <SearchContent
+    <ResultsBox
       iconSrc={searchIcon}
       h2={t('recommended')}
       closeButton={true}
