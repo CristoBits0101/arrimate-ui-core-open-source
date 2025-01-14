@@ -1,5 +1,7 @@
+'use client'
+
 // Hooks
-import useSearch from '@/modules/navigation/searcher/hooks/useSearch'
+import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
 
 // Icons
 import clearIcon from '@/assets/icons/buttons/inactive/light-theme/windows/clear-light-icon.svg'
@@ -8,9 +10,9 @@ import clearIcon from '@/assets/icons/buttons/inactive/light-theme/windows/clear
 import Image from 'next/image'
 
 export default function ClearButton() {
-  // Decomposition
-  const { updateReset } = useSearch()
-  
+  // Context
+  const { updateReset } = useSearchContext()
+
   return (
     <button
       onClick={() => {

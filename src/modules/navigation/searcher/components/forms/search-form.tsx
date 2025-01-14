@@ -6,14 +6,14 @@ import SearchButton from '@/modules/navigation/searcher/components/buttons/searc
 import SearchInput from '@/modules/navigation/searcher/components/inputs/search-input'
 
 // Hooks
-import useSearch from '@/modules/navigation/searcher/hooks/useSearch'
+import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
 
 // Styles
 import styles from '@/modules/navigation/searcher/styles/searcher-form.module.css'
 
 export default function SearchForm() {
-  // Decomposition
-  const { handleSubmit } = useSearch()
+  // Context
+  const { handleSubmit } = useSearchContext()
 
   return (
     <form

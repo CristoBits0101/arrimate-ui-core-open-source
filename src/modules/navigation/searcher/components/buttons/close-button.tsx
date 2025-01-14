@@ -1,5 +1,7 @@
+'use client'
+
 // Hooks
-import useSearch from '@/modules/navigation/searcher/hooks/useSearch'
+import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
 
 // Icons
 import closeIcon from '@/assets/icons/buttons/inactive/light-theme/windows/close-light-icon.svg'
@@ -8,9 +10,9 @@ import closeIcon from '@/assets/icons/buttons/inactive/light-theme/windows/close
 import Image from 'next/image'
 
 export default function CloseButton() {
-  // Decomposition
-  const { updateFocus } = useSearch()
-  
+  // Context
+  const { updateFocus } = useSearchContext()
+
   return (
     <button
       onClick={() => {
