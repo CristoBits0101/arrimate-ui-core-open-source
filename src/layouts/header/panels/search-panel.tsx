@@ -1,6 +1,6 @@
 // Components
-import RecentContent from '@/modules/navigation/searcher/components/search-recent'
-import RecommendedContent from '@/modules/navigation/searcher/components/search-recommended'
+import RecentContent from '@/modules/navigation/searcher/components/results/search-recent'
+import RecommendedContent from '@/modules/navigation/searcher/components/results/search-recommended'
 
 // Types
 type SetIsFocused = React.Dispatch<React.SetStateAction<boolean>>
