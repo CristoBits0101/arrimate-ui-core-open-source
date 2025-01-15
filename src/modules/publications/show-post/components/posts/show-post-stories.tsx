@@ -119,7 +119,7 @@ export default function ShowPostStories() {
                 />
               </div>
               {/* Swiper text */}
-              <p className='w-11/12 mt-2 m-auto text-center text-sm text-gray-700 truncate dark:text-[#ecece]'>
+              <p className='w-11/12 mt-2 m-auto text-center text-sm truncate dark:text-[#ecece]'>
                 {photo.photographer}
               </p>
             </SwiperSlide>
