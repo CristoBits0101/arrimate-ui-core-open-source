@@ -1,7 +1,7 @@
 'use client'
 
 // Custom context
-import { PostContext } from '@/modules/publications/create-post/contexts/PostContext'
+import { PostContext } from '@/modules/publications/add-post/contexts/PostContext'
 
 // React hook
 import { useContext } from 'react'

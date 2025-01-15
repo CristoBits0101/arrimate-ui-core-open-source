@@ -2,7 +2,7 @@
 import { SessionProvider } from 'next-auth/react'
 
 // Context
-import { PostProvider } from '@/modules/publications/create-post/contexts/PostContext'
+import { PostProvider } from '@/modules/publications/add-post/contexts/PostContext'
 import { SearchProvider } from '@/modules/navigation/searcher/context/SearchContext'
 import { ThemeProvider } from '@/modules/configuration/settings-panel/contexts/ThemeContext'
 

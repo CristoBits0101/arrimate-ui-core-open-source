@@ -4,7 +4,7 @@
 import SettingButton from '@/modules/configuration/settings-panel/buttons/options-button'
 
 // Custom
-import { usePost } from '@/modules/publications/create-post/hooks/usePost'
+import { usePost } from '@/modules/publications/add-post/hooks/usePost'
 
 // Icons
 import manageIcon from '@/assets/icons/panels/manage-icon.svg'

@@ -4,7 +4,7 @@
 import OptionButton from '@/modules/configuration/settings-panel/buttons/option-button'
 
 // Custom
-import { usePost } from '@/modules/publications/create-post/hooks/usePost'
+import { usePost } from '@/modules/publications/add-post/hooks/usePost'
 
 // Icons
 import audioWhiteSVG from '@/assets/icons/navigation/inactive/light-theme/streaming/audio-light-icon.svg'
