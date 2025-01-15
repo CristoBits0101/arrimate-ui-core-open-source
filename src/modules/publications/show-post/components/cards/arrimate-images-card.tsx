@@ -88,14 +88,14 @@ export default function ArrimateFollowCard({
           alt={alt || 'User avatar'}
           width={width}
           height={height}
-          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3rem] h-[3rem] border-[0.094rem] border-solid border-[#EBEAEB]'
+          className='drop-shadow-sm rounded-full object-cover aspect-square max-h-[100%] w-[3rem] h-[3rem]'
         />
       </header>
       <aside className='flex-grow h-fit overflow-hidden'>
         {(userName || publicationDate || publicationLocation) && (
           <div className='flex w-full h-fit truncate'>
             {userName && (
-              <a href='' className='font-medium'>
+              <a href='' className='font-medium dark:text-[#ececed]'>
                 {userName}
               </a>
             )}
@@ -127,18 +127,18 @@ export default function ArrimateFollowCard({
               ''
             )}
             {publicationDate && (
-              <span className='font-light text-[#453C41]'>
+              <span className='font-light text-[#453C41] dark:text-[#b8b8bb]'>
                 &nbsp;•&nbsp;{publicationDate}
               </span>
             )}
             {publicationLocation && (
-              <span className='font-light text-[#453C41]'>
+              <span className='font-light text-[#453C41] dark:text-[#b8b8bb]'>
                 &nbsp;•&nbsp;{publicationLocation}
               </span>
             )}
           </div>
         )}
-        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden'>
+        <p className='w-full max-w-md font-light text-sm text-[#453C41] truncate overflow-hidden dark:text-[#b8b8bb]'>
           {userProfesion && userProfesion}
           {userProfesion && userIntereses && ' | '}
           {userIntereses && userIntereses}

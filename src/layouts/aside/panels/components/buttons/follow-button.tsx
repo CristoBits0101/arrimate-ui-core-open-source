@@ -34,10 +34,14 @@ const FollowButton: FC<FollowButtonProps> = ({
   }
 
   const getIcon = () => {
-    if (isFollowing && hoverState) return cancel // Show cancel icon on hover
-    if (!isFollowing && hoverState) return followHover // Show followHover icon if not following and on hover
-    if (isFollowing) return following // Show following icon if already following
-    return follow // Show follow icon otherwise
+    // Show cancel icon on hover
+    if (isFollowing && hoverState) return cancel
+    // Show followHover icon if not following and on hover
+    if (!isFollowing && hoverState) return followHover
+    // Show following icon if already following
+    if (isFollowing) return following
+    // Show follow icon otherwise
+    return follow
   }
 
   return (

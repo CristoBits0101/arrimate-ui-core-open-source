@@ -6,7 +6,6 @@ import { SlOptionsVertical } from 'react-icons/sl'
 
 interface PostButtonProps {
   textDisplay?: string
-  textColor?: string
   iconDisplay: string
   iconColor?: string
   iconAlt: string
@@ -15,7 +14,6 @@ interface PostButtonProps {
 
 export default function PostButton({
   textDisplay = '',
-  textColor = '#1D0F0F',
   iconDisplay = '',
   iconColor = '#1D0F0F',
   iconAlt = '',
@@ -73,7 +71,7 @@ export default function PostButton({
           />
         )}
       </button>
-      <span style={{ color: textColor }} className='text-sm font-medium'>
+      <span className='text-sm font-medium dark:text-[#ececed]'>
         {textDisplay}
       </span>
     </div>

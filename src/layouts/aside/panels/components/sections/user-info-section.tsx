@@ -28,7 +28,7 @@ export default function UserInfoSection({
       <p className='truncate w-full h-fit text-center font-medium'>
         {userName}
       </p>
-      <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1'>
+      <p className='truncate w-full h-fit text-center text-[#453C41] text-sm mb-1 dark:text-[#b8b8bb]'>
         {userProfession && userProfession}
         {userProfession && userInterests && ' | '}
         {userInterests && userInterests}

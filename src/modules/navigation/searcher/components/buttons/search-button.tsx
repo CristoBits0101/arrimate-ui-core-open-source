@@ -8,7 +8,7 @@ export default function SearchButton() {
       type='submit'
     >
       <svg
-        className='aspect-square fill-current h-5 m-0 object-contain p-0 w-5 text-[#ececed]'
+        className='aspect-square fill-current h-5 m-0 object-contain p-0 w-5 text-[#1d0f0f] dark:text-[#ececed]'
         xmlns='http://www.w3.org/2000/svg'
         height='24px'
         viewBox='0 -960 960 960'

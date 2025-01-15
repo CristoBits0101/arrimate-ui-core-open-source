@@ -73,7 +73,7 @@ export default function ArrimateFollowCard({
   })
 
   return (
-    <article className='relative border-solid border-[0.05rem] border-[#EBEAEB] rounded-xl w-full min-h-52 max-h-fit h-auto flex flex-col p-3 justify-between items-center'>
+    <article className='relative border-solid border-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] rounded-xl w-full min-h-52 max-h-fit h-auto flex flex-col p-3 justify-between items-center'>
       <HeaderSpan src={userImage} connection={isOnline} />
       {userName && (
         <UserInfoSection
