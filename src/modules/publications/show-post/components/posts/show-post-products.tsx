@@ -38,9 +38,6 @@ export default function ShowProducts() {
         <li key={product.id} className='h-fit hover:cursor-pointer'>
           <article className='w-full h-fit flex flex-col gap-4'>
             <header className='relative w-full h-32'>
-              <span className='absolute top-0 z-10 bg-[#E45545] text-[#FFFFFF] p-1 text-sm rounded'>
-                -{product.rating.count}%
-              </span>
               <Image
                 src={product.image}
                 alt={product.title}
