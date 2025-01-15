@@ -1,4 +1,4 @@
-import CardWrapper from '@/modules/publications/create-post/components/cards/card-wrapper'
+import CardWrapper from '@/modules/publications/add-post/components/cards/card-wrapper'
 import { useTranslations } from 'next-intl'
 
 export default function VideoForm() {

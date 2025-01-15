@@ -1,10 +1,10 @@
 'use client'
 
 // Buttons
-import SubmitButton from '@/modules/publications/create-post/components/buttons/submit-button'
+import SubmitButton from '@/modules/publications/add-post/components/buttons/submit-button'
 
 // Components
-import CardWrapper from '@/modules/publications/create-post/components/cards/card-wrapper'
+import CardWrapper from '@/modules/publications/add-post/components/cards/card-wrapper'
 
 // Hooks
 import { useState, useTransition } from 'react'

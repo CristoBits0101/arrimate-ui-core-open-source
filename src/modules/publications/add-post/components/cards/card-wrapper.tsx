@@ -1,10 +1,10 @@
 'use client'
 
 // Card header
-import Header from '@/modules/publications/create-post/components/cards/card-header'
+import Header from '@/modules/publications/add-post/components/cards/card-header'
 
 // Card styles
-import styles from '@/modules/publications/create-post/styles/card-wrapper.module.css'
+import styles from '@/modules/publications/add-post/styles/card-wrapper.module.css'
 
 // Types allowed
 interface CardWrapperProps {
