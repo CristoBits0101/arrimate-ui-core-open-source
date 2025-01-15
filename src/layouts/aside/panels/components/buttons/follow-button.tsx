@@ -1,17 +1,22 @@
-// next/image
-import Image from 'next/image'
+// Context
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
-// next-intl
+// Intl
 import { useTranslations } from 'next-intl'
+
+// Image
+import Image from 'next/image'
 
 // React
 import { FC, useState } from 'react'
 
 // SVG
-import cancel from '@/assets/icons/buttons/inactive/light-theme/follow/cancel-light-icon.svg'
-import follow from '@/assets/icons/buttons/inactive/light-theme/follow/follow-light-icon.svg'
-import followHover from '@/assets/icons/buttons/inactive/light-theme/follow/follow-hover-light-icon.svg'
-import following from '@/assets/icons/buttons/inactive/light-theme/follow/following-light-icon.svg'
+import cancelIcon from '@/assets/icons/buttons/inactive/light-theme/follow/cancel-light-icon.svg'
+import followDarkIcon from '@/assets/icons/buttons/inactive/dark-theme/follow/follow-dark-icon.svg'
+import followLightIcon from '@/assets/icons/buttons/inactive/light-theme/follow/follow-light-icon.svg'
+import followHoverDarkIcon from '@/assets/icons/buttons/inactive/dark-theme/follow/follow-hover-dark-icon.svg'
+import followHoverLightIcon from '@/assets/icons/buttons/inactive/light-theme/follow/follow-hover-light-icon.svg'
+import followingIcon from '@/assets/icons/buttons/inactive/light-theme/follow/following-light-icon.svg'
 
 // Props interface
 interface FollowButtonProps {
@@ -23,6 +28,9 @@ const FollowButton: FC<FollowButtonProps> = ({
   isFollowing,
   onToggleFollow
 }) => {
+  // Context
+  const { activeTheme } = useThemeContext()
+
   const t = useTranslations('Button')
   const [hoverState, setHoverState] = useState(false)
 
@@ -35,13 +43,13 @@ const FollowButton: FC<FollowButtonProps> = ({
 
   const getIcon = () => {
     // Show cancel icon on hover
-    if (isFollowing && hoverState) return cancel
+    if (isFollowing && hoverState) return cancelIcon
     // Show followHover icon if not following and on hover
-    if (!isFollowing && hoverState) return followHover
+    if (!isFollowing && hoverState) return activeTheme === 'light' ? followHoverLightIcon : followHoverDarkIcon
     // Show following icon if already following
-    if (isFollowing) return following
+    if (isFollowing) return followingIcon
     // Show follow icon otherwise
-    return follow
+    return activeTheme === 'light' ? followLightIcon : followDarkIcon
   }
 
   return (
