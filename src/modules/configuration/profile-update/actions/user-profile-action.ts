@@ -6,24 +6,30 @@ import { db } from '@/lib/orm/prisma-client'
 // Bcrypt: For password validation
 import bcrypt from 'bcrypt'
 
-// Zod: Schema validation
-import * as z from 'zod'
-import { BackendProfileSchema } from '@/modules/configuration/profile-update/schemas'
-
 // Utilities for email verification
 import { generateVerificationToken } from '@/data/tokens/generate-token'
 import { sendVerificationEmail } from '@/lib/email/resend'
 
 export default async function profileAction(
-  values: z.infer<typeof BackendProfileSchema>,
+  values: {
+    name?: string
+    email?: string
+    password?: string
+    newPassword?: string
+    phonePrefix?: string
+    phoneNumber?: string
+    birthdate?: string
+    zipCode?: string
+    country?: string
+    city?: string
+    address?: string
+    occupation?: string
+    interests?: string
+    slogan?: string
+    portfolio?: string
+  },
   userEmail: string | undefined
 ) {
-  // Validate input data using Zod
-  const validatedFields = BackendProfileSchema.safeParse(values)
-
-  // If validation fails, return an error
-  if (!validatedFields.success) return { error: 'invalidData' }
-  console.log(validatedFields.data)
   const {
     name,
     email,
@@ -40,7 +46,7 @@ export default async function profileAction(
     interests,
     slogan,
     portfolio
-  } = validatedFields.data
+  } = values
 
   // Retrieve the user from the database
   const verifyEmail = userEmail
@@ -84,15 +90,14 @@ export default async function profileAction(
   if (phonePrefix && phoneNumber) {
     const prefixRegex = /^\+\d{1,4}$/
     const numberRegex = /^\d{6,15}$/
-    if (!prefixRegex.test(phonePrefix) || !numberRegex.test(phoneNumber)) {
+    if (!prefixRegex.test(phonePrefix) || !numberRegex.test(phoneNumber))
       return { error: 'invalidPhoneData' }
-    }
     updateData.phonePrefixId = phonePrefix
     updateData.phoneNumber = phoneNumber
   }
-  if (zipCode) updateData.zipCodeId = zipCode
-  if (country) updateData.countryId = country
-  if (city) updateData.cityId = city
+  if (zipCode) updateData.zipCode = zipCode
+  if (country) updateData.country = country
+  if (city) updateData.city = city
   if (address) updateData.address = address
   if (occupation) updateData.occupation = occupation
   if (interests) updateData.interests = interests

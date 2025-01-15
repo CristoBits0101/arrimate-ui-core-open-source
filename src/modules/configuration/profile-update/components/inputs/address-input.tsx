@@ -42,7 +42,7 @@ const AddressInput = ({ name, isPending }: AddressInputProps) => {
   return hydrated ? (
     <FormField
       control={control}
-      name={`${name}.address`}
+      name={name}
       render={({ field }) => (
         <FormItem className='relative h-fit'>
           <FormLabel htmlFor='address' className='uppercase text-sm'>

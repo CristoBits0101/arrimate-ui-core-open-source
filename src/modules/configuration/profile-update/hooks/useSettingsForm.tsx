@@ -15,18 +15,9 @@ import { useEffect, useState, useTransition } from 'react'
 // Session: Custom hook for get user profile
 import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
 
-// Zod: Define data validation rules
-import * as z from 'zod'
-import { FrontendProfileSchema } from '@/modules/configuration/profile-update/schemas/index'
-import { zodResolver } from '@hookform/resolvers/zod'
-
 export function useSettingsForm() {
   // Get translations
   const t = useTranslations('AuthActions')
-  const z = useTranslations('AuthSchemas')
-
-  // Pass translations to Zod schema
-  const ProfileSchema = FrontendProfileSchema(z)
 
   // Save action errors
   const [error, setError] = useState<string | undefined>('')
@@ -48,35 +39,46 @@ export function useSettingsForm() {
     setUserEmail(session?.user?.email || '')
   }, [session])
 
-  // Type form with ProfileSchema
-  const form = useForm<z.infer<typeof ProfileSchema>>({
-    // Validate before sending
-    resolver: zodResolver(ProfileSchema),
-    // Runs on every shipment
+  // Initialize form with default values
+  const form = useForm({
     mode: 'onSubmit',
-    // Initial state of the fields
     defaultValues: {
-      name: '',
-      email: '',
-      password: ''
+      name: session?.user?.name || '',
+      email: session?.user?.email || '',
+      password: '',
+      country: session?.user?.country || '',
+      city: session?.user?.city || '',
+      zipCode: session?.user?.zipCode || ''
     }
   })
 
+  // Synchronize form values with session when it changes
+  useEffect(() => {
+    if (session?.user) {
+      form.reset({
+        name: session.user.name || '',
+        email: session.user.email || '',
+        password: '',
+        country: session.user.country || '',
+        city: session.user.city || '',
+        zipCode: session.user.zipCode || ''
+      })
+    }
+  }, [session, form])
+
   // Handle form submission
-  const onSubmit = (values: z.infer<typeof ProfileSchema>) => {
+  const onSubmit = (values: Record<string, any>) => {
     // Clear previous messages before sending
     setError('')
     setSuccess('')
-    // Checks backend request status
+    console.log('Submitted Values:', values) // Debugging values
     startTransition(() => {
       // Send input values
       profileAction(values, userEmail)
-        // Transaction completed
         .then((data) => {
           if (data?.error) setError(t(data.error))
           if (data?.success) setSuccess(t(data.success))
         })
-        // Failed transaction
         .catch((err) => {
           setError(t('notifyUnregister'))
           console.error('Error updating profile: ', err)

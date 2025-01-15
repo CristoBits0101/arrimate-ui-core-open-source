@@ -115,7 +115,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                   <li
                     onClick={() => {
                       field.onChange('')
-                      setUserGender('') // Sincroniza con el estado
+                      setUserGender('')
                       setIsDropdownOpen(false)
                     }}
                     className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
@@ -127,7 +127,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                       key={id}
                       onClick={() => {
                         field.onChange(id)
-                        setUserGender(id) // Actualiza correctamente el estado
+                        setUserGender(id)
                         setIsDropdownOpen(false)
                       }}
                       className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
