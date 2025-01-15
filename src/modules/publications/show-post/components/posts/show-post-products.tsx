@@ -38,6 +38,9 @@ export default function ShowProducts() {
         <li key={product.id} className='h-fit hover:cursor-pointer'>
           <article className='w-full h-fit flex flex-col gap-4'>
             <header className='relative w-full h-32'>
+              <span className='absolute top-0 z-10 bg-[#E45545] text-[#FFFFFF] p-1 text-sm rounded'>
+                -{product.rating.count}%
+              </span>
               <Image
                 src={product.image}
                 alt={product.title}
@@ -46,18 +49,18 @@ export default function ShowProducts() {
                 className='object-contain aspect-square'
               />
             </header>
-            <section className='w-full h-24 flex flex-col justify-between gap-2 text-sm font-medium'>
+            <section className='w-full h-24 flex flex-col justify-between gap-2 font-medium'>
               <div className='w-full h-1/2 text-justify '>
                 <h2 className='text-cyan-800 line-clamp-2'>{product.title}</h2>
               </div>
               <div className='w-full h-1/2'>
                 <p className='grid grid-cols-2'>
-                  <span>⭐ {`${product.rating.rate}/5 `}</span>
-                  <span className='font-light'>💯 {product.rating.count}</span>
+                  <span>🤩 {`${product.rating.rate}/5 `}</span>
+                  <span>🤔 {product.rating.count} </span>
                 </p>
                 <p className='grid grid-cols-2'>
-                  <span>💸 {`${product.price.toFixed(2)} €`}</span>
-                  <span className='font-light'>📦 {product.rating.count}</span>
+                  <span>🤑 {`${product.price.toFixed(2)} €`}</span>
+                  <span>🤯 -{product.rating.count}%</span>
                 </p>
               </div>
             </section>
