@@ -21,7 +21,7 @@ export default function OptionPanel({
   const t = useTranslations('SettingsPanel')
   return (
     <div className='flex flex-col items-center py-4'>
-      <div className='w-full h-fit flex items-center pb-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
+      <div className='w-full h-fit flex items-center pb-4 border-b-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40]'>
         <h2 className='relative text-center text-lg font-medium w-full'>
           {component === 'language' ? t('language.title') : t('themes.title')}
           <BackButton onClick={handleBack} />

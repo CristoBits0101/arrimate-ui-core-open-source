@@ -12,7 +12,7 @@ interface BackButtonProps {
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
   return (
     <button
-      className='w-6 absolute left-8 top-1/2 transform -translate-y-1/2 flex items-center bg-[#F4F4F4] aspect-square rounded-full border-[0.05rem] border-[#EBEAEB] border-solid'
+      className='w-6 absolute left-8 top-1/2 transform -translate-y-1/2 flex items-center bg-[#F4F4F4] dark:bg-[#26272C] aspect-square rounded-full border-[0.05rem] dark:border-[#3b3b40] border-[#EBEAEB] border-solid'
       onClick={onClick}
     >
       <Image
