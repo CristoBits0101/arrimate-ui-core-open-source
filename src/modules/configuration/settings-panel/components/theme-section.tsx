@@ -1,11 +1,11 @@
 'use client'
 
 // Assets
-import activeDarkIcon from '@/assets/icons/buttons/active/light-theme/dark-light-icon.svg'
+import activeDarkIcon from '@/assets/icons/buttons/active/dark-theme/dark-dark-icon.svg'
 import activeLightIcon from '@/assets/icons/buttons/active/light-theme/light-light-icon.svg'
 import activeSystemIcon from '@/assets/icons/buttons/active/light-theme/system-light-icon.svg'
 import inactiveDarkIcon from '@/assets/icons/buttons/inactive/light-theme/themes/dark-light-icon.svg'
-import inactiveLightIcon from '@/assets/icons/buttons/inactive/light-theme/themes/light-light-icon.svg'
+import inactiveLightIcon from '@/assets/icons/buttons/inactive/dark-theme/themes/light-dark-icon.svg'
 import inactiveSystemIcon from '@/assets/icons/buttons/inactive/light-theme/themes/system-light-icon.svg'
 
 // Hooks
