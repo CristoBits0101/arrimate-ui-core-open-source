@@ -11,7 +11,7 @@ export default function SearchButton() {
   return (
     <button
       className={`${
-        activeTheme === 'dark' ? darkStyles.searchDark : lightStyles.searchLight
+        activeTheme === 'dark' ? darkStyles.search : lightStyles.search
       } bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem]`}
       type='submit'
     >
