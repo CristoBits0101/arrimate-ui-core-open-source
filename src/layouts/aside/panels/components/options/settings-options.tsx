@@ -3,12 +3,17 @@
 // Buttons
 import OptionsButton from '@/modules/configuration/settings-panel/buttons/options-button'
 
+// Context
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
+
 // Forms
 import SignOutForm from '@/modules/auth/sign-out/components/sign-out-form'
 
 // Icons
-import languageIcon from '@/assets/icons/buttons/inactive/light-theme/languages/language-light-icon.svg'
-import themesIcon from '@/assets/icons/buttons/inactive/light-theme/themes/themes-light-icon.svg'
+import languageDarkIcon from '@/assets/icons/buttons/inactive/dark-theme/languages/language-dark-icon.svg'
+import themesDarkIcon from '@/assets/icons/buttons/inactive/dark-theme/themes/themes-dark-icon.svg'
+import languageLightIcon from '@/assets/icons/buttons/inactive/light-theme/languages/language-light-icon.svg'
+import themesLightIcon from '@/assets/icons/buttons/inactive/light-theme/themes/themes-light-icon.svg'
 
 // Intl
 import { useTranslations } from 'next-intl'
@@ -28,6 +33,9 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
   themeLabel,
   handleSelectOption
 }) => {
+  // Context
+  const { activeTheme } = useThemeContext()
+
   // Translations
   const t = useTranslations('SettingsPanel')
   return (
@@ -41,13 +49,13 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
       {/* Selection buttons */}
       <div className='w-full h-fit flex flex-col'>
         <OptionsButton
-          icon={languageIcon}
+          icon={activeTheme === 'light' ? languageLightIcon : languageDarkIcon}
           label={languageLabel}
           onClick={() => handleSelectOption('language')}
           altText='Language icon'
         />
         <OptionsButton
-          icon={themesIcon}
+          icon={activeTheme === 'light' ? themesLightIcon : themesDarkIcon}
           label={themeLabel}
           onClick={() => handleSelectOption('theme')}
           altText='Themes icon'
