@@ -4,8 +4,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { useUserSession } from '@/modules/auth/session-data/hooks/useUserSession'
-
-const defaultUserImage = '/path/to/default/image.jpg'
+import defaultUserImage from '@/assets/images/default/default_user_image.png'
 
 const UserArticle = () => {
   const { session, hydrated } = useUserSession()
@@ -33,7 +32,7 @@ const UserArticle = () => {
   return (
     <article className='flex items-center w-full h-fit grid-cols-[auto,1fr]'>
       {/* Image */}
-      <header className='relative w-32 h-32 rounded-full bg-transparent p-[0.313rem] border-[0.313rem] border-solid border-[#EBEAEB] overflow-hidden flex items-center justify-center'>
+      <header className='relative w-32 h-32 rounded-full bg-transparent p-[0.313rem] border-[0.313rem] border-solid border-[#EBEAEB] dark:border-[#3b3b40] overflow-hidden flex items-center justify-center'>
         {!isImageLoaded && (
           <div className='absolute w-full h-full bg-[#F4F4F4] m-2 animate-pulse rounded-full'></div>
         )}

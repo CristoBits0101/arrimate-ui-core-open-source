@@ -33,7 +33,7 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({
   return (
     <div className='flex flex-col items-center'>
       {/* Panel title */}
-      <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
+      <div className='relative w-full h-fit py-4 border-b-[0.05rem] dark:border-[#3b3b40] border-[#EBEAEB] border-solid'>
         <h2 className='w-full text-center text-lg font-medium'>
           {t('settings')}
         </h2>
