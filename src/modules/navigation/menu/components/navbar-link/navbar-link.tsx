@@ -25,7 +25,6 @@ export default function NavbarItem({
   whiteIcon,
   textKey
 }: NavigationItemProps) {
-  const audio = new Audio('/sounds/click.mp3')
   const isActive = usePageIcon(route)
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
@@ -36,6 +35,7 @@ export default function NavbarItem({
         className='truncate flex items-center h-full w-32 gap-4 dark:text-[#ececed]'
         href={href}
         onClick={() => {
+          const audio = new Audio('/sounds/click.mp3')
           audio.play()
         }}
       >
