@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: 'Arrímate',
   description: '',
   icons: {
-    icon: '/arrimate.ico'
+    icon: '/ico/arrimate.ico'
   }
 }
 
