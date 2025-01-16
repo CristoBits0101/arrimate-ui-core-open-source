@@ -37,6 +37,9 @@ type Photo = {
 }
 
 export default function ShowPostStories() {
+  const audio = new Audio('/sounds/whoosh-blow-flutter-shortwav.mp3')
+
+  // Query
   const { photos, error } = useFetchPhotos({
     query: 'face',
     orientation: 'square',
@@ -85,6 +88,10 @@ export default function ShowPostStories() {
     setIsImageErrorMap((prev) => ({ ...prev, [photoId]: true }))
   }
 
+  const handleClick = () => {
+    audio.play()
+  }
+
   return (
     <div
       ref={containerRef}
@@ -116,6 +123,7 @@ export default function ShowPostStories() {
                   priority={true}
                   className='rounded-full drop-shadow-sm object-cover hover:cursor-pointer'
                   onError={() => handleImageError(photo.id)}
+                 
                 />
               </div>
               {/* Swiper text */}
@@ -128,7 +136,10 @@ export default function ShowPostStories() {
         {/* Swiper arrows */}
         <div className='custom-prev absolute left-0 top-[calc(50%-14px)] transform -translate-y-1/2 z-10'>
           {/* Previous arrow */}
-          <button className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
+          <button
+            onClick={handleClick}
+            className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'
+          >
             <Image
               src={leftArrow}
               alt='Left arrow'
@@ -141,7 +152,10 @@ export default function ShowPostStories() {
         </div>
         <div className='custom-next absolute right-0 top-[calc(50%-14px)] transform -translate-y-1/2 z-10'>
           {/* Next arrow */}
-          <button className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'>
+          <button
+            onClick={handleClick}
+            className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'
+          >
             <Image
               src={rightArrow}
               alt='Right arrow'
