@@ -1,10 +1,18 @@
+// Context
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
+
 // Styles
-import styles from '@/modules/navigation/searcher/styles/searcher-form.module.css'
+import darkStyles from '@/modules/navigation/searcher/styles/searcher-dark-form.module.css'
+import lightStyles from '@/modules/navigation/searcher/styles/searcher-light-form.module.css'
 
 export default function SearchButton() {
+  // Context
+  const { activeTheme } = useThemeContext()
   return (
     <button
-      className={`${styles.search} bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem] dark:hover:[#26272C]`}
+      className={`${
+        activeTheme === 'dark' ? darkStyles.searchDark : lightStyles.searchLight
+      } bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem]`}
       type='submit'
     >
       <svg

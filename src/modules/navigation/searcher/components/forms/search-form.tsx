@@ -9,7 +9,7 @@ import SearchInput from '@/modules/navigation/searcher/components/inputs/search-
 import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
 
 // Styles
-import styles from '@/modules/navigation/searcher/styles/searcher-form.module.css'
+import styles from '@/modules/navigation/searcher/styles/searcher-dark-form.module.css'
 
 export default function SearchForm() {
   // Context

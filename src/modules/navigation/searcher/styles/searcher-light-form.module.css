@@ -1,16 +1,16 @@
-.form div:hover .search {
+.form div:hover .searchLight {
   background-color: #ebeaeb;
   fill: #1d0f0f;
 }
 
-.form div:hover .search svg {
+.form div:hover .searchLight svg {
   background-color: transparent;
   fill: #1d0f0f;
 }
 
 .form div:hover input,
-.form .search:focus ~ input,
-.form .search:hover ~ input {
+.form .searchLight:focus ~ input,
+.form .searchLight:hover ~ input {
   border-right: none;
 }
 
@@ -19,15 +19,15 @@
   border-right: none;
 }
 
-.form input:focus ~ .search,
-.form input:hover ~ .search {
+.form input:focus ~ .searchLight,
+.form input:hover ~ .searchLight {
   background-color: #ebeaeb;
   fill: #1d0f0f;
   transition: background-color 0.3s ease, fill 0.3s ease;
 }
 
-.form input:focus ~ .search svg,
-.form input:hover ~ .search svg {
+.form input:focus ~ .searchLight svg,
+.form input:hover ~ .searchLight svg {
   background-color: transparent;
   fill: #1d0f0f;
   transition: background-color 0.3s ease, fill 0.3s ease;

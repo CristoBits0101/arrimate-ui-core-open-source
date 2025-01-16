@@ -1,0 +1,34 @@
+.form div:hover .searchDark {
+  background-color: #3b3b40;
+  fill: #ececed;
+}
+
+.form div:hover .searchDark svg {
+  background-color: transparent;
+  fill: #ececed;
+}
+
+.form div:hover input,
+.form .searchDark:focus ~ input,
+.form .searchDark:hover ~ input {
+  border-right: none;
+}
+
+.form input:focus,
+.form input:hover {
+  border-right: none;
+}
+
+.form input:focus ~ .searchDark,
+.form input:hover ~ .searchDark {
+  background-color: #3b3b40;
+  fill: #ececed;
+  transition: background-color 0.3s ease, fill 0.3s ease;
+}
+
+.form input:focus ~ .searchDark svg,
+.form input:hover ~ .searchDark svg {
+  background-color: transparent;
+  fill: #ececed;
+  transition: background-color 0.3s ease, fill 0.3s ease;
+}
