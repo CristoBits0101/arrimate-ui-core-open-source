@@ -4,7 +4,7 @@
 import ArrimateFollowCard from '@/layouts/aside/panels/components/cards/arrimate-follow-card'
 
 // Custom
-import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
+import { useFetchImages } from '@/modules/publications/show-post/hooks/useFetchImages'
 import { randomUtils } from '@/utils/randomUtils'
 
 export default function HomePanel({
@@ -14,7 +14,7 @@ export default function HomePanel({
   titleTwo = ''
 }) {
   // Query images
-  const { photos } = useFetchPhotos({
+  const { photos } = useFetchImages({
     query: 'personas',
     orientation: 'square',
     page: 1,

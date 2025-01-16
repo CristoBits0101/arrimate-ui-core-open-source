@@ -3,7 +3,7 @@ import ArrimateImagesCard from '@/modules/publications/show-post/components/card
 import PostButton from '@/modules/publications/show-post/components/buttons/post-button'
 
 // Custom
-import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
+import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchImages'
 import { randomUtils } from '@/utils/randomUtils'
 
 // Image

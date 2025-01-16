@@ -1,7 +1,7 @@
 import { createClient, PhotosWithTotalResults, ErrorResponse } from 'pexels'
 import { useEffect, useState } from 'react'
 
-interface UseFetchPhotosParams {
+interface useFetchImagesParams {
   query: string
   orientation?: string
   size?: string
@@ -11,7 +11,7 @@ interface UseFetchPhotosParams {
   per_page?: number
 }
 
-export const useFetchPhotos = ({
+export const useFetchImages = ({
   query,
   orientation = 'portrait',
   size = 'medium',
@@ -19,7 +19,7 @@ export const useFetchPhotos = ({
   locale = 'es-ES',
   page = 1,
   per_page = 10
-}: UseFetchPhotosParams) => {
+}: useFetchImagesParams) => {
   const [photos, setPhotos] = useState<PhotosWithTotalResults['photos']>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)

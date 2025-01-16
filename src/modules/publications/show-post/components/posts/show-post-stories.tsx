@@ -1,10 +1,11 @@
 'use client'
 
-// Custom
-import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
+// Components
+import { NextArrow } from '@/modules/publications/show-post/components/buttons/next-arrow'
+import { PreviousArrow } from '@/modules/publications/show-post/components/buttons/previous-arrow'
 
 // Hooks
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useFetchStories } from '@/modules/publications/show-post/hooks/useFetchStories'
 
 // Image
 import Image from 'next/image'
@@ -15,82 +16,29 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import '@/modules/publications/show-post/styles/show-post-stories-swiper.css'
 
-// SVG
-import leftArrow from '@/assets/icons/buttons/inactive/light-theme/arrows/arrow-left-light-icon.svg'
-import rightArrow from '@/assets/icons/buttons/inactive/light-theme/arrows/arrow-right-light-icon.svg'
-
 // Swiper
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-type Photo = {
-  id: number
-  src: {
-    small: string
-    medium?: string
-    large?: string
-  }
-  alt?: string | null
-  width: number
-  height: number
-  photographer: string
-}
-
 export default function ShowPostStories() {
-  const audio = new Audio('/sounds/whoosh-blow-flutter-shortwav.mp3')
-
-  // Query
-  const { photos, error } = useFetchPhotos({
+  // Custom hook
+  const {
+    photos,
+    error,
+    effectiveSlidesPerView,
+    containerRef,
+    handleImageError,
+    handleClick,
+    isImageErrorMap
+  } = useFetchStories({
     query: 'face',
     orientation: 'square',
-    per_page: 20,
+    perPage: 20,
     page: 5
   })
 
-  const [slidesPerView, setSlidesPerView] = useState(1)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [isImageErrorMap, setIsImageErrorMap] = useState<{
-    [key: number]: boolean
-  }>({})
-
-  // Function to update slidesPerView based on container width
-  const updateSlidesPerView = useCallback(() => {
-    if (containerRef.current) {
-      const containerWidth = containerRef.current.offsetWidth
-      const newSlidesPerView = Math.max(1, Math.floor(containerWidth / 96))
-      setSlidesPerView(newSlidesPerView)
-    }
-  }, [])
-
-  useEffect(() => {
-    updateSlidesPerView()
-    window.addEventListener('resize', updateSlidesPerView)
-    return () => window.removeEventListener('resize', updateSlidesPerView)
-  }, [updateSlidesPerView])
-
-  useEffect(() => {
-    if (photos.length > 0) updateSlidesPerView()
-  }, [photos, updateSlidesPerView])
-
   if (error) return <p>Error: {error}</p>
   if (photos.length === 0) return null
-
-  const uniquePhotos: Photo[] = Array.from(
-    new Set(photos.map((photo: Photo) => photo.src?.small))
-  ).map(
-    (src) => photos.find((photo: Photo) => photo.src?.small === src) as Photo
-  )
-
-  const effectiveSlidesPerView = Math.min(slidesPerView, uniquePhotos.length)
-
-  // Function to handle image loading error
-  const handleImageError = (photoId: number) => {
-    setIsImageErrorMap((prev) => ({ ...prev, [photoId]: true }))
-  }
-
-  const handleClick = () => {
-    audio.play()
-  }
 
   return (
     <div
@@ -109,63 +57,35 @@ export default function ShowPostStories() {
         pagination={{ clickable: true }}
         className='relative w-full flex justify-between items-center'
       >
-        {uniquePhotos.map((photo) =>
-          photo && photo.src && !isImageErrorMap[photo.id] ? (
-            // Swiper element
-            <SwiperSlide key={photo.id} className='relative w-fit h-fit'>
-              {/* Swiper image */}
-              <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full m-auto'>
-                <Image
-                  src={photo.src.small}
-                  alt={photo.alt || 'Image from Pexels'}
-                  width={photo.width}
-                  height={photo.height}
-                  priority={true}
-                  className='rounded-full drop-shadow-sm object-cover hover:cursor-pointer'
-                  onError={() => handleImageError(photo.id)}
-                 
-                />
-              </div>
-              {/* Swiper text */}
-              <p className='w-11/12 mt-2 m-auto text-center text-sm truncate text-[#453C41] dark:text-[#b8b8bb]'>
-                {photo.photographer}
-              </p>
-            </SwiperSlide>
-          ) : null
+        {photos.map(
+          (photo) =>
+            photo &&
+            photo.src &&
+            !isImageErrorMap[photo.id] && (
+              // Swiper element
+              <SwiperSlide key={photo.id} className='relative w-fit h-fit'>
+                {/* Swiper image */}
+                <div className='w-20 h-20 overflow-hidden flex items-center justify-center rounded-full m-auto'>
+                  <Image
+                    src={photo.src.small}
+                    alt={photo.alt || 'Image from Pexels'}
+                    width={photo.width}
+                    height={photo.height}
+                    priority={true}
+                    className='rounded-full drop-shadow-sm object-cover hover:cursor-pointer'
+                    onError={() => handleImageError(photo.id)}
+                  />
+                </div>
+                {/* Swiper text */}
+                <p className='w-11/12 mt-2 m-auto text-center text-sm truncate text-[#453C41] dark:text-[#b8b8bb]'>
+                  {photo.photographer}
+                </p>
+              </SwiperSlide>
+            )
         )}
-        {/* Swiper arrows */}
-        <div className='custom-prev absolute left-0 top-[calc(50%-14px)] transform -translate-y-1/2 z-10'>
-          {/* Previous arrow */}
-          <button
-            onClick={handleClick}
-            className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'
-          >
-            <Image
-              src={leftArrow}
-              alt='Left arrow'
-              width={32}
-              height={32}
-              loading='lazy'
-              className='opacity-85'
-            />
-          </button>
-        </div>
-        <div className='custom-next absolute right-0 top-[calc(50%-14px)] transform -translate-y-1/2 z-10'>
-          {/* Next arrow */}
-          <button
-            onClick={handleClick}
-            className='p-2 rounded-full text-white opacity-85 hover:opacity-100 focus:outline-none'
-          >
-            <Image
-              src={rightArrow}
-              alt='Right arrow'
-              width={32}
-              height={32}
-              loading='lazy'
-              className='opacity-85'
-            />
-          </button>
-        </div>
+        {/* Custom arrows */}
+        <PreviousArrow onClick={handleClick} />
+        <NextArrow onClick={handleClick} />
       </Swiper>
     </div>
   )

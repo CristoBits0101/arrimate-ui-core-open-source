@@ -4,7 +4,7 @@ import NoContent from '@/modules/publications/show-post/components/alerts/stock-
 import PostButton from '@/modules/publications/show-post/components/buttons/post-button'
 
 // Custom
-import { useFetchPhotos } from '@/modules/publications/show-post/hooks/useFetchPhotos'
+import { useFetchImages } from '@/modules/publications/show-post/hooks/useFetchImages'
 import { randomUtils } from '@/utils/randomUtils'
 
 // Image
@@ -22,7 +22,7 @@ export default function ShowPostImages() {
   const t = useTranslations('Feeds')
 
   // Query images
-  const { photos, loading } = useFetchPhotos({
+  const { photos, loading } = useFetchImages({
     query: 'couples',
     orientation: 'portrait',
     per_page: 10,
