@@ -14,7 +14,7 @@ const SettingButton: React.FC<SettingButtonProps> = ({
   altText
 }) => (
   <button
-    className='w-full text-sm text-left cursor-pointer px-8 py-4 dark:hover:bg-[#3b3b40] hover:bg-[#F4F4F4] flex justify-between items-center border-b-[0.05rem] dark:border-[#3b3b40] border-[#EBEAEB] border-solid'
+    className='w-full text-sm text-left cursor-pointer px-8 py-4 dark:hover:bg-[#26272C] hover:bg-[#F4F4F4] flex justify-between items-center border-b-[0.05rem] dark:border-[#3b3b40] border-[#EBEAEB] border-solid'
     onClick={onClick}
   >
     {label}
