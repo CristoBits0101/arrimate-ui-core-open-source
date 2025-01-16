@@ -25,7 +25,7 @@ export default function PostsPanel() {
     <div className='w-full h-full rounded-3xl border-[0.05rem] border-[#EBEAEB] border-solid dark:border-[#3b3b40] bg-transparent shadow-sm'>
       {selectedOption === null ? (
         <>
-          <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
+          <div className='relative w-full h-fit py-4 border-b-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] border-solid'>
             <h2 className='w-full text-center text-lg font-medium'>
               {t('posts')}
             </h2>
@@ -34,7 +34,7 @@ export default function PostsPanel() {
         </>
       ) : (
         <div className='flex flex-col items-center py-4'>
-          <div className='w-full h-fit flex items-center pb-4 border-b-[0.05rem] border-[#EBEAEB] border-solid'>
+          <div className='w-full h-fit flex items-center pb-4 border-b-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] border-solid'>
             <h2 className='relative text-center text-lg font-medium w-full'>
               {t(selectedOption)}
               <BackButton onClick={handleBack} />

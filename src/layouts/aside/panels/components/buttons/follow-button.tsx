@@ -31,7 +31,10 @@ const FollowButton: FC<FollowButtonProps> = ({
   // Context
   const { activeTheme } = useThemeContext()
 
+  // Translations
   const t = useTranslations('Button')
+
+  // Hover
   const [hoverState, setHoverState] = useState(false)
 
   const handleClick = () => {

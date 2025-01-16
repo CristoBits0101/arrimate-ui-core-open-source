@@ -1,3 +1,6 @@
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
+
+// Image
 import Image from 'next/image'
 
 interface OptionButtonProps {
@@ -14,20 +17,25 @@ const SectionButton: React.FC<OptionButtonProps> = ({
   onClick,
   iconSrc,
   altText
-}) => (
-  <button
-    className={`text-left text-sm cursor-pointer px-8 py-4 hover:bg-[#F4F4F4] flex justify-between items-center border-b-[0.05rem] border-[#EBEAEB] border-solid ${
-      isSelected ? 'bg-[#F4F4F4] font-medium' : ''
-    }`}
-    onClick={onClick}
-  >
-    {label}
-    <Image
-      src={iconSrc}
-      alt={altText}
-      className='w-5 h-5 aspect-square object-contain'
-    />
-  </button>
-)
+}) => {
+  // Context
+  const { activeTheme } = useThemeContext()
+
+  return (
+    <button
+      className={`text-left text-sm cursor-pointer px-8 py-4 hover:bg-[#F4F4F4] flex justify-between items-center border-b-[0.05rem] border-[#EBEAEB] border-solid ${
+        isSelected && activeTheme === 'light' ? 'bg-[#F4F4F4] font-medium' : ''
+      }`}
+      onClick={onClick}
+    >
+      {label}
+      <Image
+        src={iconSrc}
+        alt={altText}
+        className='w-5 h-5 aspect-square object-contain'
+      />
+    </button>
+  )
+}
 
 export default SectionButton
