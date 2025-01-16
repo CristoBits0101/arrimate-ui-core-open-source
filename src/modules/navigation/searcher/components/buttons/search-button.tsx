@@ -4,7 +4,7 @@ import styles from '@/modules/navigation/searcher/styles/searcher-form.module.cs
 export default function SearchButton() {
   return (
     <button
-      className={`${styles.search} bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem]`}
+      className={`${styles.search} bg-transparent flex h-full justify-center items-center border-transparent outline-none w-[4.5rem] rounded-tr-[5rem] rounded-br-[5rem] dark:hover:[#26272C]`}
       type='submit'
     >
       <svg
