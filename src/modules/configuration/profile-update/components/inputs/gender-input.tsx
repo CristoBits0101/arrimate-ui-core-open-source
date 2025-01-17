@@ -98,7 +98,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
               <button
                 type='button'
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className='text-sm outline-none select w-full h-9 px-3 py-1 rounded-none border border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#ececed] placeholder:text-[#453C41] dark:placeholder:text-[#848489] text-left'
+                className='outline-none select w-full h-9 px-3 py-1 rounded-none border border-solid bg-[#F4F4F4] dark:bg-[#26272c] border-[#EBEAEB] dark:border-[#3b3b40] hover:bg-[#EBEAEB] focus:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] dark:focus:bg-[#3b3b40] text-[#1D0F0F] dark:text-[#ececed] placeholder:text-[#453C41] dark:placeholder:text-[#848489] text-left'
                 disabled={isPending}
               >
                 {capitalizeFirstWord(
@@ -118,7 +118,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                       setUserGender('')
                       setIsDropdownOpen(false)
                     }}
-                    className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
+                    className='px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
                   >
                     {capitalizeFirstWord(t('inputs.genders.reserved'))}
                   </li>
@@ -130,7 +130,7 @@ export default function GenderInput({ name, isPending }: GenderInputProps) {
                         setUserGender(id)
                         setIsDropdownOpen(false)
                       }}
-                      className='text-sm px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
+                      className='px-3 py-1 cursor-pointer hover:bg-[#EBEAEB] dark:hover:bg-[#3b3b40] rounded-none capitalized'
                     >
                       {capitalizeFirstWord(t(`inputs.genders.${name}`))}
                     </li>
