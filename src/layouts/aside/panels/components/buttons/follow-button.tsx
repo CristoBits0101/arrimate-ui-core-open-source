@@ -1,3 +1,5 @@
+'use client'
+
 // Context
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
