@@ -50,7 +50,7 @@ export default function CardWrapper({
   const t = useTranslations('Forms')
   return (
     // Renders the main Card container
-    <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] bg-transparent'>
+    <Card className='relative w-[22rem] shadow-none rounded-none p-5 text-inherit border border-solid dark:border-[#3b3b40] border-[#EBEAEB] bg-transparent'>
       <SettingsPanel />
       <CardHeader>
         <Header />

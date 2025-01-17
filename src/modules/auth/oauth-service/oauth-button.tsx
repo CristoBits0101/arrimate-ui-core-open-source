@@ -15,7 +15,7 @@ interface OAuthButtonProps {
 export default function OAuthButton({ src, onClick }: OAuthButtonProps) {
   return (
     <Button
-      className='p-2 bg-transparent w-full h-9 rounded-none border-[0.094rem] border-solid dark:border-[#3b3b40] border-[#EBEAEB] dark:hover:bg-[#3b3b40] hover:bg-[#EBEAEB] outline-0'
+      className='p-2 bg-transparent w-full h-9 rounded-none border border-solid dark:border-[#3b3b40] border-[#EBEAEB] dark:hover:bg-[#3b3b40] hover:bg-[#EBEAEB] outline-0'
       variant='outline'
       onClick={onClick}
     >
