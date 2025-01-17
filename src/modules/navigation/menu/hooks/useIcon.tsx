@@ -1,4 +1,7 @@
+// Intl
 import { useLocale } from 'next-intl'
+
+// Navigation
 import { usePathname } from 'next/navigation'
 
 export function usePageIcon(route: string) {
