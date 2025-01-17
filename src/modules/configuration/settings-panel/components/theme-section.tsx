@@ -5,8 +5,9 @@ import activeDarkIcon from '@/assets/icons/buttons/active/dark-theme/dark-dark-i
 import activeLightIcon from '@/assets/icons/buttons/active/light-theme/light-light-icon.svg'
 import activeSystemIcon from '@/assets/icons/buttons/active/light-theme/system-light-icon.svg'
 import inactiveDarkIcon from '@/assets/icons/buttons/inactive/light-theme/themes/dark-light-icon.svg'
+import inactiveDarkSystemIcon from '@/assets/icons/buttons/inactive/light-theme/themes/system-light-icon.svg'
 import inactiveLightIcon from '@/assets/icons/buttons/inactive/dark-theme/themes/light-dark-icon.svg'
-import inactiveSystemIcon from '@/assets/icons/buttons/inactive/light-theme/themes/system-light-icon.svg'
+import inactiveLightSystemIcon from '@/assets/icons/buttons/inactive/light-theme/themes/system-light-icon.svg'
 
 // Hooks
 import useThemeSection from '@/modules/configuration/settings-panel/hooks/useThemeSection'
@@ -41,7 +42,7 @@ const ThemeSection = () => {
         label={t('themes.system')}
         isSelected={theme === 'system'}
         onClick={() => changeTheme('system')}
-        iconSrc={theme === 'system' ? activeSystemIcon : inactiveSystemIcon}
+        iconSrc={theme === 'system' && window.matchMedia('(prefers-color-scheme: light)').matches ? activeSystemIcon : inactiveLightSystemIcon || theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches ? activeSystemIcon : inactiveDarkSystemIcon}
         altText='System theme icon'
       />
     </section>
