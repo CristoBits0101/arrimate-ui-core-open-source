@@ -8,6 +8,7 @@ import lightStyles from '@/modules/navigation/searcher/styles/searcher-light-for
 export default function SearchButton() {
   // Context
   const { activeTheme } = useThemeContext()
+
   return (
     <button
       className={`${
