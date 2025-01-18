@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useFetchImages } from '@/modules/publications/show-post/hooks/useFetchImages'
 
