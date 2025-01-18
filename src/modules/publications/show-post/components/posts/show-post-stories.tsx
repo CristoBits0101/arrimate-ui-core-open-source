@@ -21,7 +21,7 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function ShowPostStories() {
-  // Custom hook
+  // Custom
   const {
     photos,
     error,
@@ -37,6 +37,7 @@ export default function ShowPostStories() {
     page: 5
   })
 
+  // Errors
   if (error) return <p>Error: {error}</p>
   if (photos.length === 0) return null
 

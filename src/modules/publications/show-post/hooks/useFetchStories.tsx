@@ -37,7 +37,7 @@ export const useFetchStories = ({
   perPage,
   page
 }: UseFetchStoriesProps): UseFetchStoriesReturn => {
-  const audio = useRef(new Audio('/sounds/whoosh-effect-1'))
+  const audio = new Audio('/sounds/whoosh-effect-2.mp3')
 
   // Query
   const { photos: fetchedPhotos, error } = useFetchImages({
@@ -85,7 +85,7 @@ export const useFetchStories = ({
   }
 
   const handleClick = () => {
-    audio.current.play()
+    audio.play()
   }
 
   return {
