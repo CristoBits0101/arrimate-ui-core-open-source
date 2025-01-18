@@ -20,7 +20,7 @@ export default function SearchContent({
   closeButton
 }: SearchContentProps) {
   return (
-    <nav className='rounded-3xl mt-2 pt-4 pb-3 border-[0.05rem] border-solid border-[#EBEAEB] dark:border-[#3b3b40] shadow-sm w-full h-fit flex flex-col gap-3'>
+    <nav className='rounded-3xl pb-3 border-[0.05rem] border-solid border-[#EBEAEB] dark:border-[#3b3b40] shadow-sm w-full h-fit flex flex-col gap-3'>
       <div className='font-medium pr-4 pl-4 w-full h-fit flex justify-between items-center'>
         <h2>{h2}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>

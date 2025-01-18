@@ -1,5 +1,8 @@
 'use client'
 
+// Context
+import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
+
 // Image
 import Image from 'next/image'
 
@@ -29,10 +32,23 @@ export default function NavbarItem({
   const locale = useLocale()
   const t = useTranslations('SidebarLayout')
   const href = route === 'stories' ? `/${locale}` : `/${locale}/${route}`
+  // Context
+  const { isFocused } = useSearchContext()
+
   return (
-    <li className='flex items-center justify-center w-full h-full pt-2 pb-2 pr-8 pl-8 hover:bg-[#F4F4F4] dark:hover:bg-[#26272C] hover:cursor-pointer transition-colors duration-300'>
+    <li
+      className={
+        !isFocused
+          ? 'flex items-center justify-center w-full h-full pt-2 pb-2 pr-8 pl-8 hover:bg-[#F4F4F4] dark:hover:bg-[#26272C] hover:cursor-pointer transition-colors duration-300'
+          : 'flex items-center w-fit h-full p-2 rounded-full hover:bg-[#F4F4F4] dark:hover:bg-[#26272C] hover:cursor-pointer transition-colors duration-300'
+      }
+    >
       <Link
-        className='truncate flex items-center h-full w-32 gap-4 dark:text-[#ececed]'
+        className={
+          !isFocused
+            ? 'truncate flex items-center h-full w-32 gap-4 dark:text-[#ececed]'
+            : 'truncate flex items-center h-full w-fit'
+        }
         href={href}
         onClick={() => {
           const audio = new Audio('/sounds/click.mp3')
@@ -44,7 +60,7 @@ export default function NavbarItem({
           src={isActive ? blackIcon : whiteIcon}
           alt={route}
         />
-        {textKey && t(textKey)}
+        {!isFocused ? textKey && t(textKey) : ''}
       </Link>
     </li>
   )

@@ -1,3 +1,6 @@
+// Context
+import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
+
 // E-commerce
 import Products from '@/modules/navigation/menu/components/navbar-items/products-link'
 
@@ -16,9 +19,24 @@ import Shorts from '@/modules/navigation/menu/components/navbar-items/shorts-lin
 import Videos from '@/modules/navigation/menu/components/navbar-items/videos-link'
 
 export default function NavbarMenu() {
+  // Context
+  const { isFocused } = useSearchContext()
+
   return (
-    <nav className='flex h-full justify-center w-full mt-6'>
-      <ul className='flex flex-col w-full h-full gap-2'>
+    <nav
+      className={
+        !isFocused
+          ? 'flex h-full justify-center w-full mt-6'
+          : 'flex h-full mt-6'
+      }
+    >
+      <ul
+        className={
+          !isFocused
+            ? 'flex flex-col w-full h-full gap-2'
+            : 'flex flex-col w-fit h-full gap-2'
+        }
+      >
         <Stories />
         <Events />
         <Products />
