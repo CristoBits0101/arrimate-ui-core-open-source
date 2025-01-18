@@ -39,9 +39,7 @@ export const useFetchStories = ({
   perPage,
   page
 }: UseFetchStoriesProps): UseFetchStoriesReturn => {
-  const audio = new Audio('/sounds/whoosh-effect-2.mp3')
-
-  // Query
+  // Fetching data
   const { photos: fetchedPhotos, error } = useFetchImages({
     query,
     orientation,
@@ -49,6 +47,7 @@ export const useFetchStories = ({
     page
   })
 
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
   const [slidesPerView, setSlidesPerView] = useState(1)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isImageErrorMap, setIsImageErrorMap] = useState<{
@@ -64,6 +63,15 @@ export const useFetchStories = ({
   }, [])
 
   useEffect(() => {
+    // Initialize audio
+    if (typeof window !== 'undefined') {
+      const audioInstance = new Audio('/sounds/whoosh-effect-2.mp3')
+      setAudio(audioInstance)
+    }
+  }, [])
+
+  useEffect(() => {
+    // Update slides per view on resize
     updateSlidesPerView()
     window.addEventListener('resize', updateSlidesPerView)
     return () => window.removeEventListener('resize', updateSlidesPerView)
@@ -87,7 +95,11 @@ export const useFetchStories = ({
   }
 
   const handleClick = () => {
-    audio.play()
+    if (audio) {
+      audio.play().catch((err) => {
+        console.error('Error playing audio:', err)
+      })
+    }
   }
 
   return {
