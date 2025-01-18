@@ -19,7 +19,7 @@ export default function NavigationPanel() {
     </div>
   ) : (
     <div
-      className='flex flex-col w-fit h-fit w-'
+      className='flex flex-col w-fit h-fit'
       ref={searchContainerRef}
     >
       <LoupeButton />
