@@ -15,7 +15,7 @@ import ReturnSearchEngine from '@/layouts/header/panels/navigation-panel'
 // Layout
 export default function Header() {
   // Context
-  const { isFocused } = useSearchContext()
+  const { searchContainerRef, isFocused } = useSearchContext()
 
   return !isFocused ? (
     <header className='hidden md:flex col-span-1 border-r-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] flex-col gap-8 min-h-screen max-h-fit h-auto py-8 sticky top-0 max-w-80'>
@@ -24,8 +24,8 @@ export default function Header() {
     </header>
   ) : (
     <header className='hidden md:flex col-span-1 border-r-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] flex-col gap-8 min-h-screen max-h-fit h- sticky top-0 max-w-80'>
-      <div className='w-full h-full flex px-4'>
-        <div className='w-fit h-full border-r-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] py-8 pr-4'>
+      <div className='w-full h-full flex' ref={searchContainerRef}>
+        <div className='w-fit h-full border-r-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] py-8 px-4'>
           <div className='w-fit h-fit mb-8'>
             <Logo />
           </div>

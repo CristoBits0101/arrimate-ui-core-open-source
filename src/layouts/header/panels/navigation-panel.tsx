@@ -18,10 +18,7 @@ export default function NavigationPanel() {
       <Navbar />
     </div>
   ) : (
-    <div
-      className='flex flex-col w-fit h-fit'
-      ref={searchContainerRef}
-    >
+    <div className='flex flex-col w-fit h-fit'>
       <LoupeButton />
       <Navbar />
     </div>
