@@ -10,7 +10,7 @@ export default function SearchContent() {
   const { searchTerm } = useSearchContext()
 
   return (
-    <div className='w-full h-fit mt-6'>
+    <div className='w-full h-full py-8'>
       {searchTerm ? <RecommendedContent /> : <RecentContent />}
     </div>
   )
