@@ -13,6 +13,7 @@ const SearchContext = createContext<{
   updateSearch: (term: string) => void
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   handleSubmit: (event: React.ChangeEvent<HTMLFormElement>) => void
+  isTyping: boolean // Añadido a la definición del contexto
 } | null>(null)
 
 // 2. Context provider
@@ -21,9 +22,11 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
   const [isFocused, setIsFocused] = useState<boolean>(false)
   const [resetSearchInput, setResetSearchInput] = useState<boolean>(false)
   const [searchTerm, setSearchTerm] = useState<string>('')
+  const [isTyping, setIsTyping] = useState<boolean>(false)
 
   // Ref
   const searchContainerRef = useRef<HTMLDivElement>(null)
+  const typingTimeout = useRef<NodeJS.Timeout | null>(null)
 
   // Updates
   const updateFocus = (focus: boolean) => {
@@ -41,6 +44,12 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
   // Handlers
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value)
+    setIsTyping(true)
+    // Reinicia el temporizador al escribir
+    if (typingTimeout.current) clearTimeout(typingTimeout.current)
+    typingTimeout.current = setTimeout(() => {
+      setIsTyping(false)
+    }, 450)
   }
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -75,14 +84,15 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
     <SearchContext.Provider
       value={{
         isFocused,
+        isTyping,
         resetSearchInput,
-        searchTerm,
         searchContainerRef,
+        searchTerm,
+        handleChange,
+        handleSubmit,
         updateFocus,
         updateReset,
-        updateSearch,
-        handleChange,
-        handleSubmit
+        updateSearch
       }}
     >
       {children}
