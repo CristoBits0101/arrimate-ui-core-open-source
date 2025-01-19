@@ -26,12 +26,14 @@ export default function Header() {
     <header className='hidden md:flex col-span-1 border-r-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] flex-col gap-8 min-h-screen max-h-fit h- sticky top-0 max-w-80'>
       <div className='w-full h-full flex' ref={searchContainerRef}>
         <div className='w-fit h-full border-r-[0.05rem] border-[#EBEAEB] dark:border-[#3b3b40] py-8 px-4'>
-          <div className='w-fit h-fit mb-8'>
+          <div className='w-fit h-fit mb-8 mx-auto'>
             <Logo />
           </div>
           <ReturnSearchEngine />
         </div>
-        <SearchContent />
+        <div className='w-full h-full border-0 outline-none'>
+          <SearchContent />
+        </div>
       </div>
     </header>
   )

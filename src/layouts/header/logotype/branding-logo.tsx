@@ -3,6 +3,7 @@ import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchC
 
 // Images
 import Image from 'next/image'
+import logo from '@/assets/icons/logo/arrimate.svg'
 
 // Fonts
 import { ds } from '@/lib/google/google-fonts'
@@ -12,15 +13,17 @@ export default function Logo() {
   const { isFocused } = useSearchContext()
 
   return (
-    <div className='relative text-4xl font-medium flex justify-center items-center w-full h-[2.5rem] dark:text-[#ececed]'>
+    <div className='relative text-4xl font-medium flex justify-center items-center w-full h-11 dark:text-[#ececed] aspect-square'>
       {!isFocused ? (
         <h1 className={ds.className}>Arrímate</h1>
       ) : (
         <Image
-          src='/ico/arrimate.ico'
+          src={logo}
           alt='Arrímate logo'
-          fill
-          className='w-7 h-7 aspect-square object-contain'
+          width={44}
+          height={44}
+          quality={100}
+          className='aspect-square object-contain'
         />
       )}
     </div>

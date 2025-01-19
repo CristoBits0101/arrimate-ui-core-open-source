@@ -1,3 +1,5 @@
+'use client'
+
 // Context
 import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
 
@@ -11,8 +13,11 @@ export default function LoupeButton() {
   }
 
   return (
-    <div className='bg-[#F4F4F4] hover:bg-[#ececed] dark:bg-[#26272C] dark:hover:bg-[#3b3b40] border border-[#EBEAEB] dark:border-[#3b3b40] flex items-center justify-center aspect-square w-11 rounded-full cursor-pointer'>
-      <button className='w-fit h-fit' onClick={handlerOnClick}>
+    <div
+      onClick={handlerOnClick}
+      className='bg-[#F4F4F4] hover:bg-[#ececed] dark:bg-[#26272C] dark:hover:bg-[#3b3b40] border border-[#EBEAEB] dark:border-[#3b3b40] flex items-center justify-center aspect-square w-11 rounded-full cursor-pointer'
+    >
+      <button className='w-fit h-fit'>
         <svg
           className='w-5 h-5 fill-current text-[#1d0f0f] dark:text-[#ececed]'
           xmlns='http://www.w3.org/2000/svg'

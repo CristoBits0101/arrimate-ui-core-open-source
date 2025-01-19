@@ -26,8 +26,8 @@ export default function NavbarMenu() {
     <nav
       className={
         !isFocused
-          ? 'flex h-full justify-center w-full mt-6'
-          : 'flex h-full mt-6'
+          ? 'flex h-full justify-center w-full mt-8'
+          : 'flex h-full mt-8'
       }
     >
       <ul

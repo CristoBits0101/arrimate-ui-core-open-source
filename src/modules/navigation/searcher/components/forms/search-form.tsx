@@ -7,8 +7,6 @@ import SearchInput from '@/modules/navigation/searcher/components/inputs/search-
 
 // Context
 import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
-
-// Hooks
 import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
 
 // Styles
@@ -18,13 +16,15 @@ import lightStyles from '@/modules/navigation/searcher/styles/searcher-light-for
 export default function SearchForm() {
   // Context
   const { activeTheme } = useThemeContext()
-  const { handleSubmit } = useSearchContext()
+  const { handleSubmit, isFocused } = useSearchContext()
 
   return (
     <form
       className={`${
         activeTheme === 'dark' ? darkStyles.form : lightStyles.form
-      } flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11 px-8`}
+      } flex items-center justify-center text-[#1d0f0f] text-[0.875rem] w-full h-11 ${
+        !isFocused ? 'px-8' : 'px-4'
+      } `}
       onSubmit={handleSubmit}
     >
       <InputsBox>
