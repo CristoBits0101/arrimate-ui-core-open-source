@@ -2,6 +2,7 @@
 
 // Context
 import { useSearchContext } from '@/modules/navigation/searcher/hooks/useSearchContext'
+import { useThemeContext } from '@/modules/configuration/settings-panel/hooks/useThemeContext'
 
 // Hooks
 import { useState } from 'react'
@@ -12,6 +13,7 @@ import { PuffLoader } from 'react-spinners'
 export default function LoupeButton() {
   // Context
   const { isTyping, updateFocus } = useSearchContext()
+  const { activeTheme } = useThemeContext()
 
   // States
   const [isFocused, setIsFocused] = useState(false)
@@ -61,7 +63,10 @@ export default function LoupeButton() {
           <path d='m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z' />
         </svg>
       ) : isTyping ? (
-        <PuffLoader size={25} />
+        <PuffLoader
+          size={25}
+          color={activeTheme === 'light' ? '#1d0f0f' : '#ececed'}
+        />
       ) : null}
     </div>
   )
