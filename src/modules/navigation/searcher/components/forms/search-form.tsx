@@ -29,7 +29,7 @@ export default function SearchForm() {
     >
       <InputsBox>
         <SearchInput />
-        <SearchButton />
+        {!isFocused ? <SearchButton /> : null}
       </InputsBox>
     </form>
   )
