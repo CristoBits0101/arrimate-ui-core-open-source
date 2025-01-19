@@ -20,7 +20,7 @@ export default function ResultsBox({
   closeButton
 }: ResultsBoxProps) {
   return (
-    <nav className='pt-2 pb-3 w-full h-full flex flex-col gap-3'>
+    <nav className='pb-3 w-full h-full flex flex-col gap-3'>
       <div className='font-medium px-4 w-full h-fit flex justify-between items-center'>
         <h2>{h2}</h2>
         <div className='w-fit h-full flex gap-2 items-center justify-center'>
