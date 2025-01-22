@@ -1,81 +1,88 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import signInAction from '@/modules/auth/sign-in/actions/sign-in-action'
-
-// Form: Manage form status and validation
+// Form
 import { useForm } from 'react-hook-form'
 
-// Intl: To get language and set translations
+// Intl
 import { useTranslations } from 'next-intl'
 
-// React: Hooks from React
+// Hooks
 import { useEffect, useState, useTransition } from 'react'
 
-// Zod: Define data validation rules
+// Utils
+import { getFingerprint } from '@/modules/auth/sign-in/utils/fingerprint'
+
+// Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FrontendSignInSchema } from '@/modules/auth/sign-in/schemas'
 
-export function useSignInForm(subject: string) {
-  // Get translations
-  const t = useTranslations('AuthActions')
+export function useSignInForm() {
+  // Translations
   const z = useTranslations('AuthSchemas')
 
-  // Pass translations to Zod schema
+  // Schemas
   const SignInSchema = FrontendSignInSchema(z)
 
-  // Save action errors
+  // States
   const [error, setError] = useState<string | undefined>('')
-
-  // Save action success
+  const [hydrated, setHydrated] = useState(false)
+  const [isPending, startTransition] = useTransition()
   const [success, setSuccess] = useState<string | undefined>('')
 
-  // To control component rendering
-  const [hydrated, setHydrated] = useState(false)
-
-  // Indicates code execution finished
-  const [isPending, startTransition] = useTransition()
-
-  // Type form with SignInSchema
   const form = useForm<z.infer<typeof SignInSchema>>({
-    // Validate before sending
+    // Validation
     resolver: zodResolver(SignInSchema),
-    // Runs on every shipment
+    // Trigger
     mode: 'onSubmit',
-    // Initial state of the fields
+    // Default
     defaultValues: {
       email: '',
       password: ''
     }
   })
 
-  // Handle form submission
-  const onSubmit = (values: z.infer<typeof SignInSchema>) => {
-    // Clear previous messages before sending
+  // Handlers
+  const onSubmit = async (values: z.infer<typeof SignInSchema>) => {
+    // Clear
     setError('')
     setSuccess('')
-    // Checks backend request status
+
+    // Hash
+    const fingerprint = await getFingerprint()
+
+    // Body
+    const data = {
+      ...values,
+      fingerprint
+    }
+
+    // Send
     startTransition(() => {
-      // Send input values and email subject to backend
-      signInAction(values, subject)
-        // Transaction completed
+      fetch('http://localhost:4000/api/v1/users/login', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        // Completed
         .then((data) => {
-          if (data.error) setError(t(data.error))
-          else if (data.success) {
-            setSuccess(t(data.success))
-            window.location.href = '/'
-          }
+          if (data.ok)
+            setSuccess('Sign in successful')
+          else
+            setError('Sign in failed')
         })
-        // Failed transaction
+        // Failed
         .catch((err) => {
-          setError(t('notifyUnregister'))
-          console.error('Error in SignIn: ', err)
+          setError('')
+          console.error('', err)
         })
     })
   }
 
-  // Backend finished allowing frontend to render
+  // Hydrate
   useEffect(() => setHydrated(true), [])
 
   return {

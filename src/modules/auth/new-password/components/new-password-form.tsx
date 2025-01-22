@@ -1,37 +1,31 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import newPasswordAction from '@/modules/auth/new-password/actions/new-password-action'
-
-// Alerts: Serialize backend messages
+// Alerts
 import FormError from '@/modules/auth/form-pieces/alerts/error-alert'
 import FormSuccess from '@/modules/auth/form-pieces/alerts/success-alert'
 
-// Buttons: Button to send form
+// Buttons
 import SubmitButton from '@/modules/auth/form-pieces/buttons/submit-form-button'
 
-// Cards: Card to wrap inputs
+// Cards
 import CardWrapper from '@/modules/auth/form-pieces/cards/card-wrapper'
 
-// Form: Manage form status and validation
+// Form
 import { useForm, FormProvider } from 'react-hook-form'
 
-// Inputs: Fillable fields in forms
-import PasswordInput from '@/modules/auth/form-pieces/inputs/password-input'
-
-// Intl: To get language and set translations
-import { useLocale, useTranslations } from 'next-intl'
-
-// Navigation: To get URL parameter
-import { useSearchParams } from 'next/navigation'
-
-// React: Hooks from React
+// Hooks
 import { useEffect, useState, useTransition } from 'react'
 
-// Shadcn: Component library
+// Inputs
+import PasswordInput from '@/modules/auth/form-pieces/inputs/password-input'
+
+// Intl
+import { useLocale, useTranslations } from 'next-intl'
+
+// Shadcn
 import { Form } from '@/modules/ui/form'
 
-// Zod: Validation library
+// Zod
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'
@@ -39,18 +33,17 @@ import { NewPasswordSchema } from '@/modules/auth/new-password/schemas'
 export default function NewPasswordForm() {
   // States
   const [error, setError] = useState<string | undefined>('')
-  const [success, setSuccess] = useState<string | undefined>('')
+  const [hydrated, setHydrated] = useState(false)
   const [isPending, startTransition] = useTransition()
+  const [success, setSuccess] = useState<string | undefined>('')
 
   // Navigation
   const locale = useLocale()
-  const searchParams = useSearchParams()
-  const token = searchParams.get('token')
 
   // Translations
   const f = useTranslations('Forms')
 
-  // Initializes the form and manages its state when rendering
+  // Form
   const form = useForm<z.infer<typeof NewPasswordSchema>>({
     resolver: zodResolver(NewPasswordSchema),
     mode: 'onSubmit',
@@ -60,26 +53,16 @@ export default function NewPasswordForm() {
   })
 
   const onSubmit = (values: z.infer<typeof NewPasswordSchema>) => {
-    // Change values
+    // Reset
     setError('')
     setSuccess('')
-    // Sent data to server
+    // Send
     startTransition(() => {
-      newPasswordAction(values, token)
-        .then((data) => {
-          setError(data?.error)
-          setSuccess(data?.success)
-          if (data.success) window.location.href = `/${locale}`
-        })
-        .catch((error) => {
-          console.error('Error en SignIn:', error)
-          setError('Ocurrió un error inesperado.')
-        })
+      console.log('Values: ', values)
     })
   }
 
-  // Ensure client-side rendering
-  const [hydrated, setHydrated] = useState(false)
+  // Hydration
   useEffect(() => setHydrated(true), [])
 
   return hydrated ? (
