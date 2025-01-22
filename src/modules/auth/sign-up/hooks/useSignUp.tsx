@@ -1,8 +1,5 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import signUpAction from '@/modules/auth/sign-up/actions/sign-up-action'
-
 // Form: Manage form status and validation
 import { useForm } from 'react-hook-form'
 
@@ -17,24 +14,18 @@ import * as z from 'zod'
 import { FrontendSignUpSchema } from '@/modules/auth/sign-up/schemas/index'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export function useSignUpForm(subject: string) {
-  // Get translations
+export function useSignUpForm() {
+  // Translations
   const t = useTranslations('AuthActions')
   const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
   const SignUpSchema = FrontendSignUpSchema(z)
 
-  // Save action errors
+  // States
   const [error, setError] = useState<string | undefined>('')
-
-  // Save action success
   const [success, setSuccess] = useState<string | undefined>('')
-
-  // To control component rendering
   const [hydrated, setHydrated] = useState(false)
-
-  // Indicates code execution finished
   const [isPending, startTransition] = useTransition()
 
   // Type form with SignUpSchema
@@ -59,13 +50,19 @@ export function useSignUpForm(subject: string) {
     // Checks backend request status
     startTransition(() => {
       // Send input values and email subject to backend
-      signUpAction(values, subject)
-        // Transaction completed
+      fetch('http://localhost:4000/api/v1/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      })
+        // Completed
         .then((data) => {
-          if (data.error) setError(t(data.error))
-          if (data.success) setSuccess(t(data.success))
+          if (data.ok)
+            console.log('Register successful')
         })
-        // Failed transaction
+        // Failed
         .catch((err) => {
           setError(t('notifyUnregister'))
           console.error('Error in SignUp: ', err)
