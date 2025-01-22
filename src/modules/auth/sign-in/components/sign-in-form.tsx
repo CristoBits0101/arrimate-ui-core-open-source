@@ -1,48 +1,44 @@
 'use client'
 
-// Alerts: Serialize backend messages
+// Alerts
 import FormError from '@/modules/auth/form-pieces/alerts/error-alert'
 import FormSuccess from '@/modules/auth/form-pieces/alerts/success-alert'
 
-// Buttons: Button to send form
+// Buttons
 import SubmitButton from '@/modules/auth/form-pieces/buttons/submit-form-button'
 
-// Cards: Card to wrap inputs
+// Cards
 import CardWrapper from '@/modules/auth/form-pieces/cards/card-wrapper'
 
-// Custom: Encapsulates form logic
-import { useSignInForm } from '@/modules/auth/sign-in/hooks/useSignIn'
-
-// Form: Hooks from React
+// Form
 import { FormProvider } from 'react-hook-form'
 
-// Inputs: Fillable fields in forms
+// Hooks
+import { useSignInForm } from '@/modules/auth/sign-in/hooks/useSignIn'
+
+// Inputs
 import EmailInput from '@/modules/auth/form-pieces/inputs/email-input'
 import PasswordInput from '@/modules/auth/form-pieces/inputs/password-input'
 
-// Intl: To get language and set translations
+// Intl
 import { useLocale, useTranslations } from 'next-intl'
 
-// Shadcn: Contains the form component
+// Shadcn
 import { Form } from '@/modules/ui/form'
 
 export default function SignInForm(): React.ReactElement | null {
-  // Get locale
+  // Hooks
+  const { form, error, success, isPending, hydrated, onSubmit } = useSignInForm()
+
+  // Locale
   const locale = useLocale()
 
-  // Get translations
+  // Translations
   const b = useTranslations('Button')
   const f = useTranslations('Forms')
-  const m = useTranslations('Mail')
-  const s = m('confirm')
 
-  // Managing form logic
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useSignInForm(s)
-
-  // Render the form on the frontend
+  // Hydration
   return hydrated ? (
-    // Content that is rendered
     <CardWrapper
       pageNameRedirect={f('signInForm.pageNameRedirect')}
       redirectButtonLabel={f('signInForm.redirectButtonLabel')}
@@ -51,22 +47,15 @@ export default function SignInForm(): React.ReactElement | null {
       showForgotPassword={true}
       showDividingLine={true}
     >
-      {/* Form structure provider */}
       <FormProvider {...form}>
-        {/* Extend structure for Shadcn form */}
         <Form {...form}>
-          {/* Form */}
           <form className='space-y-5' onSubmit={form.handleSubmit(onSubmit)}>
             <div className='space-y-5'>
-              {/* Inputs */}
               <EmailInput name='email' isPending={isPending} />
               <PasswordInput name='password' isPending={isPending} />
             </div>
-            {/* Show errors */}
             <FormError message={error} />
-            {/* Show success */}
             <FormSuccess message={success} />
-            {/* Submit button */}
             <SubmitButton message={b('signIn')} isPending={isPending} />
           </form>
         </Form>
