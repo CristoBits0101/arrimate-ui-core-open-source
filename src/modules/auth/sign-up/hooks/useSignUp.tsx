@@ -60,7 +60,9 @@ export function useSignUpForm() {
         // Completed
         .then((data) => {
           if (data.ok)
-            console.log('Register successful')
+            setSuccess('Register successful')
+          else
+            setError('')
         })
         // Failed
         .catch((err) => {

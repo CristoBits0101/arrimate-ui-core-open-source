@@ -34,12 +34,9 @@ export default function SignUpForm(): React.ReactElement | null {
   // Get translations
   const b = useTranslations('Button')
   const f = useTranslations('Forms')
-  const m = useTranslations('Mail')
-  const s = m('confirm')
 
   // Managing form logic
-  const { form, error, success, isPending, hydrated, onSubmit } =
-    useSignUpForm(s)
+  const { form, error, success, isPending, hydrated, onSubmit } = useSignUpForm()
 
   // Render the form on the frontend
   return hydrated ? (
