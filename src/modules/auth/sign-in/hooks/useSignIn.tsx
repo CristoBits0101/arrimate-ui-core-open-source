@@ -1,8 +1,5 @@
 'use client'
 
-// Actions: Encapsulates backend logic
-import signInAction from '@/modules/auth/sign-in/actions/sign-in-action'
-
 // Form: Manage form status and validation
 import { useForm } from 'react-hook-form'
 
@@ -17,9 +14,8 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FrontendSignInSchema } from '@/modules/auth/sign-in/schemas'
 
-export function useSignInForm(subject: string) {
+export function useSignInForm() {
   // Get translations
-  const t = useTranslations('AuthActions')
   const z = useTranslations('AuthSchemas')
 
   // Pass translations to Zod schema
@@ -57,21 +53,7 @@ export function useSignInForm(subject: string) {
     setSuccess('')
     // Checks backend request status
     startTransition(() => {
-      // Send input values and email subject to backend
-      signInAction(values, subject)
-        // Transaction completed
-        .then((data) => {
-          if (data.error) setError(t(data.error))
-          else if (data.success) {
-            setSuccess(t(data.success))
-            window.location.href = '/'
-          }
-        })
-        // Failed transaction
-        .catch((err) => {
-          setError(t('notifyUnregister'))
-          console.error('Error in SignIn: ', err)
-        })
+      console.log(values)
     })
   }
 
