@@ -1,5 +1,5 @@
 'use client'
 
-const UserArticle = () => { }
+const UserArticle = () => {}
 
 export default UserArticle
